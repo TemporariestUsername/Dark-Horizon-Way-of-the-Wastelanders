@@ -11,7 +11,7 @@ A single‑player, open‑world exploration, trade and survival RPG for **Window
 2. [**Translation matrix**](docs/design/01-translation-matrix.md): every source system and where it goes.
 3. [**The world**](docs/design/02-world.md): the Easing, interstates as seas, the threat map as the world map, Last and the Hum.
 4. [**Gazetteer**](docs/design/16-gazetteer.md): all 130 holds.
-5. [**Factions**](docs/design/17-factions.md): six influence factions, and the Choir.
+5. [**Factions**](docs/design/17-factions.md) and [**sub‑factions**](docs/design/18-sub-factions.md): six hardholder powers, the Choir, and the cults, gangs, guilds and secret societies underneath.
 
 ## Design bible (`docs/design/`)
 | # | Doc |
@@ -34,6 +34,7 @@ A single‑player, open‑world exploration, trade and survival RPG for **Window
 | 15 | [Roadmap, client decisions and open questions](docs/design/15-roadmap.md) |
 | 16 | [Gazetteer: the 130 holds](docs/design/16-gazetteer.md) |
 | 17 | [Factions](docs/design/17-factions.md) |
+| 18 | [Sub‑factions](docs/design/18-sub-factions.md) |
 | — | [Glossary](docs/design/glossary.md) |
 
 ## Research (`docs/research/`)

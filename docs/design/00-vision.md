@@ -16,7 +16,7 @@ Now the roads are quiet enough to drive, and nobody alive knows what's out there
 - You put your jingle into the holds that matter until they lean your way.
 - You push toward the edges, where the maelstrom still howls.
 
-Meanwhile, six factions that were only rumors last year (the Keepers, the Exchange, the Lake Compact, Sweetwell, the Teeth and the Family) are racing to win the newly reachable holds, each in its own way, as UWNH's nations raced for ports. And in the dead skyline of Harrowgate, a prophet called **Last** and a choir of brainers say they're the reason the world went quiet. They say they're holding the maelstrom in. People call the sound coming from Harrowgate **the Hum**. Every month it gets louder. When the clock reaches 12:00, the Choir lets go, and everybody hears it.
+Meanwhile, six powerful hardholders who were only rumors last year are racing to win the newly reachable holds: the Lighthouse on the Memphis bridge, Sweetwell on its aquifer, Highwater on the Lakes, the Exchange in its Florida vault, Burning Water in its refineries, and Cerro in its mountain walls. Underneath them, cults, road gangs, guilds and secret societies pick sides. And in the dead skyline of Harrowgate, a prophet called **Last** and a choir of brainers say they're the reason the world went quiet. They say they're holding the maelstrom in. People call the sound coming from Harrowgate **the Hum**. Every month it gets louder. When the clock reaches 12:00, the Choir lets go, and everybody hears it.
 
 ## Design thesis: three games become one
 
@@ -91,5 +91,6 @@ Meanwhile, six factions that were only rumors last year (the Keepers, the Exchan
 | [14 Art, audio and UI](14-art-audio-ui.md) | Look, sound, screen list |
 | [15 Roadmap](15-roadmap.md) | Vertical slice, milestones, client decisions, open questions |
 | [16 Gazetteer](16-gazetteer.md) | All 130 holds: site, boss, surplus, want, starting Lean |
-| [17 Factions](17-factions.md) | The six influence factions, and the Choir: the Nobunaga faction that breaks the rules |
+| [17 Factions](17-factions.md) | The six hardholder factions, and the Choir: the Nobunaga faction that breaks the rules |
+| [18 Sub‑factions](18-sub-factions.md) | Cults, road gangs, guilds and secret societies: Standing, chapters, backing, turning |
 | [Glossary](glossary.md) | Terms |

@@ -38,7 +38,7 @@ Playbooks do two jobs:
 | **Moves (data)** | Pack alpha, Fucking thieves (plus a bike and a gang) |
 | **Campaign verbs** | **Raid** caravans and straggler camps (road war, then take cargo) · **Tribute** (shake down holds; their Lean drops, your fear rises) · **Grow** (recruit from defeated gangs) · **Challenge** (single combat for another gang's leadership) |
 | **Starting point** | Dog Head fence market on the Houston ship channel (the Ten), in Dremmer's shadow |
-| **Arc** | I. *The pack is hungry*. II. *Dremmer notices*: tribute or war. III. *A bid for alpha*: someone in your own gang. IV. *The Teeth*: take Dremmer's seat or bow. V. *Choppers don't hum*: the Choir offers your gang purpose. |
+| **Arc** | I. *The pack is hungry*. II. *Dremmer notices*: tribute or war. III. *A bid for alpha*: someone in your own gang. IV. *The Teeth*: take Dremmer's camp, or bow. V. *Choppers don't hum*: the Choir offers your gang purpose. |
 | **Endings** | **King of the road**: replace Dremmer as Alpha wolf. **The pack scatters**: you lose the gang and ride alone. **Fucking thieves**: steal the dish core from Harrowgate, which resets the World Clock by 2 segments. |
 | **Cameo** | A chopper whose gang raids your caravans, and who might be recruited |
 

@@ -27,7 +27,8 @@ Every system found in the teardowns ([UWNH](../research/uncharted-waters-new-hor
 | 47 goods in categories, a price index per category | The AW resource list (about 30) in 6 categories; prices from **surplus and want** | [07](07-economy.md) |
 | Selling floods a market | Saturation: each lot sold lowers that hold's want for that resource | [07](07-economy.md) |
 | 20% tax, tax‑free permit | Warlord's cut (*tribute*), and a **safe‑passage mark** | [07](07-economy.md) |
-| 6 nations (Portugal, Spain, England, Holland, Italy, the Ottomans), each with its own character | **6 influence factions**, each winning Lean in its own way: the Keepers (Portugal: light and charts), the Exchange (Venice: money), the Lake Compact (Holland and the Hanse: freight), Sweetwell (Spain: the silver, here water), the Teeth (the Ottomans and corsairs: fear), the Family (Inindo's ninja clans: hidden kin) | [17](17-factions.md) |
+| 6 nations competing for port shares | **6 factions**: hardholder powers, each seated on a piece of geography the map needs (a bridge, an aquifer, a lake, a vault, a refinery, a mountain city). They compete through the same share mechanic (Lean), but each wins it its own way. Their character comes from their place on the map, not from UWNH's nations | [17](17-factions.md) |
+| Guilds (UWNH), wandering schools and orders (Inindo) | **Sub‑factions**: cults, road gangs, guilds and secret societies that cut across faction lines. They have Standing, chapters and backing; supply gigs, recruits and services; and can be turned by the Choir | [18](18-sub-factions.md) |
 | Investment → port allegiance shares | **Dropping jingle** (investment) and **gigs** move a hold's **Lean** toward you or your patron | [07](07-economy.md), [10](10-warlords-and-politics.md) |
 | Capitals can't be invested in | Warlord **seats** can't be bought, only taken | [10](10-warlords-and-politics.md) |
 | Bank, 10% monthly interest | **Debt to a warlord** or the Collector: strings attached, collected as threat moves | [07](07-economy.md) |
@@ -50,7 +51,7 @@ Every system found in the teardowns ([UWNH](../research/uncharted-waters-new-hor
 |---|---|---|
 | Start right after a catastrophe (Honnoji) | Start a year into **the Easing**, just after **Last's** first broadcast. The World Clock begins at 0:00 | [02](02-world.md) |
 | 30 provinces with castles | 130 holds as the political units, each with a hardholder and a **Lean**. Crossings are the prized ones | [02](02-world.md) |
-| 15 daimyo houses, about 90 generals with ratings | **6 influence‑faction warlords plus the Choir**, and independent hardholders. Each lieutenant has **Brawn** and **Cunning** ratings | [10](10-warlords-and-politics.md) |
+| 15 daimyo houses, about 90 generals with ratings | **6 faction hardholders plus the Choir**, sub‑faction leaders, and independent hardholders. Each lieutenant has **Brawn** and **Cunning** ratings | [10](10-warlords-and-politics.md) |
 | Daimyo personality pairs, including Pro‑Nobu / Anti‑Nobu | Warlord **temperament**: Stubborn/Flexible, Steady/Reckless, Grim/Wild, **Hum‑touched/Deaf**, Warlike/Peaceful, and a **grip** (Weak/Holding/Strong/Iron) | [10](10-warlords-and-politics.md) |
 | Province Arms and Training | Hold **Walls** and **Gang** (size, harm, armor) | [10](10-warlords-and-politics.md) |
 | The monthly turn (work posted at month start, "End month") | **World turn** at month's end, and gigs posted at month's start | [03](03-core-loops.md), [10](10-warlords-and-politics.md) |
@@ -64,7 +65,7 @@ Every system found in the teardowns ([UWNH](../research/uncharted-waters-new-hor
 | Grid battles, HP and MP | Skirmish on a grid resolved with battle moves, harm clocks and Weird **strain** | [09](09-combat.md) |
 | About 120 monsters | Threat roster: Brutes, Grotesques, Vehicles, Terrain, Afflictions | [13](13-content-tables.md) |
 | Nobunaga's growing army, Azuchi castle | **The Choir** (Last, with Tum Tum's flesh trade), a faction that **breaks the rules**: it Silences holds instead of buying them, its Opened never break, and it absorbs other factions. The **World Clock** is the Easing running out | [17](17-factions.md#the-choir-the-nobunaga-faction), [02](02-world.md) |
-| The anti‑Nobunaga league | **The League**: the player brokers a coalition of influence factions against the Choir, with its own fragile countdown | [17](17-factions.md#the-league-inindos-antinobunaga-coalition) |
+| The anti‑Nobunaga league | **The League**: the player brokers a coalition of factions against the Choir, with its own fragile countdown. Sub‑factions join as auxiliaries | [17](17-factions.md#the-league-inindos-antinobunaga-coalition) |
 | Debug "End month" | A designer tool: the headless sim runner | [platform](../research/platform-recommendation.md) |
 
 ## C. Apocalypse World rules → game triggers

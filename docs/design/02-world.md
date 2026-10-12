@@ -69,15 +69,15 @@ There are 13 road regions, like UWNH's 13 sea regions, plus Up, Down, Out and In
 
 | Region | Octant / ring | Golden‑age site | Character | Holds |
 |---|---|---|---|---|
-| **The Crossing** | Centre | Memphis, the I‑40 and I‑55 bridges | The Lighthouse bridge, kept lit through the Howling by **the Keepers**. Free crossing, the busiest market. | 8 |
+| **The Crossing** | Centre | Memphis, the I‑40 and I‑55 bridges | The Lighthouse bridge, kept lit through the Howling by **the Keepers**, and now **Clarion's** free crossing and the busiest market on the map. | 8 |
 | **The Delta** | S, Closer | I‑55 and I‑20 in Mississippi, the Mississippi crossings | Cotton flats, barge hulks, river forts. Three of the river's crossings. | 8 |
 | **The Twenty** | W, Closer | I‑20, Dallas to Birmingham | Pine woods, oil fields, steel, stadiums. | 8 |
 | **The Forty** | W/E, Closer | I‑40, Oklahoma City to Nashville | Plains to hills, the hot springs, the music town. Twisters. | 8 |
 | **The Sixty‑Five** | E, Closer | I‑65, Mobile to Louisville | Rails, rocket gardens, caves, the Vault. | 8 |
-| **The Ten** | S, Farther | I‑10, Houston to Mobile | Refineries, bayous, fog, music, **Burning Water**. Harrowgate stands over its west end. | 13 |
+| **The Ten** | S, Farther | I‑10, Houston to Mobile | **Burning Water's** refineries, bayous, fog, music. Harrowgate stands over its west end, next door to the flare stacks. | 13 |
 | **The Thirty‑Five** | W, Farther | I‑35, Laredo to Dallas | Springs, missions, the Stack. **Grome's** water country. | 9 |
-| **The Rag‑Wastes** | W, Farther | I‑20 and I‑10 in West Texas | Dunes, pumpjacks, ranches. **Dremmer's** Teeth. Edges onto the Loud. | 8 |
-| **The Bravo** | S/W, Farther | The dry Rio Grande, Monterrey, Mex 85/40/57 | A riverbed highway, canyons, tolls, land‑yacht builders. | 8 |
+| **The Rag‑Wastes** | W, Farther | I‑20 and I‑10 in West Texas | Dunes, pumpjacks, ranches. The road‑gang country of **the Teeth**, raiding **Burning Water's** crude. Edges onto the Loud. | 8 |
+| **The Bravo** | S/W, Farther | The dry Rio Grande, Monterrey, Mex 85/40/57 | A riverbed highway, canyons, land‑yacht builders. **Cerro's** walled city commands it from the mountains. | 8 |
 | **The Sierra Coast** | S, Farther (far) | Mex 180, Tampico to Veracruz | Forts, oil terminals, jungle, pyramids. The road toward the City runs into the Loud. | 7 |
 | **The Seventy** | N, Farther | I‑70 and I‑55 north: Kansas City, St Louis, Indianapolis | The Arch, stockyards, speedways. **Tum Tum's** slave road, which feeds the Choir. | 9 |
 | **The Lakes** | N, Farther (farthest) | I‑94, I‑90, I‑80, Ontario 401 | Cold fresh water, steel, falls, ice roads. **Abondo's** country. | 11 |
@@ -120,18 +120,22 @@ Every hold has these:
 | **Hold** | 66 | Market, bar, notice wall, plus a garage *or* an infirmary |
 | **Outpost** | 18 | One trader, one shelter, one rumor. A camera‑sized map. |
 
-## Factions
-Six **influence factions** compete for the holds through **Lean**, as UWNH's nations competed for ports. Each one wins loyalty its own way. A seventh, **the Choir**, doesn't compete at all: it **silences** holds, and it's the Nobunaga of this world. The full faction bible, including how the Choir breaks the rules, is in **[17 · Factions](17-factions.md)**.
+## Factions and sub‑factions
+Politics has two layers.
 
-| Faction | Leader | Seat | Wins holds by… |
-|---|---|---|---|
-| **The Keepers** | Kindle | The Lighthouse (the Crossing) | Light: hospitality, free crossings, charts |
-| **The Exchange** | Rothschild | The Exchange (the Glass) | Money: investment and debt |
-| **The Lake Compact** | Abondo | Highwater (the Lakes) | Freight: caravan routes, winter ice roads |
-| **Sweetwell** | Grome | Sweetwell (the Thirty‑Five) | Thirst: water dependency |
-| **The Teeth** | Dremmer | The Teeth (the Rag‑Wastes) | Fear: tribute and raids |
-| **The Family** | Mother Krin | Krin's Nest (Down) | Kin: hidden cousins planted in holds |
-| **THE CHOIR** | **Last**, with Tum Tum | **Harrowgate** (Up) and **Pellet** (the Seventy) | **Silence**: it takes holds off the board |
+**Factions** are six powerful **hardholders**, each sitting on something the map can't do without. They compete for the holds through **Lean**, each in a way that grows out of its geography. A seventh, **the Choir**, doesn't compete at all: it **silences** holds, and it's the Nobunaga of this world. Full write‑ups are in **[17 · Factions](17-factions.md)**.
+
+| Faction | Hardholder | Seat | What it sits on | Wins holds by… |
+|---|---|---|---|---|
+| **The Lighthouse** | Clarion | The Lighthouse (the Crossing) | The central bridge over the Mississippi | Passage: free crossings |
+| **Sweetwell** | Grome | Sweetwell (the Thirty‑Five) | The San Antonio aquifer | Thirst |
+| **Highwater** | Abondo | Highwater (the Lakes) | The Great Lakes and the ice roads | Freight and winter |
+| **The Exchange** | Rothschild | The Exchange (the Glass) | Florida's sealed peninsula of rich ruins | Debt and salvage |
+| **Burning Water** | Parcher | Burning Water (the Ten) | The Texas City refineries: guzzoline | Fuel |
+| **Cerro** | Otilia | Cerro (the Bravo) | Monterrey, a walled steel city in the mountains | Walls |
+| **THE CHOIR** | **Last**, with Tum Tum | **Harrowgate** (Up) and **Pellet** (the Seventy) | The dead towers of Houston and the maelstrom itself | **Silence**: takes holds off the board |
+
+**Sub‑factions** are the cults, road gangs, guilds and secret societies that cut across faction lines: the Keepers, the Teeth, the Family, the Tankermen and a dozen more. They never own holds, but they have chapters in them, they **back** factions, they supply most gigs and recruits, and the Choir can **turn** them. See **[18 · Sub‑factions](18-sub-factions.md)**.
 
 Independent holds have their own hardholders, who act as minor warlords using the *Dictator* or *Family* impulse.
 

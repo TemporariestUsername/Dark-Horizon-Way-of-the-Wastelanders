@@ -2,7 +2,7 @@
 
 > Inindo's lesson: *the map changes without you.* UWNH's lesson: *you can change the map without firing a shot.* Both are true here.
 >
-> This doc covers the **machinery**: warlord AI, the world turn and conquest. **Who the factions are** (their flavour, influence engines, patron packages, and how the Choir breaks the rules) is in [17 · Factions](17-factions.md).
+> This doc covers the **machinery**: warlord AI, the world turn and conquest. **Who the factions are** is in [17 · Factions](17-factions.md). **Sub‑factions** (cults, road gangs, guilds, secret societies) are in [18](18-sub-factions.md).
 
 ## The political units
 - **Holds** carry **Lean** (see [07](07-economy.md#investment-and-lean-uwnhs-allegiance-aws-way)), **Walls** (armor 0–2), a **Gang** (size, harm, armor, tags), a **Boss**, and **Afflictions**.
@@ -12,7 +12,7 @@
   - **Grip**: Weak / Holding / Strong / Iron (Inindo's Bad / Fair / Good / Great). It sets how many actions they get each turn and how hard their holds are to flip.
   - **Lieutenants**: named NPCs with **Brawn** and **Cunning** ratings (0–100), like Inindo's officer ratings. They lead gangs and run conquered holds.
   - **Stakes questions** and a **countdown**, as AW threats.
-  - An **influence engine**: the faction's own way of gaining Lean each month (light, money, freight, thirst, fear, kin). See [17](17-factions.md#the-six-influence-factions).
+  - An **influence engine**: the faction's own way of gaining Lean each month (light, money, freight, thirst, fear, kin). See [17](17-factions.md#the-map-of-power).
 
 ## Temperament (Inindo's traits translated)
 
@@ -28,7 +28,7 @@
 It resolves in this order, with every step logged for the Month Report:
 
 1. **Countdowns tick**: every threat whose conditions are met advances one segment and *fires* its line.
-2. **Influence engines run**: each faction applies its engine (debt slides, freight routes, thirst drift, fear decay, hidden cousins, Keeper lamps).
+2. **Influence engines run**: each faction applies its engine (passage, thirst, freight and winter, debt, fuel, walls). Then **sub‑faction backing** adds Presence × 2 to the backed faction's drift in every hold where the sub‑faction has a chapter.
 3. **Warlord actions**: each faction's warlord gets 1–3 actions, depending on grip, chosen by weighted AI over its impulse's threat moves:
 
 | Action | Rule |
@@ -43,14 +43,16 @@ It resolves in this order, with every step logged for the Month Report:
 
 4. **Hold economy**: stock regenerates from surplus. Wants above 2 create or worsen **afflictions**. Category price indexes drift.
 5. **Lean settles**: holds below 50 for everyone become **contested**. Warlords whose holds are contested lose grip.
-6. **Wanderer AI**: every named wandering NPC takes one verb (*Move, Attack, Flee, Seek work, Work, Train, Wait, Meet*).
-7. **The Choir's turn**: its 2–3 actions (Silence, march, coffles, cantor moves), the League countdown, plus the World Clock check (see [02](02-world.md#last-and-the-hum-the-campaign-antagonist) and [17](17-factions.md#the-choir-the-nobunaga-faction)).
-8. **The Month Report**: "*Meanwhile…*", in the News' voice, listing every change in a hold you know about. Fog‑hidden events show up as rumors.
+6. **Sub‑factions act**: each takes one verb (Grow, Work, Raid, Preach, Hide, Strike, Back), and Turning countdowns tick for Hum‑touched sub‑factions ([18](18-sub-factions.md#subfactions-in-the-world-turn)).
+7. **Wanderer AI**: every named wandering NPC takes one verb (*Move, Attack, Flee, Seek work, Work, Train, Wait, Meet*).
+8. **The Choir's turn**: its 2–3 actions (Silence, march, coffles, cantor moves), the League countdown, plus the World Clock check (see [02](02-world.md#last-and-the-hum-the-campaign-antagonist) and [17](17-factions.md#the-choir-the-nobunaga-faction)).
+9. **The Month Report**: "*Meanwhile…*", in the News' voice, listing every change in a hold you know about. Fog‑hidden events show up as rumors.
 
 **Balance targets:**
-- Over 48 simulated months without the player, **4 to 6 of the six influence factions** should still be alive.
-- At least **25 of the 130 holds should change Lean**, but no influence faction should take more than 30% of the holds.
-- **Without the player, the Choir should win**: by month 60 it should Silence 15 or more holds and absorb the Family. The player is what stops it.
+- Over 48 simulated months without the player, **4 to 6 of the six factions** should still be alive.
+- At least **25 of the 130 holds should change Lean**, but no faction should take more than 30% of the holds.
+- At least **4 sub‑factions should switch backing** at least once, so the second layer visibly moves.
+- **Without the player, the Choir should win**: by month 60 it should Silence 15 or more holds, turn the Family and the Cross‑folk, and buy or break Burning Water. The player is what stops it.
 - At least **half the independents should still be independent**, so there's always territory left to win.
 - The World Clock should reach **9:00 between months 36 and 54**.
 
@@ -64,24 +66,23 @@ The [headless sim runner](../research/platform-recommendation.md#recommended-arc
 
 ## Warlord sheets (launch)
 
-### Kindle, elder of the Keepers (the Crossing)
-- **Impulse**: to take everyone in (a benign Cult).
-- **Temperament**: Stubborn, Steady, Grim, Deaf, Peaceful.
-- **Grip**: Holding (sticky, slow).
-- **Gang**: the Lampmen, small, 2‑harm, 1‑armor, well‑disciplined. They only defend.
-- **Lieutenants**: Inch (Brawn 35 / Cunning 70), Line (40 / 55), White (30 / 62).
-- **Stakes**: *Will the Lighthouse stay free? Will Kindle ever leave the bridge? Can the Keepers hear the Hum in the cables before anyone else?*
-- **Countdown**: none of their own. The Keepers react: every Silenced hold within a week's drive ticks their *fear* toward closing the bridge, which would cut the map in half.
+### Clarion, hardholder of the Lighthouse (the Crossing)
+- **Impulse**: Dictator (to control), bent to *to keep everyone crossing*.
+- **Temperament**: Flexible, Steady, Grim, Deaf, Peaceful.
+- **Grip**: Holding.
+- **Gang**: the Bridge Wardens, small, 2‑harm, 1‑armor, well‑disciplined. Defend only.
+- **Lieutenants**: Inch (Fork; Brawn 35 / Cunning 70), White (Weigh Station; 30 / 62, wants tolls), Line (Helena; 40 / 55).
+- **Backed by**: the Keepers ([18](18-sub-factions.md#the-keepers)). Pays the Gar to stay off the river.
+- **Stakes and countdown**: see [17](17-factions.md#the-lighthouse).
 
-### Dremmer, Alpha wolf of the Teeth (Rag‑Wastes)
-- **Impulse**: to hunt and dominate.
-- **Temperament**: Stubborn, Reckless, Wild, Deaf, Warlike.
-- **Grip**: Strong.
-- **Gang**: the Teeth, large, 3‑harm, 1‑armor, savage, mobile.
-- **Lieutenants**: Rufe (Brawn 72 / Cunning 40), Crine (65 / 55), Ik (58 / 30).
-- **Reach**: the Rag‑Wastes, the Thirty‑Five north of Grome's springs, and the west end of the Ten (Dog Head, Rumhouse).
-- **Stakes**: *Will Dremmer take the Stack? Will Dremmer cross the river at the Lighthouse? Who will Dremmer bow to, if anyone?*
-- **Countdown**: the Teeth push east along the Twenty and the Forty each season. **12:00** means the Teeth hold the Lighthouse bridge, and the old neutrality is gone.
+### Parcher, hardholder of Burning Water (the Ten)
+- **Impulse**: Dictator (to control), the fuel.
+- **Temperament**: Stubborn, Steady, Grim, **contested Hum** (Ba's Choir trade inside), Peaceful.
+- **Grip**: Strong in fuel, Weak in people.
+- **Gang**: the Flare crews, small, 2‑harm, 2‑armor, *fire* (area, messy).
+- **Lieutenants**: Ba (Pitch; Brawn 45 / Cunning 74, trading with Harrowgate), Key (Spindletop; 60 / 50), Wei (Derricks; 55 / 40).
+- **Raided by**: the Teeth, on the crude roads from Nodders and Derricks.
+- **Stakes and countdown**: see [17](17-factions.md#burning-water).
 
 ### Tum Tum, Slaver of Pellet: the Choir's flesh trade (the Seventy)
 - **Impulse**: to own and sell people.
@@ -115,12 +116,13 @@ The [headless sim runner](../research/platform-recommendation.md#recommended-arc
 - **Stakes**: *Will Abondo's tankers come down the Seventy? Will the Lakes close their roads to the south when the Hum comes north?*
 - **Countdown**: tanker caravans push south down the Seventy each spring. **12:00** means Abondo and Grome are at war over the water trade.
 
-### Mother Krin, Hive queen of the Deep Lines (Down)
-- **Impulse**: to consume and swarm.
-- **Temperament**: Flexible, Reckless, Wild, Hum‑touched, Warlike.
-- **Grip**: Holding.
-- The Family grows by *taking people in*.
-- **Stakes**: *Will Junction be swallowed? What does Krin hear in the dark?*
+### Otilia, hardholder of Cerro (the Bravo)
+- **Impulse**: Dictator (to control), through walls.
+- **Temperament**: Stubborn, Steady, Grim, Deaf, Warlike (slowly).
+- **Grip**: Iron.
+- **Gang**: the Foundry, medium, 3‑harm, 2‑armor, *siege*. Steel‑plated war rigs (armor 3).
+- **Lieutenants**: Abe (Desierto; Brawn 50 / Cunning 66, wants roads, not walls), Lupe (Gemela; 62 / 58), Rosa (Soto; 55 / 45).
+- **Stakes and countdown**: see [17](17-factions.md#cerro).
 
 ### Last, Prophet of Harrowgate: the Choir (Up)
 - **Impulse**: to denounce and overthrow.

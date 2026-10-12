@@ -1,20 +1,20 @@
 # 16 · Gazetteer: the 130 Holds
 
-This is the launch roster. **Tier** is S (seat), M (major hold), H (hold) or O (outpost). **Lean** is the starting loyalty: a faction from [17](17-factions.md), or Ind (independent). *Choir (Tum Tum)* holds are the Choir's ordinary, Lean‑playing face. Harrowgate and the Gondola are already **Silenced**. The **golden‑age site** column is for designers. Players only see it through the Quarantine (see [02](02-world.md#old-names)).
+This is the launch roster. **Tier** is S (seat), M (major hold), H (hold) or O (outpost). **Lean** is the starting loyalty: one of the six factions from [17](17-factions.md) (the Lighthouse, Sweetwell, Highwater, the Exchange, Burning Water, Cerro), or Ind (independent). *Choir (Tum Tum)* holds are the Choir's ordinary, Lean‑playing face. Harrowgate and the Gondola are already **Silenced**. Sub‑faction homes and chapters are noted where they matter. The full chapter list is in [18](18-sub-factions.md#chapters). The **golden‑age site** column is for designers. Players only see it through the Quarantine (see [02](02-world.md#old-names)).
 
 Surplus and want use the resource names from [13](13-content-tables.md#resources-base-values-barter-per-lot). ✕ marks a **crossing** over a living river.
 
 ## The Crossing (Centre): 8
 | Hold | Golden‑age site | Tier | Boss | Surplus | Want | Lean | Notes |
 |---|---|---|---|---|---|---|---|
-| **The Lighthouse** ✕ | Memphis, I‑40 bridge | S | **Kindle** | information, leisure | fuel, meat | Keepers | **Keepers' seat.** The bridge lights were kept lit all through the Howling. No toll, ever. Clarion (maestro d') runs the bar. The News keeps a desk here. |
-| **Anchorage** | Memphis riverfront | M | Hugo | shelter, scrap | drinking water | Ind | Barges chained together into a floating town on the poisoned river. |
+| **The Lighthouse** ✕ | Memphis, I‑40 bridge | S | **Clarion** | information, leisure | fuel, meat | Lighthouse | **The Lighthouse's seat** (Clarion). The bridge lights were kept lit all through the Howling. No toll, ever. Kindle, elder of **the Keepers**, lives on the bridge. **The News** keeps a desk here. |
+| **Anchorage** | Memphis riverfront | M | Hugo | shelter, scrap | drinking water | Lighthouse | Barges chained together into a floating town on the poisoned river. |
 | **Saltlick** | Highway department road‑salt barns | H | Ula | salt, preserved foods | labor, medical supplies | Ind | Worked by debtors. The Salt discipline site. |
-| **Gnarly** | Truck stop on I‑55 | H | Gnarly | repairs | scrap | Ind | Built in the shell of a *Buckaroo's* travel centre. **Driver start.** |
+| **Gnarly** | Truck stop on I‑55 | H | Gnarly | repairs | scrap | Ind | Built in the shell of a *Buckaroo's* travel centre. A **Wheelwrights** garage. **Driver start.** |
 | **Pyramid** | The Memphis pyramid arena | M | Preen | shelter, leisure (fights) | fresh foods | Ind | A fighting pit. Rivals offer single combat here. |
-| **Beale** | Beale Street | H | Lala | music and art, liquor | drinking water | Ind | |
+| **Beale** | Beale Street | H | Lala | music and art, liquor | drinking water | Ind | Chapter house of **the Players**. |
 | **Haven** | A Southaven mall | H | Roark | specialized goods (mall salvage) | security | Ind | |
-| **Weigh Station** | West Memphis truck scales | O | White | information | ammo | Keepers | Counts every rig that crosses. |
+| **Weigh Station** | West Memphis truck scales | O | White | information | ammo | Lighthouse | Counts every rig that crosses. |
 
 ## The Delta (S, Closer): 8
 | Hold | Golden‑age site | Tier | Boss | Surplus | Want | Lean | Notes |
@@ -22,11 +22,11 @@ Surplus and want use the resource names from [13](13-content-tables.md#resources
 | **Siege** ✕ | Vicksburg, I‑20 bridge | M | Grip | weaponry, tolls | drinking water | Ind | An old battlefield fort over the river. |
 | **Bluff** | Natchez | H | Heron | vantage, cloth | grain | Ind | |
 | **Brace Win** ✕ | The Old River Control Structure | M | Brace Win | fortifications | gasoline | Ind | The dam that keeps the river in its bed. A crossing over the gates. |
-| **Barge Town** | Greenville barge hulks | H | Setter | shelter, trade | meat | Ind | |
+| **Barge Town** | Greenville barge hulks | H | Setter | shelter, trade | meat | Ind | Home of **the Gar** (road gang). |
 | **Crossroads** | Clarksdale | H | Jackbird | music and art | drinking water | Ind | Rumors say a deal was once made here with something in the maelstrom. |
 | **Mudflat** | Delta farmland | H | Gams | grain | labor | Choir (Tum Tum) | Sharecroppers in debt to Tum Tum. |
 | **Reservoir** | Jackson, the Ross Barnett reservoir | M | Kal | drinking water, fish | weaponry | Ind | |
-| **Helena** ✕ | Helena bridge | O | Line | cloth | medical supplies | Keepers | Half the bridge is out. A rope crossing. |
+| **Helena** ✕ | Helena bridge | O | Line | cloth | medical supplies | Lighthouse | Half the bridge is out. A rope crossing. |
 
 ## The Twenty (W, Closer): 8
 | Hold | Golden‑age site | Tier | Boss | Surplus | Want | Lean | Notes |
@@ -37,13 +37,13 @@ Surplus and want use the resource names from [13](13-content-tables.md#resources
 | **Furnace** | Birmingham steelworks | M | Brain | machinery, weaponry | grain | Ind | |
 | **Stadium** | Tuscaloosa | H | Pinkie | shelter, security | drinking water | Ind | |
 | **Pines** | Ruston | O | Dusk | raw materials (timber) | preserved foods | Ind | |
-| **Partridge** | Texarkana | M | Partridge | caravans | drinking water | Ind | A caravanserai on the state line. **Hardholder start option.** |
-| **Derricks** | Kilgore oil field | H | Wei | crude | labor | Teeth | |
+| **Partridge** | Texarkana | M | Partridge | caravans | drinking water | Ind | A caravanserai on the state line. Hall of **the Tankermen**. **Hardholder start option.** |
+| **Derricks** | Kilgore oil field | H | Wei | crude | labor | Burning Water | |
 
 ## The Forty (W/E, Closer): 8
 | Hold | Golden‑age site | Tier | Boss | Surplus | Want | Lean | Notes |
 |---|---|---|---|---|---|---|---|
-| **Stockade** | Oklahoma City stockyards | H | Bish | livestock, meat | drinking water | Teeth | The west edge of the Forty. Twisters. |
+| **Stockade** | Oklahoma City stockyards | H | Bish | livestock, meat | drinking water | Ind | The west edge of the Forty. Home of **the Twister Riders**. |
 | **Gallows** | Fort Smith | H | Pierre | information (bounties) | fresh foods | Ind | The hanging‑judge town. Posts bounty gigs. |
 | **Rock** | Little Rock, on the dry Arkansas | M | Mice | trade | security | Ind | The Arkansas riverbed road runs west from here. |
 | **The Baths** | Hot Springs | M | Lavender | hot water, leisure, medical supplies | meat | Ind | |
@@ -56,7 +56,7 @@ Surplus and want use the resource names from [13](13-content-tables.md#resources
 | Hold | Golden‑age site | Tier | Boss | Surplus | Want | Lean | Notes |
 |---|---|---|---|---|---|---|---|
 | **Rails** | Montgomery rail yards | H | Dou | scrap, machinery | grain | Ind | |
-| **Fuse** | Huntsville rocket garden | M | Newton | hi‑tech | labor | Exchange | Vault diggers. A rival to the Savvyhead. |
+| **Fuse** | Huntsville rocket garden | M | Newton | hi‑tech | labor | Exchange | Vault diggers, and home of **the Diggers**. A rival to the Savvyhead. |
 | **Mammoth** | Mammoth Cave | H | Boo | shelter, fresh foods (mushrooms) | batteries | Ind | **A Down entrance.** |
 | **Derby** ✕ | Louisville | M | Half pint | livestock (horses), liquor | grain | Ind | Crosses the Ohio. |
 | **The Vault** | Fort Knox | M | Jackabacka | weaponry | fresh foods | Ind | Nobody has opened the inner vault. Rothschild wants it. |
@@ -67,10 +67,10 @@ Surplus and want use the resource names from [13](13-content-tables.md#resources
 ## The Ten (S, Farther): 13
 | Hold | Golden‑age site | Tier | Boss | Surplus | Want | Lean | Notes |
 |---|---|---|---|---|---|---|---|
-| **Dog Head** | The Houston ship channel | H | Dog head | specialized goods (stolen) | security | Teeth | Fence market. **Chopper start.** |
-| **Rumhouse** | A grounded Galveston ferry | H | Rufe | drugs, leisure | drinking water | Teeth | |
-| **Burning Water** | Texas City refineries | M | Parcher | gasoline | drinking water, labor | Sweetwell | An eternal refinery fire. The Burn discipline site. |
-| **Pitch** | Port Arthur | H | Ba | raw materials, crude | medical supplies | Ind | |
+| **Dog Head** | The Houston ship channel | H | Dog head | specialized goods (stolen) | security | Ind | Fence market and home of **the Odd Lot**. **Chopper start.** |
+| **Rumhouse** | A grounded Galveston ferry | H | Rufe | drugs, leisure | drinking water | Ind | |
+| **Burning Water** | Texas City refineries | S | **Parcher** | gasoline | drinking water, labor | Burning Water | **Burning Water's seat** (Parcher). An eternal refinery fire: what can't be refined is burned. Harrowgate's lights are visible from the flare stacks. |
+| **Pitch** | Port Arthur | H | Ba | raw materials, crude | medical supplies | Burning Water | |
 | **Kettle** | Lake Charles bayous | H | Jeanette | drinking water (fog nets) | meat, weaponry | Ind | |
 | **Crawdad** | Lafayette | H | Ruth | fresh foods | fuel | Ind | |
 | **Capitol** ✕ | Baton Rouge, the capitol tower and the I‑10 bridge | M | Biz | information, tolls | drinking water | Choir (Tum Tum) | The southern crossing. |
@@ -78,7 +78,7 @@ Surplus and want use the resource names from [13](13-content-tables.md#resources
 | **Dustwich** | The New Orleans container port | M | Bill | scrap, machinery | grain | Ind | **Savvyhead start.** |
 | **Casino** | Biloxi | H | Esco | leisure, drugs | drinking water | Ind | |
 | **Mobile** | Mobile | H | Dice | trade | fuel | Ind | A hold built on rail cars that rolls along the coast line. |
-| **Spindletop** | Beaumont, the first great gusher | H | Key | crude | fresh foods | Ind | |
+| **Spindletop** | Beaumont, the first great gusher | H | Key | crude | fresh foods | Burning Water | |
 | **Pier** | Gulfport | O | Yen | shelter | meat | Ind | |
 
 ## The Thirty‑Five (W, Farther): 9
@@ -89,18 +89,18 @@ Surplus and want use the resource names from [13](13-content-tables.md#resources
 | **Blue Hole** | San Marcos springs | H | Chel | drinking water | weaponry | Sweetwell | |
 | **Dome** | Austin, the capitol and the university | M | Jav | books, information | fuel | Ind | |
 | **Silo** | Waco grain elevators | H | Li | grain | security | Ind | |
-| **The Stack** | The Dallas High Five interchange | M | Kim | tolls, vantage | fresh foods | Teeth | A five‑level interchange. Whoever holds it watches three interstates. |
-| **Brand** | Fort Worth stockyards | H | Fleece | meat, hides | drinking water | Teeth | |
+| **The Stack** | The Dallas High Five interchange | M | Kim | tolls, vantage | fresh foods | Ind | A five‑level interchange. Whoever holds it watches three interstates. |
+| **Brand** | Fort Worth stockyards | H | Fleece | meat, hides | drinking water | Ind | |
 | **Border** | Laredo bridges | M | III | tolls, information | preserved foods | Ind | The main crossing south onto the Eighty‑Five. |
-| **Pinwheel** | An I‑35 wind farm | O | Do | power | scrap | Ind | |
+| **Pinwheel** | An I‑35 wind farm | O | Do | power | scrap | Sweetwell | |
 
 ## The Rag‑Wastes (W, Farther): 8
 | Hold | Golden‑age site | Tier | Boss | Surplus | Want | Lean | Notes |
 |---|---|---|---|---|---|---|---|
-| **The Teeth** | The Permian Basin, a mobile camp | S | **Dremmer** | weaponry, raiders | everything | Teeth | Seat. Moves every season. |
-| **Twice** | San Angelo | H | Princy | livestock | medical supplies | Teeth | Goat herders, raided twice a year. |
-| **Nodders** | Pumpjack fields | H | Winkle | crude | preserved foods | Teeth | |
-| **Drift** | The Monahans sandhills | O | Crine | information (scouts) | drinking water | Teeth | Run by Dremmer's lieutenant. |
+| **The Teeth** | The Permian Basin, a mobile camp | M | Dremmer | weaponry, raiders | everything | Ind | Home camp of **the Teeth** (road gang, see [18](18-sub-factions.md)). Moves every season. |
+| **Twice** | San Angelo | H | Princy | livestock | medical supplies | Ind | Goat herders, raided twice a year. |
+| **Nodders** | Pumpjack fields | H | Winkle | crude | preserved foods | Burning Water | |
+| **Drift** | The Monahans sandhills | O | Crine | information (scouts) | drinking water | Ind | Run by Crine, Dremmer's lieutenant in the Teeth. |
 | **Halter** | A horse ranch | H | Harridan | livestock (work animals) | fuel | Ind | |
 | **Long Fence** | A ranch | O | Missed | hides | medical supplies | Ind | |
 | **Dry Spring** | Big Spring, an old armory | H | Tao | ammo | drinking water | Ind | |
@@ -109,13 +109,13 @@ Surplus and want use the resource names from [13](13-content-tables.md#resources
 ## The Bravo (S/W, Farther): 8
 | Hold | Golden‑age site | Tier | Boss | Surplus | Want | Lean | Notes |
 |---|---|---|---|---|---|---|---|
-| **Gullet** | A Rio Grande canyon near Del Rio | H | Ik | hides, meat | ammo | Teeth | A choke point on the riverbed road. |
-| **Gemela** | Nuevo Laredo | H | Lupe | trade | security | Ind | Border's twin across the dry bed. |
+| **Gullet** | A Rio Grande canyon near Del Rio | H | Ik | hides, meat | ammo | Ind | A choke point on the riverbed road. |
+| **Gemela** | Nuevo Laredo | H | Lupe | trade | security | Cerro | Border's twin across the dry bed. |
 | **Falcon** | Falcon Dam | M | Rache | drinking water (reservoir) | weaponry | Ind | |
 | **Pesca** | The riverbed flats | H | Nee | vehicles (land yachts) | drinking water | Ind | Builds land yachts that sail the dry Bravo. |
-| **Cerro** | Monterrey | M | Otilia | machinery, weaponry (steel) | fresh foods | Ind | A mountain‑ringed city. The biggest hold in the south. |
-| **Desierto** | Saltillo | H | Abe | raw materials | drinking water | Ind | |
-| **Soto** | A Tamaulipas ranch | O | Rosa | livestock | medical supplies | Ind | |
+| **Cerro** | Monterrey | S | **Otilia** | machinery, weaponry (steel) | fresh foods | Cerro | **Cerro's seat** (Otilia). A mountain‑ringed city of steel and cement. The biggest hold in the south. |
+| **Desierto** | Saltillo | H | Abe | raw materials | drinking water | Cerro | |
+| **Soto** | A Tamaulipas ranch | O | Rosa | livestock | medical supplies | Cerro | |
 | **Mouth** | Brownsville and Matamoros | H | Lazo | salt, fish | fuel | Ind | Where the Bravo meets the Gulf. |
 
 ## The Sierra Coast (S, Farther): 7
@@ -123,9 +123,9 @@ Surplus and want use the resource names from [13](13-content-tables.md#resources
 |---|---|---|---|---|---|---|---|
 | **Tampico** | Tampico | M | Mar | gasoline, crude | fresh foods | Ind | |
 | **Tux** | Tuxpan oil terminal | H | Cruz | crude | drinking water | Ind | |
-| **Tajin** | The El Tajín pyramids | H | Quiet | information (augury) | meat | Ind | A maelstrom site (Echo, secondary). |
+| **Tajin** | The El Tajín pyramids | H | Quiet | information (augury) | meat | Ind | Home of **the Watchers** (cult). A maelstrom site (Echo, secondary). |
 | **The Fort** | Veracruz, the island fortress | M | Salvi | fortifications, weaponry | fresh foods | Ind | |
-| **Barrow** | Xalapa | H | Matilda | burial, preserved foods (salt meat) | medical supplies | Ind | Mourners. The Mend discipline site. **Hocus start.** |
+| **Barrow** | Xalapa | H | Matilda | burial, preserved foods (salt meat) | medical supplies | Ind | Mourners: home of **the Mourners**. The Mend discipline site. **Hocus start.** |
 | **The Green** | Los Tuxtlas jungle | O | Brujo | drugs, fresh foods (herbs) | ammo | Ind | |
 | **Southmost** | The climb toward the City | O | Ibis | information, scrap | everything | Ind | **The edge of the Loud.** The Eighty‑Five keeps going to a megacity nobody has come back from. |
 
@@ -134,10 +134,10 @@ Surplus and want use the resource names from [13](13-content-tables.md#resources
 |---|---|---|---|---|---|---|---|
 | **Pellet** | The Kansas City stockyards | S | **Tum Tum** | labor (slaves; **never a player good**) | luxury goods | Choir (Tum Tum) | Seat. |
 | **The Arch** ✕ | St Louis | M | Doc | status (pilgrims), leisure | everything | Ind | Crosses the Mississippi. **Starts singing at 9:00.** |
-| **Fork** ✕ | Cairo, where the rivers meet | M | Inch | information | preserved foods | Keepers | Crosses both the Mississippi and the Ohio. |
+| **Fork** ✕ | Cairo, where the rivers meet | M | Inch | information | preserved foods | Lighthouse | Crosses both the Mississippi and the Ohio. |
 | **Quake** | New Madrid | O | Core | scrap | fortifications | Ind | The ground still shifts. |
 | **Campus** | Columbia | H | Plum | books, know‑how | fresh foods | Ind | |
-| **Cross** | Effingham, a giant cross | H | Orchid | information (pilgrims) | meat | Ind | Hum‑touched early (6:00). |
+| **Cross** | Effingham, a giant cross | H | Orchid | information (pilgrims) | meat | Ind | Home of **the Cross‑folk** (cult). Hum‑touched early (6:00). |
 | **The Track** | The Indianapolis speedway | M | Dandy | vehicles, leisure (races) | fresh foods | Ind | Races decide disputes. Driver rivals. |
 | **Granary** | Columbus | H | Clover | grain | fuel | Ind | |
 | **Boon** ✕ | A Missouri River bridge | O | Sword | salt (springs), tolls | meat | Choir (Tum Tum) | |
@@ -145,17 +145,17 @@ Surplus and want use the resource names from [13](13-content-tables.md#resources
 ## The Lakes (N, Farther, farthest): 11
 | Hold | Golden‑age site | Tier | Boss | Surplus | Want | Lean | Notes |
 |---|---|---|---|---|---|---|---|
-| **Highwater** | Toronto | S | **Abondo** | drinking water, fish | fuel, meat | Lake | Seat. Runs the winter ice roads. |
+| **Highwater** | Toronto | S | **Abondo** | drinking water, fish | fuel, meat | Highwater | Seat. Runs the winter ice roads. |
 | **The Loop** | Chicago | M | Lawn | machinery, scrap | fresh foods | Ind | **Down entrance** (the old freight tunnels). |
-| **Motor** | Detroit | M | Lars | vehicles (factory salvage) | power | Ind | The best garage in the north. |
+| **Motor** | Detroit | M | Lars | vehicles (factory salvage) | power | Ind | The best garage in the north. Home of **the Wheelwrights**. |
 | **Burnriver** | Cleveland, the river that burned | H | Spice | raw materials (chemicals) | medical supplies | Ind | |
-| **The Falls** ✕ | Niagara | M | Venus | power, drinking water | meat | Lake | Crosses the Niagara. |
+| **The Falls** ✕ | Niagara | M | Venus | power, drinking water | meat | Highwater | Crosses the Niagara. |
 | **Brewhouse** | Milwaukee | H | Storm | liquor, grain | fuel | Ind | |
-| **Mill Town** | Gary steelworks | H | Icicle | machinery, weaponry | fresh foods | Ind | |
-| **The Tunnel** ✕ | The Detroit–Windsor tunnel | H | Shade | tolls | meat | Lake | Crosses the Detroit River. |
-| **Pen** | Kingston penitentiary, on the 401 | H | Frost | labor (convicts) | preserved foods | Lake | The 401 east of here runs into the Loud. |
+| **Mill Town** | Gary steelworks | H | Icicle | machinery, weaponry | fresh foods | Ind | Winter home of **the Whiteout** (road gang). |
+| **The Tunnel** ✕ | The Detroit–Windsor tunnel | H | Shade | tolls | meat | Highwater | Crosses the Detroit River. |
+| **Pen** | Kingston penitentiary, on the 401 | H | Frost | labor (convicts) | preserved foods | Highwater | The 401 east of here runs into the Loud. |
 | **Visage** | Toledo, the glass city | H | Mimi | luxury goods (glass, lenses) | fresh foods | Ind | |
-| **Forks** | London, Ontario, on the 401 | H | Bai | grain | fuel | Lake | |
+| **Forks** | London, Ontario, on the 401 | H | Bai | grain | fuel | Highwater | |
 
 ## The Seventy‑Five (E, Farther): 9
 | Hold | Golden‑age site | Tier | Boss | Surplus | Want | Lean | Notes |
@@ -193,10 +193,10 @@ Surplus and want use the resource names from [13](13-content-tables.md#resources
 ## Down: the Deep Lines: 4
 | Hold | Golden‑age site | Tier | Boss | Surplus | Want | Lean | Notes |
 |---|---|---|---|---|---|---|---|
-| **Krin's Nest** | A Louisiana salt‑dome cavern | S | **Mother Krin** | labor, fresh foods (mushrooms) | meat | Family | Seat. The Rot discipline site. |
-| **Junction** ✕ | Pipeline galleries under the Mississippi | M | Mercer | access (tunnels) | power (light) | Ind | **The only crossing that's under every river.** **Quarantine start** (the stasis bunker is beneath it). |
+| **Krin's Nest** | A Louisiana salt‑dome cavern | M | Mother Krin | labor, fresh foods (mushrooms) | meat | Ind | Home of **the Family** (secret society, see [18](18-sub-factions.md)). The Rot discipline site. |
+| **Junction** ✕ | Pipeline galleries under the Mississippi | M | Mercer | access (tunnels) | power (light) | Ind | **The only crossing that's under every river.** **The Waking** meet here in secret. **Quarantine start** (the stasis bunker is beneath it). |
 | **The Pumphouse** | An old water‑main pumping station | H | Foster | drinking water (pipes) | machinery | Ind | Half‑working. The Hex discipline site. |
-| **The Reserve** | The strategic oil reserve caverns | H | Mill | crude (vast) | power (light), fresh foods | Family | |
+| **The Reserve** | The strategic oil reserve caverns | H | Mill | crude (vast) | power (light), fresh foods | Ind | |
 
 ## Tallies
 - **Total: 130.**
@@ -205,14 +205,15 @@ Surplus and want use the resource names from [13](13-content-tables.md#resources
 
 | Faction | Holds |
 |---|---|
-| Independent | 93 |
-| The Teeth | 11 |
+| Independent | 96 |
+| The Lighthouse | 5 |
+| Highwater | 5 |
 | The Exchange | 5 |
-| The Lake Compact | 5 |
+| Burning Water | 5 |
 | Sweetwell | 4 |
-| The Keepers | 4 |
-| The Family | 2 (plus hidden cousins) |
+| Cerro | 4 |
 | The Choir | 6: Harrowgate and the Gondola Silenced; Pellet, Mudflat, Capitol and Boon through Tum Tum |
 
+- **Sub‑faction homes:** listed in [18](18-sub-factions.md#chapters). Sub‑factions never hold Lean.
 - **Crossings:** 15, including Junction.
 - **Edges of the Loud:** Last Stop, Southmost, Sawgrass, and Pen (on the 401).

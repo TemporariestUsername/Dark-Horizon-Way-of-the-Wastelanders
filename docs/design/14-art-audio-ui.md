@@ -37,17 +37,28 @@ The AW playbooks look like **stark white silhouettes cut out of black**, with ra
 - **Lookalike brands** appear rarely, in less‑rusted ruins only, as faded or half‑lit signs drawn in the same two tones (red only if the sign is lit by a hold's power). They should be recognisable from silhouette and palette alone: the art carries the reference, not the name. Rules and seed list: [13](13-content-tables.md#lookalike-brands-set-dressing).
 
 ## Faction marks
-Each influence faction has a **stencil sigil** in bone and black, painted on its holds' gates, its rigs and its gangs' gear. On the map, a hold's Lean is drawn as a torn‑paper bar split by those sigils.
+Each faction has a **stencil sigil** in bone and black, painted on its holds' gates, its rigs and its gangs' gear. On the map, a hold's Lean is drawn as a torn‑paper bar split by those sigils.
 
 | Faction | Sigil | Look |
 |---|---|---|
-| Keepers | A lamp with three rays | Lanterns on every rig, white cloth |
-| Exchange | A coin with a hole punched through | Ledgers, stamped notes, gold teeth |
-| Lake Compact | Three wave lines | Wool, steel, frost, uniform escorts |
-| Sweetwell | A drop inside a ring | Sealed helmets, numbered chits, tankers |
-| Teeth | A jaw | Bone, chrome, trophies on grilles |
-| Family | An open hand with an eye | Tunnel lamps, shared bowls, kin‑words |
+| The Lighthouse | A lamp with three rays | White armbands, lamps on everything, long tables |
+| Sweetwell | A drop inside a ring | Sealed helmets, numbered chits, tanker convoys |
+| Highwater | Three wave lines | Wool, frost, matching coats, ice skiffs |
+| The Exchange | A coin with a hole punched through | White suits going green, gold teeth, ledgers |
+| Burning Water | A flare stack | Soot, welding masks, scorched tankers, the flare on the horizon |
+| Cerro | A mountain saddle over a bar of steel | Cement grey, rebar crowns, slag walls, plated war rigs |
 | **The Choir** | **A red circle** | **The only red banners on the map.** The Opened standing still on overpasses, all facing Harrowgate |
+
+**Sub‑faction marks** ([18](18-sub-factions.md)) are smaller, scrawled and personal. They're never painted on gates, only tagged, worn or hidden:
+- the Keepers' lantern hung at a crossing
+- the Teeth's jaw scratched into a road sign
+- the Wheelwrights' cog stamped on a repaired part
+- the Tankermen's union patch
+- the Players' chalked note on a wall
+- the Family's open hand, drawn only where kin will see it
+- the Odd Lot's knot of wire on a fence post
+
+Spotting a hidden sub‑faction mark is a *read a sitch* result.
 
 ## Iconography
 - **Harm clock**: a 6‑segment pie (3, 6, 9, 10, 11, 12), filled in red ink. The same shape is used for **all countdowns** and the **World Clock**, so the player learns to read one symbol.

@@ -3,9 +3,13 @@
 | Term | Meaning |
 |---|---|
 | **Augury** | An AW peripheral move. Reaching into the maelstrom through followers, a workspace or a site. In the game it's a *map action*. |
+| **Backing** | A sub‑faction's support for a faction. It adds Lean drift wherever the sub‑faction has chapters. |
 | **Barter / 1‑barter** | The unit of account. About a month's modest living. |
 | **Battle moves** | AW's combat moves (single combat, lay down fire…). Used in every combat mode. |
 | **Break** | A blocked road: an overpass down, a bridge out, a pileup. UWNH's reefs. |
+| **Burning Water** | Parcher's faction: the Texas City refineries. Wins holds through fuel. The Choir's nearest neighbour. |
+| **Cerro** | Otilia's faction: walled Monterrey. Wins holds through walls. |
+| **Chapter** | A sub‑faction's foothold in a hold. It gives Presence. Secret societies' chapters are hidden. |
 | **Charts** | Records of driven roads (breaks, crossings, holds, tolls). Sold to the News, hardholders and Rothschild. |
 | **Choir, the** | The Nobunaga faction: Last's brainers in Harrowgate, with Tum Tum's flesh trade. It doesn't play Lean; it Silences holds. See [17](17-factions.md). |
 | **Convoy** | Up to 6 rigs travelling together. UWNH's fleet. |
@@ -14,10 +18,10 @@
 | **Director, the** | The game's AI MC. See [05](05-director.md). |
 | **Discipline** | A set of 3 Weird moves taught at a maelstrom site. Inindo's magic school. |
 | **Easing, the** | The maelstrom quieting, a little over a year before the game starts. The first chance in a generation to travel. |
-| **Exchange, the** | Rothschild's faction. Wins holds with money and debt. |
+| **Exchange, the** | Rothschild's faction: Tampa. Wins holds through debt and salvage. |
 | **Experience** | Marked on highlighted rolls and Hx resets. 5 gives an improvement. |
-| **Faction** | One of the six influence factions competing for Lean, or the Choir. |
-| **Family, the** | Mother Krin's faction. Wins holds with hidden cousins. Hum‑touched. |
+| **Faction** | One of six hardholder powers competing for Lean (the Lighthouse, Sweetwell, Highwater, the Exchange, Burning Water, Cerro), or the Choir. See [17](17-factions.md). |
+| **Family, the** | A secret society (sub‑faction) under the Deep Lines, led by Mother Krin. Hidden chapters. Hum‑touched. |
 | **Fan rules** | The Director's limits that come from "*be a fan of the players' characters*". |
 | **First contact** | Your first arrival at a hold nobody from outside has reached since the Howling. |
 | **Frame** | A vehicle's base type (bike, compact, hauler…). UWNH's hull. |
@@ -26,6 +30,7 @@
 | **Grip** | A warlord's strength: Weak / Holding / Strong / Iron. |
 | **Harm as established** | Weapon harm minus armor (± gang size steps). |
 | **Highlight** | One of 2 stats marked each month. Rolling it marks experience. |
+| **Highwater** | Abondo's faction: the Great Lakes. Wins holds through freight and the winter ice roads. |
 | **Hold** | A settlement. UWNH's port, Inindo's castle town. There are 130 (see the [Gazetteer](16-gazetteer.md)). |
 | **Howl** | A local flare of the old maelstrom on a stretch of road. UWNH's calm, made psychic. |
 | **Howling, the** | The generation when the maelstrom made every open road deadly. |
@@ -35,11 +40,11 @@
 | **In, the** | The maelstrom as a traversable map layer. |
 | **Interstate** | A great road, called by its number ("the Ten"). UWNH's ocean. |
 | **Jingle** | Small change. 10 jingle = 1‑barter. |
-| **Keepers, the** | Kindle's faction, who kept the bridge lights on through the Howling. Wins holds with light, hospitality and charts. |
-| **Lake Compact, the** | Abondo's faction. Wins holds with freight and the winter ice roads. |
+| **Keepers, the** | A cult (sub‑faction) that kept the bridge lamps lit through the Howling. Backs the Lighthouse. |
 | **League, the** | The anti‑Choir coalition the player can broker from 6:00. It has its own countdown. |
 | **Lean** | A hold's loyalty shares, totalling 100. 50 or more means it leans to that faction. |
 | **Lifestyle** | Monthly upkeep, 1–2 barter. |
+| **Lighthouse, the** | Clarion's faction: the free Memphis bridge. Wins holds through passage. |
 | **Loud, the** | The Out: everywhere past the map's edges where the maelstrom never eased. |
 | **Maelstrom, the world's psychic** | AW's ever‑present psychic storm. |
 | **Mark** | A warlord's safe‑passage token. UWNH's Letter of Marque and tax permit. |
@@ -47,6 +52,7 @@
 | **Move** | An AW rule triggered by the fiction. You roll 2d6+stat and read the band. |
 | **Octant** | A direction on the threat map: N, S, E, W, Up, Down, In, Out. |
 | **Opened, the** | People whose brains the Choir has opened. The Choir's soldiers. They never break. |
+| **Presence** | A sub‑faction's strength in a hold (1–3). It isn't Lean. |
 | **Quiet, the** | The region where the maelstrom eased: the playable map. |
 | **Rep** | Reputation in a hold, −3 to +5. |
 | **Rig** | A vehicle in your convoy. |
@@ -56,11 +62,14 @@
 | **Sight** | A discovery. UWNH's discoveries. |
 | **Silenced** | A hold the Choir has taken. It's off the influence board and can only be liberated, never bought back. |
 | **Stakes question** | Something the Director doesn't know yet and play will answer. |
+| **Standing** | Your relationship with a sub‑faction, from −3 to +3. Hx at group scale. |
 | **Strain** | A 3‑box Weird cost track. When full, it gives Ψ‑harm. |
+| **Sub‑faction** | A cult, road gang, guild or secret society that cuts across faction lines. See [18](18-sub-factions.md). |
 | **Surplus / Want** | A hold's 0–3 levels per resource. They drive prices and afflictions. |
 | **Sweetwell** | Grome's faction. Wins holds through thirst. |
-| **Teeth, the** | Dremmer's faction. Wins holds through fear. |
+| **Teeth, the** | The biggest road gang (sub‑faction), Dremmer's. They raid the west. |
 | **Threat** | An AW entity with a kind, an impulse, threat moves, a countdown and stakes. |
+| **Turning** | The Choir corrupting a Hum‑touched sub‑faction. A turned chapter lets a hold be Silenced from inside. |
 | **Wanderer AI** | Named NPCs taking Inindo's monthly verbs (Move, Attack, Flee, Seek work, Work, Train, Wait, Meet). |
 | **World Clock** | The campaign countdown to 12:00, when the Choir lets go, the Easing ends and everybody hears the Hum. |
 | **World turn** | The end‑of‑month simulation step. |

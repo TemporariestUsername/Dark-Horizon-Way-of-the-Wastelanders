@@ -67,17 +67,17 @@ Work is posted at **month start** (Inindo's rule). It's found on hold **notice w
 | Procurement | Find antibiotics for Barrow | Barter, plus Rep |
 | Escort | Ride with Partridge's caravan through the Rag‑Wastes | Barter and gear |
 | Salvage | Bring back the Fuse vault's control board | Barter or the item, plus a Savvyhead project |
-| Warlord gig | Sabotage Grome's pipe; spy on the Teeth; infiltrate Pellet | Large barter, plus the patron's Lean. The target warlord turns against you. |
+| Faction gig | Sabotage Grome's pipe; break Burning Water's embargo; infiltrate Pellet | Large barter, plus the patron's Lean. The target warlord turns against you. |
 | Mercy | Free Tum Tum's catch; bring water to a dying straggler camp | Hx and Rep. Little barter. |
 
 ## Investment and Lean (UWNH's allegiance, AW's way)
-Every hold has a **Lean**: a share of loyalty split across factions that adds up to 100. The factions are the **six influence factions** (the Keepers, the Exchange, the Lake Compact, Sweetwell, the Teeth and the Family; see [17](17-factions.md)), **independent**, and **you** (or your patron, if you've sworn to one). **The Choir holds no Lean**: it Silences holds instead, taking them off this board entirely.
+Every hold has a **Lean**: a share of loyalty split across factions that adds up to 100. The shares belong to the **six factions** (the Lighthouse, Sweetwell, Highwater, the Exchange, Burning Water and Cerro; see [17](17-factions.md)), **independent**, and **you** (or your patron, if you've sworn to one). **The Choir holds no Lean**: it Silences holds instead, taking them off this board entirely. **Sub‑factions** ([18](18-sub-factions.md)) hold no Lean either, but the faction they **back** gains Lean drift wherever they have chapters.
 
 ```
 Lean: { independent: 55, grome: 30, you: 15 }      → the hold "leans" to whoever is ≥ 50
 ```
 
-**Ways to move Lean.** These are *your* levers. Each AI faction also has its own **influence engine** that works on Lean every month ([17](17-factions.md#the-six-influence-factions)), and a faction you're sworn to multiplies the matching lever by 1.5 (an Exchange patron's investment, a Keeper patron's charts, and so on).
+**Ways to move Lean.** These are *your* levers. Each AI faction also has its own **influence engine** that works on Lean every month ([17](17-factions.md#the-map-of-power)), and a faction you're sworn to multiplies the matching lever by 1.5 (an Exchange patron's investment, a Keeper patron's charts, and so on).
 
 | Action | Lean change to you | Notes |
 |---|---|---|
@@ -92,11 +92,11 @@ Lean: { independent: 55, grome: 30, you: 15 }      → the hold "leans" to whoev
 **Thresholds:**
 - **≥ 50**: the hold leans to you. You get a discount (tribute 0.9), access to its Seat, its gang **defends** your caravans, and it pays you **a tithe** of 1–3 barter a month.
 - **≥ 75**: you can **install** a hardholder, base a caravan there, or (Hardholder) annex it into your holding network.
-- **Faction seats** (the Lighthouse, the Exchange, Highwater, Sweetwell, the Teeth, Krin's Nest, and the Choir's Harrowgate and Pellet) **can't be invested in**. That's UWNH's capital rule. They have to be taken.
+- **Faction seats** (the Lighthouse, Sweetwell, Highwater, the Exchange, Burning Water, Cerro, and the Choir's Harrowgate and Pellet) **can't be invested in**. That's UWNH's capital rule. They have to be taken.
 
 ## Debt (UWNH's bank → AW strings)
 - **Rothschild's Exchange** lends up to 20‑barter at **10% a month** (UWNH's rate). Debt is a **threat** with a countdown. Missed payments tick it toward *take away their stuff*: collectors, a seized rig, or a "*favour*" gig.
-- **Other warlords lend too, but in strings**: Grome lends water against obedience, and Mother Krin lends labor against flesh.
+- **Others lend too, but in strings**: Grome lends water against obedience, Parcher lends fuel against labour, and the Family (a sub‑faction) lends a hand against a stray brought home.
 
 ## Information as a commodity (UWNH's cartographers → the News)
 - **Charts**: the News, at the Lighthouse, buys newly charted roads (0.5–3 barter per stretch, more for Farther and Notional ones, and a bonus for every break, crossing and toll you mark). **Rothschild pays triple for exclusive charts**, which then aren't sold to anyone else. That shuts other traders (and other playbooks' cameos) out of the route. Hardholders buy charts of the roads *to their* hold.

@@ -3,7 +3,7 @@
 > UWNH gave you mates with wages. Inindo gave you companions recruited at inns. AW gives you **Hx**, and NPCs who are *human*: they have a name, a look and a want.
 
 ## Recruitment
-- **Where**: hold **bars** (UWNH's cafe, Inindo's inn), straggler camps, defeated rivals ("*I surrender!*"), rescued prisoners, and maelstrom sites (weird masters' students).
+- **Where**: hold **bars** (UWNH's cafe, Inindo's inn), straggler camps, defeated rivals ("*I surrender!*"), rescued prisoners, maelstrom sites (weird masters' students), and **sub‑faction chapters**. At Standing +2, each sub‑faction offers recruits of particular playbook archetypes: the Teeth have Choppers and Gunluggers, the Keepers have Angels and Hocuses, the Wheelwrights have Savvyheads ([18](18-sub-factions.md)). A sub‑faction recruit carries that sub‑faction's Standing with them, which works both ways.
 - **Who**: named NPCs, drawn from the roster of **playbook archetypes** ([06](06-playbooks.md#the-rest-of-the-roster-crew-archetypes-and-unlockable-protagonists)) plus non‑playbook folk: drivers, gunners, cooks, hands.
 - **Gate**: Inindo gated recruiting on *experience* ("*The more experience you have, the more likely someone will join you*"). We gate it on **Rep** in that hold and on **Hx**:
   - **Rep ≥ their bar**: they'll talk business.

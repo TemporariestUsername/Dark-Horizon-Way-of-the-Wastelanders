@@ -109,6 +109,8 @@ Each kind carries **its AW threat‑move list** as data. Examples:
 - **Warlords**: push the battle moves, outflank someone, attack suddenly or cautiously, seize leverage, make a show of force or discipline, offer to negotiate, claim territory, buy out someone's allies, study someone and strike where they're weak.
 - **Afflictions**: someone neglects duties, flies into a rage, takes self‑destructive action, approaches seeking help or comfort, withdraws, proclaims the affliction just punishment or a blessing, refuses to adapt, brings loved ones along.
 
+**Factions and sub‑factions as threats.** Each faction's hardholder is a *Warlord* threat ([17](17-factions.md)). A sub‑faction becomes a threat when your Standing with it falls to −2, or when its want collides with your plans: road gangs as *Hunting packs*, cults as *Cults*, striking guilds as *Mobs*, secret societies as *Families* ([18](18-sub-factions.md#subfactions-as-threats)).
+
 ### Essential threats (auto‑created, as in AW's first session)
 - **Where you are** becomes a *Landscape*.
 - **Your gang** (Chopper, Hardholder) becomes *Brutes* (its own internal pressure).

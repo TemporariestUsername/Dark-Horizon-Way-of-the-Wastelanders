@@ -5,7 +5,7 @@
 | # | Milestone | Proves | Contents |
 |---|---|---|---|
 | **M0** | **Design bible** (this round) | Direction | These docs, the RE teardowns, the platform pick |
-| **M1** | **Sim spike** (headless, Godot 4) | The economy and politics work *without* graphics, at full scale | Moves engine, dice service, the road graph, all 130 holds' economy, Lean, the 6 influence factions and the Choir, the world turn, a 48‑month sim runner, a balance report |
+| **M1** | **Sim spike** (headless, Godot 4) | The economy and politics work *without* graphics, at full scale | Moves engine, dice service, the road graph, all 130 holds' economy, Lean, the 6 factions and the Choir, the world turn, a 48‑month sim runner, a balance report |
 | **M2** | **Paper Director** | AW's MC as an AI is fun and fair | The Director decision procedure, threat data, event cards in a text UI, golden tests |
 | **M3** | **Vertical slice** | The full loop, at quality, for about 2 hours | Defined below |
 | **M4** | **Alpha** | The whole map (130 holds) and all six playbooks | All regions, holds, warlords, the Hum arc, Up, Down and In |
@@ -20,7 +20,8 @@
   - the Delta: Siege, Brace Win, Barge Town, Mudflat, Reservoir
   - the Ten: Capitol, Orleans, Dustwich
 - **Fog**: everything outside the Crossing starts uncharted, so every Delta and Ten hold is a **first contact**.
-- **Factions**: the **Keepers** (the Lighthouse, as the player's likely first patron) and **the Choir**, whose Catchers come down the Fifty‑Five through Tum Tum's Mudflat and Capitol. One Delta hold is **Silenced** during the slice, so playtesters see the difference between losing a hold to Lean and losing it to the Choir. Brace Win is an independent minor warlord holding the dam. Last's World Clock runs at 3× speed so the slice reaches 6:00.
+- **Factions**: **the Lighthouse** (Clarion, the player's likely first patron) and **the Choir**, whose Catchers come down the Fifty‑Five through Tum Tum's Mudflat and Capitol. One Delta hold is **Silenced** during the slice, so playtesters see the difference between losing a hold to Lean and losing it to the Choir. Brace Win is an independent minor warlord holding the dam.
+- **Sub‑factions**: **the Keepers** (who back the Lighthouse), **the Gar** (Delta river raiders whom Clarion pays off), and **the Players** (Beale, Crossroads, Orleans). That's enough to show Standing, chapters and a sub‑faction switching its backing. Last's World Clock runs at 3× speed so the slice reaches 6:00.
 - **Systems in**:
   - Overworld road network with supplies, fog, charts, breaks, crossings, weather and Howls
   - First contact scenes

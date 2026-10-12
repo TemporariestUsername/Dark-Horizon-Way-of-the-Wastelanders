@@ -67,10 +67,11 @@ These are seed values for `/data`. The final tuning comes from the headless sim 
 
 | Kind | Example | Where |
 |---|---|---|
-| Warlord / Alpha wolf | Dremmer and the Teeth | Rag‑Wastes, pushing east |
+| Warlord / Dictator | The six faction hardholders: Clarion, Grome, Abondo, Rothschild, Parcher, Otilia ([17](17-factions.md)) | Their seats |
+| Brute / Hunting pack (road gang) | Dremmer's Teeth, the Gar, the Twister Riders, the Whiteout ([18](18-sub-factions.md)) | The Rag‑Wastes, the Delta, the Forty, the Lakes |
 | Brute / Hunting pack | Tum Tum's Catchers | The Seventy, down the Fifty‑Five |
-| Brute / Cult | The Choir's missionaries | Up, then along the Ten, then everywhere |
-| Brute / Family | Mother Krin's Family | Down |
+| Brute / Cult | The Choir's missionaries. Turned Cross‑folk | Up, then along the Ten, then everywhere |
+| Brute / Family (secret society) | Mother Krin's Family, the Odd Lot | Down, and hidden everywhere |
 | Brute / Mob | Anchorage's water mob | The Crossing |
 | Brute / Enforcers | Grome's Wellguard. Crossing toll‑men. | The Thirty‑Five. Every crossing |
 | Brute / Sybarites | The Exchange's clients | The Glass |
