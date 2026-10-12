@@ -1,0 +1,457 @@
+{
+ "_doc": "Disciplines (docs/design/04-characters.md): three techniques each, needing Weird 30/50/70, costing Grit. target: self | ally | downed_ally | allies | enemy | enemy_area | map. 'map' techniques act outside battle.",
+ "disciplines": [
+  {
+   "id": "static",
+   "name": "Static",
+   "site": "the_dishes",
+   "techniques": [
+    {
+     "id": "jam",
+     "name": "Jam",
+     "grit": 6,
+     "needs_weird": 30,
+     "target": "enemy_area",
+     "status": {
+      "id": "jammed",
+      "turns": 2
+     },
+     "text": "Stops enemy radios and cantors for 2 turns"
+    },
+    {
+     "id": "blind",
+     "name": "Blind",
+     "grit": 12,
+     "needs_weird": 50,
+     "target": "enemy",
+     "status": {
+      "id": "stunned",
+      "turns": 1
+     },
+     "only_tags": [
+      "brainer",
+      "cantor"
+     ],
+     "text": "A brainer or cantor loses its turn"
+    },
+    {
+     "id": "silence",
+     "name": "Silence",
+     "grit": 25,
+     "needs_weird": 70,
+     "target": "map",
+     "text": "No Hum gain in this hold for a month"
+    }
+   ]
+  },
+  {
+   "id": "burn",
+   "name": "Burn",
+   "site": "burning_water",
+   "techniques": [
+    {
+     "id": "shimmer",
+     "name": "Shimmer",
+     "grit": 5,
+     "needs_weird": 30,
+     "target": "self",
+     "buff": {
+      "evasion": 20,
+      "turns": 3
+     }
+    },
+    {
+     "id": "catch",
+     "name": "Catch",
+     "grit": 10,
+     "needs_weird": 50,
+     "target": "enemy_area",
+     "damage": 15,
+     "status": {
+      "id": "burning",
+      "turns": 2
+     }
+    },
+    {
+     "id": "the_fire_remembers",
+     "name": "The fire remembers",
+     "grit": 22,
+     "needs_weird": 70,
+     "target": "enemy",
+     "damage": 30,
+     "status": {
+      "id": "burning",
+      "turns": 3
+     }
+    }
+   ]
+  },
+  {
+   "id": "wind",
+   "name": "Wind",
+   "site": "last_stop",
+   "techniques": [
+    {
+     "id": "read_the_dust",
+     "name": "Read the dust",
+     "grit": 4,
+     "needs_weird": 30,
+     "target": "map",
+     "text": "Forecast weather for 3 days"
+    },
+    {
+     "id": "turn_a_storm",
+     "name": "Turn a storm",
+     "grit": 15,
+     "needs_weird": 50,
+     "target": "map",
+     "text": "End a dust storm or Howl here"
+    },
+    {
+     "id": "walk_on_wind",
+     "name": "Walk on wind",
+     "grit": 25,
+     "needs_weird": 70,
+     "target": "allies",
+     "buff": {
+      "move": 4,
+      "turns": 99
+     }
+    }
+   ]
+  },
+  {
+   "id": "salt",
+   "name": "Salt",
+   "site": "saltlick",
+   "techniques": [
+    {
+     "id": "preserve",
+     "name": "Preserve",
+     "grit": 4,
+     "needs_weird": 30,
+     "target": "map",
+     "text": "Food doesn't spoil for a month"
+    },
+    {
+     "id": "still_the_ground",
+     "name": "Still the ground",
+     "grit": 12,
+     "needs_weird": 50,
+     "target": "enemy_area",
+     "buff": {
+      "move": -4,
+      "turns": 1
+     }
+    },
+    {
+     "id": "turn_to_salt",
+     "name": "Turn to salt",
+     "grit": 28,
+     "needs_weird": 70,
+     "target": "enemy",
+     "status": {
+      "id": "petrified",
+      "turns": 99
+     },
+     "immune_tags": [
+      "boss"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mirror",
+   "name": "Mirror",
+   "site": "mirror_town",
+   "techniques": [
+    {
+     "id": "see_behind",
+     "name": "See behind",
+     "grit": 5,
+     "needs_weird": 30,
+     "target": "map",
+     "text": "Reveal hidden Presence and ambushes"
+    },
+    {
+     "id": "double",
+     "name": "Double",
+     "grit": 14,
+     "needs_weird": 50,
+     "target": "self",
+     "buff": {
+      "evasion": 40,
+      "turns": 2
+     }
+    },
+    {
+     "id": "step_through",
+     "name": "Step through",
+     "grit": 24,
+     "needs_weird": 70,
+     "target": "self",
+     "teleport": true
+    }
+   ]
+  },
+  {
+   "id": "mend",
+   "name": "Mend",
+   "site": "barrow",
+   "techniques": [
+    {
+     "id": "close_a_wound",
+     "name": "Close a wound",
+     "grit": 6,
+     "needs_weird": 30,
+     "target": "ally",
+     "heal": 20
+    },
+    {
+     "id": "call_back",
+     "name": "Call back",
+     "grit": 18,
+     "needs_weird": 50,
+     "target": "downed_ally",
+     "revive_pct": 25
+    },
+    {
+     "id": "borrow_a_life",
+     "name": "Borrow a life",
+     "grit": 30,
+     "needs_weird": 70,
+     "target": "ally",
+     "heal": 999,
+     "self_max_hp": -10
+    }
+   ]
+  },
+  {
+   "id": "iron",
+   "name": "Iron",
+   "site": "the_teeth",
+   "techniques": [
+    {
+     "id": "steady",
+     "name": "Steady",
+     "grit": 5,
+     "needs_weird": 30,
+     "target": "self",
+     "buff": {
+      "accuracy": 15,
+      "turns": 3
+     }
+    },
+    {
+     "id": "no_pain",
+     "name": "No pain",
+     "grit": 12,
+     "needs_weird": 50,
+     "target": "self",
+     "buff": {
+      "ignore_injury": 1,
+      "turns": 99
+     }
+    },
+    {
+     "id": "become_a_weapon",
+     "name": "Become a weapon",
+     "grit": 22,
+     "needs_weird": 70,
+     "target": "self",
+     "buff": {
+      "attack": 20,
+      "turns": 3
+     }
+    }
+   ]
+  },
+  {
+   "id": "lure",
+   "name": "Lure",
+   "site": "rumhouse",
+   "techniques": [
+    {
+     "id": "catch_an_eye",
+     "name": "Catch an eye",
+     "grit": 4,
+     "needs_weird": 30,
+     "target": "map",
+     "text": "+15% on a Hot check"
+    },
+    {
+     "id": "be_wanted",
+     "name": "Be wanted",
+     "grit": 12,
+     "needs_weird": 50,
+     "target": "enemy",
+     "status": {
+      "id": "charmed",
+      "turns": 2
+     }
+    },
+    {
+     "id": "make_them_follow",
+     "name": "Make them follow",
+     "grit": 25,
+     "needs_weird": 70,
+     "target": "enemy",
+     "status": {
+      "id": "turned",
+      "turns": 3
+     },
+     "immune_tags": [
+      "opened",
+      "boss"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rot",
+   "name": "Rot",
+   "site": "krins_nest",
+   "techniques": [
+    {
+     "id": "spoil",
+     "name": "Spoil",
+     "grit": 5,
+     "needs_weird": 30,
+     "target": "map",
+     "text": "Ruin enemy supplies"
+    },
+    {
+     "id": "sicken",
+     "name": "Sicken",
+     "grit": 12,
+     "needs_weird": 50,
+     "target": "enemy",
+     "status": {
+      "id": "poisoned",
+      "turns": 3
+     }
+    },
+    {
+     "id": "the_familys_touch",
+     "name": "The Family's touch",
+     "grit": 24,
+     "needs_weird": 70,
+     "target": "enemy",
+     "damage": 20,
+     "drain": true
+    }
+   ]
+  },
+  {
+   "id": "echo",
+   "name": "Echo",
+   "site": "wisher",
+   "techniques": [
+    {
+     "id": "hear_the_dead",
+     "name": "Hear the dead",
+     "grit": 5,
+     "needs_weird": 30,
+     "target": "map",
+     "text": "A rumor about this place"
+    },
+    {
+     "id": "ask_the_dead",
+     "name": "Ask the dead",
+     "grit": 14,
+     "needs_weird": 50,
+     "target": "map",
+     "text": "Reveal a hold's secret"
+    },
+    {
+     "id": "speak_as_the_dead",
+     "name": "Speak as the dead",
+     "grit": 26,
+     "needs_weird": 70,
+     "target": "map",
+     "text": "+30% on a check against the living"
+    }
+   ]
+  },
+  {
+   "id": "choir",
+   "name": "Choir",
+   "site": "harrowgate",
+   "dangerous": true,
+   "techniques": [
+    {
+     "id": "hum",
+     "name": "Hum",
+     "grit": 8,
+     "needs_weird": 30,
+     "target": "enemy",
+     "hum_damage": 12,
+     "hum_exposure": 10
+    },
+    {
+     "id": "open_them",
+     "name": "Open them",
+     "grit": 20,
+     "needs_weird": 50,
+     "target": "enemy",
+     "status": {
+      "id": "turned",
+      "turns": 2
+     },
+     "hum_exposure": 10,
+     "immune_tags": [
+      "boss"
+     ]
+    },
+    {
+     "id": "join_the_choir",
+     "name": "Join the Choir",
+     "grit": 40,
+     "needs_weird": 70,
+     "target": "map",
+     "hum_exposure": 10,
+     "text": "An ending"
+    }
+   ]
+  },
+  {
+   "id": "hex",
+   "name": "Hex",
+   "site": "the_pumphouse",
+   "techniques": [
+    {
+     "id": "mark",
+     "name": "Mark",
+     "grit": 5,
+     "needs_weird": 30,
+     "target": "enemy",
+     "status": {
+      "id": "marked",
+      "turns": 3,
+      "accuracy_against": 15
+     }
+    },
+    {
+     "id": "jinx",
+     "name": "Jinx",
+     "grit": 14,
+     "needs_weird": 50,
+     "target": "enemy",
+     "status": {
+      "id": "jinxed",
+      "turns": 3,
+      "accuracy": -20
+     }
+    },
+    {
+     "id": "undo",
+     "name": "Undo",
+     "grit": 26,
+     "needs_weird": 70,
+     "target": "enemy",
+     "cleanse": true
+    }
+   ]
+  }
+ ]
+}

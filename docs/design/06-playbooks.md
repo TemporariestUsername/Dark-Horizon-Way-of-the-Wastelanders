@@ -188,7 +188,7 @@ No class ending is gated by a deadline. When you trigger an ending, the **Choir'
 | **Drowning** (30+) | **Everybody hears it.** Each class has a dark ending in which its arc is resolved *inside* the Hum. They're bleak, not game‑overs. |
 
 ## The rest of the roster (crew archetypes and unlockable protagonists)
-These are recruitable as **officers and companions**, each with its own attributes, growth and abilities.
+These are recruitable as **officers and companions**, each with its own attributes, growth and abilities. The Angel, Battlebabe, Gunlugger and Brainer have full class data for M2 ([`classes.json`](../../data/rules/classes.json)); the rest follow with their content.
 
 | Class | As an officer or companion | Unlock as protagonist |
 |---|---|---|

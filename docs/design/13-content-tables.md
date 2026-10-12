@@ -74,6 +74,8 @@ Weapons work like Inindo's equipment: an **Attack** value added to the wielder's
 | Flamethrower | 18 | contact/close | 1 fuel can | Burning: 10 Durability a turn for 3 turns. Burning Water's specialty |
 | Rocket rack | 45 | far | 1 (rare) | armour‑piercing. Cerro's foundries and the Down only |
 
+**Natural weapons** (beasts and the Opened): bite 16, gore 18 (*messy*), the Opened's bare hands 16 (*messy*). A cantor's voice does Hum damage instead (see [09](09-combat.md#the-choir-in-battle)).
+
 ## Armour
 Armour adds to **Defense**, which is subtracted from damage:
 - **3–6**: bike leathers, an armoured corset, a riot vest. Anything really.

@@ -43,7 +43,7 @@ It resolves in this order, with every step logged for the Month Report:
 | **Demand tribute** | Leaning holds pay. A want rises if they can't. |
 
 4. **Hold economy**: stock regenerates from surplus. Wants above 2 create or worsen **afflictions**. Category price indexes drift.
-5. **Lean settles**: holds below 50 for everyone become **contested**. Warlords whose holds are contested lose grip. **Home rule** moves 1.5 points a month from each hold's largest faction share back to independent (seats excepted), so influence has to be kept up.
+5. **Lean settles**: holds below 50 for everyone become **contested**. Warlords whose holds are contested lose grip. **Home rule** moves 1.75 points a month from each hold's largest faction share back to independent, unless that share is 60 or more (a firm hold, such as a fresh conquest) or the hold is a seat. Loose influence has to be kept up; a living faction's seat can only be taken or Silenced, never drifted.
 6. **Sub‑factions act**: each takes one verb (Grow, Work, Raid, Preach, Hide, Strike, Back), and Turning progress rises for Hum‑touched sub‑factions ([18](18-sub-factions.md#subfactions-in-the-world-turn)).
 7. **Wanderer AI**: every named wandering NPC takes one verb (*Move, Attack, Flee, Seek work, Work, Train, Wait, Meet*).
 8. **The Choir's turn**: Hum seeps from Silenced holds; the Choir takes its actions (1, or 2 from **Spreading**: coffles, cantors, turning; marches from **Marching**); voices and reach update; League tension moves (see [02](02-world.md#the-choirs-creep-no-clock) and [17](17-factions.md#the-choir-the-nobunaga-faction)).

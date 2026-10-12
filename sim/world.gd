@@ -106,8 +106,8 @@ func live_holds() -> Array:
 ## Drift Lean toward a faction, respecting the per-hold monthly cap (rules/lean.json drift).
 func drift(id: String, faction: String, pts: float) -> float:
 	var h: Dictionary = H[id]
-	if h["silenced"] or h["lean"] == null or pts == 0.0:
-		return 0.0
+	if h["silenced"] or h["lean"] == null or pts == 0.0 or is_live_seat(id):
+		return 0.0   # a living faction's seat can only be taken or Silenced, never drifted
 	var cap := float(data.lean["drift"]["max_points_per_hold_per_month"])
 	var used: float = moved_this_month.get(id, 0.0)
 	var room: float = max(cap - used, 0.0)
@@ -115,6 +115,13 @@ func drift(id: String, faction: String, pts: float) -> float:
 	var moved := Lean.add(h["lean"], faction, p)
 	moved_this_month[id] = used + abs(moved)
 	return moved
+
+
+func is_live_seat(id: String) -> bool:
+	for f in F:
+		if F[f]["alive"] and F[f]["seat"] == id:
+			return true
+	return false
 
 
 func holds_leaning_to(faction: String) -> Array:

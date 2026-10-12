@@ -2,7 +2,8 @@
 
 Checks: hold schema and counts; Lean sums; goods and services; sub-faction presence; consistency with
 docs/design/16-gazetteer.md (names, tiers, bosses, starting Lean); road network references and
-connectivity; faction, Choir and sub-faction references (seats, lieutenants, targets, homes).
+connectivity; faction, Choir and sub-faction references (seats, lieutenants, targets, homes); the M2
+battle data (classes, equipment, disciplines, units, encounters).
 
 Usage: python3 tools/validate_data.py
 """
@@ -187,10 +188,68 @@ for s in subs["subfactions"]:
         if H.get(lt["hold"], {}).get("boss") != lt["name"]:
             err(f"sub-faction {s['id']}: lieutenant {lt['name']} doesn't run {lt['hold']}")
 
+# --- M2 battle data ------------------------------------------------------------------------
+classes = load("rules/classes.json")["classes"]
+equip = load("rules/equipment.json")
+discs = load("rules/disciplines.json")["disciplines"]
+units_file = load("units/units.json")
+battle = load("rules/battle.json")
+ATTRS = {"cool", "hard", "hot", "sharp", "weird"}
+TRACKS = {"road", "trade", "fight"}
+SKILLS = set(load("rules/characters.json")["skills"]["list"])
+WEAPONS = {w["id"] for w in equip["weapons"]}
+ARMOUR = {a["id"] for a in equip["armour"]}
+DISCS = {d["id"] for d in discs}
+for kind in ("weapons", "armour", "rig_guns", "frames", "ornaments"):
+    ids = [x["id"] for x in equip[kind]]
+    if len(ids) != len(set(ids)):
+        err(f"equipment {kind}: duplicate ids")
+for w in equip["weapons"]:
+    if w["range"] not in battle["skirmish"]["ranges"]:
+        err(f"weapon {w['id']}: unknown range {w['range']}")
+for c in classes:
+    if set(c["attributes"]) != ATTRS or set(c["growth"]) != ATTRS:
+        err(f"class {c['id']}: attributes/growth must name all five attributes")
+    if c["protagonist"] and sum(c["attributes"].values()) != 180:
+        err(f"class {c['id']}: protagonist attributes total {sum(c['attributes'].values())}, not 180")
+    if abs(sum(c["growth"].values()) - 1.0) > 1e-6:
+        err(f"class {c['id']}: growth sums to {sum(c['growth'].values())}")
+    if c["main_track"] not in TRACKS:
+        err(f"class {c['id']}: main_track {c['main_track']}")
+    if c["weapon"] not in WEAPONS or c["armour"] not in ARMOUR:
+        err(f"class {c['id']}: unknown weapon or armour")
+    for sk in c["skills"]:
+        if sk not in SKILLS:
+            err(f"class {c['id']}: unknown skill {sk}")
+    for d in c.get("disciplines", []):
+        if d not in DISCS:
+            err(f"class {c['id']}: unknown discipline {d}")
+    for ab in c["abilities"]:
+        if ab["track"] not in TRACKS or not 1 <= ab["level"] <= 20:
+            err(f"class {c['id']}: ability {ab['id']} unlock {ab['track']} {ab['level']}")
+    if c["protagonist"] and len(c["abilities"]) != 7:
+        err(f"class {c['id']}: protagonists have 7 abilities, not {len(c['abilities'])}")
+U = {u["id"]: u for u in units_file["units"]}
+for u in units_file["units"]:
+    if set(u["attributes"]) != ATTRS:
+        err(f"unit {u['id']}: attributes")
+    if u["weapon"] not in WEAPONS or u["armour"] not in ARMOUR:
+        err(f"unit {u['id']}: unknown weapon or armour")
+for e in units_file["encounters"]:
+    if e["rating"] not in battle["encounter_targets"]:
+        err(f"encounter {e['id']}: rating {e['rating']}")
+    for uid in e["units"]:
+        if uid not in U:
+            err(f"encounter {e['id']}: unknown unit {uid}")
+for d in discs:
+    if [t["needs_weird"] for t in d["techniques"]] != [30, 50, 70]:
+        err(f"discipline {d['id']}: techniques need Weird 30/50/70")
+
 if errors:
     print(f"{len(errors)} error(s):")
     for e in errors:
         print("  -", e)
     sys.exit(1)
 print(f"data OK: {len(holds)} holds, {len(roads)} road edges, {len(GOODS)} goods, "
-      f"{len(FACTIONS)} factions + the Choir, {len(SUBS)} sub-factions")
+      f"{len(FACTIONS)} factions + the Choir, {len(SUBS)} sub-factions, {len(classes)} classes, "
+      f"{len(U)} units, {len(units_file['encounters'])} encounters")

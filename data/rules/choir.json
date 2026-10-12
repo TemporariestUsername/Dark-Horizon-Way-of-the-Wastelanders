@@ -45,7 +45,8 @@
    "keepers_presence_each": 0.85,
    "watchers_presence_each": 0.85,
    "static_or_jammer": 0.0,
-   "player_patrolling": 0.5
+   "player_patrolling": 0.5,
+   "living_faction_seat": 0.5
   },
   "turned_presence_per_point": 1,
   "turned_min_presence": 2,

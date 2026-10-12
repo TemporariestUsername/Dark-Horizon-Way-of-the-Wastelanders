@@ -182,19 +182,21 @@ func _report(data, runs: Array, sample_events: Array, secs: float) -> Dictionary
 	md.append("| Most common reach | " + " | ".join(cols.map(func(m): return _mode(runs.map(func(r): return r["history"][m]["reach"])))) + " |")
 
 	md.append("")
-	md.append("## Factions at month %d (median across seeds)" % fm)
+	md.append("## Factions at month %d (median across seeds; the last two columns cover the whole run)" % fm)
 	md.append("")
-	md.append("| Faction | Holds leaning at start | Holds leaning | Alive in | Conquests | Ambition stage reached |")
-	md.append("|---|---|---|---|---|---|")
+	md.append("| Faction | Holds leaning at start | Holds leaning | Alive in | Conquests | Ambition stage reached | Falls by month %d in | Median month it falls |" % months)
+	md.append("|---|---|---|---|---|---|---|---|")
 	for f in data.factions["factions"]:
 		var fid: String = f["id"]
-		md.append("| %s | %s | %s | %s | %s | %s of 4 |" % [f["name"],
+		md.append("| %s | %s | %s | %s | %s | %s of 4 | %s | %s |" % [f["name"],
 			_fmt(_median(runs.map(func(r): return r["history"][0]["leaning"].get(fid, 0)))),
 			_fmt(_median(runs.map(func(r): return r["factions"]["leaning"][fid]))),
 			_pct(runs.filter(func(r): return r["factions"]["alive"].has(fid)).size(), n),
 			_fmt(_median(runs.map(func(r): return r["factions"]["conquests"][fid]))),
-			_fmt(_median(runs.map(func(r): return r["factions"]["stages"][fid])))])
-	md.append("| Independent | %s | %s | | | |" % [
+			_fmt(_median(runs.map(func(r): return r["factions"]["stages"][fid]))),
+			_pct(runs.filter(func(r): return _fall_month(r, fid) > 0).size(), n),
+			_fmt(_median(runs.map(func(r): return _fall_month(r, fid)).filter(func(m): return m > 0))) if runs.any(func(r): return _fall_month(r, fid) > 0) else "—"])
+	md.append("| Independent | %s | %s | | | | | |" % [
 		_fmt(_median(runs.map(func(r): return r["history"][0]["leaning"].get("independent", 0)))),
 		_fmt(_median(runs.map(func(r): return r["factions"]["leaning"].get("independent", 0) if r["factions"]["leaning"].has("independent") else r["history"][min(fm, r["history"].size() - 1)]["leaning"].get("independent", 0))))])
 
@@ -223,6 +225,14 @@ func _report(data, runs: Array, sample_events: Array, secs: float) -> Dictionary
 			break
 
 	return {"md": "\n".join(md) + "\n", "json": {"seeds": n, "months": months, "rows": rows, "all_pass": all_pass}}
+
+
+## The first month a faction is no longer alive, or 0 if it survives the run.
+static func _fall_month(r: Dictionary, fid: String) -> int:
+	for h in r["history"]:
+		if not h["alive"].has(fid):
+			return h["month"]
+	return 0
 
 
 static func _fmt(v: Variant) -> String:

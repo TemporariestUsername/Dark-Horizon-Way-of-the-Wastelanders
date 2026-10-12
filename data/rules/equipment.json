@@ -1,0 +1,681 @@
+{
+ "_doc": "Weapons, armour, rig guns, frames and hood ornaments (docs/design/13-content-tables.md, 08-travel-and-vehicles.md). Personal weapons: attack, range (melee | near 4 tiles | far 10 tiles), ammo per attack, tags. Rig guns: power vs target Armor, range bands, 2 crew each.",
+ "weapons": [
+  {
+   "id": "fists",
+   "name": "Fists",
+   "attack": 4,
+   "range": "melee",
+   "ammo": 0,
+   "tags": []
+  },
+  {
+   "id": "big_knife",
+   "name": "Big knife",
+   "attack": 12,
+   "range": "melee",
+   "ammo": 0,
+   "tags": []
+  },
+  {
+   "id": "machete",
+   "name": "Machete",
+   "attack": 18,
+   "range": "melee",
+   "ammo": 0,
+   "tags": [
+    "messy"
+   ]
+  },
+  {
+   "id": "crowbar",
+   "name": "Crowbar",
+   "attack": 14,
+   "range": "melee",
+   "ammo": 0,
+   "tags": [
+    "messy"
+   ]
+  },
+  {
+   "id": "chain",
+   "name": "Chain",
+   "attack": 10,
+   "range": "melee",
+   "ammo": 0,
+   "tags": [
+    "area"
+   ]
+  },
+  {
+   "id": "many_knives",
+   "name": "Many knives",
+   "attack": 12,
+   "range": "near",
+   "ammo": 0,
+   "tags": [
+    "thrown"
+   ]
+  },
+  {
+   "id": "38_revolver",
+   "name": ".38 revolver",
+   "attack": 16,
+   "range": "near",
+   "ammo": 1,
+   "tags": [
+    "reload",
+    "loud"
+   ]
+  },
+  {
+   "id": "9mm",
+   "name": "9mm",
+   "attack": 15,
+   "range": "near",
+   "ammo": 1,
+   "tags": [
+    "loud"
+   ]
+  },
+  {
+   "id": "magnum",
+   "name": "Magnum",
+   "attack": 22,
+   "range": "near",
+   "ammo": 1,
+   "tags": [
+    "reload",
+    "loud"
+   ]
+  },
+  {
+   "id": "sawed_off",
+   "name": "Sawed-off",
+   "attack": 24,
+   "range": "near",
+   "ammo": 1,
+   "tags": [
+    "reload",
+    "messy"
+   ],
+   "max_tiles": 3
+  },
+  {
+   "id": "shotgun",
+   "name": "Shotgun",
+   "attack": 22,
+   "range": "near",
+   "ammo": 1,
+   "tags": [
+    "messy"
+   ]
+  },
+  {
+   "id": "smg",
+   "name": "SMG",
+   "attack": 14,
+   "range": "near",
+   "ammo": 3,
+   "tags": [
+    "autofire",
+    "loud"
+   ]
+  },
+  {
+   "id": "assault_rifle",
+   "name": "Assault rifle",
+   "attack": 20,
+   "range": "far",
+   "ammo": 1,
+   "tags": [
+    "autofire",
+    "loud"
+   ]
+  },
+  {
+   "id": "hunting_rifle",
+   "name": "Hunting rifle",
+   "attack": 22,
+   "range": "far",
+   "ammo": 1,
+   "tags": [
+    "loud"
+   ]
+  },
+  {
+   "id": "sniper_rifle",
+   "name": "Sniper rifle",
+   "attack": 30,
+   "range": "far",
+   "ammo": 1,
+   "tags": [
+    "armour_piercing",
+    "golden_age"
+   ]
+  },
+  {
+   "id": "machine_gun",
+   "name": "Machine gun",
+   "attack": 20,
+   "range": "far",
+   "ammo": 3,
+   "tags": [
+    "area",
+    "messy"
+   ]
+  },
+  {
+   "id": "grenade_tube",
+   "name": "Grenade tube",
+   "attack": 30,
+   "range": "near",
+   "ammo": 1,
+   "tags": [
+    "area",
+    "reload",
+    "messy"
+   ]
+  },
+  {
+   "id": "stun_gun",
+   "name": "Stun gun",
+   "attack": 0,
+   "range": "melee",
+   "ammo": 1,
+   "tags": [
+    "stun",
+    "reload"
+   ]
+  },
+  {
+   "id": "golden_age_rifle",
+   "name": "Golden-age rifle",
+   "attack": 30,
+   "range": "far",
+   "ammo": 1,
+   "tags": [
+    "armour_piercing",
+    "golden_age"
+   ]
+  },
+  {
+   "id": "opened_hands",
+   "name": "Bare hands (the Opened)",
+   "attack": 16,
+   "range": "melee",
+   "ammo": 0,
+   "tags": [
+    "natural",
+    "messy"
+   ]
+  },
+  {
+   "id": "cantor_voice",
+   "name": "Cantor's voice",
+   "attack": 0,
+   "range": "far",
+   "ammo": 0,
+   "tags": [
+    "hum"
+   ]
+  },
+  {
+   "id": "bite",
+   "name": "Bite",
+   "attack": 16,
+   "range": "melee",
+   "ammo": 0,
+   "tags": [
+    "natural"
+   ]
+  },
+  {
+   "id": "gore",
+   "name": "Gore",
+   "attack": 18,
+   "range": "melee",
+   "ammo": 0,
+   "tags": [
+    "natural",
+    "messy"
+   ]
+  }
+ ],
+ "armour": [
+  {
+   "id": "none",
+   "name": "Clothes",
+   "defense": 0
+  },
+  {
+   "id": "leathers",
+   "name": "Bike leathers",
+   "defense": 3
+  },
+  {
+   "id": "armoured_corset",
+   "name": "Armoured corset",
+   "defense": 5
+  },
+  {
+   "id": "riot_vest",
+   "name": "Riot vest",
+   "defense": 6
+  },
+  {
+   "id": "riot_gear",
+   "name": "Riot gear",
+   "defense": 12
+  },
+  {
+   "id": "car_plate",
+   "name": "Plate cut from a car",
+   "defense": 15,
+   "encumbrance": 6
+  },
+  {
+   "id": "golden_age_plate",
+   "name": "Golden-age plate",
+   "defense": 22,
+   "golden_age": true
+  }
+ ],
+ "rig_guns": [
+  {
+   "id": "gun_ring",
+   "name": "Gun ring",
+   "power": 25,
+   "bands": [
+    "close",
+    "far"
+   ],
+   "ammo": 1,
+   "tags": [
+    "area",
+    "loud"
+   ],
+   "crew": 2
+  },
+  {
+   "id": "rig_machine_gun",
+   "name": "Rig machine gun",
+   "power": 20,
+   "bands": [
+    "close",
+    "far"
+   ],
+   "ammo": 2,
+   "tags": [
+    "loud"
+   ],
+   "crew": 2,
+   "attacks": 2
+  },
+  {
+   "id": "harpoon_gun",
+   "name": "Harpoon gun",
+   "power": 15,
+   "bands": [
+    "close"
+   ],
+   "ammo": 1,
+   "tags": [
+    "hook"
+   ],
+   "crew": 2
+  },
+  {
+   "id": "flamethrower",
+   "name": "Flamethrower",
+   "power": 18,
+   "bands": [
+    "contact",
+    "close"
+   ],
+   "ammo": 0,
+   "tags": [
+    "burning"
+   ],
+   "crew": 2,
+   "fuel": 1
+  },
+  {
+   "id": "rocket_rack",
+   "name": "Rocket rack",
+   "power": 45,
+   "bands": [
+    "far"
+   ],
+   "ammo": 1,
+   "tags": [
+    "armour_piercing",
+    "rare"
+   ],
+   "crew": 2
+  }
+ ],
+ "frames": [
+  {
+   "id": "dirt_bike",
+   "name": "Dirt bike",
+   "durability": 30,
+   "armor": 0,
+   "speed": 4,
+   "handling": 30,
+   "ram": 0,
+   "gun_mounts": 0,
+   "crew": [
+    1,
+    1
+   ],
+   "cargo": 1,
+   "notes": "Off-road. Scout. Chopper gangs",
+   "offroad": true
+  },
+  {
+   "id": "hog",
+   "name": "Hog",
+   "durability": 45,
+   "armor": 5,
+   "speed": 3,
+   "handling": 15,
+   "ram": 10,
+   "gun_mounts": 0,
+   "crew": [
+    1,
+    2
+   ],
+   "cargo": 2,
+   "notes": "Chopper bike",
+   "offroad": true
+  },
+  {
+   "id": "sand_buggy",
+   "name": "Sand buggy",
+   "durability": 50,
+   "armor": 0,
+   "speed": 4,
+   "handling": 30,
+   "ram": 10,
+   "gun_mounts": 1,
+   "crew": [
+    1,
+    3
+   ],
+   "cargo": 4,
+   "notes": "Off-road. Fast courier",
+   "offroad": true
+  },
+  {
+   "id": "compact",
+   "name": "Compact",
+   "durability": 60,
+   "armor": 5,
+   "speed": 3,
+   "handling": 30,
+   "ram": 10,
+   "gun_mounts": 1,
+   "crew": [
+    2,
+    4
+   ],
+   "cargo": 8,
+   "notes": "Starting Driver option"
+  },
+  {
+   "id": "pickup",
+   "name": "Pickup",
+   "durability": 90,
+   "armor": 5,
+   "speed": 2,
+   "handling": 15,
+   "ram": 20,
+   "gun_mounts": 1,
+   "crew": [
+    2,
+    6
+   ],
+   "cargo": 16,
+   "notes": "Workhorse"
+  },
+  {
+   "id": "ute",
+   "name": "Ute with a gun ring",
+   "durability": 85,
+   "armor": 5,
+   "speed": 3,
+   "handling": 15,
+   "ram": 20,
+   "gun_mounts": 2,
+   "crew": [
+    3,
+    6
+   ],
+   "cargo": 10,
+   "notes": "Battle car"
+  },
+  {
+   "id": "interceptor",
+   "name": "Interceptor",
+   "durability": 70,
+   "armor": 5,
+   "speed": 4,
+   "handling": 45,
+   "ram": 10,
+   "gun_mounts": 1,
+   "crew": [
+    1,
+    2
+   ],
+   "cargo": 4,
+   "notes": "My other car is a tank path"
+  },
+  {
+   "id": "bus",
+   "name": "Bus",
+   "durability": 160,
+   "armor": 10,
+   "speed": 1,
+   "handling": 0,
+   "ram": 30,
+   "gun_mounts": 2,
+   "crew": [
+    4,
+    30
+   ],
+   "cargo": 40,
+   "notes": "Hardholder caravan, Hocus followers",
+   "road_bound": true
+  },
+  {
+   "id": "hauler",
+   "name": "Hauler (semi)",
+   "durability": 180,
+   "armor": 10,
+   "speed": 2,
+   "handling": 0,
+   "ram": 30,
+   "gun_mounts": 2,
+   "crew": [
+    2,
+    8
+   ],
+   "cargo": 60,
+   "notes": "Trade backbone",
+   "road_bound": true
+  },
+  {
+   "id": "tanker",
+   "name": "Tanker",
+   "durability": 170,
+   "armor": 10,
+   "speed": 1,
+   "handling": 0,
+   "ram": 30,
+   "gun_mounts": 1,
+   "crew": [
+    2,
+    6
+   ],
+   "cargo": 50,
+   "notes": "Water or fuel only",
+   "road_bound": true,
+   "liquid_only": true
+  },
+  {
+   "id": "half_track",
+   "name": "Half-track",
+   "durability": 150,
+   "armor": 15,
+   "speed": 2,
+   "handling": 15,
+   "ram": 20,
+   "gun_mounts": 2,
+   "crew": [
+    3,
+    10
+   ],
+   "cargo": 20,
+   "notes": "Off-road. The Rough and dunes",
+   "offroad": true
+  },
+  {
+   "id": "war_rig",
+   "name": "War rig",
+   "durability": 220,
+   "armor": 15,
+   "speed": 2,
+   "handling": 0,
+   "ram": 30,
+   "gun_mounts": 4,
+   "crew": [
+    6,
+    20
+   ],
+   "cargo": 30,
+   "notes": "Mid-game flagship",
+   "road_bound": true
+  },
+  {
+   "id": "land_yacht",
+   "name": "Land yacht",
+   "durability": 70,
+   "armor": 0,
+   "speed": 3,
+   "handling": 15,
+   "ram": 10,
+   "gun_mounts": 1,
+   "crew": [
+    3,
+    12
+   ],
+   "cargo": 25,
+   "notes": "Sail-driven: no fuel on riverbeds, open interstate and lake ice; needs wind",
+   "sail": true
+  },
+  {
+   "id": "ice_skiff",
+   "name": "Ice skiff",
+   "durability": 35,
+   "armor": 0,
+   "speed": 4,
+   "handling": 30,
+   "ram": 0,
+   "gun_mounts": 0,
+   "crew": [
+    2,
+    4
+   ],
+   "cargo": 6,
+   "notes": "Sail-driven. Lake ice and riverbeds only",
+   "sail": true
+  },
+  {
+   "id": "tank",
+   "name": "Tank (ancient)",
+   "durability": 300,
+   "armor": 20,
+   "speed": 1,
+   "handling": 15,
+   "ram": 40,
+   "gun_mounts": 3,
+   "crew": [
+    4,
+    6
+   ],
+   "cargo": 2,
+   "notes": "Late game. Gas-hungry",
+   "road_bound": true
+  },
+  {
+   "id": "gondola_car",
+   "name": "Gondola car",
+   "durability": 60,
+   "armor": 5,
+   "speed": 0,
+   "handling": 0,
+   "ram": 0,
+   "gun_mounts": 0,
+   "crew": [
+    2,
+    8
+   ],
+   "cargo": 10,
+   "notes": "Up layer only. Rides on cables",
+   "cable": true
+  }
+ ],
+ "ornaments": [
+  {
+   "id": "skull",
+   "name": "Skull",
+   "bonus": {
+    "hard_intimidate_pct": 10
+   }
+  },
+  {
+   "id": "saint",
+   "name": "Saint",
+   "bonus": {
+    "weird_check_pct": 10
+   }
+  },
+  {
+   "id": "chrome_angel",
+   "name": "Chrome angel",
+   "bonus": {
+    "handling_check_pct": 10
+   }
+  },
+  {
+   "id": "steer_horns",
+   "name": "Steer horns",
+   "bonus": {
+    "ram_pct": 20
+   }
+  },
+  {
+   "id": "dolls_head",
+   "name": "Doll's head",
+   "bonus": {
+    "warning_days": 1
+   }
+  },
+  {
+   "id": "hula_girl",
+   "name": "Hula girl",
+   "bonus": {
+    "hot_check_pct": 5
+   }
+  },
+  {
+   "id": "antenna",
+   "name": "Antenna",
+   "bonus": {
+    "hum_zone_warning_days": 2,
+    "hum_exposure_per_month": 2
+   }
+  }
+ ]
+}

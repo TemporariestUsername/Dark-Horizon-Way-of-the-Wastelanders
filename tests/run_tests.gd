@@ -10,6 +10,7 @@ const Lean := preload("res://sim/lean.gd")
 const GangWar := preload("res://sim/gang_war.gd")
 const Conditions := preload("res://sim/conditions.gd")
 const Characters := preload("res://sim/characters.gd")
+const Skirmish := preload("res://sim/battle/skirmish.gd")
 
 var data
 var graph
@@ -25,6 +26,7 @@ func _init() -> void:
 	for t in [
 		"test_data_loads", "test_graph", "test_lean", "test_gang_war", "test_conditions",
 		"test_characters", "test_determinism", "test_invariants",
+		"test_build_class", "test_skirmish",
 	]:
 		var before := failures
 		call(t)
@@ -178,3 +180,71 @@ func test_invariants() -> void:
 	ok(want_ok, "wants stay within 0-3")
 	ok(hum_ok, "Hum within 0-100, and only Silenced holds lose their Lean")
 	ok(w.history.size() == 37, "a metric snapshot per month")
+
+
+func test_build_class() -> void:
+	var rng := RandomNumberGenerator.new()
+	rng.seed = 1
+	var d1: Dictionary = Characters.build_class(data, "driver", {"road": 1, "trade": 1, "fight": 1}, "party", rng)
+	var total := 0.0
+	for a in d1["attributes"]:
+		total += float(d1["attributes"][a])
+	ok(is_equal_approx(total, 180.0), "a level-1 Driver has 180 attribute points")
+	var d5: Dictionary = Characters.build_class(data, "driver", {"road": 5, "trade": 1, "fight": 5}, "party", rng)
+	var total5 := 0.0
+	for a in d5["attributes"]:
+		total5 += float(d5["attributes"][a])
+	ok(is_equal_approx(total5, 180.0 + 4 * 8), "8 level-ups add 32 points")
+	ok(d5["attributes"]["cool"] > d1["attributes"]["cool"] and d5["max_hp"] > d1["max_hp"], "levels raise Cool and Health")
+	ok(d1["abilities"].any(func(ab): return ab["id"] == "eye_on_the_door") == false and d5["abilities"].any(func(ab): return ab["id"] == "eye_on_the_door"),
+		"Eye on the door unlocks at Road 5")
+	var q: Dictionary = Characters.build_class(data, "quarantine", {"road": 9, "trade": 1, "fight": 9}, "party", rng)
+	ok(is_equal_approx(q["attributes"]["weird"], 15.0), "the Quarantine's Weird stays locked")
+	var mg: Dictionary = Characters.build_class(data, "gunlugger", {"road": 1, "trade": 1, "fight": 1}, "party", rng)
+	ok(mg["ammo"] == 36, "a machine gun carries 12 attacks of ammo at 3 rounds each")
+	var op: Dictionary = Characters.build_unit(data, "opened", "enemy", rng)
+	ok(op["max_hp"] < Characters.health(op["attributes"]["hard"], op["fight"]), "the Opened have 60% HP")
+
+
+func _fight(seed_n: int, party_spec: Array, enemy_spec: Dictionary, lvl: int) -> Dictionary:
+	var rng := RandomNumberGenerator.new()
+	rng.seed = seed_n
+	var party: Array = []
+	for c in party_spec:
+		party.append(Characters.build_class(data, c, {"road": lvl, "trade": 1, "fight": lvl}, "party", rng))
+	var enemies: Array = []
+	var n := 0
+	for u in enemy_spec:
+		for k in int(enemy_spec[u]):
+			enemies.append(Characters.build_unit(data, u, "enemy", rng, n))
+			n += 1
+	var sk := Skirmish.new()
+	sk.setup(data, party, enemies, rng)
+	return {"result": sk.run(), "sk": sk}
+
+
+func test_skirmish() -> void:
+	var a: Dictionary = _fight(9, ["driver", "angel", "gunlugger"], {"raider": 2, "raider_gunner": 2}, 2)
+	var b: Dictionary = _fight(9, ["driver", "angel", "gunlugger"], {"raider": 2, "raider_gunner": 2}, 2)
+	ok(a["result"] == b["result"] and a["sk"].lines == b["sk"].lines, "a skirmish replays exactly from its seed")
+	var wins := 0
+	for i in 50:
+		if _fight(100 + i, ["driver", "angel", "gunlugger"], {"scavver": 2}, 5)["result"]["winner"] == "party":
+			wins += 1
+	ok(wins == 50, "a level-5 party always beats two scavvers")
+	var easy: Dictionary = _fight(3, ["driver", "angel", "gunlugger"], {"scavver": 2}, 5)["result"]
+	ok(easy["xp"] == 20 and easy["rounds"] >= 1, "XP is 10 per enemy level")
+	var losses := 0
+	for i in 30:
+		if _fight(200 + i, ["driver"], {"shan": 1, "catcher": 3}, 1)["result"]["winner"] == "enemy":
+			losses += 1
+	ok(losses == 30, "a lone level-1 Driver never beats Shan's catchers")
+	var mob: Dictionary = _fight(5, ["driver", "angel", "gunlugger"], {"opened": 8}, 3)
+	ok(not mob["sk"].units.any(func(c): return c["tags"].has("opened") and c["fled"]), "the Opened never flee")
+	var sk: Skirmish = mob["sk"]
+	ok(sk.flee_chance() >= 5.0 and sk.flee_chance() <= 95.0, "flee chance is clamped")
+	for c in sk.units:
+		if c["hp"] < 0.0 or c["hp"] > c["max_hp"] + 0.001 or c["ammo"] < 0:
+			ok(false, "HP and ammo stay in range (%s)" % c["name"])
+			return
+	ok(true, "HP and ammo stay in range")

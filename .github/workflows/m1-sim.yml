@@ -1,4 +1,4 @@
-name: M1 sim
+name: Sim
 
 on:
   push:
@@ -29,6 +29,9 @@ jobs:
       - name: Unit tests
         run: timeout 300 "$GODOT" --headless --path . --script res://tests/run_tests.gd
 
+      - name: Battle bench (300 fights per encounter)
+        run: timeout 300 "$GODOT" --headless --path . --script res://tools/battle_bench.gd -- --fights 300
+
       - name: Balance report (50 seeds x 120 months)
         run: timeout 900 "$GODOT" --headless --path . --script res://tools/sim_runner.gd -- --months 120 --seeds 50
 
@@ -36,5 +39,5 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: m1-balance-report
+          name: sim-reports
           path: tools/out/

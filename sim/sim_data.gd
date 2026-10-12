@@ -15,6 +15,11 @@ var subfactions: Dictionary = {}
 var sub_by_id: Dictionary = {}
 var war: Dictionary = {}
 var characters: Dictionary = {}
+var classes: Dictionary = {}
+var equipment: Dictionary = {}
+var battle: Dictionary = {}
+var disciplines: Dictionary = {}
+var units: Dictionary = {}
 
 
 static func read_json(path: String) -> Variant:
@@ -44,6 +49,11 @@ func load_all(root: String = "res://data") -> void:
 		sub_by_id[s["id"]] = s
 	war = read_json(root + "/rules/war.json")
 	characters = read_json(root + "/rules/characters.json")
+	classes = read_json(root + "/rules/classes.json")
+	equipment = read_json(root + "/rules/equipment.json")
+	battle = read_json(root + "/rules/battle.json")
+	disciplines = read_json(root + "/rules/disciplines.json")
+	units = read_json(root + "/units/units.json")
 
 
 ## Region names use non-breaking hyphens ("Sixty‑Five"); compare on a plain form.

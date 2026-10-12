@@ -1,0 +1,426 @@
+{
+ "_doc": "Enemy units and encounters for skirmishes (docs/design/09-combat.md, 13-content-tables.md). Units derive their stats with the same formulas as characters (sim/characters.gd), using 'level' as their Fight and Road level. Encounters carry a rating against a party of three at party_level; tools/battle_bench.gd checks them against rules/battle.json encounter_targets.",
+ "units": [
+  {
+   "id": "scavver",
+   "name": "Scavver",
+   "level": 1,
+   "attributes": {
+    "cool": 30,
+    "hard": 30,
+    "hot": 5,
+    "sharp": 45,
+    "weird": 10
+   },
+   "weapon": "bite",
+   "armour": "none",
+   "luck": 8,
+   "tags": [
+    "beast"
+   ],
+   "skills": {}
+  },
+  {
+   "id": "feral_bull",
+   "name": "Feral bull",
+   "level": 4,
+   "attributes": {
+    "cool": 25,
+    "hard": 70,
+    "hot": 5,
+    "sharp": 25,
+    "weird": 5
+   },
+   "weapon": "gore",
+   "armour": "leathers",
+   "luck": 8,
+   "tags": [
+    "beast"
+   ],
+   "skills": {}
+  },
+  {
+   "id": "glass_eye",
+   "name": "Glass-eye hound",
+   "level": 4,
+   "attributes": {
+    "cool": 45,
+    "hard": 50,
+    "hot": 5,
+    "sharp": 50,
+    "weird": 30
+   },
+   "weapon": "bite",
+   "armour": "none",
+   "luck": 8,
+   "tags": [
+    "beast",
+    "mutant"
+   ],
+   "skills": {}
+  },
+  {
+   "id": "raider",
+   "name": "Raider",
+   "level": 2,
+   "attributes": {
+    "cool": 35,
+    "hard": 45,
+    "hot": 15,
+    "sharp": 30,
+    "weird": 15
+   },
+   "weapon": "machete",
+   "armour": "leathers",
+   "luck": 8,
+   "tags": [
+    "teeth"
+   ],
+   "skills": {
+    "brawling": 1
+   }
+  },
+  {
+   "id": "raider_gunner",
+   "name": "Raider gunner",
+   "level": 2,
+   "attributes": {
+    "cool": 45,
+    "hard": 30,
+    "hot": 15,
+    "sharp": 35,
+    "weird": 15
+   },
+   "weapon": "9mm",
+   "armour": "leathers",
+   "luck": 8,
+   "tags": [
+    "teeth"
+   ],
+   "skills": {
+    "gunnery": 1
+   }
+  },
+  {
+   "id": "raider_boss",
+   "name": "Raider boss",
+   "level": 5,
+   "attributes": {
+    "cool": 50,
+    "hard": 60,
+    "hot": 30,
+    "sharp": 40,
+    "weird": 20
+   },
+   "weapon": "shotgun",
+   "armour": "riot_vest",
+   "luck": 12,
+   "tags": [
+    "teeth",
+    "leader"
+   ],
+   "skills": {
+    "gunnery": 1,
+    "brawling": 1
+   }
+  },
+  {
+   "id": "toll_man",
+   "name": "Toll man",
+   "level": 2,
+   "attributes": {
+    "cool": 35,
+    "hard": 40,
+    "hot": 25,
+    "sharp": 35,
+    "weird": 10
+   },
+   "weapon": "crowbar",
+   "armour": "leathers",
+   "luck": 8,
+   "tags": [
+    "enforcer"
+   ],
+   "skills": {}
+  },
+  {
+   "id": "wellguard",
+   "name": "Wellguard",
+   "level": 4,
+   "attributes": {
+    "cool": 45,
+    "hard": 50,
+    "hot": 20,
+    "sharp": 40,
+    "weird": 15
+   },
+   "weapon": "shotgun",
+   "armour": "riot_gear",
+   "luck": 8,
+   "tags": [
+    "sweetwell",
+    "enforcer"
+   ],
+   "skills": {
+    "gunnery": 1
+   }
+  },
+  {
+   "id": "catcher",
+   "name": "Catcher",
+   "level": 3,
+   "attributes": {
+    "cool": 40,
+    "hard": 50,
+    "hot": 15,
+    "sharp": 40,
+    "weird": 20
+   },
+   "weapon": "crowbar",
+   "armour": "leathers",
+   "luck": 8,
+   "tags": [
+    "catchers"
+   ],
+   "skills": {
+    "brawling": 1
+   }
+  },
+  {
+   "id": "catcher_netter",
+   "name": "Catcher netter",
+   "level": 3,
+   "attributes": {
+    "cool": 45,
+    "hard": 35,
+    "hot": 15,
+    "sharp": 45,
+    "weird": 20
+   },
+   "weapon": "stun_gun",
+   "armour": "leathers",
+   "luck": 8,
+   "tags": [
+    "catchers"
+   ],
+   "skills": {}
+  },
+  {
+   "id": "shan",
+   "name": "Shan, Tum Tum's catcher",
+   "level": 7,
+   "attributes": {
+    "cool": 55,
+    "hard": 60,
+    "hot": 35,
+    "sharp": 55,
+    "weird": 30
+   },
+   "weapon": "magnum",
+   "armour": "riot_gear",
+   "luck": 14,
+   "tags": [
+    "catchers",
+    "leader",
+    "boss"
+   ],
+   "skills": {
+    "gunnery": 2,
+    "brawling": 1
+   }
+  },
+  {
+   "id": "opened",
+   "name": "The Opened",
+   "level": 2,
+   "attributes": {
+    "cool": 20,
+    "hard": 60,
+    "hot": 0,
+    "sharp": 20,
+    "weird": 40
+   },
+   "weapon": "opened_hands",
+   "armour": "none",
+   "luck": 8,
+   "tags": [
+    "opened"
+   ],
+   "skills": {}
+  },
+  {
+   "id": "cantor",
+   "name": "Cantor",
+   "level": 5,
+   "attributes": {
+    "cool": 30,
+    "hard": 25,
+    "hot": 20,
+    "sharp": 40,
+    "weird": 75
+   },
+   "weapon": "cantor_voice",
+   "armour": "none",
+   "luck": 10,
+   "tags": [
+    "cantor",
+    "brainer"
+   ],
+   "skills": {}
+  },
+  {
+   "id": "sings_back",
+   "name": "Sings-Back",
+   "level": 9,
+   "attributes": {
+    "cool": 40,
+    "hard": 35,
+    "hot": 30,
+    "sharp": 50,
+    "weird": 95
+   },
+   "weapon": "cantor_voice",
+   "armour": "riot_vest",
+   "luck": 14,
+   "tags": [
+    "cantor",
+    "brainer",
+    "leader",
+    "boss"
+   ],
+   "skills": {}
+  },
+  {
+   "id": "bounty_hunter",
+   "name": "Bounty hunter",
+   "level": 6,
+   "attributes": {
+    "cool": 60,
+    "hard": 45,
+    "hot": 25,
+    "sharp": 55,
+    "weird": 20
+   },
+   "weapon": "sniper_rifle",
+   "armour": "riot_vest",
+   "luck": 12,
+   "tags": [
+    "leader"
+   ],
+   "skills": {
+    "gunnery": 2
+   }
+  }
+ ],
+ "encounters": [
+  {
+   "id": "scavvers",
+   "name": "Scavvers in the stores",
+   "units": {
+    "scavver": 3
+   },
+   "rating": "easy",
+   "party_level": 1
+  },
+  {
+   "id": "toll_men",
+   "name": "Toll men at the crossing",
+   "units": {
+    "toll_man": 3
+   },
+   "rating": "easy",
+   "party_level": 2
+  },
+  {
+   "id": "raider_pack",
+   "name": "A Teeth raiding pack",
+   "units": {
+    "raider": 2,
+    "raider_gunner": 2
+   },
+   "rating": "fair",
+   "party_level": 2
+  },
+  {
+   "id": "glass_eyes",
+   "name": "Glass-eyes in the dunes",
+   "units": {
+    "glass_eye": 4
+   },
+   "rating": "fair",
+   "party_level": 3
+  },
+  {
+   "id": "opened_mob",
+   "name": "The Opened on the overpass",
+   "units": {
+    "opened": 8
+   },
+   "rating": "fair",
+   "party_level": 3
+  },
+  {
+   "id": "teeth_war_band",
+   "name": "A Teeth war band",
+   "units": {
+    "raider_boss": 1,
+    "raider": 1,
+    "raider_gunner": 1
+   },
+   "rating": "hard",
+   "party_level": 3
+  },
+  {
+   "id": "wellguard_patrol",
+   "name": "A Wellguard patrol",
+   "units": {
+    "wellguard": 2,
+    "toll_man": 1
+   },
+   "rating": "hard",
+   "party_level": 4
+  },
+  {
+   "id": "catchers_roadblock",
+   "name": "Tum Tum's Catchers' roadblock",
+   "units": {
+    "shan": 1,
+    "catcher": 4,
+    "catcher_netter": 1
+   },
+   "rating": "boss",
+   "party_level": 5
+  },
+  {
+   "id": "cantor_and_opened",
+   "name": "A cantor and its Opened",
+   "units": {
+    "cantor": 1,
+    "opened": 9
+   },
+   "rating": "hard",
+   "party_level": 5
+  },
+  {
+   "id": "bounty_hunter",
+   "name": "A bounty hunter out of Gallows",
+   "units": {
+    "bounty_hunter": 1,
+    "raider_gunner": 3
+   },
+   "rating": "hard",
+   "party_level": 5
+  },
+  {
+   "id": "sings_back",
+   "name": "Sings-Back at the dishes",
+   "units": {
+    "sings_back": 1,
+    "cantor": 1,
+    "opened": 8
+   },
+   "rating": "boss",
+   "party_level": 9
+  }
+ ]
+}

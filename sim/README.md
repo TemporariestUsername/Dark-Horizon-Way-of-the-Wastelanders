@@ -14,11 +14,12 @@ The M1 headless simulation: the world turn from [docs/design/10](../docs/design/
 | `factions.gd` | Influence engines, monthly actions, ambitions, grip, seats, deaths, home rule |
 | `choir.gd` | The Hum's seep, the Choir's actions by reach, coffles, the Opened marching, Silencing |
 | `subfactions.gd` | Backing drift, monthly verbs (raid, grow, preach, work, hide, back), Turning |
-| `characters.gd` | Check chance, XP curve, derived stats (M1 tests them; battles use them from M2) |
+| `characters.gd` | Check chance, XP curve, derived stats, and the builder that turns a class at given levels, or an enemy unit, into a battle-ready combatant |
+| `battle/skirmish.gd` | Inindo's grid battle (doc 09): turn order by Speed, attacks, ammo, cover, statuses, disciplines and class abilities, rout, a tactical AI for both sides |
 
 **Determinism.** Every random draw goes through the World's one `RandomNumberGenerator`, seeded per run, and every loop walks dictionaries in insertion order. The same seed always replays the same history (`tests/run_tests.gd` checks it).
 
-**Not in M1.** The player, the Wanderer AI (it needs the named-NPC roster, M2), the League (it needs a broker, the player), battles other than gang war (M2).
+**Not yet.** The player, the Wanderer AI (it needs the named-NPC roster), the League (it needs a broker, the player), road war and events (M2, next).
 
 ## Running
 ```sh
@@ -26,5 +27,7 @@ GODOT=$(tools/get_godot.sh)                       # pinned Godot 4.4.1, checksum
 "$GODOT" --headless --path . --script res://tests/run_tests.gd
 "$GODOT" --headless --path . --script res://tools/sim_runner.gd -- --months 120 --seeds 200
 "$GODOT" --headless --path . --script res://tools/debug_seed.gd -- --seed 1 --months 48 --kinds choir,war
+"$GODOT" --headless --path . --script res://tools/battle_bench.gd -- --fights 500   # skirmish balance
+"$GODOT" --headless --path . --script res://tools/unit_stats.gd                    # derived stats
 ```
 The runner writes `tools/out/report.md` and `report.json` and exits 1 if a balance target fails. On Windows or macOS, use your own Godot 4.4.1 in place of `$GODOT`.

@@ -121,7 +121,7 @@ static func turn(w) -> void:
 				w.say("choir", "The Choir's circle appears on the doors of %s." % id)
 			var l = h["lean"]
 			var top := Lean.leader(l)
-			if top != "" and top != Lean.IND:
+			if top != "" and top != Lean.IND and not w.is_live_seat(id):
 				Lean.add(l, top, -3.0)
 		elif h["hum"] >= float(stages["touched"]) and before[id] < float(stages["touched"]):
 			w.say("choir", "People in %s dream the dream. Some leave for Harrowgate." % id)
@@ -134,6 +134,9 @@ static func _defence(w, id: String, defs: Dictionary) -> float:
 		mult *= float(defs["deaf_faction_leans"])
 	elif l == "choir":
 		mult *= float(defs["hum_touched_faction_leans"])
+	for f in w.F:
+		if w.F[f]["alive"] and w.F[f]["seat"] == id:
+			mult *= float(defs["living_faction_seat"])
 	for s in ["keepers", "watchers"]:
 		var p: int = w.H[id]["subs"].get(s, {}).get("presence", 0)
 		if p > 0 and not w.S[s]["turned"]:

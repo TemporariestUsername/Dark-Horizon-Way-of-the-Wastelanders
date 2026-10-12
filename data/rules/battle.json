@@ -1,0 +1,181 @@
+{
+ "_doc": "Battle rules (docs/design/09-combat.md). Skirmish is Inindo's grid battle; road war is UWNH's fleet battle. Formulas are evaluated by sim/battle/. Encounter targets are what tools/battle_bench.gd checks.",
+ "skirmish": {
+  "grid": [
+   16,
+   10
+  ],
+  "move_tiles": 4,
+  "move_tiles_rough": 2,
+  "ranges": {
+   "melee": 1,
+   "near": 4,
+   "far": 10
+  },
+  "hit": {
+   "base": 70,
+   "min": 5,
+   "max": 95
+  },
+  "cover_evasion_vs_ranged": 20,
+  "high_ground_accuracy": 10,
+  "crit": {
+   "chance": "luck/4",
+   "multiplier": 1.5
+  },
+  "damage": {
+   "variance": [
+    0.9,
+    1.1
+   ],
+   "min": 1
+  },
+  "speed_reroll": 0.1,
+  "defend": {
+   "defense_mult": 1.5,
+   "adjacent_ally_defense_mult": 1.25
+  },
+  "flee": {
+   "base": 50
+  },
+  "talk": {
+   "difficulty": "hard",
+   "immune_tags": [
+    "opened",
+    "beast"
+   ]
+  },
+  "lineup": {
+   "front_col": 3,
+   "back_col": 1,
+   "flank_col": 2,
+   "enemy_front_col": 12,
+   "enemy_back_col": 14,
+   "flank_moves_first_round": true
+  },
+  "statuses": {
+   "bleeding": {
+    "damage": 5,
+    "turns": 3
+   },
+   "burning": {
+    "damage": 8,
+    "turns": 3
+   },
+   "poisoned": {
+    "damage": 5,
+    "turns": 3
+   },
+   "stunned": {
+    "skip": true,
+    "turns": 1
+   },
+   "frightened": {
+    "accuracy": -20,
+    "turns": 2
+   },
+   "hum_struck": {
+    "random_action": true,
+    "turns": 1
+   }
+  },
+  "messy_bleed_on_crit": true,
+  "rout": {
+   "_doc": "Non-Opened enemies break and flee when their leader is down and half their side is down, or when two-thirds are down.",
+   "leader_down_and_share": 0.5,
+   "share": 0.67,
+   "immune_tags": [
+    "opened"
+   ]
+  },
+  "zero_hp": {
+   "enemy": "down",
+   "companion": "gravely_wounded",
+   "player": "knocked_out",
+   "gravely_wounded_days": 3
+  },
+  "injury": {
+   "max_hp_penalty": 10,
+   "days": 14
+  },
+  "xp": {
+   "fight_per_enemy_level": 10
+  },
+  "ammo_attacks": 12
+ },
+ "the_choir": {
+  "opened": {
+   "hp_mult": 0.6,
+   "armour": 0,
+   "no_morale": true
+  },
+  "cantor": {
+   "hum_damage": "8 + weird*0.3",
+   "ignores_armour": true,
+   "range": "far",
+   "grit_drain": 5,
+   "turn_check": {
+    "needs_hum_exposure": 50,
+    "loyalty_vs": 60
+   },
+   "hum_damage_base": 8,
+   "hum_damage_per_weird": 0.3
+  }
+ },
+ "road_war": {
+  "lanes": {
+   "interstate": 5,
+   "highway": 3,
+   "back": 1
+  },
+  "bands": [
+   "contact",
+   "close",
+   "far",
+   "gone"
+  ],
+  "fire": {
+   "base": 65,
+   "gunnery_rank": 10,
+   "min": 5,
+   "max": 95
+  },
+  "far_band_obscured_accuracy": -15,
+  "ram": {
+   "self_damage_share": 0.5
+  },
+  "evade_handling": 30,
+  "obstacle_check_difficulty": {
+   "dead_car": "fair",
+   "pileup": "hard",
+   "pillar": "hard"
+  },
+  "boarding": {
+   "strength": "crew * (1 + fight_level*0.05) * (1 + crew_arms/100)"
+  },
+  "capture_needs_driver": true
+ },
+ "encounter_targets": {
+  "_doc": "Share of battles the party should win, by the encounter's rating against the party's level (tools/battle_bench.gd).",
+  "easy": [
+   0.95,
+   1.0
+  ],
+  "fair": [
+   0.75,
+   0.92
+  ],
+  "hard": [
+   0.45,
+   0.7
+  ],
+  "boss": [
+   0.3,
+   0.6
+  ],
+  "rounds": [
+   3,
+   10
+  ]
+ }
+}

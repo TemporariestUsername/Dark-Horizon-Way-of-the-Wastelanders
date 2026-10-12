@@ -17,6 +17,11 @@ The design bible's rules are now **data** that the M1 simulation can load. This 
 | [`rules/subfactions.json`](../../data/rules/subfactions.json) | 16 sub‑factions: Standing (−100 to +100), Presence, backing, verbs, perks, Turning progress | Yes |
 | [`rules/characters.json`](../../data/rules/characters.json) | Attributes, derived‑stat formulas, the three XP tracks, skills and training, Renown, checks, Hum exposure | Yes |
 | [`rules/war.json`](../../data/rules/war.json) | Gang war: troops by size, the strength formula, losses, morale, walls, tags | Yes |
+| [`rules/classes.json`](../../data/rules/classes.json) | The six launch classes and four companion classes: attributes, growth, skills, starting gear, abilities by track and level | Yes |
+| [`rules/equipment.json`](../../data/rules/equipment.json) | Weapons, armour, rig guns, frames, hood ornaments | Yes |
+| [`rules/disciplines.json`](../../data/rules/disciplines.json) | The twelve disciplines' techniques as battle data | Yes |
+| [`rules/battle.json`](../../data/rules/battle.json) | Skirmish and road‑war rules, statuses, the Choir in battle, encounter targets | Yes |
+| [`units/units.json`](../../data/units/units.json) | Enemy units and rated encounters | Yes |
 
 **Tools** (Python 3, in [`tools/`](../../tools)):
 - `validate_data.py` checks every file against the others and against the [Gazetteer](16-gazetteer.md): names, tiers, bosses and Lean must match. It's run before every commit and in CI from M1.
@@ -97,7 +102,7 @@ There's no clock. The Choir spreads hold by hold ([02](02-world.md#the-choirs-cr
 
 **Sub‑faction backing** adds Presence × 0.5 a month to the backed faction in every chapter hold.
 
-**Home rule** pulls the other way: every month, each hold that isn't a living faction's seat moves 1.5 points from its largest faction share back to independent. Influence has to be kept up. Without it, the factions swallowed the independents within two years in the M1 sim.
+**Home rule** pulls the other way: every month, each hold that isn't a living faction's seat moves 1.75 points from its largest faction share back to independent, unless that share is already 60 or more. Loose influence has to be kept up, but a firm hold stays held. Without it, the factions swallowed the independents within two years in the M1 sim; without the 60 exemption, they couldn't keep what they conquered. A living faction's seat can only be taken or Silenced: drift, raids and the Marked drain don't touch it.
 
 **Faction actions** ([`factions.json`](../../data/rules/factions.json) `actions`): a show of force is +2 Lean in up to 3 holds within 300 km; buying out allies spends 12 barter (6 points); a faction claims territory by gang war at most once every 8 months.
 
@@ -129,7 +134,7 @@ M1 is the headless Godot simulation ([`sim/`](../../sim/README.md)). It loads th
 
 **What the first runs changed** (each is now in the data and the docs above):
 - **The economy measures disruption, not scarcity.** The map is scarce by design (medicine supply covers about a fifth of demand), so judged against an absolute bar every hold looked afflicted on day one. A want now rises when its supply falls below half of that hold's own starting level, which is what a Silenced supplier, an embargo or a raid does. Prices and wants are stable without a player; about 29 holds carry a disrupted want by month 48.
-- **Home rule.** Without a pull back to independence, the factions absorbed every independent hold within two years. Home rule (1.5 a month) means influence has to be kept up.
+- **Home rule.** Without a pull back to independence, the factions absorbed every independent hold within two years. Home rule (1.75 a month, below a 60 share) means loose influence has to be kept up.
 - **Softer engines and actions**, and a claim at most every 8 months: the factions grow slowly and fight over the edges, as UWNH's nations did.
 - **Turned chapters work at the Hum's edge.** Letting them work anywhere seeded outbreaks across the map, which drowned it by year seven (96 Silenced at month 120). Voices are capped at 160 and the Opened march 15% of months.
 
@@ -140,3 +145,12 @@ M1 is the headless Godot simulation ([`sim/`](../../sim/README.md)). It loads th
 - **Not simulated yet**: the Wanderer AI (it needs the named‑NPC roster), the League (it needs a broker: the player), and every battle except gang war (M2).
 
 Whatever the sim shows, the numbers here change, the docs that quote them change with them, and the validator and tests keep the two in step.
+
+## M2: skirmish balance
+The [battle bench](../reports/m2-battle-bench.md) fights every rated encounter 500 times against a Driver, an Angel and a Gunlugger at the encounter's level. **All eleven encounters land in their rating's window.** What the first runs changed:
+- **Ammo counts attacks.** A fighter carries 12 attacks' worth, so the machine gun (3 rounds an attack) no longer runs dry after four bursts.
+- **Cantors hit harder**: 8 + 30% of Weird (was 10%), so a cantor is worth killing first.
+- **Weak attackers need real teeth.** Damage is Attack minus Defense, so the Opened and the beasts did almost nothing. The Opened's hands and bites are now 16 Attack, and the Opened are stronger (Hard 60), which keeps them fragile but dangerous in numbers.
+- **Encounters were re‑sized** to their ratings (in [`units.json`](../../data/units/units.json)).
+
+**Findings to watch:** fair fights leave the party at 20–40% of its HP with one or two members down; and the Catchers, Wellguard and Sings‑Back fights run 14–17 rounds, past the 10‑round pacing target.

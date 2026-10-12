@@ -20,7 +20,7 @@ There are three combat modes, all **turn‑based and formula‑driven**, in the 
 
 | Action | Rule |
 |---|---|
-| **Attack** | Hit chance = clamp(70 + Accuracy − Evasion, 5, 95)%. Damage = Attack × (0.9–1.1) − Defense, at least 1. **Critical** (chance = Luck ÷ 4 %): ×1.5 damage. Ranged weapons have a **range** (near is 4 tiles, far is 10) and use **ammo** |
+| **Attack** | Hit chance = clamp(70 + Accuracy − Evasion, 5, 95)%. Damage = Attack × (0.9–1.1) − Defense, at least 1. **Critical** (chance = Luck ÷ 4 %): ×1.5 damage. Ranged weapons have a **range** (near is 4 tiles, far is 10) and use **ammo**: a fighter carries enough for 12 attacks, then fights with fists |
 | **Discipline** | Spend Grit on a technique ([04](04-characters.md#disciplines-inindos-magic-schools)) |
 | **Item** | Use medicine, a stimulant, a grenade, a smoke can… |
 | **Defend** | +50% Defense until your next turn. Covers an adjacent ally |
@@ -28,12 +28,14 @@ There are three combat modes, all **turn‑based and formula‑driven**, in the 
 | **Flee** | The party escapes if the average Speed check succeeds: chance = 50 + (party Speed − enemy Speed). Failure loses the turn |
 
 - **Status effects**: bleeding, burning, poisoned, stunned, frightened (−20 accuracy) and **Hum‑struck** (the unit acts randomly for a turn).
+- **Rout**: enemies (but never the Opened) break and flee when their leader is down and half their side is down, or when two‑thirds of their side is down. Fled enemies count as beaten.
 - **At 0 HP**:
   - An enemy is down.
   - A companion is **gravely wounded**. They need Medicine or an infirmary within 3 days, or they die. They die outright only in story and boss fights.
   - **You** are knocked out. If your whole party is down, you've been **defeated**: captured, robbed or left stranded, as the story dictates. It's never a game over.
 - **Injuries**: falling to 0 HP leaves an injury, −10 max HP until it heals in about 14 days, faster at an infirmary.
 - **Rewards**: Fight XP (10 per enemy level), loot, barter, Rep and Renown.
+- **Encounter ratings.** Every encounter is rated against a party of three at a given level, and the [battle bench](../reports/m2-battle-bench.md) checks the party's win rate: *easy* 95–100%, *fair* 75–92%, *hard* 45–70%, *boss* 30–60% ([`battle.json`](../../data/rules/battle.json)).
 
 ## Mode 2: Road war (UWNH's fleet battle)
 **Board.** The road itself, as **lanes × range bands**, scrolling past:
@@ -99,7 +101,7 @@ up to 5 rounds; the attacker must break the defender to take the hold
 
 ## The Choir in battle
 - **The Opened**: they never rout and can't be talked down. They're unarmored, with 60% normal HP, and there are always more of them.
-- **Cantors**: they deal **Hum damage** at far range that ignores armor (8 + 10% of the cantor's Weird), and they drain 5 Grit. Any crew member with Hum exposure 50 or more resists each round with a loyalty check against 60, or turns on you for a turn.
+- **Cantors**: they deal **Hum damage** at far range that ignores armor (8 + 30% of the cantor's Weird), and they drain 5 Grit. Any crew member with Hum exposure 50 or more resists each round with a loyalty check against 60, or turns on you for a turn.
 - **Static** jams cantors. **Burn** and **Salt** break Opened lines. These are the counters to learn before Harrowgate.
 
 ## Prisoners, mercy and consequences

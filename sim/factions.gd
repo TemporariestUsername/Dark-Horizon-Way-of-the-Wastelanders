@@ -214,6 +214,12 @@ static func _freight(w, fid: String, eng: Dictionary) -> void:
 		if not w.H[id]["silenced"]:
 			w.drift(id, fid, pts)
 	if w.rng.randf() < float(eng["extend_chance"]):
+		# Head for the first target not yet on a route; with none, take the nearest new hold.
+		var goal := ""
+		for t in fs["targets"]:
+			if not fs["routes"].has(t) and not w.H[t]["silenced"]:
+				goal = t
+				break
 		var best := ""
 		var best_score := INF
 		for r in fs["routes"]:
@@ -223,7 +229,7 @@ static func _freight(w, fid: String, eng: Dictionary) -> void:
 				var l: String = w.leans(id)
 				if l != "" and l != Lean.IND and l != fid and fs["relations"].get(l, 0) <= -2:
 					continue
-				var score: float = w.graph.km(r, id) - (1000.0 if fs["targets"].has(id) else 0.0)
+				var score: float = w.graph.km(id, goal) if goal != "" else w.graph.km(r, id)
 				if score < best_score:
 					best = id
 					best_score = score
@@ -266,9 +272,13 @@ static func _debt(w, fid: String, eng: Dictionary) -> void:
 			break
 		if not picks.has(id) and not w.H[id]["silenced"] and w.leans(id) != fid and not _is_live_seat(w, id):
 			picks.append(id)
-	for id in picks:
-		if not _is_live_seat(w, id):
-			w.drift(id, fid, budget / per_point / picks.size())
+	# Half the budget goes to the first pick (the ambition's target), the rest is shared.
+	for i in picks.size():
+		var id: String = picks[i]
+		if _is_live_seat(w, id):
+			continue
+		var share: float = 0.5 + 0.5 / picks.size() if i == 0 else 0.5 / picks.size()
+		w.drift(id, fid, budget / per_point * share)
 
 
 static func _fuel(w, fid: String, eng: Dictionary) -> void:
@@ -616,6 +626,7 @@ static func settle(w) -> void:
 ## Home rule: influence fades unless it's kept up (rules/lean.json drift.home_rule_per_month).
 static func home_rule(w) -> void:
 	var pull := float(w.data.lean["drift"].get("home_rule_per_month", 0.0))
+	var exempt := float(w.data.lean["drift"].get("home_rule_exempt_at_share", 101.0))
 	if pull <= 0.0:
 		return
 	for id in w.H:
@@ -628,7 +639,7 @@ static func home_rule(w) -> void:
 			if k != Lean.IND and float(l[k]) > top_v:
 				top = k
 				top_v = float(l[k])
-		if top != "":
+		if top != "" and top_v < exempt:
 			Lean.add(l, top, -min(pull, top_v))
 
 

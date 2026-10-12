@@ -1,0 +1,872 @@
+{
+ "_doc": "Classes (docs/design/06-playbooks.md): Apocalypse World's playbooks on UWNH/Inindo mechanics. attributes total about 180 for protagonists; growth splits level-up points (docs/design/04-characters.md). Ability effects: 'mods' are battle stat modifiers, 'battle' special rules or actions, 'rig' road-war modifiers, 'gang' gang-war modifiers, 'map' everything outside battle (applied by later milestones).",
+ "classes": [
+  {
+   "id": "driver",
+   "name": "The Driver",
+   "protagonist": true,
+   "main_track": "road",
+   "attributes": {
+    "cool": 50,
+    "hard": 25,
+    "hot": 30,
+    "sharp": 45,
+    "weird": 30
+   },
+   "growth": {
+    "cool": 0.35,
+    "hard": 0.1,
+    "hot": 0.1,
+    "sharp": 0.3,
+    "weird": 0.15
+   },
+   "skills": {
+    "driving": 1,
+    "navigation": 1
+   },
+   "luck": 12,
+   "weapon": "magnum",
+   "armour": "leathers",
+   "asset": "the_car",
+   "abilities": [
+    {
+     "id": "combat_driver",
+     "name": "Combat driver",
+     "track": "road",
+     "level": 1,
+     "text": "Your rig gets +10 Handling, and its guns +15 hit chance, while you drive it",
+     "rig": {
+      "handling": 10,
+      "gun_hit": 15
+     }
+    },
+    {
+     "id": "weather_eye",
+     "name": "Weather eye",
+     "track": "road",
+     "level": 3,
+     "text": "Forecast weather 2 days ahead. Fog and snow slow you 50% less",
+     "map": {
+      "forecast_days": 2,
+      "fog_snow_delay": -0.5
+     }
+    },
+    {
+     "id": "eye_on_the_door",
+     "name": "Eye on the door",
+     "track": "road",
+     "level": 5,
+     "text": "Fleeing any battle gets +30%. Once per battle, if your Speed is at least the enemy's, it simply works",
+     "battle": {
+      "flee_bonus": 30,
+      "sure_flee_if_faster": true
+     }
+    },
+    {
+     "id": "daredevil",
+     "name": "Daredevil",
+     "track": "fight",
+     "level": 6,
+     "text": "When you drive straight into contact range, +3 Armor and +25% Ram damage that turn",
+     "rig": {
+      "charge_armor": 3,
+      "charge_ram_pct": 25
+     }
+    },
+    {
+     "id": "reputation",
+     "name": "Reputation",
+     "track": "road",
+     "level": 8,
+     "text": "Explorer Renown gains +25%. Recruit chance +10 in holds that know your name",
+     "map": {
+      "explorer_renown_pct": 25,
+      "recruit_bonus": 10
+     }
+    },
+    {
+     "id": "collector",
+     "name": "Collector",
+     "track": "trade",
+     "level": 8,
+     "text": "Own up to 2 more personal cars, each with its own hood ornament",
+     "map": {
+      "extra_cars": 2
+     }
+    },
+    {
+     "id": "my_other_car_is_a_tank",
+     "name": "My other car is a tank",
+     "track": "road",
+     "level": 14,
+     "text": "A battle vehicle: 2 extra gun mounts, Armor +3, Durability +40",
+     "rig": {
+      "gun_mounts": 2,
+      "armor": 3,
+      "durability": 40
+     }
+    }
+   ]
+  },
+  {
+   "id": "chopper",
+   "name": "The Chopper",
+   "protagonist": true,
+   "main_track": "fight",
+   "attributes": {
+    "cool": 40,
+    "hard": 50,
+    "hot": 25,
+    "sharp": 30,
+    "weird": 35
+   },
+   "growth": {
+    "cool": 0.25,
+    "hard": 0.35,
+    "hot": 0.1,
+    "sharp": 0.15,
+    "weird": 0.15
+   },
+   "skills": {
+    "brawling": 1,
+    "driving": 1
+   },
+   "luck": 10,
+   "weapon": "machete",
+   "armour": "leathers",
+   "asset": "the_gang",
+   "abilities": [
+    {
+     "id": "pack_alpha",
+     "name": "Pack alpha",
+     "track": "fight",
+     "level": 1,
+     "text": "Your gang gets +15 training. Bids for its leadership are answered with a Hard check at +20",
+     "gang": {
+      "training": 15
+     },
+     "map": {
+      "alpha_check_bonus": 20
+     }
+    },
+    {
+     "id": "fucking_thieves",
+     "name": "Fucking thieves",
+     "track": "trade",
+     "level": 1,
+     "text": "Once per hold visit, find a wanted item in the gang's stash: chance 40 + Sharp / 2",
+     "map": {
+      "stash_chance": "40 + sharp/2"
+     }
+    },
+    {
+     "id": "nomadic",
+     "name": "Nomadic",
+     "track": "road",
+     "level": 4,
+     "text": "The gang needs 25% less chow and water, and moves off-road at full speed",
+     "map": {
+      "gang_supply_pct": -25,
+      "offroad_full_speed": true
+     }
+    },
+    {
+     "id": "well_armed",
+     "name": "Well-armed",
+     "track": "fight",
+     "level": 5,
+     "text": "Gang arms +20. Bought weaponry counts double for arms",
+     "gang": {
+      "arms": 20
+     }
+    },
+    {
+     "id": "self_sufficient",
+     "name": "Self-sufficient",
+     "track": "trade",
+     "level": 7,
+     "text": "Raids also yield chow and fuel. Pay can be skipped for one month a year without loss",
+     "map": {
+      "raid_yields_supplies": true
+     }
+    },
+    {
+     "id": "well_disciplined",
+     "name": "Well-disciplined",
+     "track": "fight",
+     "level": 10,
+     "text": "Gang gains the well-disciplined tag",
+     "gang": {
+      "tags": [
+       "well-disciplined"
+      ]
+     }
+    },
+    {
+     "id": "a_holding_of_your_own",
+     "name": "A holding of your own",
+     "track": "fight",
+     "level": 15,
+     "text": "Take a hold by gang war and make it your seat, with its own Wealth",
+     "map": {
+      "may_take_seat": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "hardholder",
+   "name": "The Hardholder",
+   "protagonist": true,
+   "main_track": "trade",
+   "attributes": {
+    "cool": 30,
+    "hard": 40,
+    "hot": 45,
+    "sharp": 45,
+    "weird": 20
+   },
+   "growth": {
+    "cool": 0.15,
+    "hard": 0.2,
+    "hot": 0.3,
+    "sharp": 0.3,
+    "weird": 0.05
+   },
+   "skills": {
+    "trading": 1,
+    "gunnery": 1
+   },
+   "luck": 8,
+   "weapon": "shotgun",
+   "armour": "riot_vest",
+   "asset": "the_hold",
+   "abilities": [
+    {
+     "id": "wealth",
+     "name": "Wealth",
+     "track": "trade",
+     "level": 1,
+     "text": "Each month the hold yields 2 + hold size + Trade level / 4 barter if its wants are met",
+     "map": {
+      "wealth": "2 + size + trade_level/4"
+     }
+    },
+    {
+     "id": "leadership",
+     "name": "Leadership",
+     "track": "fight",
+     "level": 1,
+     "text": "Leading your gang, your leader modifier is 1.15, and it breaks only below 20 morale",
+     "gang": {
+      "leader": 1.15,
+      "breaks_below": 20
+     }
+    },
+    {
+     "id": "caravans",
+     "name": "Caravans",
+     "track": "trade",
+     "level": 3,
+     "text": "Send 1 standing caravan, +1 for every 4 Trade levels",
+     "map": {
+      "caravans": "1 + trade_level/4"
+     }
+    },
+    {
+     "id": "investment",
+     "name": "Investment",
+     "track": "trade",
+     "level": 5,
+     "text": "Your investment moves Lean 25% further",
+     "map": {
+      "invest_pct": 25
+     }
+    },
+    {
+     "id": "armory",
+     "name": "Armory",
+     "track": "fight",
+     "level": 6,
+     "text": "Your hold's gang arms +20",
+     "gang": {
+      "hold_arms": 20
+     }
+    },
+    {
+     "id": "walls",
+     "name": "Walls",
+     "track": "trade",
+     "level": 10,
+     "text": "Your hold's walls +1 (to a maximum of 2)",
+     "map": {
+      "hold_walls": 1
+     }
+    },
+    {
+     "id": "hardholder_of_the_quiet",
+     "name": "Hardholder of the Quiet",
+     "track": "trade",
+     "level": 15,
+     "text": "Audience with any faction hardholder whatever your Renown. Holds leaning to you send tribute",
+     "map": {
+      "audience_any": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "hocus",
+   "name": "The Hocus",
+   "protagonist": true,
+   "main_track": "road",
+   "attributes": {
+    "cool": 25,
+    "hard": 25,
+    "hot": 45,
+    "sharp": 30,
+    "weird": 55
+   },
+   "growth": {
+    "cool": 0.1,
+    "hard": 0.1,
+    "hot": 0.3,
+    "sharp": 0.15,
+    "weird": 0.35
+   },
+   "skills": {
+    "lore": 1,
+    "medicine": 1
+   },
+   "luck": 14,
+   "weapon": "big_knife",
+   "armour": "none",
+   "asset": "followers",
+   "disciplines": [
+    "mend"
+   ],
+   "abilities": [
+    {
+     "id": "fortunes",
+     "name": "Fortunes",
+     "track": "trade",
+     "level": 1,
+     "text": "Each month, followers yield 1 + followers / 10 barter if devotion is 50 or more",
+     "map": {
+      "fortunes": "1 + followers/10"
+     }
+    },
+    {
+     "id": "seeing_souls",
+     "name": "Seeing souls",
+     "track": "road",
+     "level": 3,
+     "text": "See an NPC's want and loyalty on sight. +15% on Hot checks against people you've seen",
+     "map": {
+      "hot_check_bonus": 15
+     }
+    },
+    {
+     "id": "charismatic",
+     "name": "Charismatic",
+     "track": "trade",
+     "level": 3,
+     "text": "Recruit chance +15. Faith Lean +25%",
+     "map": {
+      "recruit_bonus": 15,
+      "faith_pct": 25
+     }
+    },
+    {
+     "id": "frenzy",
+     "name": "Frenzy",
+     "track": "fight",
+     "level": 4,
+     "text": "A crowd or a gang acts as you say: +30 morale to your side, or -30 to theirs",
+     "battle": {
+      "action": "frenzy",
+      "grit": 15,
+      "morale": 30
+     }
+    },
+    {
+     "id": "fucking_wacknut",
+     "name": "Fucking wacknut",
+     "track": "road",
+     "level": 6,
+     "text": "+10 Weird in the In, and Hum exposure gains -30%",
+     "map": {
+      "in_weird": 10,
+      "hum_gain_pct": -30
+     }
+    },
+    {
+     "id": "divine_protection",
+     "name": "Divine protection",
+     "track": "fight",
+     "level": 8,
+     "text": "+5 Defense, and +10 against Hum damage",
+     "mods": {
+      "defense": 5,
+      "defense_vs_hum": 10
+     }
+    },
+    {
+     "id": "speak_to_the_choir",
+     "name": "Speak to the Choir",
+     "track": "road",
+     "level": 15,
+     "text": "Talk to cantors and the Opened in battle; a success makes them stand still for 2 turns",
+     "battle": {
+      "talk_to_choir": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "savvyhead",
+   "name": "The Savvyhead",
+   "protagonist": true,
+   "main_track": "road",
+   "attributes": {
+    "cool": 30,
+    "hard": 25,
+    "hot": 30,
+    "sharp": 50,
+    "weird": 45
+   },
+   "growth": {
+    "cool": 0.15,
+    "hard": 0.1,
+    "hot": 0.15,
+    "sharp": 0.35,
+    "weird": 0.25
+   },
+   "skills": {
+    "wrenching": 1,
+    "lore": 1
+   },
+   "luck": 10,
+   "weapon": "9mm",
+   "armour": "leathers",
+   "asset": "the_workspace",
+   "disciplines": [
+    "static"
+   ],
+   "abilities": [
+    {
+     "id": "things_speak",
+     "name": "Things speak",
+     "track": "road",
+     "level": 1,
+     "text": "Examining salvage tells you its history. Salvage and charts are worth +20%",
+     "map": {
+      "salvage_pct": 20
+     }
+    },
+    {
+     "id": "spooky_intense",
+     "name": "Spooky intense",
+     "track": "fight",
+     "level": 3,
+     "text": "Talk in battle gets +20. Enemies with low morale may flee from you",
+     "battle": {
+      "talk_bonus": 20
+     }
+    },
+    {
+     "id": "oftener_right",
+     "name": "Oftener right",
+     "track": "trade",
+     "level": 3,
+     "text": "When an officer makes a check on your advice, +10",
+     "map": {
+      "advice_bonus": 10
+     }
+    },
+    {
+     "id": "bonefeel",
+     "name": "Bonefeel",
+     "track": "road",
+     "level": 4,
+     "text": "Scouting +15%. You're never surprised by an ambush: your party always acts first",
+     "battle": {
+      "never_surprised": true
+     },
+     "map": {
+      "scouting_pct": 15
+     }
+    },
+    {
+     "id": "realitys_fraying_edge",
+     "name": "Reality's fraying edge",
+     "track": "fight",
+     "level": 5,
+     "text": "+5 Defense, and +5 more against Hum damage",
+     "mods": {
+      "defense": 5,
+      "defense_vs_hum": 5
+     }
+    },
+    {
+     "id": "deep_insights",
+     "name": "Deep insights",
+     "track": "road",
+     "level": 8,
+     "text": "Projects take 25% less time. Disciplines cost 20% less Grit",
+     "mods": {
+      "grit_cost_pct": -20
+     },
+     "map": {
+      "project_time_pct": -25
+     }
+    },
+    {
+     "id": "the_jammer",
+     "name": "The jammer",
+     "track": "road",
+     "level": 14,
+     "text": "Begin the Static jammer project",
+     "map": {
+      "jammer_project": true
+     }
+    }
+   ]
+  },
+  {
+   "id": "quarantine",
+   "name": "The Quarantine",
+   "protagonist": true,
+   "main_track": "fight",
+   "attributes": {
+    "cool": 40,
+    "hard": 45,
+    "hot": 35,
+    "sharp": 45,
+    "weird": 15
+   },
+   "growth": {
+    "cool": 0.25,
+    "hard": 0.3,
+    "hot": 0.2,
+    "sharp": 0.25,
+    "weird": 0.0
+   },
+   "weird_locked_until": "act_3",
+   "skills": {
+    "gunnery": 1,
+    "medicine": 1
+   },
+   "luck": 10,
+   "weapon": "assault_rifle",
+   "armour": "riot_vest",
+   "asset": "stasis",
+   "abilities": [
+    {
+     "id": "leave_no_one_behind",
+     "name": "Leave no one behind",
+     "track": "fight",
+     "level": 1,
+     "text": "Moving to a downed ally gives +2 move that turn and stabilises them",
+     "battle": {
+      "rescue_move": 2,
+      "stabilise": true
+     }
+    },
+    {
+     "id": "eager_to_know",
+     "name": "Eager to know",
+     "track": "road",
+     "level": 1,
+     "text": "Ask an NPC for advice. Following it gives +20 on the check; ignoring it and failing gives double XP",
+     "map": {
+      "advice_check": 20
+     }
+    },
+    {
+     "id": "inspiring",
+     "name": "Inspiring",
+     "track": "fight",
+     "level": 4,
+     "text": "Allies adjacent to you get +10 accuracy. Officers earn +20% XP",
+     "battle": {
+      "adjacent_ally_accuracy": 10
+     },
+     "map": {
+      "officer_xp_pct": 20
+     }
+    },
+    {
+     "id": "medlab",
+     "name": "Medlab",
+     "track": "trade",
+     "level": 5,
+     "text": "Resting at the stasis facility heals the party fully in 3 days",
+     "map": {
+      "medlab": true
+     }
+    },
+    {
+     "id": "release",
+     "name": "Release",
+     "track": "fight",
+     "level": 8,
+     "text": "Once per battle, an all-out attack at double damage, after which your Defense is 0 until your next turn",
+     "battle": {
+      "action": "release",
+      "damage_mult": 2.0,
+      "once": true
+     }
+    },
+    {
+     "id": "combat_veteran",
+     "name": "Combat veteran",
+     "track": "fight",
+     "level": 12,
+     "text": "+10 accuracy with firearms and +2 Speed",
+     "mods": {
+      "accuracy_ranged": 10,
+      "speed": 2
+     }
+    },
+    {
+     "id": "stasis_armory",
+     "name": "Stasis armory",
+     "track": "trade",
+     "level": 12,
+     "text": "A golden-age rifle and armour from the vault",
+     "map": {
+      "grants": [
+       "golden_age_rifle",
+       "golden_age_plate"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "angel",
+   "name": "Angel",
+   "protagonist": false,
+   "main_track": "trade",
+   "attributes": {
+    "cool": 35,
+    "hard": 25,
+    "hot": 30,
+    "sharp": 40,
+    "weird": 30
+   },
+   "growth": {
+    "cool": 0.2,
+    "hard": 0.1,
+    "hot": 0.2,
+    "sharp": 0.3,
+    "weird": 0.2
+   },
+   "skills": {
+    "medicine": 2
+   },
+   "luck": 10,
+   "weapon": "9mm",
+   "armour": "leathers",
+   "abilities": [
+    {
+     "id": "angel_kit",
+     "name": "Angel kit",
+     "track": "fight",
+     "level": 1,
+     "text": "In battle: heal an adjacent ally 15 + Medicine rank x 5 (Grit 6)",
+     "battle": {
+      "action": "heal",
+      "grit": 6,
+      "heal": "15 + medicine*5",
+      "range": 1
+     }
+    },
+    {
+     "id": "healing_touch",
+     "name": "Healing touch",
+     "track": "fight",
+     "level": 5,
+     "text": "Revive a downed ally at 25% HP (Grit 15)",
+     "battle": {
+      "action": "revive",
+      "grit": 15,
+      "hp_pct": 25,
+      "range": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "battlebabe",
+   "name": "Battlebabe",
+   "protagonist": false,
+   "main_track": "fight",
+   "attributes": {
+    "cool": 55,
+    "hard": 35,
+    "hot": 45,
+    "sharp": 30,
+    "weird": 15
+   },
+   "growth": {
+    "cool": 0.35,
+    "hard": 0.2,
+    "hot": 0.25,
+    "sharp": 0.15,
+    "weird": 0.05
+   },
+   "skills": {
+    "brawling": 1,
+    "gunnery": 1
+   },
+   "luck": 14,
+   "weapon": "9mm",
+   "armour": "leathers",
+   "abilities": [
+    {
+     "id": "dangerous_and_sexy",
+     "name": "Dangerous & sexy",
+     "track": "road",
+     "level": 1,
+     "text": "+15% on Hot checks in hold scenes",
+     "map": {
+      "hot_check_bonus": 15
+     }
+    },
+    {
+     "id": "ice_cold",
+     "name": "Ice cold",
+     "track": "fight",
+     "level": 3,
+     "text": "+10 accuracy, and +10 Speed in the first round",
+     "mods": {
+      "accuracy_ranged": 10,
+      "accuracy_melee": 10
+     },
+     "battle": {
+      "first_round_speed": 10
+     }
+    },
+    {
+     "id": "merciless",
+     "name": "Merciless",
+     "track": "fight",
+     "level": 6,
+     "text": "Critical chance doubled",
+     "mods": {
+      "crit_mult": 2.0
+     }
+    }
+   ]
+  },
+  {
+   "id": "gunlugger",
+   "name": "Gunlugger",
+   "protagonist": false,
+   "main_track": "fight",
+   "attributes": {
+    "cool": 35,
+    "hard": 60,
+    "hot": 20,
+    "sharp": 30,
+    "weird": 15
+   },
+   "growth": {
+    "cool": 0.2,
+    "hard": 0.45,
+    "hot": 0.05,
+    "sharp": 0.2,
+    "weird": 0.1
+   },
+   "skills": {
+    "gunnery": 2
+   },
+   "luck": 8,
+   "weapon": "machine_gun",
+   "armour": "riot_gear",
+   "abilities": [
+    {
+     "id": "not_to_be_fucked_with",
+     "name": "NOT TO BE FUCKED WITH",
+     "track": "fight",
+     "level": 1,
+     "text": "Counts as 10 troops in a gang war",
+     "gang": {
+      "troops": 10
+     }
+    },
+    {
+     "id": "battle_hardened",
+     "name": "Battle-hardened",
+     "track": "fight",
+     "level": 4,
+     "text": "+10 Health and ignores the frightened status",
+     "mods": {
+      "health": 10
+     },
+     "battle": {
+      "immune": [
+       "frightened"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "brainer",
+   "name": "Brainer",
+   "protagonist": false,
+   "main_track": "road",
+   "attributes": {
+    "cool": 30,
+    "hard": 20,
+    "hot": 30,
+    "sharp": 40,
+    "weird": 60
+   },
+   "growth": {
+    "cool": 0.15,
+    "hard": 0.05,
+    "hot": 0.1,
+    "sharp": 0.3,
+    "weird": 0.4
+   },
+   "skills": {
+    "lore": 2
+   },
+   "luck": 10,
+   "weapon": "stun_gun",
+   "armour": "none",
+   "disciplines": [
+    "hex"
+   ],
+   "abilities": [
+    {
+     "id": "deep_brain_scan",
+     "name": "Deep brain scan",
+     "track": "road",
+     "level": 1,
+     "text": "Read a person: see their want and one secret",
+     "map": {
+      "read_person": true
+     }
+    },
+    {
+     "id": "direct_brain_whisper",
+     "name": "Direct-brain whisper",
+     "track": "fight",
+     "level": 3,
+     "text": "Stun one enemy for a turn (Grit 10). Non-sexual in this game",
+     "battle": {
+      "action": "stun",
+      "grit": 10,
+      "range": 4,
+      "turns": 1
+     }
+    }
+   ]
+  }
+ ]
+}
