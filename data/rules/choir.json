@@ -47,7 +47,10 @@
    "static_or_jammer": 0.0,
    "player_patrolling": 0.5
   },
-  "turned_presence_per_point": 1
+  "turned_presence_per_point": 1,
+  "turned_min_presence": 2,
+  "turned_needs_hum": 30,
+  "_doc_turned": "A turned sub-faction's chapter adds turned_presence_per_point Hum a month per point of Presence, past every defence, in holds where its Presence is at least turned_min_presence and the hold is already Touched (Hum >= turned_needs_hum)."
  },
  "voices": {
   "_doc": "The Choir's strength: people taken in. Speeds the seep.",
@@ -55,7 +58,7 @@
   "per_coffle_delivered": 4,
   "per_hold_silenced": 6,
   "harrowgate_node_destroyed": -25,
-  "max": 200
+  "max": 160
  },
  "actions": {
   "per_month_by_reach": [
@@ -91,7 +94,7 @@
     "effect": "from 15 Silenced, march_chance_per_month: an Opened gang war against an adjacent Marked hold; a win Silences it"
    }
   },
-  "march_chance_per_month": 0.25
+  "march_chance_per_month": 0.15
  },
  "reach_tiers": [
   {

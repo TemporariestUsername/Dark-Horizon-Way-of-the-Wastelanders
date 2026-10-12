@@ -57,13 +57,14 @@ static func turn(w) -> void:
 			gain[tgt] = gain.get(tgt, 0.0) + float(seep["seep_silenced"]) * factor * (1.0 - w.graph.km(src, tgt) / rng_km) * vm
 	for tgt in gain:
 		w.H[tgt]["hum"] = min(100.0, w.H[tgt]["hum"] + gain[tgt] * _defence(w, tgt, defs))
-	# Turned sub-factions open their holds from inside.
+	# Turned sub-factions open their holds from inside, where the Hum has already reached.
 	for s in w.S:
 		if not w.S[s]["turned"]:
 			continue
 		for id in w.H:
 			var p: int = w.H[id]["subs"].get(s, {}).get("presence", 0)
-			if p > 0 and not w.H[id]["silenced"]:
+			if p >= int(hum_rules["turned_min_presence"]) and not w.H[id]["silenced"] \
+					and w.H[id]["hum"] >= float(hum_rules["turned_needs_hum"]):
 				w.H[id]["hum"] = min(100.0, w.H[id]["hum"] + float(hum_rules["turned_presence_per_point"]) * p)
 				gain[id] = true
 	# Ba's trade with Harrowgate.

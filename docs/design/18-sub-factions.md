@@ -60,7 +60,7 @@ At Standing −50 or worse, or whenever its want collides with your plans, a sub
 
 ### Turned by the Choir
 **Hum‑touched** sub‑factions (the Family and the Cross‑folk at the start, and any sub‑faction whose leader reaches Hum exposure 50) carry hidden **Turning progress** from 0 to 100. It rises each month (the Family by 1.5 from the start, the Cross‑folk by 2 once the Choir is **Spreading**), and by 10 each time a cantor works on them.
-- At 100, the sub‑faction **is turned**. Its chapters become Choir instruments: every point of Presence adds 1 Hum a month to that hold, on top of any seep and past every defence, so **a hold with a turned chapter can be Silenced from inside, with no march at all.**
+- At 100, the sub‑faction **is turned**. Its chapters become Choir instruments. Once the Hum has Touched a hold, a turned chapter there with Presence 2 or more adds 1 Hum a month per point, on top of any seep and past every defence, so **a hold with a turned chapter can be Silenced from inside, with no march at all.** (In the M1 sim, letting turned chapters work anywhere seeded outbreaks across the whole map and drowned it by year seven; they work at the Hum's edge instead.)
 - **Preventing it**: each Hum‑touched sub‑faction has an arc. Each arc beat takes 20 off its Turning; persuading its leader (a Hot check) or exposing the Choir's agent inside it takes 40. Its Turning progress is visible in your journal once you reach Standing +25.
 - This is the main reason to care about cults and secret societies you'd otherwise ignore.
 

@@ -69,10 +69,10 @@ The design bible's rules are now **data** that the M1 simulation can load. This 
 There's no clock. The Choir spreads hold by hold ([02](02-world.md#the-choirs-creep-no-clock), [17](17-factions.md#the-choir-the-nobunaga-faction)):
 - **Start**: Harrowgate and the Gondola are Silenced (Hum 100), and Wisher is at 45. The Choir has 20 **voices**.
 - **Seep**: each month, every Silenced hold adds **0.9 × (1 − km ÷ 420)** Hum to each hold within 420 km by road. Marked holds seep at a quarter of that. Everything is multiplied by **1 + voices ÷ 200**.
-- **Defences** multiply the Hum a hold gains: a Deaf faction's Lean ×0.6, each point of Keeper or Watcher Presence ×0.85, the player patrolling ×0.5, Static or a jammer ×0. A Hum‑touched faction's Lean is ×1.3, and each point of turned sub‑faction Presence adds 1 Hum a month.
+- **Defences** multiply the Hum a hold gains: a Deaf faction's Lean ×0.6, each point of Keeper or Watcher Presence ×0.85, the player patrolling ×0.5, Static or a jammer ×0. A Hum‑touched faction's Lean is ×1.3, and a turned sub‑faction's chapter with Presence 2 or more adds 1 Hum a month per point, past every defence, once the hold is Touched.
 - **Decay**: a hold with no source nearby loses 2 Hum a month.
-- **Voices**: +4 per coffle delivered, +6 per hold Silenced, −25 per Harrowgate node destroyed, up to 200.
-- **Actions**: 1 a month, 2 from 5 Silenced. From 15 Silenced, a 25% chance each month of a march: an Opened gang war against a neighbouring Marked hold.
+- **Voices**: +4 per coffle delivered, +6 per hold Silenced, −25 per Harrowgate node destroyed, up to 160.
+- **Actions**: 1 a month, 2 from 5 Silenced. From 15 Silenced, a 15% chance each month of a march: an Opened gang war against a neighbouring Marked hold.
 - **Pushback**: a liberated hold drops to 0 and its neighbours lose 20; a saved sub‑faction loses 40 Turning; taking Pellet stops the coffles.
 
 **Measured with no player** (`tools/sim_choir.py`, median of 50 seeds):

@@ -1,6 +1,7 @@
 """Quick tuning sim for the Choir's creep (no player): runs the Hum seep and the Choir's monthly
-actions over the real road network, and reports Silenced holds by month. A stand-in until the M1
-Godot sim; it reads the same data/rules/choir.json.
+actions over the real road network, and reports Silenced holds by month. Superseded by the M1
+Godot sim (tools/sim_runner.gd), which runs the Choir against live factions and sub-factions;
+kept for quick what-ifs on rules/choir.json alone.
 
 Usage: python3 tools/sim_choir.py [--months 72] [--seeds 50]
 """
