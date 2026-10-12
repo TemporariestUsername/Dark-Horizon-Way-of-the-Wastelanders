@@ -20,8 +20,9 @@ fi
 mkdir -p "$DIR"
 tmp="$(mktemp -d)"
 trap 'rm -rf "$tmp"' EXIT
-curl -fsSL -o "$tmp/$FILE.zip" "$URL/$FILE.zip"
-curl -fsSL -o "$tmp/SHA512-SUMS.txt" "$URL/SHA512-SUMS.txt"
+fetch() { curl -fsSL --retry 5 --retry-all-errors --retry-delay 3 -o "$1" "$2"; }
+fetch "$tmp/$FILE.zip" "$URL/$FILE.zip"
+fetch "$tmp/SHA512-SUMS.txt" "$URL/SHA512-SUMS.txt"
 expected="$(grep " $FILE.zip\$" "$tmp/SHA512-SUMS.txt" | cut -d' ' -f1)"
 actual="$(sha512sum "$tmp/$FILE.zip" | cut -d' ' -f1)"
 if [ -z "$expected" ] || [ "$expected" != "$actual" ]; then

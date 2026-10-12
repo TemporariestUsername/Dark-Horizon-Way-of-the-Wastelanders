@@ -14,8 +14,17 @@ jobs:
       - name: Validate data
         run: python3 tools/validate_data.py
 
+      - name: Cache Godot
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/dark-horizon
+          key: godot-4.4.1-stable-linux
+
       - name: Get Godot (pinned, checksum-verified)
-        run: echo "GODOT=$(tools/get_godot.sh)" >> "$GITHUB_ENV"
+        run: |
+          godot="$(tools/get_godot.sh)"
+          test -x "$godot"
+          echo "GODOT=$godot" >> "$GITHUB_ENV"
 
       - name: Unit tests
         run: timeout 300 "$GODOT" --headless --path . --script res://tests/run_tests.gd
