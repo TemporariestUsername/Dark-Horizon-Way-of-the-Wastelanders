@@ -9,3 +9,8 @@ dumps/
 # Downloaded source data (Natural Earth etc.); rebuilt by tools/
 data/raw/
 __pycache__/
+
+# Godot editor/import cache
+.godot/
+# Sim runner output (reports worth keeping are copied to docs/reports/)
+tools/out/

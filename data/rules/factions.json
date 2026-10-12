@@ -56,15 +56,22 @@
   "claim_territory": {
    "weight": 1.0,
    "effect": "gang war vs target hold; win = conquest (lean.json)",
-   "target": "expansion_targets first, else weakest adjacent hold"
+   "target": "expansion_targets first, else weakest adjacent hold",
+   "cooldown_months": 8,
+   "range_km": 600,
+   "sent_share": 0.6
   },
   "show_of_force": {
    "weight": 1.0,
-   "effect": "+4 Lean in up to 3 holds within 300 km; their fear +1"
+   "effect": "+points Lean in up to `holds` holds within range_km; their fear +1",
+   "points": 2,
+   "holds": 3,
+   "range_km": 300
   },
   "show_of_discipline": {
    "weight": 0.8,
-   "effect": "+1 grip progress; contested holds of its own regain 3 Lean"
+   "effect": "+1 grip progress; contested holds of its own regain 3 Lean",
+   "regain_points": 3
   },
   "offer_to_negotiate": {
    "weight": 0.8,
@@ -73,7 +80,7 @@
   "buy_out_allies": {
    "weight": 0.8,
    "effect": "spend budget: +1 Lean per 2 barter in a hold leaning to a rival",
-   "budget_barter": 20
+   "budget_barter": 12
   },
   "seize_leverage": {
    "weight": 0.5,
@@ -81,7 +88,8 @@
   },
   "careful_study": {
    "weight": 0.6,
-   "effect": "+20% gang strength on next month's claim_territory vs that target (or the player)"
+   "effect": "+20% gang strength on next month's claim_territory vs that target (or the player)",
+   "strength_bonus": 0.2
   },
   "demand_tribute": {
    "weight": 0.8,
@@ -128,10 +136,10 @@
    "engine": {
     "type": "passage",
     "_doc": "Holds within radius whose shortest road path to the Crossing uses a crossing that leans to the Lighthouse drift toward it.",
-    "radius_km": 800,
-    "base_points": 1.0,
-    "per_extra_crossing": 0.5,
-    "max_points": 4.0,
+    "radius_km": 600,
+    "base_points": 0.75,
+    "per_extra_crossing": 0.25,
+    "max_points": 2.0,
     "disabled_if_any_lighthouse_crossing_tolls": true
    },
    "expansion_targets": [
@@ -211,7 +219,7 @@
     "_doc": "Holds with water want >= min_want within tanker range drift toward Sweetwell; doubled in the Long Heat. Grome may shut off a hold.",
     "tanker_range_km": 700,
     "min_want": 2,
-    "points": 2.0,
+    "points": 1.5,
     "long_heat_multiplier": 2.0,
     "shutoff": {
      "cooldown_months": 4,
@@ -401,13 +409,13 @@
    "engine": {
     "type": "debt",
     "_doc": "Invests like the player and lends; indebted holds slide toward the Exchange until repaid.",
-    "invest_budget_barter_per_month": 30,
+    "invest_budget_barter_per_month": 10,
     "lend_to_want_at_least": 2,
     "loan_barter": [
      5,
      15
     ],
-    "slide_points": 2,
+    "slide_points": 1.5,
     "repay_chance_per_month": 0.15,
     "relic_sale_points": 1
    },

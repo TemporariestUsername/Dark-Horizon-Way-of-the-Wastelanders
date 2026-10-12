@@ -69,7 +69,7 @@ The design bible's rules are now **data** that the M1 simulation can load. This 
 There's no clock. The Choir spreads hold by hold ([02](02-world.md#the-choirs-creep-no-clock), [17](17-factions.md#the-choir-the-nobunaga-faction)):
 - **Start**: Harrowgate and the Gondola are Silenced (Hum 100), and Wisher is at 45. The Choir has 20 **voices**.
 - **Seep**: each month, every Silenced hold adds **0.9 × (1 − km ÷ 420)** Hum to each hold within 420 km by road. Marked holds seep at a quarter of that. Everything is multiplied by **1 + voices ÷ 200**.
-- **Defences** multiply the Hum a hold gains: a Deaf faction's Lean ×0.6, each point of Keeper or Watcher Presence ×0.85, the player patrolling ×0.5, Static or a jammer ×0. A Hum‑touched faction's Lean is ×1.3, and each point of turned sub‑faction Presence adds 4 a month.
+- **Defences** multiply the Hum a hold gains: a Deaf faction's Lean ×0.6, each point of Keeper or Watcher Presence ×0.85, the player patrolling ×0.5, Static or a jammer ×0. A Hum‑touched faction's Lean is ×1.3, and each point of turned sub‑faction Presence adds 1 Hum a month.
 - **Decay**: a hold with no source nearby loses 2 Hum a month.
 - **Voices**: +4 per coffle delivered, +6 per hold Silenced, −25 per Harrowgate node destroyed, up to 200.
 - **Actions**: 1 a month, 2 from 5 Silenced. From 15 Silenced, a 25% chance each month of a march: an Opened gang war against a neighbouring Marked hold.
@@ -88,14 +88,18 @@ There's no clock. The Choir spreads hold by hold ([02](02-world.md#the-choirs-cr
 
 | Faction | Engine | Key numbers |
 |---|---|---|
-| The Lighthouse | Passage | +1 Lean a month to holds within 800 km that cross through its crossings. +0.5 per extra crossing, max +4. Shut off if any of its crossings tolls |
-| Sweetwell | Thirst | +2 a month to holds with water want ≥2 within 700 km, ×2 in the Long Heat. Shut‑off on a 4‑month cooldown. **The aquifer** level drops 8 a year (11 in a Long Heat year) |
+| The Lighthouse | Passage | +0.75 Lean a month to holds within 600 km that cross through its crossings. +0.25 per extra crossing, max +2. Shut off if any of its crossings tolls |
+| Sweetwell | Thirst | +1.5 a month to holds with water want ≥2 within 700 km, ×2 in the Long Heat. Shut‑off on a 4‑month cooldown. **The aquifer** level drops 8 a year (11 in a Long Heat year) |
 | Highwater | Freight | +1.5 a month on standing routes, ×2 in winter. 50% chance a month to extend a route by up to 300 km. A raid costs −3 along the whole route |
-| The Exchange | Debt | 30 barter a month to invest. Lends 5–15 barter to holds with a want ≥2. +2 a month slide until repaid (15% repay chance a month) |
+| The Exchange | Debt | 10 barter a month to invest. Lends 5–15 barter to holds with a want ≥2. +1.5 a month slide until repaid (15% repay chance a month) |
 | Burning Water | Fuel | +1 or +2 a month to fuel‑wanting holds within 900 km. Embargo: ×2 fuel price, and the hold submits (+5) or turns (−5), 50/50. Teeth raid the crude 25% of months |
 | Cerro | Walls | Fortifies one hold a month within 500 km. +2 a month per walled hold. +0.5 tolls on the Rio Grande bed |
 
-**Sub‑faction backing** adds Presence × 2 a month to the backed faction in every chapter hold.
+**Sub‑faction backing** adds Presence × 0.5 a month to the backed faction in every chapter hold.
+
+**Home rule** pulls the other way: every month, each hold that isn't a living faction's seat moves 1.5 points from its largest faction share back to independent. Influence has to be kept up. Without it, the factions swallowed the independents within two years in the M1 sim.
+
+**Faction actions** ([`factions.json`](../../data/rules/factions.json) `actions`): a show of force is +2 Lean in up to 3 holds within 300 km; buying out allies spends 12 barter (6 points); a faction claims territory by gang war at most once every 8 months.
 
 ## Time and pacing
 

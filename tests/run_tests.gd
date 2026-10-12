@@ -1,0 +1,180 @@
+## M1 unit tests for res://sim. No add-ons needed:
+##   godot --headless --path . --script res://tests/run_tests.gd
+## Exits 0 when every test passes, 1 otherwise.
+extends SceneTree
+
+const SimData := preload("res://sim/sim_data.gd")
+const RoadGraph := preload("res://sim/road_graph.gd")
+const World := preload("res://sim/world.gd")
+const Lean := preload("res://sim/lean.gd")
+const GangWar := preload("res://sim/gang_war.gd")
+const Conditions := preload("res://sim/conditions.gd")
+const Characters := preload("res://sim/characters.gd")
+
+var data
+var graph
+var failures := 0
+var checks := 0
+
+
+func _init() -> void:
+	data = SimData.new()
+	data.load_all()
+	graph = RoadGraph.new()
+	graph.build(data)
+	for t in [
+		"test_data_loads", "test_graph", "test_lean", "test_gang_war", "test_conditions",
+		"test_characters", "test_determinism", "test_invariants",
+	]:
+		var before := failures
+		call(t)
+		print(("PASS  " if failures == before else "FAIL  ") + t)
+	print("%d checks, %d failed" % [checks, failures])
+	quit(0 if failures == 0 else 1)
+
+
+func ok(cond: bool, what: String) -> void:
+	checks += 1
+	if not cond:
+		failures += 1
+		printerr("  failed: " + what)
+
+
+func test_data_loads() -> void:
+	ok(data.holds.size() == 130, "130 holds")
+	ok(data.edges.size() == 423, "423 road edges")
+	ok(data.factions["factions"].size() == 6, "6 factions")
+	ok(data.subfactions["subfactions"].size() == 16, "16 sub-factions")
+
+
+func test_graph() -> void:
+	ok(graph.dist["lighthouse"].size() == 130, "every hold reachable year-round from the Lighthouse")
+	ok(graph.km("lighthouse", "lighthouse") == 0.0, "zero distance to self")
+	ok(is_equal_approx(graph.km("lighthouse", "barrow"), graph.km("barrow", "lighthouse")), "distances symmetric")
+	var days: float = graph.travel_days("lighthouse", "barrow")
+	ok(days > 25.0 and days < 45.0, "the Sierra Coast is about a month from the Crossing (%.1f days)" % days)
+	var near: Array = graph.nearest("lighthouse", 400.0)
+	var sorted := true
+	for i in range(1, near.size()):
+		if graph.km("lighthouse", near[i - 1]) > graph.km("lighthouse", near[i]):
+			sorted = false
+	ok(sorted and not near.has("lighthouse"), "nearest() is sorted and excludes the source")
+
+
+func test_lean() -> void:
+	var l := {"independent": 77.0, "lighthouse": 23.0}
+	Lean.add(l, "sweetwell", 30.0)
+	ok(is_equal_approx(Lean.total(l), 100.0), "add keeps the total at 100")
+	ok(is_equal_approx(Lean.share(l, "independent"), 47.0), "add takes from independent first")
+	Lean.add(l, "sweetwell", 60.0)
+	ok(is_equal_approx(Lean.total(l), 100.0) and Lean.leans(l) == "sweetwell", "then from the largest share")
+	Lean.add(l, "sweetwell", -10.0)
+	ok(is_equal_approx(Lean.total(l), 100.0), "negative points go back to independent")
+	var c := {"independent": 50.0, "cerro": 30.0, "sweetwell": 20.0}
+	Lean.conquer(c, "exchange", 60.0)
+	ok(is_equal_approx(c["exchange"], 60.0) and is_equal_approx(Lean.total(c), 100.0), "conquest gives 60 and rescales the rest")
+	ok(is_equal_approx(c["cerro"], 12.0), "rest rescaled proportionally")
+	ok(Lean.leans({"independent": 45.0, "cerro": 40.0, "exchange": 15.0}) == "", "below 50 everywhere is contested")
+
+
+func test_gang_war() -> void:
+	var rng := RandomNumberGenerator.new()
+	var strong := {"troops": 80, "arms": 80, "training": 70, "tags": []}
+	var weak := {"troops": 15, "arms": 30, "training": 20, "tags": []}
+	var wins := 0
+	for i in 100:
+		rng.seed = i
+		if GangWar.resolve(strong, weak, 0, data.war, rng)["attacker_won"]:
+			wins += 1
+	ok(wins >= 95, "a much stronger gang wins (%d/100)" % wins)
+	wins = 0
+	for i in 100:
+		rng.seed = i
+		if GangWar.resolve(weak, strong, 2, data.war, rng)["attacker_won"]:
+			wins += 1
+	ok(wins == 0, "a weak gang never takes a walled hold from a strong one")
+	rng.seed = 7
+	var a: Dictionary = GangWar.resolve(strong, weak, 1, data.war, rng)
+	rng.seed = 7
+	var b: Dictionary = GangWar.resolve(strong, weak, 1, data.war, rng)
+	ok(a == b, "gang war is deterministic for a seed")
+	var opened := {"troops": 40, "arms": 30, "training": 20, "tags": ["opened"]}
+	var eff := GangWar.effective(opened, data.war)
+	ok(eff["no_morale"], "the Opened have no morale")
+	ok(GangWar.effective({"troops": 10, "arms": 50, "training": 50, "tags": ["well-disciplined"]}, data.war)["breaks_below"] == 20.0,
+		"well-disciplined gangs break only below 20")
+
+
+func test_conditions() -> void:
+	var w := World.new()
+	w.setup(data, graph, 1)
+	ok(Conditions.evaluate("leans(lighthouse) == lighthouse", w), "leans() of a seat")
+	ok(not Conditions.evaluate("aquifer < 50", w), "the aquifer starts at 100")
+	ok(Conditions.evaluate("walls(helena) >= 0 and lean(lighthouse, lighthouse) >= 99", w), "and-joined clauses")
+	ok(not Conditions.evaluate("cerro_walls(border)", w), "bare boolean clause")
+	ok(Conditions.evaluate("teeth_raids_last_6_months == 0", w), "no raids at the start")
+	ok(Conditions.evaluate("count(debtors on the Sixty-Five) >= 0", w), "count() with a region")
+	ok(Conditions.mentioned_holds("leans(arch) == lighthouse and leans(siege) == lighthouse", w.H) == ["arch", "lighthouse", "siege"],
+		"mentioned_holds finds hold ids")
+	# Every ambition condition in the data must parse and evaluate.
+	for f in data.factions["factions"]:
+		for st in f["ambition"]["stages"]:
+			Conditions.evaluate(st["when"], w)
+	ok(true, "all ambition conditions evaluate")
+
+
+func test_characters() -> void:
+	var r: Dictionary = data.characters
+	ok(Characters.check_chance(r, 60, "fair", 1) == 80, "check: 50 + (60 - 40) + 10 = 80")
+	ok(Characters.check_chance(r, 10, "brutal") == 5, "check floor is 5")
+	ok(Characters.check_chance(r, 100, "easy", 3) == 95, "check cap is 95")
+	ok(Characters.xp_to_next(1) == 100 and Characters.xp_to_next(10) == 3162, "XP curve 100 x level^1.5")
+	ok(is_equal_approx(Characters.health(50, 0), 70.0), "health 40 + hard x 0.6")
+	ok(is_equal_approx(Characters.hum_gain(10, 100), 5.0), "Weird 100 halves Hum gain")
+
+
+func test_determinism() -> void:
+	var a := World.new()
+	a.setup(data, graph, 42)
+	var b := World.new()
+	b.setup(data, graph, 42)
+	var c := World.new()
+	c.setup(data, graph, 43)
+	for m in 24:
+		a.world_turn()
+		b.world_turn()
+		c.world_turn()
+	ok(a.fingerprint() == b.fingerprint(), "same seed, same world after 24 months")
+	ok(a.events.size() == b.events.size(), "same seed, same Month Reports")
+	ok(a.fingerprint() != c.fingerprint(), "different seed, different world")
+
+
+func test_invariants() -> void:
+	var w := World.new()
+	w.setup(data, graph, 5)
+	var sil := w.silenced_count()
+	for m in 36:
+		w.world_turn()
+		ok(w.silenced_count() >= sil, "with no player, nothing is liberated (month %d)" % w.month)
+		sil = w.silenced_count()
+	var lean_ok := true
+	var stock_ok := true
+	var want_ok := true
+	var hum_ok := true
+	for id in w.H:
+		var h: Dictionary = w.H[id]
+		if h["lean"] != null and not is_equal_approx(Lean.total(h["lean"]), 100.0):
+			lean_ok = false
+		for g in h["stock"]:
+			if float(h["stock"][g]) < 0.0:
+				stock_ok = false
+		for g in h["want"]:
+			if int(h["want"][g]) < 0 or int(h["want"][g]) > 3:
+				want_ok = false
+		if h["hum"] < 0.0 or h["hum"] > 100.0 or (h["silenced"] != (h["lean"] == null)):
+			hum_ok = false
+	ok(lean_ok, "every live hold's Lean sums to 100")
+	ok(stock_ok, "no negative stock")
+	ok(want_ok, "wants stay within 0-3")
+	ok(hum_ok, "Hum within 0-100, and only Silenced holds lose their Lean")
+	ok(w.history.size() == 37, "a metric snapshot per month")

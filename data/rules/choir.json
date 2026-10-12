@@ -47,7 +47,7 @@
    "static_or_jammer": 0.0,
    "player_patrolling": 0.5
   },
-  "turned_presence_per_point": 4
+  "turned_presence_per_point": 1
  },
  "voices": {
   "_doc": "The Choir's strength: people taken in. Speeds the seep.",

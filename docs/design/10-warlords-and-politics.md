@@ -29,7 +29,7 @@
 It resolves in this order, with every step logged for the Month Report:
 
 1. **Ambitions advance**: each faction checks the condition of its next ambition stage. A met stage fires: a Month Report line, new targets, and sometimes a war. Threats move ([05](05-events.md#how-an-event-is-chosen)).
-2. **Influence engines run**: each faction applies its engine (passage, thirst, freight and winter, debt, fuel, walls). Then **sub‑faction backing** adds Presence × 2 to the backed faction's drift in every hold where the sub‑faction has a chapter.
+2. **Influence engines run**: each faction applies its engine (passage, thirst, freight and winter, debt, fuel, walls). Then **sub‑faction backing** adds Presence × 0.5 to the backed faction's drift in every hold where the sub‑faction has a chapter.
 3. **Warlord actions**: each faction's warlord gets 1–3 actions, depending on grip, chosen by weighted AI from this list, weighted by drive, temperament and ambition ([`factions.json`](../../data/rules/factions.json)):
 
 | Action | Rule |
@@ -43,7 +43,7 @@ It resolves in this order, with every step logged for the Month Report:
 | **Demand tribute** | Leaning holds pay. A want rises if they can't. |
 
 4. **Hold economy**: stock regenerates from surplus. Wants above 2 create or worsen **afflictions**. Category price indexes drift.
-5. **Lean settles**: holds below 50 for everyone become **contested**. Warlords whose holds are contested lose grip.
+5. **Lean settles**: holds below 50 for everyone become **contested**. Warlords whose holds are contested lose grip. **Home rule** moves 1.5 points a month from each hold's largest faction share back to independent (seats excepted), so influence has to be kept up.
 6. **Sub‑factions act**: each takes one verb (Grow, Work, Raid, Preach, Hide, Strike, Back), and Turning progress rises for Hum‑touched sub‑factions ([18](18-sub-factions.md#subfactions-in-the-world-turn)).
 7. **Wanderer AI**: every named wandering NPC takes one verb (*Move, Attack, Flee, Seek work, Work, Train, Wait, Meet*).
 8. **The Choir's turn**: Hum seeps from Silenced holds; the Choir takes its actions (1, or 2 from **Spreading**: coffles, cantors, turning; marches from **Marching**); voices and reach update; League tension moves (see [02](02-world.md#the-choirs-creep-no-clock) and [17](17-factions.md#the-choir-the-nobunaga-faction)).

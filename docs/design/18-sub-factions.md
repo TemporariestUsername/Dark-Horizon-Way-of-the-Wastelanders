@@ -32,7 +32,7 @@ Your class sets some starting Standings: the Chopper starts at +25 with the Teet
 
 ### Backing (how sub‑factions move Lean)
 - Each sub‑faction backs **at most one faction** at a time, or none.
-- **In every hold where it has Presence, a backing sub‑faction adds Presence × 2 to its faction's Lean drift each month.** Five Keeper chapters backing the Lighthouse is real political weight. Five Teeth chapters backing nobody is a lot of unused weight.
+- **In every hold where it has Presence, a backing sub‑faction adds Presence × 0.5 to its faction's Lean drift each month.** It's slow, steady weight: five Keeper chapters backing the Lighthouse hold its bridges' towns for it year after year. Five Teeth chapters backing nobody is a lot of unused weight.
 - **Switching backing**:
   - In the world turn, sub‑factions shift toward whoever feeds their **want**.
   - The player can shift a sub‑faction's backing with Standing +75 and a Hot check against its leader, with bonuses for giving it a reason it actually cares about.
@@ -59,8 +59,8 @@ At Standing −50 or worse, or whenever its want collides with your plans, a sub
 - secret societies are Brutes/*Family*, or a Grotesque if they've been turned
 
 ### Turned by the Choir
-**Hum‑touched** sub‑factions (the Family and the Cross‑folk at the start, and any sub‑faction whose leader reaches Hum exposure 50) carry hidden **Turning progress** from 0 to 100. It rises each month (the Family by 2 from the start, the Cross‑folk by 3 once the Choir is **Spreading**), and by 10 each time a cantor works on them.
-- At 100, the sub‑faction **is turned**. Its chapters become Choir instruments: every point of Presence adds 4 Hum a month to that hold, so **a hold with a turned chapter can be Silenced from inside, with no march at all.**
+**Hum‑touched** sub‑factions (the Family and the Cross‑folk at the start, and any sub‑faction whose leader reaches Hum exposure 50) carry hidden **Turning progress** from 0 to 100. It rises each month (the Family by 1.5 from the start, the Cross‑folk by 2 once the Choir is **Spreading**), and by 10 each time a cantor works on them.
+- At 100, the sub‑faction **is turned**. Its chapters become Choir instruments: every point of Presence adds 1 Hum a month to that hold, on top of any seep and past every defence, so **a hold with a turned chapter can be Silenced from inside, with no march at all.**
 - **Preventing it**: each Hum‑touched sub‑faction has an arc. Each arc beat takes 20 off its Turning; persuading its leader (a Hot check) or exposing the Choir's agent inside it takes 40. Its Turning progress is visible in your journal once you reach Standing +25.
 - This is the main reason to care about cults and secret societies you'd otherwise ignore.
 

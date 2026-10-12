@@ -39,7 +39,7 @@
   "max": 3
  },
  "backing": {
-  "drift_points_per_presence": 2.0,
+  "drift_points_per_presence": 0.5,
   "switch_needs_standing": 75,
   "ai_switch_chance_when_want_fed_elsewhere": 0.3
  },
@@ -80,11 +80,11 @@
   "_doc": "Hum-touched sub-factions carry hidden Turning progress 0-100. At 100 they're turned: their chapters let a hold be Silenced from inside.",
   "per_month": {
    "family": {
-    "rate": 2,
+    "rate": 1.5,
     "from_reach": "whispers"
    },
    "cross_folk": {
-    "rate": 3,
+    "rate": 2,
     "from_reach": "spreading"
    }
   },

@@ -1,0 +1,31 @@
+name: M1 sim
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  sim:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate data
+        run: python3 tools/validate_data.py
+
+      - name: Get Godot (pinned, checksum-verified)
+        run: echo "GODOT=$(tools/get_godot.sh)" >> "$GITHUB_ENV"
+
+      - name: Unit tests
+        run: timeout 300 "$GODOT" --headless --path . --script res://tests/run_tests.gd
+
+      - name: Balance report (50 seeds x 120 months)
+        run: timeout 900 "$GODOT" --headless --path . --script res://tools/sim_runner.gd -- --months 120 --seeds 50
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: m1-balance-report
+          path: tools/out/
