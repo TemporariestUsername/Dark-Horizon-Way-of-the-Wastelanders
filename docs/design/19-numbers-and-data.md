@@ -21,7 +21,9 @@ The design bible's rules are now **data** that the M1 simulation can load. This 
 | [`rules/equipment.json`](../../data/rules/equipment.json) | Weapons, armour, rig guns, frames, hood ornaments | Yes |
 | [`rules/disciplines.json`](../../data/rules/disciplines.json) | The twelve disciplines' techniques as battle data | Yes |
 | [`rules/battle.json`](../../data/rules/battle.json) | Skirmish and road‑war rules, statuses, the Choir in battle, encounter targets | Yes |
-| [`units/units.json`](../../data/units/units.json) | Enemy units and rated encounters | Yes |
+| [`units/units.json`](../../data/units/units.json) | Enemy units, rated encounters, crews, rated convoys and the standard party convoys | Yes |
+| [`events/events.json`](../../data/events/events.json) | 43 event cards: road, encounter and hold events with choices and effects | Yes |
+| [`events/threats.json`](../../data/events/threats.json) | 12 threats, the event draw's tuning, and the event bench's routes and targets | Yes |
 
 **Tools** (Python 3, in [`tools/`](../../tools)):
 - `validate_data.py` checks every file against the others and against the [Gazetteer](16-gazetteer.md): names, tiers, bosses and Lean must match. It's run before every commit and in CI from M1.
@@ -161,3 +163,12 @@ What the first road‑war runs changed:
 - **Either leader can call the duel**, a leader aboard fights alongside the crew, and nobody comes alongside a leader who'd win it. Hard convoys carry level‑matched captains, and the mid‑game party convoy is an Interceptor, a ute with a rocket rack and a half‑track.
 
 **Findings to watch:** fair skirmishes leave the party at 20–40% of its HP with one or two members down; the Catchers, Wellguard and Sings‑Back skirmishes run 14–17 rounds, past the 10‑round pacing target; leader duels decide road wars whenever one leader clearly outclasses the other; and three convoys sit near the edges of their windows.
+
+## M2: events
+The [event bench](../reports/m2-event-bench.md) drives nine routes 200 times each, from a short Delta run to the Sierra Coast voyage and the Ten after six years of the Choir. **Every route passes**: 0.47–0.63 road events a road day (target 0.3–0.7), 0.7–2.8 battles every 10 days (target 0.5–3), every convoy arrives, no lethal event fires unwarned, and bad events never run more than three in a row. What the first runs changed:
+- **"Nothing happens" weighs 40** and encounters count four times their weight. At first, events fired on four days in five and fights hardly at all.
+- **The sensible‑player policy weighs win chance** (from the fight's rating and the level gap) against losing half the cargo, and won fights pay loot. Otherwise it either fought everything or nothing.
+- **Road bandits** were added: the early roads had no fights a level‑2 party should take.
+- **Dremmer** now leads his own battle rig as a level‑6 boss, after a level‑5 raider boss lost every duel to a level‑6 Driver.
+
+**Findings to watch:** long legs run dry (the Rag‑Wastes in summer, the Sierra Coast voyage at about 50 days against 31), so water capacity and stashes will matter; and the early roads carry the Catchers, who outclass a new party.

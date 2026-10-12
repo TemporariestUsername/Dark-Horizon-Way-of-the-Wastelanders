@@ -4,13 +4,15 @@
 
 A single‑player, open‑world exploration, trade and survival RPG for **Windows and macOS**, set in **Apocalypse World** (licensed). For a generation the maelstrom made every road deadly. Now it has eased, and the old interstates are this world's uncharted seas. It brings together the gameplay philosophy of Koei's **Uncharted Waters: New Horizons** (career freedom, scarcity of range, trade as the engine, investment as conquest, discovery) and **Inindo: Way of the Ninja** (a living political map that changes every month, NPCs with their own lives, power learned at strange places, and a tyrant whose shadow keeps growing). The **mechanics** come from those two games; **Apocalypse World** supplies the classes, the setting and the ambiance. The look is **full‑colour pixel art inspired by Mad Max**.
 
-**Status:** design bible (M0) complete; the world and rules exist as validated data in [`data/`](data/README.md). **M1, the headless simulation, runs in Godot 4.4**: the whole world turn for all 130 holds, the six factions, the sub‑factions and the Choir, with unit tests and a balance report ([latest](docs/reports/m1-balance-report.md)). See [`sim/`](sim/README.md).
+**Status:** design bible (M0) complete; the world and rules exist as validated data in [`data/`](data/README.md). **M1, the headless simulation, runs in Godot 4.4**: the whole world turn for all 130 holds, the six factions, the sub‑factions and the Choir ([balance report](docs/reports/m1-balance-report.md)). **M2's simulation is in**: the classes, skirmishes, road wars and the event system, each with a balance bench ([battles](docs/reports/m2-battle-bench.md), [events](docs/reports/m2-event-bench.md)) and a text UI for the event cards. Playable Godot scenes come next. See [`sim/`](sim/README.md).
 
 ```sh
 python3 tools/validate_data.py                                   # must say "data OK"
 GODOT=$(tools/get_godot.sh)                                      # pinned Godot 4.4.1 (Linux), checksum-verified
 "$GODOT" --headless --path . --script res://tests/run_tests.gd   # unit tests
-"$GODOT" --headless --path . --script res://tools/sim_runner.gd -- --months 120 --seeds 200   # balance report
+"$GODOT" --headless --path . --script res://tools/sim_runner.gd -- --months 120 --seeds 200   # world balance report
+"$GODOT" --headless --path . --script res://tools/battle_bench.gd -- --fights 500            # skirmish and road-war balance
+"$GODOT" --headless --path . --script res://tools/journey.gd -- --from lighthouse --to dustwich --play   # play the event cards
 ```
 
 ## Start here

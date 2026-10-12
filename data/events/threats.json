@@ -1,0 +1,264 @@
+{
+ "_doc": "Threats as data (docs/design/05-events.md): named gangs, beasts and afflictions with a place on the map. A threat is present when the convoy is within roams_km of its hold by road (or anywhere, or near a hold with Hum >= hum_zone). Its warning_events must fire before its lethal events can (anti-frustration rule 1).",
+ "quiet_weight": 40,
+ "warning_memory_days": 45,
+ "repeat_penalty_days": 10,
+ "repeat_penalty": 0.1,
+ "bad_streak_breather": 3,
+ "danger_ring": {
+  "centre": 0.5,
+  "closer": 1.0,
+  "farther": 1.5,
+  "notional": 3.0
+ },
+ "threats": [
+  {
+   "id": "teeth",
+   "name": "Dremmer's Teeth",
+   "kind": "brute/hunting_pack",
+   "aim": "tribute and the open road",
+   "at": "teeth",
+   "roams_km": 550,
+   "warning_events": [
+    "teeth_sign",
+    "dust_plume"
+   ],
+   "events": [
+    "teeth_outriders",
+    "teeth_raid",
+    "dremmers_battle_rig"
+   ]
+  },
+  {
+   "id": "catchers",
+   "name": "Tum Tum's Catchers",
+   "kind": "brute/hunting_pack",
+   "aim": "take people for the Choir",
+   "at": "mudflat",
+   "roams_km": 400,
+   "warning_events": [
+    "empty_camp"
+   ],
+   "events": [
+    "catchers_coffle",
+    "catchers_roadblock"
+   ]
+  },
+  {
+   "id": "gar",
+   "name": "The Gar",
+   "kind": "brute/hunting_pack",
+   "aim": "the river",
+   "at": "barge_town",
+   "roams_km": 250,
+   "warning_events": [
+    "gar_on_the_river"
+   ],
+   "events": [
+    "gar_ambush"
+   ]
+  },
+  {
+   "id": "twister_riders",
+   "name": "The Twister Riders",
+   "kind": "brute/hunting_pack",
+   "aim": "the storm and what it leaves",
+   "at": "stockade",
+   "roams_km": 450,
+   "warning_events": [
+    "dust_plume"
+   ],
+   "events": [
+    "twister_riders_raid"
+   ]
+  },
+  {
+   "id": "whiteout",
+   "name": "The Whiteout",
+   "kind": "brute/hunting_pack",
+   "aim": "the winter roads",
+   "at": "mill_town",
+   "roams_km": 400,
+   "seasons": [
+    "winter"
+   ],
+   "warning_events": [
+    "white_flags"
+   ],
+   "events": [
+    "whiteout_raid"
+   ]
+  },
+  {
+   "id": "bounty_hunter",
+   "name": "A bounty hunter out of Gallows",
+   "kind": "vehicle/vicious_bastard",
+   "aim": "a price on someone's head",
+   "at": "gallows",
+   "roams_km": 700,
+   "warning_events": [
+    "bar_rumor"
+   ],
+   "events": [
+    "bounty_hunter"
+   ]
+  },
+  {
+   "id": "wellguard",
+   "name": "Grome's Wellguard",
+   "kind": "brute/enforcers",
+   "aim": "the Ration",
+   "at": "sweetwell",
+   "roams_km": 450,
+   "warning_events": [],
+   "events": [
+    "wellguard_patrol",
+    "wellguard_tankers"
+   ]
+  },
+  {
+   "id": "glass_eyes",
+   "name": "Glass-eyes",
+   "kind": "grotesque/mutant",
+   "aim": "hunger",
+   "at": "mirror_town",
+   "roams_km": 450,
+   "warning_events": [
+    "glass_tracks"
+   ],
+   "events": [
+    "glass_eyes"
+   ]
+  },
+  {
+   "id": "scavvers",
+   "name": "Scavvers",
+   "kind": "brute/hunting_pack",
+   "aim": "your stores",
+   "anywhere": true,
+   "warning_events": [],
+   "events": [
+    "scavvers_in_stores",
+    "scavver_pack"
+   ]
+  },
+  {
+   "id": "the_opened",
+   "name": "The Opened",
+   "kind": "grotesque/mindfucker",
+   "aim": "to bring you to Harrowgate",
+   "hum_zone": 30,
+   "warning_events": [
+    "radio_singing"
+   ],
+   "events": [
+    "opened_on_the_overpass"
+   ]
+  },
+  {
+   "id": "cantors",
+   "name": "Choir cantors",
+   "kind": "grotesque/mindfucker",
+   "aim": "to open your brain",
+   "hum_zone": 60,
+   "warning_events": [
+    "radio_singing"
+   ],
+   "events": [
+    "cantor"
+   ]
+  },
+  {
+   "id": "bandits",
+   "name": "Road bandits",
+   "kind": "brute/hunting_pack",
+   "aim": "whatever you're carrying",
+   "anywhere": true,
+   "warning_events": [],
+   "events": [
+    "bandits"
+   ]
+  }
+ ],
+ "targets": {
+  "_doc": "Checked by tools/event_bench.gd over many journeys per route. Battles follow docs/design/03-core-loops.md (8-12 road days and 1-3 scenes or battles a month). Road events are small cards; dangerous regions (the Rag-Wastes in the Long Heat, Hum zones) are meant to be busier, so the ceiling is 0.7 a road day.",
+  "events_per_road_day": [
+   0.3,
+   0.7
+  ],
+  "battles_per_10_days": [
+   0.5,
+   3.0
+  ],
+  "arrival_min": 0.95,
+  "lethal_unwarned": 0,
+  "max_bad_streak": 3
+ },
+ "bench_routes": [
+  {
+   "from": "lighthouse",
+   "to": "dustwich",
+   "level": 3,
+   "month": 3,
+   "note": "The Crossing to the Ten, spring"
+  },
+  {
+   "from": "gnarly",
+   "to": "siege",
+   "level": 2,
+   "month": 4,
+   "note": "A short Delta run"
+  },
+  {
+   "from": "sweetwell",
+   "to": "last_stop",
+   "level": 4,
+   "month": 7,
+   "note": "The Rag-Wastes in the Long Heat"
+  },
+  {
+   "from": "highwater",
+   "to": "motor",
+   "level": 4,
+   "month": 1,
+   "note": "The Lakes in winter"
+  },
+  {
+   "from": "lighthouse",
+   "to": "barrow",
+   "level": 5,
+   "month": 3,
+   "note": "The long voyage to the Sierra Coast"
+  },
+  {
+   "from": "capitol",
+   "to": "dustwich",
+   "level": 5,
+   "month": 3,
+   "world_months": 72,
+   "note": "The Ten after six years of the Choir"
+  },
+  {
+   "from": "exchange",
+   "to": "neon",
+   "level": 4,
+   "month": 3,
+   "note": "The Glass"
+  },
+  {
+   "from": "lighthouse",
+   "to": "gallows",
+   "level": 4,
+   "month": 10,
+   "note": "The Forty in twister season"
+  },
+  {
+   "from": "highwater",
+   "to": "mill_town",
+   "level": 5,
+   "month": 1,
+   "note": "The Whiteout's winter roads"
+  }
+ ],
+ "encounter_weight": 4.0
+}

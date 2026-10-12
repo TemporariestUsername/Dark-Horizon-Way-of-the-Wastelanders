@@ -1,0 +1,55 @@
+From Sweetwell to Last Stop: 2 legs, about 7 days.
+
+Day 2, near Sweetwell (The Thirty‑Five, spring)
+The riverbed you were driving on remembers it's a river. Brown water, fast, rising, full of what it picked up upstream.
+  1) Get to high ground and wait
+  2) Race it across  [Cool check, hard: 58%]
+> Get to high ground and wait
+  1 day(s)
+
+Day 4, near Gullet (The Bravo, spring)
+A car across the off-ramp, hood up, a man waving like he needs help. Four more in the ditch with pipes and a pistol between them. They've done this before.
+  1) Fight
+  2) Pay them to move the car
+  3) Ram through  [Cool check, fair: 78%]
+> Fight
+  Skirmish: Road bandits. Won in 6 rounds.
+  Loot: 2 barter.
+Day 4: Gullet. You resupply for 1.1 barter.
+
+Day 4, near Gullet (The Bravo, spring)
+The bar's loud and the liquor's cut with something. A driver at the end of the counter wants to tell you about the road.
+  1) Buy a round and listen
+  2) Drink alone
+> Buy a round and listen
+  barter -0.2, warned: Grome's Wellguard, rumor: "Word is Grome's Wellguard are out there, near Sweetwell."
+
+Day 5, near Gullet (The Bravo, spring)
+Wellguard in sealed suits wave you down. Papers, they say. Water chits. The Ration.
+  1) Pay for water you didn't take
+  2) Refuse
+> Pay for water you didn't take
+  barter -1
+
+Day 6, near Gullet (The Bravo, spring)
+The radio stops being static and starts being voices. Then your crew's voices. Then the old roar, the one nobody under thirty remembers, right there on this stretch of road.
+  1) Wait it out
+  2) Find the quiet way through  [Weird check, fair: 44%]
+  3) Turn around and detour
+> Turn around and detour
+  0.5 day(s)
+
+Day 8, near Gullet (The Bravo, spring)
+A Wellguard tanker convoy, low and heavy, sloshing. Enough water to buy a hold.
+  1) Hit the tankers
+  2) Let them pass
+> Let them pass
+
+Day 8, near Last Stop (The Rag‑Wastes, spring)
+The horizon goes brown, then it comes for you. Sand in the teeth, sand in the fuel line, the sun a dull coin you could stare at all day.
+  1) Hunker down and wait it out
+  2) Push through it  [Cool check, fair: 78%]
+> Push through it (78%: success)
+Day 10: Out of guzzoline. A trader's rig stops, and sells you six cans at double the price.
+Day 10: Last Stop. You resupply for 1.9 barter.
+Arrived after 10.5 days. Cargo 100%, barter 5.9, morale 80.

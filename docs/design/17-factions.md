@@ -214,7 +214,7 @@ About 70% of holds start independent: the open ground every faction is racing to
 - **Holds**: Cerro (seat), Desierto (Saltillo), Gemela (Nuevo Laredo), Soto.
 - **Covets**: **Border** (Laredo), contested with Sweetwell. **Falcon** (the dam, and its water). **Tampico** (fuel, which puts it against Burning Water).
 
-**Look and speech.** Cement grey, rebar crowns, slag walls, steel shields, war rigs plated like tanks. They speak formal Spanish‑inflected English, following the [southern voice guide](02-world.md#voice-the-bravo-and-the-sierra-coast): "*Pues, you want walls or you want to die? Choose. We're busy.*"
+**Look and speech.** Cement grey, rebar crowns, slag walls, steel shields, battle rigs plated like tanks. They speak formal Spanish‑inflected English, following the [southern voice guide](02-world.md#voice-the-bravo-and-the-sierra-coast): "*Pues, you want walls or you want to die? Choose. We're busy.*"
 
 **Inside.**
 - **Abe** at Desierto thinks Otilia builds walls when she should be building roads.
@@ -223,7 +223,7 @@ About 70% of holds start independent: the open ground every faction is racing to
 
 **Economy.** Surplus: machinery, weaponry, fortifications. Want: fresh food and drinking water.
 
-**Military.** The heaviest on the map. Walls, steel‑plated war rigs (Armor 15) and siege engineers (troops 45, arms 85, training 60, *siege*). Slow, but nothing takes a Cerro wall.
+**Military.** The heaviest on the map. Walls, steel‑plated battle rigs (Armor 15) and siege engineers (troops 45, arms 85, training 60, *siege*). Slow, but nothing takes a Cerro wall.
 
 **Influence engine: Walls.** Cerro builds fortifications for client holds under **protection contracts**, and every hold with Cerro walls drifts toward Cerro. It also tolls the **Bravo riverbed road**.
 

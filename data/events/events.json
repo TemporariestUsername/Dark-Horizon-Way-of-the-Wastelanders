@@ -1,0 +1,1331 @@
+{
+ "_doc": "Event cards (docs/design/05-events.md): road, encounter and hold events in the Apocalypse World voice. weight = base x region and season fit x danger ring (bad, lethal) x threat present x supplies x repeat penalty, drawn by sim/events/event_system.gd. Choices are safe, or a check with a shown chance (attr, difficulty, skill). Effects: days, water, chow, fuel, ammo, morale, hp (each party member), cargo (share), barter, repairs (barter), hum, xp_road, renown_*, rep_nearby, rumor, recruit, warn (a threat), battle ('skirmish:<encounter>' or 'road:<convoy>'), on_win. 'regions'/'seasons' scale weight; 'regions_only'/'seasons_only' restrict. 'needs_warning' events can't fire unless their threat was warned recently (the anti-frustration rule).",
+ "events": [
+  {
+   "id": "dust_storm",
+   "kind": "road",
+   "tone": "bad",
+   "weight": 3,
+   "text": "The horizon goes brown, then it comes for you. Sand in the teeth, sand in the fuel line, the sun a dull coin you could stare at all day.",
+   "choices": [
+    {
+     "label": "Hunker down and wait it out",
+     "effects": {
+      "days": 1,
+      "water": -1,
+      "morale": -3
+     }
+    },
+    {
+     "label": "Push through it",
+     "check": {
+      "attr": "cool",
+      "difficulty": "fair",
+      "skill": "driving"
+     },
+     "success": {
+      "days": 0
+     },
+     "failure": {
+      "days": 1,
+      "hp": -8,
+      "morale": -5,
+      "repairs": 1
+     }
+    }
+   ],
+   "regions": {
+    "the rag-wastes": 3,
+    "the thirty-five": 2,
+    "the forty": 2,
+    "the twenty": 1.5,
+    "the bravo": 1.5
+   },
+   "seasons": {
+    "summer": 1.5,
+    "autumn": 1.5
+   },
+   "regions_only": [
+    "the rag-wastes",
+    "the thirty-five",
+    "the forty",
+    "the twenty",
+    "the bravo",
+    "the ten",
+    "the glass",
+    "the seventy",
+    "the sixty-five"
+   ]
+  },
+  {
+   "id": "howl",
+   "kind": "road",
+   "tone": "bad",
+   "weight": 1.5,
+   "text": "The radio stops being static and starts being voices. Then your crew's voices. Then the old roar, the one nobody under thirty remembers, right there on this stretch of road.",
+   "choices": [
+    {
+     "label": "Wait it out",
+     "effects": {
+      "days": 1,
+      "morale": -5
+     }
+    },
+    {
+     "label": "Find the quiet way through",
+     "check": {
+      "attr": "weird",
+      "difficulty": "fair",
+      "skill": "lore"
+     },
+     "success": {
+      "xp_road": 20
+     },
+     "failure": {
+      "morale": -10,
+      "hum": 5
+     }
+    },
+    {
+     "label": "Turn around and detour",
+     "effects": {
+      "days": 0.5
+     }
+    }
+   ],
+   "hum_weight": 2.0
+  },
+  {
+   "id": "break_ahead",
+   "kind": "road",
+   "tone": "neutral",
+   "weight": 3,
+   "text": "The overpass is down across all lanes, a concrete slab the size of a hold, rebar sticking out like broken fingers.",
+   "choices": [
+    {
+     "label": "Detour",
+     "effects": {
+      "days": 0.5
+     }
+    },
+    {
+     "label": "Clear a way",
+     "effects": {
+      "days": 1,
+      "xp_road": 15,
+      "rumor": "You clear a break; the News will pay for that on a chart."
+     }
+    },
+    {
+     "label": "Squeeze through on the shoulder",
+     "check": {
+      "attr": "cool",
+      "difficulty": "hard",
+      "skill": "driving"
+     },
+     "success": {},
+     "failure": {
+      "repairs": 2,
+      "hp": -5
+     }
+    }
+   ]
+  },
+  {
+   "id": "rot",
+   "kind": "road",
+   "tone": "bad",
+   "weight": 2,
+   "text": "Something in the chow crates has turned. You can smell it from the cab.",
+   "choices": [
+    {
+     "label": "Throw out the bad crates",
+     "effects": {
+      "chow": -2
+     }
+    },
+    {
+     "label": "Eat it anyway",
+     "check": {
+      "attr": "hard",
+      "difficulty": "fair",
+      "skill": "medicine"
+     },
+     "success": {},
+     "failure": {
+      "hp": -10,
+      "morale": -5
+     }
+    }
+   ],
+   "seasons": {
+    "summer": 2
+   },
+   "needs": {
+    "chow_min": 3
+   }
+  },
+  {
+   "id": "bad_water",
+   "kind": "road",
+   "tone": "bad",
+   "weight": 1.5,
+   "text": "The water from the last cask is green at the bottom. Somebody's already drunk some.",
+   "choices": [
+    {
+     "label": "Boil it",
+     "effects": {
+      "fuel": -1
+     }
+    },
+    {
+     "label": "Drink it anyway",
+     "check": {
+      "attr": "hard",
+      "difficulty": "fair",
+      "skill": "medicine"
+     },
+     "success": {},
+     "failure": {
+      "hp": -10,
+      "morale": -5
+     }
+    },
+    {
+     "label": "Pour it out",
+     "effects": {
+      "water": -2,
+      "morale": -3
+     }
+    }
+   ],
+   "regions": {
+    "the delta": 3,
+    "the crossing": 1.5,
+    "the ten": 1.5
+   },
+   "needs": {
+    "water_min": 3
+   }
+  },
+  {
+   "id": "flash_flood",
+   "kind": "road",
+   "tone": "bad",
+   "weight": 2,
+   "text": "The riverbed you were driving on remembers it's a river. Brown water, fast, rising, full of what it picked up upstream.",
+   "choices": [
+    {
+     "label": "Get to high ground and wait",
+     "effects": {
+      "days": 1
+     }
+    },
+    {
+     "label": "Race it across",
+     "check": {
+      "attr": "cool",
+      "difficulty": "hard",
+      "skill": "driving"
+     },
+     "success": {},
+     "failure": {
+      "cargo": -0.2,
+      "hp": -5,
+      "morale": -5
+     }
+    }
+   ],
+   "seasons_only": [
+    "spring"
+   ],
+   "regions": {
+    "the bravo": 2,
+    "the forty": 1.5,
+    "the rag-wastes": 1.5,
+    "the delta": 1.5
+   }
+  },
+  {
+   "id": "twister",
+   "kind": "road",
+   "tone": "bad",
+   "weight": 2,
+   "text": "Green sky. Then the sound, like a freight train with nowhere to stop. Two funnels, then three, walking across the flats toward the interstate.",
+   "choices": [
+    {
+     "label": "Get under an overpass and pray",
+     "effects": {
+      "days": 1,
+      "morale": -3
+     }
+    },
+    {
+     "label": "Outrun them",
+     "check": {
+      "attr": "cool",
+      "difficulty": "fair",
+      "skill": "driving"
+     },
+     "success": {
+      "xp_road": 20
+     },
+     "failure": {
+      "hp": -10,
+      "morale": -5,
+      "repairs": 1
+     }
+    }
+   ],
+   "seasons_only": [
+    "autumn",
+    "spring"
+   ],
+   "regions_only": [
+    "the forty",
+    "the twenty",
+    "the seventy",
+    "the sixty-five",
+    "the crossing"
+   ]
+  },
+  {
+   "id": "ice_groans",
+   "kind": "road",
+   "tone": "bad",
+   "weight": 2,
+   "text": "The ice road groans under the rigs. A crack runs out ahead of you, white on grey, faster than you'd like.",
+   "choices": [
+    {
+     "label": "Slow down and spread the convoy out",
+     "effects": {
+      "days": 0.5
+     }
+    },
+    {
+     "label": "Keep going",
+     "check": {
+      "attr": "cool",
+      "difficulty": "fair",
+      "skill": "driving"
+     },
+     "success": {},
+     "failure": {
+      "cargo": -0.2,
+      "morale": -5
+     }
+    }
+   ],
+   "seasons_only": [
+    "winter"
+   ],
+   "regions_only": [
+    "the lakes",
+    "the seventy-five"
+   ]
+  },
+  {
+   "id": "long_heat",
+   "kind": "road",
+   "tone": "bad",
+   "weight": 2,
+   "text": "Noon. The asphalt's soft enough to take a bootprint, and the water casks are warm as blood.",
+   "choices": [
+    {
+     "label": "Drive by night",
+     "effects": {
+      "days": 0.5
+     }
+    },
+    {
+     "label": "Push on and drink",
+     "effects": {
+      "water": -2
+     }
+    }
+   ],
+   "seasons_only": [
+    "summer"
+   ],
+   "regions": {
+    "the glass": 2,
+    "the rag-wastes": 2,
+    "the thirty-five": 2,
+    "the ten": 1.5
+   }
+  },
+  {
+   "id": "pileup",
+   "kind": "road",
+   "tone": "good",
+   "weight": 2,
+   "text": "A thousand dead cars, nose to tail for a mile, rusted together where they stopped twenty-five years ago. Some of them still have their windows up.",
+   "choices": [
+    {
+     "label": "Salvage for a day",
+     "check": {
+      "attr": "sharp",
+      "difficulty": "fair",
+      "skill": "scouting"
+     },
+     "success": {
+      "days": 1,
+      "barter": 3,
+      "xp_road": 15
+     },
+     "failure": {
+      "days": 1,
+      "battle": "skirmish:scavvers"
+     }
+    },
+    {
+     "label": "Drive on",
+     "effects": {}
+    }
+   ]
+  },
+  {
+   "id": "straggler_camp",
+   "kind": "road",
+   "tone": "good",
+   "weight": 2.5,
+   "text": "A camp at the off-ramp: tarps, a cookfire, a dozen people who stopped running from the Howling and never started again.",
+   "choices": [
+    {
+     "label": "Trade with them",
+     "effects": {
+      "barter": 1,
+      "water": 2,
+      "rumor": "The stragglers know where the road's broken further on."
+     }
+    },
+    {
+     "label": "Dig for water nearby",
+     "check": {
+      "attr": "sharp",
+      "difficulty": "fair"
+     },
+     "success": {
+      "water": 4
+     },
+     "failure": {
+      "days": 0.5
+     }
+    },
+    {
+     "label": "Take what they have",
+     "effects": {
+      "barter": 2,
+      "water": 3,
+      "morale": -5,
+      "renown_raider": 10,
+      "rep_nearby": -1
+     }
+    }
+   ]
+  },
+  {
+   "id": "lone_traveller",
+   "kind": "road",
+   "tone": "neutral",
+   "weight": 2,
+   "text": "A woman walking the median, a bedroll and a rifle with no bolt. She doesn't wave. She doesn't run, either.",
+   "choices": [
+    {
+     "label": "Share water and ask about the road",
+     "effects": {
+      "water": -1,
+      "rumor": "She came from the next hold. The bridge is still up.",
+      "rep_nearby": 1
+     }
+    },
+    {
+     "label": "Leave her be",
+     "effects": {}
+    },
+    {
+     "label": "Take the rifle",
+     "effects": {
+      "barter": 0.5,
+      "morale": -5
+     }
+    }
+   ]
+  },
+  {
+   "id": "abandoned_rig",
+   "kind": "road",
+   "tone": "good",
+   "weight": 1.5,
+   "text": "A hauler on its side in the ditch, doors open, cargo gone. The engine looks untouched.",
+   "choices": [
+    {
+     "label": "Strip it for parts",
+     "check": {
+      "attr": "sharp",
+      "difficulty": "fair",
+      "skill": "wrenching"
+     },
+     "success": {
+      "days": 0.5,
+      "barter": 2,
+      "fuel": 3
+     },
+     "failure": {
+      "days": 0.5
+     }
+    },
+    {
+     "label": "Leave it",
+     "effects": {}
+    }
+   ]
+  },
+  {
+   "id": "fuel_cache",
+   "kind": "road",
+   "tone": "good",
+   "weight": 0.6,
+   "text": "Somebody buried drums at the foot of a mile marker and painted a little cross on it. Three of the four are still full.",
+   "choices": [
+    {
+     "label": "Dig them up",
+     "effects": {
+      "fuel": 4,
+      "days": 0.25
+     }
+    }
+   ]
+  },
+  {
+   "id": "crossing_toll",
+   "kind": "road",
+   "tone": "neutral",
+   "weight": 3,
+   "text": "Barrels across the bridge, a gate made of car doors, and men with crowbars who want a share of everything that rolls over their river.",
+   "choices": [
+    {
+     "label": "Pay the toll",
+     "effects": {
+      "barter": -1
+     }
+    },
+    {
+     "label": "Face them down",
+     "check": {
+      "attr": "hard",
+      "difficulty": "fair",
+      "skill": "brawling"
+     },
+     "success": {
+      "renown_raider": 5
+     },
+     "failure": {
+      "battle": "skirmish:toll_men"
+     }
+    },
+    {
+     "label": "Run the gate",
+     "effects": {
+      "battle": "road:toll_runners"
+     }
+    }
+   ],
+   "needs": {
+    "crossing": true
+   }
+  },
+  {
+   "id": "teeth_sign",
+   "kind": "road",
+   "tone": "neutral",
+   "weight": 2,
+   "text": "A jawbone nailed to the exit sign, fresh paint dripping under it. The Teeth have been through, and they want you to know.",
+   "choices": [
+    {
+     "label": "Note it on the map",
+     "effects": {
+      "warn": "teeth",
+      "rumor": "The Teeth are working this road."
+     }
+    }
+   ],
+   "threat": "teeth",
+   "warning": true
+  },
+  {
+   "id": "dust_plume",
+   "kind": "road",
+   "tone": "neutral",
+   "weight": 2,
+   "text": "A dust plume behind you, keeping its distance. It's been there since morning.",
+   "choices": [
+    {
+     "label": "Watch it",
+     "effects": {
+      "warn": "nearest_road_gang"
+     }
+    },
+    {
+     "label": "Try to lose it",
+     "check": {
+      "attr": "cool",
+      "difficulty": "fair",
+      "skill": "driving"
+     },
+     "success": {
+      "warn": "nearest_road_gang",
+      "xp_road": 10
+     },
+     "failure": {
+      "warn": "nearest_road_gang",
+      "fuel": -1
+     }
+    }
+   ],
+   "threat_kind": "brute/hunting_pack",
+   "warning": true
+  },
+  {
+   "id": "empty_camp",
+   "kind": "road",
+   "tone": "bad",
+   "weight": 2,
+   "text": "A straggler camp, empty. Fire still warm. Chains in the dust and the tracks of a lot of bare feet, heading for the interstate.",
+   "choices": [
+    {
+     "label": "Follow the tracks",
+     "check": {
+      "attr": "sharp",
+      "difficulty": "fair",
+      "skill": "scouting"
+     },
+     "success": {
+      "warn": "catchers",
+      "rumor": "The Catchers took them south, toward the Ten."
+     },
+     "failure": {
+      "warn": "catchers",
+      "days": 0.5
+     }
+    },
+    {
+     "label": "Move on, fast",
+     "effects": {
+      "warn": "catchers",
+      "morale": -5
+     }
+    }
+   ],
+   "threat": "catchers",
+   "warning": true
+  },
+  {
+   "id": "gar_on_the_river",
+   "kind": "road",
+   "tone": "neutral",
+   "weight": 2,
+   "text": "Long boats on the river, low and fast, paint like fish scales. They're pacing you along the levee road.",
+   "choices": [
+    {
+     "label": "Keep your distance from the bank",
+     "effects": {
+      "warn": "gar",
+      "days": 0.25
+     }
+    }
+   ],
+   "threat": "gar",
+   "warning": true
+  },
+  {
+   "id": "white_flags",
+   "kind": "road",
+   "tone": "neutral",
+   "weight": 2,
+   "text": "White rags tied to every light pole for a mile. The Whiteout mark the roads they own.",
+   "choices": [
+    {
+     "label": "Note it",
+     "effects": {
+      "warn": "whiteout"
+     }
+    }
+   ],
+   "threat": "whiteout",
+   "warning": true
+  },
+  {
+   "id": "glass_tracks",
+   "kind": "road",
+   "tone": "neutral",
+   "weight": 2,
+   "text": "Paw prints in the glass sand, bigger than your hand, and something that glitters where they've been.",
+   "choices": [
+    {
+     "label": "Keep the guns loaded",
+     "effects": {
+      "warn": "glass_eyes"
+     }
+    }
+   ],
+   "threat": "glass_eyes",
+   "warning": true
+  },
+  {
+   "id": "radio_singing",
+   "kind": "road",
+   "tone": "bad",
+   "weight": 2,
+   "text": "Every radio in the convoy is singing. Not words. Not quite. Your gunner's humming along and doesn't know it.",
+   "choices": [
+    {
+     "label": "Kill the radios",
+     "check": {
+      "attr": "weird",
+      "difficulty": "easy"
+     },
+     "success": {
+      "warn": "cantors"
+     },
+     "failure": {
+      "warn": "cantors",
+      "hum": 5
+     }
+    },
+    {
+     "label": "Listen",
+     "effects": {
+      "warn": "cantors",
+      "hum": 5,
+      "xp_road": 10,
+      "rumor": "The song gets louder toward Harrowgate."
+     }
+    }
+   ],
+   "threat_kind": "grotesque/mindfucker",
+   "warning": true
+  },
+  {
+   "id": "teeth_outriders",
+   "kind": "encounter",
+   "tone": "bad",
+   "weight": 3,
+   "text": "Three bikes come up fast on the shoulder, riders standing on the pegs, whooping. Outriders. Where there's outriders, there's more.",
+   "choices": [
+    {
+     "label": "Fight",
+     "effects": {
+      "battle": "road:teeth_outriders"
+     }
+    },
+    {
+     "label": "Outrun them",
+     "check": {
+      "attr": "cool",
+      "difficulty": "fair",
+      "skill": "driving"
+     },
+     "success": {
+      "xp_road": 10,
+      "warn": "teeth"
+     },
+     "failure": {
+      "battle": "road:teeth_outriders"
+     }
+    }
+   ],
+   "threat": "teeth"
+  },
+  {
+   "id": "teeth_raid",
+   "kind": "encounter",
+   "tone": "lethal",
+   "weight": 2,
+   "text": "They come out of the dust in a wedge: a gun ute, bikes, a buggy with a harpoon on the back. The Teeth want your cargo, and they're not going to ask twice.",
+   "choices": [
+    {
+     "label": "Fight",
+     "effects": {
+      "battle": "road:teeth_raid"
+     }
+    },
+    {
+     "label": "Run for it",
+     "check": {
+      "attr": "cool",
+      "difficulty": "hard",
+      "skill": "driving"
+     },
+     "success": {
+      "xp_road": 20
+     },
+     "failure": {
+      "battle": "road:teeth_raid"
+     }
+    },
+    {
+     "label": "Pay tribute",
+     "effects": {
+      "cargo": -0.3,
+      "renown_raider": -5
+     }
+    }
+   ],
+   "threat": "teeth",
+   "needs_warning": true
+  },
+  {
+   "id": "dremmers_battle_rig",
+   "kind": "encounter",
+   "tone": "lethal",
+   "weight": 1,
+   "text": "The battle rig fills the road: plates welded over plates, four gun mounts, a flamethrower on the cab. Dremmer's banner on top. He's come for you himself.",
+   "choices": [
+    {
+     "label": "Fight",
+     "effects": {
+      "battle": "road:dremmers_battle_rig"
+     }
+    },
+    {
+     "label": "Run for it",
+     "check": {
+      "attr": "cool",
+      "difficulty": "brutal",
+      "skill": "driving"
+     },
+     "success": {
+      "xp_road": 30
+     },
+     "failure": {
+      "battle": "road:dremmers_battle_rig"
+     }
+    },
+    {
+     "label": "Pay what he asks",
+     "effects": {
+      "cargo": -0.5,
+      "barter": -2
+     }
+    }
+   ],
+   "threat": "teeth",
+   "needs_warning": true,
+   "near_home_km": 300
+  },
+  {
+   "id": "catchers_coffle",
+   "kind": "encounter",
+   "tone": "bad",
+   "weight": 2,
+   "text": "A hauler with a cage welded on the back, people in it. Guards on a gun ute. Tum Tum's mark on the doors. They're heading for the Ten.",
+   "choices": [
+    {
+     "label": "Free them",
+     "effects": {
+      "battle": "road:catchers_coffle",
+      "on_win": {
+       "morale": 10,
+       "rep_nearby": 2,
+       "renown_raider": 20
+      }
+     }
+    },
+    {
+     "label": "Let them pass",
+     "effects": {
+      "morale": -10
+     }
+    }
+   ],
+   "threat": "catchers"
+  },
+  {
+   "id": "catchers_roadblock",
+   "kind": "encounter",
+   "tone": "lethal",
+   "weight": 1.5,
+   "text": "A roadblock at the interchange: catchers with nets and crowbars, and a man in a long coat who already knows how much your crew are worth.",
+   "choices": [
+    {
+     "label": "Fight",
+     "effects": {
+      "battle": "skirmish:catchers_roadblock"
+     }
+    },
+    {
+     "label": "Talk your way past",
+     "check": {
+      "attr": "hot",
+      "difficulty": "hard"
+     },
+     "success": {},
+     "failure": {
+      "battle": "skirmish:catchers_roadblock"
+     }
+    },
+    {
+     "label": "Turn back and go around",
+     "effects": {
+      "days": 2
+     }
+    }
+   ],
+   "threat": "catchers",
+   "needs_warning": true
+  },
+  {
+   "id": "gar_ambush",
+   "kind": "encounter",
+   "tone": "bad",
+   "weight": 2,
+   "text": "The Gar come off the river at the low crossing, wet and fast, knives first.",
+   "choices": [
+    {
+     "label": "Fight",
+     "effects": {
+      "battle": "skirmish:raider_pack"
+     }
+    },
+    {
+     "label": "Floor it",
+     "check": {
+      "attr": "cool",
+      "difficulty": "fair",
+      "skill": "driving"
+     },
+     "success": {},
+     "failure": {
+      "battle": "skirmish:raider_pack"
+     }
+    }
+   ],
+   "threat": "gar"
+  },
+  {
+   "id": "twister_riders_raid",
+   "kind": "encounter",
+   "tone": "bad",
+   "weight": 2,
+   "text": "Riders come out of the storm wall, goggles and scarves, using the twister for cover.",
+   "choices": [
+    {
+     "label": "Fight",
+     "effects": {
+      "battle": "road:teeth_raid"
+     }
+    },
+    {
+     "label": "Outrun them",
+     "check": {
+      "attr": "cool",
+      "difficulty": "fair",
+      "skill": "driving"
+     },
+     "success": {},
+     "failure": {
+      "battle": "road:teeth_raid"
+     }
+    }
+   ],
+   "threat": "twister_riders",
+   "needs_warning": true
+  },
+  {
+   "id": "whiteout_raid",
+   "kind": "encounter",
+   "tone": "bad",
+   "weight": 2,
+   "text": "Skiffs on the ice, sails white as the snow, coming in from three sides at once.",
+   "choices": [
+    {
+     "label": "Fight",
+     "effects": {
+      "battle": "road:teeth_raid"
+     }
+    },
+    {
+     "label": "Make for the shore",
+     "check": {
+      "attr": "cool",
+      "difficulty": "hard",
+      "skill": "driving"
+     },
+     "success": {},
+     "failure": {
+      "battle": "road:teeth_raid"
+     }
+    }
+   ],
+   "threat": "whiteout",
+   "needs_warning": true
+  },
+  {
+   "id": "bounty_hunter",
+   "kind": "encounter",
+   "tone": "lethal",
+   "weight": 1.5,
+   "text": "A single interceptor parked across the road, a man on the roof with a long rifle. He calls a name. Yours.",
+   "choices": [
+    {
+     "label": "Fight",
+     "effects": {
+      "battle": "skirmish:bounty_hunter"
+     }
+    },
+    {
+     "label": "Talk",
+     "check": {
+      "attr": "hot",
+      "difficulty": "hard"
+     },
+     "success": {},
+     "failure": {
+      "battle": "skirmish:bounty_hunter"
+     }
+    },
+    {
+     "label": "Pay him off",
+     "effects": {
+      "barter": -3
+     }
+    }
+   ],
+   "threat": "bounty_hunter",
+   "needs_warning": true
+  },
+  {
+   "id": "wellguard_patrol",
+   "kind": "encounter",
+   "tone": "neutral",
+   "weight": 3,
+   "text": "Wellguard in sealed suits wave you down. Papers, they say. Water chits. The Ration.",
+   "choices": [
+    {
+     "label": "Pay for water you didn't take",
+     "effects": {
+      "barter": -1
+     }
+    },
+    {
+     "label": "Refuse",
+     "effects": {
+      "battle": "skirmish:wellguard_patrol",
+      "on_win": {
+       "rep_nearby": -1
+      }
+     }
+    }
+   ],
+   "threat": "wellguard"
+  },
+  {
+   "id": "wellguard_tankers",
+   "kind": "encounter",
+   "tone": "neutral",
+   "weight": 1.5,
+   "text": "A Wellguard tanker convoy, low and heavy, sloshing. Enough water to buy a hold.",
+   "choices": [
+    {
+     "label": "Hit the tankers",
+     "effects": {
+      "battle": "road:wellguard_tankers",
+      "on_win": {
+       "water": 10,
+       "barter": 4,
+       "renown_raider": 20,
+       "rep_nearby": -2
+      }
+     }
+    },
+    {
+     "label": "Let them pass",
+     "effects": {}
+    }
+   ],
+   "threat": "wellguard"
+  },
+  {
+   "id": "bandits",
+   "kind": "encounter",
+   "tone": "bad",
+   "weight": 1.0,
+   "text": "A car across the off-ramp, hood up, a man waving like he needs help. Four more in the ditch with pipes and a pistol between them. They've done this before.",
+   "choices": [
+    {
+     "label": "Fight",
+     "effects": {
+      "battle": "skirmish:road_bandits"
+     }
+    },
+    {
+     "label": "Pay them to move the car",
+     "effects": {
+      "barter": -1
+     }
+    },
+    {
+     "label": "Ram through",
+     "check": {
+      "attr": "cool",
+      "difficulty": "fair",
+      "skill": "driving"
+     },
+     "success": {
+      "repairs": 0.5
+     },
+     "failure": {
+      "battle": "skirmish:road_bandits"
+     }
+    }
+   ],
+   "threat": "bandits"
+  },
+  {
+   "id": "scavvers_in_stores",
+   "kind": "road",
+   "tone": "bad",
+   "weight": 1.5,
+   "text": "Something's been in the stores in the night. Gnawed crates, droppings, a hole chewed in a water cask.",
+   "choices": [
+    {
+     "label": "Set traps",
+     "check": {
+      "attr": "sharp",
+      "difficulty": "easy",
+      "skill": "scouting"
+     },
+     "success": {},
+     "failure": {
+      "chow": -2
+     }
+    },
+    {
+     "label": "Hunt them down",
+     "effects": {
+      "battle": "skirmish:scavvers",
+      "on_win": {
+       "chow": 1
+      }
+     }
+    },
+    {
+     "label": "Write it off",
+     "effects": {
+      "chow": -2,
+      "water": -1
+     }
+    }
+   ],
+   "threat": "scavvers"
+  },
+  {
+   "id": "scavver_pack",
+   "kind": "encounter",
+   "tone": "bad",
+   "weight": 0.5,
+   "text": "A pack of scavvers on the road, ribs showing, too hungry to be scared of engines.",
+   "choices": [
+    {
+     "label": "Fight",
+     "effects": {
+      "battle": "skirmish:scavvers"
+     }
+    },
+    {
+     "label": "Drive them off",
+     "check": {
+      "attr": "cool",
+      "difficulty": "easy"
+     },
+     "success": {},
+     "failure": {
+      "battle": "skirmish:scavvers"
+     }
+    }
+   ],
+   "threat": "scavvers"
+  },
+  {
+   "id": "glass_eyes",
+   "kind": "encounter",
+   "tone": "bad",
+   "weight": 2,
+   "text": "The hounds come over the dune with the sun behind them, and their eyes catch the light like broken bottles.",
+   "choices": [
+    {
+     "label": "Fight",
+     "effects": {
+      "battle": "skirmish:glass_eyes"
+     }
+    },
+    {
+     "label": "Outrun them",
+     "check": {
+      "attr": "cool",
+      "difficulty": "fair",
+      "skill": "driving"
+     },
+     "success": {},
+     "failure": {
+      "battle": "skirmish:glass_eyes"
+     }
+    }
+   ],
+   "threat": "glass_eyes",
+   "needs_warning": true
+  },
+  {
+   "id": "opened_on_the_overpass",
+   "kind": "encounter",
+   "tone": "bad",
+   "weight": 2.5,
+   "text": "People standing on the overpass, very still, all facing the same way. Toward Harrowgate. Then, all at once, they turn toward you.",
+   "choices": [
+    {
+     "label": "Fight through",
+     "effects": {
+      "battle": "skirmish:opened_mob"
+     }
+    },
+    {
+     "label": "Go around",
+     "effects": {
+      "days": 1
+     }
+    }
+   ],
+   "threat": "the_opened"
+  },
+  {
+   "id": "cantor",
+   "kind": "encounter",
+   "tone": "lethal",
+   "weight": 1.5,
+   "text": "A brainer in a white robe in the middle of the road, singing, and the Opened around them like a congregation. Your head starts to hurt.",
+   "choices": [
+    {
+     "label": "Fight",
+     "effects": {
+      "battle": "skirmish:cantor_and_opened"
+     }
+    },
+    {
+     "label": "Break away",
+     "check": {
+      "attr": "weird",
+      "difficulty": "hard",
+      "skill": "lore"
+     },
+     "success": {
+      "hum": 5
+     },
+     "failure": {
+      "battle": "skirmish:cantor_and_opened",
+      "hum": 5
+     }
+    }
+   ],
+   "threat": "cantors",
+   "needs_warning": true
+  },
+  {
+   "id": "bar_rumor",
+   "kind": "hold",
+   "tone": "good",
+   "weight": 3,
+   "text": "The bar's loud and the liquor's cut with something. A driver at the end of the counter wants to tell you about the road.",
+   "choices": [
+    {
+     "label": "Buy a round and listen",
+     "effects": {
+      "barter": -0.2,
+      "warn": "nearest_threat",
+      "rumor": "nearest_threat"
+     }
+    },
+    {
+     "label": "Drink alone",
+     "effects": {}
+    }
+   ],
+   "warning": true
+  },
+  {
+   "id": "recruit_at_bar",
+   "kind": "hold",
+   "tone": "good",
+   "weight": 1.5,
+   "text": "A gunner with no rig, sitting by the door with her kit packed, watching everyone who comes in.",
+   "choices": [
+    {
+     "label": "Offer her a place",
+     "check": {
+      "attr": "hot",
+      "difficulty": "fair"
+     },
+     "success": {
+      "recruit": 1,
+      "morale": 3
+     },
+     "failure": {}
+    },
+    {
+     "label": "Not today",
+     "effects": {}
+    }
+   ]
+  },
+  {
+   "id": "theft",
+   "kind": "hold",
+   "tone": "bad",
+   "weight": 1.5,
+   "text": "Somebody's been at the rigs while you were in the bar.",
+   "choices": [
+    {
+     "label": "Track them down",
+     "check": {
+      "attr": "sharp",
+      "difficulty": "fair",
+      "skill": "scouting"
+     },
+     "success": {
+      "rep_nearby": 1
+     },
+     "failure": {
+      "cargo": -0.1
+     }
+    },
+    {
+     "label": "Count the losses",
+     "effects": {
+      "cargo": -0.1
+     }
+    }
+   ]
+  },
+  {
+   "id": "rest",
+   "kind": "hold",
+   "tone": "good",
+   "weight": 2,
+   "text": "Hot food, a roof, and nobody shooting at you. The crew sleeps like the dead.",
+   "choices": [
+    {
+     "label": "Rest a day",
+     "effects": {
+      "days": 1,
+      "morale": 8,
+      "hp": 15
+     }
+    },
+    {
+     "label": "Keep moving",
+     "effects": {}
+    }
+   ]
+  }
+ ]
+}

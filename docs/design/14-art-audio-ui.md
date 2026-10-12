@@ -31,8 +31,8 @@ As a hold's **Hum level** rises, its tiles lose saturation step by step. A Marke
 
 ## IP guardrail
 "Closer to Mad Max" means its **energy and palette**, not its designs:
-- **No replicas** of the films' vehicles (no recognisable copies of the hero cars or the war rig), masks, characters, costumes, gangs or rituals.
-- **No quotes, catchphrases or near‑quotes** from the films.
+- **No replicas** of the films' vehicles (no recognisable copies of the hero cars or the battle rig), masks, characters, costumes, gangs or rituals.
+- **No quotes, catchphrases or near‑quotes** from the films, and no names lifted from them: the heaviest frame is a *battle rig*.
 - Every vehicle, faction look and costume is designed from **Dark Horizon's own setting**: its factions, regions and sub‑factions. The [faction table](#faction-marks) is the source.
 - Art reviews include a "could this be mistaken for a film still?" check. If yes, it's redrawn.
 
@@ -77,7 +77,7 @@ Each faction has a **sigil and colours**, painted on its holds' gates, its rigs 
 | Highwater | Three wave lines | Navy and frost white | Wool, frost, matching coats, ice skiffs |
 | The Exchange | A coin with a hole punched through | Gold on green | White suits going green, gold teeth, ledgers |
 | Burning Water | A flare stack | Fire orange on soot black | Soot, welding masks, scorched tankers, the flare on the horizon |
-| Cerro | A mountain saddle over a bar of steel | Rust red and cement grey | Rebar crowns, slag walls, plated war rigs |
+| Cerro | A mountain saddle over a bar of steel | Rust red and cement grey | Rebar crowns, slag walls, plated battle rigs |
 | **The Choir** | **A circle** | **Bleached white and violet** | Unpainted, sun‑bleached rigs. The Opened standing still on overpasses, all facing Harrowgate. The only cold colours on the map |
 
 **Sub‑faction marks** ([18](18-sub-factions.md)) are smaller, scrawled and personal. They're never painted on gates, only tagged, worn or hidden:

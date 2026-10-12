@@ -20,6 +20,8 @@ var equipment: Dictionary = {}
 var battle: Dictionary = {}
 var disciplines: Dictionary = {}
 var units: Dictionary = {}
+var events: Dictionary = {}
+var threats: Dictionary = {}
 
 
 static func read_json(path: String) -> Variant:
@@ -54,6 +56,8 @@ func load_all(root: String = "res://data") -> void:
 	battle = read_json(root + "/rules/battle.json")
 	disciplines = read_json(root + "/rules/disciplines.json")
 	units = read_json(root + "/units/units.json")
+	events = read_json(root + "/events/events.json")
+	threats = read_json(root + "/events/threats.json")
 
 
 ## Region names use non-breaking hyphens ("Sixty‑Five"); compare on a plain form.

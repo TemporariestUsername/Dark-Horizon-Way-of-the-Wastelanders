@@ -356,6 +356,30 @@
    "skills": {
     "gunnery": 1
    }
+  },
+  {
+   "id": "dremmer",
+   "name": "Dremmer, Alpha wolf of the Teeth",
+   "level": 6,
+   "attributes": {
+    "cool": 55,
+    "hard": 55,
+    "hot": 40,
+    "sharp": 45,
+    "weird": 25
+   },
+   "weapon": "machete",
+   "armour": "riot_gear",
+   "luck": 14,
+   "tags": [
+    "teeth",
+    "leader",
+    "boss"
+   ],
+   "skills": {
+    "brawling": 2,
+    "gunnery": 1
+   }
   }
  ],
  "encounters": [
@@ -383,6 +407,17 @@
    "units": {
     "raider": 2,
     "raider_gunner": 2
+   },
+   "rating": "fair",
+   "party_level": 2
+  },
+  {
+   "id": "road_bandits",
+   "name": "Road bandits",
+   "units": {
+    "raider": 2,
+    "raider_gunner": 1,
+    "toll_man": 1
    },
    "rating": "fair",
    "party_level": 2
@@ -684,28 +719,22 @@
    ]
   },
   {
-   "id": "dremmers_war_rig",
-   "name": "Dremmer's war rig",
+   "id": "dremmers_battle_rig",
+   "name": "Dremmer's battle rig",
    "road": "interstate",
    "rating": "boss",
    "party_level": 6,
    "rigs": [
     {
-     "frame": "war_rig",
+     "frame": "battle_rig",
      "crew": 16,
      "crew_type": "teeth",
      "guns": [
       "gun_ring",
-      "gun_ring",
       "rig_machine_gun",
       "flamethrower"
      ],
-     "leader": "raider_boss"
-    },
-    {
-     "frame": "hog",
-     "crew": 2,
-     "crew_type": "teeth"
+     "leader": "dremmer"
     },
     {
      "frame": "hog",

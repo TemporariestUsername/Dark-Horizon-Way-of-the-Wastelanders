@@ -541,8 +541,8 @@
    "offroad": true
   },
   {
-   "id": "war_rig",
-   "name": "War rig",
+   "id": "battle_rig",
+   "name": "Battle rig",
    "durability": 440,
    "armor": 15,
    "speed": 2,

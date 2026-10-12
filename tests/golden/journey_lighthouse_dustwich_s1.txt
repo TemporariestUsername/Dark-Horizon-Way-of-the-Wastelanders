@@ -1,0 +1,43 @@
+From The Lighthouse to Dustwich: 2 legs, about 7 days.
+
+Day 1, near The Lighthouse (The Crossing, spring)
+A thousand dead cars, nose to tail for a mile, rusted together where they stopped twenty-five years ago. Some of them still have their windows up.
+  1) Salvage for a day  [Sharp check, fair: 59%]
+  2) Drive on
+> Salvage for a day (59%: failure)
+  Skirmish: Scavvers in the stores. Won in 5 rounds.
+  Loot: 1.5 barter.
+  1 day(s)
+
+Day 5, near Corbett (The Twenty, spring)
+The water from the last cask is green at the bottom. Somebody's already drunk some.
+  1) Boil it
+  2) Drink it anyway  [Hard check, fair: 75%]
+  3) Pour it out
+> Boil it
+  fuel -1
+Day 6: Corbett. You resupply for 1.6 barter.
+
+Day 7, near Corbett (The Twenty, spring)
+A straggler camp, empty. Fire still warm. Chains in the dust and the tracks of a lot of bare feet, heading for the interstate.
+  1) Follow the tracks  [Sharp check, fair: 59%]
+  2) Move on, fast
+> Follow the tracks (59%: failure)
+  0.5 day(s), warned: Tum Tum's Catchers
+
+Day 8, near Corbett (The Twenty, spring)
+A roadblock at the interchange: catchers with nets and crowbars, and a man in a long coat who already knows how much your crew are worth.
+  1) Fight
+  2) Talk your way past  [Hot check, hard: 21%]
+  3) Turn back and go around
+> Turn back and go around
+  2 day(s)
+Day 12: Dustwich. You resupply for 0.9 barter.
+
+Day 12, near Dustwich (The Ten, spring)
+The bar's loud and the liquor's cut with something. A driver at the end of the counter wants to tell you about the road.
+  1) Buy a round and listen
+  2) Drink alone
+> Buy a round and listen
+  barter -0.2, rumor: "Nothing you didn't know."
+Arrived after 11.5 days. Cargo 100%, barter 8.8, morale 80.

@@ -114,13 +114,13 @@ Rigs carry UWNH's ship statistics. Their *looks* and *weaknesses* keep AW's Driv
 | Hauler (semi) | 360 | 10 | 2 | 0 | 30 | 2 | 2/8 | 60 | Trade backbone |
 | Tanker | 340 | 10 | 1 | 0 | 30 | 1 | 2/6 | 50 water/fuel only | Grome's leash, if you can get one |
 | Half‑track | 300 | 15 | 2 | 15 | 20 | 2 | 3/10 | 20 | Off‑road. The Rough and dunes |
-| War rig | 440 | 15 | 2 | 0 | 30 | 4 | 6/20 | 30 | Mid‑game flagship |
+| Battle rig | 440 | 15 | 2 | 0 | 30 | 4 | 6/20 | 30 | Mid‑game flagship |
 | Land yacht | 140 | 0 | 3 | 15 | 10 | 1 | 3/12 | 25 | **Sail‑driven: no fuel on dry riverbeds, open interstate and lake ice, but needs wind.** Built at Pesca. UWNH's love letter |
 | Ice skiff | 70 | 0 | 4 | 30 | 0 | 0 | 2/4 | 6 | Sail‑driven. Lake ice and riverbeds only. Fastest thing on the winter Lakes |
 | Tank (ancient) | 600 | 20 | 1 | 15 | 40 | 3 | 4/6 | 2 | Late game. Gas‑hungry |
 | Gondola car | 120 | 5 | — | — | — | 0 | 2/8 | 10 | Up layer only. Rides on cables |
 
-- **Off‑road capability** works like a UWNH ship's draught. Big frames (bus, hauler, tanker, war rig, tank) are bound to the roads. Bikes, buggies and half‑tracks can take the Rough, and any frame with the *off‑road* strength can too.
+- **Off‑road capability** works like a UWNH ship's draught. Big frames (bus, hauler, tanker, battle rig, tank) are bound to the roads. Bikes, buggies and half‑tracks can take the Rough, and any frame with the *off‑road* strength can too.
 - **Convoy**: up to **6 rigs**, each needing a **driver** ([11](11-crew-and-bonds.md#officers-uwnhs-mates)). The *flagship* is your own rig.
 - **Garage**: buy, sell or repair rigs. **Refits** (one stat up a step, a new strength, removing a weakness) take workspace time (Savvyhead) or barter (the garage). Each frame has a refit cap.
 

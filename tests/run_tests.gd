@@ -12,6 +12,12 @@ const Conditions := preload("res://sim/conditions.gd")
 const Characters := preload("res://sim/characters.gd")
 const Skirmish := preload("res://sim/battle/skirmish.gd")
 const RoadWar := preload("res://sim/battle/road_war.gd")
+const EventSystem := preload("res://sim/events/event_system.gd")
+const Journey := preload("res://sim/events/journey.gd")
+
+## Golden journeys: a fixed seed and the auto policy must reproduce these transcripts word for
+## word. After an intended change, regenerate with DH_UPDATE_GOLDEN=1 and review the diff.
+const GOLDEN := [["lighthouse", "dustwich", 3, 1], ["sweetwell", "last_stop", 4, 2], ["highwater", "motor", 4, 3]]
 
 var data
 var graph
@@ -27,7 +33,7 @@ func _init() -> void:
 	for t in [
 		"test_data_loads", "test_graph", "test_lean", "test_gang_war", "test_conditions",
 		"test_characters", "test_determinism", "test_invariants",
-		"test_build_class", "test_skirmish", "test_road_war",
+		"test_build_class", "test_skirmish", "test_road_war", "test_events", "test_golden_journeys",
 	]:
 		var before := failures
 		call(t)
@@ -294,3 +300,64 @@ func test_road_war() -> void:
 			pos[k] = true
 	ok(not overlap, "no two active rigs share a cell")
 	ok(rw.result["winner"] in ["party", "enemy", "escaped", "draw"], "a road war ends with a known outcome")
+
+
+func _journey(from: String, to: String, lvl: int, seed_n: int, month: int = 3) -> Journey:
+	var rng := RandomNumberGenerator.new()
+	rng.seed = seed_n
+	var j := Journey.new()
+	j.setup(data, graph, null, from, to, lvl, rng, month)
+	j.run()
+	return j
+
+
+func test_events() -> void:
+	var rng := RandomNumberGenerator.new()
+	rng.seed = 1
+	var es := EventSystem.new()
+	es.setup(data, graph, null, rng)
+	var ctx := {"day": 10.0, "hold": "nodders", "region": data.hold_by_id["nodders"]["region"], "ring": "farther", "season": "summer",
+		"kind": "road", "crossing": false, "water": 10.0, "chow": 10.0}
+	var ids: Array = es.eligible(ctx).map(func(c): return c["event"]["id"])
+	ok(not ids.has("teeth_raid") and not ids.has("dremmers_battle_rig"), "lethal Teeth events need a warning first")
+	ok(ids.has("teeth_sign") and ids.has("dust_storm"), "near the Teeth in summer: their sign and dust storms can fire")
+	es.warn("teeth", 5.0)
+	ids = es.eligible(ctx).map(func(c): return c["event"]["id"])
+	ok(ids.has("teeth_raid"), "once warned, the Teeth can raid")
+	ctx["day"] = 80.0
+	ids = es.eligible(ctx).map(func(c): return c["event"]["id"])
+	ok(not ids.has("teeth_raid"), "a warning is forgotten after the warning memory")
+	es.bad_streak = 3
+	var tones: Array = es.eligible(ctx).map(func(c): return c["event"]["tone"])
+	ok(not tones.has("bad") and not tones.has("lethal"), "after three bad events in a row, only good or neutral ones")
+	es.bad_streak = 0
+	var far := ctx.duplicate()
+	far["hold"] = "highwater"
+	far["region"] = data.hold_by_id["highwater"]["region"]
+	ids = es.eligible(far).map(func(c): return c["event"]["id"])
+	ok(not ids.has("teeth_sign") and not ids.has("dust_storm"), "no Teeth or Rag-Wastes weather on the Lakes")
+	var unwarned := 0
+	var streak := 0
+	for i in 40:
+		var j := _journey("sweetwell", "last_stop", 4, 500 + i, 7)
+		unwarned += j.stats["lethal_unwarned"]
+		streak = max(streak, j.stats["max_bad_streak"])
+	ok(unwarned == 0 and streak <= 3, "40 journeys: no lethal event unwarned, no bad streak over 3")
+	var a := _journey("lighthouse", "dustwich", 3, 9)
+	var b := _journey("lighthouse", "dustwich", 3, 9)
+	ok(a.lines == b.lines and a.stats == b.stats, "a journey replays exactly from its seed")
+
+
+func test_golden_journeys() -> void:
+	var update := OS.get_environment("DH_UPDATE_GOLDEN") == "1"
+	for g in GOLDEN:
+		var j := _journey(g[0], g[1], g[2], g[3])
+		var path := "res://tests/golden/journey_%s_%s_s%d.txt" % [g[0], g[1], g[3]]
+		var text := "\n".join(j.lines) + "\n"
+		if update or not FileAccess.file_exists(path):
+			var f := FileAccess.open(path, FileAccess.WRITE)
+			f.store_string(text)
+			print("  wrote " + path)
+			continue
+		var want := FileAccess.get_file_as_string(path)
+		ok(want == text, "golden journey %s -> %s (seed %d) matches %s" % [g[0], g[1], g[3], path])

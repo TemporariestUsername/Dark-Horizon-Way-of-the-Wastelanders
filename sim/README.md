@@ -16,11 +16,13 @@ The M1 headless simulation: the world turn from [docs/design/10](../docs/design/
 | `subfactions.gd` | Backing drift, monthly verbs (raid, grow, preach, work, hide, back), Turning |
 | `characters.gd` | Check chance, XP curve, derived stats, and the builder that turns a class at given levels, or an enemy unit, into a battle-ready combatant |
 | `battle/skirmish.gd` | Inindo's grid battle (doc 09): turn order by Speed, attacks, ammo, cover, statuses, disciplines and class abilities, rout, a tactical AI for both sides |
+| `events/event_system.gd` | Threats as data, the weighted event draw, warnings, the breather, choices and checks (doc 05) |
+| `events/journey.gd` | A convoy driving a real route day by day: supplies, events, battles, resupply, never a dead end |
 | `battle/road_war.gd` | UWNH's fleet battle on the road (doc 09): lanes and range bands, obstacles, guns that need crew, rams, boarding, leader duels (a 1-on-1 skirmish), capture, rout, flight |
 
 **Determinism.** Every random draw goes through the World's one `RandomNumberGenerator`, seeded per run, and every loop walks dictionaries in insertion order. The same seed always replays the same history (`tests/run_tests.gd` checks it).
 
-**Not yet.** The player, the Wanderer AI (it needs the named-NPC roster), the League (it needs a broker, the player), events (M2, next).
+**Not yet.** The player, the Wanderer AI (it needs the named-NPC roster), the League (it needs a broker, the player), playable Godot scenes (next).
 
 ## Running
 ```sh
@@ -30,6 +32,8 @@ GODOT=$(tools/get_godot.sh)                       # pinned Godot 4.4.1, checksum
 "$GODOT" --headless --path . --script res://tools/debug_seed.gd -- --seed 1 --months 48 --kinds choir,war
 "$GODOT" --headless --path . --script res://tools/battle_bench.gd -- --fights 500   # skirmish and road-war balance
 "$GODOT" --headless --path . --script res://tools/debug_road_war.gd -- teeth_raid   # one road war, round by round
+"$GODOT" --headless --path . --script res://tools/journey.gd -- --from lighthouse --to dustwich --play   # play the event cards
+"$GODOT" --headless --path . --script res://tools/event_bench.gd -- --journeys 200   # event pacing
 "$GODOT" --headless --path . --script res://tools/unit_stats.gd                    # derived stats
 ```
 The runner writes `tools/out/report.md` and `report.json` and exits 1 if a balance target fails. On Windows or macOS, use your own Godot 4.4.1 in place of `$GODOT`.

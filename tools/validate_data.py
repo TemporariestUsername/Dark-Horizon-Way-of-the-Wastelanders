@@ -272,6 +272,65 @@ for band, pc in units_file["party_convoys"].items():
         continue
     for i, r in enumerate(pc["rigs"]):
         check_rig(f"party convoy {band} rig {i}", r, True)
+# --- M2 events ----------------------------------------------------------------------------
+evs = load("events/events.json")["events"]
+thr_file = load("events/threats.json")
+THREATS = {t["id"]: t for t in thr_file["threats"]}
+EVENT_IDS = {e["id"] for e in evs}
+ENC = {e["id"] for e in units_file["encounters"]}
+CONV = {c["id"] for c in units_file["convoys"]}
+REGIONS = {h["region"].replace("\u2011", "-").lower() for h in holds}
+SEASONS = set(load("rules/time.json")["calendar"]["seasons"])
+ATTR_SET = {"cool", "hard", "hot", "sharp", "weird"}
+def check_fx(where, fx):
+    b = fx.get("battle")
+    if b:
+        kind, _, bid = b.partition(":")
+        if (kind == "skirmish" and bid not in ENC) or (kind == "road" and bid not in CONV) or kind not in ("skirmish", "road"):
+            err(f"{where}: unknown battle {b}")
+    w = fx.get("warn")
+    if w and w not in THREATS and w not in ("nearest_threat", "nearest_road_gang"):
+        err(f"{where}: warns unknown threat {w}")
+    if "on_win" in fx:
+        check_fx(where + " on_win", fx["on_win"])
+if len(EVENT_IDS) != len(evs):
+    err("events: duplicate ids")
+for t in thr_file["threats"]:
+    if "at" in t and t["at"] not in H:
+        err(f"threat {t['id']}: unknown hold {t['at']}")
+    for e in t.get("warning_events", []) + t.get("events", []):
+        if e not in EVENT_IDS:
+            err(f"threat {t['id']}: unknown event {e}")
+for e in evs:
+    where = f"event {e['id']}"
+    if e["kind"] not in ("road", "encounter", "hold") or e["tone"] not in ("good", "neutral", "bad", "lethal"):
+        err(f"{where}: kind or tone")
+    if not 1 <= len(e["choices"]) <= 4 or (len(e["choices"]) == 1 and e["tone"] in ("bad", "lethal")):
+        err(f"{where}: needs 2-4 choices (a single-choice note must be good or neutral)")
+    if not any("check" not in c for c in e["choices"]):
+        err(f"{where}: no safe choice (anti-frustration rule 4)")
+    if e.get("needs_warning") and not e.get("threat"):
+        err(f"{where}: needs_warning without a threat")
+    if e["tone"] == "lethal" and not e.get("needs_warning"):
+        err(f"{where}: lethal events must need a warning (anti-frustration rule 1)")
+    if e.get("threat") and e["threat"] not in THREATS:
+        err(f"{where}: unknown threat {e['threat']}")
+    for r in list(e.get("regions", {})) + e.get("regions_only", []):
+        if r not in REGIONS:
+            err(f"{where}: unknown region {r}")
+    for sn in list(e.get("seasons", {})) + e.get("seasons_only", []):
+        if sn not in SEASONS:
+            err(f"{where}: unknown season {sn}")
+    for c in e["choices"]:
+        if "check" in c:
+            if c["check"]["attr"] not in ATTR_SET or c["check"]["difficulty"] not in ("easy", "fair", "hard", "brutal"):
+                err(f"{where}: bad check {c['check']}")
+            if c["check"].get("skill") and c["check"]["skill"] not in SKILLS:
+                err(f"{where}: unknown skill {c['check']['skill']}")
+            check_fx(where, c["success"]); check_fx(where, c["failure"])
+        else:
+            check_fx(where, c.get("effects", {}))
+
 for d in discs:
     if [t["needs_weird"] for t in d["techniques"]] != [30, 50, 70]:
         err(f"discipline {d['id']}: techniques need Weird 30/50/70")
@@ -283,4 +342,5 @@ if errors:
     sys.exit(1)
 print(f"data OK: {len(holds)} holds, {len(roads)} road edges, {len(GOODS)} goods, "
       f"{len(FACTIONS)} factions + the Choir, {len(SUBS)} sub-factions, {len(classes)} classes, "
-      f"{len(U)} units, {len(units_file['encounters'])} encounters, {len(units_file['convoys'])} convoys")
+      f"{len(U)} units, {len(units_file['encounters'])} encounters, {len(units_file['convoys'])} convoys, "
+      f"{len(evs)} events, {len(THREATS)} threats")

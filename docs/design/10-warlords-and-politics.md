@@ -121,7 +121,7 @@ The [headless sim runner](../research/platform-recommendation.md#recommended-arc
 - **Drive**: Dictator (to control), through walls.
 - **Temperament**: Stubborn, Steady, Grim, Deaf, Warlike (slowly).
 - **Grip**: Iron.
-- **Gang**: the Foundry: troops 45, arms 85, training 60, *siege*. Steel‑plated war rigs (Armor 15).
+- **Gang**: the Foundry: troops 45, arms 85, training 60, *siege*. Steel‑plated battle rigs (Armor 15).
 - **Lieutenants**: Abe (Desierto; Brawn 50 / Cunning 66, wants roads, not walls), Lupe (Gemela; 62 / 58), Rosa (Soto; 55 / 45).
 - **Open questions and ambition**: see [17](17-factions.md#cerro).
 

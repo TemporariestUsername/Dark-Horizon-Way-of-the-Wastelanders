@@ -76,6 +76,14 @@ At the end of each month comes a one‑page broadsheet, "*Meanwhile…*", writte
 - **Rumors** for the ones you don't.
 - **Always** where the Choir has spread. Its creep is slow, but it's never hidden.
 
+## In the M2 simulation
+The event system runs in [`sim/events/`](../../sim/README.md), over the data in [`data/events/`](../../data/events/threats.json): 12 threats and 43 event cards.
+- **The draw.** Each road day draws one road event or encounter, or nothing; each hold passed draws a hold event, or nothing. "Nothing" has a weight of 40 against the events' summed weights. Encounters count four times their listed weight.
+- **Warnings** last 45 days. A threat's warning cards (the Teeth's jawbone, an empty camp with chains in the dust, radios singing) must fire before its lethal events can.
+- **The breather** follows three bad events in a row. The **repeat penalty** cuts an event's weight to a tenth for 10 days after it fires.
+- **A journey** ([`journey.gd`](../../sim/events/journey.gd)) drives a real route day by day: supplies burn, battles start from the cards, the holds it passes resupply it, and running out of fuel is never a dead end. [`tools/journey.gd`](../../tools/journey.gd) plays it as a text UI (`--play`), with an optional designer overlay (`--overlay`).
+- **The bench** ([report](../reports/m2-event-bench.md)) drives nine routes 200 times each with a sensible‑player policy. Every route lands at 0.47–0.63 road events a day and 0.7–2.8 battles every 10 days, and no lethal event ever fires unwarned.
+
 ## Tuning
 - Every draw is **seeded** and **logged**: eligible events, weights, the pick. A designer overlay (off in release) shows why an event fired.
-- Fixed seeds plus scripted inputs reproduce the same event sequence exactly, so balance changes can be compared by diffing.
+- Fixed seeds plus scripted inputs reproduce the same event sequence exactly, so balance changes can be compared by diffing. Three **golden journeys** in [`tests/golden/`](../../tests/golden/journey_lighthouse_dustwich_s1.txt) are checked word for word by the tests.

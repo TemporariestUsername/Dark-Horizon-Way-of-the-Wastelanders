@@ -143,7 +143,7 @@ They bury the dead properly in a world that mostly doesn't. If you play the Hocu
 **Home**: the Teeth (a mobile camp in the Permian).
 **Chapters**: Twice, Drift, Brand, the Stack, Gullet, Rumhouse.
 
-The biggest raider pack on the map, a moving city of bikes and war rigs that has followed Dremmer since the Howling emptied the open roads and so made them *his*. They're not a power that wants to *govern*: they want the road, tribute and a fight.
+The biggest raider pack on the map, a moving city of bikes and battle rigs that has followed Dremmer since the Howling emptied the open roads and so made them *his*. They're not a power that wants to *govern*: they want the road, tribute and a fight.
 - **Lieutenants**: Rufe (Rumhouse), Crine (Drift), Ik (Gullet).
 - **Want**: tribute, and the open road.
 - **Backs**: none. Sweetwell's Chel pays them to stay off the springs, and they **raid Burning Water's crude convoys** from Nodders and Derricks.
