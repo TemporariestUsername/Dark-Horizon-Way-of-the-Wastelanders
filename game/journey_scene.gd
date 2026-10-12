@@ -7,6 +7,7 @@ extends Control
 const Game := preload("res://game/game.gd")
 const Journey := preload("res://sim/events/journey.gd")
 const World := preload("res://sim/world.gd")
+const PlaytestLog := preload("res://game/playtest_log.gd")
 
 const CARD := Rect2(156, 60, 322, 172)
 const DASH := Rect2(2, 60, 150, 190)
@@ -20,6 +21,7 @@ var choice_btns: Array = []
 var slot_choice: Array = [-1, -1, -1, -1]   # choice button slot -> the card's choice index
 var btn := {}
 var shown_lines := 0
+var feel_asked := false
 var card: Dictionary:
 	get:
 		return state if state.get("kind", "") == "card" else {}
@@ -34,7 +36,8 @@ func _ready() -> void:
 	var nx: Dictionary = Game.next
 	if Game.journey == null:
 		var rng := RandomNumberGenerator.new()
-		rng.seed = int(nx.get("seed", Time.get_ticks_usec()))
+		var seed := int(nx.get("seed", Time.get_ticks_usec()))
+		rng.seed = seed
 		var world = null
 		var month := int(nx.get("month", 3))
 		if int(nx.get("world_months", 0)) > 0:
@@ -47,10 +50,17 @@ func _ready() -> void:
 		j.setup(Game.data, Game.graph, world, nx.get("from", "lighthouse"), nx.get("to", "dustwich"), int(nx.get("level", 3)), rng, month)
 		j.interactive = true
 		Game.journey = j
+		Game.journey_info = {"from": j.route[0], "to": j.route[-1], "level": int(nx.get("level", 3)), "seed": seed,
+			"month": month, "world_months": int(nx.get("world_months", 0))}
+		PlaytestLog.write("journey_start", Game.journey_info)
 		state = j.step()
 	else:
 		j = Game.journey
-		state = j.battle_done(nx["battle_result"]) if nx.has("battle_result") else j.step()
+		if nx.has("battle_result"):
+			_log_battle("fought", nx["battle_result"])
+			state = j.battle_done(nx["battle_result"])
+		else:
+			state = j.step()
 	Game.next = {}
 	title = "%s to %s" % [_hold(j.route[0]), _hold(j.route[-1])]
 
@@ -101,26 +111,57 @@ func _on_drive(until: bool) -> void:
 
 
 func _on_choice(i: int) -> void:
+	var rec := {"day": int(j.day), "hold": j.here(), "chances": state["chances"], "journey_seed": Game.journey_info.get("seed", 0)}
 	state = j.choose(i)
+	rec.merge(j.last_choice)
+	PlaytestLog.write("card", rec)
 	_show()
 
 
 func _on_fight() -> void:
+	Game.next = fight_setup()
+	get_tree().change_scene_to_file(Game.next["scene"])
+
+
+## What the battle scene needs to play the journey's pending battle (and log it).
+func fight_setup() -> Dictionary:
 	var spec: String = state["spec"]
 	var parts := spec.split(":")
 	var kind := "skirmish" if parts[0] == "skirmish" else "road_war"
 	var list: Array = Game.data.units["encounters"] if kind == "skirmish" else Game.data.units["convoys"]
 	var foe: Dictionary = list.filter(func(x): return x["id"] == parts[1])[0]
-	Game.next = {"sim": state["sim"], "title": "%s (%s), day %d" % [foe["name"], foe["rating"], int(j.day)]}
-	get_tree().change_scene_to_file("res://game/%s_scene.tscn" % kind)
+	return {"sim": state["sim"], "scene": "res://game/%s_scene.tscn" % kind, "title": "%s (%s), day %d" % [foe["name"], foe["rating"], int(j.day)],
+		"log": {"source": "journey", "encounter" if kind == "skirmish" else "convoy": parts[1], "rating": foe["rating"],
+			"level": Game.journey_info.get("level", 0), "day": int(j.day), "journey_seed": Game.journey_info.get("seed", 0)}}
 
 
 func _on_auto_resolve() -> void:
-	state = j.battle_done(state["sim"].run())
+	var res: Dictionary = state["sim"].run()
+	_log_battle("auto", res)
+	state = j.battle_done(res)
 	_show()
 
 
+func _log_battle(mode: String, res: Dictionary) -> void:
+	PlaytestLog.write("journey_battle", {"spec": j.pending_battle.get("spec", ""), "mode": mode, "winner": res["winner"],
+		"rounds": res["rounds"], "day": int(j.day), "journey_seed": Game.journey_info.get("seed", 0)})
+
+
+func _log_end(abandoned: bool) -> void:
+	if Game.journey_info.get("logged_end", false):
+		return
+	Game.journey_info["logged_end"] = true
+	var st: Dictionary = j.stats
+	var rec := {"from": j.route[0], "to": j.route[-1], "level": Game.journey_info.get("level", 0), "journey_seed": Game.journey_info.get("seed", 0),
+		"abandoned": abandoned, "arrived": st.get("arrived", false), "days": int(j.day), "expected_days": snappedf(float(st.get("expected_days", 0.0)), 0.1),
+		"events": st["events"], "battles": st["battles"], "battles_won": st["battles_won"], "defeats": st["defeats"],
+		"cargo": snappedf(j.cargo, 0.01), "barter": snappedf(j.barter, 0.1), "morale": roundi(j.morale)}
+	PlaytestLog.write("journey_end", rec)
+
+
 func _on_menu() -> void:
+	if j != null and not over:
+		_log_end(true)
 	Game.journey = null
 	get_tree().change_scene_to_file("res://game/main_menu.tscn")
 
@@ -139,6 +180,13 @@ func _show() -> void:
 			journal.add_text(l)
 		journal.newline()
 	journal.visible = kind == "day" or kind == "end"
+	if kind == "end" and not Game.journey_info.get("logged_end", false):
+		_log_end(false)
+		journal.size.y = CARD.size.y - 52
+		var about := {"about": "journey", "from": j.route[0], "to": j.route[-1], "level": Game.journey_info.get("level", 0),
+			"journey_seed": Game.journey_info.get("seed", 0), "arrived": state["arrived"]}
+		PlaytestLog.feel_buttons(self, Vector2(CARD.position.x + 6, CARD.end.y - 34), about)
+		feel_asked = true
 	card_text.visible = kind == "card" or kind == "battle"
 	for b in choice_btns:
 		b.visible = false
@@ -202,6 +250,8 @@ func _draw() -> void:
 	elif kind == "end":
 		var arrived: bool = state["arrived"]
 		Game.text(self, Vector2(CARD.position.x + 6, CARD.end.y - 8), ("Arrived at %s." % _hold(j.route[-1])) if arrived else "You turn back.", Game.FIRE, 8)
+		if feel_asked:
+			Game.text(self, Vector2(CARD.position.x + 6, CARD.end.y - 38), "How did the trip feel? (for the playtest log)", Color(Game.BONE, 0.75), 7)
 
 
 ## The route as a strip: holds as gates, spaced by km, with the convoy on it.

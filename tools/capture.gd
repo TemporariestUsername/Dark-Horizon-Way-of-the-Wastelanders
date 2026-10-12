@@ -3,7 +3,9 @@
 ##   xvfb-run -a -s "-screen 0 1280x800x24" godot --path . --rendering-driver opengl3 \
 ##       --script res://tools/capture.gd -- <shot> <out.png>
 ##
-## Shots: menu, skirmish, skirmish_end, road_war, road_war_end, journey, journey_card.
+## Shots: menu, skirmish, skirmish_end, skirmish_result, road_war, road_war_end, road_war_result,
+## journey, journey_card, journey_end. The *_result and journey_end shots play as a tester who
+## presses Auto every turn, so the "how did that feel?" buttons show.
 ## Needs a renderer (not --headless).
 extends SceneTree
 
@@ -21,18 +23,19 @@ func _run() -> void:
 		quit(2)
 		return
 	var shot: String = args[0]
+	load("res://game/playtest_log.gd").path = "user://capture/playtest_log.jsonl"   # not the real log
 	Game.ensure_loaded()
 	var scene_path := ""
 	match shot:
 		"menu":
 			scene_path = "res://game/main_menu.tscn"
-		"skirmish", "skirmish_end":
+		"skirmish", "skirmish_end", "skirmish_result":
 			Game.next = {"encounter": "raider_pack", "level": 2, "seed": 1}
 			scene_path = "res://game/skirmish_scene.tscn"
-		"road_war", "road_war_end":
+		"road_war", "road_war_end", "road_war_result":
 			Game.next = {"convoy": "teeth_raid", "level": 3, "seed": 1}
 			scene_path = "res://game/road_war_scene.tscn"
-		"journey", "journey_card":
+		"journey", "journey_card", "journey_end":
 			Game.next = {"from": "lighthouse", "to": "dustwich", "level": 3, "seed": 1}
 			Game.journey = null
 			scene_path = "res://game/journey_scene.tscn"
@@ -69,6 +72,25 @@ func _run() -> void:
 				if scene.done:
 					break
 				scene.step()
+		"skirmish_result", "road_war_result":
+			for i in 3000:
+				if scene.done:
+					break
+				if scene.waiting:
+					scene._on_auto()
+				else:
+					scene.step()
+		"journey_end":
+			for i in 400:
+				if scene.over:
+					break
+				var kind: String = scene.state["kind"]
+				if kind == "card":
+					scene._on_choice(scene.j.auto_choice(scene.state["event"], scene.state["chances"]))
+				elif kind == "battle":
+					scene._on_auto_resolve()
+				else:
+					scene.advance(true)
 		"journey_card":
 			for i in 40:
 				if scene.card.size() > 0 or scene.over:

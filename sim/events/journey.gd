@@ -254,6 +254,8 @@ func _choose(pick: Dictionary, idx: int) -> void:
 	var e: Dictionary = pick["event"]
 	var choice: Dictionary = e["choices"][idx]
 	var res = events.resolve(choice, party)
+	last_choice = {"event": e["id"], "tone": e["tone"], "picked": idx, "check": res["check"],
+		"chance": res.get("chance", -1), "success": res.get("success", true)}
 	var outcome := ""
 	if res["check"]:
 		outcome = " (%d%%: %s)" % [res["chance"], "success" if res["success"] else "failure"]
@@ -404,6 +406,7 @@ func battle_outcome(spec: String, sim, res: Dictionary) -> bool:
 # ---------------------------------------------------------------- playing it (the journey scene)
 
 var interactive := false
+var last_choice: Dictionary = {}  # the last card choice and its check, for the playtest log
 var phase := "start"              # start, morning, drive, end
 var pending_ctx: Dictionary = {}
 var pending_card: Dictionary = {} # {pick, ctx, chances}

@@ -32,8 +32,9 @@ static var font: Font
 
 ## What the next scene should set up (set by the menu or the journey).
 static var next := {}
-## A journey in progress (survives the trip into a battle scene and back).
+## A journey in progress (survives the trip into a battle scene and back), and its setup.
 static var journey = null
+static var journey_info := {}
 
 
 static func ensure_loaded() -> void:

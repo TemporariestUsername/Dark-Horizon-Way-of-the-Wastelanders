@@ -29,6 +29,9 @@ jobs:
       - name: Unit tests
         run: timeout 300 "$GODOT" --headless --path . --script res://tests/run_tests.gd
 
+      - name: Playtest report (from the log the scene tests wrote)
+        run: python3 tools/playtest_report.py "$HOME/.local/share/Dark Horizon/test" -o tools/out/playtest-report-from-tests.md
+
       - name: Battle bench (300 fights per encounter)
         run: timeout 300 "$GODOT" --headless --path . --script res://tools/battle_bench.gd -- --fights 300
 

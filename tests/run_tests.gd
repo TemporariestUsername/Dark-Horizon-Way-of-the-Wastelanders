@@ -30,6 +30,10 @@ func _initialize() -> void:
 
 
 func _run_all() -> void:
+	# The scene tests write playtest records: keep them out of a developer's real log.
+	var log_mod = load("res://game/playtest_log.gd")
+	log_mod.path = "user://test/playtest_log.jsonl"
+	DirAccess.remove_absolute(log_mod.path)
 	data = SimData.new()
 	data.load_all()
 	graph = RoadGraph.new()
@@ -38,7 +42,7 @@ func _run_all() -> void:
 		"test_data_loads", "test_graph", "test_lean", "test_gang_war", "test_conditions",
 		"test_characters", "test_determinism", "test_invariants",
 		"test_build_class", "test_skirmish", "test_road_war", "test_events", "test_golden_journeys",
-		"test_interactive_journey", "test_scenes", "test_scene_player",
+		"test_interactive_journey", "test_scenes", "test_scene_player", "test_playtest_log",
 	]:
 		var before := failures
 		call(t)
@@ -464,15 +468,17 @@ func test_scenes() -> void:
 		var spec: String = js.state["spec"]
 		var kind := "skirmish" if spec.begins_with("skirmish") else "road_war"
 		var battles_before: int = js.j.stats["battles"]
-		Game.next = {"sim": js.state["sim"], "title": spec}
+		Game.next = js.fight_setup()
 		js.free()
-		var bs = load("res://game/%s_scene.tscn" % kind).instantiate()
+		var bs = load(Game.next["scene"]).instantiate()
 		root.add_child(bs)
 		ok(bs.embedded, "the %s scene plays the journey's own battle" % kind)
-		bs.auto_all = true
 		n = 0
 		while not bs.done and n < 5000:
-			bs.step()
+			if bs.waiting:
+				bs._on_auto()   # the player hands every turn to the AI, through the button
+			else:
+				bs.step()
 			n += 1
 		Game.next = {"battle_result": bs.result}
 		bs.free()
@@ -578,3 +584,48 @@ func test_scene_player() -> void:
 		ok(rs.done and acted > 0, "a scripted driver finishes %s (%d actions, %s, used %s)" % [cv["id"], acted, rs.result.get("winner", "?"), used.keys()])
 		rs.free()
 	Game.next = {}
+
+
+## The playtest log the scene tests just wrote: one JSON object per line, every kind present,
+## and each record carries what tools/playtest_report.py needs.
+func test_playtest_log() -> void:
+	var PlaytestLog = load("res://game/playtest_log.gd")
+	var Game = load("res://game/game.gd")
+	Game.ensure_loaded()
+	var holder := Control.new()
+	root.add_child(holder)
+	var btns: Array = PlaytestLog.feel_buttons(holder, Vector2.ZERO, {"about": "skirmish", "encounter": "scavvers"})
+	btns[2].pressed.emit()
+	ok(btns.all(func(b): return b.disabled), "a feel verdict locks its buttons")
+	holder.free()
+	var text := FileAccess.get_file_as_string(PlaytestLog.path)
+	var recs: Array = []
+	var parsed_all := true
+	for line in text.split("\n", false):
+		var r = JSON.parse_string(line)
+		if r == null:
+			parsed_all = false
+		else:
+			recs.append(r)
+	ok(parsed_all and recs.size() > 20, "the log is JSON lines (%d records)" % recs.size())
+	var kinds := {}
+	for r in recs:
+		kinds[r["kind"]] = int(kinds.get(r["kind"], 0)) + 1
+	for k in ["session", "skirmish", "road_war", "journey_start", "card", "journey_battle", "journey_end", "feel"]:
+		ok(kinds.has(k), "the log has %s records" % k)
+	ok(recs.all(func(r): return r.has("t") and r.has("session") and r.has("build")), "every record has t, session and build")
+	ok(kinds.get("session", 0) == 1, "one session record per run")
+	for r in recs:
+		match r["kind"]:
+			"skirmish":
+				ok(r.has("encounter") and r.has("winner") and r.has("actions") and (r.has("seed") or r.has("journey_seed")), "a skirmish record says what was fought and how")
+			"road_war":
+				ok(r.has("convoy") and r.has("winner") and r.has("actions") and (r.has("seed") or r.has("journey_seed")), "a road war record says what was fought and how")
+			"card":
+				ok(int(r["picked"]) >= 0 and int(r["picked"]) < r["chances"].size() and r.has("event") and r.has("success"), "a card record has the choice, the chances and the outcome")
+			"journey_battle":
+				ok(r["mode"] in ["auto", "fought"] and String(r["spec"]).contains(":"), "a journey battle says how it was settled")
+			"feel":
+				ok(r["verdict"] in ["too_easy", "about_right", "too_hard"], "a feel record has a verdict")
+	ok(recs.any(func(r): return r["kind"] == "journey_battle" and r["mode"] == "fought"), "a fought journey battle is logged")
+	ok(recs.any(func(r): return r["kind"] == "skirmish" and r["source"] == "journey" or r["kind"] == "road_war" and r["source"] == "journey"), "a battle fought from a journey says so")

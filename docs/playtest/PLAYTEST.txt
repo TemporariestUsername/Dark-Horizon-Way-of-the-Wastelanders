@@ -1,0 +1,37 @@
+DARK HORIZON: WAY OF THE WASTELANDERS
+M2 playtest build. Placeholder art, no sound, no save games yet.
+
+WHAT WE WANT TO KNOW
+Are the fights and the road events fun, and do they feel fair? Play whatever you
+like from the menu: a skirmish, a road war, or a journey (a trip down a real route,
+with event cards and fights along the way). After each fight and journey the game
+asks "Too easy / About right / Too hard". One click is enough, and it helps a lot.
+
+STARTING THE GAME
+Windows: unzip, then run DarkHorizon.exe. The build isn't signed, so Windows may
+  say "Windows protected your PC". Click "More info", then "Run anyway".
+macOS: unzip, then open "Dark Horizon.app". The build isn't notarized, so the
+  first launch is blocked once.
+  macOS 15 (Sequoia) and later: try to open it, click "Done", then go to System
+    Settings > Privacy & Security, scroll down and click "Open Anyway".
+  macOS 14 and earlier: right-click the app, choose Open, then Open again.
+  Or, in Terminal: xattr -dr com.apple.quarantine "Dark Horizon.app"
+
+CONTROLS
+Skirmish: teal tiles show where the unit can move (once a turn). Click an enemy in
+  range to attack; its hit chance shows under it. Defend (D), Skill (S), Auto (A:
+  the AI plays this unit), End turn (Space), Flee (F).
+Road war: each rig's turn is drive, then act. Drive: click a teal cell, or Stay
+  (Space). Act: Fire (F), Ram (R), Board (B) or Evade (E). Click an enemy rig to
+  target it. Auto (A) lets the AI drive; Run makes the whole convoy run for it.
+Journey: Drive on (Space) or Drive until something happens (Enter). Pick a card's
+  choice with a click or 1-4. Fight a battle yourself, or auto-resolve it.
+
+SENDING YOUR PLAYTEST LOG
+The game keeps a log of what happened in each fight, card and journey: results,
+the chances shown and your choices. No names, file paths or hardware details.
+On the menu, click "Open log folder" and send us the file log.jsonl. It's here:
+  Windows: %APPDATA%\Dark Horizon\playtest\log.jsonl
+  macOS:   ~/Library/Application Support/Dark Horizon/playtest/log.jsonl
+Notes on what felt good or bad are just as welcome: tell us the build number
+shown on the menu.

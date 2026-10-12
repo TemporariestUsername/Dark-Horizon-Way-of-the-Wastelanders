@@ -11,6 +11,7 @@ The scenes hold no rules. Each one drives a sim from [`sim/`](../sim/README.md) 
 | `road_war_scene.tscn` | UWNH's fleet battle on the road: lanes, range bands, the camera following the convoy |
 | `journey_scene.tscn` | A route day by day: the route strip, supply gauges, event cards with their check chances, battles to fight or auto-resolve |
 | `game.gd` | Shared state (the loaded data, the journey in progress, what the next scene sets up), the palette, the theme and drawing helpers |
+| `playtest_log.gd` | The playtest log: every fight, card and journey, and testers' "too easy / about right / too hard", as JSON lines in the user folder. See [playtesting](../docs/playtest/README.md) |
 
 ![The test menu](../docs/screenshots/m2-menu.png)
 ![A skirmish](../docs/screenshots/m2-skirmish.png)
@@ -25,6 +26,8 @@ Buttons and keys: **Defend** (D), **Skill** (S: class abilities and disciplines;
 
 **Journey.** **Drive on** (Space) drives one day; **Drive until something happens** (Enter) drives to the next card, battle or the end. Pick a card's choice with a click or 1–4. A battle can be **fought** (it opens the battle scene, then comes back) or **auto-resolved**.
 
+**After a fight or a journey** the game asks *Too easy / About right / Too hard* for the playtest log. The menu shows how many records the log holds, and **Open log folder** opens it.
+
 ## Running
 ```sh
 GODOT=$(tools/get_godot.sh)
@@ -34,5 +37,5 @@ GODOT=$(tools/get_godot.sh)
 Screenshots without a display (Linux, Xvfb and Mesa):
 ```sh
 xvfb-run -a -s "-screen 0 1280x800x24" "$GODOT" --path . --rendering-driver opengl3 \
-    --script res://tools/capture.gd -- skirmish out.png   # menu, skirmish, skirmish_end, road_war, road_war_end, journey, journey_card
+    --script res://tools/capture.gd -- skirmish out.png   # also: menu, skirmish_result, road_war, road_war_result, journey_card, journey_end…
 ```

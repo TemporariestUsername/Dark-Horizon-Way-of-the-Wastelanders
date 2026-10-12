@@ -10,6 +10,7 @@ extends Control
 const Game := preload("res://game/game.gd")
 const Characters := preload("res://sim/characters.gd")
 const Skirmish := preload("res://sim/battle/skirmish.gd")
+const PlaytestLog := preload("res://game/playtest_log.gd")
 
 const TILE := 21
 const ORIGIN := Vector2(4, 22)
@@ -32,6 +33,10 @@ var btn := {}
 var skill_menu: PopupMenu
 var skill_list: Array = []
 var auto_all := false           # the screenshot tool and tests can let the AI play everything
+var log_info := {}              # what this fight is, for the playtest log
+var actions := {}               # the player's actions by kind, for the playtest log
+var player_turns := 0
+var started_ms := 0
 
 
 func _ready() -> void:
@@ -42,9 +47,11 @@ func _ready() -> void:
 		sk = nx["sim"]
 		embedded = true
 		title = nx.get("title", "Skirmish")
+		log_info = nx.get("log", {"source": "journey"})
 	else:
 		var rng := RandomNumberGenerator.new()
-		rng.seed = int(nx.get("seed", Time.get_ticks_usec()))
+		var seed := int(nx.get("seed", Time.get_ticks_usec()))
+		rng.seed = seed
 		var enc_id: String = nx.get("encounter", "raider_pack")
 		var enc: Dictionary = Game.data.units["encounters"].filter(func(e): return e["id"] == enc_id)[0]
 		var lvl := int(nx.get("level", enc["party_level"]))
@@ -60,12 +67,14 @@ func _ready() -> void:
 		sk = Skirmish.new()
 		sk.setup(Game.data, party, enemies, rng)
 		title = "%s (%s, party level %d)" % [enc["name"], enc["rating"], lvl]
+		log_info = {"source": "menu", "encounter": enc_id, "rating": enc["rating"], "level": lvl, "seed": seed}
+	started_ms = Time.get_ticks_msec()
 	var x := PANEL.position.x + 4
 	var y := 168.0
 	btn["defend"] = Game.button(self, "Defend", Vector2(x, y), Vector2(61, 13), _on_defend)
 	btn["skill"] = Game.button(self, "Skill", Vector2(x + 63, y), Vector2(61, 13), _on_skill)
 	btn["auto"] = Game.button(self, "Auto", Vector2(x, y + 16), Vector2(61, 13), _on_auto)
-	btn["end"] = Game.button(self, "End turn", Vector2(x + 63, y + 16), Vector2(61, 13), _end_turn)
+	btn["end"] = Game.button(self, "End turn", Vector2(x + 63, y + 16), Vector2(61, 13), _on_end_turn)
 	btn["flee"] = Game.button(self, "Flee", Vector2(x, y + 32), Vector2(124, 13), _on_flee)
 	btn["continue"] = Game.button(self, "Continue", Vector2(200, 166), Vector2(80, 14), _on_continue)
 	btn["continue"].visible = false
@@ -110,6 +119,7 @@ func step() -> void:
 		return
 	if c["side"] == "party" and not auto_all:
 		waiting = true
+		player_turns += 1
 		target_skill = {}
 	else:
 		sk.ai_act(c)
@@ -130,6 +140,15 @@ func _finish() -> void:
 	waiting = false
 	result = sk.finish()
 	btn["continue"].visible = true
+	if not auto_all:
+		var rec := log_info.duplicate()
+		rec.merge({"winner": result["winner"], "rounds": result["rounds"], "party_hp_share": snappedf(result["party_hp_share"], 0.01),
+			"party_down": result["party_down"], "xp": result["xp"], "player_turns": player_turns, "actions": actions,
+			"seconds": (Time.get_ticks_msec() - started_ms) / 1000})
+		PlaytestLog.write("skirmish", rec)
+		var about := log_info.duplicate()
+		about.merge({"about": "skirmish", "winner": result["winner"]})
+		PlaytestLog.feel_buttons(self, Vector2(129, 150), about)
 	_refresh_buttons()
 	queue_redraw()
 
@@ -165,7 +184,7 @@ func _unhandled_key_input(ev: InputEvent) -> void:
 		KEY_D: _on_defend()
 		KEY_S: _on_skill()
 		KEY_A: _on_auto()
-		KEY_SPACE: _end_turn()
+		KEY_SPACE: _on_end_turn()
 		KEY_F: _on_flee()
 
 
@@ -177,12 +196,15 @@ func click_tile(t: Vector2i) -> void:
 	if not u.is_empty() and u["side"] == "enemy":
 		if not target_skill.is_empty():
 			if sk.player_skill(active, target_skill, u):
+				_count("skill")
 				_end_turn()
 			return
 		if sk.player_attack(active, u):
+			_count("attack")
 			_end_turn()
 		return
 	if u.is_empty() and sk.player_move(active, t):
+		_count("move")
 		queue_redraw()
 
 
@@ -193,18 +215,29 @@ func _unit_at(t: Vector2i) -> Dictionary:
 	return {}
 
 
+func _count(k: String) -> void:
+	actions[k] = int(actions.get(k, 0)) + 1
+
+
+func _on_end_turn() -> void:
+	_count("pass")
+	_end_turn()
+
+
 func _on_defend() -> void:
 	sk.player_defend(active)
+	_count("defend")
 	_end_turn()
 
 
 func _on_auto() -> void:
 	sk.ai_act(active)
+	_count("auto")
 	_end_turn()
 
 
 func _on_flee() -> void:
-	sk.player_flee()
+	_count("flee" if sk.player_flee() else "flee_failed")
 	_end_turn()
 
 
@@ -225,6 +258,7 @@ func _on_skill_chosen(i: int) -> void:
 		queue_redraw()
 		return
 	if sk.player_skill(active, s):
+		_count("skill")
 		_end_turn()
 
 
@@ -328,4 +362,6 @@ func _draw_result() -> void:
 	var w: String = result["winner"]
 	var head: String = {"party": "VICTORY", "enemy": "DEFEAT", "fled": "GOT AWAY"}.get(w, "STALEMATE")
 	Game.text(self, r.position + Vector2(80, 22), head, Game.FIRE if w == "party" else Game.BLOOD, 14)
-	Game.text(self, r.position + Vector2(12, 42), "%d rounds. Party HP left: %d%%. Fight XP: %d." % [result["rounds"], roundi(result["party_hp_share"] * 100), result["xp"]], Game.BONE, 7)
+	Game.text(self, r.position + Vector2(12, 38), "%d rounds. Party HP left: %d%%. Fight XP: %d." % [result["rounds"], roundi(result["party_hp_share"] * 100), result["xp"]], Game.BONE, 7)
+	if not auto_all:
+		Game.text(self, r.position + Vector2(12, 56), "How did that fight feel? (for the playtest log)", Color(Game.BONE, 0.75), 7)

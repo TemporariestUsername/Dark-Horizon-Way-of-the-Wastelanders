@@ -14,3 +14,7 @@ __pycache__/
 .godot/
 # Sim runner output (reports worth keeping are copied to docs/reports/)
 tools/out/
+
+# Playtest builds (tools/export.sh)
+build/
+build.txt

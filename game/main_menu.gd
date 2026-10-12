@@ -3,6 +3,7 @@
 extends Control
 
 const Game := preload("res://game/game.gd")
+const PlaytestLog := preload("res://game/playtest_log.gd")
 
 var picks := {}       # "skirmish" / "road_war" / "journey" -> OptionButton
 var levels := {}      # same keys -> int
@@ -20,7 +21,24 @@ func _ready() -> void:
 	_column("skirmish", "SKIRMISH", 8, "Fight", func(e): return "%s (%s)" % [e["name"], e["rating"]])
 	_column("road_war", "ROAD WAR", 164, "Drive", func(e): return "%s (%s)" % [e["name"], e["rating"]])
 	_column("journey", "JOURNEY", 320, "Set out", func(e): return "%s to %s" % [_hold(e["from"]), _hold(e["to"])])
+	Game.button(self, "Open log folder", Vector2(336, 250), Vector2(96, 14), _open_log_folder)
 	Game.button(self, "Quit", Vector2(436, 250), Vector2(38, 14), func(): get_tree().quit())
+	if "--smoke-test" in OS.get_cmdline_user_args():
+		_smoke_test.call_deferred()
+
+
+func _open_log_folder() -> void:
+	DirAccess.make_dir_recursive_absolute(PlaytestLog.path.get_base_dir())
+	OS.shell_open(PlaytestLog.folder())
+
+
+## For CI: an exported build proves it can load the data and write the log, then quits.
+func _smoke_test() -> void:
+	var before := PlaytestLog.count()
+	PlaytestLog.write("smoke_test", {"holds": Game.data.holds.size(), "encounters": Game.data.units["encounters"].size()})
+	var ok: bool = Game.data.holds.size() == 130 and PlaytestLog.count() >= before + 1
+	print("smoke test: %s (holds %d, log %s)" % ["ok" if ok else "FAILED", Game.data.holds.size(), PlaytestLog.folder()])
+	get_tree().quit(0 if ok else 1)
 
 
 func _hold(id: String) -> String:
@@ -108,5 +126,7 @@ func _draw() -> void:
 		draw_circle(Vector2(x - 4, 106), 4.0, Color(Game.SAND, 0.5))
 	Game.text(self, Vector2(10, 30), "DARK HORIZON", Game.FIRE, 22)
 	Game.text(self, Vector2(12, 44), "Way of the Wastelanders", Game.BONE, 10)
-	Game.text(self, Vector2(12, 56), "M2 prototype: placeholder art", Color(Game.BONE, 0.7), 7)
+	Game.text(self, Vector2(12, 56), "M2 playtest build %s: placeholder art" % PlaytestLog.build_id(), Color(Game.BONE, 0.7), 7)
 	Game.panel(self, Rect2(2, 142, 476, 100))
+	var n := PlaytestLog.count()
+	Game.text(self, Vector2(6, 260), "Playtest log: %d %s. Send us log.jsonl from its folder." % [n, "entry" if n == 1 else "entries"], Game.BONE, 7)

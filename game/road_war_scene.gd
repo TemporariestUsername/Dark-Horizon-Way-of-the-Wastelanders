@@ -10,6 +10,7 @@ extends Control
 const Game := preload("res://game/game.gd")
 const Characters := preload("res://sim/characters.gd")
 const RoadWar := preload("res://sim/battle/road_war.gd")
+const PlaytestLog := preload("res://game/playtest_log.gd")
 
 const CELL := 18
 const ROAD_TOP := 22.0
@@ -33,6 +34,10 @@ var title := ""
 var cam_x := 0.0
 var btn := {}
 var auto_all := false
+var log_info := {}              # what this fight is, for the playtest log
+var actions := {}               # the player's actions by kind, for the playtest log
+var player_turns := 0
+var started_ms := 0
 
 
 func _ready() -> void:
@@ -43,9 +48,11 @@ func _ready() -> void:
 		rw = nx["sim"]
 		embedded = true
 		title = nx.get("title", "Road war")
+		log_info = nx.get("log", {"source": "journey"})
 	else:
 		var rng := RandomNumberGenerator.new()
-		rng.seed = int(nx.get("seed", Time.get_ticks_usec()))
+		var seed := int(nx.get("seed", Time.get_ticks_usec()))
+		rng.seed = seed
 		var cv_id: String = nx.get("convoy", "teeth_outriders")
 		var cv: Dictionary = Game.data.units["convoys"].filter(func(c): return c["id"] == cv_id)[0]
 		var lvl := int(nx.get("level", cv["party_level"]))
@@ -59,6 +66,8 @@ func _ready() -> void:
 		rw = RoadWar.new()
 		rw.setup(Game.data, party, cv["rigs"], cv["road"], rng)
 		title = "%s (%s, %s, party level %d)" % [cv["name"], cv["rating"], cv["road"], lvl]
+		log_info = {"source": "menu", "convoy": cv_id, "rating": cv["rating"], "level": lvl, "seed": seed}
+	started_ms = Time.get_ticks_msec()
 	cam_x = _party_center()
 	var labels := [["Stay", _on_stay], ["Fire", _on_fire], ["Ram", _on_ram], ["Board", _on_board], ["Evade", _on_evade], ["Auto", _on_auto], ["Run", _on_run]]
 	for i in labels.size():
@@ -109,6 +118,7 @@ func step() -> void:
 	timer = AI_DELAY
 	if r["side"] == "party" and not auto_all and rw.party_mode == "fight":
 		waiting = true
+		player_turns += 1
 		stage = "drive"
 		if target.is_empty() or target["status"] != "active":
 			target = _nearest_enemy(r)
@@ -136,6 +146,15 @@ func _finish() -> void:
 	waiting = false
 	result = rw.finish()
 	btn["continue"].visible = true
+	if not auto_all:
+		var rec := log_info.duplicate()
+		rec.merge({"winner": result["winner"], "rounds": result["rounds"], "party_durability_share": snappedf(result["party_durability_share"], 0.01),
+			"party_rigs_lost": result["party_rigs_lost"], "enemy_rigs_taken": result["enemy_rigs_taken"], "player_turns": player_turns,
+			"actions": actions, "seconds": (Time.get_ticks_msec() - started_ms) / 1000})
+		PlaytestLog.write("road_war", rec)
+		var about := log_info.duplicate()
+		about.merge({"about": "road_war", "winner": result["winner"]})
+		PlaytestLog.feel_buttons(self, Vector2(129, 94), about)
 	_refresh_buttons()
 
 
@@ -218,6 +237,7 @@ func click_cell(c: Vector2i) -> void:
 		return
 	if stage == "drive" and drive_cells().has(c) and r.is_empty():
 		rw.player_drive(active, c.y - active["x"], c.x - active["lane"])
+		_count("drive")
 		stage = "act"
 		_refresh_buttons()
 
@@ -234,38 +254,49 @@ func _unhandled_key_input(ev: InputEvent) -> void:
 		KEY_A: if stage == "drive": _on_auto()
 
 
+func _count(k: String) -> void:
+	actions[k] = int(actions.get(k, 0)) + 1
+
+
 func _on_stay() -> void:
+	_count("stay")
 	stage = "act"
 	_refresh_buttons()
 
 
 func _on_fire() -> void:
 	rw.player_fire(active, target)
+	_count("fire")
 	_end_turn()
 
 
 func _on_ram() -> void:
 	if rw.player_ram(active, target):
+		_count("ram")
 		_end_turn()
 
 
 func _on_board() -> void:
 	if rw.player_board(active, target):
+		_count("board")
 		_end_turn()
 
 
 func _on_evade() -> void:
 	rw.player_evade(active)
+	_count("evade")
 	_end_turn()
 
 
 func _on_auto() -> void:
 	rw.ai_turn(active)
+	_count("auto")
 	_end_turn()
 
 
 func _on_run() -> void:
 	rw.player_run()
+	_count("run")
 	rw.ai_turn(active)
 	_end_turn()
 
@@ -429,10 +460,12 @@ func _draw_info(r: Dictionary, pos: Vector2, label: String) -> void:
 
 
 func _draw_result() -> void:
-	var r := Rect2(120, 40, 240, 92)
+	var r := Rect2(120, 30, 240, 102)
 	Game.panel(self, r)
 	var w: String = result["winner"]
 	var head: String = {"party": "VICTORY", "enemy": "DEFEAT", "escaped": "GOT AWAY"}.get(w, "BROKE OFF")
-	Game.text(self, r.position + Vector2(80, 22), head, Game.FIRE if w == "party" else Game.BLOOD, 14)
-	Game.text(self, r.position + Vector2(12, 40), "%d rounds. Convoy Durability left: %d%%." % [result["rounds"], roundi(result["party_durability_share"] * 100)], Game.BONE, 7)
-	Game.text(self, r.position + Vector2(12, 50), "Rigs lost: %d. Enemy rigs taken: %d." % [result["party_rigs_lost"], result["enemy_rigs_taken"]], Game.BONE, 7)
+	Game.text(self, r.position + Vector2(80, 20), head, Game.FIRE if w == "party" else Game.BLOOD, 14)
+	Game.text(self, r.position + Vector2(12, 34), "%d rounds. Convoy Durability left: %d%%." % [result["rounds"], roundi(result["party_durability_share"] * 100)], Game.BONE, 7)
+	Game.text(self, r.position + Vector2(12, 44), "Rigs lost: %d. Enemy rigs taken: %d." % [result["party_rigs_lost"], result["enemy_rigs_taken"]], Game.BONE, 7)
+	if not auto_all:
+		Game.text(self, r.position + Vector2(12, 60), "How did that fight feel? (for the playtest log)", Color(Game.BONE, 0.75), 7)

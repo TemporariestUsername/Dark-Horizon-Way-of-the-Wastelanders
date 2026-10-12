@@ -10,6 +10,8 @@ config_version=5
 config/name="Dark Horizon: Way of the Wastelanders"
 config/features=PackedStringArray("4.4")
 run/main_scene="res://game/main_menu.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="Dark Horizon"
 
 [display]
 
@@ -21,6 +23,8 @@ window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
 
 [rendering]
+
+textures/vram_compression/import_etc2_astc=true
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

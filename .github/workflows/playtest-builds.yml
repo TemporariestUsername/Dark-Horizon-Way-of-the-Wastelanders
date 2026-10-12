@@ -1,0 +1,52 @@
+name: Playtest builds
+
+# Windows and macOS playtest zips on every push (docs/playtest/README.md). The macOS build is
+# ad-hoc signed and not notarized (no Apple Developer account). A Linux build is exported too,
+# only to smoke-test that an exported game loads its data and writes the playtest log.
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Cache Godot and export templates
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/dark-horizon
+            ~/.local/share/godot/export_templates
+          key: godot-4.4.1-stable-linux-templates
+
+      - name: Get Godot and export templates (pinned, checksum-verified)
+        run: |
+          godot="$(tools/get_godot.sh)"
+          test -x "$godot"
+          echo "GODOT=$godot" >> "$GITHUB_ENV"
+          tools/get_export_templates.sh
+
+      - name: Export and smoke-test
+        run: BUILD_ID="${GITHUB_SHA::7}" tools/export.sh windows macos linux
+
+      # Each artifact holds our zip as-is: upload-artifact drops Unix file modes, and the macOS
+      # app needs its executable bit.
+      - name: Upload Windows build
+        uses: actions/upload-artifact@v4
+        with:
+          name: DarkHorizon-playtest-windows
+          path: build/out/*-windows.zip
+          compression-level: 0
+          retention-days: 30
+
+      - name: Upload macOS build
+        uses: actions/upload-artifact@v4
+        with:
+          name: DarkHorizon-playtest-macos
+          path: build/out/*-macos.zip
+          compression-level: 0
+          retention-days: 30
