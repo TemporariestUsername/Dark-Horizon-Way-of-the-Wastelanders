@@ -51,7 +51,7 @@
 | **Text volume** (AW's voice is the game) | A text‑bank pipeline with tags (region, threat, move, result). A writers' style guide built from the AW playbook voice, including the [southern voice guide](02-world.md#voice-the-bravo-and-the-sierra-coast). A Spanish‑fluent writer or sensitivity reader for the southern text bank |
 | **Licensing scope** | **Confirmed by the client.** The license covers this video game. AW text is still kept in `/data` so it's easy to audit |
 | **Mature content and ratings** | The content policy in [00](00-vision.md#tone-and-content-policy), content toggles, and an early ESRB/PEGI/IARC questionnaire |
-| **Real‑world geography and parody brands** | Real geography and real interstate numbers are used (client decision). Holds use survivor names, and real place names appear through the Quarantine. Parody brands are rare set dressing under strict rules ([13](13-content-tables.md#parody-brands-set-dressing)): never real names, logos or trade dress. **Legal review of the parody list before content lock.** |
+| **Real‑world geography and lookalike brands** | Real geography and real interstate numbers are used (client decision). Holds use survivor names, and real place names appear through the Quarantine. Lookalike brands are rare set dressing under strict rules ([13](13-content-tables.md#lookalike-brands-set-dressing)): never real names, logos or trade dress. **Legal review of the lookalike list before content lock.** |
 | **Map scale** (130 holds) | The headless sim tests all 130 from M1. Hold tiers (outposts are cheap) keep content cost down. Regions are authored in priority order: the slice region first, the Loud edges last |
 | **macOS distribution** | Apple Developer ID signing and notarization in CI from M1. Universal (Apple Silicon + Intel) builds. Test on a low‑end MacBook Air |
 | **Source‑game IP** | We take *philosophy*, not content. No Koei names, maps, text, art or music. The RE notes stay internal, and ROMs are never committed |
@@ -68,7 +68,7 @@
 | 6 | Travel model | **Interstates are the seas**, dry riverbeds are extra roads, living rivers are barriers, and **the Easing** makes exploration the heart of the game | [02](02-world.md#the-map-as-a-road-network), [08](08-travel-and-vehicles.md) |
 | 7 | The drained Gulf | **Dropped.** The Gulf stays as water at the map's edge | [02](02-world.md) |
 | 8 | Spanish | **Spanish‑inflected dialogue** along the Bravo and the Sierra Coast, without drifting from apocalyptica. UI and moves stay in English | [02](02-world.md#voice-the-bravo-and-the-sierra-coast) |
-| 9 | Real geography and brands | **Real interstate numbers and real geography.** Brands are rare set dressing in less‑rusted ruins, always as clear parodies (*Murica Burger*, *Bogg‑ees*) | [02](02-world.md#naming-rules), [13](13-content-tables.md#parody-brands-set-dressing) |
+| 9 | Real geography and brands | **Real interstate numbers and real geography.** Brands are rare set dressing in less‑rusted ruins, as **lookalikes**: plausible chain names recognisable by look, not puns (*McCready's*, *Buckaroo's*) | [02](02-world.md#naming-rules), [13](13-content-tables.md#lookalike-brands-set-dressing) |
 
 ## Open questions for the client
 None outstanding. New questions will come out of the M1 sim spike (economy balance at 130 holds) and the M2 Director prototype.

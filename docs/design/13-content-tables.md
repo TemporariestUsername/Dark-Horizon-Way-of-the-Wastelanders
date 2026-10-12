@@ -129,30 +129,31 @@ Taken from AW's resource list: meat, water, fuel, security, shelter, leisure, li
 ## Maelstrom sites (Inindo's mountains)
 See the discipline table in [04](04-moves-engine.md#weird-disciplines-inindos-magic-schools-translated). Each site has a **weird master**, a short In‑dungeon (3–5 rooms), and a **test** (a custom move).
 
-## Parody brands (set dressing)
+## Lookalike brands (set dressing)
 **What they're for.** A brief golden‑age jolt in a ruin that's survived better than most: a sign half‑lit by a hold's generator, a mascot statue, a wrapper in a crate of oddments. They're rare, never a focus, and never a quest hook in their own right.
 
 **Rules:**
-1. **Clear reference, never the real thing.** Each one is a parody name that obviously points at a real brand. It never uses the real name, logo, mascot or exact trade dress, and it's always transformed (a different name, a different mark).
-2. **Rare.** At most one or two per region on screen at a time, and only in **less‑rusted ruins**: mall interiors, sealed vaults, the Kingdom, the speedway, a bunker.
-3. **Background, not foreground.** On signs, in item flavour text and on wrapper oddments. They're never a hold name, a faction or a warlord's symbol.
-4. **No mockery of real people**, and no implied endorsement.
-5. **Legal review** of the final list before content lock (a production‑risks item).
+1. **Lookalike, not pun.** Each one is a name that **sounds like a real chain that could have existed**: plain, a little bland, the way real brands are. The player should recognise the real brand from its **colours, sign shape, mascot or slogan fragment**, not from wordplay on its name. No winks, no jokes in the name itself. The humour, if any, is in where it turns up.
+2. **Never the real thing.** No real name, logo, mascot or exact trade dress. The resemblance is in the palette and the silhouette, never a copy.
+3. **Rare.** At most one or two per region on screen at a time, and only in **less‑rusted ruins**: mall interiors, sealed vaults, the Kingdom, the speedway, a bunker.
+4. **Background, not foreground.** On signs, in item flavour text and on wrapper oddments. They're never a hold name, a faction or a warlord's symbol.
+5. **No mockery of real people**, and no implied endorsement.
+6. **Legal review** of the final list before content lock (a production‑risks item).
 
 **Seed list:**
 
-| Parody | Reads as | Where it shows up |
+| Lookalike | Reads as (by its look, not its name) | Where it shows up |
 |---|---|---|
-| **Murica Burger** | Golden‑arches fast food | A sign over a Panhandle off‑ramp. *Murica Burger* wrappers as worthless oddments |
-| **Bogg‑ees** | A giant beaver‑mascot Texas travel centre | Gnarly's garage is built in the remains of one. The beaver statue is now a hood ornament |
-| **Wally's World** | The big‑box superstore | Haven's mall annex |
-| **Starbux** | A coffee chain | A cup worth 1 jingle to collectors at the Exchange |
-| **Krispy Krater** | A doughnut chain | A lit "HOT NOW" sign that Beale keeps running as a joke |
-| **Waffle Hut** | A 24‑hour waffle diner | The "Waffle Hut index": holds say a road is safe if the Hut is still standing |
-| **Koka‑Kola** | A cola in red script | Bottles as oddments. A faded wall mural in Orleans |
-| **Shill** | A gas station chain with a shell logo | Scavenged pumps at Spindletop |
-| **FedUp** | A parcel carrier | A dead hauler on the Forty. Its cargo is a Sight |
-| **Radio Hut** | An electronics store | Savvyhead salvage, at Wisher |
+| **McCready's** | Red and yellow, a doubled‑hump sign, "*billions served*" on a faded board | A sign over a Panhandle off‑ramp. Wrappers as worthless oddments |
+| **Buckaroo's** | A giant Texas travel centre with a cartoon beaver mascot and 120 fuel pumps | Gnarly's garage is built in the shell of one. The beaver statue is now a hood ornament |
+| **Everyday Mart** | A blue box store with a yellow spark, "*every day*" in the slogan | Haven's mall annex |
+| **Siren Coffee** | A green round logo with a two‑tailed figure | A cup worth 1 jingle to collectors at the Exchange |
+| **Glazier's** | A doughnut shop with a red "HOT NOW" light | Beale keeps the light running as a joke |
+| **Griddle House** | A yellow block‑letter sign, open 24 hours | The "Griddle House index": holds say a road is safe if the Griddle House is still standing |
+| **Cascade Cola** | Red, a white ribbon swoosh, a curved bottle | Bottles as oddments. A faded wall mural in Orleans |
+| **Conch** | A yellow and red seashell over the pumps | Scavenged pumps at Spindletop |
+| **Overland Express** | Purple and orange livery on white haulers | A dead hauler on the Forty. Its cargo is a Sight |
+| **Wavelength Electronics** | A red‑lettered strip‑mall electronics store | Savvyhead salvage, at Wisher |
 
 ## Hood ornaments (UWNH's figureheads)
 Skull (+1 *go aggro* from the rig), Saint (+1 *open your brain* in the rig), Chrome angel (+1 *deal with bad terrain*), Steer horns (+1 massive when ramming), Doll's head (the Director's *announce future badness* comes a day early), Hula girl (+1 Hot at holds), Antenna (hear the Hum: +1 to read a sitch in Hum zones, and +1 Hum exposure a month).

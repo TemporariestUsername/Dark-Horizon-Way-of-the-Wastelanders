@@ -34,7 +34,7 @@ The AW playbooks look like **stark white silhouettes cut out of black**, with ra
 
 ## Signage and ruins
 - **Most signage is gone.** It's rust, bare poles and sun‑bleached blanks. Interstate shields and mile markers survive best, because they're metal and they matter; they're drawn crisp because people still use them.
-- **Parody brands** appear rarely, in less‑rusted ruins only, as faded or half‑lit signs drawn in the same two tones (red only if the sign is lit by a hold's power). Rules and seed list: [13](13-content-tables.md#parody-brands-set-dressing).
+- **Lookalike brands** appear rarely, in less‑rusted ruins only, as faded or half‑lit signs drawn in the same two tones (red only if the sign is lit by a hold's power). They should be recognisable from silhouette and palette alone: the art carries the reference, not the name. Rules and seed list: [13](13-content-tables.md#lookalike-brands-set-dressing).
 
 ## Iconography
 - **Harm clock**: a 6‑segment pie (3, 6, 9, 10, 11, 12), filled in red ink. The same shape is used for **all countdowns** and the **World Clock**, so the player learns to read one symbol.
