@@ -278,7 +278,7 @@ The Choir has **no clock and no end state**. Its **reach**, the number of holds 
 | **Marching** | 15–29 | The Opened march. The Arch relays the Hum up the Seventy. Ba can sell Burning Water |
 | **Drowning** | 30+ | The Loud creeps in at the edges of Hum zones. Travel through the Up is cut |
 
-With nobody resisting, the Choir Silences about 9 holds by month 36, 14 by month 60 and 42 by month 120 ([M1 report](../reports/m1-balance-report.md)). That's a slow tide, not a deadline: the campaign never ends because of it, but your class's ending is coloured by how far it got ([06](06-playbooks.md#endings-and-the-choirs-reach)).
+With nobody resisting, the Choir Silences about 8 holds by month 36, 13 by month 60 and 40 by month 120 ([M1 report](../reports/m1-balance-report.md)). That's a slow tide, not a deadline: the campaign never ends because of it, but your class's ending is coloured by how far it got ([06](06-playbooks.md#endings-and-the-choirs-reach)).
 
 ### What makes it beatable
 The Choir is more dangerous, not unfair ([05](05-events.md#antifrustration-rules)):

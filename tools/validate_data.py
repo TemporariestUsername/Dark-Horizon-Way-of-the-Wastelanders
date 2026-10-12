@@ -241,6 +241,37 @@ for e in units_file["encounters"]:
     for uid in e["units"]:
         if uid not in U:
             err(f"encounter {e['id']}: unknown unit {uid}")
+FRAMES = {f["id"]: f for f in equip["frames"]}
+GUNS = {g["id"] for g in equip["rig_guns"]}
+CREWS = {c["id"] for c in units_file["crews"]}
+CLASSES = {c["id"] for c in classes}
+def check_rig(where, r, party):
+    fr = FRAMES.get(r["frame"])
+    if not fr:
+        err(f"{where}: unknown frame {r['frame']}"); return
+    if len(r.get("guns", [])) > fr["gun_mounts"]:
+        err(f"{where}: {len(r['guns'])} guns on a {r['frame']} with {fr['gun_mounts']} mounts")
+    for g in r.get("guns", []):
+        if g not in GUNS:
+            err(f"{where}: unknown rig gun {g}")
+    if not fr["crew"][0] <= r["crew"] <= fr["crew"][1]:
+        err(f"{where}: crew {r['crew']} outside {fr['crew']} for a {r['frame']}")
+    if r["crew_type"] not in CREWS:
+        err(f"{where}: unknown crew type {r['crew_type']}")
+    if party and r.get("driver") not in CLASSES:
+        err(f"{where}: unknown driver class {r.get('driver')}")
+    if not party and r.get("leader") and r["leader"] not in U:
+        err(f"{where}: unknown leader {r['leader']}")
+for cv in units_file["convoys"]:
+    if cv["rating"] not in battle["encounter_targets"] or cv["road"] not in battle["road_war"]["lanes"]:
+        err(f"convoy {cv['id']}: rating or road")
+    for i, r in enumerate(cv["rigs"]):
+        check_rig(f"convoy {cv['id']} rig {i}", r, False)
+for band, pc in units_file["party_convoys"].items():
+    if band.startswith("_"):
+        continue
+    for i, r in enumerate(pc["rigs"]):
+        check_rig(f"party convoy {band} rig {i}", r, True)
 for d in discs:
     if [t["needs_weird"] for t in d["techniques"]] != [30, 50, 70]:
         err(f"discipline {d['id']}: techniques need Weird 30/50/70")
@@ -252,4 +283,4 @@ if errors:
     sys.exit(1)
 print(f"data OK: {len(holds)} holds, {len(roads)} road edges, {len(GOODS)} goods, "
       f"{len(FACTIONS)} factions + the Choir, {len(SUBS)} sub-factions, {len(classes)} classes, "
-      f"{len(U)} units, {len(units_file['encounters'])} encounters")
+      f"{len(U)} units, {len(units_file['encounters'])} encounters, {len(units_file['convoys'])} convoys")

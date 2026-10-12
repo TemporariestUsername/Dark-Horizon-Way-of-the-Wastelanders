@@ -1,5 +1,5 @@
 {
- "_doc": "Enemy units and encounters for skirmishes (docs/design/09-combat.md, 13-content-tables.md). Units derive their stats with the same formulas as characters (sim/characters.gd), using 'level' as their Fight and Road level. Encounters carry a rating against a party of three at party_level; tools/battle_bench.gd checks them against rules/battle.json encounter_targets.",
+ "_doc": "Enemy units and encounters for skirmishes (docs/design/09-combat.md, 13-content-tables.md). Units derive their stats with the same formulas as characters (sim/characters.gd), using 'level' as their Fight and Road level. Encounters carry a rating against a party of three at party_level; tools/battle_bench.gd checks them against rules/battle.json encounter_targets. Road war: crews (boarding strength and gunnery), enemy convoys rated like encounters, and the standard party convoys the road-war bench uses.",
  "units": [
   {
    "id": "scavver",
@@ -310,6 +310,52 @@
    "skills": {
     "gunnery": 2
    }
+  },
+  {
+   "id": "catcher_captain",
+   "name": "Catcher captain",
+   "level": 5,
+   "attributes": {
+    "cool": 50,
+    "hard": 55,
+    "hot": 25,
+    "sharp": 45,
+    "weird": 20
+   },
+   "weapon": "magnum",
+   "armour": "riot_vest",
+   "luck": 10,
+   "tags": [
+    "catchers",
+    "leader"
+   ],
+   "skills": {
+    "gunnery": 1,
+    "brawling": 1
+   }
+  },
+  {
+   "id": "wellguard_captain",
+   "name": "Wellguard captain",
+   "level": 5,
+   "attributes": {
+    "cool": 50,
+    "hard": 55,
+    "hot": 25,
+    "sharp": 45,
+    "weird": 15
+   },
+   "weapon": "shotgun",
+   "armour": "riot_gear",
+   "luck": 10,
+   "tags": [
+    "sweetwell",
+    "enforcer",
+    "leader"
+   ],
+   "skills": {
+    "gunnery": 1
+   }
   }
  ],
  "encounters": [
@@ -422,5 +468,313 @@
    "rating": "boss",
    "party_level": 9
   }
- ]
+ ],
+ "crews": [
+  {
+   "id": "hands",
+   "name": "Hands",
+   "arms": 40,
+   "training": 30,
+   "gunnery": 0,
+   "fight": 2
+  },
+  {
+   "id": "teeth",
+   "name": "Teeth riders",
+   "arms": 50,
+   "training": 20,
+   "gunnery": 0,
+   "fight": 3,
+   "tags": [
+    "savage"
+   ],
+   "rider_weapon": "9mm"
+  },
+  {
+   "id": "catchers",
+   "name": "Catchers",
+   "arms": 45,
+   "training": 35,
+   "gunnery": 1,
+   "fight": 3,
+   "rider_weapon": "9mm"
+  },
+  {
+   "id": "wellguard",
+   "name": "Wellguard",
+   "arms": 75,
+   "training": 70,
+   "gunnery": 1,
+   "fight": 4,
+   "tags": [
+    "well-disciplined"
+   ]
+  },
+  {
+   "id": "tollmen",
+   "name": "Toll men",
+   "arms": 35,
+   "training": 25,
+   "gunnery": 0,
+   "fight": 2
+  }
+ ],
+ "convoys": [
+  {
+   "id": "teeth_outriders",
+   "name": "Teeth outriders",
+   "road": "interstate",
+   "rating": "easy",
+   "party_level": 2,
+   "rigs": [
+    {
+     "frame": "hog",
+     "crew": 2,
+     "crew_type": "teeth",
+     "guns": []
+    },
+    {
+     "frame": "hog",
+     "crew": 2,
+     "crew_type": "teeth",
+     "guns": []
+    },
+    {
+     "frame": "hog",
+     "crew": 2,
+     "crew_type": "teeth",
+     "guns": []
+    }
+   ]
+  },
+  {
+   "id": "toll_runners",
+   "name": "Toll men give chase",
+   "road": "highway",
+   "rating": "easy",
+   "party_level": 2,
+   "rigs": [
+    {
+     "frame": "pickup",
+     "crew": 5,
+     "crew_type": "tollmen",
+     "guns": [
+      "gun_ring"
+     ]
+    },
+    {
+     "frame": "hog",
+     "crew": 2,
+     "crew_type": "tollmen",
+     "guns": []
+    }
+   ]
+  },
+  {
+   "id": "teeth_raid",
+   "name": "A Teeth raid",
+   "road": "interstate",
+   "rating": "fair",
+   "party_level": 3,
+   "rigs": [
+    {
+     "frame": "ute",
+     "crew": 6,
+     "crew_type": "teeth",
+     "guns": [
+      "gun_ring",
+      "rig_machine_gun"
+     ],
+     "leader": "raider"
+    },
+    {
+     "frame": "hog",
+     "crew": 2,
+     "crew_type": "teeth",
+     "guns": []
+    },
+    {
+     "frame": "hog",
+     "crew": 2,
+     "crew_type": "teeth",
+     "guns": []
+    },
+    {
+     "frame": "sand_buggy",
+     "crew": 3,
+     "crew_type": "teeth",
+     "guns": [
+      "harpoon_gun"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "catchers_coffle",
+   "name": "Catchers guarding a coffle",
+   "road": "interstate",
+   "rating": "hard",
+   "party_level": 5,
+   "rigs": [
+    {
+     "frame": "hauler",
+     "crew": 8,
+     "crew_type": "catchers",
+     "guns": [
+      "rig_machine_gun",
+      "gun_ring"
+     ],
+     "leader": "catcher_captain"
+    },
+    {
+     "frame": "ute",
+     "crew": 6,
+     "crew_type": "catchers",
+     "guns": [
+      "gun_ring",
+      "harpoon_gun"
+     ]
+    },
+    {
+     "frame": "ute",
+     "crew": 6,
+     "crew_type": "catchers",
+     "guns": [
+      "rig_machine_gun",
+      "rig_machine_gun"
+     ]
+    },
+    {
+     "frame": "hog",
+     "crew": 2,
+     "crew_type": "catchers"
+    },
+    {
+     "frame": "hog",
+     "crew": 2,
+     "crew_type": "catchers"
+    }
+   ]
+  },
+  {
+   "id": "wellguard_tankers",
+   "name": "A Wellguard tanker escort",
+   "road": "interstate",
+   "rating": "hard",
+   "party_level": 5,
+   "rigs": [
+    {
+     "frame": "tanker",
+     "crew": 6,
+     "crew_type": "wellguard",
+     "guns": [
+      "rig_machine_gun"
+     ]
+    },
+    {
+     "frame": "half_track",
+     "crew": 10,
+     "crew_type": "wellguard",
+     "guns": [
+      "rig_machine_gun",
+      "gun_ring"
+     ],
+     "leader": "wellguard_captain"
+    }
+   ]
+  },
+  {
+   "id": "dremmers_war_rig",
+   "name": "Dremmer's war rig",
+   "road": "interstate",
+   "rating": "boss",
+   "party_level": 6,
+   "rigs": [
+    {
+     "frame": "war_rig",
+     "crew": 16,
+     "crew_type": "teeth",
+     "guns": [
+      "gun_ring",
+      "gun_ring",
+      "rig_machine_gun",
+      "flamethrower"
+     ],
+     "leader": "raider_boss"
+    },
+    {
+     "frame": "hog",
+     "crew": 2,
+     "crew_type": "teeth"
+    },
+    {
+     "frame": "hog",
+     "crew": 2,
+     "crew_type": "teeth"
+    }
+   ]
+  }
+ ],
+ "party_convoys": {
+  "_doc": "Standard player convoys for the road-war bench, by party level band.",
+  "early": {
+   "max_level": 3,
+   "rigs": [
+    {
+     "frame": "compact",
+     "crew": 4,
+     "crew_type": "hands",
+     "guns": [
+      "gun_ring"
+     ],
+     "driver": "driver",
+     "flagship": true
+    },
+    {
+     "frame": "pickup",
+     "crew": 6,
+     "crew_type": "hands",
+     "guns": [
+      "rig_machine_gun"
+     ],
+     "driver": "gunlugger"
+    }
+   ]
+  },
+  "mid": {
+   "max_level": 20,
+   "rigs": [
+    {
+     "frame": "interceptor",
+     "crew": 2,
+     "crew_type": "hands",
+     "guns": [
+      "gun_ring"
+     ],
+     "driver": "driver",
+     "flagship": true
+    },
+    {
+     "frame": "ute",
+     "crew": 6,
+     "crew_type": "hands",
+     "guns": [
+      "gun_ring",
+      "rocket_rack"
+     ],
+     "driver": "gunlugger"
+    },
+    {
+     "frame": "half_track",
+     "crew": 8,
+     "crew_type": "hands",
+     "guns": [
+      "rig_machine_gun",
+      "gun_ring"
+     ],
+     "driver": "angel"
+    }
+   ]
+  }
+ }
 }

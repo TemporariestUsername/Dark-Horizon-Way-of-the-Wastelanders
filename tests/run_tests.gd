@@ -11,6 +11,7 @@ const GangWar := preload("res://sim/gang_war.gd")
 const Conditions := preload("res://sim/conditions.gd")
 const Characters := preload("res://sim/characters.gd")
 const Skirmish := preload("res://sim/battle/skirmish.gd")
+const RoadWar := preload("res://sim/battle/road_war.gd")
 
 var data
 var graph
@@ -26,7 +27,7 @@ func _init() -> void:
 	for t in [
 		"test_data_loads", "test_graph", "test_lean", "test_gang_war", "test_conditions",
 		"test_characters", "test_determinism", "test_invariants",
-		"test_build_class", "test_skirmish",
+		"test_build_class", "test_skirmish", "test_road_war",
 	]:
 		var before := failures
 		call(t)
@@ -248,3 +249,48 @@ func test_skirmish() -> void:
 			ok(false, "HP and ammo stay in range (%s)" % c["name"])
 			return
 	ok(true, "HP and ammo stay in range")
+
+
+func _road_war(seed_n: int, convoy_id: String, lvl: int) -> RoadWar:
+	var rng := RandomNumberGenerator.new()
+	rng.seed = seed_n
+	var band := "early" if lvl <= 3 else "mid"
+	var party: Array = []
+	for spec in data.units["party_convoys"][band]["rigs"]:
+		var s: Dictionary = spec.duplicate(true)
+		s["character"] = Characters.build_class(data, spec["driver"], {"road": lvl, "trade": 1, "fight": lvl}, "party", rng)
+		party.append(s)
+	var cv: Dictionary = data.units["convoys"].filter(func(c): return c["id"] == convoy_id)[0]
+	var rw := RoadWar.new()
+	rw.setup(data, party, cv["rigs"], cv["road"], rng)
+	rw.run()
+	return rw
+
+
+func test_road_war() -> void:
+	ok(RoadWar.band(0) == "contact" and RoadWar.band(3) == "close" and RoadWar.band(6) == "far" and RoadWar.band(9) == "gone", "range bands")
+	var a := _road_war(4, "teeth_raid", 3)
+	var b := _road_war(4, "teeth_raid", 3)
+	ok(a.result == b.result and a.lines == b.lines, "a road war replays exactly from its seed")
+	var wins := 0
+	for i in 40:
+		if _road_war(300 + i, "teeth_outriders", 6)["result"]["winner"] == "party":
+			wins += 1
+	ok(wins == 40, "a level-6 convoy always beats the outriders")
+	var rw := _road_war(7, "wellguard_tankers", 5)
+	var in_range := true
+	for r in rw.rigs:
+		if r["durability"] < 0.0 or r["durability"] > r["max_durability"] + 0.001 or r["crew"] < 0 or r["ammo"] < 0:
+			in_range = false
+		if r["lane"] < 0 or r["lane"] >= rw.lanes:
+			in_range = false
+	ok(in_range, "Durability, crew, ammo and lanes stay in range")
+	var pos := {}
+	var overlap := false
+	for r in rw.rigs:
+		if r["status"] == "active":
+			var k := Vector2i(r["lane"], r["x"])
+			overlap = overlap or pos.has(k)
+			pos[k] = true
+	ok(not overlap, "no two active rigs share a cell")
+	ok(rw.result["winner"] in ["party", "enemy", "escaped", "draw"], "a road war ends with a known outcome")

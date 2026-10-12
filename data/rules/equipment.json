@@ -359,7 +359,7 @@
   {
    "id": "dirt_bike",
    "name": "Dirt bike",
-   "durability": 30,
+   "durability": 60,
    "armor": 0,
    "speed": 4,
    "handling": 30,
@@ -376,7 +376,7 @@
   {
    "id": "hog",
    "name": "Hog",
-   "durability": 45,
+   "durability": 90,
    "armor": 5,
    "speed": 3,
    "handling": 15,
@@ -393,7 +393,7 @@
   {
    "id": "sand_buggy",
    "name": "Sand buggy",
-   "durability": 50,
+   "durability": 100,
    "armor": 0,
    "speed": 4,
    "handling": 30,
@@ -410,7 +410,7 @@
   {
    "id": "compact",
    "name": "Compact",
-   "durability": 60,
+   "durability": 120,
    "armor": 5,
    "speed": 3,
    "handling": 30,
@@ -426,7 +426,7 @@
   {
    "id": "pickup",
    "name": "Pickup",
-   "durability": 90,
+   "durability": 180,
    "armor": 5,
    "speed": 2,
    "handling": 15,
@@ -442,7 +442,7 @@
   {
    "id": "ute",
    "name": "Ute with a gun ring",
-   "durability": 85,
+   "durability": 170,
    "armor": 5,
    "speed": 3,
    "handling": 15,
@@ -458,7 +458,7 @@
   {
    "id": "interceptor",
    "name": "Interceptor",
-   "durability": 70,
+   "durability": 140,
    "armor": 5,
    "speed": 4,
    "handling": 45,
@@ -474,7 +474,7 @@
   {
    "id": "bus",
    "name": "Bus",
-   "durability": 160,
+   "durability": 320,
    "armor": 10,
    "speed": 1,
    "handling": 0,
@@ -491,7 +491,7 @@
   {
    "id": "hauler",
    "name": "Hauler (semi)",
-   "durability": 180,
+   "durability": 360,
    "armor": 10,
    "speed": 2,
    "handling": 0,
@@ -508,7 +508,7 @@
   {
    "id": "tanker",
    "name": "Tanker",
-   "durability": 170,
+   "durability": 340,
    "armor": 10,
    "speed": 1,
    "handling": 0,
@@ -526,7 +526,7 @@
   {
    "id": "half_track",
    "name": "Half-track",
-   "durability": 150,
+   "durability": 300,
    "armor": 15,
    "speed": 2,
    "handling": 15,
@@ -543,7 +543,7 @@
   {
    "id": "war_rig",
    "name": "War rig",
-   "durability": 220,
+   "durability": 440,
    "armor": 15,
    "speed": 2,
    "handling": 0,
@@ -560,7 +560,7 @@
   {
    "id": "land_yacht",
    "name": "Land yacht",
-   "durability": 70,
+   "durability": 140,
    "armor": 0,
    "speed": 3,
    "handling": 15,
@@ -577,7 +577,7 @@
   {
    "id": "ice_skiff",
    "name": "Ice skiff",
-   "durability": 35,
+   "durability": 70,
    "armor": 0,
    "speed": 4,
    "handling": 30,
@@ -594,7 +594,7 @@
   {
    "id": "tank",
    "name": "Tank (ancient)",
-   "durability": 300,
+   "durability": 600,
    "armor": 20,
    "speed": 1,
    "handling": 15,
@@ -611,7 +611,7 @@
   {
    "id": "gondola_car",
    "name": "Gondola car",
-   "durability": 60,
+   "durability": 120,
    "armor": 5,
    "speed": 0,
    "handling": 0,

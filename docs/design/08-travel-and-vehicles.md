@@ -86,7 +86,7 @@ Rigs carry UWNH's ship statistics. Their *looks* and *weaknesses* keep AW's Driv
 | Property | Range | Effect |
 |---|---|---|
 | **Frame** | bike, compact, large, battle (and a few special frames) | Base stats, crew and cargo |
-| **Durability** | 30–300 | The rig's HP in road war. Repaired at garages, or in the field by a Mechanic |
+| **Durability** | 60–600 | The rig's HP in road war. Repaired at garages, or in the field by a Mechanic |
 | **Armor** | 0–20 | Subtracted from every hit's damage |
 | **Speed** | 1–4 | Overworld speed (× 0.7 + 0.1 × Speed for the slowest rig), and lane and band moves per road‑war turn |
 | **Handling** | 0–45 | Subtracted from enemy hit chance. Added to terrain and obstacle checks |
@@ -103,22 +103,22 @@ Rigs carry UWNH's ship statistics. Their *looks* and *weaknesses* keep AW's Driv
 
 | Frame | Durability | Armor | Speed | Handling | Ram | Guns | Crew | Cargo | Notes |
 |---|---|---|---|---|---|---|---|---|---|
-| Dirt bike | 30 | 0 | 4 | 30 | 0 | 0 | 1/1 | 1 | Off‑road. Scout. Chopper gangs |
-| Hog | 45 | 5 | 3 | 15 | 10 | 0 | 1/2 | 2 | Chopper bike |
-| Sand buggy | 50 | 0 | 4 | 30 | 10 | 1 | 1/3 | 4 | Off‑road. Fast courier |
-| Compact | 60 | 5 | 3 | 30 | 10 | 1 | 2/4 | 8 | Starting Driver option |
-| Pickup | 90 | 5 | 2 | 15 | 20 | 1 | 2/6 | 16 | Workhorse |
-| Ute with a gun ring | 85 | 5 | 3 | 15 | 20 | 2 | 3/6 | 10 | Battle car |
-| Interceptor | 70 | 5 | 4 | 45 | 10 | 1 | 1/2 | 4 | *My other car is a tank* path |
-| Bus | 160 | 10 | 1 | 0 | 30 | 2 | 4/30 | 40 | Hardholder caravan, Hocus followers |
-| Hauler (semi) | 180 | 10 | 2 | 0 | 30 | 2 | 2/8 | 60 | Trade backbone |
-| Tanker | 170 | 10 | 1 | 0 | 30 | 1 | 2/6 | 50 water/fuel only | Grome's leash, if you can get one |
-| Half‑track | 150 | 15 | 2 | 15 | 20 | 2 | 3/10 | 20 | Off‑road. The Rough and dunes |
-| War rig | 220 | 15 | 2 | 0 | 30 | 4 | 6/20 | 30 | Mid‑game flagship |
-| Land yacht | 70 | 0 | 3 | 15 | 10 | 1 | 3/12 | 25 | **Sail‑driven: no fuel on dry riverbeds, open interstate and lake ice, but needs wind.** Built at Pesca. UWNH's love letter |
-| Ice skiff | 35 | 0 | 4 | 30 | 0 | 0 | 2/4 | 6 | Sail‑driven. Lake ice and riverbeds only. Fastest thing on the winter Lakes |
-| Tank (ancient) | 300 | 20 | 1 | 15 | 40 | 3 | 4/6 | 2 | Late game. Gas‑hungry |
-| Gondola car | 60 | 5 | — | — | — | 0 | 2/8 | 10 | Up layer only. Rides on cables |
+| Dirt bike | 60 | 0 | 4 | 30 | 0 | 0 | 1/1 | 1 | Off‑road. Scout. Chopper gangs |
+| Hog | 90 | 5 | 3 | 15 | 10 | 0 | 1/2 | 2 | Chopper bike |
+| Sand buggy | 100 | 0 | 4 | 30 | 10 | 1 | 1/3 | 4 | Off‑road. Fast courier |
+| Compact | 120 | 5 | 3 | 30 | 10 | 1 | 2/4 | 8 | Starting Driver option |
+| Pickup | 180 | 5 | 2 | 15 | 20 | 1 | 2/6 | 16 | Workhorse |
+| Ute with a gun ring | 170 | 5 | 3 | 15 | 20 | 2 | 3/6 | 10 | Battle car |
+| Interceptor | 140 | 5 | 4 | 45 | 10 | 1 | 1/2 | 4 | *My other car is a tank* path |
+| Bus | 320 | 10 | 1 | 0 | 30 | 2 | 4/30 | 40 | Hardholder caravan, Hocus followers |
+| Hauler (semi) | 360 | 10 | 2 | 0 | 30 | 2 | 2/8 | 60 | Trade backbone |
+| Tanker | 340 | 10 | 1 | 0 | 30 | 1 | 2/6 | 50 water/fuel only | Grome's leash, if you can get one |
+| Half‑track | 300 | 15 | 2 | 15 | 20 | 2 | 3/10 | 20 | Off‑road. The Rough and dunes |
+| War rig | 440 | 15 | 2 | 0 | 30 | 4 | 6/20 | 30 | Mid‑game flagship |
+| Land yacht | 140 | 0 | 3 | 15 | 10 | 1 | 3/12 | 25 | **Sail‑driven: no fuel on dry riverbeds, open interstate and lake ice, but needs wind.** Built at Pesca. UWNH's love letter |
+| Ice skiff | 70 | 0 | 4 | 30 | 0 | 0 | 2/4 | 6 | Sail‑driven. Lake ice and riverbeds only. Fastest thing on the winter Lakes |
+| Tank (ancient) | 600 | 20 | 1 | 15 | 40 | 3 | 4/6 | 2 | Late game. Gas‑hungry |
+| Gondola car | 120 | 5 | — | — | — | 0 | 2/8 | 10 | Up layer only. Rides on cables |
 
 - **Off‑road capability** works like a UWNH ship's draught. Big frames (bus, hauler, tanker, war rig, tank) are bound to the roads. Bikes, buggies and half‑tracks can take the Rough, and any frame with the *off‑road* strength can too.
 - **Convoy**: up to **6 rigs**, each needing a **driver** ([11](11-crew-and-bonds.md#officers-uwnhs-mates)). The *flagship* is your own rig.

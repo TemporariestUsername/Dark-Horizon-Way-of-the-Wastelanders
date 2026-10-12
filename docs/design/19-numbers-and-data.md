@@ -84,7 +84,7 @@ There's no clock. The Choir spreads hold by hold ([02](02-world.md#the-choirs-cr
 
 | Month | 36 | 60 | 72 | 96 | 120 |
 |---|---|---|---|---|---|
-| Silenced holds | 9 | 14 | 19 | 31 | 42 |
+| Silenced holds | 8 | 13 | 17 | 30 | 40 |
 | Reach | Spreading | Spreading | Marching | Drowning | Drowning |
 
 **Targets** (`choir.json`): at most 9 by month 36, 11–16 by month 60, 30–45 by month 120. That's slow and steady: the Choir reaches **Marching** between months 60 and 72 and **Drowning** around month 96 if nobody resists. A campaign runs 60–96 months, so a passive player will see it Marching, and a hard‑pushing one can hold it at Spreading or push it back.
@@ -125,11 +125,11 @@ M1 is the headless Godot simulation ([`sim/`](../../sim/README.md)). It loads th
 | Target | Result (median) |
 |---|---|
 | 4–6 factions alive at month 48 | 5 |
-| ≥ 25 holds changing Lean by month 48 | 53 |
-| No faction above 30% of holds | the largest holds 8% |
-| ≥ 50% of independents still independent | 57% |
+| ≥ 25 holds changing Lean by month 48 | 47 |
+| No faction above 30% of holds | the largest holds 9% |
+| ≥ 50% of independents still independent | 56% |
 | ≥ 4 sub‑factions switching backing | 10 |
-| Choir: ≤ 9 / 11–16 / 30–45 Silenced at months 36 / 60 / 120 | 9 / 14 / 42 |
+| Choir: ≤ 9 / 11–16 / 30–45 Silenced at months 36 / 60 / 120 | 8 / 13 / 40 |
 | Family and Cross‑folk turned by month 60 | both, every seed |
 
 **What the first runs changed** (each is now in the data and the docs above):
@@ -138,19 +138,26 @@ M1 is the headless Godot simulation ([`sim/`](../../sim/README.md)). It loads th
 - **Softer engines and actions**, and a claim at most every 8 months: the factions grow slowly and fight over the edges, as UWNH's nations did.
 - **Turned chapters work at the Hum's edge.** Letting them work anywhere seeded outbreaks across the map, which drowned it by year seven (96 Silenced at month 120). Voices are capped at 160 and the Opened march 15% of months.
 
-**Findings to watch** (for the M2 design pass):
-- **Burning Water falls in almost every seed** (98%), usually between months 20 and 40, because its seat is Harrowgate's neighbour. The design wants it bought or broken by month 60 without a player, so this is on purpose but early. Saving it is the player's clearest first job.
-- **The factions barely grow on their own**: +1 to +4 holds each by month 48, and Sweetwell shrinks (4 to 3) despite winning 5 gang wars, because conquered holds drift back. The player's investment and gigs should matter a lot, which is the intent, but the AI may need stronger ways to *keep* what it takes.
-- **Ambitions are uneven**: the Lighthouse and Cerro finish all four stages by month 48; the Exchange rarely finishes its first (70 Lean at Fuse is far from Tampa); Highwater stalls at its first. Stage conditions need a second look.
-- **Not simulated yet**: the Wanderer AI (it needs the named‑NPC roster), the League (it needs a broker: the player), and every battle except gang war (M2).
+**Fixed at the start of M2** (the M1 findings):
+- **Factions keep what they win.** Home rule (1.75 a month) no longer erodes a share of 60 or more, and a living faction's seat can only be taken or Silenced. By month 48 the Exchange, Highwater and Cerro hold 10–11 holds each, the Lighthouse 7 and Sweetwell 4, while 56% of the independents stay independent.
+- **Ambitions move.** The Exchange puts half its investment into its ambition's target; Highwater's freight heads toward its target. The Lighthouse, Highwater and Cerro finish all four stages by month 48; Sweetwell reaches 2 and the Exchange 1.
+- **Seats resist the Hum** (a living faction's seat gains half the Hum). Burning Water still falls in most seeds (93%), now at a median of month 39, still because its seat is Harrowgate's neighbour. Saving it stays the player's clearest first job. Sweetwell falls in 14% of seeds, late (median month 91).
+
+**Still not simulated**: the Wanderer AI (it needs the named‑NPC roster), the League (it needs a broker: the player).
 
 Whatever the sim shows, the numbers here change, the docs that quote them change with them, and the validator and tests keep the two in step.
 
-## M2: skirmish balance
-The [battle bench](../reports/m2-battle-bench.md) fights every rated encounter 500 times against a Driver, an Angel and a Gunlugger at the encounter's level. **All eleven encounters land in their rating's window.** What the first runs changed:
+## M2: battle balance
+The [battle bench](../reports/m2-battle-bench.md) fights every rated skirmish encounter 500 times against a Driver, an Angel and a Gunlugger at the encounter's level, and every rated convoy 500 times against the standard party convoy for its level. **All eleven encounters and all six convoys land in their rating's window.** What the first skirmish runs changed:
 - **Ammo counts attacks.** A fighter carries 12 attacks' worth, so the machine gun (3 rounds an attack) no longer runs dry after four bursts.
 - **Cantors hit harder**: 8 + 30% of Weird (was 10%), so a cantor is worth killing first.
 - **Weak attackers need real teeth.** Damage is Attack minus Defense, so the Opened and the beasts did almost nothing. The Opened's hands and bites are now 16 Attack, and the Opened are stronger (Hard 60), which keeps them fragile but dangerous in numbers.
 - **Encounters were re‑sized** to their ratings (in [`units.json`](../../data/units/units.json)).
 
-**Findings to watch:** fair fights leave the party at 20–40% of its HP with one or two members down; and the Catchers, Wellguard and Sings‑Back fights run 14–17 rounds, past the 10‑round pacing target.
+What the first road‑war runs changed:
+- **Durability doubled** for every frame ([08](08-travel-and-vehicles.md#vehicles-uwnhs-hulls)). Six guns focusing one rig wrecked it in a single volley; now a ute lasts three or four rounds.
+- **The driver works a gun on a small rig**, so a two‑seat Interceptor can fire its one gun.
+- **Rams scale with speed difference ÷ 4**, not the full difference, which made a fast ram a one‑shot kill.
+- **Either leader can call the duel**, a leader aboard fights alongside the crew, and nobody comes alongside a leader who'd win it. Hard convoys carry level‑matched captains, and the mid‑game party convoy is an Interceptor, a ute with a rocket rack and a half‑track.
+
+**Findings to watch:** fair skirmishes leave the party at 20–40% of its HP with one or two members down; the Catchers, Wellguard and Sings‑Back skirmishes run 14–17 rounds, past the 10‑round pacing target; leader duels decide road wars whenever one leader clearly outclasses the other; and three convoys sit near the edges of their windows.

@@ -59,20 +59,23 @@ Obstacles are dead cars, breaks, overpass pillars, the median and pileups. Dust 
 | Action | Rule |
 |---|---|
 | **Move** | Change lane or range band, up to Speed. Entering an obstacle takes a Handling check against the obstacle's difficulty; a failure costs Durability |
-| **Fire** | Each manned gun mount fires: hit chance = clamp(65 + gunner accuracy + 10 × Gunnery rank − target Handling, 5, 95)%. Damage = gun power − target Armor. It uses ammo. **Each gun needs 2 crew** to fire, as UWNH's cannons needed their crew |
-| **Ram** | Same lane, contact range. Damage to the target = Ram × (1 + speed difference) − Armor. The rammer takes half |
+| **Fire** | Each manned gun mount fires: hit chance = clamp(65 + gunner accuracy + 10 × Gunnery rank − target Handling, 5, 95)%. Damage = gun power − target Armor. It uses ammo (a rig carries 30 shots). **Each gun needs 2 crew** to fire, as UWNH's cannons needed their crew; on a small rig the driver works a gun too. Bikes have no mounts: their riders shoot personal weapons at close range |
+| **Ram** | Same lane, contact range. Damage to the target = Ram × (1 + speed difference ÷ 4) − Armor. The rammer takes half |
 | **Board** | Same lane, contact range, and you're not faster than the target. It starts a **boarding fight** (below) |
 | **Evade** | +30 Handling until your next turn |
 
 **Boarding** works like UWNH's.
 - Boarding strength = crew × (1 + Fight level × 0.05) × (1 + crew arms ÷ 100). Resolve rounds as a small gang war ([war.json](../../data/rules/war.json)) until one crew breaks.
-- **Leader duel** (UWNH's duel): either leader can call one. It's a one‑on‑one skirmish on the rig's deck. The winner's crew takes the rig at once.
+- **Leader duel** (UWNH's duel): either leader can call one, and whoever looks the stronger does. It's a one‑on‑one skirmish on the rig's deck. If the boarder's leader wins, the rig is taken at once; if the defender's wins, the boarders are thrown off and half of them are lost. A leader aboard also fights alongside the crew in an ordinary boarding.
+- **Who boards**: a crew boards when it outmatches the defenders, or when its leader would win the duel, and never comes alongside a leader who'd win it. Small crews keep their distance from anyone who could board them.
 - **Capture**: a boarded rig whose crew breaks is **taken**, with its cargo, and needs a driver from your crew to bring it home. A rig at 0 Durability is **wrecked**: you can salvage it for parts and part of its cargo.
 
 **Ending a road war:**
 - Every enemy rig is taken, wrecked or fled into the "gone" band.
 - Or you reach "gone" yourself, which means you've escaped.
 - Losing means the raiders take cargo and maybe a rig, and you're left stranded but alive.
+- **Rout**: an enemy convoy breaks off when two‑thirds of its rigs are out, or when its flagship is out and half its rigs are. Your convoy runs for it when its strength (Durability × guns) falls below a third of theirs.
+- **Ratings**: convoys are rated like skirmish encounters and checked by the [battle bench](../reports/m2-battle-bench.md).
 
 ## Mode 3: Gang war (Inindo's province war)
 This mode is used for **sieges, raids on holds, faction conquest and defending your hold**. The **M1 simulation** uses it for every conquest in the world turn.
