@@ -1,0 +1,7 @@
+# Never commit source ROMs, emulator states, or raw extraction dumps.
+*.smc
+*.sfc
+*.st
+*.srm
+roms/
+dumps/

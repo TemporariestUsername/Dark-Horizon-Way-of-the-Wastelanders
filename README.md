@@ -1,0 +1,43 @@
+# Dark Horizon: Way of the Wastelanders
+
+> *"In Apocalypse World the horizons are dark, and no roads go to them."*
+
+An open‑world trade, travel and survival RPG set in **Apocalypse World** (licensed). It brings together the gameplay philosophy of Koei's **Uncharted Waters: New Horizons** (career freedom, scarcity of range, trade as the engine, investment as conquest, discovery) and **Inindo: Way of the Ninja** (a living political map that changes every month, NPCs with their own lives, power learned at strange places, and a tyrant whose shadow keeps growing).
+
+**Status:** design bible (M0). There is no game code yet.
+
+## Start here
+1. [**Vision**](docs/design/00-vision.md): the pitch, pillars, tone and an index of everything.
+2. [**Translation matrix**](docs/design/01-translation-matrix.md): every source system and where it goes.
+3. [**The world**](docs/design/02-world.md): the Basin, the threat map as the world map, Last and the Hum.
+
+## Design bible (`docs/design/`)
+| # | Doc |
+|---|---|
+| 00 | [Vision](docs/design/00-vision.md) |
+| 01 | [Translation matrix](docs/design/01-translation-matrix.md) |
+| 02 | [World](docs/design/02-world.md) |
+| 03 | [Core loops and time](docs/design/03-core-loops.md) |
+| 04 | [Moves engine](docs/design/04-moves-engine.md) |
+| 05 | [The Director (MC as AI)](docs/design/05-director.md) |
+| 06 | [Playbooks](docs/design/06-playbooks.md) |
+| 07 | [Economy](docs/design/07-economy.md) |
+| 08 | [Travel, vehicles and the In](docs/design/08-travel-and-vehicles.md) |
+| 09 | [Combat](docs/design/09-combat.md) |
+| 10 | [Warlords and politics](docs/design/10-warlords-and-politics.md) |
+| 11 | [Crew and bonds](docs/design/11-crew-and-bonds.md) |
+| 12 | [Progression](docs/design/12-progression.md) |
+| 13 | [Content tables](docs/design/13-content-tables.md) |
+| 14 | [Art, audio and UI](docs/design/14-art-audio-ui.md) |
+| 15 | [Roadmap and open questions](docs/design/15-roadmap.md) |
+| — | [Glossary](docs/design/glossary.md) |
+
+## Research (`docs/research/`)
+- [Teardown: Uncharted Waters: New Horizons](docs/research/uncharted-waters-new-horizons.md): reverse‑engineered from the ROM (headers, data tables, text) and observed in emulation.
+- [Teardown: Inindo: Way of the Ninja](docs/research/inindo-way-of-the-ninja.md): same method.
+- [Apocalypse World source notes](docs/research/apocalypse-world-source-notes.md): the AW elements we use.
+- [**Platform recommendation**](docs/research/platform-recommendation.md): **Godot 4**, a data‑driven 2D game with a headless simulation core.
+
+## Repo hygiene
+- Source ROMs, emulator states and raw extraction dumps are **never committed**, and `.gitignore` enforces this. The research docs contain analysis and short quotations only.
+- Apocalypse World © D. Vincent Baker / Lumpley Games, used under the client's license. Uncharted Waters and Inindo © Koei Tecmo. They're referenced for design research only, and none of their content is used in the game.

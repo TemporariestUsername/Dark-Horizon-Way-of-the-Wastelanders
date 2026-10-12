@@ -1,0 +1,57 @@
+# 14 · Art, Audio and UI
+
+## Visual identity: "the playbook, brought to life"
+The AW playbooks look like **stark white silhouettes cut out of black**, with ragged torn edges, **distressed stencil type**, and paper sheets marked with ink. Inindo's title screen uses the same grammar, with a **blood‑red** banner as its only colour.
+
+**Rules:**
+1. **Two tones and one red.** All gameplay art is drawn in **bone white** (#EDE6D6) and **char black** (#0E0D0C), with dithered greys (a 4‑step ordered dither). **Red** (#B3201B) is reserved for **blood, harm, the Hum, and countdown fill**. Nothing else is red.
+2. **Silhouette first.** Characters, rigs and threats have to read as solid shapes at 1× scale. Portraits are AW‑style cut‑outs: a high‑contrast face, a black field and ragged edges.
+3. **Paper UI.** Menus are the **playbook sheet**: off‑white paper, black ink, stencil headings with torn rules (`▬▬▬▬`), and circle checkboxes for moves and highlights.
+4. **The In is the negative.** The In layer inverts the palette: white ground, black sky, red veins.
+5. **Scale.** Native 480×270 pixel art with 16×16 tiles. Portraits are 64×80.
+
+## Key screens
+
+| Screen | Lineage | Contents |
+|---|---|---|
+| **Title** | Inindo, AW | The stencil logo *DARK HORIZON* over a silhouette convoy on the salt, with one red sun. "New / Continue". |
+| **Playbook select** | UWNH's 3×2 portrait grid | Six silhouette cards. Hover shows the AW playbook blurb and its italic "*Warning:*" line. |
+| **Character creation** | AW sheet | An animated sheet filling in: name, look (choose from the lists), stats, moves, gear, Hx questions. |
+| **The overworld** | UWNH sea map | Salt, holds as stencil icons, the convoy marker, fog. A date box (top right, Inindo). Supply gauges (bottom). **Threat‑map overlay** toggle (rings, octants, threat arrows). |
+| **Hold (walkable)** | UWNH town | Top‑down hold with building signs as stencil icons, NPCs and an hour clock. |
+| **Market** | UWNH market | A resource table with Surplus/Want pips (●○○) and buy/sell. Saturation is shown as an ink smear. |
+| **Dialogue** | UWNH/Inindo portrait boxes | Portrait plus paper box. **Stance buttons**: [Threaten] [Persuade] [Read] [Listen] [Offer] [Leave]. |
+| **Roll** | AW | Two dice on the sheet, a stat chip, a modifiers ticker, and the band strip *miss / 7–9 / 10+*. Choose‑cards. |
+| **Director event card** | AW MC | Diegetic prose, then options, ending with "*What do you do?*" |
+| **Skirmish** | Inindo battle | Grid, unit silhouettes, battle‑move radial, harm clocks above units. |
+| **Road war** | UWNH fleet battle | 5 lanes, range bands, scrolling salt, rigs as side‑view silhouettes, three stations per rig. |
+| **Gang war** | Inindo province war | A siege schematic with gang blocks, walls and cohesion meters. |
+| **Playbook sheet** | AW | The full sheet: stats with highlights, moves, special, Hx box, harm countdown, improvements, gear and barter. |
+| **Crew** | UWNH mates | Crew cards: portrait, role, Hx, want (visible at Hx+2), secret (Hx+3). |
+| **Journal** | AW threat map | Rings and octants. Known threats with pie countdowns. Stakes questions as handwritten notes. |
+| **Month Report** | "Meanwhile…" | A one‑page broadsheet in the News' voice. The World Clock is printed in the masthead. |
+
+## Iconography
+- **Harm clock**: a 6‑segment pie (3, 6, 9, 10, 11, 12), filled in red ink. The same shape is used for **all countdowns** and the **World Clock**, so the player learns to read one symbol.
+- **Hx**: a signed number in a hand‑drawn box.
+- **Highlights**: a red circle around a stat.
+- **Lean**: a torn‑paper bar split by faction stencil marks.
+
+## Typography
+- **Display**: a distressed stencil sans in the style of AW's headers (licensed or commissioned).
+- **Body**: a clean book serif. Moves are set in **bold italic**, as AW sets them.
+- **Director text**: an italic serif.
+
+## Audio
+- **Palette**: drones, rusted percussion (oil drums, chains), detuned radio, a lone baritone guitar, wind on salt.
+- **The Hum** is the game's leitmotif. It's a low choral tone **mixed under every track, getting louder by World Clock segment**. At 3:00 it's barely audible. At 11:00 it's in everything. At 12:00 it *resolves* into a chord.
+- **Diegetic radio**: rigs have radios. Tuning in finds the News, Rumhouse music, and later the Choir.
+- **Dice**: bone dice on paper. The 10+ / 7–9 / miss results each have their own sting.
+- **Silence** is a tool. The Calm cuts all music and leaves only wind and radio hiss.
+
+## Accessibility
+- Full dice transparency (every modifier is named).
+- Harm and countdowns are readable without colour, by segment count.
+- Text speed and an instant‑text option. Large‑text mode for the paper UI.
+- The Intimacy content toggle (see [00](00-vision.md#tone-and-content-policy)). Gore‑level toggle.
+- Remappable controls. Full gamepad navigation (Godot focus system).
