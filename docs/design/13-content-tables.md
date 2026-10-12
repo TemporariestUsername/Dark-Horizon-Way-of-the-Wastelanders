@@ -6,7 +6,7 @@ These are seed values for `/data`. The final tuning comes from the headless sim 
 
 | Resource | Category | Base | Notes |
 |---|---|---|---|
-| Drinking water | Water | 0.6 | Free at Kettle and the Pumphouse when their surplus is 3 |
+| Drinking water | Water | 0.6 | Free at Kettle, Reservoir, the Falls and Highwater when their surplus is 3 |
 | Hot water | Water | 0.3 | Luxury in the north |
 | Meat | Chow | 0.8 | |
 | Meat (don't ask) | Chow | 0.4 | Krin's Nest. Rep −1 if you're seen selling it |
@@ -67,62 +67,64 @@ These are seed values for `/data`. The final tuning comes from the headless sim 
 
 | Kind | Example | Where |
 |---|---|---|
-| Warlord / Alpha wolf | Dremmer and the Teeth | W |
-| Brute / Hunting pack | Tum Tum's Catchers | N |
-| Brute / Cult | The Choir's missionaries | Up, then everywhere |
+| Warlord / Alpha wolf | Dremmer and the Teeth | Rag‑Wastes, pushing east |
+| Brute / Hunting pack | Tum Tum's Catchers | The Seventy, down the Fifty‑Five |
+| Brute / Cult | The Choir's missionaries | Up, then along the Ten, then everywhere |
 | Brute / Family | Mother Krin's Family | Down |
-| Brute / Mob | Anchorage's water mob | Centre |
-| Brute / Enforcers | Grome's Wellguard | S |
-| Brute / Sybarites | The Exchange's clients | E |
-| Grotesque / Cannibal | The Salt Eaters | Closer ring, wreck fields |
+| Brute / Mob | Anchorage's water mob | The Crossing |
+| Brute / Enforcers | Grome's Wellguard. Crossing toll‑men. | The Thirty‑Five. Every crossing |
+| Brute / Sybarites | The Exchange's clients | The Glass |
+| Grotesque / Cannibal | The Rest Area people | Off‑ramps on the Forty |
 | Grotesque / Mindfucker | The Choir brainer **Sings‑Back** | Up |
-| Grotesque / Disease vector | **Putrid** | Barrow road |
-| Grotesque / Mutant | Glass‑eyes | E |
-| Affliction / Disease | Rot, salt‑lung | anywhere with want ≥2 in fresh foods or medicine |
-| Affliction / Delusion | **The Hum** (hold‑level) | Spreads from Up |
-| Affliction / Custom | Saltlick's debt‑bond | Centre |
-| Affliction / Barrier | Grome's water price | S |
-| Landscape / Mirage | The Always City | Out |
-| Landscape / Maze | Junction's tunnels | Down |
-| Landscape / Furnace | The Long Heat on the Burn‑Flat | S |
-| Landscape / Fortress | Sweetwell | S |
-| Landscape / Prison | Pellet's pens | N |
+| Grotesque / Disease vector | **Putrid** | The road to Barrow |
+| Grotesque / Mutant | Glass‑eyes | The Glass |
+| Affliction / Disease | Rot, river‑sick (from drinking the living rivers) | Anywhere with want ≥2 in fresh foods or medicine. River holds |
+| Affliction / Delusion | **The Hum** (hold‑level) | Spreads from Up along the Ten |
+| Affliction / Custom | Saltlick's debt‑bond. **Isolation**: holds that still bar their gates to all outsiders, a Howling‑era habit | The Crossing. Far holds |
+| Affliction / Barrier | Grome's water price. Abondo's trade terms | The Thirty‑Five. The Lakes |
+| Landscape / Mirage | The Always City | The Ten, west of Last Stop (Out) |
+| Landscape / Maze | Junction's tunnels. The Spaghetti interchange | Down. The Seventy‑Five |
+| Landscape / Furnace | The Long Heat on the Thirty‑Five | The Thirty‑Five, the Rag‑Wastes |
+| Landscape / Fortress | Sweetwell, Highwater | Seats |
+| Landscape / Prison | Pellet's pens | The Seventy |
 | Landscape / Breeding pit | Krin's Nest, lowest level | Down |
-| Terrain | precipice (the Drop), shifting ground (dunes), broken ground (the Rag‑Wastes), exposed place (salt flat), overhang (the Skyline), wall (the Sea Wall) | — |
-| Vehicle | *A relentless hauler* (Dremmer's), *a cagey tanker* (Grome's), *a vicious bastard* interceptor (bounty hunter) | — |
+| Terrain | precipice (a bridge out), wall (a break: overpass down, pileup), overhang (a sagging overpass), exposed place (open interstate), shifting ground (flood‑cut riverbed, lake ice), broken ground (the Rough) | Everywhere |
+| Vehicle | *A relentless hauler* (Dremmer's), *a cagey tanker* (Grome's or Abondo's), *a vicious bastard* interceptor (a bounty hunter out of Gallows) | The roads |
 
-## Names (AW name lists plus our own, by use)
-- **Hold bosses and NPCs**: Tum Tum, Gnarly, Fleece, White, Lala, Bill, Crine, Mercer, Preen, Ik, Shan, Isle, Ula, Joe's Girl, Dremmer, Balls, Amy, Rufe, Jackabacka, Ba, Mice, Dog head, Hugo, Roark, Monk, Pierre, Norvell, H, Omie Wise, Corbett, Jeanette, Rum, Peppering, Brain, Matilda, Rothschild, Partridge, Brace Win, Bar, Krin, Parcher, Millions, Grome, Foster, Mill, Newton, Tao, Missed, III, Princy, Putrid, Last, Clarion, Abondo, Mimi, Fianelly, Li, Harridan, Rice, Do, Winkle.
-- **Playbook names**: from each AW playbook's name list (e.g. Driver: Lars, Bullet, Dice… from the playbook data).
-- **Rule**: a name in the AW list that we've used as a **hold** (Kettle, Twice, Fuse, Visage, Pellet, Harrow…) isn't also used as a person, except where the hold is named for its boss (Gnarly, Brace Win, Corbett, Partridge, Isle, Dog head). The data validator checks this.
+## Names
+- **Hold bosses** are listed in the [Gazetteer](16-gazetteer.md): one unique name per hold, from the AW name lists plus playbook name lists, and Spanish words in the same spirit for the Bravo and the Sierra Coast.
+- **Other named NPCs** in the docs: Shan (Tum Tum's Catchers), Bar (a driver), Sings‑Back (the Choir), Putrid (a disease vector).
+- **Rules** (checked by the data validator):
+  - No two people share a name.
+  - No person shares a name with a hold, except where the hold is named for its boss (Gnarly, Brace Win, Corbett, Partridge, Dog Head).
 
 ## NPC wants (the Wanderer AI drives these)
-Taken from AW's resource list: meat, water, fuel, security, shelter, leisure, liberty, status, acclaim, loyalty, blood kin, information, drugs, medical supplies, a particular person, revenge, *to hear the Hum*, *to never hear it*.
+Taken from AW's resource list: meat, water, fuel, security, shelter, leisure, liberty, status, acclaim, loyalty, blood kin, information, drugs, medical supplies, a particular person, revenge, *to see what's out there now*, *to go home* (a hold they left before the Howling), *to hear the Hum*, *to never hear it*.
 
 ## Sights (discovery seed list, 20 of about 50)
 
 | Sight | Category | Where |
 |---|---|---|
-| The *Hesper* (an ocean liner, upright) | Wreck | Closer ring, N |
-| The Lighthouse lens | Monument | Centre |
-| The Sea Wall | Monument | W |
-| The Always City (mirage) | Maelstrom Wonder | Out |
-| Burning Water | Maelstrom Wonder | S |
-| The Drop's downward wind | Maelstrom Wonder | Out |
-| Salt crab warren | Beast | Centre |
-| The last whale | Beast | N (Fishbone) |
-| Stone kelp forest | Growth | Closer ring, S |
+| The thousand‑car pileup | Wreck | The Ten, west of Capitol |
+| An airliner on the median | Wreck | The Forty, near Rock |
+| The Lighthouse bridge lights | Monument | The Crossing |
+| The Arch | Monument | The Seventy |
+| The Sphere | Monument | The Seventy‑Five |
+| The miniature cathedrals | Monument | The Sixty‑Five (Abbey) |
+| The Always City (mirage) | Maelstrom Wonder | Out, west of Last Stop |
+| Burning Water | Maelstrom Wonder | The Ten |
+| The Falls, still falling | Maelstrom Wonder | The Lakes |
+| The edge of the Loud | Maelstrom Wonder | Each Out edge (one Sight per edge) |
+| Feral cattle the size of rigs | Beast | The Thirty‑Five |
+| River gar as long as a rig | Beast | The Delta |
+| Glass‑eyed hounds' den | Beast | The Glass |
+| The town under the kudzu | Growth | The Seventy‑Five (Kudzu) |
 | Mushroom halls | Growth | Down |
-| The Fuse vault | Ruin | E |
-| The drowned cathedral | Ruin | Closer ring, E |
-| The stasis bunker | Ruin | Down |
+| The Vault's inner door | Ruin | The Sixty‑Five |
+| The Fuse rocket garden | Ruin | The Sixty‑Five |
+| The stasis bunker | Ruin | Down, beneath Junction |
 | The airship *Gondola* | Wreck | Up |
-| The antenna graves | Ruin | Up |
-| The submarine in the dune | Wreck | W |
 | The Choir's first hollow | Grotesque | Up |
-| Glass‑eyed hounds' den | Beast | E |
-| The Pumphouse's great pump | Monument | Down |
-| The *where the sea went* view | Maelstrom Wonder | Out (endgame) |
 
 ## Maelstrom sites (Inindo's mountains)
 See the discipline table in [04](04-moves-engine.md#weird-disciplines-inindos-magic-schools-translated). Each site has a **weird master**, a short In‑dungeon (3–5 rooms), and a **test** (a custom move).
@@ -131,8 +133,11 @@ See the discipline table in [04](04-moves-engine.md#weird-disciplines-inindos-ma
 Skull (+1 *go aggro* from the rig), Saint (+1 *open your brain* in the rig), Chrome angel (+1 *deal with bad terrain*), Steer horns (+1 massive when ramming), Doll's head (the Director's *announce future badness* comes a day early), Hula girl (+1 Hot at holds), Antenna (hear the Hum: +1 to read a sitch in Hum zones, and +1 Hum exposure a month).
 
 ## Rumor samples (bar text bank)
+- "*Somebody drove the Forty all the way to Rock and back. Says there's a whole town living in an airplane on the median.*"
 - "*Grome turned away a caravan from Barrow. Said they'd brought sickness.*"
-- "*Dremmer's camp moves at the turn of the season. They say it's coming toward the Lighthouse this time.*"
+- "*Dremmer's camp moves at the turn of the season. They say it's coming east along the Twenty this time.*"
 - "*Every radio in Wisher sings at midnight now. Nobody turns them off.*"
-- "*There's a road off the edge. Gnarly's seen the map. Gnarly won't sell it.*"
-- "*Tum Tum's been sending carts up the lift‑towers. Full going up. Empty coming down.*"
+- "*There's a road on Gnarly's old atlas that goes past Last Stop. Gnarly won't say where it ends.*"
+- "*Tum Tum's coffles go down the Ten to Harrowgate. Full going in. Empty coming out.*"
+- "*The ice roads on the Lakes opened early. Abondo's charging double to cross.*"
+- "*Fork's bridge is out again. You'll have to go round by the Arch.*"

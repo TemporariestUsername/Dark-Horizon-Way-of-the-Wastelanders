@@ -44,9 +44,10 @@ It resolves in this order, with every step logged for the Month Report:
 7. **The Month Report**: "*Meanwhile…*", in the News' voice, listing every change in a hold you know about. Fog‑hidden events show up as rumors.
 
 **Balance targets:**
-- Over 36 simulated months without the player, the Basin should keep **3 to 5 warlords alive**.
-- At least **8 holds should change Lean**, but no warlord should take more than 40% of the holds.
-- The World Clock should reach **9:00 between months 28 and 40**.
+- Over 48 simulated months without the player, the world should keep **4 to 6 warlords alive**.
+- At least **25 of the 130 holds should change Lean**, but no warlord should take more than 30% of the holds.
+- At least **half the independents should still be independent**, so there's always territory left to win.
+- The World Clock should reach **9:00 between months 36 and 54**.
 
 The [headless sim runner](../research/platform-recommendation.md#recommended-architecture) checks all of this over 200 seeds.
 
@@ -58,35 +59,47 @@ The [headless sim runner](../research/platform-recommendation.md#recommended-arc
 
 ## Warlord sheets (launch)
 
-### Dremmer, Alpha wolf of the Teeth (W)
+### Dremmer, Alpha wolf of the Teeth (Rag‑Wastes)
 - **Impulse**: to hunt and dominate.
 - **Temperament**: Stubborn, Reckless, Wild, Deaf, Warlike.
 - **Grip**: Strong.
 - **Gang**: the Teeth, large, 3‑harm, 1‑armor, savage, mobile.
 - **Lieutenants**: Rufe (Brawn 72 / Cunning 40), Crine (65 / 55), Ik (58 / 30).
-- **Stakes**: *Will Dremmer take the Lighthouse? Who will Dremmer bow to, if anyone?*
-- **Countdown**: the Teeth move closer to the Shallows each season. **12:00** means the Lighthouse falls.
+- **Reach**: the Rag‑Wastes, the Thirty‑Five north of Grome's springs, and the west end of the Ten (Dog Head, Rumhouse).
+- **Stakes**: *Will Dremmer take the Stack? Will Dremmer cross the river at the Lighthouse? Who will Dremmer bow to, if anyone?*
+- **Countdown**: the Teeth push east along the Twenty and the Forty each season. **12:00** means the Teeth hold the Lighthouse bridge, and the old neutrality is gone.
 
-### Tum Tum, Slaver of Pellet (N)
+### Tum Tum, Slaver of Pellet (the Seventy)
 - **Impulse**: to own and sell people.
 - **Temperament**: Flexible, Steady, Grim, Hum‑touched, Peaceful (it sells to everyone).
 - **Grip**: Holding.
+- **Reach**: slave coffles move down the Fifty‑Five from Kansas City to the Delta's farms and to Capitol on the Ten.
 - **Stakes**: *Will Saltlick's debtors be sold? Who is Tum Tum selling to in Harrowgate?*
-- The Choir buys bodies. That's the thread connecting Tum Tum to Last.
+- The Choir buys bodies, and the coffles go down the Ten to Harrowgate. That's the thread connecting Tum Tum to Last.
 
-### Rothschild, Collector of the Exchange (E)
+### Rothschild, Collector of the Exchange (the Glass)
 - **Impulse**: to own.
 - **Temperament**: Flexible, Steady, Grim, Deaf, Peaceful.
 - **Grip**: Strong (in money).
-- The Basin's lender. Collects Golden‑Age relics.
-- **Stakes**: *What's in the Fuse vault? Will Rothschild own the Driver's route?*
+- The only lender on the map. Collects Golden‑Age relics and **buys exclusive charts**: Rothschild wants to own the *roads*, not just the holds.
+- **Stakes**: *What's in the Vault? Will Rothschild own the charts to the Lakes?*
 
-### Grome, Dictator of Sweetwell (S)
+### Grome, Dictator of Sweetwell (the Thirty‑Five)
 - **Impulse**: to control.
 - **Temperament**: Stubborn, Steady, Grim, Deaf, Warlike.
 - **Grip**: Iron.
-- Sets the water price across the Burn‑Flat.
-- **Stakes**: *Will the Pumphouse run again? Will Grome let Barrow die of thirst?*
+- Sits on the aquifer springs and sets the water price across the southwest.
+- **Stakes**: *Will the Pumphouse run again? Will Grome's tankers reach the Sierra Coast before Barrow dies of thirst? Will Grome and Abondo go to war over water?*
+
+### Abondo, Dictator of Highwater (the Lakes)
+- **Impulse**: to control.
+- **Temperament**: Flexible, Steady, Grim, Deaf, Peaceful.
+- **Grip**: Strong.
+- **Gang**: the Lakemen, large, 2‑harm, 2‑armor, well‑disciplined. They winter on the ice roads.
+- **Lieutenants**: Venus (Brawn 40 / Cunning 81), Shade (55 / 60), Frost (70 / 35).
+- Controls the north's fresh water and the winter ice roads. Abondo trades rather than conquers, but the *terms* are the leash.
+- **Stakes**: *Will Abondo's tankers come down the Seventy? Will the Lakes close their roads to the south when the Hum comes north?*
+- **Countdown**: tanker caravans push south down the Seventy each spring. **12:00** means Abondo and Grome are at war over the water trade.
 
 ### Mother Krin, Hive queen of the Deep Lines (Down)
 - **Impulse**: to consume and swarm.

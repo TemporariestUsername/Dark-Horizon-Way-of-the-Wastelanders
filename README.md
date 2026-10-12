@@ -2,14 +2,15 @@
 
 > *"In Apocalypse World the horizons are dark, and no roads go to them."*
 
-An open‑world trade, travel and survival RPG set in **Apocalypse World** (licensed). It brings together the gameplay philosophy of Koei's **Uncharted Waters: New Horizons** (career freedom, scarcity of range, trade as the engine, investment as conquest, discovery) and **Inindo: Way of the Ninja** (a living political map that changes every month, NPCs with their own lives, power learned at strange places, and a tyrant whose shadow keeps growing).
+A single‑player, open‑world exploration, trade and survival RPG for **Windows and macOS**, set in **Apocalypse World** (licensed). For a generation the maelstrom made every road deadly. Now it has eased, and the old interstates are this world's uncharted seas. It brings together the gameplay philosophy of Koei's **Uncharted Waters: New Horizons** (career freedom, scarcity of range, trade as the engine, investment as conquest, discovery) and **Inindo: Way of the Ninja** (a living political map that changes every month, NPCs with their own lives, power learned at strange places, and a tyrant whose shadow keeps growing).
 
 **Status:** design bible (M0). There is no game code yet.
 
 ## Start here
 1. [**Vision**](docs/design/00-vision.md): the pitch, pillars, tone and an index of everything.
 2. [**Translation matrix**](docs/design/01-translation-matrix.md): every source system and where it goes.
-3. [**The world**](docs/design/02-world.md): the Basin, the threat map as the world map, Last and the Hum.
+3. [**The world**](docs/design/02-world.md): the Easing, interstates as seas, the threat map as the world map, Last and the Hum.
+4. [**Gazetteer**](docs/design/16-gazetteer.md): all 130 holds.
 
 ## Design bible (`docs/design/`)
 | # | Doc |
@@ -29,14 +30,15 @@ An open‑world trade, travel and survival RPG set in **Apocalypse World** (lice
 | 12 | [Progression](docs/design/12-progression.md) |
 | 13 | [Content tables](docs/design/13-content-tables.md) |
 | 14 | [Art, audio and UI](docs/design/14-art-audio-ui.md) |
-| 15 | [Roadmap and open questions](docs/design/15-roadmap.md) |
+| 15 | [Roadmap, client decisions and open questions](docs/design/15-roadmap.md) |
+| 16 | [Gazetteer: the 130 holds](docs/design/16-gazetteer.md) |
 | — | [Glossary](docs/design/glossary.md) |
 
 ## Research (`docs/research/`)
 - [Teardown: Uncharted Waters: New Horizons](docs/research/uncharted-waters-new-horizons.md): reverse‑engineered from the ROM (headers, data tables, text) and observed in emulation.
 - [Teardown: Inindo: Way of the Ninja](docs/research/inindo-way-of-the-ninja.md): same method.
 - [Apocalypse World source notes](docs/research/apocalypse-world-source-notes.md): the AW elements we use.
-- [**Platform recommendation**](docs/research/platform-recommendation.md): **Godot 4**, a data‑driven 2D game with a headless simulation core.
+- [**Platform recommendation**](docs/research/platform-recommendation.md): **Godot 4**, a data‑driven 2D game with a headless simulation core, for Windows and macOS.
 
 ## Repo hygiene
 - Source ROMs, emulator states and raw extraction dumps are **never committed**, and `.gitignore` enforces this. The research docs contain analysis and short quotations only.

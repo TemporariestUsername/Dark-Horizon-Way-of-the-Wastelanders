@@ -14,21 +14,22 @@ The AW playbooks look like **stark white silhouettes cut out of black**, with ra
 
 | Screen | Lineage | Contents |
 |---|---|---|
-| **Title** | Inindo, AW | The stencil logo *DARK HORIZON* over a silhouette convoy on the salt, with one red sun. "New / Continue". |
+| **Title** | Inindo, AW | The stencil logo *DARK HORIZON* over a silhouette convoy on an empty interstate, an overpass broken in half against one red sun. "New / Continue". |
 | **Playbook select** | UWNH's 3×2 portrait grid | Six silhouette cards. Hover shows the AW playbook blurb and its italic "*Warning:*" line. |
 | **Character creation** | AW sheet | An animated sheet filling in: name, look (choose from the lists), stats, moves, gear, Hx questions. |
-| **The overworld** | UWNH sea map | Salt, holds as stencil icons, the convoy marker, fog. A date box (top right, Inindo). Supply gauges (bottom). **Threat‑map overlay** toggle (rings, octants, threat arrows). |
+| **The overworld** | UWNH sea map | The road network drawn as the sea: interstates as bold white channels, highways thinner, the Rough as black land, living rivers as hard red‑black barriers with crossings marked, breaks as ink blots. Holds as stencil icons, the convoy marker, fog that peels back along the roads you drive. Old road‑sign shields with the interstate numbers. A date box (top right, Inindo). Supply gauges (bottom). **Threat‑map overlay** toggle (rings, octants, threat arrows). |
 | **Hold (walkable)** | UWNH town | Top‑down hold with building signs as stencil icons, NPCs and an hour clock. |
 | **Market** | UWNH market | A resource table with Surplus/Want pips (●○○) and buy/sell. Saturation is shown as an ink smear. |
 | **Dialogue** | UWNH/Inindo portrait boxes | Portrait plus paper box. **Stance buttons**: [Threaten] [Persuade] [Read] [Listen] [Offer] [Leave]. |
 | **Roll** | AW | Two dice on the sheet, a stat chip, a modifiers ticker, and the band strip *miss / 7–9 / 10+*. Choose‑cards. |
 | **Director event card** | AW MC | Diegetic prose, then options, ending with "*What do you do?*" |
 | **Skirmish** | Inindo battle | Grid, unit silhouettes, battle‑move radial, harm clocks above units. |
-| **Road war** | UWNH fleet battle | 5 lanes, range bands, scrolling salt, rigs as side‑view silhouettes, three stations per rig. |
+| **Road war** | UWNH fleet battle | Lanes (5, 3 or 1 by road class), range bands, scrolling asphalt with lane paint and dead cars, rigs as side‑view silhouettes, three stations per rig. |
 | **Gang war** | Inindo province war | A siege schematic with gang blocks, walls and cohesion meters. |
 | **Playbook sheet** | AW | The full sheet: stats with highlights, moves, special, Hx box, harm countdown, improvements, gear and barter. |
 | **Crew** | UWNH mates | Crew cards: portrait, role, Hx, want (visible at Hx+2), secret (Hx+3). |
 | **Journal** | AW threat map | Rings and octants. Known threats with pie countdowns. Stakes questions as handwritten notes. |
+| **First contact** | AW | The arrival scene at an uncharted hold: the gate, the watchers, a *read a sitch* card, the hold's stencil name drawn onto your map in ink. |
 | **Month Report** | "Meanwhile…" | A one‑page broadsheet in the News' voice. The World Clock is printed in the masthead. |
 
 ## Iconography
@@ -47,11 +48,12 @@ The AW playbooks look like **stark white silhouettes cut out of black**, with ra
 - **The Hum** is the game's leitmotif. It's a low choral tone **mixed under every track, getting louder by World Clock segment**. At 3:00 it's barely audible. At 11:00 it's in everything. At 12:00 it *resolves* into a chord.
 - **Diegetic radio**: rigs have radios. Tuning in finds the News, Rumhouse music, and later the Choir.
 - **Dice**: bone dice on paper. The 10+ / 7–9 / miss results each have their own sting.
-- **Silence** is a tool. The Calm cuts all music and leaves only wind and radio hiss.
+- **Silence** is a tool. The game opens almost silent (it's the Quiet). A Howl brings back the old roar for a few seconds, then cuts to nothing but wind and radio hiss.
 
 ## Accessibility
 - Full dice transparency (every modifier is named).
 - Harm and countdowns are readable without colour, by segment count.
 - Text speed and an instant‑text option. Large‑text mode for the paper UI.
 - The Intimacy content toggle (see [00](00-vision.md#tone-and-content-policy)). Gore‑level toggle.
-- Remappable controls. Full gamepad navigation (Godot focus system).
+- **Mouse and keyboard first** (Windows and macOS), with remappable keys. Gamepad supported through Godot's focus system. Full trackpad support on Macs.
+- Scalable UI for laptop screens down to 1280×800, including Retina scaling.

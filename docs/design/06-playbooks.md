@@ -21,13 +21,13 @@ Playbooks do two jobs:
 | | |
 |---|---|
 | **Career** | Explorer and courier (UWNH's adventurer path) |
-| **Signature system** | **The car**: frame, strengths, looks, weakness, battle options (AW Driver), plus a hood ornament. The Driver's rig gets +1 range tier and earns **Sights** (discoveries) at double value. |
+| **Signature system** | **The car**: frame, strengths, looks, weakness, battle options (AW Driver), plus a hood ornament. The Driver's rig gets +1 range tier. **Sights** and **first contacts** are worth double to the Driver. The Driver is the playbook built for the Easing: the first person in a generation to drive these roads for a living. |
 | **Moves (data)** | Combat driver, Eye on the door, Weather eye, Reputation, Daredevil, Collector, My other car is a tank |
 | **Campaign verbs** | **Chart** (fog of war reveals at double radius, and charts sell to the News) · **Stash** (leave supply caches) · **Run** (courier gigs with deadlines) · **Find the Out** |
-| **Starting point** | Gnarly's garage (Closer ring, N) |
-| **Arc** | I. *Gnarly's debt*: run three deliveries. II. *A map that isn't*: a rumor of a road off the salt. III. *The Drop's edge*: first reach the Out. IV. *Who else is looking*: Rothschild wants the route. V. *Where the sea went*. |
-| **Endings** | **Over the edge**: cross the Drop and leave the Basin; your crew decides whether to follow. **The road home**: chart the Basin, and the holds live by your maps. **The courier of the Hum**: if the World Clock is past 10:00 and your Weird is +2, drive the Choir's message to every hold. |
-| **Cameo in other runs** | A named Driver who sells maps at the Lighthouse and goes missing in month 20 or so |
+| **Starting point** | Gnarly's garage, a truck stop on the Fifty‑Five (the Crossing) |
+| **Arc** | I. *Gnarly's debt*: run three deliveries down roads nobody's driven since the Howling. II. *A map that isn't*: a golden‑age atlas with a road marked in red ink that isn't on any other map. III. *Last Stop*: first reach the edge of the Loud. IV. *Who else is looking*: Rothschild wants your charts, exclusively. V. *How far the Quiet goes*: drive into the Loud. |
+| **Endings** | **Into the Loud**: drive an interstate off the edge of the map and find what's past it; your crew decides whether to follow. **The road home**: chart every road in the Quiet, and the holds live by your maps. **The courier of the Hum**: if the World Clock is past 10:00 and your Weird is +2, drive the Choir's message to every hold. |
+| **Cameo in other runs** | A named Driver who sells charts at the Lighthouse and goes missing near Last Stop in month 20 or so |
 
 ### 2. The Chopper: *every road belongs to my pack*
 | | |
@@ -36,12 +36,12 @@ Playbooks do two jobs:
 | **Signature system** | **The gang**: about 15 violent bastards (2‑harm gang small savage 1‑armor). Strengths and weaknesses come from AW options (well‑armed, nomadic, in debt, filthy and unwell…). The gang eats: it needs chow and **action** each month or it starts *pack alpha* bids. |
 | **Moves (data)** | Pack alpha, Fucking thieves (plus a bike and a gang) |
 | **Campaign verbs** | **Raid** caravans and straggler camps (road war, then take cargo) · **Tribute** (shake down holds; their Lean drops, your fear rises) · **Grow** (recruit from defeated gangs) · **Challenge** (single combat for another gang's leadership) |
-| **Starting point** | Dog Head fence market (Closer ring, W) |
+| **Starting point** | Dog Head fence market on the Houston ship channel (the Ten), in Dremmer's shadow |
 | **Arc** | I. *The pack is hungry*. II. *Dremmer notices*: tribute or war. III. *A bid for alpha*: someone in your own gang. IV. *The Teeth*: take Dremmer's seat or bow. V. *Choppers don't hum*: the Choir offers your gang purpose. |
-| **Endings** | **King of the road**: replace Dremmer as Alpha wolf. **The pack scatters**: you lose the gang and ride alone. **Fucking thieves**: steal the antenna core from Harrowgate, which resets the World Clock by 2 segments. |
+| **Endings** | **King of the road**: replace Dremmer as Alpha wolf. **The pack scatters**: you lose the gang and ride alone. **Fucking thieves**: steal the dish core from Harrowgate, which resets the World Clock by 2 segments. |
 | **Cameo** | A chopper whose gang raids your caravans, and who might be recruited |
 
-### 3. The Hardholder: *my hold feeds half the Basin*
+### 3. The Hardholder: *my caravans feed half the Quiet*
 | | |
 |---|---|
 | **Career** | Merchant prince and governor (UWNH's trader path, with a home) |
@@ -50,7 +50,7 @@ Playbooks do two jobs:
 | **Campaign verbs** | **Govern** (settle disputes in the hold, set the tithe) · **Dispatch** (send caravans on standing routes) · **Invest** (buy influence in other holds; you're the best at moving Lean) · **Defend** (gang war at your walls) |
 | **The tension** | You can ride with a caravan yourself, but **while you're gone your hold rolls Wealth at −1**, and threats get bold. This is AW's "*serious and immobile home base*" as a mechanic. |
 | **Arc** | I. *Want*: the hold is hungry. II. *Routes*: the first standing caravan. III. *Grome's price*: the water leash. IV. *Allegiance*: five holds lean your way, and the warlords notice. V. *Refuge*: the Hum's refugees arrive at your gates. |
-| **Endings** | **Hardholder of the Basin**: 10 or more holds leaning to you, a new power. **Walls**: your hold survives 12:00 sealed and deaf. **Gave it away**: hand the hold to its people (a quiet ending, with epilogue text from them). |
+| **Endings** | **Hardholder of the Quiet**: 10 or more holds leaning to you, a new power. **Walls**: your hold survives 12:00 sealed and deaf. **Gave it away**: hand the hold to its people (a quiet ending, with epilogue text from them). |
 | **Cameo** | Partridge's hardholder, who offers you caravan contracts |
 
 ### 4. The Hocus: *they follow me because I hear what it says*
@@ -60,7 +60,7 @@ Playbooks do two jobs:
 | **Signature system** | **Followers**: a cult, family or students (AW's Hocus options). **Fortunes**: a monthly roll for surplus or want from your followers. Followers give you access to **insight** and **augury**. **Faith** is a form of Lean: holds can lean to *you* through faith rather than investment. |
 | **Moves (data)** | Fortunes, Charismatic, Frenzy, Fucking wacknut, Seeing souls, Divine protection, Characterize them |
 | **Campaign verbs** | **Preach** (*Frenzy* on a hold's mob) · **Augur** (map actions; see [04](04-moves-engine.md#insight-and-augury)) · **Convert** (rival cults, and Hum‑touched holds) · **Counter‑broadcast** (later, against Last) |
-| **Starting point** | Barrow, the mourners' hold (Farther ring, S) |
+| **Starting point** | Barrow, the mourners' hold (Sierra Coast). Far from everything, a long voyage to anywhere |
 | **Arc** | I. *The dead are loud lately*. II. *Followers want*. III. *A rival voice*: Last's missionaries reach Barrow. IV. *Speak to the Choir*. V. *Which of you is right?* |
 | **Endings** | **Two prophets**: defeat Last's theology in a final *Frenzy* at Harrowgate. **Become the Choir**: take Last's place. **Silence**: lead your followers to *contain* the maelstrom fragment, which has a cost. |
 | **Note on *Frenzy*** | The "*orgy of uninhibited emotion*" option plays as a crowd frenzy of lamenting, fighting, sharing and celebrating. Anything sexual stays off‑screen, per the [content policy](00-vision.md#tone-and-content-policy). |
@@ -73,20 +73,20 @@ Playbooks do two jobs:
 | **Signature system** | **The workspace**: a garage, lab or infirmary, as in AW, with AW's project rule ("*it's going to take hours/days/weeks; first you'll need… it'll require…*"). **Things speak**: examine salvage to learn its history. Golden‑Age tech recovered from the **Down** and **Up** feeds **projects**: better rigs, water condensers, a **Static jammer** against the Hum. |
 | **Moves (data)** | Things speak (special), Bonefeel, Oftener right, Reality's fraying edge, Spooky intense, Deep insights |
 | **Campaign verbs** | **Salvage** (Down and Up dungeon crawls: Inindo's mountain dungeons) · **Build** (projects that take real calendar time) · **Fix** (other people's stuff, for Rep and barter) · **Augur** through the workspace |
-| **Starting point** | Dustwich container stacks (Farther ring, N) |
-| **Arc** | I. *Things break*: Dustwich's pump. II. *The vault at Fuse*. III. *Wisher's mast*: what the antennas are for. IV. *Build the jammer*. V. *The Gondola*: get above the Choir. |
-| **Endings** | **Static**: the jammer silences the Hum across the Basin for good (World Clock to 0:00, but the maelstrom is cut off for everyone, hocuses included). **Sweet water**: fix the Pumphouse, which ends Grome's leash. **Keep it running**: you become Harrowgate's mechanic. |
+| **Starting point** | Dustwich container stacks at the old port of Orleans (the Ten) |
+| **Arc** | I. *Things break*: Dustwich's pump. II. *The rocket garden at Fuse*, up the Sixty‑Five. III. *Wisher's mast*: what the antennas are for. IV. *Build the jammer*. V. *The Gondola*: get above the Choir. |
+| **Endings** | **Static**: the jammer silences the Choir for good (World Clock to 0:00). Whether the Quiet holds without them is answered in the epilogue, by what you learned in the In. The maelstrom is cut off for everyone, hocuses included. **Sweet water**: fix the Pumphouse and open the old water mains under the Ten, which breaks Grome's leash. **Keep it running**: you become Harrowgate's mechanic. |
 | **Cameo** | Newton of Fuse, a rival digger who has the part you need |
 
 ### 6. The Quarantine: *I was there before*
 | | |
 |---|---|
 | **Career** | Soldier out of time. **The main‑quest spine**, like Inindo's hero |
-| **Signature system** | **Stasis**: your stasis facility is a hidden workspace (AW's Quarantine stasis options, e.g. *medlab*). **A sane modern sensibility**: you get unique dialogue reading the Golden Age's remains, and you can **operate** Golden‑Age machinery without a Savvyhead. **Weird is locked at the start** (AW's "Weird—"). It opens through play. |
+| **Signature system** | **Stasis**: your stasis facility is a hidden workspace (AW's Quarantine stasis options, e.g. *medlab*). **A sane modern sensibility**: you see **golden‑age names under the new ones** on the map, read old road atlases perfectly (fewer surprises at breaks), get unique dialogue reading the Golden Age's remains, and you can **operate** Golden‑Age machinery without a Savvyhead. **Weird is locked at the start** (AW's "Weird—"). It opens through play. |
 | **Moves (data)** | Leave no one behind, Eager to know, Inspiring, Release, Medlab (stasis options) |
 | **Campaign verbs** | **Remember** (fragments of the before, triggered at Golden‑Age sites) · **Advise** (*Eager to know* makes NPCs a quest compass) · **Lead** (crew rolling +Hx to help you mark experience, so crew grow faster under you) |
-| **Starting point** | Waking in a sealed stasis bunker in the Deep Lines, beneath Junction |
-| **Arc** | I. *Out of the box*: Junction, then the Lighthouse. II. *What year is it*: the world as it is now. III. *Another empty pod*: someone woke before you. IV. *Last's name*: you knew them, before. V. *Harrowgate*: the reckoning. |
+| **Starting point** | Waking in a sealed stasis bunker in the Deep Lines, beneath Junction, a year into the Easing (nobody would have found you during the Howling) |
+| **Arc** | I. *Out of the box*: Junction, then the Lighthouse. II. *What year is it*: the world as it is now, and the old names under the new ones. III. *Another empty pod*: someone woke before you. IV. *Last's name*: you knew them, before. V. *Harrowgate*: the reckoning. |
 | **Endings** | **Shut it down**: you end the broadcast; Last dies or goes back into stasis (player's choice). **Join them**: Last was right, and you open your brain. **Back in the box**: you seal yourself and the Choir's core in stasis together. |
 | **Cameo** | A strange soldier asking strange questions around Junction |
 

@@ -1,6 +1,6 @@
 # Platform Recommendation
 
-**Recommendation: Godot 4 (GDScript), 2D, data‑driven, with the simulation core kept separate from the presentation layer. Ship on PC (Steam, Steam Deck) first. Console comes later, through a porting partner.**
+**Recommendation: Godot 4 (GDScript), 2D, data‑driven, with the simulation core kept separate from the presentation layer. Ship on Windows and macOS only (client decision), through Steam, with GOG and itch.io optional.**
 
 This follows from what reverse‑engineering the two source games showed about their structure.
 
@@ -14,16 +14,16 @@ This follows from what reverse‑engineering the two source games showed about t
 | **All text is uncompressed ASCII**, and there's a lot of it: rumors, dialogue, item descriptions | ROM | A string pipeline, localization, and an authoring format for dialogue |
 | **Simulation ticks by day and by month**: wages, interest, the daimyo turn, autonomous NPC verbs (*Move, Attack, Flee, Seek work, Work, Train, Wait, Meet*) | ROM text | A deterministic sim core you can test headlessly and run many months ahead for balancing |
 | **Grid tactics** with lineup/formation (Inindo) and **grid fleet battles** (UWNH) | Emulation / Play | Grid maps, turn order, AI evaluation. Nothing that needs physics |
-| **Battery saves** (32 KB / 8 KB SRAM) hold a whole world state | Header | Serialising the full world state is cheap. Save anywhere is fine |
+| **Battery saves** (32 KB / 8 KB SRAM) hold a whole world state | Header | Serialising the full world state is cheap, so a conventional save system with many slots is easy |
 | **Two‑tone + red** visual identity (Inindo's title, AW's art) | Emulation / PDF | Palette and shader control for the two‑tone dithered look, with red as the only accent |
 
 ## Options considered
 
 | Option | Strengths | Weaknesses | Verdict |
 |---|---|---|---|
-| **Godot 4** | Excellent 2D and TileMap support. The **Control/UI system suits menu‑heavy games**. No royalties, MIT licence. Runs headless for sim tests (`--headless`, GUT tests). Resources and JSON for data. Exports to Windows, macOS, Linux, Steam Deck, Web, Android and iOS. Console through partners such as W4 Games. | Console export isn't built in. GDScript is slower than C#, but this game is never CPU‑bound. | **Chosen** |
-| Browser TypeScript (Vite + Canvas/Pixi) | Fastest to prototype and share. Easy to test. | You build your own UI layout, input‑focus and tilemap tools. Desktop and console distribution needs wrappers (Electron/Tauri), and polish costs more. | Good for a throwaway paper prototype of the moves engine. Not for the game. |
-| Unity | Mature, console‑ready, big asset store. | Licensing and pricing history is a trust risk. It's heavyweight for a 2D menu game, and 2D UI (UGUI/UI Toolkit) is more friction. | Not chosen |
+| **Godot 4** | Excellent 2D and TileMap support. The **Control/UI system suits menu‑heavy games**. No royalties, MIT licence. Runs headless for sim tests (`--headless`, GUT tests). Resources and JSON for data. **First‑class Windows and macOS export**, including universal macOS builds and a built‑in signing and notarization flow. | GDScript is slower than C#, but this game is never CPU‑bound. | **Chosen** |
+| Browser TypeScript (Vite + Canvas/Pixi) | Fastest to prototype and share. Easy to test. | You build your own UI layout, input‑focus and tilemap tools. Desktop distribution needs a wrapper (Electron or Tauri), and polish costs more. | Good for a throwaway paper prototype of the moves engine. Not for the game. |
+| Unity | Mature, big asset store. | Licensing and pricing history is a trust risk. It's heavyweight for a 2D menu game, and 2D UI (UGUI/UI Toolkit) is more friction. | Not chosen |
 | SNES homebrew (65816, ca65, or PVSnesLib) | Maximum authenticity, which would make a great marketing stunt. | The text‑heavy design, mature content, a Director AI and a world sim in 128 KB of WRAM would cut the design to pieces. Tiny audience. | No. Could be revisited later as a demake/promo |
 | Custom engine (Rust/Bevy, MonoGame…) | Full control. | Months spent on tooling that Godot already provides. | No |
 
@@ -41,8 +41,12 @@ This follows from what reverse‑engineering the two source games showed about t
 ```
 - **Resolution**: a native canvas of **480×270**, integer‑scaled. That's the 16:9 equivalent of the SNES's 256×224, and it scales cleanly to 1080p, 1440p and 4K.
 - **Look**: two‑tone dithered pixel art plus a single red, enforced with a palette shader so every asset stays on‑model.
-- **Saves**: JSON world snapshots, versioned, with save anywhere. Ironman mode is optional. AW's "*life is untenable*" should mean something, so ironman fits.
-- **Accessibility**: remappable input, a text‑speed setting, full dice transparency (show the 2d6 and the modifiers), and a colour‑independent harm display.
+- **Saves** (client decision: a conventional save system): JSON world snapshots (gzip), versioned with migrations. Manual slots, rotating autosaves and quicksave. The dice service's seed is saved, so reloading doesn't re‑roll results. Stored in Godot's `user://` (`%APPDATA%` on Windows, `~/Library/Application Support` on macOS), with Steam Cloud sync. See [03](../design/03-core-loops.md#saving-client-decision-a-conventional-save-system).
+- **Input**: mouse and keyboard first, with gamepad supported. Trackpad gestures (pan and zoom on the overworld) on macOS. Platform‑native shortcuts (⌘ on macOS, Ctrl on Windows).
+- **Rendering**: Godot's **Compatibility** renderer (OpenGL 3.3, falling back to ANGLE/Metal on macOS) is enough for a 2D two‑tone game and runs on older Intel Macs and integrated GPUs. Minimum targets: Windows 10, macOS 11 on Apple Silicon or Intel, 8 GB RAM.
+- **Overworld scale**: about 440 × 580 tiles at 5 km per tile, with a **road graph** layered over it for pathing and simulation. The world sim runs on the graph (130 holds plus about 600 road segments), not the tiles, so a 48‑month headless run stays fast.
+- **macOS release pipeline**: Apple Developer ID signing, notarization and stapling in CI, a universal binary, and a hardened runtime. Steam builds for both platforms from the same pipeline.
+- **Accessibility**: remappable input, a text‑speed setting, full dice transparency (show the 2d6 and the modifiers), a colour‑independent harm display, and UI scaling for laptop screens.
 
 ## Next step for engineering (out of scope this round)
-Spike in Godot 4: the moves engine plus a 10‑hold economy plus a 12‑month headless sim. Success means a balance report that shows allegiance shifting and the economy neither inflating nor collapsing. See [`../design/15-roadmap.md`](../design/15-roadmap.md).
+Spike in Godot 4: the moves engine, the road graph, the 130‑hold economy and a 48‑month headless sim. Success means a balance report that shows allegiance shifting and the economy neither inflating nor collapsing, plus a signed, notarized macOS build and a Windows build from CI. See [`../design/15-roadmap.md`](../design/15-roadmap.md).

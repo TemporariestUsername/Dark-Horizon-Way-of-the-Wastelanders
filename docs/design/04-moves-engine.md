@@ -88,23 +88,23 @@ At **maelstrom sites** (see [08](08-travel-and-vehicles.md#the-in)), a weird mas
 
 | Discipline | Site (In) | Tier 1 / 2 / 3 | Source school |
 |---|---|---|---|
-| **Static** | The Antenna Graves (Up) | jam a radio / blind a brainer / silence the Hum locally | Ninjutsu |
-| **Burn** | Burning Water (S) | heat‑shimmer / make it catch / the fire remembers | Fire |
-| **Wind** | The Drop's edge (Out) | read the dust / turn a storm / walk on wind | Sky |
-| **Salt** | Saltlick's pans (Centre) | preserve / still the ground / turn to salt | Earth |
-| **Mirror** | The Glass (E) | see behind / double / step through a reflection | Mysticism |
-| **Mend** | Barrow's ossuary (S) | close a wound (heal 1) / call back the dying / borrow a life | Cures |
-| **Iron** | The Teeth's pit (W) | steady hands / no pain / become a weapon | Bukyo (martial) |
-| **Lure** | Rumhouse cellar (W) | catch an eye / be wanted / make them follow | Magic |
+| **Static** | The Dishes (Up: Harrowgate) | jam a radio / blind a brainer / silence the Hum locally | Ninjutsu |
+| **Burn** | Burning Water (the Ten) | heat‑shimmer / make it catch / the fire remembers | Fire |
+| **Wind** | Last Stop, at the edge of the Loud (Rag‑Wastes) | read the dust / turn a storm / walk on wind | Sky |
+| **Salt** | Saltlick's salt barns (the Crossing) | preserve / still the ground / turn to salt | Earth |
+| **Mirror** | Mirror Town (the Glass) | see behind / double / step through a reflection | Mysticism |
+| **Mend** | Barrow's ossuary (Sierra Coast) | close a wound (heal 1) / call back the dying / borrow a life | Cures |
+| **Iron** | The Teeth's pit (Rag‑Wastes) | steady hands / no pain / become a weapon | Bukyo (martial) |
+| **Lure** | Rumhouse cellar (the Ten) | catch an eye / be wanted / make them follow | Magic |
 | **Rot** | Krin's Nest (Down) | spoil food / sicken / the Family's touch | Sorcery |
-| **Echo** | Wisher's mast (Up) | hear the dead / ask the dead / speak as the dead | Visions |
+| **Echo** | Wisher's mast (Up), and Tajin (Sierra Coast) | hear the dead / ask the dead / speak as the dead | Visions |
 | **Choir** | Harrowgate (Up, late) | hum / open them / join the Choir (dangerous) | Evil |
 | **Hex** | the Pumphouse (Down) | mark / jinx (−1 ongoing) / undo | Curses |
 
 Each discipline's moves are written as AW moves with a trigger, a roll (+weird unless stated) and a choose‑list.
 
 ## Hx
-- Hx normally sits from **−2 to +3**, on your sheet, for each named character you're bonded to: PCs in co‑op (a stretch goal), **crew**, and **key NPCs**.
+- Hx normally sits from **−2 to +3**, on your sheet, for each named character you're bonded to: your **crew** and **key NPCs** (the game is single‑player).
 - **What Hx does:** it's your *help/interfere* bonus, and it's how well you know them. At Hx+2 or more you see an NPC's *want* on their card. At Hx+3 you see their *secret*.
 - **Hx changes through:**
   - playbook Hx questions at character creation (asked about the starting crew and NPCs)

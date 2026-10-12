@@ -6,7 +6,7 @@
 - **Barter** is the unit of account. **1‑barter** is about a month's modest living for one person (AW: a night of high luxury, a few sessions' hire of a bodyguard, a repair of hi‑tech gear…).
 - **Jingle** is small change: **10 jingle = 1‑barter**. Coins with holes in them, bullets, bottle caps, ration chits, depending on the hold.
 - **Oddments** are portable valuables worth barter (antique coins, a working watch, eyeglasses). They're carried as items and traded at a hold‑specific rate.
-- **Hold currency quirks** (AW: "*is there some particular currency your establishment recognizes?*"): Sweetwell takes **water chits**, the Exchange takes **Rothschild notes**, and the Teeth take **bullets**. Converting between them costs 10–30%.
+- **Hold currency quirks** (AW: "*is there some particular currency your establishment recognizes?*"): Sweetwell takes **water chits**, the Exchange takes **Rothschild notes**, the Teeth take **bullets**, and Highwater takes **lake tokens** stamped from old coins. Converting between them costs 10–30%.
 
 ## Resources (trade goods)
 These come from AW's resource list, in six categories (each with its own price index, as UWNH has):
@@ -40,7 +40,8 @@ tribute        = 1.0 (+0.1 if the hold leans to a warlord who isn't your patron 
 - A good route (S3 to W3) returns about **2.5×** on cargo before supply costs.
 - A typical one returns **1.3–1.8×**.
 - Selling 15 or more lots into one hold crushes the margin. That's UWNH's flooding lesson, and it pushes you to *spread out*.
-- **Water is never free in the Burn‑Flat**, but it is free at hold wells in the north (the Kettle fog nets, as in "*Water is free*" in UWNH).
+- **Water is never free in Grome's country** (the Thirty‑Five and the Rag‑Wastes). It is free at Kettle's fog nets, Reservoir, the Falls and Highwater when their surplus is 3, as in UWNH's "*Water is free*".
+- **Distance is the margin.** Holds near the Crossing have had a year of the Easing to trade with each other, so their prices have mostly evened out. Holds in the Farther ring, and holds you're first to reach, still have **golden‑age‑isolation prices**: their surplus is worth almost nothing locally and a fortune three regions away. That gap is UWNH's spice route, and it closes as traffic grows (the category index drifts toward the regional mean by 10% a month once a road is charted and busy).
 
 ## Barter moves in the market
 - **Go into a holding's bustling market** (+sharp) to find a *specific* thing that isn't in stock.
@@ -98,9 +99,12 @@ Lean: { independent: 55, grome: 30, you: 15 }      → the hold "leans" to whoev
 - **Other warlords lend too, but in strings**: Grome lends water against obedience, and Mother Krin lends labor against flesh.
 
 ## Information as a commodity (UWNH's cartographers → the News)
-- **Charts**: the News, at the Lighthouse, buys newly revealed map regions (0.5–3 barter per region, more for Notional ones).
+- **Charts**: the News, at the Lighthouse, buys newly charted roads (0.5–3 barter per stretch, more for Farther and Notional ones, and a bonus for every break, crossing and toll you mark). **Rothschild pays triple for exclusive charts**, which then aren't sold to anyone else. That shuts other traders (and other playbooks' cameos) out of the route. Hardholders buy charts of the roads *to their* hold.
 - **Sights** (discoveries) pay out once to the News, add Rep, and add Lean wherever they're relevant.
 - **Rumors**: buy them at bars (1–5 jingle) or sell them. **True rumors** turn into map markers. **False rumors** exist and are planted by threats (a *Mirage* landscape's move: "*entice and betray*").
+
+## Crossing tolls
+Whoever holds a crossing over a living river sets its toll: 0–3 jingle a rig, or a share of cargo. Neutral crossings (the Lighthouse) charge nothing by custom. A crossing that leans to you is toll‑free for your caravans, which is a big reason to invest in one. Running a toll is *go aggro* or road war on a bridge.
 
 ## Safe passage
 A warlord's **mark** (UWNH's Letter of Marque and tax permit rolled together) is a token worn on your rigs:

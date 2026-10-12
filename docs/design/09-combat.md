@@ -70,7 +70,7 @@ Harm "blows through" to passengers at −1 per tier (2 functional = 1‑harm thr
 These decide *where* the fight happens and who starts with the advantage.
 
 **Rounds**:
-1. **Player phase.** Each PC and crew member moves (up to 4 tiles, 2 in dunes or rubble) and makes **one battle move**:
+1. **Player phase.** Each PC and crew member moves (up to 4 tiles, 2 in rubble, mud or wrecks) and makes **one battle move**:
 
 | Battle move | On the grid |
 |---|---|
@@ -98,7 +98,13 @@ These decide *where* the fight happens and who starts with the advantage.
 **Ending a skirmish**: through objectives, a rout, a surrender (*go aggro*), or an escape (*escape a hunter*). There's **no XP for kills**. Experience comes from highlighted rolls.
 
 ## Mode 2: Road war (lanes)
-**Board**: **5 lanes × 4 range bands** (*contact / close / far / gone*), on terrain that scrolls past. Obstacles come from Terrain threats: wrecks, dune ridges, broken ground, glass. Wind and dust lower visibility (−1 to *lay down fire* at *far*).
+**Board**: the road itself, as **lanes × 4 range bands** (*contact / close / far / gone*), scrolling past. The road class sets the width:
+- **5 lanes** on an interstate
+- **3** on a highway
+- **1** on a back road, where only the lead rigs can fight
+- **a bridge** is 2–4 lanes with no shoulder, so a lost *shoulder another vehicle* means **over the rail and into the river**
+
+Obstacles come from Terrain threats: dead cars, a break ahead (*a wall*), overpass pillars, the median, potholes, a pileup. Taking the **median or the shoulder** is a *deal with bad terrain* roll. Dust and fog lower visibility (−1 to *lay down fire* at *far*). A Howl mid‑chase gives everyone −1 ongoing until you're out of it.
 
 **Each rig has three stations:**
 1. **Driver** makes one road move:

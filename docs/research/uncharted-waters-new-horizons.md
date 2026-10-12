@@ -161,7 +161,8 @@ All the menus are built from portrait plus parchment dialogue plus a thumbs yes/
 | System | Verdict | Dark Horizon form |
 |---|---|---|
 | 6 protagonists, intertwined stories | **Keep** | 6 launch playbooks in one shared world |
-| Supplies, range, sea events | **Keep (core)** | Water, guzzoline, chow and ammo; dust storms, the Calm, rot, scavvers |
+| Supplies, range, sea events | **Keep (core)** | Water, guzzoline, chow and ammo; dust storms, Howls, rot, scavvers |
+| Oceans and land | **Translate** | Interstates are the seas, the Rough is the land, river crossings are the straits |
 | Ports with buildings | **Translate** | Holds with a market, bar, garage, infirmary, seat, congregation and brainer's room |
 | Goods and regional prices | **Translate** | The Apocalypse World resource list; each hold's surplus and want set the price |
 | Investment → allegiance | **Keep (core)** | Dropping jingle and working gigs shift a hold's loyalty between warlords and you |

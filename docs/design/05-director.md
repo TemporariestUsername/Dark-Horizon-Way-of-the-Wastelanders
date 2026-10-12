@@ -80,17 +80,17 @@ id: tum_tum_raiders
 name: "Tum Tum's Catchers"
 kind: brute/hunting_pack           # AW: Hunting pack (to victimize anyone vulnerable)
 impulse: victimize anyone vulnerable
-map: { ring: farther, octant: N }  # position on the threat map; moves each world turn
+map: { ring: closer, octant: N }  # position on the threat map; moves each world turn
 cast: [ "Shan (boss, Hard+2)", "Bar (driver)", "about 12 catchers (2-harm gang small 1-armor)" ]
 stakes:
   - "Will Tum Tum take Saltlick's debtors?"
   - "Will the Lighthouse stay neutral?"
 countdown:                          # each tick fires its line; 12:00 = resolved
-  "3:00": "Catchers seen on the salt road south of Kettle."
-  "6:00": "A straggler camp vanishes. Tracks lead north."
+  "3:00": "Catchers seen on the Fifty‑Five, coming down from the Seventy."
+  "6:00": "A straggler camp at an off‑ramp vanishes. Tracks lead north."
   "9:00": "Catchers raid Saltlick's outworks."
   "10:00": "Ula sells debtors to Tum Tum to keep the peace."
-  "11:00": "Catchers take the Saltlick pans."
+  "11:00": "Catchers take the Saltlick barns."
   "12:00": "Saltlick becomes a slave pen. Lean: Tum Tum."
 connected: [ tum_tum, saltlick_debt ]
 custom_moves: []
