@@ -11,15 +11,18 @@ The design bible's rules are now **data** that the M1 simulation can load. This 
 | [`rules/resources.json`](../../data/rules/resources.json) | 29 goods (base price, category, spoilage) and 19 services | Yes |
 | [`rules/economy.json`](../../data/rules/economy.json) | Price model coefficients, saturation, stock regeneration, upkeep, debt, tolls, chart prices | Yes |
 | [`rules/lean.json`](../../data/rules/lean.json) | Thresholds, the player's Lean levers, drift, conquest, tithe | Yes |
-| [`rules/time.json`](../../data/rules/time.json) | Calendar and seasons, travel speeds, supply burn, harm clock, **real‑time pacing targets** | Yes |
-| [`rules/factions.json`](../../data/rules/factions.json) | Six factions: temperament, grip, lieutenants, **influence‑engine numbers**, targets, countdowns; AI actions; relations; balance targets | Yes |
-| [`rules/choir.json`](../../data/rules/choir.json) | The **World Clock** maths, Choir actions, Silenced holds, the Opened, Hum exposure, the League | Yes |
-| [`rules/subfactions.json`](../../data/rules/subfactions.json) | 16 sub‑factions: Standing, Presence, backing, verbs, Turning | Yes |
+| [`rules/time.json`](../../data/rules/time.json) | Calendar and seasons, travel speeds, supply burn, healing, **real‑time pacing targets** | Yes |
+| [`rules/factions.json`](../../data/rules/factions.json) | Six factions: temperament, grip, lieutenants, **influence‑engine numbers**, targets, **ambitions**; AI actions; relations; balance targets | Yes |
+| [`rules/choir.json`](../../data/rules/choir.json) | The **Choir's spread**: Hum levels, seep, defences, voices, actions by reach, reach tiers, Silenced holds, pushback, the Opened, cantors, the League | Yes |
+| [`rules/subfactions.json`](../../data/rules/subfactions.json) | 16 sub‑factions: Standing (−100 to +100), Presence, backing, verbs, perks, Turning progress | Yes |
+| [`rules/characters.json`](../../data/rules/characters.json) | Attributes, derived‑stat formulas, the three XP tracks, skills and training, Renown, checks, Hum exposure | Yes |
+| [`rules/war.json`](../../data/rules/war.json) | Gang war: troops by size, the strength formula, losses, morale, walls, tags | Yes |
 
 **Tools** (Python 3, in [`tools/`](../../tools)):
 - `validate_data.py` checks every file against the others and against the [Gazetteer](16-gazetteer.md): names, tiers, bosses and Lean must match. It's run before every commit and in CI from M1.
 - `build_roads.py` rebuilds the road network.
 - `bootstrap_holds.py` and `bootstrap_economy.py` are one‑time generators, kept for provenance.
+- `sim_choir.py` runs the Choir's spread over the road network with no player, to tune [`choir.json`](../../data/rules/choir.json) against its balance targets.
 
 ## The road network
 **Built from Natural Earth 1:10m** roads and rivers (public domain). OpenStreetMap was avoided because its share‑alike licence would cover the game's map database.
@@ -62,28 +65,31 @@ The design bible's rules are now **data** that the M1 simulation can load. This 
 - **Independent holds** carry partial shares from every faction seat by road distance: 25 × e^(−km/350), capped at 35 in total.
 - So Gnarly, near Memphis, starts 22% Lighthouse, and the Reserve starts 19% Burning Water. On day one the map already shows who's reaching for what, as UWNH's port shares did.
 
-## The World Clock maths
-- **Six segments** needing **12, 12, 12, 8, 6 and 6** progress points.
-- **Base rate**: the Choir earns 1 point a month, so with no help and no resistance 9:00 lands at **month 36** and 12:00 at **month 56**.
-- **What speeds it up**:
-  - every Silenced hold (+0.05 a month each)
-  - every coffle delivered (+0.25)
-  - every turned sub‑faction (+0.2 a month)
-  - a faction seat Silenced (+6)
-- **What pushes it back**:
-  - a coffle stopped (−0.5)
-  - a hold liberated (−3)
-  - a sub‑faction saved (−4)
-  - Pellet taken (−12, a whole segment)
-  - a Harrowgate node destroyed (−6)
-- **Target**: 9:00 between months 36 and 54 in a typical game. The campaign runs 60–96 months.
+## The Choir's spread in numbers
+There's no clock. The Choir spreads hold by hold ([02](02-world.md#the-choirs-creep-no-clock), [17](17-factions.md#the-choir-the-nobunaga-faction)):
+- **Start**: Harrowgate and the Gondola are Silenced (Hum 100), and Wisher is at 45. The Choir has 20 **voices**.
+- **Seep**: each month, every Silenced hold adds **0.9 × (1 − km ÷ 420)** Hum to each hold within 420 km by road. Marked holds seep at a quarter of that. Everything is multiplied by **1 + voices ÷ 200**.
+- **Defences** multiply the Hum a hold gains: a Deaf faction's Lean ×0.6, each point of Keeper or Watcher Presence ×0.85, the player patrolling ×0.5, Static or a jammer ×0. A Hum‑touched faction's Lean is ×1.3, and each point of turned sub‑faction Presence adds 4 a month.
+- **Decay**: a hold with no source nearby loses 2 Hum a month.
+- **Voices**: +4 per coffle delivered, +6 per hold Silenced, −25 per Harrowgate node destroyed, up to 200.
+- **Actions**: 1 a month, 2 from 5 Silenced. From 15 Silenced, a 25% chance each month of a march: an Opened gang war against a neighbouring Marked hold.
+- **Pushback**: a liberated hold drops to 0 and its neighbours lose 20; a saved sub‑faction loses 40 Turning; taking Pellet stops the coffles.
+
+**Measured with no player** (`tools/sim_choir.py`, median of 50 seeds):
+
+| Month | 36 | 60 | 96 | 120 |
+|---|---|---|---|---|
+| Silenced holds | 8 | 13 | 26 | 39 |
+| Reach | Spreading | Spreading | Marching | Drowning |
+
+**Targets** (`choir.json`): at most 9 by month 36, 11–16 by month 60, 30–45 by month 120. That's slow and steady: the Choir reaches **Marching** around month 72 and **Drowning** after about 9 years if nobody resists. A campaign runs 60–96 months, so a passive player will see it Marching, and a hard‑pushing one can hold it at Spreading or push it back.
 
 ## Faction engines in numbers
 
 | Faction | Engine | Key numbers |
 |---|---|---|
 | The Lighthouse | Passage | +1 Lean a month to holds within 800 km that cross through its crossings. +0.5 per extra crossing, max +4. Shut off if any of its crossings tolls |
-| Sweetwell | Thirst | +2 a month to holds with water want ≥2 within 700 km, ×2 in the Long Heat. Shut‑off on a 4‑month cooldown. **The aquifer ticks every 12 months** |
+| Sweetwell | Thirst | +2 a month to holds with water want ≥2 within 700 km, ×2 in the Long Heat. Shut‑off on a 4‑month cooldown. **The aquifer** level drops 8 a year (11 in a Long Heat year) |
 | Highwater | Freight | +1.5 a month on standing routes, ×2 in winter. 50% chance a month to extend a route by up to 300 km. A raid costs −3 along the whole route |
 | The Exchange | Debt | 30 barter a month to invest. Lends 5–15 barter to holds with a want ≥2. +2 a month slide until repaid (15% repay chance a month) |
 | Burning Water | Fuel | +1 or +2 a month to fuel‑wanting holds within 900 km. Embargo: ×2 fuel price, and the hold submits (+5) or turns (−5), 50/50. Teeth raid the crude 25% of months |
@@ -109,7 +115,6 @@ M1 is the headless Godot simulation. It loads these files and runs the world tur
 - 4–6 factions alive
 - at least 25 holds changing Lean, and no faction above 30%
 - at least 4 sub‑factions switching backing
-- 9:00 between months 36 and 54
-- **without a player, the Choir wins**: 15 or more holds Silenced by month 60
+- the Choir Silencing 11–16 holds by month 60 with no player, and never stalling
 
 Whatever the sim shows, the numbers here change, the docs that quote them change with them, and the validator keeps the two in step.

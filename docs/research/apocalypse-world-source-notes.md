@@ -1,12 +1,12 @@
 # Source Notes: Apocalypse World 2nd Edition (licensed)
 
-> These are the AW elements Dark Horizon uses, taken from the *AW 2nd Ed Kickstarter Preview* playbooks file (©2k+16 D. Vincent Baker). The client holds a license, so AW's names, playbooks, moves and terms are used as they appear. This file lists them so the design docs can refer to one place.
+> These are the AW elements in the *AW 2nd Ed Kickstarter Preview* playbooks file (©2k+16 D. Vincent Baker), and what Dark Horizon does with each. The client holds a license. **Client direction: AW supplies the classes, the setting and the ambiance; the game's mechanics come from UWNH and Inindo.** So AW's names, playbooks, move names, voice and world are used, and its rules system is not. This file lists both so the design docs can refer to one place.
 
 ## Aesthetic
-- **Two‑tone silhouette art.** Stark white figures cut out of solid black panels, with ragged edges, as if torn or stencilled.
+- **Two‑tone silhouette art.** Stark white figures cut out of solid black panels, with ragged edges, as if torn or stencilled. **Not used for the game's look**: the client chose full‑colour pixel art inspired by Mad Max ([14](../design/14-art-audio-ui.md)). The stencil type survives in the UI.
 - **Distressed stencil display type** for headings ("THE DRIVER", "BASIC MOVES"). Body text is a clean serif, and move names are bold italic.
-- **The sheet is the interface.** Name, Look, Stats, Moves, Hx, Special, Improvement, Harm countdown, Gear & Barter.
-- **Voice.** Second person, profane and tender at once, wry. *"Fucked if I know."*
+- **The sheet.** Name, Look, Stats, Moves, Hx, Special, Improvement, Harm countdown, Gear & Barter. The game's character sheet is Inindo's instead; the Name and Look lists are used at creation.
+- **Voice.** Second person, profane and tender at once, wry. *"Fucked if I know."* **Used everywhere.**
 
 ## Themes and motifs
 | Motif | Source line / idea | Use in Dark Horizon |
@@ -24,7 +24,9 @@
 | The truth, no matter whose lies it betrays | The News | The News as a buyer of maps and information, and a playbook |
 | Golden Age Past | many | The previous civilisation: the "*golden age of legend*" |
 
-## Mechanics in use
+## Mechanics: not used
+None of the rules below are used as rules. They're replaced by UWNH and Inindo mechanics ([01, table D](../design/01-translation-matrix.md#d-apocalypse-world-rules--dropped)). Where a name survives, it's as flavour: the five stat names become the attribute names, move names become class‑ability names, threat kinds become event tags, and the MC agenda becomes the design agenda.
+
 - **Stats**: Cool, Hard, Hot, Sharp, Weird, each from −3 to +3. Each playbook offers its own stat arrays.
 - **Basic moves**:
   - do something under fire

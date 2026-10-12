@@ -67,6 +67,9 @@ FACTION_GANG = {  # seat/aligned overrides: armor bonus, tags
 FACTION_SEATS = {"lighthouse": "lighthouse", "sweetwell": "sweetwell", "highwater": "highwater",
                  "exchange": "exchange", "burning_water": "burning_water", "cerro": "cerro"}
 INFLUENCE_PEAK, INFLUENCE_FALLOFF_KM, INFLUENCE_MIN, INFLUENCE_CAP = 25, 350, 3, 35
+WAR = json.loads((ROOT / "data/rules/war.json").read_text())
+TROOPS, WAR_TAGS = WAR["troops_by_size"], WAR["tags"]
+TRAINING = {"seat": 60, "major": 45, "hold": 30, "outpost": 15}
 # Seat gangs from the faction sheets (docs/design/10 and 17): size, harm, armor, tags.
 SEAT_GANG = {
     "lighthouse": ("small", 2, 1, ["defend-only", "well-disciplined"]),
@@ -211,7 +214,14 @@ def main():
             size, harm, tags = "large", 3, ["savage", "mobile"]
         if hid in SEAT_GANG:
             size, harm, armor, tags = SEAT_GANG[hid]
-        h["gang"] = {"size": size, "harm": harm, "armor": min(armor, 3), "tags": tags}
+        # Inindo-style gang: troops, arms, training (rules/war.json).
+        troops = round(TROOPS[size] * stable(hid, "troops", 80, 120) / 100)
+        arms = min(95, 20 + harm * 15 + min(armor, 3) * 10)
+        training = TRAINING[tier]
+        for t in tags:
+            arms += WAR_TAGS.get(t, {}).get("arms", 0)
+            training += WAR_TAGS.get(t, {}).get("training", 0)
+        h["gang"] = {"troops": troops, "arms": max(5, min(95, arms)), "training": max(5, min(95, training)), "tags": tags}
         walls = {"seat": 2, "major": 1, "hold": stable(hid, "walls", 0, 1), "outpost": 0}[tier]
         if h["faction"] == "cerro":
             walls = 2

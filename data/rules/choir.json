@@ -1,41 +1,208 @@
 {
- "_doc": "The Choir (docs/design/17-factions.md) and the World Clock (02-world.md). The clock is 6 segments; each needs progress points. The Choir earns points monthly plus bonuses; player victories subtract.",
- "leader": "Last", "seats": ["harrowgate", "pellet"], "arm": {"name": "Tum Tum", "seat": "pellet", "catchers_gang": {"size": "small", "harm": 2, "armor": 1}},
- "world_clock": {
-  "segments": ["3:00", "6:00", "9:00", "10:00", "11:00", "12:00"],
-  "points_per_segment": [12, 12, 12, 8, 6, 6],
-  "_doc_pace": "Base 1 point a month: 9:00 at month 36 with no bonuses and no resistance; 12:00 at month 56. Bonuses pull it earlier; the player pushes it back. Target: 9:00 between months 36 and 54 in a normal game.",
-  "base_points_per_month": 1.0,
-  "bonus": {"per_silenced_hold_per_month": 0.05, "per_coffle_delivered": 0.25, "per_turned_subfaction_per_month": 0.2, "seat_silenced": 6},
-  "pushback": {"coffle_stopped": 0.5, "pellet_taken": 12, "hold_liberated": 3, "subfaction_saved": 4, "harrowgate_node_destroyed": 6},
-  "segment_effects": {
-   "3:00": ["dream_spreads_on_the_ten_and_delta", "open_your_brain_plus1_miss_psi1"],
-   "6:00": ["hum_touched_holds", "wisher_falls", "ten_holds_lose_lean_to_no_one_2_per_month", "howls_x2", "league_can_form"],
-   "9:00": ["choir_marches_monthly", "prophet_moves_twice_monthly", "arch_sings_hum_spreads_up_the_seventy"],
-   "10:00": ["loud_creeps_in_one_ring", "up_travel_cut"],
-   "11:00": ["dishes_live_hum_zones_join", "weird_plus1_npcs_listen"],
-   "12:00": ["everybody_hears_it_campaign_ends"]
+ "_doc": "The Choir (docs/design/17-factions.md): a slow, creeping spread with no clock and no forced end. Each hold has a Hum level 0-100. Silenced holds seep Hum into road neighbours; defences slow it; the Choir's own actions scale with its reach (how many holds it has Silenced). Tuned by tools/sim_choir.py.",
+ "leader": "Last",
+ "seats": [
+  "harrowgate",
+  "pellet"
+ ],
+ "arm": {
+  "name": "Tum Tum",
+  "seat": "pellet",
+  "catchers_gang": {
+   "size": "small",
+   "troops": 20,
+   "arms": 40,
+   "training": 35
   }
  },
- "actions_per_month": {"from_0": 2, "from_6:00": 3, "march_monthly_from": "9:00"},
- "actions": {
-  "spread_hum": {"weight": 1.0, "effect": "+1 hum in a hold adjacent to a Hum zone; at hum 3 the hold is Hum-touched"},
-  "mark_red_circle": {"weight": 1.0, "effect": "target a Hum-touched hold, or one with turned sub-faction presence >= 2; it is Silenced next month unless the player intervenes"},
-  "silence": {"weight": 0.0, "effect": "resolves last month's red circle"},
-  "run_coffle": {"weight": 1.2, "effect": "a Catchers coffle leaves Pellet for Harrowgate along the Fifty-Five and the Ten; delivered after travel time unless stopped"},
-  "cantor_move": {"weight": 0.8, "effect": "a Prophet threat move against the player if Hum exposure >= 3, else against a sub-faction's Turning countdown"},
-  "march": {"weight": 0.0, "effect": "from 9:00: gang war of the Opened against an adjacent hold; win = Silenced"},
-  "buy_burning_water": {"weight": 0.6, "effect": "advance Ba's trade; at three successes after 9:00 Burning Water is sold (seat silenced)"}
+ "hum": {
+  "range": [
+   0,
+   100
+  ],
+  "stages": {
+   "touched": 30,
+   "marked": 60,
+   "silenced": 100
+  },
+  "start": {
+   "harrowgate": 100,
+   "gondola": 100,
+   "wisher": 45
+  },
+  "seep": {
+   "_doc": "Each month every Silenced hold adds seep_silenced * (1 - km/seep_range_km) Hum to each hold within range by road; Marked holds seep at marked_factor of that.",
+   "seep_range_km": 420,
+   "seep_silenced": 0.9,
+   "marked_factor": 0.25,
+   "voices_multiplier": "1 + voices/200"
+  },
+  "decay_per_month_without_source": 2,
+  "defences": {
+   "_doc": "Multipliers on Hum gained by a hold each month.",
+   "deaf_faction_leans": 0.6,
+   "hum_touched_faction_leans": 1.3,
+   "keepers_presence_each": 0.85,
+   "watchers_presence_each": 0.85,
+   "static_or_jammer": 0.0,
+   "player_patrolling": 0.5
+  },
+  "turned_presence_per_point": 4
  },
- "silenced_hold": {"lean": null, "market": false, "recruiting": false, "gigs": false, "hum_zone_radius_km": 150,
-                   "liberation": {"requires": ["gang_war_win", "counter"], "counters": ["static_discipline", "hocus_frenzy", "augury_contain", "savvyhead_jammer"],
-                                  "liberator_lean_share": 70}},
- "opened": {"cohesion_break": false, "go_aggro_immune": true, "armor": 0, "harm": 2, "ignore_impress_dismay_frighten": true},
- "cantors": {"psi_harm_range": "far", "psi_harm": 1, "ap": true, "turn_check": "crew with hum_exposure >= 3 roll +Hx each round"},
- "hum_exposure": {"max": 5, "direct_moves_at": 3, "join_them_at": 5,
-                  "gain": {"in_visit_after_9": 1, "obr_miss_in_hum_zone": 1, "choir_move_hit": 1},
-                  "lose": {"static_discipline": 1, "jammer": 2, "divine_protection": 1, "deaf_month": 1}},
- "league": {"forms_from": "6:00", "countdown_points_per_segment": 3,
-            "grievance_points": {"raid": 1, "debt_called": 1, "water_shut_off": 2, "embargo": 2, "toll_on_lighthouse_crossing": 1}},
- "balance_targets": {"without_player_by_month_60": {"silenced_min": 15, "turned": ["family", "cross_folk"]}}
+ "voices": {
+  "_doc": "The Choir's strength: people taken in. Speeds the seep.",
+  "start": 20,
+  "per_coffle_delivered": 4,
+  "per_hold_silenced": 6,
+  "harrowgate_node_destroyed": -25,
+  "max": 200
+ },
+ "actions": {
+  "per_month_by_reach": [
+   {
+    "from_silenced": 0,
+    "actions": 1
+   },
+   {
+    "from_silenced": 5,
+    "actions": 2
+   }
+  ],
+  "march_from_silenced": 15,
+  "list": {
+   "press": {
+    "weight": 1.2,
+    "effect": "+12 Hum in a Touched or Marked hold (it's the Choir's missionaries at work)"
+   },
+   "run_coffle": {
+    "weight": 1.0,
+    "effect": "a Catchers coffle leaves Pellet for Harrowgate; delivered after its travel time unless stopped (+voices)"
+   },
+   "cantor": {
+    "weight": 0.6,
+    "effect": "+10 Turning progress to a Hum-touched sub-faction, or a Choir event against the player if Hum exposure >= 50"
+   },
+   "court_burning_water": {
+    "weight": 0.5,
+    "effect": "advance Ba's trade; three successes at Marching reach or above sell Burning Water's seat"
+   },
+   "march": {
+    "weight": 0.0,
+    "effect": "from 15 Silenced, march_chance_per_month: an Opened gang war against an adjacent Marked hold; a win Silences it"
+   }
+  },
+  "march_chance_per_month": 0.25
+ },
+ "reach_tiers": [
+  {
+   "id": "whispers",
+   "from_silenced": 0,
+   "effects": [
+    "dreams_along_the_ten"
+   ]
+  },
+  {
+   "id": "spreading",
+   "from_silenced": 5,
+   "effects": [
+    "howls_x2_near_hum_zones",
+    "league_can_form"
+   ]
+  },
+  {
+   "id": "marching",
+   "from_silenced": 15,
+   "effects": [
+    "opened_march",
+    "arch_relays_the_hum_up_the_seventy"
+   ]
+  },
+  {
+   "id": "drowning",
+   "from_silenced": 30,
+   "effects": [
+    "loud_creeps_in_at_hum_edges",
+    "up_travel_cut"
+   ]
+  }
+ ],
+ "no_end_state": true,
+ "silenced_hold": {
+  "lean": null,
+  "market": false,
+  "recruiting": false,
+  "gigs": false,
+  "liberation": {
+   "requires": [
+    "gang_war_win",
+    "counter"
+   ],
+   "counters": [
+    "static_discipline",
+    "hocus_frenzy",
+    "echo_discipline",
+    "savvyhead_jammer"
+   ],
+   "hum_after": 0,
+   "neighbours_hum_change": -20,
+   "liberator_lean_share": 70
+  }
+ },
+ "pushback": {
+  "coffle_stopped": "no voices gained; captives freed (+Rep)",
+  "pellet_taken": "coffles stop entirely",
+  "hold_liberated": "hum 0, neighbours -20",
+  "subfaction_saved": "turning progress -40",
+  "harrowgate_node_destroyed": "voices -25"
+ },
+ "opened": {
+  "no_morale": true,
+  "armor": 0,
+  "hp_multiplier": 0.6,
+  "immune_to_intimidation": true
+ },
+ "cantors": {
+  "hum_damage": "8 + weird_of_cantor*0.1, ignores armor, range far",
+  "grit_drain": 5,
+  "turn_check": "crew with Hum exposure >= 50 resist with loyalty vs 60 each round"
+ },
+ "hum_exposure_gain": {
+  "in_visit_in_hum_zone": 8,
+  "cantor_hit": 6,
+  "month_in_hum_zone": 4,
+  "decay_per_deaf_month": 5
+ },
+ "league": {
+  "forms_at_reach": "spreading",
+  "tension": {
+   "max": 100,
+   "collapses_at": 100,
+   "grievance": {
+    "raid": 10,
+    "debt_called": 10,
+    "water_shut_off": 20,
+    "embargo": 20,
+    "toll_on_lighthouse_crossing": 10
+   },
+   "relief_per_quiet_month": 5
+  }
+ },
+ "balance_targets": {
+  "without_player": {
+   "month_36_silenced_max": 9,
+   "month_60_silenced_range": [
+    11,
+    16
+   ],
+   "month_120_silenced_range": [
+    30,
+    45
+   ]
+  },
+  "turned_without_player_by_month_60": [
+   "family",
+   "cross_folk"
+  ],
+  "_doc": "Measured by tools/sim_choir.py (no player): month 36 ~8, month 60 ~13, month 96 ~26, month 120 ~39 of 130 holds."
+ }
 }

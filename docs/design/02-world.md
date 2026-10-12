@@ -34,8 +34,8 @@ Then, a little over a year ago, **it eased**. Nobody knows why. Out on the roads
 - **The Quarantine playbook knows the old names.** For them, the map shows golden‑age names under the new ones.
 - The [Gazetteer](16-gazetteer.md) lists the real‑world site behind every hold, for designers.
 
-## The threat map *is* the world map
-AW's threat map uses rings and eight directions. The overworld uses the same layout, centred on **the Crossing**: the old Memphis bridges over the Mississippi, where the Lighthouse stands. That means the map the Director reasons with and the map the player looks at are one object.
+## The world map: rings and directions
+The overworld borrows the *shape* of AW's threat map, rings and eight directions, as its geography of danger. It's centred on **the Crossing**: the old Memphis bridges over the Mississippi, where the Lighthouse stands. The rings set event danger ([05](05-events.md#how-an-event-is-chosen)) and how much of the map starts fogged.
 
 ```
                        NORTH: the Seventy → the Lakes (old Canadian border)
@@ -62,7 +62,7 @@ AW's threat map uses rings and eight directions. The overworld uses the same lay
 | **Centre** | The Crossing: the Memphis bridges and the junction of the Forty and the Fifty‑Five. Neutral by old custom. | Low | Always known |
 | **Closer** | About a week's drive: the Delta, the Forty, the Twenty, the Sixty‑Five | Medium | Revealed by travel or bought charts |
 | **Farther** | The far roads: the Ten, the Thirty‑Five, the Seventy, the Seventy‑Five, the Glass, the Rag‑Wastes, the Bravo, the Lakes, the Sierra Coast. Warlord seats, Up and Down entrances. | High, and rising with distance | Revealed by travel, rumors, the News |
-| **Notional** | **The Loud** (the Out), the deep In, rumored places | Extreme | Not on the map until a rumor, sight or augury puts it there |
+| **Notional** | **The Loud** (the Out), the deep In, rumored places | Extreme | Not on the map until a rumor, a Sight or a discipline puts it there |
 
 ## Regions
 There are 13 road regions, like UWNH's 13 sea regions, plus Up, Down, Out and In.
@@ -137,7 +137,7 @@ Politics has two layers.
 
 **Sub‑factions** are the cults, road gangs, guilds and secret societies that cut across faction lines: the Keepers, the Teeth, the Family, the Tankermen and a dozen more. They never own holds, but they have chapters in them, they **back** factions, they supply most gigs and recruits, and the Choir can **turn** them. See **[18 · Sub‑factions](18-sub-factions.md)**.
 
-Independent holds have their own hardholders, who act as minor warlords using the *Dictator* or *Family* impulse.
+Independent holds have their own hardholders, who act as minor warlords with a *Dictator* or *Family* temperament.
 
 ## Last and the Hum (the campaign antagonist)
 **What everyone knows.**
@@ -145,24 +145,31 @@ Independent holds have their own hardholders, who act as minor warlords using th
 - Since then, people along the Ten sleep badly and dream the same dream, and some walk into Harrowgate's lift‑towers and don't come down.
 - A prophet called **Last** preaches from the space center's great dishes: *the maelstrom is everyone who died. We took it in so you could travel. When we let it out, they'll speak to you again.*
 
-**What the Director knows** (these are stakes questions, not facts):
+**What the writers know** (these are open questions, not facts):
 - Last is the first person who ever woke from the stasis facility the Quarantine came out of, decades earlier.
 - **Did the Choir cause the Easing?** The Choir's brainers have been drawing the maelstrom *into Harrowgate* through the dishes. The world is quiet because they're holding it.
-- **What happens when they let go?** At 12:00 the Hum pours it all back out, through every opened brain at once.
+- **What happens if they let go?** Nobody knows. The Choir says the dead would speak again. Everyone else fears the Howling coming back.
 - **Is Last right?** The game never answers. The endings let the player decide what's true by what they do.
 
-**The World Clock is the end of the Easing.** It's a 6‑segment countdown, the same shape as a harm clock. It advances on Last's threat moves (about one segment every 8–12 months if nobody interferes) and on specific player failures. Player victories can push it back.
+### The Choir's creep (no clock)
+The Choir doesn't run on a timer. It spreads like rot, **one hold at a time, down the same roads you drive**, and the world gets harsher as it spreads. The rules are in [17](17-factions.md#the-choir-the-nobunaga-faction) and the numbers in [`choir.json`](../../data/rules/choir.json).
+- **Hum level.** Every hold has a Hum level from 0 to 100. At **30** it's **Touched** (bad dreams, people leaving for Harrowgate). At **60** it's **Marked**: the Choir's circle appears on its doors, and its Lean starts draining to no one. At **100** it's **Silenced**, and it belongs to the Choir.
+- **Seep.** Each month, Silenced holds seep Hum into the holds connected to them by road, weaker with distance. Deaf factions, Keepers, Watchers, your convoy patrolling and Static slow it. Turned sub‑factions speed it up.
+- **Voices.** Every coffle Tum Tum's Catchers deliver, and every hold Silenced, adds to the Choir's **voices**, and more voices make the seep stronger.
+- **Reach** is the number of Silenced holds. It sets how harsh the world is:
 
-| Segment | Effect on the world |
-|---|---|
-| **3:00** | Everyone along the Ten dreams the dream. *Open your brain* gets +1 everywhere, but a miss also gives 1 Ψ‑harm. Rumors of the Choir spread. |
-| **6:00** | **Hum‑touched holds** appear: the *Delusion* affliction. Wisher falls. Holds along the Ten start **losing Lean to no one**: people stop caring who they belong to, the holds go contested, and red circles appear on doors a month before the Choir Silences them. **Howls** (local flares of the old maelstrom) happen twice as often. |
-| **9:00** | The Choir **marches**: Last starts conquering holds like a warlord. Prophet threat moves happen twice a month. The Arch starts singing, and the Hum spreads up the Seventy. |
-| **10:00** | **The Loud creeps in.** The edge holds go silent, one ring of the map turns Notional again, and travel through the Up is cut. |
-| **11:00** | The dishes go live. Hum zones join along every interstate. Every NPC with Weird+1 or more starts *listening*. |
-| **12:00** | **Everybody hears it.** The Easing ends. The campaign ends: an end state chosen by who you are and what you did (see [06](06-playbooks.md)). |
+| Reach | Silenced holds | Effect on the world |
+|---|---|---|
+| **Whispers** | 0–4 | Everyone along the Ten dreams the dream. Rumors of the Choir spread. The Choir takes 1 action a month |
+| **Spreading** | 5–14 | Howls (local flares of the old maelstrom) happen twice as often near Hum zones. Wisher falls. The Choir takes 2 actions a month. **The League can form** |
+| **Marching** | 15–29 | The Opened **march**: the Choir attacks holds by gang war, like a warlord. The Arch starts singing, and the Hum spreads up the Seventy |
+| **Drowning** | 30+ | **The Loud creeps in** at the edges of Hum zones, and travel through the Up is cut. Every NPC with Weird 50 or more starts *listening* |
 
-> **Why a clock and not a turn limit.** Inindo's tension came from Nobunaga's army *moving*, not from a timer. Here the window of the Easing is closing, but only because Last is closing it. You can push it back.
+- **Pace.** With no one resisting, the Choir Silences about 8 holds by month 36, 13 by month 60, and 39 by month 120 (tested in [`tools/sim_choir.py`](../../tools/sim_choir.py)). It's slow, and it's never hidden: the Month Report always says where it has spread.
+- **It can be pushed back.** Stopping coffles, taking Pellet, Static, liberating Silenced holds, saving turned sub‑factions and breaking Harrowgate's nodes all lower Hum and voices.
+- **There's no end state.** The Choir never ends the campaign. Your class's arc does, and the Choir's reach when it ends decides how dark the ending is ([06](06-playbooks.md#endings-and-the-choirs-reach)).
+
+> **Why no clock.** Inindo's tension came from Nobunaga's army *moving*, not from a timer. Here the threat is a slow tide you can watch coming down the roads, and push back, at your own pace.
 
 ## The Golden Age (what's left)
 Things the world still has, all scarce and all hinted at rather than explained:
@@ -181,7 +188,7 @@ Things the world still has, all scarce and all hinted at rather than explained:
 - fused‑glass beaches
 - vault doors with dead keypads
 
-Golden‑Age technology always comes with a **downside** for the Director to *activate* (an AW MC move).
+Golden‑Age technology always comes with a **downside**, which an event can trigger later.
 
 ## Naming rules
 - **People** take AW‑style single names, nicknames and odd words: Tum Tum, Gnarly, Clarion, Dremmer, Omie Wise, Brace Win, Fianelly. Along the Bravo and the Sierra Coast, names lean into Spanish words in the same spirit (Lupe, Rache, Otilia).
@@ -197,7 +204,7 @@ Holds south of the Thirty‑Five and down the Mex 180 speak **Apocalypse World f
 **Do:**
 - Code‑switch the way border speech does: a Spanish word where it's the natural one. Terms of address (*mija*, *compa*, *jefe*), swearing (*pinche*, *cabrón*), small words (*pues*, *órale*, *ándale*, *ni modo*).
 - Give the south its own names for the AW world in the same spirit: the maelstrom is *el remolino* or *la gritona* ("the screamer"); the Howling is *los años del grito*; the Easing is *la calma*; barter is *trueque*; jingle is *feria*; a rig is *la troca*; a hold is *el fuerte*.
-- Keep at least 80% of every line in English. A player who reads no Spanish must never miss a choice, a price, a threat or a move. **Move names, UI text and choose‑lists are always in English.**
+- Keep at least 80% of every line in English. A player who reads no Spanish must never miss a choice, a price, a threat or a chance. **Ability names, UI text and choices are always in English.**
 
 **Don't:**
 - Write whole Spanish lines or paragraphs, or "translate" the AW voice into a folkloric or touristic one.

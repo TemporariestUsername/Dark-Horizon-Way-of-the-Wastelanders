@@ -7,61 +7,61 @@ Where a faction is a country, a sub‑faction is a church, a gang, a union or a 
 ## How sub‑factions work
 
 ### Standing (you and them)
-Standing runs **−3 to +3**, per sub‑faction. It's Hx at group scale.
+Standing runs from **−100 to +100**, per sub‑faction, like UWNH's guild and port standing ([`subfactions.json`](../../data/rules/subfactions.json)).
 
 | Standing | What it means |
 |---|---|
-| **+3** | **Sworn friend.** You can use their **sub‑faction move**. They'll **back** the faction you ask them to, if you give them a reason. |
-| **+2** | **Trusted.** Their recruits and services are open to you. |
-| **+1** | **Known.** Their gigs and chapter houses are open to you. |
-| **0** | **Strangers.** They trade with you at a mark‑up. |
-| **−1, −2** | **Unwelcome, then hunted.** Their chapters close to you. At −2 they become a Director **threat** (see below). |
-| **−3** | **Blood.** Every chapter acts against you. |
+| **+75** | **Sworn friend.** You can use their **perk**. They'll **back** the faction you ask them to, if you give them a reason. |
+| **+50** | **Trusted.** Their recruits, services and training hall are open to you. |
+| **+25** | **Known.** Their gigs and chapter houses are open to you. You can train skills at their hall ([04](04-characters.md#skills-uwnhs-skill-set)). |
+| **0** | **Strangers.** They trade with you at a 10% mark‑up. |
+| **−1 to −49** | **Unwelcome.** Their chapters close to you. |
+| **−50 or below** | **Hostile.** They become a **threat** on the map (see below), and every chapter acts against you. |
 
-- **Raised by**: their gigs (+1), defending a chapter, feeding their want, and bringing them a recruit or a secret.
-- **Lowered by**: attacking members, working against their want, and siding with their enemies.
+- **Raised by**: their gigs (+10), defending a chapter (+15), feeding their want (+5), and bringing them a recruit or a secret (+10).
+- **Lowered by**: attacking members (−20), working against their want (−10), and siding with their enemies (−15).
 
-Your playbook sets some starting Standings: the Chopper starts at +1 with the Teeth, the Hocus at +2 with the Mourners, the Quarantine at +1 with the Waking.
+Your class sets some starting Standings: the Chopper starts at +25 with the Teeth, the Hocus at +50 with the Mourners, the Quarantine at +25 with the Waking.
 
 ### Chapters and Presence
 - A sub‑faction has a **home** and **chapters** in specific holds. Each chapter gives **Presence 1–3** in that hold.
 - **Presence isn't Lean.** It doesn't decide who the hold belongs to. What it does:
   - **Services and gigs** are available at that hold.
   - Their **rumors** show up in that hold's bar.
-  - **Hidden Presence**: secret societies' chapters don't appear on the map until revealed by *read a sitch*, a spy gig, a brainer, or the News.
+  - **Hidden Presence**: secret societies' chapters don't appear on the map until revealed by a Sharp check (Scouting helps), the Mirror discipline's *See behind*, a spy gig, a Brainer officer, or the News.
 
 ### Backing (how sub‑factions move Lean)
 - Each sub‑faction backs **at most one faction** at a time, or none.
 - **In every hold where it has Presence, a backing sub‑faction adds Presence × 2 to its faction's Lean drift each month.** Five Keeper chapters backing the Lighthouse is real political weight. Five Teeth chapters backing nobody is a lot of unused weight.
 - **Switching backing**:
   - In the world turn, sub‑factions shift toward whoever feeds their **want**.
-  - The player can shift a sub‑faction's backing with Standing +3 and a *seduce or manipulate* on its leader, giving a reason it actually cares about.
+  - The player can shift a sub‑faction's backing with Standing +75 and a Hot check against its leader, with bonuses for giving it a reason it actually cares about.
 - **This is the political lever money can't buy.** You can't invest your way into the Teeth's loyalty. You have to ride with them.
 
 ### Sub‑factions in the world turn
-After warlord actions, each sub‑faction takes **one verb**, driven by its want:
+After faction actions, each sub‑faction takes **one verb**, driven by its want:
 
 | Verb | Who uses it | Effect |
 |---|---|---|
 | **Grow** | anyone | Opens a chapter in a neighbouring hold (Presence 1) |
 | **Work** | guilds | Posts gigs, and moves goods along their routes |
 | **Raid** | road gangs | Hits a convoy or hold. That hold's Lean drifts away from its current faction |
-| **Preach** | cults | Raises Presence. In Hum‑touched cults, raises Hum exposure in that hold |
+| **Preach** | cults | Raises Presence. In Hum‑touched cults, raises that hold's Hum level |
 | **Hide** | secret societies | Moves hidden Presence, and plants a cousin or contact |
 | **Strike** | the Tankermen | Stops water and fuel along one route (a League‑breaking lever) |
 | **Back** | anyone | Switches the faction it backs |
 
 ### Sub‑factions as threats
-At Standing −2 or worse, or whenever its want collides with your plans, a sub‑faction becomes a **Director threat** of a matching AW kind:
+At Standing −50 or worse, or whenever its want collides with your plans, a sub‑faction becomes a **threat** on the map ([05](05-events.md#how-an-event-is-chosen)), tagged with a matching AW kind:
 - road gangs are Brutes/*Hunting pack*
 - cults are Brutes/*Cult*
 - guilds on strike are Brutes/*Mob*
 - secret societies are Brutes/*Family*, or a Grotesque if they've been turned
 
 ### Turned by the Choir
-**Hum‑touched** sub‑factions (the Family and the Cross‑folk at the start, and any sub‑faction whose leader reaches Hum exposure 3) carry a hidden **Turning countdown**.
-- When it hits 12:00, the sub‑faction **is turned**. Its chapters become Choir instruments, and **any hold where a turned sub‑faction has Presence 2 or more can be Silenced from inside, without a march.**
-- **Preventing it**: each Hum‑touched sub‑faction has an arc (gigs, a *seduce or manipulate* on its leader, exposing the Choir's agents inside it). Its Turning countdown is visible in your journal once you reach Standing +1.
+**Hum‑touched** sub‑factions (the Family and the Cross‑folk at the start, and any sub‑faction whose leader reaches Hum exposure 50) carry hidden **Turning progress** from 0 to 100. It rises each month (the Family by 2 from the start, the Cross‑folk by 3 once the Choir is **Spreading**), and by 10 each time a cantor works on them.
+- At 100, the sub‑faction **is turned**. Its chapters become Choir instruments: every point of Presence adds 4 Hum a month to that hold, so **a hold with a turned chapter can be Silenced from inside, with no march at all.**
+- **Preventing it**: each Hum‑touched sub‑faction has an arc. Each arc beat takes 20 off its Turning; persuading its leader (a Hot check) or exposing the Choir's agent inside it takes 40. Its Turning progress is visible in your journal once you reach Standing +25.
 - This is the main reason to care about cults and secret societies you'd otherwise ignore.
 
 ---
@@ -85,7 +85,7 @@ When the Howling started, someone on the Memphis bridge refused to let the light
   - **Gigs**: exploration and lamp‑lighting at uncharted crossings.
   - **Recruits**: Angel, Hocus.
   - **Services**: lodging, and charts of the river.
-- **Sub‑faction move (Standing +3), *Light the way***: when you stop at a lit Keeper crossing for the night, you can ask the Director one question about any road within a day's drive, and you take +1 forward on the road you ask about.
+- **Perk (Standing +75), *Light the way***: when you rest at a lit Keeper crossing, every road within a day's drive is revealed, and your next day's travel from there is 10% faster.
 - **If hostile**: they close a bridge to you. At a crossing, that's devastating.
 
 #### The Watchers of Tajin
@@ -100,25 +100,25 @@ The Watchers have kept vigil on the pyramids of El Tajín since before the Easin
 - **Backs**: none. They lean friendly toward Cerro.
 - **Hum stance**: **Deaf**, and fiercely anti‑Choir.
 - **Offers**:
-  - **Augury**.
+  - **Divining**: a Watcher reads the dust or the dead for you (a discipline map action, for barter).
   - **The Echo discipline** (secondary site).
   - **Recruits**: Brainer, Hocus.
-- **Sub‑faction move, *Watch the edge***: at Southmost, you can *open your brain* toward the Loud without gaining Hum exposure, once a month.
+- **Perk (Standing +75), *Watch the edge***: at Southmost, once a month, look into the Loud: reveal one Notional place on the map without spending Grit or gaining Hum exposure.
 
 #### The Cross‑folk
 **Leader**: Orchid.
 **Home**: Cross (Effingham, on the Seventy).
 **Chapters**: Boon, Campus, Granary, the Arch.
 
-They gather under the giant cross where two interstates meet and listen to the wind, which they say carries the dead. They're gentle, hospitable and very easy to frighten. Their crossing at the Arch is where the Hum jumps north at 9:00.
+They gather under the giant cross where two interstates meet and listen to the wind, which they say carries the dead. They're gentle, hospitable and very easy to frighten. Their crossing at the Arch is where the Hum jumps north once the Choir is **Marching**.
 - **Want**: to hear their dead.
 - **Backs**: none.
-- **Hum stance**: **Hum‑touched.** The Choir's softest target on the Seventy. Their Turning countdown starts at 3:00.
+- **Hum stance**: **Hum‑touched.** The Choir's softest target on the Seventy. Their Turning starts once the Choir is **Spreading**.
 - **Offers**:
-  - **Insight**.
+  - **Listening**: they tell you what the wind says about a hold (a rumor that's always true).
   - **Recruits**: Hocus.
   - Lodging on the Seventy.
-- **Sub‑faction move, *Ask the dead***: once a month, use insight without followers.
+- **Perk (Standing +75), *Ask the dead***: once a month, at any Cross‑folk chapter, learn one hold's secret (as the Echo discipline's *Ask the dead*) for no Grit.
 
 #### The Mourners
 **Leader**: Matilda.
@@ -132,7 +132,7 @@ They bury the dead properly in a world that mostly doesn't. If you play the Hocu
 - **Offers**:
   - **Recruits**: Angel, Hocus.
   - **The Mend discipline**.
-- **Sub‑faction move, *Wake for the dead***: after a battle, crew deaths cost no grief modifier, and the Mourners take +1 Standing.
+- **Perk (Standing +75), *Wake for the dead***: after a battle, crew deaths cost no grief modifier, and the Mourners' Standing rises by 5.
 
 ### Road gangs
 
@@ -152,7 +152,7 @@ The biggest raider pack on the map, a moving city of bikes and war rigs that has
   - **Gigs**: raids.
   - **Recruits**: Chopper, Gunlugger.
   - **The tooth mark**: raiders leave you alone in the west.
-- **Sub‑faction move, *Ride with the Teeth***: once a month, call a Teeth raid pack (2‑harm gang small savage) to ride with you for one road war.
+- **Perk (Standing +75), *Ride with the Teeth***: once a month, call a Teeth raid pack (troops 20, arms 50, training 20, *savage*, *mobile*) to ride with you for one road war or gang war.
 - **If hostile**: a *Hunting pack* on every western road.
 - **Chopper note**: replacing Dremmer as Alpha wolf is the Chopper's arc.
 
@@ -168,7 +168,7 @@ Delta mud‑runners in airboats and swamp buggies. They know every ford and back
 - **Offers**:
   - **Unofficial crossings** of the Mississippi at fords, for a price.
   - **Recruits**: Driver, Battlebabe.
-- **Sub‑faction move, *Gar crossing***: once a month, cross the Mississippi anywhere in the Delta at night, with no crossing needed.
+- **Perk (Standing +75), *Gar crossing***: once a month, cross the Mississippi anywhere in the Delta at night, with no crossing needed.
 - **If hostile**: they ambush you at fords and crossings.
 
 #### The Twister Riders
@@ -183,7 +183,7 @@ Storm chasers on the plains of the Forty. They follow twisters for what they tea
 - **Offers**:
   - **Weather reading** (twisters announced a day early).
   - **Recruits**: Driver.
-- **Sub‑faction move, *Ride the storm***: in twister season, use a twister as cover for +2 to *outdistance*.
+- **Perk (Standing +75), *Ride the storm***: in twister season, use a twister as cover: +30% to escape any road war, and raiders can't find you for a day.
 
 #### The Whiteout
 **Leader**: Icicle.
@@ -197,7 +197,7 @@ Winter raiders on the Lakes' ice roads, Highwater's oldest enemy. In summer they
 - **Offers**:
   - **Ice raids**.
   - **Recruits**: Chopper.
-- **Sub‑faction move, *Whiteout***: in winter, your convoy can vanish on the ice (an automatic *escape a hunter* on lake ice).
+- **Perk (Standing +75), *Whiteout***: in winter, your convoy can vanish on the ice: escape from any road war on lake ice always succeeds.
 
 ### Guilds
 
@@ -214,7 +214,7 @@ The mechanics' guild. If it has wheels, a Wheelwright can keep it rolling, for a
   - **Repairs** and **frame upgrades**.
   - **Rig sales**.
   - **Recruits**: Savvyhead, Driver.
-- **Sub‑faction move, *Guild garage***: at any Wheelwright chapter, remove a rig's weakness in a day instead of a month.
+- **Perk (Standing +75), *Guild garage***: at any Wheelwright chapter, remove a rig's weakness in a day instead of a month, and refits cost 25% less.
 
 #### The Tankermen
 **Leader**: Partridge.
@@ -228,7 +228,7 @@ The haulers who move water and fuel between factions that hate each other. Every
 - **Offers**:
   - **Tanker contracts**.
   - **Recruits**: Driver.
-- **Sub‑faction move, *Union card***: no faction's embargo applies to your tankers.
+- **Perk (Standing +75), *Union card***: no faction's embargo applies to your tankers, and Tankermen drivers work for half wages.
 - **If hostile, or striking**: water and fuel stop moving on a route. Strikes are a **League‑breaking lever**, and a League‑saving one.
 
 #### The Players
@@ -244,7 +244,7 @@ Musicians, performers and skinners working the old music road from Orleans up th
   - **Rumors**.
   - **Morale** (a hold with a Players chapter has −1 to affliction severity).
   - **Recruits**: Skinner, Maestro D'.
-- **Sub‑faction move, *Play the room***: +1 to *seduce or manipulate* in any hold with a Players chapter.
+- **Perk (Standing +75), *Play the room***: +10% on Hot checks in any hold with a Players chapter.
 
 #### The Diggers
 **Leader**: Newton.
@@ -259,7 +259,7 @@ The salvage guild: vault crackers, ruin divers, rocket‑garden strippers. They 
   - **Golden‑age tech**.
   - **Project parts** (Savvyhead).
   - **Recruits**: Savvyhead.
-- **Sub‑faction move, *Dig rights***: salvage a Ruin Sight a second time.
+- **Perk (Standing +75), *Dig rights***: salvage a Ruin Sight a second time.
 
 #### The News
 **Leader**: Omie Wise.
@@ -274,7 +274,7 @@ They buy charts and sell truth. They print the **Month Report**. Every faction w
   - **Buys charts and Sights**.
   - **Sells rumors**.
   - **Recruits**: Quarantine‑types and other outsiders.
-- **Sub‑faction move, *Print it***: once a season, publish a truth you can prove (a faction's secret, or a sub‑faction's hidden Presence). That truth becomes common knowledge map‑wide, and the exposed party loses Lean or Presence.
+- **Perk (Standing +75), *Print it***: once a season, publish a truth you can prove (a faction's secret, or a sub‑faction's hidden Presence). That truth becomes common knowledge map‑wide, and the exposed party loses 10 Lean in its holds, or 1 Presence.
 
 ### Secret societies
 
@@ -288,12 +288,12 @@ They buy charts and sell truth. They print the **Month Report**. Every faction w
 Under the salt domes and pipeline tunnels, Mother Krin took in everyone the Howling broke. The Family is enormous, mostly unseen, and everywhere: cousins at every table, kin‑words for strangers, a door that opens from the inside.
 - **Want**: strays, and meat.
 - **Backs**: none in the open. **Hostile to Burning Water**, which covets the Reserve they live beside.
-- **Hum stance**: **Hum‑touched.** Mother Krin hears something in the dark. Their Turning countdown starts at 0:00, and if they're turned, **every hidden chapter becomes a door for the Choir.**
+- **Hum stance**: **Hum‑touched.** Mother Krin hears something in the dark. Their Turning runs from the start, and if they're turned, **every hidden chapter becomes a door for the Choir.**
 - **Offers**:
   - **The tunnel key** (travel in the Down, under the rivers).
   - **Spy gigs**.
   - **Recruits**: any.
-- **Sub‑faction move, *Cousin***: reveal every hidden Presence in a hold, or plant your own.
+- **Perk (Standing +75), *Cousin***: reveal every hidden Presence in a hold, or plant your own (Presence 1, hidden).
 
 #### The Waking
 **Leader**: H.
@@ -307,7 +307,7 @@ A society of people who have found *other* stasis bunkers, empty ones. They know
 - **Offers**:
   - **Stasis lore** (Quarantine arc beats).
   - **Bunker locations**.
-- **Sub‑faction move, *Wake the sleeper***: open a sealed stasis pod. What comes out is a Director stakes question.
+- **Perk (Standing +75), *Wake the sleeper***: open a sealed stasis pod. What comes out is a story beat: a recruit, a memory, or something worse.
 
 #### The Odd Lot
 **Leader**: Dog head.
@@ -322,10 +322,10 @@ Fences and smugglers. They'll move anything past any toll or embargo. Anything e
   - **Contraband** trade.
   - **Smuggling** past embargoes and tolls.
   - **Recruits**: Driver, Skinner.
-- **Sub‑faction move, *Off the books***: once a month, make one trade that saturation, embargo and tribute don't touch.
+- **Perk (Standing +75), *Off the books***: once a month, make one trade that saturation, embargo and tribute don't touch.
 
 ### Not a sub‑faction: the Catchers
-**Tum Tum's Catchers** are the Choir's arm ([17](17-factions.md#the-choir-the-nobunaga-faction)). They don't have Standing, chapters or a sub‑faction move, and you can't join them.
+**Tum Tum's Catchers** are the Choir's arm ([17](17-factions.md#the-choir-the-nobunaga-faction)). They don't have Standing, chapters or a perk, and you can't join them.
 
 ---
 

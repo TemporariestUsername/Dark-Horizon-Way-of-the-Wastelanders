@@ -1,0 +1,72 @@
+{
+ "_doc": "Characters, UWNH/Inindo-style (docs/design/04-characters.md). Attribute names come from Apocalypse World; the scales and formulas don't.",
+ "attributes": {
+  "range": [1, 100],
+  "list": {
+   "cool": "nerve, driving, initiative, ranged accuracy",
+   "hard": "melee, intimidation, carrying, health",
+   "hot": "charm, negotiation, recruiting, prices",
+   "sharp": "navigation, trade, spotting, evasion",
+   "weird": "disciplines, the In, resisting the Hum, grit"
+  }
+ },
+ "derived": {
+  "_doc": "Recomputed on level-up or equipment change. Levels are the three XP tracks below.",
+  "health": "40 + hard*0.6 + fight_level*6",
+  "grit": "10 + weird*0.4 + (road_level + fight_level)",
+  "attack_melee": "weapon_attack + hard*0.3 + fight_level",
+  "attack_ranged": "weapon_attack + cool*0.3 + fight_level",
+  "accuracy_melee": "hard*0.5 + brawling_rank*10 + fight_level",
+  "accuracy_ranged": "cool*0.5 + gunnery_rank*10 + fight_level",
+  "defense": "armor + cool*0.2 + fight_level",
+  "evasion": "speed*0.5 + cover",
+  "speed": "20 + cool*0.4 + sharp*0.2 - encumbrance",
+  "luck": "class_luck + random(1, 20)"
+ },
+ "levels": {
+  "tracks": ["road", "trade", "fight"],
+  "max": 20,
+  "xp_to_next": "round(100 * level^1.5)",
+  "attribute_points_per_level": 4,
+  "track_attribute_weights": {
+   "road": {"cool": 0.4, "sharp": 0.4, "weird": 0.2},
+   "trade": {"hot": 0.5, "sharp": 0.5},
+   "fight": {"hard": 0.5, "cool": 0.3, "weird": 0.2}
+  },
+  "_doc_weights": "Points from a level-up are split by the track's weights, then multiplied by the class's growth (data per class arrives with M2; see docs/design/06-playbooks.md).",
+  "xp_sources": {
+   "road": {"per_10km_uncharted": 1, "per_50km_charted": 1, "first_contact": 60, "sight": 120, "new_crossing_used": 20},
+   "trade": {"per_barter_profit": 1, "investment_per_2_barter": 1, "gig_delivery": 25},
+   "fight": {"per_enemy_level_defeated": 10, "per_rig_disabled": 40, "gang_war_won": 80, "duel_won": 60}
+  }
+ },
+ "skills": {
+  "_doc": "Ranks 1-3. Learned at level-ups (one rank every 3 levels in the matching track) or trained at sub-faction halls.",
+  "list": {
+   "driving": {"track": "road", "effect_per_rank": "+10 handling in road war, -5% fuel use"},
+   "navigation": {"track": "road", "effect_per_rank": "+1 fog reveal radius, -5% travel time"},
+   "wrenching": {"track": "road", "effect_per_rank": "+20% field repair, -10% breakdown chance"},
+   "trading": {"track": "trade", "effect_per_rank": "+3% sell price, +5% haggle cap"},
+   "gunnery": {"track": "fight", "effect_per_rank": "+10 accuracy with rig guns and ranged weapons"},
+   "brawling": {"track": "fight", "effect_per_rank": "+10 melee accuracy"},
+   "medicine": {"track": "trade", "effect_per_rank": "+3 HP healed per day for the party; stabilise the gravely wounded"},
+   "scouting": {"track": "road", "effect_per_rank": "+15% chance to spot an ambush or event a day early"},
+   "lore": {"track": "road", "effect_per_rank": "+20% chart value; read golden-age tech; +10% discipline power in the In"}
+  },
+  "training": {"standing_needed": 25, "barter_by_rank": [3, 8, 15], "days_by_rank": [5, 10, 20]}
+ },
+ "renown": {
+  "_doc": "UWNH fame. Three kinds, 0-1000; a title every 200.",
+  "kinds": ["explorer", "trader", "raider"],
+  "titles_every": 200,
+  "sources": {"explorer": "sights, first contacts, charts sold", "trader": "profit, investment, gigs delivered", "raider": "convoys taken, tribute, battles won"},
+  "recruit_quality_per_200": 1
+ },
+ "checks": {
+  "_doc": "Hidden roll vs a shown chance. chance = clamp(base + (attribute - difficulty) + skill_rank*10 + modifiers, 5, 95).",
+  "base": 50, "min": 5, "max": 95,
+  "difficulty": {"easy": 20, "fair": 40, "hard": 60, "brutal": 80}
+ },
+ "hum_exposure": {"range": [0, 100], "choir_reaches_you_at": 50, "join_them_available_at": 100,
+                  "weird_resistance": "gain * (1 - weird/200)"}
+}

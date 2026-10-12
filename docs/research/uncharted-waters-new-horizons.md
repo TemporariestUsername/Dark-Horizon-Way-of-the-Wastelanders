@@ -48,7 +48,7 @@ You pick one of six captains, each with a personal story. Then you sail a real�
 - **Attributes** (10 words found together): Cartography, Gunnery, Accounting, Negotiation, Seamanship, Knowledge, Intuition, Courage, Swordsmanship, Charm.
 - **Separate experience tracks** for navigation, trade and combat. One string reads "*%d more experience points to advance your combat skill level*".
 - **Fame** is its own track, with ranks: "*you need %d more fame points to obtain the next rank*", "*Your fame as an adventurer has gone up*".
-- **Translate:** Apocalypse World's five stats (Cool, Hard, Hot, Sharp, Weird) replace the 10 attributes. Separate "how you got good" tracks become **highlights** and experience.
+- **Keep:** separate experience tracks (**Road, Trade, Fight**) and fame (**Renown**). The 10 attributes become five, carrying Apocalypse World's names (Cool, Hard, Hot, Sharp, Weird) on a 1–100 scale, and the skills become a UWNH‑style skill list ([04](../design/04-characters.md)).
 
 ### 3.3 Fleet and ships [ROM]
 **25 hull types**, with records of `name[18] id flags minCrew maxCrew(u16) capacity(u16)`:
@@ -129,7 +129,7 @@ More about ships:
 - **Duel**: "*The enemy's commodore proposed a duel*" and "*Will you challenge the enemy commodore to a duel?*" A one‑on‑one sword fight can decide a whole boarding action.
 - You can **flee**: "*Are you sure you want to flee?*", "*We managed to escape!*"
 - The spoils are the captured ship, its cargo and fame.
-- **Translate:** this becomes road war on the overworld. Boarding becomes **board a moving vehicle**, and the duel becomes **single combat**.
+- **Keep:** this becomes road war on the overworld, with UWNH's ship stats on rigs, guns that need crew, boarding resolved by crew strength, a leader duel, and capture ([09](../design/09-combat.md)).
 
 ### 3.8 Social [ROM‑text][Play]
 - **Cafe**: owner, waitress, rumors and recruiting. Treating the waitress is a small relationship mechanic ("*Are you buying me the cafe's specialty?*"), and the cafe even has regional drinks such as mint tea, oolong and coconut milk.
@@ -158,20 +158,22 @@ All the menus are built from portrait plus parchment dialogue plus a thumbs yes/
 
 ## 6. Keep, translate or discard
 
+> **Updated after the client's direction** that the game's mechanics follow UWNH and Inindo, with Apocalypse World supplying the classes, setting and ambiance. The verdicts below reflect that; see [01](../design/01-translation-matrix.md).
+
 | System | Verdict | Dark Horizon form |
 |---|---|---|
-| 6 protagonists, intertwined stories | **Keep** | 6 launch playbooks in one shared world |
+| 6 protagonists, intertwined stories | **Keep** | 6 launch classes (AW's playbooks) in one shared world |
 | Supplies, range, sea events | **Keep (core)** | Water, guzzoline, chow and ammo; dust storms, Howls, rot, scavvers |
 | Oceans and land | **Translate** | Interstates are the seas, the Rough is the land, river crossings are the straits |
 | Ports with buildings | **Translate** | Holds with a market, bar, garage, infirmary, seat, congregation and brainer's room |
 | Goods and regional prices | **Translate** | The Apocalypse World resource list; each hold's surplus and want set the price |
 | Investment → allegiance | **Keep (core)** | Dropping jingle and working gigs shift a hold's loyalty between warlords and you |
-| 25 hulls, parts, figureheads | **Translate** | Vehicle frames (Driver), with strengths, looks and weaknesses; hood ornaments |
-| Crew min/max, wages, mates | **Keep** | Gang size, crew roles, and *pack alpha* loyalty instead of wages alone |
-| Fleet battle + boarding + duel | **Translate** | Road war, then *board a moving vehicle*, then single combat |
+| 25 hulls, parts, figureheads | **Keep** | Vehicle frames with Durability, Armor, Speed, Handling, Ram, gun mounts, crew and cargo; AW's looks and weaknesses as flavour; hood ornaments |
+| Crew min/max, wages, mates | **Keep** | Hands with min/max per rig and morale; officers with wages and loyalty |
+| Fleet battle + boarding + duel | **Keep** | Road war, boarding, a leader duel, capture |
 | Discoveries and cartography | **Keep** | Golden‑age wonders, sold to the News or traded as rumors |
-| 10 attributes, 3 experience tracks, fame | **Discard / replace** | AW stats, highlights, improvements, plus **reputation in each hold** |
-| Bank with 10% monthly interest | **Translate** | Debt to a warlord. Strings attached, collected as threat moves |
+| 10 attributes, 3 experience tracks, fame | **Keep** | 5 attributes (AW's names), Road/Trade/Fight levels, skills, **Renown**, plus **Rep** in each hold |
+| Bank with 10% monthly interest | **Keep** | The Exchange lends at 10% a month; missed payments escalate to seizure |
 | Letters of Marque, tax permits | **Translate** | Warlord tokens and safe‑passage marks; raiding without one turns warlords against you |
-| Marriage subplot | **Translate** | Bonds and Hx; intimacy off-screen, with mechanical weight |
-| Fortune teller | **Translate** | A brainer or hocus doing **augury**, which is real in Apocalypse World |
+| Marriage subplot | **Translate** | Affection and a committed partner; intimacy off‑screen, with numeric effects |
+| Fortune teller | **Translate** | Discipline map actions (*Read the dust*, *Ask the dead*) and Weird officers |

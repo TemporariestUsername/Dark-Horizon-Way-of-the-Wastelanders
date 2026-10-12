@@ -43,9 +43,9 @@
    "needs": [],
    "population": 5948,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 18,
+    "arms": 60,
+    "training": 80,
     "tags": [
      "defend-only",
      "well-disciplined"
@@ -120,9 +120,9 @@
    "needs": [],
    "population": 1917,
    "gang": {
-    "size": "medium",
-    "harm": 3,
-    "armor": 1,
+    "troops": 54,
+    "arms": 75,
+    "training": 45,
     "tags": [
      "defend-only"
     ]
@@ -187,9 +187,9 @@
    ],
    "population": 761,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 22,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 0,
@@ -243,9 +243,9 @@
    "needs": [],
    "population": 788,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 22,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 1,
@@ -301,9 +301,9 @@
    "needs": [],
    "population": 1451,
    "gang": {
-    "size": "medium",
-    "harm": 3,
-    "armor": 1,
+    "troops": 54,
+    "arms": 75,
+    "training": 45,
     "tags": []
    },
    "walls": 1,
@@ -360,9 +360,9 @@
    "needs": [],
    "population": 698,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 19,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 1,
@@ -422,9 +422,9 @@
    ],
    "population": 771,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 19,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 1,
@@ -478,9 +478,9 @@
    "needs": [],
    "population": 103,
    "gang": {
-    "size": "tiny",
-    "harm": 1,
-    "armor": 0,
+    "troops": 9,
+    "arms": 35,
+    "training": 15,
     "tags": [
      "defend-only"
     ]
@@ -542,9 +542,9 @@
    "needs": [],
    "population": 2091,
    "gang": {
-    "size": "medium",
-    "harm": 3,
-    "armor": 1,
+    "troops": 52,
+    "arms": 75,
+    "training": 45,
     "tags": []
    },
    "walls": 1,
@@ -607,9 +607,9 @@
    "needs": [],
    "population": 553,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 18,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 1,
@@ -673,9 +673,9 @@
    "needs": [],
    "population": 2149,
    "gang": {
-    "size": "medium",
-    "harm": 3,
-    "armor": 1,
+    "troops": 49,
+    "arms": 75,
+    "training": 45,
     "tags": []
    },
    "walls": 1,
@@ -736,9 +736,9 @@
    "needs": [],
    "population": 519,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 17,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 0,
@@ -804,9 +804,9 @@
    "needs": [],
    "population": 271,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 17,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 0,
@@ -868,9 +868,9 @@
    ],
    "population": 708,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 18,
+    "arms": 60,
+    "training": 10,
     "tags": [
      "opened"
     ]
@@ -932,9 +932,9 @@
    "needs": [],
    "population": 993,
    "gang": {
-    "size": "medium",
-    "harm": 3,
-    "armor": 1,
+    "troops": 40,
+    "arms": 75,
+    "training": 45,
     "tags": []
    },
    "walls": 1,
@@ -989,9 +989,9 @@
    "needs": [],
    "population": 89,
    "gang": {
-    "size": "tiny",
-    "harm": 1,
-    "armor": 0,
+    "troops": 8,
+    "arms": 35,
+    "training": 15,
     "tags": [
      "defend-only"
     ]
@@ -1054,9 +1054,9 @@
    "needs": [],
    "population": 2402,
    "gang": {
-    "size": "medium",
-    "harm": 3,
-    "armor": 1,
+    "troops": 43,
+    "arms": 75,
+    "training": 45,
     "tags": []
    },
    "walls": 1,
@@ -1113,9 +1113,9 @@
    "needs": [],
    "population": 714,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 21,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 1,
@@ -1170,9 +1170,9 @@
    "needs": [],
    "population": 220,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 19,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 1,
@@ -1230,9 +1230,9 @@
    "needs": [],
    "population": 1113,
    "gang": {
-    "size": "medium",
-    "harm": 3,
-    "armor": 1,
+    "troops": 43,
+    "arms": 75,
+    "training": 45,
     "tags": []
    },
    "walls": 1,
@@ -1288,9 +1288,9 @@
    "needs": [],
    "population": 615,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 21,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 0,
@@ -1342,9 +1342,9 @@
    "needs": [],
    "population": 98,
    "gang": {
-    "size": "tiny",
-    "harm": 1,
-    "armor": 0,
+    "troops": 7,
+    "arms": 35,
+    "training": 15,
     "tags": []
    },
    "walls": 0,
@@ -1396,9 +1396,9 @@
    "needs": [],
    "population": 1545,
    "gang": {
-    "size": "medium",
-    "harm": 3,
-    "armor": 1,
+    "troops": 46,
+    "arms": 75,
+    "training": 45,
     "tags": []
    },
    "walls": 1,
@@ -1461,9 +1461,9 @@
    ],
    "population": 440,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 2,
+    "troops": 20,
+    "arms": 80,
+    "training": 30,
     "tags": [
      "fire"
     ]
@@ -1524,9 +1524,9 @@
    "needs": [],
    "population": 236,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 18,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 0,
@@ -1589,9 +1589,9 @@
    "needs": [],
    "population": 367,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 24,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 1,
@@ -1653,9 +1653,9 @@
    ],
    "population": 1180,
    "gang": {
-    "size": "medium",
-    "harm": 3,
-    "armor": 1,
+    "troops": 46,
+    "arms": 75,
+    "training": 45,
     "tags": []
    },
    "walls": 1,
@@ -1722,9 +1722,9 @@
    "needs": [],
    "population": 2327,
    "gang": {
-    "size": "medium",
-    "harm": 3,
-    "armor": 1,
+    "troops": 52,
+    "arms": 75,
+    "training": 45,
     "tags": []
    },
    "walls": 1,
@@ -1784,9 +1784,9 @@
    "needs": [],
    "population": 1815,
    "gang": {
-    "size": "medium",
-    "harm": 3,
-    "armor": 1,
+    "troops": 39,
+    "arms": 75,
+    "training": 45,
     "tags": []
    },
    "walls": 1,
@@ -1842,9 +1842,9 @@
    "needs": [],
    "population": 86,
    "gang": {
-    "size": "tiny",
-    "harm": 1,
-    "armor": 0,
+    "troops": 8,
+    "arms": 35,
+    "training": 15,
     "tags": []
    },
    "walls": 0,
@@ -1902,9 +1902,9 @@
    "needs": [],
    "population": 783,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 23,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 0,
@@ -1964,9 +1964,9 @@
    "needs": [],
    "population": 1254,
    "gang": {
-    "size": "medium",
-    "harm": 3,
-    "armor": 1,
+    "troops": 52,
+    "arms": 75,
+    "training": 45,
     "tags": []
    },
    "walls": 1,
@@ -2028,9 +2028,9 @@
    "needs": [],
    "population": 241,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 18,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 1,
@@ -2090,9 +2090,9 @@
    ],
    "population": 2399,
    "gang": {
-    "size": "medium",
-    "harm": 3,
-    "armor": 1,
+    "troops": 39,
+    "arms": 75,
+    "training": 55,
     "tags": [
      "mercenary"
     ]
@@ -2160,9 +2160,9 @@
    "needs": [],
    "population": 529,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 24,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 0,
@@ -2225,9 +2225,9 @@
    "needs": [],
    "population": 1650,
    "gang": {
-    "size": "medium",
-    "harm": 3,
-    "armor": 1,
+    "troops": 51,
+    "arms": 75,
+    "training": 45,
     "tags": []
    },
    "walls": 1,
@@ -2290,9 +2290,9 @@
    "needs": [],
    "population": 2186,
    "gang": {
-    "size": "medium",
-    "harm": 3,
-    "armor": 1,
+    "troops": 50,
+    "arms": 75,
+    "training": 45,
     "tags": []
    },
    "walls": 1,
@@ -2357,9 +2357,9 @@
    "needs": [],
    "population": 773,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 22,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 1,
@@ -2419,9 +2419,9 @@
    "needs": [],
    "population": 75,
    "gang": {
-    "size": "tiny",
-    "harm": 1,
-    "armor": 0,
+    "troops": 8,
+    "arms": 35,
+    "training": 15,
     "tags": []
    },
    "walls": 0,
@@ -2474,9 +2474,9 @@
    "needs": [],
    "population": 246,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 22,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 0,
@@ -2537,9 +2537,9 @@
    ],
    "population": 598,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 22,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 1,
@@ -2602,9 +2602,9 @@
    "needs": [],
    "population": 237,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 23,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 1,
@@ -2668,9 +2668,9 @@
    ],
    "population": 7362,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 2,
+    "troops": 23,
+    "arms": 80,
+    "training": 60,
     "tags": [
      "fire"
     ]
@@ -2734,9 +2734,9 @@
    "needs": [],
    "population": 482,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 2,
+    "troops": 23,
+    "arms": 80,
+    "training": 30,
     "tags": [
      "fire"
     ]
@@ -2794,9 +2794,9 @@
    "needs": [],
    "population": 308,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 21,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 0,
@@ -2856,9 +2856,9 @@
    "needs": [],
    "population": 480,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 18,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 0,
@@ -2922,9 +2922,9 @@
    "needs": [],
    "population": 2479,
    "gang": {
-    "size": "medium",
-    "harm": 3,
-    "armor": 1,
+    "troops": 47,
+    "arms": 75,
+    "training": 25,
     "tags": [
      "opened"
     ]
@@ -2986,9 +2986,9 @@
    "needs": [],
    "population": 2244,
    "gang": {
-    "size": "medium",
-    "harm": 3,
-    "armor": 1,
+    "troops": 43,
+    "arms": 75,
+    "training": 45,
     "tags": []
    },
    "walls": 1,
@@ -3056,9 +3056,9 @@
    "needs": [],
    "population": 1349,
    "gang": {
-    "size": "medium",
-    "harm": 3,
-    "armor": 1,
+    "troops": 37,
+    "arms": 75,
+    "training": 45,
     "tags": []
    },
    "walls": 1,
@@ -3121,9 +3121,9 @@
    "needs": [],
    "population": 683,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 21,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 1,
@@ -3179,9 +3179,9 @@
    "needs": [],
    "population": 744,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 24,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 0,
@@ -3241,9 +3241,9 @@
    "needs": [],
    "population": 638,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 2,
+    "troops": 17,
+    "arms": 80,
+    "training": 30,
     "tags": [
      "fire"
     ]
@@ -3296,9 +3296,9 @@
    "needs": [],
    "population": 37,
    "gang": {
-    "size": "tiny",
-    "harm": 1,
-    "armor": 0,
+    "troops": 7,
+    "arms": 35,
+    "training": 15,
     "tags": []
    },
    "walls": 0,
@@ -3351,9 +3351,9 @@
    "needs": [],
    "population": 8413,
    "gang": {
-    "size": "medium",
-    "harm": 3,
-    "armor": 2,
+    "troops": 49,
+    "arms": 85,
+    "training": 80,
     "tags": [
      "well-disciplined"
     ]
@@ -3418,9 +3418,9 @@
    "needs": [],
    "population": 716,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 2,
+    "troops": 22,
+    "arms": 70,
+    "training": 50,
     "tags": [
      "well-disciplined"
     ]
@@ -3479,9 +3479,9 @@
    "needs": [],
    "population": 442,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 2,
+    "troops": 18,
+    "arms": 70,
+    "training": 50,
     "tags": [
      "well-disciplined"
     ]
@@ -3544,9 +3544,9 @@
    "needs": [],
    "population": 1291,
    "gang": {
-    "size": "medium",
-    "harm": 3,
-    "armor": 1,
+    "troops": 52,
+    "arms": 75,
+    "training": 45,
     "tags": []
    },
    "walls": 1,
@@ -3611,9 +3611,9 @@
    ],
    "population": 767,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 19,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 0,
@@ -3672,9 +3672,9 @@
    "needs": [],
    "population": 1435,
    "gang": {
-    "size": "medium",
-    "harm": 3,
-    "armor": 1,
+    "troops": 51,
+    "arms": 75,
+    "training": 45,
     "tags": []
    },
    "walls": 1,
@@ -3737,9 +3737,9 @@
    "needs": [],
    "population": 764,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 20,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 1,
@@ -3801,9 +3801,9 @@
    "needs": [],
    "population": 1986,
    "gang": {
-    "size": "medium",
-    "harm": 3,
-    "armor": 1,
+    "troops": 45,
+    "arms": 75,
+    "training": 45,
     "tags": []
    },
    "walls": 1,
@@ -3858,9 +3858,9 @@
    "needs": [],
    "population": 87,
    "gang": {
-    "size": "tiny",
-    "harm": 1,
-    "armor": 1,
+    "troops": 8,
+    "arms": 45,
+    "training": 35,
     "tags": [
      "well-disciplined"
     ]
@@ -3921,9 +3921,9 @@
    "needs": [],
    "population": 1999,
    "gang": {
-    "size": "large",
-    "harm": 3,
-    "armor": 1,
+    "troops": 85,
+    "arms": 85,
+    "training": 35,
     "tags": [
      "savage",
      "mobile"
@@ -3988,9 +3988,9 @@
    "needs": [],
    "population": 554,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 24,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 1,
@@ -4051,9 +4051,9 @@
    "needs": [],
    "population": 182,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 2,
+    "troops": 16,
+    "arms": 80,
+    "training": 30,
     "tags": [
      "fire"
     ]
@@ -4106,9 +4106,9 @@
    "needs": [],
    "population": 109,
    "gang": {
-    "size": "tiny",
-    "harm": 1,
-    "armor": 0,
+    "troops": 7,
+    "arms": 35,
+    "training": 15,
     "tags": []
    },
    "walls": 0,
@@ -4166,9 +4166,9 @@
    "needs": [],
    "population": 618,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 19,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 1,
@@ -4220,9 +4220,9 @@
    "needs": [],
    "population": 30,
    "gang": {
-    "size": "tiny",
-    "harm": 1,
-    "armor": 0,
+    "troops": 9,
+    "arms": 35,
+    "training": 15,
     "tags": []
    },
    "walls": 0,
@@ -4276,9 +4276,9 @@
    "needs": [],
    "population": 723,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 23,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 1,
@@ -4336,9 +4336,9 @@
    "needs": [],
    "population": 82,
    "gang": {
-    "size": "tiny",
-    "harm": 1,
-    "armor": 0,
+    "troops": 9,
+    "arms": 35,
+    "training": 15,
     "tags": []
    },
    "walls": 0,
@@ -4392,9 +4392,9 @@
    "needs": [],
    "population": 382,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 20,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 0,
@@ -4457,9 +4457,9 @@
    ],
    "population": 523,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 2,
+    "troops": 18,
+    "arms": 70,
+    "training": 30,
     "tags": [
      "siege"
     ]
@@ -4521,9 +4521,9 @@
    "needs": [],
    "population": 1019,
    "gang": {
-    "size": "medium",
-    "harm": 3,
-    "armor": 1,
+    "troops": 46,
+    "arms": 75,
+    "training": 45,
     "tags": []
    },
    "walls": 1,
@@ -4586,9 +4586,9 @@
    "needs": [],
    "population": 437,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 24,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 1,
@@ -4649,9 +4649,9 @@
    "needs": [],
    "population": 4130,
    "gang": {
-    "size": "medium",
-    "harm": 3,
-    "armor": 2,
+    "troops": 45,
+    "arms": 85,
+    "training": 60,
     "tags": [
      "siege"
     ]
@@ -4707,9 +4707,9 @@
    "needs": [],
    "population": 652,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 2,
+    "troops": 22,
+    "arms": 70,
+    "training": 30,
     "tags": [
      "siege"
     ]
@@ -4763,9 +4763,9 @@
    "needs": [],
    "population": 72,
    "gang": {
-    "size": "tiny",
-    "harm": 1,
-    "armor": 1,
+    "troops": 8,
+    "arms": 45,
+    "training": 15,
     "tags": [
      "siege"
     ]
@@ -4819,9 +4819,9 @@
    "needs": [],
    "population": 257,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 17,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 1,
@@ -4878,9 +4878,9 @@
    "needs": [],
    "population": 1788,
    "gang": {
-    "size": "medium",
-    "harm": 3,
-    "armor": 1,
+    "troops": 44,
+    "arms": 75,
+    "training": 45,
     "tags": []
    },
    "walls": 1,
@@ -4941,9 +4941,9 @@
    "needs": [],
    "population": 376,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 22,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 0,
@@ -4975,7 +4975,7 @@
    "lon": -97.38,
    "tier": "hold",
    "boss": "Quiet",
-   "surplus_text": "information (augury)",
+   "surplus_text": "information (divining)",
    "want_text": "meat",
    "faction": null,
    "via_tum_tum": false,
@@ -5002,9 +5002,9 @@
    "needs": [],
    "population": 534,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 24,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 0,
@@ -5068,9 +5068,9 @@
    "needs": [],
    "population": 1511,
    "gang": {
-    "size": "medium",
-    "harm": 3,
-    "armor": 1,
+    "troops": 38,
+    "arms": 75,
+    "training": 45,
     "tags": []
    },
    "walls": 1,
@@ -5135,9 +5135,9 @@
    "needs": [],
    "population": 218,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 18,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 1,
@@ -5199,9 +5199,9 @@
    "needs": [],
    "population": 98,
    "gang": {
-    "size": "tiny",
-    "harm": 1,
-    "armor": 0,
+    "troops": 6,
+    "arms": 35,
+    "training": 15,
     "tags": []
    },
    "walls": 0,
@@ -5260,9 +5260,9 @@
    "needs": [],
    "population": 97,
    "gang": {
-    "size": "tiny",
-    "harm": 1,
-    "armor": 0,
+    "troops": 8,
+    "arms": 35,
+    "training": 15,
     "tags": []
    },
    "walls": 0,
@@ -5318,9 +5318,9 @@
    "needs": [],
    "population": 4015,
    "gang": {
-    "size": "medium",
-    "harm": 2,
-    "armor": 1,
+    "troops": 53,
+    "arms": 60,
+    "training": 60,
     "tags": [
      "catchers"
     ]
@@ -5381,9 +5381,9 @@
    "needs": [],
    "population": 1668,
    "gang": {
-    "size": "medium",
-    "harm": 3,
-    "armor": 1,
+    "troops": 49,
+    "arms": 75,
+    "training": 45,
     "tags": []
    },
    "walls": 1,
@@ -5452,9 +5452,9 @@
    "needs": [],
    "population": 2316,
    "gang": {
-    "size": "medium",
-    "harm": 3,
-    "armor": 1,
+    "troops": 54,
+    "arms": 75,
+    "training": 45,
     "tags": [
      "defend-only"
     ]
@@ -5514,9 +5514,9 @@
    ],
    "population": 82,
    "gang": {
-    "size": "tiny",
-    "harm": 1,
-    "armor": 0,
+    "troops": 7,
+    "arms": 35,
+    "training": 15,
     "tags": []
    },
    "walls": 0,
@@ -5571,9 +5571,9 @@
    "needs": [],
    "population": 745,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 17,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 1,
@@ -5633,9 +5633,9 @@
    "needs": [],
    "population": 521,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 17,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 0,
@@ -5697,9 +5697,9 @@
    "needs": [],
    "population": 1563,
    "gang": {
-    "size": "medium",
-    "harm": 3,
-    "armor": 1,
+    "troops": 53,
+    "arms": 75,
+    "training": 45,
     "tags": []
    },
    "walls": 1,
@@ -5757,9 +5757,9 @@
    "needs": [],
    "population": 599,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 23,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 1,
@@ -5819,9 +5819,9 @@
    "needs": [],
    "population": 93,
    "gang": {
-    "size": "tiny",
-    "harm": 1,
-    "armor": 0,
+    "troops": 8,
+    "arms": 35,
+    "training": 5,
     "tags": [
      "opened"
     ]
@@ -5885,9 +5885,9 @@
    "needs": [],
    "population": 6384,
    "gang": {
-    "size": "large",
-    "harm": 2,
-    "armor": 2,
+    "troops": 86,
+    "arms": 70,
+    "training": 80,
     "tags": [
      "well-disciplined"
     ]
@@ -5960,9 +5960,9 @@
    "needs": [],
    "population": 1346,
    "gang": {
-    "size": "medium",
-    "harm": 3,
-    "armor": 1,
+    "troops": 47,
+    "arms": 75,
+    "training": 45,
     "tags": []
    },
    "walls": 1,
@@ -6028,9 +6028,9 @@
    "needs": [],
    "population": 2332,
    "gang": {
-    "size": "medium",
-    "harm": 3,
-    "armor": 1,
+    "troops": 47,
+    "arms": 75,
+    "training": 45,
     "tags": []
    },
    "walls": 1,
@@ -6093,9 +6093,9 @@
    "needs": [],
    "population": 246,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 17,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 0,
@@ -6160,9 +6160,9 @@
    "needs": [],
    "population": 2484,
    "gang": {
-    "size": "medium",
-    "harm": 3,
-    "armor": 2,
+    "troops": 40,
+    "arms": 85,
+    "training": 65,
     "tags": [
      "well-disciplined"
     ]
@@ -6225,9 +6225,9 @@
    "needs": [],
    "population": 728,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 17,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 0,
@@ -6292,9 +6292,9 @@
    "needs": [],
    "population": 348,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 17,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 1,
@@ -6358,9 +6358,9 @@
    "needs": [],
    "population": 444,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 2,
+    "troops": 18,
+    "arms": 70,
+    "training": 50,
     "tags": [
      "well-disciplined"
     ]
@@ -6419,9 +6419,9 @@
    "needs": [],
    "population": 584,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 2,
+    "troops": 20,
+    "arms": 70,
+    "training": 50,
     "tags": [
      "well-disciplined"
     ]
@@ -6480,9 +6480,9 @@
    "needs": [],
    "population": 607,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 20,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 0,
@@ -6538,9 +6538,9 @@
    "needs": [],
    "population": 793,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 2,
+    "troops": 18,
+    "arms": 70,
+    "training": 50,
     "tags": [
      "well-disciplined"
     ]
@@ -6600,9 +6600,9 @@
    "needs": [],
    "population": 2582,
    "gang": {
-    "size": "medium",
-    "harm": 3,
-    "armor": 1,
+    "troops": 46,
+    "arms": 75,
+    "training": 45,
     "tags": []
    },
    "walls": 1,
@@ -6662,9 +6662,9 @@
    "needs": [],
    "population": 714,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 17,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 1,
@@ -6715,9 +6715,9 @@
    "needs": [],
    "population": 540,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 23,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 0,
@@ -6776,9 +6776,9 @@
    "needs": [],
    "population": 369,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 16,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 1,
@@ -6834,9 +6834,9 @@
    "needs": [],
    "population": 2226,
    "gang": {
-    "size": "medium",
-    "harm": 3,
-    "armor": 1,
+    "troops": 54,
+    "arms": 75,
+    "training": 45,
     "tags": []
    },
    "walls": 1,
@@ -6893,9 +6893,9 @@
    "needs": [],
    "population": 198,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 18,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 0,
@@ -6951,9 +6951,9 @@
    "needs": [],
    "population": 1216,
    "gang": {
-    "size": "medium",
-    "harm": 3,
-    "armor": 1,
+    "troops": 37,
+    "arms": 75,
+    "training": 45,
     "tags": []
    },
    "walls": 1,
@@ -7014,9 +7014,9 @@
    "needs": [],
    "population": 41,
    "gang": {
-    "size": "tiny",
-    "harm": 1,
-    "armor": 0,
+    "troops": 7,
+    "arms": 35,
+    "training": 15,
     "tags": []
    },
    "walls": 0,
@@ -7063,9 +7063,9 @@
    "needs": [],
    "population": 77,
    "gang": {
-    "size": "tiny",
-    "harm": 1,
-    "armor": 0,
+    "troops": 8,
+    "arms": 35,
+    "training": 15,
     "tags": []
    },
    "walls": 0,
@@ -7121,9 +7121,9 @@
    "needs": [],
    "population": 7847,
    "gang": {
-    "size": "medium",
-    "harm": 3,
-    "armor": 1,
+    "troops": 48,
+    "arms": 75,
+    "training": 70,
     "tags": [
      "mercenary"
     ]
@@ -7188,9 +7188,9 @@
    "needs": [],
    "population": 755,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 19,
+    "arms": 60,
+    "training": 40,
     "tags": [
      "mercenary"
     ]
@@ -7254,9 +7254,9 @@
    "needs": [],
    "population": 1032,
    "gang": {
-    "size": "medium",
-    "harm": 3,
-    "armor": 1,
+    "troops": 46,
+    "arms": 75,
+    "training": 55,
     "tags": [
      "mercenary"
     ]
@@ -7316,9 +7316,9 @@
    "needs": [],
    "population": 300,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 23,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 0,
@@ -7379,9 +7379,9 @@
    "needs": [],
    "population": 682,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 17,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 1,
@@ -7447,9 +7447,9 @@
    "needs": [],
    "population": 933,
    "gang": {
-    "size": "medium",
-    "harm": 3,
-    "armor": 1,
+    "troops": 44,
+    "arms": 75,
+    "training": 45,
     "tags": []
    },
    "walls": 1,
@@ -7509,9 +7509,9 @@
    "needs": [],
    "population": 375,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 17,
+    "arms": 60,
+    "training": 40,
     "tags": [
      "mercenary"
     ]
@@ -7566,9 +7566,9 @@
    "needs": [],
    "population": 104,
    "gang": {
-    "size": "tiny",
-    "harm": 1,
-    "armor": 0,
+    "troops": 7,
+    "arms": 35,
+    "training": 15,
     "tags": []
    },
    "walls": 0,
@@ -7620,9 +7620,9 @@
    "needs": [],
    "population": 337,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 19,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 1,
@@ -7667,9 +7667,9 @@
    "needs": [],
    "population": 3000,
    "gang": {
-    "size": "huge",
-    "harm": 2,
-    "armor": 0,
+    "troops": 120,
+    "arms": 50,
+    "training": 40,
     "tags": [
      "opened"
     ]
@@ -7714,9 +7714,9 @@
    "needs": [],
    "population": 206,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 19,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 0,
@@ -7767,9 +7767,9 @@
    "needs": [],
    "population": 251,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 24,
+    "arms": 60,
+    "training": 10,
     "tags": [
      "opened"
     ]
@@ -7817,9 +7817,9 @@
    "needs": [],
    "population": 1784,
    "gang": {
-    "size": "medium",
-    "harm": 3,
-    "armor": 1,
+    "troops": 46,
+    "arms": 75,
+    "training": 45,
     "tags": []
    },
    "walls": 1,
@@ -7879,9 +7879,9 @@
    "needs": [],
    "population": 1574,
    "gang": {
-    "size": "medium",
-    "harm": 3,
-    "armor": 1,
+    "troops": 45,
+    "arms": 75,
+    "training": 45,
     "tags": []
    },
    "walls": 1,
@@ -7944,9 +7944,9 @@
    "needs": [],
    "population": 234,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 17,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 0,
@@ -8005,9 +8005,9 @@
    "needs": [],
    "population": 270,
    "gang": {
-    "size": "small",
-    "harm": 2,
-    "armor": 1,
+    "troops": 17,
+    "arms": 60,
+    "training": 30,
     "tags": []
    },
    "walls": 0,

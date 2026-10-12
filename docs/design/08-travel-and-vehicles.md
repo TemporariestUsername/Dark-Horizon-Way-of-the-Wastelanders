@@ -5,9 +5,9 @@ For twenty‑five years nobody drove the interstates. The Easing has opened them
 
 - **Fog of war** covers everything past your starting region. Your starting playbook knows the roads around its home, and nothing else.
 - **Charts are the most valuable thing you can carry.** A charted road (its breaks, crossings, holds, tolls and threats) sells to the News and to hardholders, and Rothschild pays well for exclusive charts.
-- **Holds have been strangers for a generation.** Your **first arrival** at a hold is an event: a *read a sitch* and a *first contact* scene. The hold doesn't know who runs the next town. You might be the first outsider anyone there has seen in years. **First contact** gives Rep and Lean you can't get any other way. It's the Driver's bread and butter.
+- **Holds have been strangers for a generation.** Your **first arrival** at a hold is an event: a *first contact* scene at the gate. The hold doesn't know who runs the next town. You might be the first outsider anyone there has seen in years. **First contact** gives Rep and Lean you can't get any other way. It's the Driver's bread and butter.
 - **Old maps lie.** Golden‑age road atlases are oddments. They show the roads as they were: right about where the interstates go, wrong about every break, bridge and town. The Quarantine reads them best.
-- **The Loud has edges.** Where an interstate runs into the Loud, the howl gets louder mile by mile. Pushing in is a series of *open your brain* rolls and costs Hum exposure. The Driver's arc is about finding out how far the Easing goes.
+- **The Loud has edges.** Where an interstate runs into the Loud, the howl gets louder mile by mile. Pushing in is a series of Weird checks, and it costs Grit and Hum exposure. The Driver's arc is about finding out how far the Easing goes.
 
 ## The overworld
 - A **top‑down tile map** at **5 km per tile**: about 440 × 580 tiles from the Lakes to the Sierra Coast. The convoy moves as one marker along the road network, like a UWNH fleet on the sea.
@@ -18,7 +18,7 @@ For twenty‑five years nobody drove the interstates. The Easing has opened them
 |---|---|---|---|
 | Interstate | ×1.0 | 1 can/rig/day | 5 lanes. Exposed: you're seen from far away. Breaks every 50–200 km. |
 | Highway | ×0.7 | 1 | 3 lanes. Cover from the treeline. |
-| Back road | ×0.5 | 1 | 1 lane. Haulers, buses and tankers roll *deal with bad terrain* each day. |
+| Back road | ×0.5 | 1 | 1 lane. Haulers, buses and tankers make a Handling check each day. |
 | Dry riverbed | ×0.9 (×1.2 for light rigs) | 1 | Land yachts sail it with no fuel when the wind blows. Flash floods in storm season. |
 | The Rough | ×0.3 | 2 | **Off‑road frames only** (bikes, buggies, half‑tracks, interceptors with *off‑road*). *Deal with bad terrain* each day. |
 | Break (overpass down, pileup) | impassable | — | Detour, clear it (a project), or a light rig picks a way through with *do something under fire*. |
@@ -47,7 +47,7 @@ For twenty‑five years nobody drove the interstates. The Easing has opened them
   - **flood** (spring, along the living rivers): crossings close, and dry riverbeds run
   - **ice and snow** (the Lakes, the Seventy in winter): fuel ×1.5, and the ice roads open
   - **the Long Heat** (the south in summer): water use ×1.5
-  - **a Howl**: a local flare of the old maelstrom on one stretch of road. Radios sing, compasses spin and crew hear voices. You wait it out, push through with *open your brain*, or detour. This is UWNH's eerie calm, made psychic. Howls get more frequent as the World Clock advances.
+  - **a Howl**: a local flare of the old maelstrom on one stretch of road. Radios sing, compasses spin and crew hear voices. You wait it out, push through with a Weird check, or detour. This is UWNH's eerie calm, made psychic. Howls are more frequent near Hum zones, and twice as frequent once the Choir is **Spreading**.
 
 ## Supplies and attrition
 Four gauges, shown for each rig and for the whole convoy:
@@ -59,68 +59,70 @@ Four gauges, shown for each rig and for the whole convoy:
 Burn rates are in [03](03-core-loops.md#scarcity-budget-tuning-targets-for-the-slice).
 
 **Running out:**
-- **Water at 0**: each day every crew member takes 1‑harm ("*thirst*"), and crew Hx drops. On day 3, crew start to desert.
+- **Water at 0**: every crew member loses 10% of max HP a day ("*thirst*"), and morale drops 5 a day. From day 3, hands desert.
 - **Guzzoline at 0**: the rig stops. You can tow it, abandon it, or send someone walking.
-- **Chow at 0**: −1 ongoing to all rolls, and a *pack alpha* bid on day 4.
-- **Ammo at 0**: *loud* and *reload* weapons can't be used.
+- **Chow at 0**: morale drops 5 a day, and every check is −10. From day 4, hands desert.
+- **Ammo at 0**: firearms and rig guns can't fire.
 
-**Road events** (Director moves drawn from road threats, never a random table):
+**Road events** are drawn from the threats actually present on that road ([05](05-events.md#how-an-event-is-chosen)). Threat kinds are AW's, used as tags:
 
 | Event | Source threat | Fix or counter |
 |---|---|---|
-| **Dust storm** | Terrain/Landscape (*Furnace*) | Hunker down (lose a day) or *do something under fire* to push through |
-| **A Howl** | Affliction (*Condition*) / the Hum | Wait it out, detour, or *open your brain* to find the quiet way through |
+| **Dust storm** | Terrain/Landscape (*Furnace*) | Hunker down (lose a day), or push through with a Cool check (hard) |
+| **A Howl** | Affliction (*Condition*) / the Hum | Wait it out, detour, or a Weird check to find the quiet way through |
 | **Scavvers in the stores** | Brute (*Hunting pack*) | Traps (an item), or lose chow |
-| **Rot** (UWNH's scurvy) | Affliction (*Disease*) | Fresh foods, an Angel, antiseptic |
-| **Raiders** | Warlord/Brute | Road war, tribute, or *outdistance* |
+| **Rot** (UWNH's scurvy) | Affliction (*Disease*) | Fresh foods, a Medic, antiseptic |
+| **Raiders** | Warlord/Brute | Road war, tribute, or outrun them |
 | **Pileup sighted** | Opportunity | Salvage a thousand dead cars: costs time, gives loot, may be a trap |
-| **Break ahead** | Terrain (*a wall*) | Detour, clear it, or squeeze a light rig through |
-| **Crossing toll** | Warlord/Brute (*Enforcers*) | Pay, *go aggro*, run it (road war on a bridge), or find another crossing |
+| **Break ahead** | Terrain (*a wall*) | Detour, clear it, or squeeze a light rig through (Handling check) |
+| **Crossing toll** | Warlord/Brute (*Enforcers*) | Pay, face them down (Hard check), run it (road war on a bridge), or find another crossing |
 | **First contact** | Opportunity | A hold, camp or traveller that hasn't seen outsiders since the Howling |
-| **Straggler camp** | Opportunity | Trade, **dig for water** (+sharp), or **raid** (Chopper). Camps sit at off‑ramps and rest areas. |
-| **A rig breaks down** | Vehicle (*its weakness*) | Mechanic crew, or a Savvyhead |
+| **Straggler camp** | Opportunity | Trade, **dig for water** (Sharp check), or **raid** (Chopper). Camps sit at off‑ramps and rest areas. |
+| **A rig breaks down** | Vehicle (*its weakness*) | A Mechanic, Wrenching, or a Savvyhead |
 
-## Vehicles (UWNH's hulls → AW Driver frames)
-Each vehicle has these properties, all from AW:
+## Vehicles (UWNH's hulls)
+Rigs carry UWNH's ship statistics. Their *looks* and *weaknesses* keep AW's Driver lists as flavour, with numeric effects:
 
 | Property | Range | Effect |
 |---|---|---|
 | **Frame** | bike, compact, large, battle (and a few special frames) | Base stats, crew and cargo |
-| **Speed** | 0–3 | Overworld speed, and *outdistance or overtake* |
-| **Handling** | 0–3 | Added to *deal with bad terrain*. Subtracted from v‑harm against you |
-| **Armor** | 0–3 | Harm reduction for the vehicle |
-| **Massive** | 0–3 | Ramming harm. Adds to v‑harm you inflict |
-| **Strengths** (choose 1–2) | fast, rugged, aggressive, tight, huge, off‑road, responsive, uncomplaining, capacious, workhorse, easily repaired | Situational +1s |
-| **Looks** (choose 1–2) | sleek, vintage, pristine, powerful, luxe, flashy, muscular, quirky, pretty, handcrafted, spikes & plates, garish | Affects Hot rolls and Rep at holds |
-| **Weakness** (choose 1–2) | slow, sloppy, lazy, loud, picky, guzzler, unreliable, rabbity, cramped, bucking, skittish | Activated as a Director *stuff's downside* move |
-| **Crew** min/max | e.g. 1/2 (bike), 2/6 (compact), 4/20 (large), 6/30 (rig/hauler) | UWNH's min/max crew |
-| **Cargo** | lots | UWNH's capacity |
-| **Hood ornament** | skull, saint, hula girl, steer horns, chrome angel, doll's head… | UWNH's figurehead: +1 to a narrow kind of roll |
+| **Durability** | 30–300 | The rig's HP in road war. Repaired at garages, or in the field by a Mechanic |
+| **Armor** | 0–20 | Subtracted from every hit's damage |
+| **Speed** | 1–4 | Overworld speed (× 0.7 + 0.1 × Speed for the slowest rig), and lane and band moves per road‑war turn |
+| **Handling** | 0–45 | Subtracted from enemy hit chance. Added to terrain and obstacle checks |
+| **Ram** | 0–40 | Ramming damage |
+| **Gun mounts** | 0–4 | Rig guns ([13](13-content-tables.md#weapons)). **Each needs 2 crew** to fire, like UWNH's cannons |
+| **Crew** min/max | e.g. 1/1 (bike), 2/4 (compact), 4/30 (bus) | UWNH's min/max crew. Below the minimum, half Speed |
+| **Cargo** | lots | UWNH's capacity. Supplies share it |
+| **Strengths** (choose 1–2) | fast, rugged, aggressive, tight, huge, off‑road, responsive, uncomplaining, capacious, workhorse, easily repaired | +10% to the matching stat (e.g. *capacious*: cargo; *rugged*: Durability) |
+| **Looks** (choose 1–2) | sleek, vintage, pristine, powerful, luxe, flashy, muscular, quirky, pretty, handcrafted, spikes & plates, garish | +5% on Hot checks where the rig is seen, and Rep on arrival |
+| **Weakness** (choose 1–2) | slow, sloppy, lazy, loud, picky, guzzler, unreliable, rabbity, cramped, bucking, skittish | −10% to a stat, or a matching road event becomes likelier (e.g. *unreliable*: breakdowns) |
+| **Hood ornament** | skull, saint, hula girl, steer horns, chrome angel, doll's head… | UWNH's figurehead: a small % bonus ([13](13-content-tables.md#hood-ornaments-uwnhs-figureheads)) |
 
 **Frames at launch** (16, standing in for UWNH's 25 hulls):
 
-| Frame | Speed / Handling / Armor / Massive | Crew | Cargo | Notes |
-|---|---|---|---|---|
-| Dirt bike | 3/2/0/0 | 1/1 | 1 | Off‑road. Scout. Chopper gangs |
-| Hog | 2/1/1/1 | 1/2 | 2 | Chopper bike |
-| Sand buggy | 3/2/0/1 | 1/3 | 4 | Off‑road. Fast courier |
-| Compact | 2/2/1/1 | 2/4 | 8 | Starting Driver option |
-| Pickup | 1/1/1/2 | 2/6 | 16 | Workhorse |
-| Ute with a gun ring | 2/1/1/2 | 3/6 | 10 | Battle car |
-| Interceptor | 3/3/1/1 | 1/2 | 4 | *My other car is a tank* path |
-| Bus | 0/0/2/3 | 4/30 | 40 | Hardholder caravan, Hocus followers |
-| Hauler (semi) | 1/0/2/3 | 2/8 | 60 | Trade backbone |
-| Tanker | 0/0/2/3 | 2/6 | 50 water/fuel only | Grome's leash, if you can get one |
-| Half‑track | 1/1/3/2 | 3/10 | 20 | Off‑road. The Rough and dunes |
-| War rig | 1/0/3/3 | 6/20 | 30 | Mid‑game flagship |
-| Land yacht | 2/1/0/1 | 3/12 | 25 | **Sail‑driven: no fuel on dry riverbeds, open interstate and lake ice, but needs wind.** Built at Pesca. UWNH's love letter |
-| Ice skiff | 3/2/0/0 | 2/4 | 6 | Sail‑driven. Lake ice and riverbeds only. Fastest thing on the winter Lakes |
-| Tank (ancient) | 0/1/4/4 | 4/6 | 2 | Late game. Gas‑hungry |
-| Gondola car | — | 2/8 | 10 | Up layer only. Rides on cables |
+| Frame | Durability | Armor | Speed | Handling | Ram | Guns | Crew | Cargo | Notes |
+|---|---|---|---|---|---|---|---|---|---|
+| Dirt bike | 30 | 0 | 4 | 30 | 0 | 0 | 1/1 | 1 | Off‑road. Scout. Chopper gangs |
+| Hog | 45 | 5 | 3 | 15 | 10 | 0 | 1/2 | 2 | Chopper bike |
+| Sand buggy | 50 | 0 | 4 | 30 | 10 | 1 | 1/3 | 4 | Off‑road. Fast courier |
+| Compact | 60 | 5 | 3 | 30 | 10 | 1 | 2/4 | 8 | Starting Driver option |
+| Pickup | 90 | 5 | 2 | 15 | 20 | 1 | 2/6 | 16 | Workhorse |
+| Ute with a gun ring | 85 | 5 | 3 | 15 | 20 | 2 | 3/6 | 10 | Battle car |
+| Interceptor | 70 | 5 | 4 | 45 | 10 | 1 | 1/2 | 4 | *My other car is a tank* path |
+| Bus | 160 | 10 | 1 | 0 | 30 | 2 | 4/30 | 40 | Hardholder caravan, Hocus followers |
+| Hauler (semi) | 180 | 10 | 2 | 0 | 30 | 2 | 2/8 | 60 | Trade backbone |
+| Tanker | 170 | 10 | 1 | 0 | 30 | 1 | 2/6 | 50 water/fuel only | Grome's leash, if you can get one |
+| Half‑track | 150 | 15 | 2 | 15 | 20 | 2 | 3/10 | 20 | Off‑road. The Rough and dunes |
+| War rig | 220 | 15 | 2 | 0 | 30 | 4 | 6/20 | 30 | Mid‑game flagship |
+| Land yacht | 70 | 0 | 3 | 15 | 10 | 1 | 3/12 | 25 | **Sail‑driven: no fuel on dry riverbeds, open interstate and lake ice, but needs wind.** Built at Pesca. UWNH's love letter |
+| Ice skiff | 35 | 0 | 4 | 30 | 0 | 0 | 2/4 | 6 | Sail‑driven. Lake ice and riverbeds only. Fastest thing on the winter Lakes |
+| Tank (ancient) | 300 | 20 | 1 | 15 | 40 | 3 | 4/6 | 2 | Late game. Gas‑hungry |
+| Gondola car | 60 | 5 | — | — | — | 0 | 2/8 | 10 | Up layer only. Rides on cables |
 
 - **Off‑road capability** works like a UWNH ship's draught. Big frames (bus, hauler, tanker, war rig, tank) are bound to the roads. Bikes, buggies and half‑tracks can take the Rough, and any frame with the *off‑road* strength can too.
-- **Convoy**: up to **6 rigs**, each needing a **driver** (crew role). The *flagship* is your own rig.
-- **Garage**: buy, sell or repair rigs. **Upgrades** (+1 to a stat, a new strength, removing a weakness) take workspace time (Savvyhead) or barter (the garage).
+- **Convoy**: up to **6 rigs**, each needing a **driver** ([11](11-crew-and-bonds.md#officers-uwnhs-mates)). The *flagship* is your own rig.
+- **Garage**: buy, sell or repair rigs. **Refits** (one stat up a step, a new strength, removing a weakness) take workspace time (Savvyhead) or barter (the garage). Each frame has a refit cap.
 
 ## Discovery: Sights
 These are UWNH's discoveries: about 50 at launch, in seven categories, spread across the map so that every region has something worth driving to.
@@ -138,20 +140,20 @@ These are UWNH's discoveries: about 50 at launch, in seven categories, spread ac
 A Sight pays out to the News, adds Rep, gives the Driver experience, and may open a **maelstrom site**.
 
 ## The In
-**The In is the maelstrom as a place.** It's a parallel layer over the whole map, which you enter by *opening your brain* at a site, or at any time with Weird +2 or more.
+**The In is the maelstrom as a place.** It's a parallel layer over the whole map. You enter it by meditating at a maelstrom site, or anywhere once your Weird is 60 or more.
 
-- **What it looks like.** The overworld redrawn in negative: white roads, black land, red veins where the Hum runs. Since the Easing the In is quieter and easier to walk than it has been in a generation, which is why so many people are learning disciplines this year. Holds show up as clusters of lights (people's minds). Threats show up as shapes.
-- **Moving through it.** Distance doesn't work normally. Moving between nodes costs **strain**, not supplies.
+- **What it looks like.** The overworld as a fever ([14](14-art-audio-ui.md)): oversaturated magenta and gold over black, the roads warped and doubled, and violet veins where the Hum runs. Since the Easing the In is quieter and easier to walk than it has been in a generation, which is why so many people are learning disciplines this year. Holds show up as clusters of lights (people's minds). Threats show up as shapes.
+- **Moving through it.** Distance doesn't work normally. Moving between nodes costs **Grit**, not supplies.
 - **What you find there:**
-  - **Maelstrom sites**, Inindo's mountains: each has a **weird master** who teaches a discipline (see [04](04-moves-engine.md#weird-disciplines-inindos-magic-schools-translated)). Their "training" is a short In‑dungeon plus a test move.
+  - **Maelstrom sites**, Inindo's mountains: each has a **weird master** who teaches a discipline (see [04](04-characters.md#disciplines-inindos-magic-schools)). Their training is a short In‑dungeon and a test battle.
   - **Echoes**: things that happened at a place. Useful as rumors, and very useful as a hold's secrets.
-  - **Countdown glimpses**: see the next tick of a threat's countdown.
+  - **Glimpses**: a faction's next ambition stage, or where a threat is heading next.
   - **The Choir**: Hum veins lead to Harrowgate. Following them is how you find the Choir's antenna nodes.
-- **Risk.** Ψ‑harm. Getting **lost** (the Director's *separate them*, inside your head). And **Hum exposure**.
+- **Risk.** Running out of Grit (you're thrown out, at 0 Grit and half HP), getting **lost** (an In event), and **Hum exposure**.
 
 ### Hum exposure
-A hidden 0–5 track for each character, including crew:
-- **+1** for each visit to the In while the World Clock is at 9:00 or later, for each *open your brain* miss inside a Hum zone, and for each Choir move that hits you.
-- **At 3**, Last can make Prophet threat moves at you *directly*: dreams, whispered commands, crew who repeat your words back to you.
-- **At 5**, the "*join them*" ending options open, and crew at 5 may walk to Harrowgate on their own.
-- **Lowering it**: the Static discipline, the Savvyhead's jammer, a Hocus's *Divine protection*, and time spent deaf, a whole month without entering the In.
+Each character, crew included, has a hidden **Hum exposure from 0 to 100** ([04](04-characters.md#hum-exposure)):
+- **Gaining it**: days in Hum zones, In visits near Harrowgate, cantor attacks, and the Choir discipline. Weird reduces every gain.
+- **At 50**, the Choir can reach you directly: dreams, whispered commands, crew who repeat your words back to you.
+- **At 100**, the "*join them*" ending options open, and crew at 100 may walk to Harrowgate on their own.
+- **Lowering it**: the Static discipline, the Savvyhead's jammer, a Hocus's *Divine protection*, and a whole month away from Hum zones (−5).

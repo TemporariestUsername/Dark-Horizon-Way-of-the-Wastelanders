@@ -10,8 +10,10 @@ rules/economy.json      prices, stock, upkeep, debt, tolls
 rules/lean.json         loyalty thresholds and levers
 rules/time.json         calendar, travel, supply burn, pacing
 rules/factions.json     the six factions, their AI and influence engines
-rules/choir.json        the Choir and the World Clock
+rules/choir.json        the Choir's spread (Hum levels, seep, reach)
 rules/subfactions.json  cults, road gangs, guilds, secret societies
+rules/characters.json   attributes, levels, skills, Renown, checks
+rules/war.json          the gang-war formula
 ```
 
 ## Working with it

@@ -123,7 +123,7 @@ Surplus and want use the resource names from [13](13-content-tables.md#resources
 |---|---|---|---|---|---|---|---|
 | **Tampico** | Tampico | M | Mar | gasoline, crude | fresh foods | Ind | |
 | **Tux** | Tuxpan oil terminal | H | Cruz | crude | drinking water | Ind | |
-| **Tajin** | The El Tajín pyramids | H | Quiet | information (augury) | meat | Ind | Home of **the Watchers** (cult). A maelstrom site (Echo, secondary). |
+| **Tajin** | The El Tajín pyramids | H | Quiet | information (divining) | meat | Ind | Home of **the Watchers** (cult). A maelstrom site (Echo, secondary). |
 | **The Fort** | Veracruz, the island fortress | M | Salvi | fortifications, weaponry | fresh foods | Ind | |
 | **Barrow** | Xalapa | H | Matilda | burial, preserved foods (salt meat) | medical supplies | Ind | Mourners: home of **the Mourners**. The Mend discipline site. **Hocus start.** |
 | **The Green** | Los Tuxtlas jungle | O | Brujo | drugs, fresh foods (herbs) | ammo | Ind | |

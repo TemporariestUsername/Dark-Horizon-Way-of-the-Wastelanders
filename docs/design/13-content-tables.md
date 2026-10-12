@@ -34,34 +34,51 @@ These are seed values for `/data`. The final tuning comes from the headless sim 
 | Glass and lenses | Luxury | 1.4 | Visage |
 | Livestock | Chow | 2.0 | Twice. Occupies crew |
 
-## Weapons (AW tags)
+## Weapons
+Weapons work like Inindo's equipment: an **Attack** value added to the wielder's attack ([04](04-characters.md#derived-stats-inindos-character-sheet)), a **range** (melee, near is 4 tiles, far is 10), and **ammo** per attack. AW's weapon names and tags stay as flavour, and the tags have numeric effects:
+- *messy*: a critical also causes bleeding (5 a turn for 3 turns)
+- *area*: hits the target and every unit next to it, at half damage
+- *autofire*: 3 attacks at −15 accuracy each, 3 ammo
+- *armour‑piercing* (AW's *ap*): ignores half the target's Defense or Armor
+- *loud*: every enemy within 10 tiles is alerted, and the next road event near a hold is likelier to be trouble
+- *reload*: after firing, it needs a turn to reload
 
-| Weapon | Tags |
-|---|---|
-| Big knife | 2‑harm hand |
-| Machete | 3‑harm hand messy |
-| Crowbar | 2‑harm hand messy |
-| Chain | 1‑harm hand area |
-| Many knives | 2‑harm hand infinite |
-| .38 revolver | 2‑harm close reload loud |
-| 9mm | 2‑harm close loud |
-| Magnum | 3‑harm close reload loud |
-| Sawed‑off | 3‑harm close reload messy |
-| Shotgun | 3‑harm close messy |
-| SMG | 2‑harm close autofire loud |
-| Assault rifle | 3‑harm close loud autofire |
-| Hunting rifle | 3‑harm far loud |
-| Sniper rifle | 4‑harm far hi‑tech |
-| Machine gun | 3‑harm close/far area messy |
-| Grenade tube | 4‑harm close area reload messy |
-| Stun gun | s‑harm hand reload |
-| Silencer (attachment) | hi‑tech. Removes *loud* |
-| Rig gun ring (vehicle) | 3‑harm close/far area loud. Needs a gunner |
-| Harpoon gun (vehicle) | 2‑harm close. Hooked: the target can't *outdistance* |
+| Weapon | Attack | Range | Ammo | Tags |
+|---|---|---|---|---|
+| Big knife | 12 | melee | — | |
+| Machete | 18 | melee | — | messy |
+| Crowbar | 14 | melee | — | messy |
+| Chain | 10 | melee | — | area |
+| Many knives | 12 | near (thrown) | — | never runs out |
+| .38 revolver | 16 | near | 1 | reload, loud |
+| 9mm | 15 | near | 1 | loud |
+| Magnum | 22 | near | 1 | reload, loud |
+| Sawed‑off | 24 | near (3 tiles) | 1 | reload, messy |
+| Shotgun | 22 | near | 1 | messy |
+| SMG | 14 | near | 3 | autofire, loud |
+| Assault rifle | 20 | near/far | 1 (3 on autofire) | autofire, loud |
+| Hunting rifle | 22 | far | 1 | loud |
+| Sniper rifle | 30 | far | 1 | armour‑piercing. Golden‑age |
+| Machine gun | 20 | near/far | 3 | area, messy |
+| Grenade tube | 30 | near | 1 | area, reload, messy |
+| Stun gun | 0 | melee | 1 | stuns for 1 turn, reload |
+| Silencer (attachment) | — | — | — | Removes *loud*. Golden‑age |
 
-## Armor
-- 1‑armor: bike leathers, an armored corset, a riot vest. Anything really.
-- 2‑armor: serious body armor (riot gear, plate made from a car).
+**Rig guns** (for gun mounts; damage = gun power − target Armor, and each needs 2 crew):
+
+| Rig gun | Power | Range | Ammo | Notes |
+|---|---|---|---|---|
+| Gun ring | 25 | close/far | 1 | area, loud |
+| Rig machine gun | 20 | close/far | 2 | Two attacks a turn |
+| Harpoon gun | 15 | close | 1 | Hooked: the target can't change range band next turn |
+| Flamethrower | 18 | contact/close | 1 fuel can | Burning: 10 Durability a turn for 3 turns. Burning Water's specialty |
+| Rocket rack | 45 | far | 1 (rare) | armour‑piercing. Cerro's foundries and the Down only |
+
+## Armour
+Armour adds to **Defense**, which is subtracted from damage:
+- **3–6**: bike leathers, an armoured corset, a riot vest. Anything really.
+- **10–15**: serious body armour (riot gear, plate cut from a car).
+- **18–25**: golden‑age plate. Rare, and found only in the Down, the Up and stasis vaults.
 
 ## Threat roster (examples by kind)
 
@@ -128,7 +145,7 @@ Taken from AW's resource list: meat, water, fuel, security, shelter, leisure, li
 | The Choir's first hollow | Grotesque | Up |
 
 ## Maelstrom sites (Inindo's mountains)
-See the discipline table in [04](04-moves-engine.md#weird-disciplines-inindos-magic-schools-translated). Each site has a **weird master**, a short In‑dungeon (3–5 rooms), and a **test** (a custom move).
+See the discipline table in [04](04-characters.md#disciplines-inindos-magic-schools). Each site has a **weird master**, a short In‑dungeon (3–5 rooms), and a **test** (a battle or an ordeal).
 
 ## Lookalike brands (set dressing)
 **What they're for.** A brief golden‑age jolt in a ruin that's survived better than most: a sign half‑lit by a hold's generator, a mascot statue, a wrapper in a crate of oddments. They're rare, never a focus, and never a quest hook in their own right.
@@ -157,7 +174,17 @@ See the discipline table in [04](04-moves-engine.md#weird-disciplines-inindos-ma
 | **Wavelength Electronics** | A red‑lettered strip‑mall electronics store | Savvyhead salvage, at Wisher |
 
 ## Hood ornaments (UWNH's figureheads)
-Skull (+1 *go aggro* from the rig), Saint (+1 *open your brain* in the rig), Chrome angel (+1 *deal with bad terrain*), Steer horns (+1 massive when ramming), Doll's head (the Director's *announce future badness* comes a day early), Hula girl (+1 Hot at holds), Antenna (hear the Hum: +1 to read a sitch in Hum zones, and +1 Hum exposure a month).
+One per rig. Each gives a small, narrow bonus:
+
+| Ornament | Bonus |
+|---|---|
+| Skull | +10% on Hard checks to intimidate, from the rig |
+| Saint | +10% on Weird checks in the rig (Howls, the Loud) |
+| Chrome angel | +10% on Handling checks against terrain and obstacles |
+| Steer horns | +20% Ram damage |
+| Doll's head | Warnings of trouble (raids, ambushes) come a day early |
+| Hula girl | +5% on Hot checks at holds |
+| Antenna | Hear the Hum: Hum zones show on the map 2 days ahead, but +2 Hum exposure a month |
 
 ## Rumor samples (bar text bank)
 - "*Somebody drove the Forty all the way to Rock and back. Says there's a whole town living in an airplane on the median.*"

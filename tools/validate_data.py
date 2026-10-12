@@ -29,6 +29,8 @@ res = load("rules/resources.json")
 fac = load("rules/factions.json")
 choir = load("rules/choir.json")
 subs = load("rules/subfactions.json")
+WAR_TAGS = load("rules/war.json")["tags"]
+load("rules/characters.json")
 for rel in ("rules/time.json", "rules/economy.json", "rules/lean.json"):
     load(rel)  # must parse
 
@@ -86,6 +88,13 @@ for h in holds:
         expect = h["faction"] or "independent"
         if leader != expect:
             err(f"{hid}: leans to {leader} but faction is {expect}")
+    gang = h["gang"]
+    if set(gang) != {"troops", "arms", "training", "tags"} or not (1 <= gang["troops"] <= 300) \
+            or not (5 <= gang["arms"] <= 95) or not (5 <= gang["training"] <= 95):
+        err(f"{hid}: bad gang {gang}")
+    for t in gang["tags"]:
+        if t not in WAR_TAGS:
+            err(f"{hid}: unknown gang tag {t}")
     for sid, p in h["subfactions"].items():
         if sid not in SUBS:
             err(f"{hid}: unknown sub-faction {sid}")

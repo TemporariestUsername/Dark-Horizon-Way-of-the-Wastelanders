@@ -1,40 +1,126 @@
 {
  "_doc": "Prices, stock, saturation, upkeep, debt and tolls. Formulas from docs/design/07-economy.md; values tuned in the M1 headless sim.",
- "currency": {"jingle_per_barter": 10, "conversion_loss": [0.1, 0.3],
-              "hold_currencies": {"sweetwell": "water chits", "exchange": "Rothschild notes", "teeth": "bullets", "highwater": "lake tokens"}},
+ "currency": {
+  "jingle_per_barter": 10,
+  "conversion_loss": [
+   0.1,
+   0.3
+  ],
+  "hold_currencies": {
+   "sweetwell": "water chits",
+   "exchange": "Rothschild notes",
+   "teeth": "bullets",
+   "highwater": "lake tokens"
+  }
+ },
  "price": {
   "_doc": "buy = base * (buy_k0 + buy_ks*S + buy_kw*W) * cat_index * tribute;  sell = base * (sell_k0 + sell_ks*S + sell_kw*W) * cat_index * tribute * (1 - saturation)",
-  "buy_k0": 1.0, "buy_ks": -0.15, "buy_kw": 0.20,
-  "sell_k0": 0.70, "sell_ks": -0.10, "sell_kw": 0.25,
-  "tribute_no_mark": 0.10,
-  "patron_discount": 0.10,
+  "buy_k0": 1.0,
+  "buy_ks": -0.15,
+  "buy_kw": 0.2,
+  "sell_k0": 0.7,
+  "sell_ks": -0.1,
+  "sell_kw": 0.25,
+  "tribute_no_mark": 0.1,
+  "patron_discount": 0.1,
   "rep_price_step": 0.05,
-  "haggle": {"strong_hit": 0.10, "weak_hit": 0.05}
+  "haggle": {
+   "_doc": "Negotiated discount or premium. bonus = cap * clamp((hot + trade_level*3 + rep*5 + trading_rank*5 - 50) / 100, 0, 1)",
+   "cap": 0.12,
+   "trading_rank_cap_bonus": 0.05,
+   "walkout_if_pushed_past_cap": true
+  }
  },
- "saturation": {"per_lot_sold": 0.04, "cap": 0.60, "monthly_decay": 0.50},
- "category_index": {"min": 0.7, "max": 1.6, "monthly_drift_sd": 0.05, "season_shift": {"summer": {"water": 0.15}, "winter": {"fuel": 0.15, "chow": 0.10}},
-                    "regional_convergence_once_charted": 0.10},
+ "saturation": {
+  "per_lot_sold": 0.04,
+  "cap": 0.6,
+  "monthly_decay": 0.5
+ },
+ "category_index": {
+  "min": 0.7,
+  "max": 1.6,
+  "monthly_drift_sd": 0.05,
+  "season_shift": {
+   "summer": {
+    "water": 0.15
+   },
+   "winter": {
+    "fuel": 0.15,
+    "chow": 0.1
+   }
+  },
+  "regional_convergence_once_charted": 0.1
+ },
  "stock": {
   "_doc": "Each surplus level regenerates stock weekly; stock is capped. Wants grow if unmet.",
-  "weekly_regen_per_surplus_level": {"seat": 2.5, "major": 1.75, "hold": 1.0, "outpost": 0.5},
+  "weekly_regen_per_surplus_level": {
+   "seat": 2.5,
+   "major": 1.75,
+   "hold": 1.0,
+   "outpost": 0.5
+  },
   "cap_multiplier_weeks": 4,
   "want_growth_months_unmet": 3,
-  "want_relief_lots_per_level": {"seat": 20, "major": 12, "hold": 6, "outpost": 2},
+  "want_relief_lots_per_level": {
+   "seat": 20,
+   "major": 12,
+   "hold": 6,
+   "outpost": 2
+  },
   "affliction_at_want": 3
  },
  "upkeep": {
-  "lifestyle_barter_per_month": [1, 2],
-  "scraping_penalty": {"hot_ongoing": -1},
+  "lifestyle_barter_per_month": [
+   1,
+   2
+  ],
+  "scraping_penalty": {
+   "hot": -5,
+   "crew_morale": -5
+  },
   "crew_pay_barter_per_month": 0.5,
-  "shares_cargo_cut": 0.10,
-  "late_pay_hx_per_month": -1,
+  "shares_cargo_cut": 0.1,
   "rig_service_barter": 1,
-  "rig_service_every_months": 3
+  "rig_service_every_months": 3,
+  "late_pay_loyalty_per_month": -5,
+  "late_pay_morale_per_month": -10
  },
- "debt": {"exchange_rate_per_month": 0.10, "letter_of_credit_rate": 0.05, "max_barter": 20,
-          "missed_payment_countdown_ticks": 1, "lean_slide_per_month_to_lender": 2},
- "tolls": {"jingle_per_rig": [0, 3], "cargo_share": 0.05, "lighthouse_crossings": 0},
- "news": {"chart_barter_per_stretch": {"closer": 0.5, "farther": 1.5, "notional": 3.0},
-          "chart_bonus_per_feature": 0.1, "exchange_exclusive_multiplier": 3, "keepers_patron_multiplier": 1.5},
- "targets": {"great_route_return": 2.5, "typical_route_return": [1.3, 1.8], "saturation_crush_lots": 15}
+ "debt": {
+  "exchange_rate_per_month": 0.1,
+  "letter_of_credit_rate": 0.05,
+  "max_barter": 20,
+  "lean_slide_per_month_to_lender": 2,
+  "missed_payments": {
+   "1": "warning letter",
+   "2": "collectors at the next Exchange-leaning hold",
+   "3": "a rig or cargo seized",
+   "4": "a collection gig is posted on you"
+  }
+ },
+ "tolls": {
+  "jingle_per_rig": [
+   0,
+   3
+  ],
+  "cargo_share": 0.05,
+  "lighthouse_crossings": 0
+ },
+ "news": {
+  "chart_barter_per_stretch": {
+   "closer": 0.5,
+   "farther": 1.5,
+   "notional": 3.0
+  },
+  "chart_bonus_per_feature": 0.1,
+  "exchange_exclusive_multiplier": 3,
+  "keepers_patron_multiplier": 1.5
+ },
+ "targets": {
+  "great_route_return": 2.5,
+  "typical_route_return": [
+   1.3,
+   1.8
+  ],
+  "saturation_crush_lots": 15
+ }
 }

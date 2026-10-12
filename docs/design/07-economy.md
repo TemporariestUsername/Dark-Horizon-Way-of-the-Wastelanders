@@ -32,7 +32,7 @@ base(r)        = resource base value in barter per lot          (data table, 13-
 buy price      = base × (1.0 − 0.15·S + 0.20·W) × cat_index × tribute
 sell price     = base × (0.70 − 0.10·S + 0.25·W) × cat_index × tribute × (1 − saturation)
 saturation     = 0.04 per lot you've sold here this month (cap 0.6), decays 50% per month
-cat_index      = 0.7…1.6 per category, drifts monthly (seasons, raids, threat moves)
+cat_index      = 0.7…1.6 per category, drifts monthly (seasons, raids, threats)
 tribute        = 1.0 (+0.1 if the hold leans to a warlord who isn't your patron and you lack a mark)
 ```
 
@@ -43,23 +43,24 @@ tribute        = 1.0 (+0.1 if the hold leans to a warlord who isn't your patron 
 - **Water is never free in Grome's country** (the Thirty‑Five and the Rag‑Wastes). It is free at Kettle's fog nets, Reservoir, the Falls and Highwater when their surplus is 3, as in UWNH's "*Water is free*".
 - **Distance is the margin.** Holds near the Crossing have had a year of the Easing to trade with each other, so their prices have mostly evened out. Holds in the Farther ring, and holds you're first to reach, still have **golden‑age‑isolation prices**: their surplus is worth almost nothing locally and a fortune three regions away. That gap is UWNH's spice route, and it closes as traffic grows (the category index drifts toward the regional mean by 10% a month once a road is charted and busy).
 
-## Barter moves in the market
-- **Go into a holding's bustling market** (+sharp) to find a *specific* thing that isn't in stock.
-  - 10+: you buy it at the listed price.
-  - 7–9: the Director picks one: it costs 1‑barter more / it's not openly for sale, but here's a lead / here's who bought it last / something similar, will it do?
-  - Miss: the Director makes a move.
-- **Make known you want a thing and drop jingle** (+barter spent, max +3). This is a **special order**: the item arrives in N days. 10+ means no strings. 7–9 means close enough. A miss means it comes with strings very much attached (a Director hook).
-- **Give 1‑barter with strings attached**: counts as *manipulate* at 10+, with no roll. This is how bribes, gifts and favours are bought.
-- **Haggle**: there isn't one. Price negotiation is *seduce or manipulate* with a reason (Rep, a favour owed, a threat): +10% on a 10+, +5% on 7–9.
+## Market actions
+These work like UWNH's market: you see the numbers, and checks show their chance before you commit ([04](04-characters.md#checks)).
+- **Buy and sell** at the listed prices. No check.
+- **Haggle** (UWNH's negotiation): ask for a better price on one deal. The discount or premium is up to **12%** (17% with Trading rank 1 or more):
+  `bonus = cap × clamp((Hot + Trade level × 3 + Rep × 5 + Trading rank × 5 − 50) ÷ 100, 0, 1)`.
+  Push past the cap and the merchant walks out for the day ([`economy.json`](../../data/rules/economy.json)).
+- **Search the market** for a *specific* thing that isn't in stock: a **Sharp check** (fair, Trading helps). Success means you find it at the listed price. Failure means a lead: who has it, who bought it last, or something similar.
+- **Special order**: name a thing and pay a deposit. It arrives in 5–15 days (bigger holds are faster). A Hot check sets whether it comes with **strings** (a favour gig) or not.
+- **Gifts and bribes**: give barter with strings attached. Each barter's worth adds +5% to your next check with that person, up to +25%.
 
 ## Lifestyle and upkeep (the monthly drain)
-- **Lifestyle**: at month start, spend **1–2 barter** (AW). Below that you're *scraping*, which gives −1 ongoing to Hot that month and a Director question.
-- **Crew cut**: 0.5 barter per crew member per month, or **shares** (a 10% cargo cut). Under‑paying crew pushes Hx down and causes *pack alpha*‑style bids. See [11](11-crew-and-bonds.md).
-- **Rig upkeep**: each rig needs a 1‑barter service every 3 months, or it picks up a **weakness**.
-- **Holding** (Hardholder): your hold pays your lifestyle while you're there governing it. Wealth and want are rolled at month start.
+- **Lifestyle**: at month start, spend **1–2 barter**. Below that you're **scraping**: Hot −5 and crew morale −5 that month.
+- **Wages and pay**: officers' wages, and 0.5 barter a month for every 10 hands, or **shares** (a 10% cargo cut). Late pay costs officers −5 loyalty and hands −10 morale a month. See [11](11-crew-and-bonds.md#wages-and-loyalty).
+- **Rig upkeep**: each rig needs a 1‑barter service every 3 months, or it picks up a **weakness** (−10% to one stat until serviced).
+- **The hold** (Hardholder): your hold pays your lifestyle while you're there governing it. **Wealth** is paid at month start ([06](06-playbooks.md#3-the-hardholder-my-caravans-feed-half-the-quiet)).
 
 ## Gigs (work)
-Work is posted at **month start** (Inindo's rule). It's found on hold **notice walls**, at **warlord seats**, at the **bar** (rumors), and through playbook gig lists from AW ("*Tend to the health of a dozen families*" for an Angel crew member, and so on).
+Work is posted at **month start** (Inindo's rule). It's found on hold **notice walls**, at **warlord seats**, at the **bar** (rumors), and through class gig lists ("*Tend to the health of a dozen families*" for an Angel officer, and so on).
 
 | Gig type | Example | Reward |
 |---|---|---|
@@ -68,7 +69,7 @@ Work is posted at **month start** (Inindo's rule). It's found on hold **notice w
 | Escort | Ride with Partridge's caravan through the Rag‑Wastes | Barter and gear |
 | Salvage | Bring back the Fuse vault's control board | Barter or the item, plus a Savvyhead project |
 | Faction gig | Sabotage Grome's pipe; break Burning Water's embargo; infiltrate Pellet | Large barter, plus the patron's Lean. The target warlord turns against you. |
-| Mercy | Free Tum Tum's catch; bring water to a dying straggler camp | Hx and Rep. Little barter. |
+| Mercy | Free Tum Tum's catch; bring water to a dying straggler camp | Rep, Renown, officers' loyalty. Little barter. |
 
 ## Investment and Lean (UWNH's allegiance, AW's way)
 Every hold has a **Lean**: a share of loyalty split across factions that adds up to 100. The shares belong to the **six factions** (the Lighthouse, Sweetwell, Highwater, the Exchange, Burning Water and Cerro; see [17](17-factions.md)), **independent**, and **you** (or your patron, if you've sworn to one). **The Choir holds no Lean**: it Silences holds instead, taking them off this board entirely. **Sub‑factions** ([18](18-sub-factions.md)) hold no Lean either, but the faction they **back** gains Lean drift wherever they have chapters.
@@ -94,20 +95,24 @@ Lean: { independent: 55, grome: 30, you: 15 }      → the hold "leans" to whoev
 - **≥ 75**: you can **install** a hardholder, base a caravan there, or (Hardholder) annex it into your holding network.
 - **Faction seats** (the Lighthouse, Sweetwell, Highwater, the Exchange, Burning Water, Cerro, and the Choir's Harrowgate and Pellet) **can't be invested in**. That's UWNH's capital rule. They have to be taken.
 
-## Debt (UWNH's bank → AW strings)
-- **Rothschild's Exchange** lends up to 20‑barter at **10% a month** (UWNH's rate). Debt is a **threat** with a countdown. Missed payments tick it toward *take away their stuff*: collectors, a seized rig, or a "*favour*" gig.
+## Debt (UWNH's bank)
+- **Rothschild's Exchange** lends up to 20 barter at **10% a month** (UWNH's rate). While you owe, the hold you borrowed in drifts 2 Lean a month toward the Exchange. Each missed payment escalates:
+  1. a warning letter
+  2. collectors waiting at the next Exchange‑leaning hold
+  3. a rig or cargo seized
+  4. a collection gig posted on you
 - **Others lend too, but in strings**: Grome lends water against obedience, Parcher lends fuel against labour, and the Family (a sub‑faction) lends a hand against a stray brought home.
 
 ## Information as a commodity (UWNH's cartographers → the News)
 - **Charts**: the News, at the Lighthouse, buys newly charted roads (0.5–3 barter per stretch, more for Farther and Notional ones, and a bonus for every break, crossing and toll you mark). **Rothschild pays triple for exclusive charts**, which then aren't sold to anyone else. That shuts other traders (and other playbooks' cameos) out of the route. Hardholders buy charts of the roads *to their* hold.
 - **Sights** (discoveries) pay out once to the News, add Rep, and add Lean wherever they're relevant.
-- **Rumors**: buy them at bars (1–5 jingle) or sell them. **True rumors** turn into map markers. **False rumors** exist and are planted by threats (a *Mirage* landscape's move: "*entice and betray*").
+- **Rumors**: buy them at bars (1–5 jingle) or sell them. **True rumors** turn into map markers. **False rumors** exist and are planted by threats (a *Mirage* landscape *entices and betrays*).
 
 ## Crossing tolls
-Whoever holds a crossing over a living river sets its toll: 0–3 jingle a rig, or a share of cargo. Neutral crossings (the Lighthouse) charge nothing by custom. A crossing that leans to you is toll‑free for your caravans, which is a big reason to invest in one. Running a toll is *go aggro* or road war on a bridge.
+Whoever holds a crossing over a living river sets its toll: 0–3 jingle a rig, or a share of cargo. Neutral crossings (the Lighthouse) charge nothing by custom. A crossing that leans to you is toll‑free for your caravans, which is a big reason to invest in one. Running a toll means a Hard check to face down the guards, or a road war on the bridge.
 
 ## Safe passage
 A warlord's **mark** (UWNH's Letter of Marque and tax permit rolled together) is a token worn on your rigs:
 - No tribute in that warlord's holds.
 - Their gangs leave you alone on the road.
-- *Activating its downside*: rival warlords treat you as that warlord's creature.
+- The downside: rival warlords treat you as that warlord's creature.

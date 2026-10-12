@@ -64,7 +64,7 @@ You are the last Iga ninja, out for revenge on Oda Nobunaga in 1582 Japan. You t
 - **17 classes**: Our Hero, Iga ninja, Koga ninja, Negoro ninja, Fuma ninja, Mendicant, Sohei (warrior monk), Hermit, Sage, Mystic, Magician, Sorcerer, Samurai, Ronin, Swordsman, and others.
 - **Lineup**: a small grid that sets each member's position in battle.
 - **Stat sheet** [Emu]: Level, Exp Needed, Health, Energy (mana), Attack, Defend, Resist, Power, Speed, Intel, Luck, Gold.
-- **Translate:** classes become **playbooks**, and recruits become NPCs from other playbooks. Formation becomes a skirmish deployment.
+- **Keep:** classes with growth, carrying AW's **playbook** names; recruits are officers of other classes. Formation becomes the skirmish Lineup.
 
 ### 3.4 Magic: schools and sacred mountains [ROM]
 - **12 schools**: Ninjutsu, Fire, Sky, Earth, Mysticism, Cures, Bukyo, Magic, Sorcery, Visions, Evil, Curses.
@@ -73,7 +73,7 @@ You are the last Iga ninja, out for revenge on Oda Nobunaga in 1582 Japan. You t
   - "*Mt. Tsukuba training ground is south of here. There you will learn to heal wounds.*"
   - "*Can you endure rigorous training? I hope you're not a quitter.*"
 - **The design lesson:** power is *geographic*. You learn what you can do by *going somewhere* strange and getting through it.
-- **Translate:** sacred mountains become **places where the psychic maelstrom runs thin**. Masters become brainers, hocuses and other weird hermits. Spells become Weird moves and augury.
+- **Translate:** sacred mountains become **places where the psychic maelstrom runs thin**. Masters become brainers, hocuses and other weird hermits. Spells become **disciplines**: techniques that cost Grit.
 
 ### 3.5 Missions [ROM‑text]
 - Mission types: "*Infiltrate the castle*", "*Sabotage the castle*", spying (the **Spy** field command), and "*I want you to sabotage…*".
@@ -109,17 +109,19 @@ Search · Lineup · Items · Info (Stats / Items / Magic / Skills) · Magic · *
 
 ## 6. Keep, translate or discard
 
+> **Updated after the client's direction** that the game's mechanics follow UWNH and Inindo, with Apocalypse World supplying the classes, setting and ambiance. The verdicts below reflect that; see [01](../design/01-translation-matrix.md).
+
 | System | Verdict | Dark Horizon form |
 |---|---|---|
-| Monthly strategic turn | **Keep (core)** | The month as an AW "session". The **world turn**: warlords and threats act, and countdowns tick |
+| Monthly strategic turn | **Keep (core)** | The **world turn**: factions pursue their ambitions, threats move, and the Choir's Hum seeps |
 | Daimyo personalities | **Keep** | Warlord temperament pairs, including **Hum‑touched / Deaf** (for or against Last) |
 | Provinces changing hands | **Keep** | Holds change allegiance through conquest *or* investment (from UWNH) |
 | Autonomous wandering NPCs | **Keep (big)** | Named NPCs with wants who live on the calendar: the "*think offscreen too*" principle as a system |
-| Recruiting gated by experience | **Translate** | Recruiting gated by **Hx and reputation**, not level |
-| 17 classes | **Translate** | Playbooks as protagonists and as crew archetypes |
-| Magic schools at mountains | **Translate** | Maelstrom sites in the **In** octant, with weird masters, Weird moves, augury and Ψ‑harm |
+| Recruiting gated by experience | **Keep** | Recruiting gated by **Renown and Rep** |
+| 17 classes | **Keep** | AW's playbooks as classes, for protagonists and officers |
+| Magic schools at mountains | **Translate** | Maelstrom sites in the **In**, with weird masters teaching disciplines that cost Grit |
 | Missions from daimyo | **Keep** | Warlord gigs |
-| Grid tactical battles | **Translate** | Skirmishes resolved through **battle moves**, not hit‑point trades |
-| Levels and HP | **Discard** | Harm clocks, highlights, improvements |
-| Random monster encounters | **Discard** | No random encounters. The Director makes threat moves |
-| A villain who stays far away | **Keep** | **Last** at Harrowgate: present in rumors and countdowns, reachable only late |
+| Grid tactical battles | **Keep** | Skirmishes on a grid: HP, Speed order, Attack against Defense |
+| Levels and HP | **Keep** | Levels on three tracks, Health and Grit |
+| Random monster encounters | **Translate** | Encounters weighted by the threats actually present on that road |
+| A villain who stays far away | **Keep** | **Last** at Harrowgate: present in rumors and in the Hum's slow spread, reachable only late |
