@@ -75,14 +75,14 @@ There's no clock. The Choir spreads hold by hold ([02](02-world.md#the-choirs-cr
 - **Actions**: 1 a month, 2 from 5 Silenced. From 15 Silenced, a 15% chance each month of a march: an Opened gang war against a neighbouring Marked hold.
 - **Pushback**: a liberated hold drops to 0 and its neighbours lose 20; a saved sub‑faction loses 40 Turning; taking Pellet stops the coffles.
 
-**Measured with no player** (`tools/sim_choir.py`, median of 50 seeds):
+**Measured with no player** (the M1 sim, median of 200 seeds; [report](../reports/m1-balance-report.md)):
 
-| Month | 36 | 60 | 96 | 120 |
-|---|---|---|---|---|
-| Silenced holds | 8 | 13 | 26 | 39 |
-| Reach | Spreading | Spreading | Marching | Drowning |
+| Month | 36 | 60 | 72 | 96 | 120 |
+|---|---|---|---|---|---|
+| Silenced holds | 9 | 14 | 19 | 31 | 42 |
+| Reach | Spreading | Spreading | Marching | Drowning | Drowning |
 
-**Targets** (`choir.json`): at most 9 by month 36, 11–16 by month 60, 30–45 by month 120. That's slow and steady: the Choir reaches **Marching** around month 72 and **Drowning** after about 9 years if nobody resists. A campaign runs 60–96 months, so a passive player will see it Marching, and a hard‑pushing one can hold it at Spreading or push it back.
+**Targets** (`choir.json`): at most 9 by month 36, 11–16 by month 60, 30–45 by month 120. That's slow and steady: the Choir reaches **Marching** between months 60 and 72 and **Drowning** around month 96 if nobody resists. A campaign runs 60–96 months, so a passive player will see it Marching, and a hard‑pushing one can hold it at Spreading or push it back.
 
 ## Faction engines in numbers
 
@@ -114,11 +114,29 @@ There's no clock. The Choir spreads hold by hold ([02](02-world.md#the-choirs-cr
 - A typical month is 8–12 road days, 2–4 hold visits and 1–3 scenes or battles, which comes to **35–45 minutes**.
 - Over **60–96 months**, that's the **40–60 hour** campaign target.
 
-## What M1 does with this
-M1 is the headless Godot simulation. It loads these files and runs the world turn ([10](10-warlords-and-politics.md#the-world-turn-end-of-each-month)) for 48 months across 200 seeds. It then reports against the balance targets in `factions.json` and `choir.json`:
-- 4–6 factions alive
-- at least 25 holds changing Lean, and no faction above 30%
-- at least 4 sub‑factions switching backing
-- the Choir Silencing 11–16 holds by month 60 with no player, and never stalling
+## What M1 found
+M1 is the headless Godot simulation ([`sim/`](../../sim/README.md)). It loads these files and runs the world turn ([10](10-warlords-and-politics.md#the-world-turn-end-of-each-month)) with no player, across 200 seeds × 120 months, and reports against the balance targets in `factions.json` and `choir.json`. **Every target passes** in the [latest report](../reports/m1-balance-report.md):
 
-Whatever the sim shows, the numbers here change, the docs that quote them change with them, and the validator keeps the two in step.
+| Target | Result (median) |
+|---|---|
+| 4–6 factions alive at month 48 | 5 |
+| ≥ 25 holds changing Lean by month 48 | 53 |
+| No faction above 30% of holds | the largest holds 8% |
+| ≥ 50% of independents still independent | 57% |
+| ≥ 4 sub‑factions switching backing | 10 |
+| Choir: ≤ 9 / 11–16 / 30–45 Silenced at months 36 / 60 / 120 | 9 / 14 / 42 |
+| Family and Cross‑folk turned by month 60 | both, every seed |
+
+**What the first runs changed** (each is now in the data and the docs above):
+- **The economy measures disruption, not scarcity.** The map is scarce by design (medicine supply covers about a fifth of demand), so judged against an absolute bar every hold looked afflicted on day one. A want now rises when its supply falls below half of that hold's own starting level, which is what a Silenced supplier, an embargo or a raid does. Prices and wants are stable without a player; about 29 holds carry a disrupted want by month 48.
+- **Home rule.** Without a pull back to independence, the factions absorbed every independent hold within two years. Home rule (1.5 a month) means influence has to be kept up.
+- **Softer engines and actions**, and a claim at most every 8 months: the factions grow slowly and fight over the edges, as UWNH's nations did.
+- **Turned chapters work at the Hum's edge.** Letting them work anywhere seeded outbreaks across the map, which drowned it by year seven (96 Silenced at month 120). Voices are capped at 160 and the Opened march 15% of months.
+
+**Findings to watch** (for the M2 design pass):
+- **Burning Water falls in almost every seed** (98%), usually between months 20 and 40, because its seat is Harrowgate's neighbour. The design wants it bought or broken by month 60 without a player, so this is on purpose but early. Saving it is the player's clearest first job.
+- **The factions barely grow on their own**: +1 to +4 holds each by month 48, and Sweetwell shrinks (4 to 3) despite winning 5 gang wars, because conquered holds drift back. The player's investment and gigs should matter a lot, which is the intent, but the AI may need stronger ways to *keep* what it takes.
+- **Ambitions are uneven**: the Lighthouse and Cerro finish all four stages by month 48; the Exchange rarely finishes its first (70 Lean at Fuse is far from Tampa); Highwater stalls at its first. Stage conditions need a second look.
+- **Not simulated yet**: the Wanderer AI (it needs the named‑NPC roster), the League (it needs a broker: the player), and every battle except gang war (M2).
+
+Whatever the sim shows, the numbers here change, the docs that quote them change with them, and the validator and tests keep the two in step.

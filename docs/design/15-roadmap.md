@@ -6,7 +6,7 @@
 |---|---|---|---|
 | **M0** | **Design bible** ✅ | Direction | These docs, the RE teardowns, the platform pick |
 | **M0.5** | **M1 data prerequisites** ✅ | The rules are concrete enough to simulate | The road network (Natural Earth), economic profiles for all 130 holds, the rules as numbers, time pacing, a validator. See [19](19-numbers-and-data.md) |
-| **M1** | **Sim spike** (headless, Godot 4) | The economy and politics work *without* graphics, at full scale | The character and check formulas, a seeded RNG service, the road graph, all 130 holds' economy, Lean, the 6 factions' ambitions and engines, gang war, the Choir's spread, the world turn, a 48‑month sim runner, a balance report |
+| **M1** | **Sim spike** (headless, Godot 4) ✅ | The economy and politics work *without* graphics, at full scale. Every balance target passes ([report](../reports/m1-balance-report.md), [findings](19-numbers-and-data.md#what-m1-found)) | The character and check formulas, a seeded RNG service, the road graph, all 130 holds' economy, Lean, the 6 factions' ambitions and engines, gang war, the Choir's spread, the world turn, a 48‑month sim runner, a balance report |
 | **M2** | **Battle and event prototype** | The fights and the events are fun and fair | Skirmish and road war with placeholder art, unit and class data, threats as data, event cards in a text UI, golden tests |
 | **M3** | **Vertical slice** | The full loop, at quality, for about 2 hours | Defined below |
 | **M4** | **Alpha** | The whole map (130 holds) and all six playbooks | All regions, holds, factions, the Choir's creep, Up, Down and In |
@@ -81,4 +81,4 @@
 | 13 | Whose mechanics | **UWNH's and Inindo's.** AW supplies the classes, setting and ambiance | [01](01-translation-matrix.md), [04](04-characters.md), [09](09-combat.md), [11](11-crew-and-bonds.md) |
 
 ## Open questions for the client
-None outstanding. New questions will come out of the M1 sim spike (economy balance at 130 holds) and the M2 battle and event prototype.
+None outstanding. The M1 sim raised design questions for the M2 pass ([findings](19-numbers-and-data.md#what-m1-found)): Burning Water falls early, the factions barely grow on their own, and some ambitions stall.

@@ -1,50 +1,51 @@
 # M1 balance report
 
-40 seeds (1–40) × 60 months, no player. Faction targets are read at month 48. Ran in 79.8 s with Godot 4.4.1-stable (official).
+200 seeds (1–200) × 120 months, no player. Faction targets are read at month 48. Ran in 781.2 s with Godot 4.4.1-stable (official).
 
 A target **passes** when at least half the seeds meet it.
 
 | Target | Goal | Median | Range | Seeds meeting it | |
 |---|---|---|---|---|---|
 | Factions alive at month 48 | 4–6 of 6 | 5 | 4–6 | 100% | ✅ |
-| Holds that changed Lean by month 48 | ≥ 25 | 53 | 42–59 | 100% | ✅ |
-| Largest faction's share of holds, month 48 | ≤ 30% | 0.08 | 0.06–0.12 | 100% | ✅ |
-| Independents still independent, month 48 | ≥ 50% | 0.57 | 0.47–0.69 | 90% | ✅ |
+| Holds that changed Lean by month 48 | ≥ 25 | 53 | 42–66 | 100% | ✅ |
+| Largest faction's share of holds, month 48 | ≤ 30% | 0.08 | 0.05–0.12 | 100% | ✅ |
+| Independents still independent, month 48 | ≥ 50% | 0.57 | 0.45–0.71 | 93% | ✅ |
 | Sub-factions that switched backing by month 48 | ≥ 4 | 10 | 6–13 | 100% | ✅ |
-| Silenced holds at month 36 | ≤ 9 | 9 | 7–10 | 95% | ✅ |
-| Silenced holds at month 60 | 11–16 | 14.50 | 11–22 | 73% | ✅ |
+| Silenced holds at month 36 | ≤ 9 | 9 | 7–10 | 97% | ✅ |
+| Silenced holds at month 60 | 11–16 | 14 | 11–17 | 98% | ✅ |
 | Hum-touched sub-factions turned by month 60 | Family and Cross-folk (2) | 2 | 2–2 | 100% | ✅ |
+| Silenced holds at month 120 | 30–45 | 42 | 34–47 | 98% | ✅ |
 
 ## The Choir's creep (median Silenced holds)
 
-| Month | 12 | 24 | 36 | 48 | 60 |
-|---|---|---|---|---|---|
-| Silenced | 3 | 4 | 9 | 10 | 14.50 |
-| Voices | 34 | 54 | 102 | 131 | 182 |
-| Most common reach | whispers | whispers | spreading | spreading | spreading |
+| Month | 12 | 24 | 36 | 48 | 60 | 72 | 96 | 120 |
+|---|---|---|---|---|---|---|---|---|
+| Silenced | 3 | 4 | 9 | 10 | 14 | 19 | 31 | 42 |
+| Voices | 34 | 56 | 102 | 130 | 160 | 160 | 160 | 160 |
+| Most common reach | whispers | whispers | spreading | spreading | spreading | marching | drowning | drowning |
 
 ## Factions at month 48 (median across seeds)
 
 | Faction | Holds leaning at start | Holds leaning | Alive in | Conquests | Ambition stage reached |
 |---|---|---|---|---|---|
 | The Lighthouse | 5 | 8 | 100% | 0 | 4 of 4 |
-| Sweetwell | 4 | 3 | 98% | 5 | 2 of 4 |
-| Highwater | 5 | 9 | 100% | 3.50 | 1 of 4 |
-| The Exchange | 5 | 7 | 100% | 3 | 0 of 4 |
-| Burning Water | 5 | 0 | 5% | 1 | 1 of 4 |
-| Cerro | 4 | 9 | 100% | 6 | 4 of 4 |
-| Independent | 96 | 64 | | | |
+| Sweetwell | 4 | 3 | 95% | 5 | 2 of 4 |
+| Highwater | 5 | 9 | 99% | 3 | 1 of 4 |
+| The Exchange | 5 | 6 | 100% | 3 | 0 of 4 |
+| Burning Water | 5 | 0 | 2% | 1 | 1 of 4 |
+| Cerro | 4 | 8 | 100% | 6 | 4 of 4 |
+| Independent | 96 | 63.50 | | | |
 
 ## Economy (median across seeds)
 
 | Month | 0 | 12 | 24 | 48 |
 |---|---|---|---|---|
-| Holds with a want above its starting level | 0 | 23 | 28 | 29 |
+| Holds with a want above its starting level | 0 | 22.50 | 28 | 29 |
 | Mean want level | 1.74 | 1.87 | 1.93 | 1.96 |
 | Water, mean buy price | 0.66 | 0.67 | 0.68 | 0.67 |
-| Guzzoline, mean buy price | 0.55 | 0.64 | 0.65 | 0.66 |
-| Medicine, mean buy price | 2.91 | 2.99 | 2.99 | 2.99 |
-| Contested holds | 0 | 11 | 10 | 20 |
+| Guzzoline, mean buy price | 0.55 | 0.64 | 0.65 | 0.65 |
+| Medicine, mean buy price | 2.91 | 2.99 | 2.99 | 3.00 |
+| Contested holds | 0 | 10 | 10 | 20.50 |
 
 ## Month Report sample (seed 1, first two years)
 

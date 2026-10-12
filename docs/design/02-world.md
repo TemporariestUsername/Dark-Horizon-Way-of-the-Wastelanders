@@ -165,7 +165,7 @@ The Choir doesn't run on a timer. It spreads like rot, **one hold at a time, dow
 | **Marching** | 15–29 | The Opened **march**: the Choir attacks holds by gang war, like a warlord. The Arch starts singing, and the Hum spreads up the Seventy |
 | **Drowning** | 30+ | **The Loud creeps in** at the edges of Hum zones, and travel through the Up is cut. Every NPC with Weird 50 or more starts *listening* |
 
-- **Pace.** With no one resisting, the Choir Silences about 8 holds by month 36, 13 by month 60, and 39 by month 120 (tested in [`tools/sim_choir.py`](../../tools/sim_choir.py)). It's slow, and it's never hidden: the Month Report always says where it has spread.
+- **Pace.** With no one resisting, the Choir Silences about 9 holds by month 36, 14 by month 60, 19 by month 72 and 42 by month 120 (the M1 simulation, 200 seeds: [report](../reports/m1-balance-report.md)). It's slow, and it's never hidden: the Month Report always says where it has spread.
 - **It can be pushed back.** Stopping coffles, taking Pellet, Static, liberating Silenced holds, saving turned sub‑factions and breaking Harrowgate's nodes all lower Hum and voices.
 - **There's no end state.** The Choir never ends the campaign. Your class's arc does, and the Choir's reach when it ends decides how dark the ending is ([06](06-playbooks.md#endings-and-the-choirs-reach)).
 
