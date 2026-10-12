@@ -71,13 +71,13 @@ Work is posted at **month start** (Inindo's rule). It's found on hold **notice w
 | Mercy | Free Tum Tum's catch; bring water to a dying straggler camp | Hx and Rep. Little barter. |
 
 ## Investment and Lean (UWNH's allegiance, AW's way)
-Every hold has a **Lean**: a share of loyalty split across factions that adds up to 100. The factions are the six warlords, **independent**, and **you** (or your patron, if you've sworn to one).
+Every hold has a **Lean**: a share of loyalty split across factions that adds up to 100. The factions are the **six influence factions** (the Keepers, the Exchange, the Lake Compact, Sweetwell, the Teeth and the Family; see [17](17-factions.md)), **independent**, and **you** (or your patron, if you've sworn to one). **The Choir holds no Lean**: it Silences holds instead, taking them off this board entirely.
 
 ```
 Lean: { independent: 55, grome: 30, you: 15 }      → the hold "leans" to whoever is ≥ 50
 ```
 
-**Ways to move Lean:**
+**Ways to move Lean.** These are *your* levers. Each AI faction also has its own **influence engine** that works on Lean every month ([17](17-factions.md#the-six-influence-factions)), and a faction you're sworn to multiplies the matching lever by 1.5 (an Exchange patron's investment, a Keeper patron's charts, and so on).
 
 | Action | Lean change to you | Notes |
 |---|---|---|
@@ -92,7 +92,7 @@ Lean: { independent: 55, grome: 30, you: 15 }      → the hold "leans" to whoev
 **Thresholds:**
 - **≥ 50**: the hold leans to you. You get a discount (tribute 0.9), access to its Seat, its gang **defends** your caravans, and it pays you **a tithe** of 1–3 barter a month.
 - **≥ 75**: you can **install** a hardholder, base a caravan there, or (Hardholder) annex it into your holding network.
-- **Warlord seats** (Pellet, the Teeth, the Exchange, Sweetwell, Krin's Nest, Harrowgate) **can't be invested in**. That's UWNH's capital rule. They have to be taken.
+- **Faction seats** (the Lighthouse, the Exchange, Highwater, Sweetwell, the Teeth, Krin's Nest, and the Choir's Harrowgate and Pellet) **can't be invested in**. That's UWNH's capital rule. They have to be taken.
 
 ## Debt (UWNH's bank → AW strings)
 - **Rothschild's Exchange** lends up to 20‑barter at **10% a month** (UWNH's rate). Debt is a **threat** with a countdown. Missed payments tick it toward *take away their stuff*: collectors, a seized rig, or a "*favour*" gig.

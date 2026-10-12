@@ -4,7 +4,7 @@
 The AW playbooks look like **stark white silhouettes cut out of black**, with ragged torn edges, **distressed stencil type**, and paper sheets marked with ink. Inindo's title screen uses the same grammar, with a **blood‑red** banner as its only colour.
 
 **Rules:**
-1. **Two tones and one red.** All gameplay art is drawn in **bone white** (#EDE6D6) and **char black** (#0E0D0C), with dithered greys (a 4‑step ordered dither). **Red** (#B3201B) is reserved for **blood, harm, the Hum, and countdown fill**. Nothing else is red.
+1. **Two tones and one red.** All gameplay art is drawn in **bone white** (#EDE6D6) and **char black** (#0E0D0C), with dithered greys (a 4‑step ordered dither). **Red** (#B3201B) is reserved for **blood, harm, the Hum, and countdown fill**. Nothing else is red. **The Choir is the only faction drawn in red**: its sigil (a red circle), its doors and its banners. That way the player learns to read the colour itself as danger.
 2. **Silhouette first.** Characters, rigs and threats have to read as solid shapes at 1× scale. Portraits are AW‑style cut‑outs: a high‑contrast face, a black field and ragged edges.
 3. **Paper UI.** Menus are the **playbook sheet**: off‑white paper, black ink, stencil headings with torn rules (`▬▬▬▬`), and circle checkboxes for moves and highlights.
 4. **The In is the negative.** The In layer inverts the palette: white ground, black sky, red veins.
@@ -35,6 +35,19 @@ The AW playbooks look like **stark white silhouettes cut out of black**, with ra
 ## Signage and ruins
 - **Most signage is gone.** It's rust, bare poles and sun‑bleached blanks. Interstate shields and mile markers survive best, because they're metal and they matter; they're drawn crisp because people still use them.
 - **Lookalike brands** appear rarely, in less‑rusted ruins only, as faded or half‑lit signs drawn in the same two tones (red only if the sign is lit by a hold's power). They should be recognisable from silhouette and palette alone: the art carries the reference, not the name. Rules and seed list: [13](13-content-tables.md#lookalike-brands-set-dressing).
+
+## Faction marks
+Each influence faction has a **stencil sigil** in bone and black, painted on its holds' gates, its rigs and its gangs' gear. On the map, a hold's Lean is drawn as a torn‑paper bar split by those sigils.
+
+| Faction | Sigil | Look |
+|---|---|---|
+| Keepers | A lamp with three rays | Lanterns on every rig, white cloth |
+| Exchange | A coin with a hole punched through | Ledgers, stamped notes, gold teeth |
+| Lake Compact | Three wave lines | Wool, steel, frost, uniform escorts |
+| Sweetwell | A drop inside a ring | Sealed helmets, numbered chits, tankers |
+| Teeth | A jaw | Bone, chrome, trophies on grilles |
+| Family | An open hand with an eye | Tunnel lamps, shared bowls, kin‑words |
+| **The Choir** | **A red circle** | **The only red banners on the map.** The Opened standing still on overpasses, all facing Harrowgate |
 
 ## Iconography
 - **Harm clock**: a 6‑segment pie (3, 6, 9, 10, 11, 12), filled in red ink. The same shape is used for **all countdowns** and the **World Clock**, so the player learns to read one symbol.

@@ -11,6 +11,7 @@ Playbooks do two jobs:
   - **Hx questions** are asked about the **starting crew and NPCs** (for example, the Driver asks: "*Which one of you once rode with me?*"). The answers set Hx and become **facts** the Director can use.
 - **Basic moves** for everyone, plus the playbook's starting picks.
 - **Every playbook can do everything**: trade, drive and fight. The playbook makes one career *special* and *cheap*, not the others impossible. This is UWNH's freedom of career.
+- **Factions.** Each playbook has a natural patron and a natural enemy among the [factions](17-factions.md#playbook-affinities-defaults-never-locks). These are defaults, never locks: any playbook can swear to any influence faction, or to none.
 - **Cameos.** In each campaign, the other five protagonists exist as named NPCs with arcs that run on their own (Wanderer AI plus authored beats). Meeting them crosses the stories over, as UWNH does.
 
 ## The six launch playbooks

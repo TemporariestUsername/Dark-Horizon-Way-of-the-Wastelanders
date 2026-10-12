@@ -1,15 +1,18 @@
 # 10 · Warlords, Politics and the World Turn
 
 > Inindo's lesson: *the map changes without you.* UWNH's lesson: *you can change the map without firing a shot.* Both are true here.
+>
+> This doc covers the **machinery**: warlord AI, the world turn and conquest. **Who the factions are** (their flavour, influence engines, patron packages, and how the Choir breaks the rules) is in [17 · Factions](17-factions.md).
 
 ## The political units
 - **Holds** carry **Lean** (see [07](07-economy.md#investment-and-lean-uwnhs-allegiance-aws-way)), **Walls** (armor 0–2), a **Gang** (size, harm, armor, tags), a **Boss**, and **Afflictions**.
-- **Warlords** own **seats** (which can't be invested in) and command the holds that lean to them. Each has:
+- **Factions** are each led by a **warlord** who owns a **seat** (which can't be invested in) and commands the holds that lean to the faction. Each has:
   - **Kind and impulse** (AW warlord types).
   - **Temperament**: Inindo's personality pairs, adapted.
   - **Grip**: Weak / Holding / Strong / Iron (Inindo's Bad / Fair / Good / Great). It sets how many actions they get each turn and how hard their holds are to flip.
   - **Lieutenants**: named NPCs with **Brawn** and **Cunning** ratings (0–100), like Inindo's officer ratings. They lead gangs and run conquered holds.
   - **Stakes questions** and a **countdown**, as AW threats.
+  - An **influence engine**: the faction's own way of gaining Lean each month (light, money, freight, thirst, fear, kin). See [17](17-factions.md#the-six-influence-factions).
 
 ## Temperament (Inindo's traits translated)
 
@@ -25,7 +28,8 @@
 It resolves in this order, with every step logged for the Month Report:
 
 1. **Countdowns tick**: every threat whose conditions are met advances one segment and *fires* its line.
-2. **Warlord actions**: each warlord gets 1–3 actions, depending on grip, chosen by weighted AI over its impulse's threat moves:
+2. **Influence engines run**: each faction applies its engine (debt slides, freight routes, thirst drift, fear decay, hidden cousins, Keeper lamps).
+3. **Warlord actions**: each faction's warlord gets 1–3 actions, depending on grip, chosen by weighted AI over its impulse's threat moves:
 
 | Action | Rule |
 |---|---|
@@ -37,15 +41,16 @@ It resolves in this order, with every step logged for the Month Report:
 | **Make a careful study** | Targets the weakest hold or **you**. Next month's attack gets +1. |
 | **Demand tribute** | Leaning holds pay. A want rises if they can't. |
 
-3. **Hold economy**: stock regenerates from surplus. Wants above 2 create or worsen **afflictions**. Category price indexes drift.
-4. **Lean settles**: holds below 50 for everyone become **contested**. Warlords whose holds are contested lose grip.
-5. **Wanderer AI**: every named wandering NPC takes one verb (*Move, Attack, Flee, Seek work, Work, Train, Wait, Meet*).
-6. **Last's turn**: Prophet threat moves, plus the World Clock check (see [02](02-world.md#last-and-the-hum-the-campaign-antagonist)).
-7. **The Month Report**: "*Meanwhile…*", in the News' voice, listing every change in a hold you know about. Fog‑hidden events show up as rumors.
+4. **Hold economy**: stock regenerates from surplus. Wants above 2 create or worsen **afflictions**. Category price indexes drift.
+5. **Lean settles**: holds below 50 for everyone become **contested**. Warlords whose holds are contested lose grip.
+6. **Wanderer AI**: every named wandering NPC takes one verb (*Move, Attack, Flee, Seek work, Work, Train, Wait, Meet*).
+7. **The Choir's turn**: its 2–3 actions (Silence, march, coffles, cantor moves), the League countdown, plus the World Clock check (see [02](02-world.md#last-and-the-hum-the-campaign-antagonist) and [17](17-factions.md#the-choir-the-nobunaga-faction)).
+8. **The Month Report**: "*Meanwhile…*", in the News' voice, listing every change in a hold you know about. Fog‑hidden events show up as rumors.
 
 **Balance targets:**
-- Over 48 simulated months without the player, the world should keep **4 to 6 warlords alive**.
-- At least **25 of the 130 holds should change Lean**, but no warlord should take more than 30% of the holds.
+- Over 48 simulated months without the player, **4 to 6 of the six influence factions** should still be alive.
+- At least **25 of the 130 holds should change Lean**, but no influence faction should take more than 30% of the holds.
+- **Without the player, the Choir should win**: by month 60 it should Silence 15 or more holds and absorb the Family. The player is what stops it.
 - At least **half the independents should still be independent**, so there's always territory left to win.
 - The World Clock should reach **9:00 between months 36 and 54**.
 
@@ -59,6 +64,15 @@ The [headless sim runner](../research/platform-recommendation.md#recommended-arc
 
 ## Warlord sheets (launch)
 
+### Kindle, elder of the Keepers (the Crossing)
+- **Impulse**: to take everyone in (a benign Cult).
+- **Temperament**: Stubborn, Steady, Grim, Deaf, Peaceful.
+- **Grip**: Holding (sticky, slow).
+- **Gang**: the Lampmen, small, 2‑harm, 1‑armor, well‑disciplined. They only defend.
+- **Lieutenants**: Inch (Brawn 35 / Cunning 70), Line (40 / 55), White (30 / 62).
+- **Stakes**: *Will the Lighthouse stay free? Will Kindle ever leave the bridge? Can the Keepers hear the Hum in the cables before anyone else?*
+- **Countdown**: none of their own. The Keepers react: every Silenced hold within a week's drive ticks their *fear* toward closing the bridge, which would cut the map in half.
+
 ### Dremmer, Alpha wolf of the Teeth (Rag‑Wastes)
 - **Impulse**: to hunt and dominate.
 - **Temperament**: Stubborn, Reckless, Wild, Deaf, Warlike.
@@ -69,13 +83,13 @@ The [headless sim runner](../research/platform-recommendation.md#recommended-arc
 - **Stakes**: *Will Dremmer take the Stack? Will Dremmer cross the river at the Lighthouse? Who will Dremmer bow to, if anyone?*
 - **Countdown**: the Teeth push east along the Twenty and the Forty each season. **12:00** means the Teeth hold the Lighthouse bridge, and the old neutrality is gone.
 
-### Tum Tum, Slaver of Pellet (the Seventy)
+### Tum Tum, Slaver of Pellet: the Choir's flesh trade (the Seventy)
 - **Impulse**: to own and sell people.
 - **Temperament**: Flexible, Steady, Grim, Hum‑touched, Peaceful (it sells to everyone).
 - **Grip**: Holding.
 - **Reach**: slave coffles move down the Fifty‑Five from Kansas City to the Delta's farms and to Capitol on the Ten.
 - **Stakes**: *Will Saltlick's debtors be sold? Who is Tum Tum selling to in Harrowgate?*
-- The Choir buys bodies, and the coffles go down the Ten to Harrowgate. That's the thread connecting Tum Tum to Last.
+- **Part of the Choir.** The Choir buys bodies, and the coffles go down the Ten to Harrowgate. Tum Tum is the Choir's ordinary face: his holds play the Lean game like anyone else's, and he trades and negotiates (never in people with the player). He's where the Choir is most *beatable*. See [17](17-factions.md#what-makes-it-beatable-fan-rules-still-apply).
 
 ### Rothschild, Collector of the Exchange (the Glass)
 - **Impulse**: to own.
@@ -108,9 +122,9 @@ The [headless sim runner](../research/platform-recommendation.md#recommended-arc
 - The Family grows by *taking people in*.
 - **Stakes**: *Will Junction be swallowed? What does Krin hear in the dark?*
 
-### Last, Prophet of Harrowgate (Up)
+### Last, Prophet of Harrowgate: the Choir (Up)
 - **Impulse**: to denounce and overthrow.
 - **Temperament**: Stubborn, Steady, Grim, *the Hum itself*.
-- **Grip**: Iron, inside the Hum.
-- Doesn't conquer by gang war until 9:00. Before that, conquers by **Lean drift** in Hum‑touched holds.
+- **Grip**: doesn't apply. The Choir uses its own action economy (2, then 3, then marches).
+- **Doesn't play Lean.** It **Silences** holds: through Hum drift and cantors before 9:00, and by marching the Opened after. Full rules are in [17](17-factions.md#how-the-choir-breaks-the-rules).
 - **Stakes**: *Is Last right? Who was Last, before? Will the Choir sing at 12:00?*

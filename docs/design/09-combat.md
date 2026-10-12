@@ -93,7 +93,7 @@ These decide *where* the fight happens and who starts with the advantage.
    - **Terrain**: collapse, isolating someone.
 
    When the PCs' moves called for an exchange of harm, the harm has already been applied. The Director phase covers what the enemy *initiates*.
-3. **Morale.** NPCs whose harm is greater than or equal to their **nerve** (1–3) flee or surrender. Gangs check cohesion at harm thresholds.
+3. **Morale.** NPCs whose harm is greater than or equal to their **nerve** (1–3) flee or surrender. **Exception: the Choir's Opened never check morale or cohesion** ([17](17-factions.md#how-the-choir-breaks-the-rules)). Gangs check cohesion at harm thresholds.
 
 **Ending a skirmish**: through objectives, a rout, a surrender (*go aggro*), or an escape (*escape a hunter*). There's **no XP for kills**. Experience comes from highlighted rolls.
 

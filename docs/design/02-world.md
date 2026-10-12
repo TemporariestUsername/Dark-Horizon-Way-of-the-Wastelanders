@@ -69,7 +69,7 @@ There are 13 road regions, like UWNH's 13 sea regions, plus Up, Down, Out and In
 
 | Region | Octant / ring | Golden‑age site | Character | Holds |
 |---|---|---|---|---|
-| **The Crossing** | Centre | Memphis, the I‑40 and I‑55 bridges | The Lighthouse bridge, kept lit through the Howling. Neutral ground, the busiest market. | 8 |
+| **The Crossing** | Centre | Memphis, the I‑40 and I‑55 bridges | The Lighthouse bridge, kept lit through the Howling by **the Keepers**. Free crossing, the busiest market. | 8 |
 | **The Delta** | S, Closer | I‑55 and I‑20 in Mississippi, the Mississippi crossings | Cotton flats, barge hulks, river forts. Three of the river's crossings. | 8 |
 | **The Twenty** | W, Closer | I‑20, Dallas to Birmingham | Pine woods, oil fields, steel, stadiums. | 8 |
 | **The Forty** | W/E, Closer | I‑40, Oklahoma City to Nashville | Plains to hills, the hot springs, the music town. Twisters. | 8 |
@@ -79,7 +79,7 @@ There are 13 road regions, like UWNH's 13 sea regions, plus Up, Down, Out and In
 | **The Rag‑Wastes** | W, Farther | I‑20 and I‑10 in West Texas | Dunes, pumpjacks, ranches. **Dremmer's** Teeth. Edges onto the Loud. | 8 |
 | **The Bravo** | S/W, Farther | The dry Rio Grande, Monterrey, Mex 85/40/57 | A riverbed highway, canyons, tolls, land‑yacht builders. | 8 |
 | **The Sierra Coast** | S, Farther (far) | Mex 180, Tampico to Veracruz | Forts, oil terminals, jungle, pyramids. The road toward the City runs into the Loud. | 7 |
-| **The Seventy** | N, Farther | I‑70 and I‑55 north: Kansas City, St Louis, Indianapolis | The Arch, stockyards, speedways. **Tum Tum's** slave road. | 9 |
+| **The Seventy** | N, Farther | I‑70 and I‑55 north: Kansas City, St Louis, Indianapolis | The Arch, stockyards, speedways. **Tum Tum's** slave road, which feeds the Choir. | 9 |
 | **The Lakes** | N, Farther (farthest) | I‑94, I‑90, I‑80, Ontario 401 | Cold fresh water, steel, falls, ice roads. **Abondo's** country. | 11 |
 | **The Seventy‑Five** | E, Farther | I‑75, Cincinnati to Macon | Ohio crossings, horse country, the Sphere, the Spaghetti. | 9 |
 | **The Glass** | E, Farther | Florida (I‑10 east, I‑75, I‑4) | Something burned the beaches to glass. Vaults, the Kingdom, **Rothschild's** Exchange. | 9 |
@@ -107,32 +107,33 @@ Every hold has these:
 - a **Surplus** (what it sells cheap)
 - a **Want** (what it pays dear for, and what goes wrong without it)
 - **buildings**
-- a **Lean**: who it's loyal to (see [10](10-warlords-and-politics.md))
+- a **Lean**: who it's loyal to (see [17](17-factions.md) and [10](10-warlords-and-politics.md))
 
-**About three‑quarters of holds start independent.** Most of them haven't spoken to anyone outside their own valley in twenty‑five years. That leaves a lot of territory for warlords and the player to win over.
+**About 70% of holds start independent.** Most of them haven't spoken to anyone outside their own valley in twenty‑five years. That leaves a lot of territory for the factions and the player to win over.
 
 **Hold tiers**:
 
 | Tier | Count | Buildings |
 |---|---|---|
-| **Seat** (warlord) | 7 | Everything, plus the Seat. Can't be invested in. |
-| **Major hold** | 39 | Market, bar, garage, infirmary, notice wall, plus 1–2 specials (congregation, brainer's room, exchange, wells, crossing toll) |
+| **Seat** (faction) | 8 | Everything, plus the Seat. Can't be invested in. |
+| **Major hold** | 38 | Market, bar, garage, infirmary, notice wall, plus 1–2 specials (congregation, brainer's room, exchange, wells, crossing toll) |
 | **Hold** | 66 | Market, bar, notice wall, plus a garage *or* an infirmary |
 | **Outpost** | 18 | One trader, one shelter, one rumor. A camera‑sized map. |
 
-## Warlords (7)
+## Factions
+Six **influence factions** compete for the holds through **Lean**, as UWNH's nations competed for ports. Each one wins loyalty its own way. A seventh, **the Choir**, doesn't compete at all: it **silences** holds, and it's the Nobunaga of this world. The full faction bible, including how the Choir breaks the rules, is in **[17 · Factions](17-factions.md)**.
 
-| Warlord | AW threat kind (impulse) | Seat (region) | Temperament | What they want from you |
-|---|---|---|---|---|
-| **Dremmer** | Alpha wolf (to hunt and dominate) | The Teeth (Rag‑Wastes) | Stubborn, Reckless, Warlike, Deaf | Tribute, or your rig |
-| **Tum Tum** | Slaver (to own and sell people) | Pellet (the Seventy) | Flexible, Steady, Peaceful (!), Hum‑touched | Bodies. Your crew has a price. |
-| **Rothschild** | Collector (to own) | The Exchange (the Glass) | Flexible, Steady, Peaceful, Deaf | Golden‑Age relics. Your debt. |
-| **Grome** | Dictator (to control) | Sweetwell (the Thirty‑Five) | Stubborn, Steady, Warlike, Deaf | Obedience. The water price is the leash. |
-| **Abondo** | Dictator (to control) | Highwater (the Lakes) | Flexible, Steady, Peaceful, Deaf | Trade on his terms. The north's water, at his price. |
-| **Mother Krin** | Hive queen (to consume and swarm) | Krin's Nest (Down) | Flexible, Reckless, Warlike, Hum‑touched | More of the Family. Meat. |
-| **Last** | Prophet (to denounce and overthrow) | Harrowgate (Up) | Stubborn, Steady, Grim, **the Hum itself** | Your *brain*, opened |
+| Faction | Leader | Seat | Wins holds by… |
+|---|---|---|---|
+| **The Keepers** | Kindle | The Lighthouse (the Crossing) | Light: hospitality, free crossings, charts |
+| **The Exchange** | Rothschild | The Exchange (the Glass) | Money: investment and debt |
+| **The Lake Compact** | Abondo | Highwater (the Lakes) | Freight: caravan routes, winter ice roads |
+| **Sweetwell** | Grome | Sweetwell (the Thirty‑Five) | Thirst: water dependency |
+| **The Teeth** | Dremmer | The Teeth (the Rag‑Wastes) | Fear: tribute and raids |
+| **The Family** | Mother Krin | Krin's Nest (Down) | Kin: hidden cousins planted in holds |
+| **THE CHOIR** | **Last**, with Tum Tum | **Harrowgate** (Up) and **Pellet** (the Seventy) | **Silence**: it takes holds off the board |
 
-Grome (the southwest's aquifer) and Abondo (the Lakes) are both Dictators who control water, at opposite ends of the map. Their rivalry, and the trade between them, is the long axis of the campaign. Independent holds have their own hardholders, who act as minor warlords using the *Dictator* or *Family* impulse.
+Independent holds have their own hardholders, who act as minor warlords using the *Dictator* or *Family* impulse.
 
 ## Last and the Hum (the campaign antagonist)
 **What everyone knows.**
@@ -151,7 +152,7 @@ Grome (the southwest's aquifer) and Abondo (the Lakes) are both Dictators who co
 | Segment | Effect on the world |
 |---|---|
 | **3:00** | Everyone along the Ten dreams the dream. *Open your brain* gets +1 everywhere, but a miss also gives 1 Ψ‑harm. Rumors of the Choir spread. |
-| **6:00** | **Hum‑touched holds** appear: the *Delusion* affliction. Wisher falls. Leans along the Ten drift toward Last on their own. **Howls** (local flares of the old maelstrom) happen twice as often. |
+| **6:00** | **Hum‑touched holds** appear: the *Delusion* affliction. Wisher falls. Holds along the Ten start **losing Lean to no one**: people stop caring who they belong to, the holds go contested, and red circles appear on doors a month before the Choir Silences them. **Howls** (local flares of the old maelstrom) happen twice as often. |
 | **9:00** | The Choir **marches**: Last starts conquering holds like a warlord. Prophet threat moves happen twice a month. The Arch starts singing, and the Hum spreads up the Seventy. |
 | **10:00** | **The Loud creeps in.** The edge holds go silent, one ring of the map turns Notional again, and travel through the Up is cut. |
 | **11:00** | The dishes go live. Hum zones join along every interstate. Every NPC with Weird+1 or more starts *listening*. |
