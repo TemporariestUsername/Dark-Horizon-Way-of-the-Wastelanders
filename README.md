@@ -4,7 +4,11 @@
 
 A single‑player, open‑world exploration, trade and survival RPG for **Windows and macOS**, set in **Apocalypse World** (licensed). For a generation the maelstrom made every road deadly. Now it has eased, and the old interstates are this world's uncharted seas. It brings together the gameplay philosophy of Koei's **Uncharted Waters: New Horizons** (career freedom, scarcity of range, trade as the engine, investment as conquest, discovery) and **Inindo: Way of the Ninja** (a living political map that changes every month, NPCs with their own lives, power learned at strange places, and a tyrant whose shadow keeps growing).
 
-**Status:** design bible (M0). There is no game code yet.
+**Status:** design bible (M0) complete. M1 prerequisites are done: the world and rules exist as validated data in [`data/`](data/README.md), including a 130‑hold road network built from public‑domain Natural Earth data. Next is the M1 headless simulation in Godot.
+
+```sh
+python3 tools/validate_data.py   # must say "data OK"
+```
 
 ## Start here
 1. [**Vision**](docs/design/00-vision.md): the pitch, pillars, tone and an index of everything.
@@ -35,6 +39,7 @@ A single‑player, open‑world exploration, trade and survival RPG for **Window
 | 16 | [Gazetteer: the 130 holds](docs/design/16-gazetteer.md) |
 | 17 | [Factions](docs/design/17-factions.md) |
 | 18 | [Sub‑factions](docs/design/18-sub-factions.md) |
+| 19 | [Numbers and data](docs/design/19-numbers-and-data.md) |
 | — | [Glossary](docs/design/glossary.md) |
 
 ## Research (`docs/research/`)

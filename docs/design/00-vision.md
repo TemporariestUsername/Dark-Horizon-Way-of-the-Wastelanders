@@ -93,4 +93,5 @@ Meanwhile, six powerful hardholders who were only rumors last year are racing to
 | [16 Gazetteer](16-gazetteer.md) | All 130 holds: site, boss, surplus, want, starting Lean |
 | [17 Factions](17-factions.md) | The six hardholder factions, and the Choir: the Nobunaga faction that breaks the rules |
 | [18 Sub‑factions](18-sub-factions.md) | Cults, road gangs, guilds and secret societies: Standing, chapters, backing, turning |
+| [19 Numbers and data](19-numbers-and-data.md) | The rules as data: the road network, the economy, Lean, faction engines, the World Clock maths, pacing |
 | [Glossary](glossary.md) | Terms |

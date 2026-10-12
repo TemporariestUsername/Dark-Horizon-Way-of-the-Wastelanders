@@ -4,7 +4,8 @@
 
 | # | Milestone | Proves | Contents |
 |---|---|---|---|
-| **M0** | **Design bible** (this round) | Direction | These docs, the RE teardowns, the platform pick |
+| **M0** | **Design bible** ✅ | Direction | These docs, the RE teardowns, the platform pick |
+| **M0.5** | **M1 data prerequisites** ✅ | The rules are concrete enough to simulate | The road network (Natural Earth), economic profiles for all 130 holds, the rules as numbers, time pacing, a validator. See [19](19-numbers-and-data.md) |
 | **M1** | **Sim spike** (headless, Godot 4) | The economy and politics work *without* graphics, at full scale | Moves engine, dice service, the road graph, all 130 holds' economy, Lean, the 6 factions and the Choir, the world turn, a 48‑month sim runner, a balance report |
 | **M2** | **Paper Director** | AW's MC as an AI is fun and fair | The Director decision procedure, threat data, event cards in a text UI, golden tests |
 | **M3** | **Vertical slice** | The full loop, at quality, for about 2 hours | Defined below |

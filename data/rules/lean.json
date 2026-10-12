@@ -1,0 +1,23 @@
+{
+ "_doc": "Lean: a hold's loyalty shares (sum 100). Thresholds, the player's levers and conquest. See docs/design/07-economy.md and 10-warlords-and-politics.md.",
+ "thresholds": {"leans": 50, "install": 75, "contested_below": 50},
+ "player_levers": {
+  "invest_barter_per_point": 2,
+  "invest_diminishing_above_barter_per_month": 20,
+  "invest_diminished_barter_per_point": 4,
+  "relieve_want_lots_per_point": 3,
+  "end_affliction_bonus": 3,
+  "gig_points": [3, 8],
+  "defend_in_gang_war": 10,
+  "raid_or_tribute_penalty": [-10, -5],
+  "frenzy_points": [2, 6],
+  "first_contact_points": 5,
+  "patron_lever_multiplier": 1.5
+ },
+ "drift": {"_doc": "Lean moves toward a faction by taking points from independent first, then from the faction with the largest share.",
+           "take_from_order": ["independent", "largest"], "max_points_per_hold_per_month": 15},
+ "conquest": {"conqueror_share": 60, "rescale_rest": true, "garrison_months": 3},
+ "tithe_barter_per_month": {"seat": 0, "major": 3, "hold": 2, "outpost": 1},
+ "player_as_warlord_at_holds": 3,
+ "starting_influence": {"peak": 25, "falloff_km": 350, "min": 3, "cap": 35, "aligned_own_share": 60}
+}

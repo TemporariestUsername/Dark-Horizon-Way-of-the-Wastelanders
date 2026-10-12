@@ -27,17 +27,19 @@ For twenty‑five years nobody drove the interstates. The Easing has opened them
 | Deep Lines (Down) | ×0.8, on foot | 0 | No light means *do something under fire* to navigate. **Goes under rivers.** |
 | Harrowgate (Up) | lifts and cable | 0 | Vertical layer. Reached only through lift‑towers. |
 
-- **Rough distances** by convoy (they're the tuning anchors):
+- **Travel times**. These are computed from the built road network ([`data/world/roads.json`](../../data/world/roads.json)) at the speeds in [`data/rules/time.json`](../../data/rules/time.json), including expected detours for breaks. See [19](19-numbers-and-data.md#the-road-network).
 
-| Route | Days |
-|---|---|
-| The Crossing to Orleans (the Fifty‑Five) | about 5 |
-| The Crossing to the Arch | about 4 |
-| Harrowgate to the Exchange (the length of the Ten) | about 13 |
-| The Crossing to Highwater (Toronto) | about 13 |
-| The Crossing to the Fort (Veracruz) | about 18 |
+| Route | km | Days | Crossings used |
+|---|---|---|---|
+| The Lighthouse → the Arch | 462 | 4.8 | the Lighthouse, the Arch |
+| The Lighthouse → Strings (Nashville) | 560 | 5.4 | Shoals: the Forty's Tennessee bridge is out |
+| The Lighthouse → Orleans | 718 | 8.6 | — |
+| The Lighthouse → Sweetwell | 1,375 | 14.3 | the Lighthouse |
+| The Lighthouse → Highwater (Toronto) | 1,721 | 17.2 | the Lighthouse, Fork, the Tunnel |
+| Harrowgate → the Exchange (the length of the Ten) | 1,806 | 20.3 | Capitol |
+| The Lighthouse → the Fort (Veracruz) | 3,237 | 36.8 | the Lighthouse |
 
-  A trip to the Lakes or the Sierra Coast is a **long voyage** in UWNH's sense. You'll need supply stops or stashes.
+  The Lakes and the length of the Ten are **long voyages** of two to three weeks. **The Sierra Coast is the great voyage**: more than a month from the Crossing down the Gulf coast and the MEX‑180. That's the map's Caribbean. You'll need resupply at holds, or stashes laid along the way.
 - **Weather** follows the season and the region:
   - **dust storm** (the Rag‑Wastes, the Bravo): UWNH's storm
   - **fog bank** (the Ten, the Delta): navigation −1

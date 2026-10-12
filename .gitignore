@@ -5,3 +5,7 @@
 *.srm
 roms/
 dumps/
+
+# Downloaded source data (Natural Earth etc.); rebuilt by tools/
+data/raw/
+__pycache__/

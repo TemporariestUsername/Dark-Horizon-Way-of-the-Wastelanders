@@ -1,0 +1,41 @@
+{
+ "_doc": "The Choir (docs/design/17-factions.md) and the World Clock (02-world.md). The clock is 6 segments; each needs progress points. The Choir earns points monthly plus bonuses; player victories subtract.",
+ "leader": "Last", "seats": ["harrowgate", "pellet"], "arm": {"name": "Tum Tum", "seat": "pellet", "catchers_gang": {"size": "small", "harm": 2, "armor": 1}},
+ "world_clock": {
+  "segments": ["3:00", "6:00", "9:00", "10:00", "11:00", "12:00"],
+  "points_per_segment": [12, 12, 12, 8, 6, 6],
+  "_doc_pace": "Base 1 point a month: 9:00 at month 36 with no bonuses and no resistance; 12:00 at month 56. Bonuses pull it earlier; the player pushes it back. Target: 9:00 between months 36 and 54 in a normal game.",
+  "base_points_per_month": 1.0,
+  "bonus": {"per_silenced_hold_per_month": 0.05, "per_coffle_delivered": 0.25, "per_turned_subfaction_per_month": 0.2, "seat_silenced": 6},
+  "pushback": {"coffle_stopped": 0.5, "pellet_taken": 12, "hold_liberated": 3, "subfaction_saved": 4, "harrowgate_node_destroyed": 6},
+  "segment_effects": {
+   "3:00": ["dream_spreads_on_the_ten_and_delta", "open_your_brain_plus1_miss_psi1"],
+   "6:00": ["hum_touched_holds", "wisher_falls", "ten_holds_lose_lean_to_no_one_2_per_month", "howls_x2", "league_can_form"],
+   "9:00": ["choir_marches_monthly", "prophet_moves_twice_monthly", "arch_sings_hum_spreads_up_the_seventy"],
+   "10:00": ["loud_creeps_in_one_ring", "up_travel_cut"],
+   "11:00": ["dishes_live_hum_zones_join", "weird_plus1_npcs_listen"],
+   "12:00": ["everybody_hears_it_campaign_ends"]
+  }
+ },
+ "actions_per_month": {"from_0": 2, "from_6:00": 3, "march_monthly_from": "9:00"},
+ "actions": {
+  "spread_hum": {"weight": 1.0, "effect": "+1 hum in a hold adjacent to a Hum zone; at hum 3 the hold is Hum-touched"},
+  "mark_red_circle": {"weight": 1.0, "effect": "target a Hum-touched hold, or one with turned sub-faction presence >= 2; it is Silenced next month unless the player intervenes"},
+  "silence": {"weight": 0.0, "effect": "resolves last month's red circle"},
+  "run_coffle": {"weight": 1.2, "effect": "a Catchers coffle leaves Pellet for Harrowgate along the Fifty-Five and the Ten; delivered after travel time unless stopped"},
+  "cantor_move": {"weight": 0.8, "effect": "a Prophet threat move against the player if Hum exposure >= 3, else against a sub-faction's Turning countdown"},
+  "march": {"weight": 0.0, "effect": "from 9:00: gang war of the Opened against an adjacent hold; win = Silenced"},
+  "buy_burning_water": {"weight": 0.6, "effect": "advance Ba's trade; at three successes after 9:00 Burning Water is sold (seat silenced)"}
+ },
+ "silenced_hold": {"lean": null, "market": false, "recruiting": false, "gigs": false, "hum_zone_radius_km": 150,
+                   "liberation": {"requires": ["gang_war_win", "counter"], "counters": ["static_discipline", "hocus_frenzy", "augury_contain", "savvyhead_jammer"],
+                                  "liberator_lean_share": 70}},
+ "opened": {"cohesion_break": false, "go_aggro_immune": true, "armor": 0, "harm": 2, "ignore_impress_dismay_frighten": true},
+ "cantors": {"psi_harm_range": "far", "psi_harm": 1, "ap": true, "turn_check": "crew with hum_exposure >= 3 roll +Hx each round"},
+ "hum_exposure": {"max": 5, "direct_moves_at": 3, "join_them_at": 5,
+                  "gain": {"in_visit_after_9": 1, "obr_miss_in_hum_zone": 1, "choir_move_hit": 1},
+                  "lose": {"static_discipline": 1, "jammer": 2, "divine_protection": 1, "deaf_month": 1}},
+ "league": {"forms_from": "6:00", "countdown_points_per_segment": 3,
+            "grievance_points": {"raid": 1, "debt_called": 1, "water_shut_off": 2, "embargo": 2, "toll_on_lighthouse_crossing": 1}},
+ "balance_targets": {"without_player_by_month_60": {"silenced_min": 15, "turned": ["family", "cross_folk"]}}
+}

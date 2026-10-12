@@ -1,0 +1,7312 @@
+{
+ "_doc": "Hold-to-hold road network built by tools/build_roads.py from Natural Earth 1:10m (public domain). km = driving distance; mix = km by road class; breaks = seeded blockages (each costs a detour or a clearing project); crossing = the crossing hold this edge uses to get over a living river.",
+ "source": "Natural Earth 1:10m roads + rivers_lake_centerlines (public domain)",
+ "seed": 1522,
+ "edges": [
+  {
+   "a": "abbey",
+   "b": "barge_town",
+   "kind": "road",
+   "km": 513.4,
+   "mix": {
+    "highway": 509.5,
+    "back": 3.9
+   },
+   "roads": [
+    "US-82",
+    "US-278",
+    "US-ALT45"
+   ],
+   "crossing": null,
+   "breaks": 5
+  },
+  {
+   "a": "abbey",
+   "b": "corbett",
+   "kind": "road",
+   "km": 421.4,
+   "mix": {
+    "interstate": 6.9,
+    "highway": 411.8,
+    "back": 2.8
+   },
+   "roads": [
+    "US-45",
+    "US-278",
+    "US-ALT45"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "abbey",
+   "b": "furnace",
+   "kind": "road",
+   "km": 263.1,
+   "mix": {
+    "interstate": 6.9,
+    "highway": 251.6,
+    "back": 4.6
+   },
+   "roads": [
+    "US-78",
+    "US-278",
+    "I-65"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "abbey",
+   "b": "hub",
+   "kind": "road",
+   "km": 349.0,
+   "mix": {
+    "highway": 347.2,
+    "back": 1.9
+   },
+   "roads": [
+    "US-278",
+    "US-70",
+    "US-45"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "abbey",
+   "b": "lighthouse",
+   "kind": "road",
+   "km": 351.4,
+   "mix": {
+    "interstate": 3.8,
+    "highway": 343.7,
+    "back": 3.8
+   },
+   "roads": [
+    "US-78",
+    "US-278",
+    "4"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "abbey",
+   "b": "reservoir",
+   "kind": "road",
+   "km": 609.9,
+   "mix": {
+    "highway": 558.4,
+    "interstate": 40.9,
+    "back": 10.6
+   },
+   "roads": [
+    "US-51",
+    "US-278",
+    "US-82"
+   ],
+   "crossing": null,
+   "breaks": 6
+  },
+  {
+   "a": "abbey",
+   "b": "shoals",
+   "kind": "road",
+   "km": 354.6,
+   "mix": {
+    "highway": 352.7,
+    "back": 1.9
+   },
+   "roads": [
+    "US-278",
+    "US-72",
+    "US-45"
+   ],
+   "crossing": "shoals",
+   "breaks": 1
+  },
+  {
+   "a": "anchorage",
+   "b": "beale",
+   "kind": "road",
+   "km": 5.5,
+   "mix": {
+    "highway": 5.5
+   },
+   "roads": [],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "anchorage",
+   "b": "pyramid",
+   "kind": "road",
+   "km": 3.2,
+   "mix": {
+    "highway": 3.2
+   },
+   "roads": [],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "arch",
+   "b": "campus",
+   "kind": "road",
+   "km": 201.0,
+   "mix": {
+    "interstate": 196.0,
+    "back": 4.9
+   },
+   "roads": [
+    "I-70"
+   ],
+   "crossing": "arch",
+   "breaks": 2
+  },
+  {
+   "a": "arch",
+   "b": "cross",
+   "kind": "road",
+   "km": 495.2,
+   "mix": {
+    "interstate": 269.2,
+    "highway": 222.2,
+    "back": 3.8
+   },
+   "roads": [
+    "I-70",
+    "US-50",
+    "US-41"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "arch",
+   "b": "derby",
+   "kind": "road",
+   "km": 417.4,
+   "mix": {
+    "interstate": 405.6,
+    "highway": 7.9,
+    "back": 3.9
+   },
+   "roads": [
+    "I-64",
+    "I-70"
+   ],
+   "crossing": "derby",
+   "breaks": 3
+  },
+  {
+   "a": "arch",
+   "b": "fork",
+   "kind": "road",
+   "km": 281.7,
+   "mix": {
+    "interstate": 277.0,
+    "back": 4.6
+   },
+   "roads": [
+    "I-55",
+    "I-57"
+   ],
+   "crossing": "fork",
+   "breaks": 3
+  },
+  {
+   "a": "arch",
+   "b": "gallows",
+   "kind": "road",
+   "km": 704.2,
+   "mix": {
+    "highway": 370.5,
+    "interstate": 328.4,
+    "back": 5.3
+   },
+   "roads": [
+    "I-44",
+    "7",
+    "US-65"
+   ],
+   "crossing": "arch",
+   "breaks": 1
+  },
+  {
+   "a": "arch",
+   "b": "helena",
+   "kind": "road",
+   "km": 583.0,
+   "mix": {
+    "interstate": 53.9,
+    "highway": 521.6,
+    "back": 7.4
+   },
+   "roads": [
+    "US-67",
+    "US-49",
+    "US-62"
+   ],
+   "crossing": "arch",
+   "breaks": 4
+  },
+  {
+   "a": "arch",
+   "b": "loop",
+   "kind": "road",
+   "km": 483.3,
+   "mix": {
+    "interstate": 479.9,
+    "back": 3.4
+   },
+   "roads": [
+    "I-55",
+    "I-294",
+    "I-70"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "arch",
+   "b": "mill_town",
+   "kind": "road",
+   "km": 484.3,
+   "mix": {
+    "interstate": 479.3,
+    "back": 5.0
+   },
+   "roads": [
+    "I-55",
+    "I-80",
+    "I-70"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "arch",
+   "b": "pellet",
+   "kind": "road",
+   "km": 440.8,
+   "mix": {
+    "interstate": 83.6,
+    "highway": 353.2,
+    "back": 4.0
+   },
+   "roads": [
+    "US-50",
+    "I-44",
+    "US-71"
+   ],
+   "crossing": "arch",
+   "breaks": 3
+  },
+  {
+   "a": "arch",
+   "b": "quake",
+   "kind": "road",
+   "km": 394.0,
+   "mix": {
+    "interstate": 53.9,
+    "highway": 330.5,
+    "back": 9.5
+   },
+   "roads": [
+    "US-67",
+    "US-62",
+    "I-55"
+   ],
+   "crossing": "arch",
+   "breaks": 2
+  },
+  {
+   "a": "arch",
+   "b": "rock",
+   "kind": "road",
+   "km": 567.7,
+   "mix": {
+    "interstate": 75.7,
+    "highway": 488.3,
+    "back": 3.6
+   },
+   "roads": [
+    "US-67",
+    "US-62",
+    "I-55"
+   ],
+   "crossing": "arch",
+   "breaks": 7
+  },
+  {
+   "a": "arch",
+   "b": "stack",
+   "kind": "road",
+   "km": 981.7,
+   "mix": {
+    "highway": 444.7,
+    "interstate": 533.7,
+    "back": 3.3
+   },
+   "roads": [
+    "I-44",
+    "US-69",
+    "US-75"
+   ],
+   "crossing": "arch",
+   "breaks": 6
+  },
+  {
+   "a": "arch",
+   "b": "stockade",
+   "kind": "road",
+   "km": 793.4,
+   "mix": {
+    "interstate": 788.8,
+    "back": 4.5
+   },
+   "roads": [
+    "I-44",
+    "I-244",
+    "I-35"
+   ],
+   "crossing": "arch",
+   "breaks": 4
+  },
+  {
+   "a": "arch",
+   "b": "track",
+   "kind": "road",
+   "km": 399.7,
+   "mix": {
+    "highway": 126.1,
+    "interstate": 265.3,
+    "back": 8.4
+   },
+   "roads": [
+    "I-70",
+    "US-36",
+    "US-41"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "arch",
+   "b": "weigh_station",
+   "kind": "road",
+   "km": 447.6,
+   "mix": {
+    "interstate": 441.2,
+    "back": 6.4
+   },
+   "roads": [
+    "I-55"
+   ],
+   "crossing": "arch",
+   "breaks": 2
+  },
+  {
+   "a": "barge_town",
+   "b": "gnarly",
+   "kind": "road",
+   "km": 280.5,
+   "mix": {
+    "highway": 234.6,
+    "interstate": 40.9,
+    "back": 5.1
+   },
+   "roads": [
+    "US-82",
+    "US-51",
+    "I-55"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "barge_town",
+   "b": "mudflat",
+   "kind": "road",
+   "km": 64.2,
+   "mix": {
+    "highway": 55.6,
+    "back": 8.6
+   },
+   "roads": [
+    "US-49",
+    "US-82"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "barge_town",
+   "b": "reservoir",
+   "kind": "road",
+   "km": 351.9,
+   "mix": {
+    "highway": 298.4,
+    "interstate": 40.9,
+    "back": 12.7
+   },
+   "roads": [
+    "US-51",
+    "US-82",
+    "I-55"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "barge_town",
+   "b": "shoals",
+   "kind": "road",
+   "km": 493.6,
+   "mix": {
+    "highway": 489.6,
+    "back": 4.0
+   },
+   "roads": [
+    "US-82",
+    "US-72",
+    "US-ALT45"
+   ],
+   "crossing": "shoals",
+   "breaks": 1
+  },
+  {
+   "a": "barge_town",
+   "b": "siege",
+   "kind": "road",
+   "km": 158.7,
+   "mix": {
+    "interstate": 8.8,
+    "highway": 146.5,
+    "back": 3.4
+   },
+   "roads": [
+    "US-61",
+    "US-82",
+    "I-20"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "barge_town",
+   "b": "stadium",
+   "kind": "road",
+   "km": 357.8,
+   "mix": {
+    "highway": 351.0,
+    "back": 6.8
+   },
+   "roads": [
+    "US-82"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "barrow",
+   "b": "fort",
+   "kind": "road",
+   "km": 109.5,
+   "mix": {
+    "interstate": 30.8,
+    "highway": 68.2,
+    "back": 10.5
+   },
+   "roads": [
+    "MEX-140",
+    "MEX-180D"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "barrow",
+   "b": "southmost",
+   "kind": "road",
+   "km": 218.9,
+   "mix": {
+    "highway": 134.3,
+    "interstate": 80.6,
+    "back": 4.0
+   },
+   "roads": [
+    "MEX-140",
+    "MEX-150D"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "barrow",
+   "b": "tajin",
+   "kind": "road",
+   "km": 229.4,
+   "mix": {
+    "highway": 221.0,
+    "back": 8.5
+   },
+   "roads": [
+    "MEX-131",
+    "MEX-180",
+    "MEX-140"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "baths",
+   "b": "boon",
+   "kind": "road",
+   "km": 628.6,
+   "mix": {
+    "highway": 553.7,
+    "interstate": 53.4,
+    "back": 21.5
+   },
+   "roads": [
+    "US-65",
+    "7",
+    "I-70"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "baths",
+   "b": "gallows",
+   "kind": "road",
+   "km": 220.8,
+   "mix": {
+    "highway": 217.0,
+    "back": 3.8
+   },
+   "roads": [
+    "22",
+    "7"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "baths",
+   "b": "helena",
+   "kind": "road",
+   "km": 277.4,
+   "mix": {
+    "highway": 123.6,
+    "interstate": 147.9,
+    "back": 5.9
+   },
+   "roads": [
+    "I-40",
+    "US-49",
+    "I-30"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "baths",
+   "b": "partridge",
+   "kind": "road",
+   "km": 182.2,
+   "mix": {
+    "highway": 55.8,
+    "interstate": 123.6,
+    "back": 2.8
+   },
+   "roads": [
+    "I-30",
+    "7",
+    "US-70"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "baths",
+   "b": "pellet",
+   "kind": "road",
+   "km": 667.5,
+   "mix": {
+    "interstate": 121.9,
+    "highway": 543.1,
+    "back": 2.5
+   },
+   "roads": [
+    "US-71",
+    "I-540",
+    "US-270"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "baths",
+   "b": "pines",
+   "kind": "road",
+   "km": 291.4,
+   "mix": {
+    "highway": 289.9,
+    "back": 1.5
+   },
+   "roads": [
+    "US-167",
+    "US-270",
+    "US-70"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "baths",
+   "b": "rock",
+   "kind": "road",
+   "km": 88.5,
+   "mix": {
+    "highway": 47.8,
+    "interstate": 38.6,
+    "back": 2.1
+   },
+   "roads": [
+    "US-70",
+    "I-30",
+    "I-630"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "baths",
+   "b": "siege",
+   "kind": "road",
+   "km": 475.3,
+   "mix": {
+    "interstate": 37.1,
+    "highway": 436.9,
+    "back": 1.4
+   },
+   "roads": [
+    "US-65",
+    "US-165",
+    "US-270"
+   ],
+   "crossing": "siege",
+   "breaks": 1
+  },
+  {
+   "a": "baths",
+   "b": "stockade",
+   "kind": "road",
+   "km": 518.7,
+   "mix": {
+    "interstate": 303.4,
+    "highway": 212.2,
+    "back": 3.0
+   },
+   "roads": [
+    "I-40",
+    "US-71",
+    "US-270"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "baths",
+   "b": "weigh_station",
+   "kind": "road",
+   "km": 293.5,
+   "mix": {
+    "interstate": 250.3,
+    "highway": 38.3,
+    "back": 4.9
+   },
+   "roads": [
+    "I-40",
+    "I-30",
+    "US-70"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "beale",
+   "b": "lighthouse",
+   "kind": "road",
+   "km": 46.0,
+   "mix": {
+    "interstate": 26.2,
+    "highway": 15.9,
+    "back": 4.0
+   },
+   "roads": [
+    "I-40",
+    "US-79",
+    "US-70"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "beale",
+   "b": "pyramid",
+   "kind": "road",
+   "km": 3.3,
+   "mix": {
+    "highway": 3.3
+   },
+   "roads": [],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "beale",
+   "b": "saltlick",
+   "kind": "road",
+   "km": 53.0,
+   "mix": {
+    "highway": 34.4,
+    "interstate": 14.8,
+    "back": 3.8
+   },
+   "roads": [
+    "US-51",
+    "I-40",
+    "US-79"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "blue_hole",
+   "b": "dome",
+   "kind": "road",
+   "km": 55.5,
+   "mix": {
+    "highway": 2.1,
+    "interstate": 36.3,
+    "back": 17.1
+   },
+   "roads": [
+    "I-35",
+    "US-290"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "blue_hole",
+   "b": "mission",
+   "kind": "road",
+   "km": 105.4,
+   "mix": {
+    "interstate": 95.1,
+    "back": 10.3
+   },
+   "roads": [
+    "I-35",
+    "I-410"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "blue_hole",
+   "b": "silo",
+   "kind": "road",
+   "km": 221.6,
+   "mix": {
+    "interstate": 206.6,
+    "highway": 5.5,
+    "back": 9.5
+   },
+   "roads": [
+    "I-35",
+    "US-84"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "blue_hole",
+   "b": "sweetwell",
+   "kind": "road",
+   "km": 91.8,
+   "mix": {
+    "interstate": 81.7,
+    "back": 10.2
+   },
+   "roads": [
+    "I-35"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "bluff",
+   "b": "brace_win",
+   "kind": "road",
+   "km": 111.9,
+   "mix": {
+    "highway": 70.1,
+    "back": 41.8
+   },
+   "roads": [
+    "US-61"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "bluff",
+   "b": "casino",
+   "kind": "road",
+   "km": 458.4,
+   "mix": {
+    "highway": 384.4,
+    "interstate": 65.4,
+    "back": 8.6
+   },
+   "roads": [
+    "US-84",
+    "US-49",
+    "I-10"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "bluff",
+   "b": "corbett",
+   "kind": "road",
+   "km": 336.6,
+   "mix": {
+    "highway": 101.6,
+    "interstate": 229.3,
+    "back": 5.6
+   },
+   "roads": [
+    "I-20",
+    "US-84",
+    "I-55"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "bluff",
+   "b": "gnarly",
+   "kind": "road",
+   "km": 489.3,
+   "mix": {
+    "highway": 211.4,
+    "interstate": 271.9,
+    "back": 5.9
+   },
+   "roads": [
+    "I-55",
+    "US-51",
+    "US-84"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "bluff",
+   "b": "mobile",
+   "kind": "road",
+   "km": 415.0,
+   "mix": {
+    "interstate": 10.9,
+    "highway": 399.5,
+    "back": 4.6
+   },
+   "roads": [
+    "US-84",
+    "US-45",
+    "I-165"
+   ],
+   "crossing": null,
+   "breaks": 4
+  },
+  {
+   "a": "bluff",
+   "b": "reservoir",
+   "kind": "road",
+   "km": 560.7,
+   "mix": {
+    "highway": 275.3,
+    "interstate": 271.9,
+    "back": 13.4
+   },
+   "roads": [
+    "I-55",
+    "US-51",
+    "US-84"
+   ],
+   "crossing": null,
+   "breaks": 4
+  },
+  {
+   "a": "bluff",
+   "b": "siege",
+   "kind": "road",
+   "km": 259.1,
+   "mix": {
+    "interstate": 156.2,
+    "highway": 98.7,
+    "back": 4.2
+   },
+   "roads": [
+    "US-84",
+    "I-55",
+    "I-20"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "boon",
+   "b": "campus",
+   "kind": "road",
+   "km": 45.7,
+   "mix": {
+    "interstate": 22.6,
+    "back": 23.1
+   },
+   "roads": [
+    "I-70"
+   ],
+   "crossing": "boon",
+   "breaks": 0
+  },
+  {
+   "a": "boon",
+   "b": "gallows",
+   "kind": "road",
+   "km": 651.3,
+   "mix": {
+    "highway": 574.4,
+    "interstate": 53.4,
+    "back": 23.5
+   },
+   "roads": [
+    "US-65",
+    "7",
+    "22"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "boon",
+   "b": "pellet",
+   "kind": "road",
+   "km": 200.0,
+   "mix": {
+    "interstate": 177.9,
+    "back": 22.2
+   },
+   "roads": [
+    "I-70"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "boon",
+   "b": "quake",
+   "kind": "road",
+   "km": 701.8,
+   "mix": {
+    "highway": 620.7,
+    "interstate": 53.4,
+    "back": 27.7
+   },
+   "roads": [
+    "US-67",
+    "US-50",
+    "8"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "boon",
+   "b": "rock",
+   "kind": "road",
+   "km": 614.0,
+   "mix": {
+    "interstate": 96.0,
+    "highway": 496.2,
+    "back": 21.8
+   },
+   "roads": [
+    "US-65",
+    "I-70",
+    "I-40"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "boon",
+   "b": "weigh_station",
+   "kind": "road",
+   "km": 716.9,
+   "mix": {
+    "interstate": 83.2,
+    "highway": 609.1,
+    "back": 24.6
+   },
+   "roads": [
+    "US-63",
+    "US-65",
+    "US-60"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "border",
+   "b": "burning_water",
+   "kind": "road",
+   "km": 575.9,
+   "mix": {
+    "highway": 499.9,
+    "interstate": 62.7,
+    "back": 13.3
+   },
+   "roads": [
+    "US-59",
+    "I-45",
+    "US-77"
+   ],
+   "crossing": null,
+   "breaks": 4
+  },
+  {
+   "a": "border",
+   "b": "dog_head",
+   "kind": "road",
+   "km": 540.8,
+   "mix": {
+    "highway": 506.3,
+    "interstate": 22.1,
+    "back": 12.4
+   },
+   "roads": [
+    "US-59",
+    "I-10",
+    "8"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "border",
+   "b": "gemela",
+   "kind": "riverbed",
+   "km": 4.3,
+   "mix": {
+    "riverbed": 4.3
+   },
+   "roads": [
+    "Rio Grande bed"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "border",
+   "b": "gullet",
+   "kind": "road",
+   "km": 289.7,
+   "mix": {
+    "highway": 284.0,
+    "back": 5.7
+   },
+   "roads": [
+    "US-83",
+    "US-277",
+    "US-85"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "border",
+   "b": "pesca",
+   "kind": "road",
+   "km": 169.0,
+   "mix": {
+    "highway": 162.3,
+    "back": 6.6
+   },
+   "roads": [
+    "US-83"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "border",
+   "b": "sweetwell",
+   "kind": "road",
+   "km": 255.1,
+   "mix": {
+    "highway": 29.7,
+    "interstate": 219.5,
+    "back": 5.9
+   },
+   "roads": [
+    "I-35",
+    "US-85",
+    "US-83"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "brace_win",
+   "b": "crawdad",
+   "kind": "road",
+   "km": 134.8,
+   "mix": {
+    "highway": 134.8
+   },
+   "roads": [
+    "the dam road"
+   ],
+   "crossing": "brace_win",
+   "breaks": 1
+  },
+  {
+   "a": "brand",
+   "b": "halter",
+   "kind": "road",
+   "km": 251.5,
+   "mix": {
+    "highway": 4.2,
+    "interstate": 238.9,
+    "back": 8.4
+   },
+   "roads": [
+    "I-20",
+    "I-30",
+    "US-81"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "brand",
+   "b": "pinwheel",
+   "kind": "road",
+   "km": 122.2,
+   "mix": {
+    "highway": 12.7,
+    "interstate": 106.8,
+    "back": 2.7
+   },
+   "roads": [
+    "I-35W",
+    "I-35",
+    "US-81"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "brand",
+   "b": "silo",
+   "kind": "road",
+   "km": 164.8,
+   "mix": {
+    "highway": 12.2,
+    "interstate": 150.3,
+    "back": 2.4
+   },
+   "roads": [
+    "I-35W",
+    "I-35",
+    "US-81"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "brand",
+   "b": "stack",
+   "kind": "road",
+   "km": 69.9,
+   "mix": {
+    "interstate": 16.8,
+    "highway": 50.6,
+    "back": 2.5
+   },
+   "roads": [
+    "183",
+    "I-635",
+    "US-81"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "brand",
+   "b": "stockade",
+   "kind": "road",
+   "km": 323.0,
+   "mix": {
+    "interstate": 312.6,
+    "highway": 6.7,
+    "back": 3.7
+   },
+   "roads": [
+    "I-35",
+    "I-35W",
+    "US-81"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "brewhouse",
+   "b": "loop",
+   "kind": "road",
+   "km": 199.8,
+   "mix": {
+    "highway": 32.0,
+    "interstate": 164.5,
+    "back": 3.3
+   },
+   "roads": [
+    "I-94",
+    "I-290",
+    "145"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "brewhouse",
+   "b": "mill_town",
+   "kind": "road",
+   "km": 233.0,
+   "mix": {
+    "interstate": 196.1,
+    "highway": 32.0,
+    "back": 4.9
+   },
+   "roads": [
+    "I-94",
+    "I-90",
+    "I-55"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "burning_water",
+   "b": "derricks",
+   "kind": "road",
+   "km": 388.8,
+   "mix": {
+    "interstate": 66.1,
+    "highway": 312.0,
+    "back": 10.7
+   },
+   "roads": [
+    "US-59",
+    "US-259",
+    "I-45"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "burning_water",
+   "b": "dog_head",
+   "kind": "road",
+   "km": 108.1,
+   "mix": {
+    "interstate": 84.8,
+    "highway": 6.4,
+    "back": 16.9
+   },
+   "roads": [
+    "I-45",
+    "I-10",
+    "8"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "burning_water",
+   "b": "dome",
+   "kind": "road",
+   "km": 339.9,
+   "mix": {
+    "highway": 142.0,
+    "interstate": 180.7,
+    "back": 17.2
+   },
+   "roads": [
+    "71",
+    "I-10",
+    "I-45"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "burning_water",
+   "b": "falcon",
+   "kind": "road",
+   "km": 776.0,
+   "mix": {
+    "highway": 698.0,
+    "interstate": 66.9,
+    "back": 11.1
+   },
+   "roads": [
+    "US-77",
+    "US-59",
+    "MEX-2"
+   ],
+   "crossing": null,
+   "breaks": 6
+  },
+  {
+   "a": "burning_water",
+   "b": "kettle",
+   "kind": "road",
+   "km": 446.8,
+   "mix": {
+    "interstate": 66.1,
+    "highway": 366.2,
+    "back": 14.5
+   },
+   "roads": [
+    "US-190",
+    "US-59",
+    "US-171"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "burning_water",
+   "b": "mouth",
+   "kind": "road",
+   "km": 645.1,
+   "mix": {
+    "highway": 564.3,
+    "interstate": 66.9,
+    "back": 14.0
+   },
+   "roads": [
+    "US-77",
+    "US-59",
+    "I-45"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "burning_water",
+   "b": "pitch",
+   "kind": "road",
+   "km": 218.0,
+   "mix": {
+    "interstate": 159.3,
+    "highway": 40.9,
+    "back": 17.8
+   },
+   "roads": [
+    "I-10",
+    "I-45",
+    "73"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "burning_water",
+   "b": "reserve",
+   "kind": "entrance",
+   "km": 93.9,
+   "mix": {
+    "tunnel": 93.9
+   },
+   "roads": [
+    "the Deep Lines"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "burning_water",
+   "b": "rumhouse",
+   "kind": "road",
+   "km": 25.5,
+   "mix": {
+    "highway": 9.2,
+    "interstate": 2.8,
+    "back": 13.5
+   },
+   "roads": [
+    "I-45"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "burning_water",
+   "b": "silo",
+   "kind": "road",
+   "km": 375.4,
+   "mix": {
+    "interstate": 74.6,
+    "highway": 291.1,
+    "back": 9.7
+   },
+   "roads": [
+    "6",
+    "US-290",
+    "I-45"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "burning_water",
+   "b": "spindletop",
+   "kind": "road",
+   "km": 209.6,
+   "mix": {
+    "interstate": 195.1,
+    "back": 14.5
+   },
+   "roads": [
+    "I-10",
+    "I-45"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "burning_water",
+   "b": "stack",
+   "kind": "road",
+   "km": 472.5,
+   "mix": {
+    "interstate": 447.9,
+    "highway": 14.8,
+    "back": 9.8
+   },
+   "roads": [
+    "I-45",
+    "US-75"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "burning_water",
+   "b": "sweetwell",
+   "kind": "road",
+   "km": 391.1,
+   "mix": {
+    "interstate": 380.8,
+    "back": 10.3
+   },
+   "roads": [
+    "I-10",
+    "I-45"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "burnriver",
+   "b": "falls",
+   "kind": "ice",
+   "km": 306.6,
+   "mix": {
+    "ice": 306.6
+   },
+   "roads": [
+    "ice road"
+   ],
+   "crossing": null,
+   "breaks": 0,
+   "season": "winter"
+  },
+  {
+   "a": "burnriver",
+   "b": "forks",
+   "kind": "road",
+   "km": 550.4,
+   "mix": {
+    "highway": 256.3,
+    "interstate": 288.1,
+    "back": 6.0
+   },
+   "roads": [
+    "I-90",
+    "ON-3",
+    "US-20"
+   ],
+   "crossing": "falls",
+   "breaks": 5
+  },
+  {
+   "a": "burnriver",
+   "b": "granary",
+   "kind": "road",
+   "km": 278.3,
+   "mix": {
+    "interstate": 249.4,
+    "highway": 23.7,
+    "back": 5.2
+   },
+   "roads": [
+    "I-71",
+    "I-271",
+    "US-20"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "burnriver",
+   "b": "highwater",
+   "kind": "road",
+   "km": 471.9,
+   "mix": {
+    "highway": 54.0,
+    "interstate": 411.5,
+    "back": 6.4
+   },
+   "roads": [
+    "I-90",
+    "ON-QEW",
+    "US-20"
+   ],
+   "crossing": "falls",
+   "breaks": 2
+  },
+  {
+   "a": "burnriver",
+   "b": "visage",
+   "kind": "ice",
+   "km": 170.3,
+   "mix": {
+    "ice": 170.3
+   },
+   "roads": [
+    "ice road"
+   ],
+   "crossing": null,
+   "breaks": 0,
+   "season": "winter"
+  },
+  {
+   "a": "capitol",
+   "b": "crawdad",
+   "kind": "road",
+   "km": 135.2,
+   "mix": {
+    "highway": 97.1,
+    "interstate": 33.1,
+    "back": 4.9
+   },
+   "roads": [
+    "US-190",
+    "I-49",
+    "1"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "capitol",
+   "b": "ferry",
+   "kind": "road",
+   "km": 426.5,
+   "mix": {
+    "interstate": 104.3,
+    "highway": 317.4,
+    "back": 4.8
+   },
+   "roads": [
+    "US-190",
+    "15",
+    "I-49"
+   ],
+   "crossing": null,
+   "breaks": 4
+  },
+  {
+   "a": "capitol",
+   "b": "junction",
+   "kind": "entrance",
+   "km": 77.3,
+   "mix": {
+    "tunnel": 77.3
+   },
+   "roads": [
+    "the Deep Lines"
+   ],
+   "crossing": "junction",
+   "breaks": 0
+  },
+  {
+   "a": "capitol",
+   "b": "pines",
+   "kind": "road",
+   "km": 343.6,
+   "mix": {
+    "highway": 268.6,
+    "interstate": 70.7,
+    "back": 4.3
+   },
+   "roads": [
+    "US-167",
+    "US-190",
+    "I-49"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "capitol",
+   "b": "red",
+   "kind": "road",
+   "km": 392.2,
+   "mix": {
+    "highway": 119.7,
+    "interstate": 267.6,
+    "back": 4.9
+   },
+   "roads": [
+    "I-49",
+    "US-190",
+    "US-71"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "capitol",
+   "b": "siege",
+   "kind": "road",
+   "km": 417.6,
+   "mix": {
+    "interstate": 100.2,
+    "highway": 313.2,
+    "back": 4.2
+   },
+   "roads": [
+    "US-65",
+    "US-190",
+    "I-49"
+   ],
+   "crossing": "siege",
+   "breaks": 3
+  },
+  {
+   "a": "casino",
+   "b": "crawdad",
+   "kind": "road",
+   "km": 420.1,
+   "mix": {
+    "highway": 54.8,
+    "interstate": 359.3,
+    "back": 6.0
+   },
+   "roads": [
+    "I-10",
+    "I-12",
+    "US-90"
+   ],
+   "crossing": "capitol",
+   "breaks": 0
+  },
+  {
+   "a": "casino",
+   "b": "dustwich",
+   "kind": "road",
+   "km": 231.2,
+   "mix": {
+    "highway": 49.0,
+    "interstate": 175.9,
+    "back": 6.4
+   },
+   "roads": [
+    "I-10",
+    "US-90"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "casino",
+   "b": "mobile",
+   "kind": "road",
+   "km": 100.5,
+   "mix": {
+    "highway": 49.0,
+    "interstate": 45.8,
+    "back": 5.7
+   },
+   "roads": [
+    "US-90",
+    "I-10"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "casino",
+   "b": "pier",
+   "kind": "road",
+   "km": 28.7,
+   "mix": {
+    "highway": 20.2,
+    "back": 8.5
+   },
+   "roads": [
+    "US-90"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "casino",
+   "b": "siege",
+   "kind": "road",
+   "km": 431.3,
+   "mix": {
+    "highway": 291.3,
+    "interstate": 134.6,
+    "back": 5.3
+   },
+   "roads": [
+    "US-49",
+    "I-20",
+    "I-10"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "cerro",
+   "b": "desierto",
+   "kind": "road",
+   "km": 237.4,
+   "mix": {
+    "highway": 95.9,
+    "interstate": 137.4,
+    "back": 4.2
+   },
+   "roads": [
+    "MEX-57D",
+    "MEX-40D",
+    "MEX-40"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "cerro",
+   "b": "dog_head",
+   "kind": "road",
+   "km": 890.4,
+   "mix": {
+    "highway": 683.5,
+    "interstate": 197.2,
+    "back": 9.7
+   },
+   "roads": [
+    "US-77",
+    "US-59",
+    "MEX-40"
+   ],
+   "crossing": null,
+   "breaks": 6
+  },
+  {
+   "a": "cerro",
+   "b": "falcon",
+   "kind": "road",
+   "km": 306.1,
+   "mix": {
+    "highway": 189.8,
+    "interstate": 112.4,
+    "back": 3.9
+   },
+   "roads": [
+    "MEX-85D",
+    "MEX-2",
+    "MEX-85"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "cerro",
+   "b": "gemela",
+   "kind": "road",
+   "km": 222.5,
+   "mix": {
+    "highway": 105.7,
+    "interstate": 112.4,
+    "back": 4.3
+   },
+   "roads": [
+    "MEX-85D",
+    "MEX-85"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "cerro",
+   "b": "mouth",
+   "kind": "road",
+   "km": 389.1,
+   "mix": {
+    "highway": 211.3,
+    "interstate": 171.0,
+    "back": 6.8
+   },
+   "roads": [
+    "MEX-40",
+    "MEX-40D",
+    "US-83"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "cerro",
+   "b": "pesca",
+   "kind": "road",
+   "km": 342.3,
+   "mix": {
+    "highway": 167.4,
+    "interstate": 171.0,
+    "back": 3.9
+   },
+   "roads": [
+    "MEX-40",
+    "MEX-40D",
+    "US-83"
+   ],
+   "crossing": null,
+   "breaks": 5
+  },
+  {
+   "a": "cerro",
+   "b": "soto",
+   "kind": "road",
+   "km": 462.8,
+   "mix": {
+    "highway": 439.7,
+    "interstate": 20.8,
+    "back": 2.3
+   },
+   "roads": [
+    "MEX-85",
+    "MEX-70",
+    "MEX-85D"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "cerro",
+   "b": "tampico",
+   "kind": "road",
+   "km": 707.1,
+   "mix": {
+    "highway": 682.7,
+    "interstate": 20.8,
+    "back": 3.7
+   },
+   "roads": [
+    "MEX-85",
+    "MEX-70",
+    "MEX-81"
+   ],
+   "crossing": null,
+   "breaks": 6
+  },
+  {
+   "a": "circus",
+   "b": "exchange",
+   "kind": "road",
+   "km": 99.0,
+   "mix": {
+    "highway": 45.6,
+    "interstate": 50.5,
+    "back": 2.9
+   },
+   "roads": [
+    "I-75",
+    "US-301",
+    "618"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "circus",
+   "b": "kingdom",
+   "kind": "road",
+   "km": 245.5,
+   "mix": {
+    "highway": 171.9,
+    "interstate": 64.0,
+    "back": 9.6
+   },
+   "roads": [
+    "I-75",
+    "US-301",
+    "50"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "circus",
+   "b": "pier_saint",
+   "kind": "road",
+   "km": 62.7,
+   "mix": {
+    "interstate": 27.0,
+    "highway": 30.7,
+    "back": 5.0
+   },
+   "roads": [
+    "I-275",
+    "US-301",
+    "US-41"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "circus",
+   "b": "sawgrass",
+   "kind": "road",
+   "km": 306.0,
+   "mix": {
+    "highway": 77.3,
+    "interstate": 225.7,
+    "back": 3.0
+   },
+   "roads": [
+    "I-75",
+    "US-41",
+    "US-17"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "corbett",
+   "b": "crossroads",
+   "kind": "road",
+   "km": 406.7,
+   "mix": {
+    "highway": 352.1,
+    "interstate": 47.8,
+    "back": 6.9
+   },
+   "roads": [
+    "US-45",
+    "US-82",
+    "US-6"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "corbett",
+   "b": "dustwich",
+   "kind": "road",
+   "km": 310.2,
+   "mix": {
+    "interstate": 306.8,
+    "back": 3.4
+   },
+   "roads": [
+    "I-59",
+    "I-10",
+    "I-20"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "corbett",
+   "b": "gnarly",
+   "kind": "road",
+   "km": 405.2,
+   "mix": {
+    "highway": 353.4,
+    "interstate": 47.8,
+    "back": 3.9
+   },
+   "roads": [
+    "US-45",
+    "US-51",
+    "US-82"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "corbett",
+   "b": "hub",
+   "kind": "road",
+   "km": 396.0,
+   "mix": {
+    "interstate": 6.9,
+    "highway": 386.3,
+    "back": 2.8
+   },
+   "roads": [
+    "US-45",
+    "US-ALT45",
+    "US-70"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "corbett",
+   "b": "lighthouse",
+   "kind": "road",
+   "km": 398.3,
+   "mix": {
+    "interstate": 10.7,
+    "highway": 382.9,
+    "back": 4.7
+   },
+   "roads": [
+    "US-78",
+    "US-45",
+    "US-ALT45"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "corbett",
+   "b": "mobile",
+   "kind": "road",
+   "km": 208.2,
+   "mix": {
+    "highway": 194.6,
+    "interstate": 10.9,
+    "back": 2.7
+   },
+   "roads": [
+    "US-45",
+    "I-165"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "corbett",
+   "b": "orchard",
+   "kind": "road",
+   "km": 538.4,
+   "mix": {
+    "interstate": 135.4,
+    "highway": 399.1,
+    "back": 3.8
+   },
+   "roads": [
+    "US-80",
+    "I-85",
+    "US-280"
+   ],
+   "crossing": null,
+   "breaks": 5
+  },
+  {
+   "a": "corbett",
+   "b": "rails",
+   "kind": "road",
+   "km": 415.9,
+   "mix": {
+    "highway": 298.0,
+    "interstate": 115.6,
+    "back": 2.4
+   },
+   "roads": [
+    "US-80",
+    "I-85",
+    "I-20"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "corbett",
+   "b": "reservoir",
+   "kind": "road",
+   "km": 476.6,
+   "mix": {
+    "highway": 417.3,
+    "interstate": 47.8,
+    "back": 11.5
+   },
+   "roads": [
+    "US-51",
+    "US-45",
+    "US-82"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "corbett",
+   "b": "shoals",
+   "kind": "road",
+   "km": 401.6,
+   "mix": {
+    "highway": 391.9,
+    "interstate": 6.9,
+    "back": 2.8
+   },
+   "roads": [
+    "US-45",
+    "US-72",
+    "US-ALT45"
+   ],
+   "crossing": "shoals",
+   "breaks": 3
+  },
+  {
+   "a": "corbett",
+   "b": "siege",
+   "kind": "road",
+   "km": 216.9,
+   "mix": {
+    "interstate": 211.6,
+    "highway": 3.0,
+    "back": 2.3
+   },
+   "roads": [
+    "I-20"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "corbett",
+   "b": "stadium",
+   "kind": "road",
+   "km": 157.8,
+   "mix": {
+    "highway": 5.2,
+    "interstate": 146.9,
+    "back": 5.7
+   },
+   "roads": [
+    "I-20",
+    "US-82"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "crawdad",
+   "b": "ferry",
+   "kind": "road",
+   "km": 371.6,
+   "mix": {
+    "highway": 231.9,
+    "interstate": 137.4,
+    "back": 2.2
+   },
+   "roads": [
+    "I-49",
+    "15",
+    "28"
+   ],
+   "crossing": null,
+   "breaks": 4
+  },
+  {
+   "a": "crawdad",
+   "b": "krin_s_nest",
+   "kind": "entrance",
+   "km": 52.0,
+   "mix": {
+    "tunnel": 52.0
+   },
+   "roads": [
+    "the Deep Lines"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "crawdad",
+   "b": "mobile",
+   "kind": "road",
+   "km": 412.9,
+   "mix": {
+    "highway": 5.8,
+    "interstate": 405.0,
+    "back": 2.0
+   },
+   "roads": [
+    "I-10",
+    "I-12",
+    "US-90"
+   ],
+   "crossing": "capitol",
+   "breaks": 3
+  },
+  {
+   "a": "crawdad",
+   "b": "pines",
+   "kind": "road",
+   "km": 288.7,
+   "mix": {
+    "highway": 183.2,
+    "interstate": 103.8,
+    "back": 1.7
+   },
+   "roads": [
+    "US-167",
+    "I-49",
+    "US-71"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "crawdad",
+   "b": "red",
+   "kind": "road",
+   "km": 337.3,
+   "mix": {
+    "highway": 34.3,
+    "interstate": 300.7,
+    "back": 2.4
+   },
+   "roads": [
+    "I-49",
+    "US-71",
+    "US-167"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "crawdad",
+   "b": "reservoir",
+   "kind": "road",
+   "km": 737.9,
+   "mix": {
+    "highway": 182.4,
+    "interstate": 544.6,
+    "back": 10.8
+   },
+   "roads": [
+    "I-55",
+    "US-51",
+    "I-10"
+   ],
+   "crossing": "capitol",
+   "breaks": 6
+  },
+  {
+   "a": "crawdad",
+   "b": "siege",
+   "kind": "road",
+   "km": 362.6,
+   "mix": {
+    "interstate": 133.3,
+    "highway": 227.8,
+    "back": 1.6
+   },
+   "roads": [
+    "I-49",
+    "US-65",
+    "28"
+   ],
+   "crossing": "siege",
+   "breaks": 2
+  },
+  {
+   "a": "crawdad",
+   "b": "spindletop",
+   "kind": "road",
+   "km": 225.7,
+   "mix": {
+    "highway": 5.8,
+    "interstate": 213.0,
+    "back": 6.8
+   },
+   "roads": [
+    "I-10",
+    "US-90",
+    "US-167"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "cross",
+   "b": "derby",
+   "kind": "road",
+   "km": 368.4,
+   "mix": {
+    "highway": 353.7,
+    "interstate": 11.9,
+    "back": 2.8
+   },
+   "roads": [
+    "US-150",
+    "US-50",
+    "67"
+   ],
+   "crossing": "derby",
+   "breaks": 3
+  },
+  {
+   "a": "cross",
+   "b": "fork",
+   "kind": "road",
+   "km": 301.3,
+   "mix": {
+    "interstate": 50.3,
+    "highway": 247.4,
+    "back": 3.6
+   },
+   "roads": [
+    "US-51",
+    "US-50",
+    "I-57"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "cross",
+   "b": "mill_town",
+   "kind": "road",
+   "km": 491.3,
+   "mix": {
+    "highway": 466.1,
+    "interstate": 21.3,
+    "back": 3.9
+   },
+   "roads": [
+    "US-41",
+    "63",
+    "US-50"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "cross",
+   "b": "span",
+   "kind": "road",
+   "km": 500.3,
+   "mix": {
+    "highway": 461.4,
+    "interstate": 36.7,
+    "back": 2.1
+   },
+   "roads": [
+    "US-50",
+    "67",
+    "US-45"
+   ],
+   "crossing": "span",
+   "breaks": 3
+  },
+  {
+   "a": "cross",
+   "b": "track",
+   "kind": "road",
+   "km": 319.5,
+   "mix": {
+    "highway": 305.4,
+    "interstate": 6.8,
+    "back": 7.4
+   },
+   "roads": [
+    "67",
+    "US-50",
+    "US-45"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "crossroads",
+   "b": "gnarly",
+   "kind": "road",
+   "km": 120.6,
+   "mix": {
+    "highway": 113.5,
+    "back": 7.1
+   },
+   "roads": [
+    "US-51",
+    "US-6"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "crossroads",
+   "b": "helena",
+   "kind": "road",
+   "km": 47.8,
+   "mix": {
+    "highway": 47.8
+   },
+   "roads": [
+    "US-49 bridge"
+   ],
+   "crossing": "helena",
+   "breaks": 0
+  },
+  {
+   "a": "crossroads",
+   "b": "lighthouse",
+   "kind": "road",
+   "km": 126.5,
+   "mix": {
+    "interstate": 3.8,
+    "highway": 114.8,
+    "back": 7.9
+   },
+   "roads": [
+    "US-49",
+    "US-61",
+    "I-40"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "crossroads",
+   "b": "mudflat",
+   "kind": "road",
+   "km": 75.6,
+   "mix": {
+    "highway": 64.9,
+    "back": 10.6
+   },
+   "roads": [
+    "US-49"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "crossroads",
+   "b": "reservoir",
+   "kind": "road",
+   "km": 296.7,
+   "mix": {
+    "highway": 282.1,
+    "back": 14.7
+   },
+   "roads": [
+    "US-51",
+    "US-6"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "crossroads",
+   "b": "saltlick",
+   "kind": "road",
+   "km": 148.5,
+   "mix": {
+    "highway": 133.4,
+    "interstate": 7.5,
+    "back": 7.6
+   },
+   "roads": [
+    "US-49",
+    "US-51",
+    "US-61"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "crossroads",
+   "b": "stadium",
+   "kind": "road",
+   "km": 384.4,
+   "mix": {
+    "highway": 334.6,
+    "interstate": 40.9,
+    "back": 8.8
+   },
+   "roads": [
+    "US-82",
+    "US-6",
+    "US-51"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "derby",
+   "b": "granary",
+   "kind": "road",
+   "km": 328.7,
+   "mix": {
+    "interstate": 324.8,
+    "back": 3.8
+   },
+   "roads": [
+    "I-71",
+    "I-74",
+    "I-64"
+   ],
+   "crossing": "span",
+   "breaks": 0
+  },
+  {
+   "a": "derby",
+   "b": "hangar",
+   "kind": "road",
+   "km": 253.4,
+   "mix": {
+    "highway": 8.7,
+    "interstate": 240.7,
+    "back": 4.0
+   },
+   "roads": [
+    "I-71",
+    "I-75",
+    "4"
+   ],
+   "crossing": "span",
+   "breaks": 2
+  },
+  {
+   "a": "derby",
+   "b": "mammoth",
+   "kind": "road",
+   "km": 159.0,
+   "mix": {
+    "interstate": 141.7,
+    "back": 17.2
+   },
+   "roads": [
+    "I-65",
+    "I-64"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "derby",
+   "b": "mill_town",
+   "kind": "road",
+   "km": 422.4,
+   "mix": {
+    "interstate": 418.4,
+    "back": 4.0
+   },
+   "roads": [
+    "I-65",
+    "I-80",
+    "I-90"
+   ],
+   "crossing": "derby",
+   "breaks": 2
+  },
+  {
+   "a": "derby",
+   "b": "span",
+   "kind": "road",
+   "km": 221.3,
+   "mix": {
+    "interstate": 117.2,
+    "highway": 102.0,
+    "back": 2.2
+   },
+   "roads": [
+    "US-50",
+    "I-65",
+    "I-275"
+   ],
+   "crossing": "span",
+   "breaks": 1
+  },
+  {
+   "a": "derby",
+   "b": "stables",
+   "kind": "road",
+   "km": 128.3,
+   "mix": {
+    "highway": 5.1,
+    "interstate": 120.4,
+    "back": 2.9
+   },
+   "roads": [
+    "I-64",
+    "I-75",
+    "US-68"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "derby",
+   "b": "track",
+   "kind": "road",
+   "km": 194.0,
+   "mix": {
+    "interstate": 136.9,
+    "highway": 49.7,
+    "back": 7.4
+   },
+   "roads": [
+    "I-65",
+    "US-31",
+    "I-74"
+   ],
+   "crossing": "derby",
+   "breaks": 1
+  },
+  {
+   "a": "derby",
+   "b": "vault",
+   "kind": "road",
+   "km": 68.8,
+   "mix": {
+    "interstate": 21.2,
+    "highway": 44.6,
+    "back": 3.0
+   },
+   "roads": [
+    "US-60",
+    "841",
+    "I-65"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "derricks",
+   "b": "dog_head",
+   "kind": "road",
+   "km": 347.0,
+   "mix": {
+    "highway": 318.4,
+    "interstate": 18.7,
+    "back": 9.9
+   },
+   "roads": [
+    "US-59",
+    "US-259",
+    "I-10"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "derricks",
+   "b": "partridge",
+   "kind": "road",
+   "km": 174.8,
+   "mix": {
+    "highway": 126.2,
+    "interstate": 44.9,
+    "back": 3.7
+   },
+   "roads": [
+    "US-59",
+    "I-20",
+    "US-259"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "derricks",
+   "b": "red",
+   "kind": "road",
+   "km": 115.6,
+   "mix": {
+    "highway": 8.0,
+    "interstate": 104.5,
+    "back": 3.1
+   },
+   "roads": [
+    "I-20",
+    "US-259",
+    "US-71"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "derricks",
+   "b": "silo",
+   "kind": "road",
+   "km": 263.3,
+   "mix": {
+    "highway": 234.5,
+    "interstate": 26.1,
+    "back": 2.7
+   },
+   "roads": [
+    "31",
+    "I-20",
+    "US-271"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "derricks",
+   "b": "spindletop",
+   "kind": "road",
+   "km": 339.0,
+   "mix": {
+    "interstate": 4.3,
+    "highway": 327.2,
+    "back": 7.5
+   },
+   "roads": [
+    "US-96",
+    "US-79",
+    "US-259"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "derricks",
+   "b": "stack",
+   "kind": "road",
+   "km": 213.3,
+   "mix": {
+    "highway": 5.9,
+    "interstate": 204.6,
+    "back": 2.8
+   },
+   "roads": [
+    "I-20",
+    "I-635",
+    "US-259"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "desierto",
+   "b": "dog_head",
+   "kind": "road",
+   "km": 1020.1,
+   "mix": {
+    "highway": 718.1,
+    "interstate": 291.4,
+    "back": 10.5
+   },
+   "roads": [
+    "US-77",
+    "US-59",
+    "MEX-40"
+   ],
+   "crossing": null,
+   "breaks": 8
+  },
+  {
+   "a": "desierto",
+   "b": "falcon",
+   "kind": "road",
+   "km": 473.6,
+   "mix": {
+    "highway": 219.0,
+    "interstate": 249.8,
+    "back": 4.7
+   },
+   "roads": [
+    "MEX-85D",
+    "MEX-2",
+    "MEX-57D"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "desierto",
+   "b": "gemela",
+   "kind": "road",
+   "km": 389.9,
+   "mix": {
+    "highway": 135.0,
+    "interstate": 249.8,
+    "back": 5.1
+   },
+   "roads": [
+    "MEX-85D",
+    "MEX-85",
+    "MEX-57D"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "desierto",
+   "b": "mouth",
+   "kind": "road",
+   "km": 518.8,
+   "mix": {
+    "highway": 246.0,
+    "interstate": 265.2,
+    "back": 7.6
+   },
+   "roads": [
+    "MEX-40",
+    "MEX-40D",
+    "MEX-57D"
+   ],
+   "crossing": null,
+   "breaks": 5
+  },
+  {
+   "a": "desierto",
+   "b": "pesca",
+   "kind": "road",
+   "km": 471.9,
+   "mix": {
+    "highway": 202.0,
+    "interstate": 265.2,
+    "back": 4.7
+   },
+   "roads": [
+    "MEX-40",
+    "MEX-40D",
+    "MEX-57D"
+   ],
+   "crossing": null,
+   "breaks": 4
+  },
+  {
+   "a": "desierto",
+   "b": "soto",
+   "kind": "road",
+   "km": 495.2,
+   "mix": {
+    "highway": 492.1,
+    "back": 3.1
+   },
+   "roads": [
+    "MEX-85",
+    "MEX-70",
+    "MEX-57"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "desierto",
+   "b": "southmost",
+   "kind": "road",
+   "km": 1096.8,
+   "mix": {
+    "highway": 507.4,
+    "interstate": 586.7,
+    "back": 2.8
+   },
+   "roads": [
+    "MEX-57",
+    "MEX-150D",
+    "MEX-57D"
+   ],
+   "crossing": null,
+   "breaks": 8
+  },
+  {
+   "a": "desierto",
+   "b": "tampico",
+   "kind": "road",
+   "km": 730.6,
+   "mix": {
+    "highway": 726.1,
+    "back": 4.5
+   },
+   "roads": [
+    "MEX-57",
+    "MEX-70",
+    "MEX-101"
+   ],
+   "crossing": null,
+   "breaks": 7
+  },
+  {
+   "a": "dog_head",
+   "b": "dome",
+   "kind": "road",
+   "km": 298.1,
+   "mix": {
+    "highway": 148.4,
+    "interstate": 133.4,
+    "back": 16.4
+   },
+   "roads": [
+    "71",
+    "I-10",
+    "8"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "dog_head",
+   "b": "falcon",
+   "kind": "road",
+   "km": 740.9,
+   "mix": {
+    "highway": 704.5,
+    "interstate": 26.2,
+    "back": 10.3
+   },
+   "roads": [
+    "US-77",
+    "US-59",
+    "MEX-2"
+   ],
+   "crossing": null,
+   "breaks": 4
+  },
+  {
+   "a": "dog_head",
+   "b": "harrowgate",
+   "kind": "lift",
+   "km": 16.7,
+   "mix": {
+    "lift": 16.7
+   },
+   "roads": [],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "dog_head",
+   "b": "mouth",
+   "kind": "road",
+   "km": 610.1,
+   "mix": {
+    "highway": 570.7,
+    "interstate": 26.2,
+    "back": 13.1
+   },
+   "roads": [
+    "US-77",
+    "US-59",
+    "I-10"
+   ],
+   "crossing": null,
+   "breaks": 5
+  },
+  {
+   "a": "dog_head",
+   "b": "pitch",
+   "kind": "road",
+   "km": 138.7,
+   "mix": {
+    "highway": 47.3,
+    "interstate": 74.5,
+    "back": 16.9
+   },
+   "roads": [
+    "I-10",
+    "73",
+    "8"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "dog_head",
+   "b": "silo",
+   "kind": "road",
+   "km": 333.6,
+   "mix": {
+    "highway": 297.5,
+    "interstate": 27.3,
+    "back": 8.8
+   },
+   "roads": [
+    "6",
+    "US-290",
+    "I-10"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "dog_head",
+   "b": "spindletop",
+   "kind": "road",
+   "km": 130.4,
+   "mix": {
+    "highway": 6.4,
+    "interstate": 110.3,
+    "back": 13.7
+   },
+   "roads": [
+    "I-10",
+    "8"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "dog_head",
+   "b": "stack",
+   "kind": "road",
+   "km": 430.7,
+   "mix": {
+    "highway": 21.2,
+    "interstate": 400.6,
+    "back": 8.9
+   },
+   "roads": [
+    "I-45",
+    "I-10",
+    "US-75"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "dog_head",
+   "b": "sweetwell",
+   "kind": "road",
+   "km": 349.3,
+   "mix": {
+    "interstate": 333.4,
+    "highway": 6.4,
+    "back": 9.5
+   },
+   "roads": [
+    "I-10",
+    "8",
+    "I-45"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "dome",
+   "b": "halter",
+   "kind": "road",
+   "km": 423.6,
+   "mix": {
+    "interstate": 4.5,
+    "highway": 403.9,
+    "back": 15.2
+   },
+   "roads": [
+    "US-87",
+    "US-290",
+    "US-84"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "dome",
+   "b": "kettle",
+   "kind": "road",
+   "km": 636.8,
+   "mix": {
+    "highway": 508.2,
+    "interstate": 114.6,
+    "back": 14.0
+   },
+   "roads": [
+    "US-190",
+    "71",
+    "US-59"
+   ],
+   "crossing": null,
+   "breaks": 4
+  },
+  {
+   "a": "dome",
+   "b": "last_stop",
+   "kind": "road",
+   "km": 626.9,
+   "mix": {
+    "highway": 261.1,
+    "interstate": 354.1,
+    "back": 11.6
+   },
+   "roads": [
+    "I-10",
+    "US-290",
+    "US-285"
+   ],
+   "crossing": null,
+   "breaks": 5
+  },
+  {
+   "a": "dome",
+   "b": "silo",
+   "kind": "road",
+   "km": 187.1,
+   "mix": {
+    "highway": 7.6,
+    "interstate": 170.4,
+    "back": 9.2
+   },
+   "roads": [
+    "I-35",
+    "US-84",
+    "US-290"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "dome",
+   "b": "twice",
+   "kind": "road",
+   "km": 363.6,
+   "mix": {
+    "highway": 354.5,
+    "back": 9.1
+   },
+   "roads": [
+    "US-87",
+    "US-290",
+    "US-281"
+   ],
+   "crossing": null,
+   "breaks": 5
+  },
+  {
+   "a": "drift",
+   "b": "last_stop",
+   "kind": "road",
+   "km": 81.3,
+   "mix": {
+    "interstate": 71.4,
+    "back": 9.8
+   },
+   "roads": [
+    "I-20"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "drift",
+   "b": "nodders",
+   "kind": "road",
+   "km": 57.8,
+   "mix": {
+    "interstate": 47.1,
+    "back": 10.7
+   },
+   "roads": [
+    "I-20"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "dry_spring",
+   "b": "long_fence",
+   "kind": "road",
+   "km": 113.3,
+   "mix": {
+    "interstate": 107.7,
+    "highway": 1.5,
+    "back": 4.0
+   },
+   "roads": [
+    "I-20",
+    "US-87"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "dry_spring",
+   "b": "nodders",
+   "kind": "road",
+   "km": 107.6,
+   "mix": {
+    "highway": 49.2,
+    "interstate": 53.9,
+    "back": 4.6
+   },
+   "roads": [
+    "I-20",
+    "US-87"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "dry_spring",
+   "b": "teeth",
+   "kind": "road",
+   "km": 85.2,
+   "mix": {
+    "interstate": 73.8,
+    "highway": 1.5,
+    "back": 9.9
+   },
+   "roads": [
+    "I-20",
+    "US-87"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "dry_spring",
+   "b": "twice",
+   "kind": "road",
+   "km": 138.9,
+   "mix": {
+    "highway": 137.8,
+    "back": 1.2
+   },
+   "roads": [
+    "US-87"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "dustwich",
+   "b": "mobile",
+   "kind": "road",
+   "km": 224.0,
+   "mix": {
+    "interstate": 221.6,
+    "back": 2.4
+   },
+   "roads": [
+    "I-10"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "dustwich",
+   "b": "orleans",
+   "kind": "road",
+   "km": 9.0,
+   "mix": {
+    "highway": 2.5,
+    "interstate": 3.7,
+    "back": 2.8
+   },
+   "roads": [
+    "I-10",
+    "US-90"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "exchange",
+   "b": "kingdom",
+   "kind": "road",
+   "km": 170.7,
+   "mix": {
+    "highway": 161.7,
+    "back": 9.0
+   },
+   "roads": [
+    "50",
+    "US-301",
+    "US-98"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "exchange",
+   "b": "mirror_town",
+   "kind": "road",
+   "km": 97.5,
+   "mix": {
+    "highway": 84.6,
+    "interstate": 10.4,
+    "back": 2.5
+   },
+   "roads": [
+    "US-41",
+    "I-275",
+    "618"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "exchange",
+   "b": "pier_saint",
+   "kind": "road",
+   "km": 65.2,
+   "mix": {
+    "interstate": 46.1,
+    "highway": 14.8,
+    "back": 4.4
+   },
+   "roads": [
+    "I-275",
+    "618",
+    "US-301"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "exchange",
+   "b": "sawgrass",
+   "kind": "road",
+   "km": 350.9,
+   "mix": {
+    "highway": 345.8,
+    "interstate": 2.8,
+    "back": 2.4
+   },
+   "roads": [
+    "US-27",
+    "60",
+    "618"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "falcon",
+   "b": "gemela",
+   "kind": "road",
+   "km": 130.9,
+   "mix": {
+    "highway": 126.0,
+    "back": 4.8
+   },
+   "roads": [
+    "MEX-2",
+    "MEX-85"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "falcon",
+   "b": "mouth",
+   "kind": "road",
+   "km": 239.6,
+   "mix": {
+    "highway": 232.3,
+    "back": 7.4
+   },
+   "roads": [
+    "MEX-2",
+    "US-83",
+    "US-77"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "falcon",
+   "b": "pesca",
+   "kind": "riverbed",
+   "km": 50.2,
+   "mix": {
+    "riverbed": 50.2
+   },
+   "roads": [
+    "Rio Grande bed"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "falcon",
+   "b": "soto",
+   "kind": "road",
+   "km": 392.1,
+   "mix": {
+    "highway": 389.3,
+    "back": 2.8
+   },
+   "roads": [
+    "MEX-180",
+    "MEX-97",
+    "MEX-2"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "falls",
+   "b": "forks",
+   "kind": "road",
+   "km": 291.5,
+   "mix": {
+    "highway": 230.9,
+    "interstate": 56.8,
+    "back": 3.7
+   },
+   "roads": [
+    "ON-3",
+    "I-190",
+    "ON-4"
+   ],
+   "crossing": "falls",
+   "breaks": 4
+  },
+  {
+   "a": "falls",
+   "b": "granary",
+   "kind": "road",
+   "km": 574.5,
+   "mix": {
+    "interstate": 545.8,
+    "highway": 25.7,
+    "back": 2.9
+   },
+   "roads": [
+    "I-90",
+    "I-71",
+    "I-271"
+   ],
+   "crossing": null,
+   "breaks": 5
+  },
+  {
+   "a": "falls",
+   "b": "highwater",
+   "kind": "ice",
+   "km": 73.8,
+   "mix": {
+    "ice": 73.8
+   },
+   "roads": [
+    "ice road"
+   ],
+   "crossing": null,
+   "breaks": 0,
+   "season": "winter"
+  },
+  {
+   "a": "falls",
+   "b": "pen",
+   "kind": "road",
+   "km": 470.5,
+   "mix": {
+    "highway": 12.0,
+    "interstate": 443.6,
+    "back": 14.9
+   },
+   "roads": [
+    "ON-401",
+    "ON-QEW",
+    "I-190"
+   ],
+   "crossing": "falls",
+   "breaks": 3
+  },
+  {
+   "a": "falls",
+   "b": "tunnel",
+   "kind": "road",
+   "km": 439.5,
+   "mix": {
+    "interstate": 215.1,
+    "highway": 218.2,
+    "back": 6.1
+   },
+   "roads": [
+    "ON-3",
+    "ON-401",
+    "I-190"
+   ],
+   "crossing": "falls",
+   "breaks": 1
+  },
+  {
+   "a": "ferry",
+   "b": "helena",
+   "kind": "road",
+   "km": 469.5,
+   "mix": {
+    "interstate": 86.9,
+    "highway": 376.5,
+    "back": 6.1
+   },
+   "roads": [
+    "US-65",
+    "US-165",
+    "I-20"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "ferry",
+   "b": "pines",
+   "kind": "road",
+   "km": 335.1,
+   "mix": {
+    "highway": 299.8,
+    "interstate": 33.6,
+    "back": 1.6
+   },
+   "roads": [
+    "US-84",
+    "15",
+    "US-167"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "ferry",
+   "b": "red",
+   "kind": "road",
+   "km": 158.4,
+   "mix": {
+    "highway": 4.4,
+    "interstate": 151.8,
+    "back": 2.2
+   },
+   "roads": [
+    "I-20",
+    "US-80"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "ferry",
+   "b": "rock",
+   "kind": "road",
+   "km": 518.7,
+   "mix": {
+    "interstate": 172.6,
+    "highway": 343.8,
+    "back": 2.3
+   },
+   "roads": [
+    "US-65",
+    "US-165",
+    "I-20"
+   ],
+   "crossing": null,
+   "breaks": 4
+  },
+  {
+   "a": "ferry",
+   "b": "siege",
+   "kind": "road",
+   "km": 117.9,
+   "mix": {
+    "interstate": 116.4,
+    "back": 1.5
+   },
+   "roads": [
+    "I-20"
+   ],
+   "crossing": "siege",
+   "breaks": 0
+  },
+  {
+   "a": "ferry",
+   "b": "weigh_station",
+   "kind": "road",
+   "km": 536.4,
+   "mix": {
+    "interstate": 189.4,
+    "highway": 342.0,
+    "back": 5.0
+   },
+   "roads": [
+    "US-65",
+    "I-40",
+    "US-165"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "field",
+   "b": "hill",
+   "kind": "road",
+   "km": 324.1,
+   "mix": {
+    "highway": 69.8,
+    "interstate": 246.1,
+    "back": 8.2
+   },
+   "roads": [
+    "I-10",
+    "US-90",
+    "US-98"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "field",
+   "b": "mobile",
+   "kind": "road",
+   "km": 114.7,
+   "mix": {
+    "interstate": 95.9,
+    "highway": 9.9,
+    "back": 8.9
+   },
+   "roads": [
+    "I-10",
+    "I-110",
+    "US-98"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "field",
+   "b": "neon",
+   "kind": "road",
+   "km": 165.5,
+   "mix": {
+    "highway": 155.5,
+    "back": 9.9
+   },
+   "roads": [
+    "US-98"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "field",
+   "b": "rails",
+   "kind": "road",
+   "km": 451.7,
+   "mix": {
+    "highway": 346.4,
+    "interstate": 96.7,
+    "back": 8.6
+   },
+   "roads": [
+    "US-29",
+    "US-331",
+    "I-10"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "fork",
+   "b": "hub",
+   "kind": "road",
+   "km": 178.4,
+   "mix": {
+    "highway": 175.2,
+    "back": 3.2
+   },
+   "roads": [
+    "US-45E",
+    "US-51",
+    "US-62"
+   ],
+   "crossing": "fork",
+   "breaks": 2
+  },
+  {
+   "a": "fork",
+   "b": "loop",
+   "kind": "road",
+   "km": 628.4,
+   "mix": {
+    "interstate": 625.2,
+    "back": 3.2
+   },
+   "roads": [
+    "I-57",
+    "I-80",
+    "I-290"
+   ],
+   "crossing": null,
+   "breaks": 4
+  },
+  {
+   "a": "fork",
+   "b": "mill_town",
+   "kind": "road",
+   "km": 601.5,
+   "mix": {
+    "interstate": 596.8,
+    "back": 4.8
+   },
+   "roads": [
+    "I-57",
+    "I-80",
+    "I-70"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "fork",
+   "b": "quake",
+   "kind": "road",
+   "km": 295.5,
+   "mix": {
+    "interstate": 49.2,
+    "highway": 237.0,
+    "back": 9.3
+   },
+   "roads": [
+    "US-62",
+    "US-60",
+    "I-57"
+   ],
+   "crossing": "fork",
+   "breaks": 4
+  },
+  {
+   "a": "fork",
+   "b": "rock",
+   "kind": "road",
+   "km": 469.2,
+   "mix": {
+    "interstate": 71.0,
+    "highway": 394.8,
+    "back": 3.4
+   },
+   "roads": [
+    "US-67",
+    "US-60",
+    "US-62"
+   ],
+   "crossing": "fork",
+   "breaks": 3
+  },
+  {
+   "a": "fork",
+   "b": "saltlick",
+   "kind": "road",
+   "km": 244.5,
+   "mix": {
+    "highway": 239.6,
+    "back": 4.8
+   },
+   "roads": [
+    "US-51",
+    "US-62",
+    "US-45W"
+   ],
+   "crossing": "fork",
+   "breaks": 1
+  },
+  {
+   "a": "fork",
+   "b": "spillway",
+   "kind": "road",
+   "km": 103.4,
+   "mix": {
+    "highway": 73.4,
+    "interstate": 23.6,
+    "back": 6.4
+   },
+   "roads": [
+    "US-60",
+    "I-24",
+    "US-62"
+   ],
+   "crossing": "spillway",
+   "breaks": 1
+  },
+  {
+   "a": "fork",
+   "b": "stockade",
+   "kind": "road",
+   "km": 895.3,
+   "mix": {
+    "interstate": 509.6,
+    "highway": 381.3,
+    "back": 4.3
+   },
+   "roads": [
+    "US-60",
+    "I-44",
+    "I-244"
+   ],
+   "crossing": "fork",
+   "breaks": 6
+  },
+  {
+   "a": "fork",
+   "b": "track",
+   "kind": "road",
+   "km": 500.7,
+   "mix": {
+    "highway": 126.1,
+    "interstate": 366.4,
+    "back": 8.2
+   },
+   "roads": [
+    "I-57",
+    "I-70",
+    "US-36"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "fork",
+   "b": "weigh_station",
+   "kind": "road",
+   "km": 268.7,
+   "mix": {
+    "interstate": 262.5,
+    "back": 6.2
+   },
+   "roads": [
+    "I-55",
+    "I-57"
+   ],
+   "crossing": "fork",
+   "breaks": 1
+  },
+  {
+   "a": "forks",
+   "b": "highwater",
+   "kind": "road",
+   "km": 209.4,
+   "mix": {
+    "highway": 29.3,
+    "interstate": 173.3,
+    "back": 6.8
+   },
+   "roads": [
+    "ON-403",
+    "ON-401",
+    "ON-QEW"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "forks",
+   "b": "pen",
+   "kind": "road",
+   "km": 457.8,
+   "mix": {
+    "highway": 12.7,
+    "interstate": 427.5,
+    "back": 17.6
+   },
+   "roads": [
+    "ON-401",
+    "ON-407",
+    "ON-4"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "forks",
+   "b": "tunnel",
+   "kind": "road",
+   "km": 209.2,
+   "mix": {
+    "interstate": 187.6,
+    "highway": 12.7,
+    "back": 8.8
+   },
+   "roads": [
+    "ON-401",
+    "ON-4",
+    "ON-402"
+   ],
+   "crossing": "tunnel",
+   "breaks": 1
+  },
+  {
+   "a": "fort",
+   "b": "green",
+   "kind": "road",
+   "km": 162.3,
+   "mix": {
+    "interstate": 7.2,
+    "highway": 145.4,
+    "back": 9.7
+   },
+   "roads": [
+    "MEX-180",
+    "MEX-180D"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "fort",
+   "b": "southmost",
+   "kind": "road",
+   "km": 139.0,
+   "mix": {
+    "interstate": 132.0,
+    "back": 7.0
+   },
+   "roads": [
+    "MEX-150D",
+    "MEX-180D"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "fort",
+   "b": "tajin",
+   "kind": "road",
+   "km": 229.0,
+   "mix": {
+    "highway": 186.7,
+    "interstate": 30.8,
+    "back": 11.5
+   },
+   "roads": [
+    "MEX-180",
+    "MEX-180D"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "furnace",
+   "b": "hill",
+   "kind": "road",
+   "km": 470.2,
+   "mix": {
+    "highway": 310.5,
+    "interstate": 155.9,
+    "back": 3.8
+   },
+   "roads": [
+    "US-231",
+    "I-65",
+    "US-84"
+   ],
+   "crossing": null,
+   "breaks": 4
+  },
+  {
+   "a": "furnace",
+   "b": "hub",
+   "kind": "road",
+   "km": 376.0,
+   "mix": {
+    "interstate": 6.9,
+    "highway": 364.4,
+    "back": 4.6
+   },
+   "roads": [
+    "US-78",
+    "US-70",
+    "US-45"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "furnace",
+   "b": "kudzu",
+   "kind": "road",
+   "km": 306.2,
+   "mix": {
+    "interstate": 141.2,
+    "highway": 155.6,
+    "back": 9.4
+   },
+   "roads": [
+    "I-59",
+    "US-278",
+    "I-75"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "furnace",
+   "b": "lighthouse",
+   "kind": "road",
+   "km": 378.3,
+   "mix": {
+    "interstate": 10.8,
+    "highway": 361.0,
+    "back": 6.5
+   },
+   "roads": [
+    "US-78",
+    "I-65",
+    "I-40"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "furnace",
+   "b": "lookout",
+   "kind": "road",
+   "km": 232.3,
+   "mix": {
+    "interstate": 224.2,
+    "back": 8.0
+   },
+   "roads": [
+    "I-59",
+    "I-24",
+    "I-20"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "furnace",
+   "b": "neon",
+   "kind": "road",
+   "km": 460.0,
+   "mix": {
+    "interstate": 155.9,
+    "highway": 298.6,
+    "back": 5.5
+   },
+   "roads": [
+    "US-231",
+    "I-65",
+    "US-98"
+   ],
+   "crossing": null,
+   "breaks": 4
+  },
+  {
+   "a": "furnace",
+   "b": "orchard",
+   "kind": "road",
+   "km": 369.5,
+   "mix": {
+    "interstate": 363.9,
+    "back": 5.6
+   },
+   "roads": [
+    "I-20",
+    "I-75",
+    "I-85"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "furnace",
+   "b": "rails",
+   "kind": "road",
+   "km": 327.3,
+   "mix": {
+    "interstate": 233.5,
+    "highway": 89.7,
+    "back": 4.2
+   },
+   "roads": [
+    "I-65",
+    "I-85",
+    "US-80"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "furnace",
+   "b": "shoals",
+   "kind": "road",
+   "km": 381.6,
+   "mix": {
+    "highway": 370.0,
+    "interstate": 6.9,
+    "back": 4.7
+   },
+   "roads": [
+    "US-78",
+    "US-72",
+    "US-45"
+   ],
+   "crossing": "shoals",
+   "breaks": 2
+  },
+  {
+   "a": "furnace",
+   "b": "spaghetti",
+   "kind": "road",
+   "km": 330.5,
+   "mix": {
+    "highway": 35.5,
+    "interstate": 288.0,
+    "back": 7.0
+   },
+   "roads": [
+    "I-20",
+    "I-85",
+    "US-23"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "furnace",
+   "b": "stadium",
+   "kind": "road",
+   "km": 94.6,
+   "mix": {
+    "interstate": 81.9,
+    "highway": 5.2,
+    "back": 7.5
+   },
+   "roads": [
+    "I-20",
+    "US-82",
+    "I-65"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "fuse",
+   "b": "shoals",
+   "kind": "road",
+   "km": 117.7,
+   "mix": {
+    "highway": 71.2,
+    "interstate": 40.7,
+    "back": 5.8
+   },
+   "roads": [
+    "US-72",
+    "I-565",
+    "I-65"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "fuse",
+   "b": "strings",
+   "kind": "road",
+   "km": 202.3,
+   "mix": {
+    "interstate": 196.5,
+    "back": 5.8
+   },
+   "roads": [
+    "I-65",
+    "I-565"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "gallows",
+   "b": "pellet",
+   "kind": "road",
+   "km": 693.5,
+   "mix": {
+    "highway": 675.1,
+    "interstate": 13.9,
+    "back": 4.5
+   },
+   "roads": [
+    "US-65",
+    "7",
+    "22"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "gallows",
+   "b": "rock",
+   "kind": "riverbed",
+   "km": 256.0,
+   "mix": {
+    "riverbed": 256.0
+   },
+   "roads": [
+    "Arkansas bed"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "gemela",
+   "b": "gullet",
+   "kind": "road",
+   "km": 273.7,
+   "mix": {
+    "highway": 269.8,
+    "back": 3.9
+   },
+   "roads": [
+    "MEX-2",
+    "US-277",
+    "MEX-85"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "gnarly",
+   "b": "haven",
+   "kind": "road",
+   "km": 25.0,
+   "mix": {
+    "highway": 20.5,
+    "back": 4.5
+   },
+   "roads": [
+    "US-51"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "gnarly",
+   "b": "lighthouse",
+   "kind": "road",
+   "km": 45.2,
+   "mix": {
+    "interstate": 28.2,
+    "highway": 12.1,
+    "back": 4.9
+   },
+   "roads": [
+    "I-55",
+    "US-51",
+    "I-40"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "gnarly",
+   "b": "reservoir",
+   "kind": "road",
+   "km": 295.2,
+   "mix": {
+    "highway": 283.4,
+    "back": 11.8
+   },
+   "roads": [
+    "US-51"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "gnarly",
+   "b": "saltlick",
+   "kind": "road",
+   "km": 67.3,
+   "mix": {
+    "highway": 30.7,
+    "interstate": 31.9,
+    "back": 4.7
+   },
+   "roads": [
+    "US-51",
+    "I-55",
+    "I-40"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "gnarly",
+   "b": "siege",
+   "kind": "road",
+   "km": 369.6,
+   "mix": {
+    "interstate": 254.3,
+    "highway": 112.8,
+    "back": 2.5
+   },
+   "roads": [
+    "I-55",
+    "US-51",
+    "I-20"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "gnarly",
+   "b": "stadium",
+   "kind": "road",
+   "km": 382.8,
+   "mix": {
+    "highway": 336.0,
+    "interstate": 40.9,
+    "back": 5.9
+   },
+   "roads": [
+    "US-82",
+    "US-51",
+    "I-55"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "gondola",
+   "b": "harrowgate",
+   "kind": "cable",
+   "km": 1.2,
+   "mix": {
+    "cable": 1.2
+   },
+   "roads": [],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "granary",
+   "b": "hangar",
+   "kind": "road",
+   "km": 106.6,
+   "mix": {
+    "highway": 47.6,
+    "interstate": 54.0,
+    "back": 5.0
+   },
+   "roads": [
+    "I-70",
+    "US-40",
+    "4"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "granary",
+   "b": "mill_town",
+   "kind": "road",
+   "km": 453.6,
+   "mix": {
+    "interstate": 36.0,
+    "highway": 412.7,
+    "back": 4.9
+   },
+   "roads": [
+    "US-30",
+    "31",
+    "117"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "granary",
+   "b": "span",
+   "kind": "road",
+   "km": 189.5,
+   "mix": {
+    "interstate": 21.5,
+    "highway": 164.9,
+    "back": 3.1
+   },
+   "roads": [
+    "US-50",
+    "US-62",
+    "US-22"
+   ],
+   "crossing": "span",
+   "breaks": 2
+  },
+  {
+   "a": "granary",
+   "b": "stables",
+   "kind": "road",
+   "km": 301.4,
+   "mix": {
+    "interstate": 292.5,
+    "highway": 5.1,
+    "back": 3.9
+   },
+   "roads": [
+    "I-71",
+    "I-75",
+    "I-74"
+   ],
+   "crossing": "span",
+   "breaks": 1
+  },
+  {
+   "a": "granary",
+   "b": "visage",
+   "kind": "road",
+   "km": 215.9,
+   "mix": {
+    "interstate": 92.3,
+    "highway": 120.0,
+    "back": 3.6
+   },
+   "roads": [
+    "I-75",
+    "31",
+    "US-68"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "green",
+   "b": "southmost",
+   "kind": "road",
+   "km": 273.6,
+   "mix": {
+    "highway": 145.4,
+    "interstate": 124.8,
+    "back": 3.3
+   },
+   "roads": [
+    "MEX-180",
+    "MEX-150D"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "gullet",
+   "b": "last_stop",
+   "kind": "road",
+   "km": 378.0,
+   "mix": {
+    "highway": 373.4,
+    "back": 4.6
+   },
+   "roads": [
+    "US-90",
+    "US-285"
+   ],
+   "crossing": null,
+   "breaks": 4
+  },
+  {
+   "a": "gullet",
+   "b": "nodders",
+   "kind": "road",
+   "km": 458.9,
+   "mix": {
+    "highway": 427.8,
+    "interstate": 25.6,
+    "back": 5.5
+   },
+   "roads": [
+    "US-90",
+    "US-285",
+    "US-385"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "gullet",
+   "b": "sweetwell",
+   "kind": "road",
+   "km": 247.9,
+   "mix": {
+    "highway": 241.6,
+    "interstate": 3.5,
+    "back": 2.8
+   },
+   "roads": [
+    "US-90",
+    "I-35"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "gullet",
+   "b": "twice",
+   "kind": "road",
+   "km": 248.5,
+   "mix": {
+    "highway": 246.4,
+    "back": 2.1
+   },
+   "roads": [
+    "US-277",
+    "US-87",
+    "US-90"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "halter",
+   "b": "long_fence",
+   "kind": "road",
+   "km": 76.9,
+   "mix": {
+    "interstate": 66.5,
+    "back": 10.4
+   },
+   "roads": [
+    "I-20"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "halter",
+   "b": "silo",
+   "kind": "road",
+   "km": 339.6,
+   "mix": {
+    "highway": 327.6,
+    "interstate": 4.5,
+    "back": 7.6
+   },
+   "roads": [
+    "US-84",
+    "US-67",
+    "US-83"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "halter",
+   "b": "stockade",
+   "kind": "road",
+   "km": 473.9,
+   "mix": {
+    "interstate": 222.8,
+    "highway": 242.2,
+    "back": 8.9
+   },
+   "roads": [
+    "I-44",
+    "US-277",
+    "US-82"
+   ],
+   "crossing": null,
+   "breaks": 4
+  },
+  {
+   "a": "halter",
+   "b": "sweetwell",
+   "kind": "road",
+   "km": 407.5,
+   "mix": {
+    "interstate": 80.0,
+    "highway": 319.3,
+    "back": 8.3
+   },
+   "roads": [
+    "US-87",
+    "I-10",
+    "US-84"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "halter",
+   "b": "twice",
+   "kind": "road",
+   "km": 153.7,
+   "mix": {
+    "highway": 141.7,
+    "interstate": 4.5,
+    "back": 7.5
+   },
+   "roads": [
+    "US-277",
+    "I-20"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "hangar",
+   "b": "mill_town",
+   "kind": "road",
+   "km": 427.3,
+   "mix": {
+    "interstate": 359.5,
+    "highway": 62.6,
+    "back": 5.1
+   },
+   "roads": [
+    "I-65",
+    "I-70",
+    "US-35"
+   ],
+   "crossing": null,
+   "breaks": 5
+  },
+  {
+   "a": "hangar",
+   "b": "span",
+   "kind": "road",
+   "km": 121.5,
+   "mix": {
+    "highway": 34.6,
+    "interstate": 83.6,
+    "back": 3.3
+   },
+   "roads": [
+    "I-75",
+    "US-50",
+    "I-275"
+   ],
+   "crossing": "span",
+   "breaks": 0
+  },
+  {
+   "a": "hangar",
+   "b": "stables",
+   "kind": "road",
+   "km": 226.2,
+   "mix": {
+    "highway": 13.8,
+    "interstate": 208.3,
+    "back": 4.1
+   },
+   "roads": [
+    "I-75",
+    "4",
+    "I-74"
+   ],
+   "crossing": "span",
+   "breaks": 1
+  },
+  {
+   "a": "hangar",
+   "b": "track",
+   "kind": "road",
+   "km": 219.4,
+   "mix": {
+    "interstate": 148.2,
+    "highway": 62.6,
+    "back": 8.6
+   },
+   "roads": [
+    "I-70",
+    "US-35",
+    "I-74"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "hangar",
+   "b": "visage",
+   "kind": "road",
+   "km": 235.8,
+   "mix": {
+    "interstate": 88.3,
+    "highway": 143.7,
+    "back": 3.8
+   },
+   "roads": [
+    "US-68",
+    "I-75",
+    "I-70"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "harrowgate",
+   "b": "wisher",
+   "kind": "cable",
+   "km": 1.0,
+   "mix": {
+    "cable": 1.0
+   },
+   "roads": [],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "haven",
+   "b": "lighthouse",
+   "kind": "road",
+   "km": 41.9,
+   "mix": {
+    "interstate": 28.2,
+    "highway": 8.4,
+    "back": 5.3
+   },
+   "roads": [
+    "I-55",
+    "US-51",
+    "I-40"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "haven",
+   "b": "saltlick",
+   "kind": "road",
+   "km": 63.9,
+   "mix": {
+    "highway": 26.9,
+    "interstate": 31.9,
+    "back": 5.1
+   },
+   "roads": [
+    "US-51",
+    "I-55",
+    "I-40"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "helena",
+   "b": "partridge",
+   "kind": "road",
+   "km": 415.9,
+   "mix": {
+    "highway": 244.0,
+    "interstate": 165.1,
+    "back": 6.9
+   },
+   "roads": [
+    "I-30",
+    "US-79",
+    "US-270"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "helena",
+   "b": "pines",
+   "kind": "road",
+   "km": 406.5,
+   "mix": {
+    "highway": 395.1,
+    "interstate": 5.7,
+    "back": 5.6
+   },
+   "roads": [
+    "US-63",
+    "US-79",
+    "US-167"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "helena",
+   "b": "quake",
+   "kind": "road",
+   "km": 420.6,
+   "mix": {
+    "highway": 408.5,
+    "back": 12.1
+   },
+   "roads": [
+    "US-49",
+    "US-62",
+    "US-63"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "helena",
+   "b": "rock",
+   "kind": "road",
+   "km": 222.5,
+   "mix": {
+    "highway": 97.5,
+    "interstate": 118.8,
+    "back": 6.2
+   },
+   "roads": [
+    "I-40",
+    "US-49",
+    "US-67"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "helena",
+   "b": "siege",
+   "kind": "road",
+   "km": 411.4,
+   "mix": {
+    "interstate": 29.5,
+    "highway": 376.5,
+    "back": 5.5
+   },
+   "roads": [
+    "US-65",
+    "US-165",
+    "US-49"
+   ],
+   "crossing": "siege",
+   "breaks": 3
+  },
+  {
+   "a": "helena",
+   "b": "weigh_station",
+   "kind": "road",
+   "km": 196.7,
+   "mix": {
+    "interstate": 102.4,
+    "highway": 85.3,
+    "back": 9.0
+   },
+   "roads": [
+    "I-40",
+    "US-49",
+    "I-55"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "highwater",
+   "b": "pen",
+   "kind": "road",
+   "km": 298.0,
+   "mix": {
+    "highway": 16.7,
+    "interstate": 263.3,
+    "back": 18.0
+   },
+   "roads": [
+    "ON-401",
+    "ON-GE",
+    "ON-400"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "highwater",
+   "b": "tunnel",
+   "kind": "road",
+   "km": 378.5,
+   "mix": {
+    "interstate": 352.7,
+    "highway": 16.7,
+    "back": 9.2
+   },
+   "roads": [
+    "ON-401",
+    "ON-403",
+    "ON-QEW"
+   ],
+   "crossing": "tunnel",
+   "breaks": 3
+  },
+  {
+   "a": "hill",
+   "b": "kingdom",
+   "kind": "road",
+   "km": 407.0,
+   "mix": {
+    "highway": 282.9,
+    "interstate": 116.2,
+    "back": 8.0
+   },
+   "roads": [
+    "US-27",
+    "I-75",
+    "FT"
+   ],
+   "crossing": null,
+   "breaks": 4
+  },
+  {
+   "a": "hill",
+   "b": "mirror_town",
+   "kind": "road",
+   "km": 336.2,
+   "mix": {
+    "highway": 334.7,
+    "back": 1.5
+   },
+   "roads": [
+    "US-19",
+    "US-41",
+    "US-27"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "hill",
+   "b": "mobile",
+   "kind": "road",
+   "km": 383.9,
+   "mix": {
+    "interstate": 335.4,
+    "highway": 47.5,
+    "back": 1.0
+   },
+   "roads": [
+    "I-10",
+    "US-90",
+    "366"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "hill",
+   "b": "neon",
+   "kind": "road",
+   "km": 204.2,
+   "mix": {
+    "highway": 105.8,
+    "interstate": 96.4,
+    "back": 2.0
+   },
+   "roads": [
+    "I-10",
+    "US-231",
+    "US-90"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "hill",
+   "b": "orchard",
+   "kind": "road",
+   "km": 314.8,
+   "mix": {
+    "highway": 147.5,
+    "interstate": 165.2,
+    "back": 2.1
+   },
+   "roads": [
+    "I-75",
+    "US-319",
+    "US-90"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "hill",
+   "b": "pier_saint",
+   "kind": "road",
+   "km": 408.2,
+   "mix": {
+    "highway": 404.8,
+    "back": 3.4
+   },
+   "roads": [
+    "US-19",
+    "US-27"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "hill",
+   "b": "rails",
+   "kind": "road",
+   "km": 397.1,
+   "mix": {
+    "highway": 396.4,
+    "back": 0.6
+   },
+   "roads": [
+    "US-84",
+    "US-431",
+    "US-27"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "hill",
+   "b": "stadium",
+   "kind": "road",
+   "km": 486.9,
+   "mix": {
+    "highway": 474.1,
+    "interstate": 8.8,
+    "back": 4.0
+   },
+   "roads": [
+    "US-231",
+    "US-82",
+    "US-84"
+   ],
+   "crossing": null,
+   "breaks": 4
+  },
+  {
+   "a": "hub",
+   "b": "lighthouse",
+   "kind": "road",
+   "km": 149.3,
+   "mix": {
+    "interstate": 138.4,
+    "highway": 7.1,
+    "back": 3.8
+   },
+   "roads": [
+    "I-40",
+    "US-70"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "hub",
+   "b": "saltlick",
+   "kind": "road",
+   "km": 156.3,
+   "mix": {
+    "highway": 25.7,
+    "interstate": 127.0,
+    "back": 3.6
+   },
+   "roads": [
+    "I-40",
+    "US-51",
+    "US-70"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "hub",
+   "b": "shoals",
+   "kind": "road",
+   "km": 181.4,
+   "mix": {
+    "highway": 179.5,
+    "back": 1.9
+   },
+   "roads": [
+    "US-72",
+    "US-70"
+   ],
+   "crossing": "shoals",
+   "breaks": 0
+  },
+  {
+   "a": "hub",
+   "b": "sinkhole",
+   "kind": "road",
+   "km": 336.1,
+   "mix": {
+    "highway": 333.9,
+    "back": 2.2
+   },
+   "roads": [
+    "US-68",
+    "US-79",
+    "US-641"
+   ],
+   "crossing": "spillway",
+   "breaks": 2
+  },
+  {
+   "a": "hub",
+   "b": "spillway",
+   "kind": "road",
+   "km": 200.3,
+   "mix": {
+    "highway": 186.9,
+    "interstate": 8.3,
+    "back": 5.1
+   },
+   "roads": [
+    "US-45E",
+    "I-24",
+    "US-70"
+   ],
+   "crossing": "spillway",
+   "breaks": 2
+  },
+  {
+   "a": "hub",
+   "b": "stadium",
+   "kind": "road",
+   "km": 373.6,
+   "mix": {
+    "highway": 368.9,
+    "back": 4.8
+   },
+   "roads": [
+    "US-82",
+    "US-ALT45",
+    "US-70"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "junction",
+   "b": "krin_s_nest",
+   "kind": "tunnel",
+   "km": 144.8,
+   "mix": {
+    "tunnel": 144.8
+   },
+   "roads": [
+    "the Deep Lines"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "junction",
+   "b": "orleans",
+   "kind": "entrance",
+   "km": 106.3,
+   "mix": {
+    "tunnel": 106.3
+   },
+   "roads": [
+    "the Deep Lines"
+   ],
+   "crossing": "junction",
+   "breaks": 0
+  },
+  {
+   "a": "junction",
+   "b": "pumphouse",
+   "kind": "tunnel",
+   "km": 98.3,
+   "mix": {
+    "tunnel": 98.3
+   },
+   "roads": [
+    "the Deep Lines"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "kettle",
+   "b": "red",
+   "kind": "road",
+   "km": 295.3,
+   "mix": {
+    "highway": 284.6,
+    "interstate": 3.9,
+    "back": 6.9
+   },
+   "roads": [
+    "US-171",
+    "I-20",
+    "US-71"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "kettle",
+   "b": "silo",
+   "kind": "road",
+   "km": 598.8,
+   "mix": {
+    "highway": 592.4,
+    "back": 6.5
+   },
+   "roads": [
+    "US-84",
+    "US-171",
+    "US-79"
+   ],
+   "crossing": null,
+   "breaks": 4
+  },
+  {
+   "a": "kettle",
+   "b": "spindletop",
+   "kind": "road",
+   "km": 298.9,
+   "mix": {
+    "highway": 283.3,
+    "interstate": 4.3,
+    "back": 11.3
+   },
+   "roads": [
+    "US-190",
+    "US-69",
+    "US-171"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "kingdom",
+   "b": "mirror_town",
+   "kind": "road",
+   "km": 113.4,
+   "mix": {
+    "highway": 104.2,
+    "back": 9.2
+   },
+   "roads": [
+    "50",
+    "US-98",
+    "429"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "kingdom",
+   "b": "orchard",
+   "kind": "road",
+   "km": 590.3,
+   "mix": {
+    "interstate": 495.0,
+    "highway": 85.4,
+    "back": 9.8
+   },
+   "roads": [
+    "I-75",
+    "FT",
+    "429"
+   ],
+   "crossing": null,
+   "breaks": 4
+  },
+  {
+   "a": "kingdom",
+   "b": "pier_saint",
+   "kind": "road",
+   "km": 204.2,
+   "mix": {
+    "highway": 147.0,
+    "interstate": 46.1,
+    "back": 11.0
+   },
+   "roads": [
+    "50",
+    "I-275",
+    "US-301"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "kingdom",
+   "b": "sawgrass",
+   "kind": "road",
+   "km": 350.3,
+   "mix": {
+    "highway": 341.3,
+    "back": 9.1
+   },
+   "roads": [
+    "FT",
+    "US-441",
+    "US-98"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "krin_s_nest",
+   "b": "reserve",
+   "kind": "tunnel",
+   "km": 494.2,
+   "mix": {
+    "tunnel": 494.2
+   },
+   "roads": [
+    "the Deep Lines"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "kudzu",
+   "b": "mobile",
+   "kind": "road",
+   "km": 638.0,
+   "mix": {
+    "interstate": 631.4,
+    "back": 6.6
+   },
+   "roads": [
+    "I-65",
+    "I-85",
+    "I-75"
+   ],
+   "crossing": null,
+   "breaks": 4
+  },
+  {
+   "a": "kudzu",
+   "b": "neon",
+   "kind": "road",
+   "km": 583.8,
+   "mix": {
+    "highway": 310.6,
+    "interstate": 265.6,
+    "back": 7.6
+   },
+   "roads": [
+    "US-431",
+    "US-231",
+    "I-75"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "kudzu",
+   "b": "orchard",
+   "kind": "road",
+   "km": 252.9,
+   "mix": {
+    "interstate": 245.2,
+    "back": 7.7
+   },
+   "roads": [
+    "I-75",
+    "I-85",
+    "I-16"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "kudzu",
+   "b": "painted_barns",
+   "kind": "road",
+   "km": 67.4,
+   "mix": {
+    "interstate": 53.4,
+    "back": 14.0
+   },
+   "roads": [
+    "I-75"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "kudzu",
+   "b": "rails",
+   "kind": "road",
+   "km": 376.9,
+   "mix": {
+    "interstate": 281.0,
+    "highway": 89.7,
+    "back": 6.2
+   },
+   "roads": [
+    "I-85",
+    "I-75",
+    "US-80"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "kudzu",
+   "b": "spaghetti",
+   "kind": "road",
+   "km": 198.6,
+   "mix": {
+    "highway": 35.5,
+    "interstate": 154.0,
+    "back": 9.1
+   },
+   "roads": [
+    "I-75",
+    "I-85",
+    "US-23"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "last_stop",
+   "b": "twice",
+   "kind": "road",
+   "km": 357.0,
+   "mix": {
+    "highway": 327.4,
+    "interstate": 25.6,
+    "back": 4.0
+   },
+   "roads": [
+    "US-67",
+    "US-285",
+    "I-10"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "lighthouse",
+   "b": "saltlick",
+   "kind": "road",
+   "km": 35.4,
+   "mix": {
+    "interstate": 11.4,
+    "highway": 18.6,
+    "back": 5.5
+   },
+   "roads": [
+    "US-51",
+    "I-40"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "lighthouse",
+   "b": "shoals",
+   "kind": "road",
+   "km": 245.6,
+   "mix": {
+    "highway": 241.8,
+    "back": 3.8
+   },
+   "roads": [
+    "US-72",
+    "205"
+   ],
+   "crossing": "shoals",
+   "breaks": 2
+  },
+  {
+   "a": "lighthouse",
+   "b": "stadium",
+   "kind": "road",
+   "km": 375.9,
+   "mix": {
+    "interstate": 3.8,
+    "highway": 365.4,
+    "back": 6.7
+   },
+   "roads": [
+    "US-78",
+    "US-82",
+    "US-ALT45"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "lighthouse",
+   "b": "weigh_station",
+   "kind": "road",
+   "km": 14.4,
+   "mix": {
+    "interstate": 7.6,
+    "back": 6.8
+   },
+   "roads": [
+    "I-55"
+   ],
+   "crossing": "lighthouse",
+   "breaks": 0
+  },
+  {
+   "a": "long_fence",
+   "b": "twice",
+   "kind": "road",
+   "km": 208.1,
+   "mix": {
+    "interstate": 62.0,
+    "highway": 141.7,
+    "back": 4.4
+   },
+   "roads": [
+    "US-277",
+    "I-20"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "lookout",
+   "b": "orchard",
+   "kind": "road",
+   "km": 446.5,
+   "mix": {
+    "interstate": 263.6,
+    "highway": 176.6,
+    "back": 6.3
+   },
+   "roads": [
+    "US-278",
+    "I-59",
+    "I-75"
+   ],
+   "crossing": null,
+   "breaks": 4
+  },
+  {
+   "a": "lookout",
+   "b": "painted_barns",
+   "kind": "road",
+   "km": 39.3,
+   "mix": {
+    "interstate": 26.6,
+    "back": 12.7
+   },
+   "roads": [
+    "I-24",
+    "I-75"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "lookout",
+   "b": "rails",
+   "kind": "road",
+   "km": 499.3,
+   "mix": {
+    "highway": 295.0,
+    "interstate": 199.5,
+    "back": 4.9
+   },
+   "roads": [
+    "I-59",
+    "US-27",
+    "US-278"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "lookout",
+   "b": "spaghetti",
+   "kind": "road",
+   "km": 310.0,
+   "mix": {
+    "interstate": 83.2,
+    "highway": 219.1,
+    "back": 7.7
+   },
+   "roads": [
+    "US-19",
+    "64",
+    "US-129"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "lookout",
+   "b": "sphere",
+   "kind": "road",
+   "km": 316.8,
+   "mix": {
+    "interstate": 52.3,
+    "highway": 258.6,
+    "back": 5.9
+   },
+   "roads": [
+    "US-129",
+    "US-19",
+    "64"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "loop",
+   "b": "mill_town",
+   "kind": "road",
+   "km": 110.0,
+   "mix": {
+    "interstate": 106.5,
+    "back": 3.5
+   },
+   "roads": [
+    "I-55",
+    "I-290",
+    "I-90"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "mammoth",
+   "b": "sinkhole",
+   "kind": "road",
+   "km": 56.6,
+   "mix": {
+    "interstate": 32.2,
+    "highway": 7.4,
+    "back": 17.0
+   },
+   "roads": [
+    "I-65",
+    "US-31W"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "mammoth",
+   "b": "sphere",
+   "kind": "road",
+   "km": 369.9,
+   "mix": {
+    "interstate": 163.7,
+    "highway": 188.9,
+    "back": 17.3
+   },
+   "roads": [
+    "80",
+    "I-75",
+    "I-65"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "mammoth",
+   "b": "stables",
+   "kind": "road",
+   "km": 219.5,
+   "mix": {
+    "highway": 130.7,
+    "interstate": 71.6,
+    "back": 17.2
+   },
+   "roads": [
+    "BGP",
+    "I-65",
+    "4"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "mammoth",
+   "b": "vault",
+   "kind": "road",
+   "km": 117.5,
+   "mix": {
+    "highway": 28.5,
+    "interstate": 71.6,
+    "back": 17.3
+   },
+   "roads": [
+    "I-65",
+    "US-31W",
+    "WKP"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "mill_town",
+   "b": "motor",
+   "kind": "road",
+   "km": 393.3,
+   "mix": {
+    "interstate": 112.2,
+    "highway": 272.1,
+    "back": 9.0
+   },
+   "roads": [
+    "US-12",
+    "I-94",
+    "US-23"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "mill_town",
+   "b": "span",
+   "kind": "road",
+   "km": 468.6,
+   "mix": {
+    "highway": 144.9,
+    "interstate": 320.4,
+    "back": 3.3
+   },
+   "roads": [
+    "I-65",
+    "US-52",
+    "I-275"
+   ],
+   "crossing": "span",
+   "breaks": 2
+  },
+  {
+   "a": "mill_town",
+   "b": "track",
+   "kind": "road",
+   "km": 277.4,
+   "mix": {
+    "interstate": 268.9,
+    "back": 8.5
+   },
+   "roads": [
+    "I-65",
+    "I-74",
+    "I-80"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "mill_town",
+   "b": "visage",
+   "kind": "road",
+   "km": 337.7,
+   "mix": {
+    "interstate": 333.9,
+    "back": 3.7
+   },
+   "roads": [
+    "I-80",
+    "I-75",
+    "I-90"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "mirror_town",
+   "b": "orchard",
+   "kind": "road",
+   "km": 546.2,
+   "mix": {
+    "highway": 207.5,
+    "interstate": 335.4,
+    "back": 3.3
+   },
+   "roads": [
+    "I-75",
+    "US-41",
+    "US-27"
+   ],
+   "crossing": null,
+   "breaks": 5
+  },
+  {
+   "a": "mirror_town",
+   "b": "pier_saint",
+   "kind": "road",
+   "km": 110.1,
+   "mix": {
+    "interstate": 35.7,
+    "highway": 69.8,
+    "back": 4.6
+   },
+   "roads": [
+    "US-41",
+    "I-275",
+    "US-98"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "mirror_town",
+   "b": "sawgrass",
+   "kind": "road",
+   "km": 386.9,
+   "mix": {
+    "highway": 384.3,
+    "back": 2.6
+   },
+   "roads": [
+    "US-27",
+    "US-98"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "mission",
+   "b": "sweetwell",
+   "kind": "road",
+   "km": 23.3,
+   "mix": {
+    "interstate": 20.2,
+    "back": 3.1
+   },
+   "roads": [
+    "I-37",
+    "I-410",
+    "I-10"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "mobile",
+   "b": "neon",
+   "kind": "road",
+   "km": 244.2,
+   "mix": {
+    "interstate": 95.9,
+    "highway": 145.6,
+    "back": 2.7
+   },
+   "roads": [
+    "US-98",
+    "I-10",
+    "I-110"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "mobile",
+   "b": "orchard",
+   "kind": "road",
+   "km": 563.9,
+   "mix": {
+    "interstate": 370.2,
+    "highway": 190.8,
+    "back": 2.8
+   },
+   "roads": [
+    "I-65",
+    "US-80",
+    "I-85"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "mobile",
+   "b": "rails",
+   "kind": "road",
+   "km": 441.4,
+   "mix": {
+    "highway": 89.7,
+    "interstate": 350.4,
+    "back": 1.3
+   },
+   "roads": [
+    "I-65",
+    "I-85",
+    "US-80"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "mobile",
+   "b": "siege",
+   "kind": "road",
+   "km": 387.8,
+   "mix": {
+    "interstate": 80.2,
+    "highway": 306.4,
+    "back": 1.3
+   },
+   "roads": [
+    "US-45",
+    "US-49",
+    "US-84"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "mobile",
+   "b": "spaghetti",
+   "kind": "road",
+   "km": 620.1,
+   "mix": {
+    "highway": 35.5,
+    "interstate": 580.4,
+    "back": 4.2
+   },
+   "roads": [
+    "I-85",
+    "I-65",
+    "US-23"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "mobile",
+   "b": "sphere",
+   "kind": "road",
+   "km": 871.2,
+   "mix": {
+    "interstate": 611.3,
+    "highway": 257.5,
+    "back": 2.4
+   },
+   "roads": [
+    "I-85",
+    "I-65",
+    "US-23"
+   ],
+   "crossing": null,
+   "breaks": 8
+  },
+  {
+   "a": "motor",
+   "b": "tunnel",
+   "kind": "road",
+   "km": 20.6,
+   "mix": {
+    "interstate": 8.5,
+    "back": 12.1
+   },
+   "roads": [
+    "I-75",
+    "I-94"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "motor",
+   "b": "visage",
+   "kind": "road",
+   "km": 99.7,
+   "mix": {
+    "interstate": 92.1,
+    "back": 7.6
+   },
+   "roads": [
+    "I-75",
+    "I-94"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "mouth",
+   "b": "pesca",
+   "kind": "road",
+   "km": 172.0,
+   "mix": {
+    "highway": 164.7,
+    "back": 7.3
+   },
+   "roads": [
+    "US-83",
+    "US-77",
+    "US-2"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "mouth",
+   "b": "soto",
+   "kind": "road",
+   "km": 278.0,
+   "mix": {
+    "highway": 272.3,
+    "back": 5.7
+   },
+   "roads": [
+    "MEX-180",
+    "MEX-2"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "mudflat",
+   "b": "siege",
+   "kind": "road",
+   "km": 182.4,
+   "mix": {
+    "interstate": 8.8,
+    "highway": 167.5,
+    "back": 6.1
+   },
+   "roads": [
+    "US-61",
+    "US-49",
+    "I-20"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "mudflat",
+   "b": "stadium",
+   "kind": "road",
+   "km": 381.4,
+   "mix": {
+    "highway": 372.0,
+    "back": 9.4
+   },
+   "roads": [
+    "US-82",
+    "US-49"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "neon",
+   "b": "orchard",
+   "kind": "road",
+   "km": 466.3,
+   "mix": {
+    "interstate": 5.3,
+    "highway": 457.1,
+    "back": 3.9
+   },
+   "roads": [
+    "US-80",
+    "US-431",
+    "US-231"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "neon",
+   "b": "rails",
+   "kind": "road",
+   "km": 386.9,
+   "mix": {
+    "highway": 384.5,
+    "back": 2.4
+   },
+   "roads": [
+    "US-231",
+    "US-431",
+    "US-82"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "neon",
+   "b": "spaghetti",
+   "kind": "road",
+   "km": 565.9,
+   "mix": {
+    "highway": 346.1,
+    "interstate": 214.6,
+    "back": 5.2
+   },
+   "roads": [
+    "US-431",
+    "US-231",
+    "I-85"
+   ],
+   "crossing": null,
+   "breaks": 5
+  },
+  {
+   "a": "neon",
+   "b": "sphere",
+   "kind": "road",
+   "km": 817.0,
+   "mix": {
+    "highway": 568.1,
+    "interstate": 245.5,
+    "back": 3.4
+   },
+   "roads": [
+    "US-431",
+    "US-23",
+    "US-231"
+   ],
+   "crossing": null,
+   "breaks": 10
+  },
+  {
+   "a": "neon",
+   "b": "stadium",
+   "kind": "road",
+   "km": 476.7,
+   "mix": {
+    "highway": 462.2,
+    "interstate": 8.8,
+    "back": 5.7
+   },
+   "roads": [
+    "US-231",
+    "US-82",
+    "US-31"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "nodders",
+   "b": "teeth",
+   "kind": "road",
+   "km": 36.2,
+   "mix": {
+    "interstate": 22.6,
+    "back": 13.6
+   },
+   "roads": [
+    "I-20"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "orchard",
+   "b": "rails",
+   "kind": "road",
+   "km": 302.8,
+   "mix": {
+    "interstate": 19.9,
+    "highway": 280.5,
+    "back": 2.5
+   },
+   "roads": [
+    "US-80",
+    "US-280",
+    "US-29"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "orchard",
+   "b": "spaghetti",
+   "kind": "road",
+   "km": 227.4,
+   "mix": {
+    "highway": 35.5,
+    "interstate": 186.6,
+    "back": 5.3
+   },
+   "roads": [
+    "I-75",
+    "I-85",
+    "US-23"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "orchard",
+   "b": "sphere",
+   "kind": "road",
+   "km": 466.6,
+   "mix": {
+    "highway": 463.1,
+    "back": 3.5
+   },
+   "roads": [
+    "US-129",
+    "US-23",
+    "US-441"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "orleans",
+   "b": "pumphouse",
+   "kind": "entrance",
+   "km": 8.1,
+   "mix": {
+    "tunnel": 8.1
+   },
+   "roads": [
+    "the Deep Lines"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "painted_barns",
+   "b": "sphere",
+   "kind": "road",
+   "km": 317.0,
+   "mix": {
+    "highway": 258.6,
+    "interstate": 48.6,
+    "back": 9.8
+   },
+   "roads": [
+    "US-129",
+    "US-19",
+    "64"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "partridge",
+   "b": "pellet",
+   "kind": "road",
+   "km": 752.0,
+   "mix": {
+    "highway": 626.7,
+    "interstate": 121.9,
+    "back": 3.4
+   },
+   "roads": [
+    "US-71",
+    "I-540",
+    "I-44"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "partridge",
+   "b": "pines",
+   "kind": "road",
+   "km": 336.1,
+   "mix": {
+    "highway": 333.7,
+    "back": 2.4
+   },
+   "roads": [
+    "US-167",
+    "US-79",
+    "US-82"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "partridge",
+   "b": "red",
+   "kind": "road",
+   "km": 114.5,
+   "mix": {
+    "highway": 111.5,
+    "back": 3.0
+   },
+   "roads": [
+    "US-71"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "partridge",
+   "b": "rock",
+   "kind": "road",
+   "km": 234.3,
+   "mix": {
+    "highway": 14.8,
+    "interstate": 216.5,
+    "back": 3.1
+   },
+   "roads": [
+    "I-30",
+    "I-630",
+    "US-67"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "partridge",
+   "b": "stack",
+   "kind": "road",
+   "km": 295.0,
+   "mix": {
+    "highway": 89.5,
+    "interstate": 202.8,
+    "back": 2.7
+   },
+   "roads": [
+    "I-30",
+    "US-380",
+    "US-75"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "partridge",
+   "b": "stockade",
+   "kind": "road",
+   "km": 505.2,
+   "mix": {
+    "interstate": 182.6,
+    "highway": 318.7,
+    "back": 4.0
+   },
+   "roads": [
+    "INT",
+    "I-40",
+    "US-82"
+   ],
+   "crossing": null,
+   "breaks": 4
+  },
+  {
+   "a": "pellet",
+   "b": "quake",
+   "kind": "road",
+   "km": 744.0,
+   "mix": {
+    "interstate": 13.9,
+    "highway": 721.4,
+    "back": 8.7
+   },
+   "roads": [
+    "US-50",
+    "US-67",
+    "8"
+   ],
+   "crossing": null,
+   "breaks": 5
+  },
+  {
+   "a": "pellet",
+   "b": "rock",
+   "kind": "road",
+   "km": 656.2,
+   "mix": {
+    "interstate": 56.5,
+    "highway": 597.0,
+    "back": 2.8
+   },
+   "roads": [
+    "US-65",
+    "US-50",
+    "I-40"
+   ],
+   "crossing": null,
+   "breaks": 4
+  },
+  {
+   "a": "pellet",
+   "b": "stack",
+   "kind": "road",
+   "km": 790.4,
+   "mix": {
+    "highway": 695.7,
+    "interstate": 92.2,
+    "back": 2.5
+   },
+   "roads": [
+    "US-69",
+    "US-71",
+    "US-75"
+   ],
+   "crossing": null,
+   "breaks": 4
+  },
+  {
+   "a": "pellet",
+   "b": "stockade",
+   "kind": "road",
+   "km": 561.0,
+   "mix": {
+    "interstate": 557.4,
+    "back": 3.7
+   },
+   "roads": [
+    "I-35",
+    "I-70",
+    "I-335"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "pellet",
+   "b": "weigh_station",
+   "kind": "road",
+   "km": 759.1,
+   "mix": {
+    "interstate": 43.7,
+    "highway": 709.9,
+    "back": 5.5
+   },
+   "roads": [
+    "US-63",
+    "US-65",
+    "US-60"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "pesca",
+   "b": "soto",
+   "kind": "road",
+   "km": 354.1,
+   "mix": {
+    "highway": 351.3,
+    "back": 2.8
+   },
+   "roads": [
+    "MEX-180",
+    "MEX-97",
+    "US-83"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "pines",
+   "b": "quake",
+   "kind": "road",
+   "km": 644.8,
+   "mix": {
+    "highway": 612.3,
+    "interstate": 24.8,
+    "back": 7.7
+   },
+   "roads": [
+    "US-167",
+    "US-67",
+    "US-62"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "pines",
+   "b": "red",
+   "kind": "road",
+   "km": 351.8,
+   "mix": {
+    "highway": 153.2,
+    "interstate": 196.9,
+    "back": 1.7
+   },
+   "roads": [
+    "I-49",
+    "US-167",
+    "1"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "pines",
+   "b": "rock",
+   "kind": "road",
+   "km": 300.6,
+   "mix": {
+    "interstate": 40.1,
+    "highway": 258.8,
+    "back": 1.8
+   },
+   "roads": [
+    "US-167",
+    "I-530",
+    "I-30"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "pines",
+   "b": "siege",
+   "kind": "road",
+   "km": 326.2,
+   "mix": {
+    "highway": 295.7,
+    "interstate": 29.5,
+    "back": 1.0
+   },
+   "roads": [
+    "US-84",
+    "US-65",
+    "US-167"
+   ],
+   "crossing": "siege",
+   "breaks": 0
+  },
+  {
+   "a": "pines",
+   "b": "spindletop",
+   "kind": "road",
+   "km": 406.4,
+   "mix": {
+    "highway": 282.5,
+    "interstate": 117.7,
+    "back": 6.2
+   },
+   "roads": [
+    "US-167",
+    "US-165",
+    "I-10"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "pines",
+   "b": "weigh_station",
+   "kind": "road",
+   "km": 473.4,
+   "mix": {
+    "interstate": 108.1,
+    "highway": 360.7,
+    "back": 4.5
+   },
+   "roads": [
+    "US-63",
+    "US-79",
+    "I-40"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "pinwheel",
+   "b": "silo",
+   "kind": "road",
+   "km": 56.7,
+   "mix": {
+    "highway": 11.5,
+    "interstate": 43.4,
+    "back": 1.8
+   },
+   "roads": [
+    "I-35",
+    "US-77",
+    "US-84"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "pinwheel",
+   "b": "stack",
+   "kind": "road",
+   "km": 126.9,
+   "mix": {
+    "highway": 20.8,
+    "interstate": 104.1,
+    "back": 1.9
+   },
+   "roads": [
+    "I-35E",
+    "US-75",
+    "I-35"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "pitch",
+   "b": "spindletop",
+   "kind": "road",
+   "km": 91.3,
+   "mix": {
+    "interstate": 35.8,
+    "highway": 40.9,
+    "back": 14.5
+   },
+   "roads": [
+    "73",
+    "I-10"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "quake",
+   "b": "rock",
+   "kind": "road",
+   "km": 405.4,
+   "mix": {
+    "interstate": 21.8,
+    "highway": 375.2,
+    "back": 8.3
+   },
+   "roads": [
+    "US-67",
+    "US-62",
+    "I-40"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "quake",
+   "b": "siege",
+   "kind": "road",
+   "km": 702.2,
+   "mix": {
+    "interstate": 29.5,
+    "highway": 665.2,
+    "back": 7.5
+   },
+   "roads": [
+    "US-62",
+    "US-65",
+    "US-49"
+   ],
+   "crossing": "siege",
+   "breaks": 7
+  },
+  {
+   "a": "quake",
+   "b": "weigh_station",
+   "kind": "road",
+   "km": 319.6,
+   "mix": {
+    "interstate": 29.8,
+    "highway": 278.7,
+    "back": 11.1
+   },
+   "roads": [
+    "US-62",
+    "US-63",
+    "I-55"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "rails",
+   "b": "spaghetti",
+   "kind": "road",
+   "km": 359.0,
+   "mix": {
+    "highway": 125.2,
+    "interstate": 230.0,
+    "back": 3.8
+   },
+   "roads": [
+    "I-85",
+    "US-80",
+    "US-23"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "rails",
+   "b": "sphere",
+   "kind": "road",
+   "km": 610.2,
+   "mix": {
+    "highway": 347.2,
+    "interstate": 261.0,
+    "back": 2.0
+   },
+   "roads": [
+    "I-85",
+    "US-23",
+    "US-441"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "rails",
+   "b": "stadium",
+   "kind": "road",
+   "km": 344.0,
+   "mix": {
+    "highway": 253.2,
+    "interstate": 86.4,
+    "back": 4.3
+   },
+   "roads": [
+    "US-82",
+    "I-85",
+    "US-80"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "red",
+   "b": "spindletop",
+   "kind": "road",
+   "km": 339.6,
+   "mix": {
+    "highway": 305.1,
+    "interstate": 27.7,
+    "back": 6.8
+   },
+   "roads": [
+    "US-96",
+    "US-79",
+    "US-59"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "reservoir",
+   "b": "siege",
+   "kind": "road",
+   "km": 441.0,
+   "mix": {
+    "interstate": 254.3,
+    "highway": 176.6,
+    "back": 10.1
+   },
+   "roads": [
+    "I-55",
+    "US-51",
+    "I-20"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "reservoir",
+   "b": "stadium",
+   "kind": "road",
+   "km": 454.2,
+   "mix": {
+    "highway": 399.8,
+    "interstate": 40.9,
+    "back": 13.5
+   },
+   "roads": [
+    "US-82",
+    "US-51",
+    "I-55"
+   ],
+   "crossing": null,
+   "breaks": 4
+  },
+  {
+   "a": "rock",
+   "b": "siege",
+   "kind": "road",
+   "km": 460.6,
+   "mix": {
+    "interstate": 115.1,
+    "highway": 343.8,
+    "back": 1.6
+   },
+   "roads": [
+    "US-65",
+    "US-165",
+    "I-530"
+   ],
+   "crossing": "siege",
+   "breaks": 2
+  },
+  {
+   "a": "rock",
+   "b": "weigh_station",
+   "kind": "road",
+   "km": 238.6,
+   "mix": {
+    "interstate": 221.2,
+    "highway": 12.2,
+    "back": 5.2
+   },
+   "roads": [
+    "I-40",
+    "US-67",
+    "I-630"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "saltlick",
+   "b": "spillway",
+   "kind": "road",
+   "km": 266.4,
+   "mix": {
+    "highway": 251.3,
+    "interstate": 8.3,
+    "back": 6.8
+   },
+   "roads": [
+    "US-51",
+    "US-45W",
+    "I-24"
+   ],
+   "crossing": "spillway",
+   "breaks": 4
+  },
+  {
+   "a": "shoals",
+   "b": "stadium",
+   "kind": "road",
+   "km": 379.2,
+   "mix": {
+    "highway": 374.4,
+    "back": 4.8
+   },
+   "roads": [
+    "US-82",
+    "US-72",
+    "US-ALT45"
+   ],
+   "crossing": "shoals",
+   "breaks": 3
+  },
+  {
+   "a": "shoals",
+   "b": "strings",
+   "kind": "road",
+   "km": 228.9,
+   "mix": {
+    "highway": 71.2,
+    "interstate": 155.8,
+    "back": 2.0
+   },
+   "roads": [
+    "I-65",
+    "US-72"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "siege",
+   "b": "spindletop",
+   "kind": "road",
+   "km": 480.4,
+   "mix": {
+    "interstate": 147.2,
+    "highway": 327.1,
+    "back": 6.1
+   },
+   "roads": [
+    "US-165",
+    "I-10",
+    "US-65"
+   ],
+   "crossing": "siege",
+   "breaks": 3
+  },
+  {
+   "a": "silo",
+   "b": "stack",
+   "kind": "road",
+   "km": 169.5,
+   "mix": {
+    "highway": 20.2,
+    "interstate": 147.6,
+    "back": 1.7
+   },
+   "roads": [
+    "I-35E",
+    "I-35",
+    "US-75"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "silo",
+   "b": "twice",
+   "kind": "road",
+   "km": 346.8,
+   "mix": {
+    "highway": 345.2,
+    "back": 1.6
+   },
+   "roads": [
+    "US-84",
+    "US-67",
+    "US-277"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "sinkhole",
+   "b": "spillway",
+   "kind": "road",
+   "km": 203.0,
+   "mix": {
+    "highway": 90.2,
+    "interstate": 107.4,
+    "back": 5.4
+   },
+   "roads": [
+    "I-24",
+    "US-79",
+    "US-68"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "soto",
+   "b": "southmost",
+   "kind": "road",
+   "km": 944.2,
+   "mix": {
+    "highway": 640.6,
+    "interstate": 302.7,
+    "back": 0.9
+   },
+   "roads": [
+    "MEX-105",
+    "MEX-150D",
+    "MEX-85"
+   ],
+   "crossing": null,
+   "breaks": 4
+  },
+  {
+   "a": "soto",
+   "b": "tampico",
+   "kind": "road",
+   "km": 452.3,
+   "mix": {
+    "highway": 449.6,
+    "back": 2.6
+   },
+   "roads": [
+    "MEX-180",
+    "MEX-70",
+    "MEX-85"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "spaghetti",
+   "b": "sphere",
+   "kind": "road",
+   "km": 328.8,
+   "mix": {
+    "highway": 293.1,
+    "interstate": 30.9,
+    "back": 4.8
+   },
+   "roads": [
+    "US-23",
+    "US-441",
+    "I-985"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "span",
+   "b": "stables",
+   "kind": "road",
+   "km": 139.5,
+   "mix": {
+    "highway": 137.3,
+    "back": 2.2
+   },
+   "roads": [
+    "US-27",
+    "US-68",
+    "US-50"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "span",
+   "b": "track",
+   "kind": "road",
+   "km": 248.3,
+   "mix": {
+    "highway": 144.9,
+    "interstate": 96.7,
+    "back": 6.7
+   },
+   "roads": [
+    "US-52",
+    "I-275",
+    "I-74"
+   ],
+   "crossing": "span",
+   "breaks": 2
+  },
+  {
+   "a": "sphere",
+   "b": "stables",
+   "kind": "road",
+   "km": 278.9,
+   "mix": {
+    "interstate": 270.9,
+    "highway": 5.1,
+    "back": 3.0
+   },
+   "roads": [
+    "I-75",
+    "US-68",
+    "I-40"
+   ],
+   "crossing": null,
+   "breaks": 3
+  },
+  {
+   "a": "sphere",
+   "b": "strings",
+   "kind": "road",
+   "km": 281.7,
+   "mix": {
+    "interstate": 279.2,
+    "back": 2.5
+   },
+   "roads": [
+    "I-40",
+    "I-65"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "sphere",
+   "b": "vault",
+   "kind": "road",
+   "km": 407.2,
+   "mix": {
+    "highway": 248.4,
+    "interstate": 155.8,
+    "back": 3.1
+   },
+   "roads": [
+    "I-75",
+    "US-150",
+    "US-27"
+   ],
+   "crossing": null,
+   "breaks": 5
+  },
+  {
+   "a": "spillway",
+   "b": "stables",
+   "kind": "road",
+   "km": 372.6,
+   "mix": {
+    "highway": 350.0,
+    "interstate": 17.0,
+    "back": 5.7
+   },
+   "roads": [
+    "BGP",
+    "WKP",
+    "I-24"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "spillway",
+   "b": "strings",
+   "kind": "road",
+   "km": 183.1,
+   "mix": {
+    "interstate": 177.9,
+    "back": 5.2
+   },
+   "roads": [
+    "I-24"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "spillway",
+   "b": "vault",
+   "kind": "road",
+   "km": 263.9,
+   "mix": {
+    "highway": 241.2,
+    "interstate": 17.0,
+    "back": 5.7
+   },
+   "roads": [
+    "WKP",
+    "US-31W",
+    "I-24"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "spindletop",
+   "b": "stack",
+   "kind": "road",
+   "km": 509.6,
+   "mix": {
+    "interstate": 37.9,
+    "highway": 465.1,
+    "back": 6.5
+   },
+   "roads": [
+    "US-69",
+    "US-175",
+    "US-59"
+   ],
+   "crossing": null,
+   "breaks": 4
+  },
+  {
+   "a": "stables",
+   "b": "vault",
+   "kind": "road",
+   "km": 162.2,
+   "mix": {
+    "highway": 159.2,
+    "back": 3.0
+   },
+   "roads": [
+    "BGP",
+    "US-31W",
+    "4"
+   ],
+   "crossing": null,
+   "breaks": 1
+  },
+  {
+   "a": "stack",
+   "b": "stockade",
+   "kind": "road",
+   "km": 319.4,
+   "mix": {
+    "interstate": 316.3,
+    "back": 3.0
+   },
+   "roads": [
+    "I-35",
+    "I-35E",
+    "I-635"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "strings",
+   "b": "temple",
+   "kind": "road",
+   "km": 5.6,
+   "mix": {
+    "interstate": 3.3,
+    "back": 2.3
+   },
+   "roads": [
+    "I-40"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "sweetwell",
+   "b": "twice",
+   "kind": "road",
+   "km": 347.6,
+   "mix": {
+    "interstate": 75.5,
+    "highway": 269.8,
+    "back": 2.2
+   },
+   "roads": [
+    "US-87",
+    "I-10"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "tajin",
+   "b": "tux",
+   "kind": "road",
+   "km": 70.9,
+   "mix": {
+    "highway": 12.7,
+    "interstate": 52.3,
+    "back": 5.9
+   },
+   "roads": [
+    "MEX-180D",
+    "MEX-180"
+   ],
+   "crossing": null,
+   "breaks": 0
+  },
+  {
+   "a": "tampico",
+   "b": "tux",
+   "kind": "road",
+   "km": 189.5,
+   "mix": {
+    "highway": 186.3,
+    "back": 3.2
+   },
+   "roads": [
+    "MEX-180",
+    "MEX-132"
+   ],
+   "crossing": null,
+   "breaks": 2
+  },
+  {
+   "a": "track",
+   "b": "visage",
+   "kind": "road",
+   "km": 412.4,
+   "mix": {
+    "interstate": 280.9,
+    "highway": 124.3,
+    "back": 7.1
+   },
+   "roads": [
+    "I-69",
+    "I-75",
+    "US-224"
+   ],
+   "crossing": null,
+   "breaks": 3
+  }
+ ]
+}

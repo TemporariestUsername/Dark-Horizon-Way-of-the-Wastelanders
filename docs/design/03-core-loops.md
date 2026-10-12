@@ -58,7 +58,7 @@ A typical campaign runs **60–96 months** (5–8 in‑game years), which is abo
 
 **Rule of thumb:**
 - A run within the Closer ring takes 3–6 days.
-- A long voyage to the Lakes, the length of the Ten, or the Sierra Coast takes 12–18 days and needs resupply at holds, or stashes laid along the way.
+- A long voyage to the Lakes or the length of the Ten takes 17–20 days. The great voyage to the Sierra Coast takes more than a month. Both need resupply at holds, or stashes laid along the way ([computed travel times](08-travel-and-vehicles.md#the-overworld)).
 - Pushing into the Loud needs both, plus nerve.
 
 This deliberately mirrors early UWNH coast‑hugging: early on you stay near holds you know. The Driver's whole game is breaking this rule.

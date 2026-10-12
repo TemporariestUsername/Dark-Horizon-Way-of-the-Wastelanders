@@ -1,0 +1,54 @@
+{
+ "_doc": "Time, travel speed, supply burn and real-time pacing. See docs/design/03-core-loops.md and docs/design/19-numbers.md.",
+ "calendar": {
+  "days_per_month": 30,
+  "months_per_season": 3,
+  "seasons": {
+   "spring": {"months": [3, 4, 5], "effects": ["floods_close_ferries_and_fords", "dry_riverbeds_flash_flood"]},
+   "summer": {"months": [6, 7, 8], "effects": ["long_heat"]},
+   "autumn": {"months": [9, 10, 11], "effects": ["storms_and_twisters"]},
+   "winter": {"months": [12, 1, 2], "effects": ["ice_roads_open", "snow_on_the_lakes_and_seventy"]}
+  },
+  "start": {"month": 3, "day": 1, "label": "Spring, year two of the Easing", "world_clock_progress": 0}
+ },
+ "travel": {
+  "_doc": "Convoy km per day by edge mix class (data/world/roads.json 'mix'). A convoy moves at its slowest rig: multiply by (0.8 + 0.1 x speed of the slowest rig, speed 0-3).",
+  "km_per_day": {
+   "interstate": 125, "highway": 88, "back": 62, "riverbed": 112, "riverbed_light_rigs": 150,
+   "rough": 38, "ice": 150, "tunnel": 30, "road": 125
+  },
+  "fixed_days": {"lift": 0.5, "cable": 0.25, "entrance": 0.25},
+  "break_detour_days": 0.5,
+  "break_clear_project_days": 5,
+  "crossing_toll_delay_days": 0.1,
+  "weather_multipliers": {"dust_storm": 0.0, "fog": 0.7, "snow": 0.6, "flood_closes": ["ferry", "ford", "riverbed"], "howl": 0.5},
+  "off_road_frames": ["dirt_bike", "hog", "sand_buggy", "interceptor_offroad", "half_track"],
+  "road_bound_frames": ["bus", "hauler", "tanker", "war_rig", "tank"]
+ },
+ "supply_burn_per_day": {
+  "water_casks_per_crew": 0.25,
+  "chow_crates_per_crew": 0.1667,
+  "guzzoline_cans_per_rig": {"roads": 1, "rough": 2, "snow": 2, "riverbed": 1, "ice": 1, "tunnel": 0},
+  "sail_frames_burn_no_fuel_on": ["riverbed", "ice", "interstate_with_wind"],
+  "heat_water_multiplier": 1.5
+ },
+ "harm_clock": {
+  "segments": ["3:00", "6:00", "9:00", "10:00", "11:00", "12:00"],
+  "heals_on_its_own_below": "6:00",
+  "worsens_unstabilized_from": "9:00",
+  "monthly_tick": 1,
+  "infirmary_heal_days_per_segment": 7
+ },
+ "pacing_targets": {
+  "_doc": "Real-time targets that make a 60-96 month campaign take 40-60 hours.",
+  "real_seconds_per_road_day_at_1x": 20,
+  "road_days_per_month_typical": [8, 12],
+  "hold_visit_minutes": [3, 8],
+  "hold_visits_per_month_typical": [2, 4],
+  "scenes_and_battles_per_month_typical": [1, 3],
+  "battle_minutes": {"skirmish": [6, 12], "road_war": [4, 8], "gang_war": [5, 10]},
+  "month_minutes_target": [35, 45],
+  "campaign_months": [60, 96],
+  "campaign_hours_target": [40, 60]
+ }
+}

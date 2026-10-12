@@ -1,0 +1,8033 @@
+{
+ "_doc": "130 holds. Source of truth after bootstrap; see docs/design/16-gazetteer.md and tools/validate_data.py.",
+ "holds": [
+  {
+   "id": "lighthouse",
+   "name": "The Lighthouse",
+   "region": "The Crossing",
+   "octant": "Centre",
+   "ring": "centre",
+   "layer": "surface",
+   "site": "Memphis, I‑40 bridge",
+   "lat": 35.152,
+   "lon": -90.062,
+   "tier": "seat",
+   "boss": "Clarion",
+   "surplus_text": "information, leisure",
+   "want_text": "fuel, meat",
+   "faction": "lighthouse",
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [
+    "Mississippi"
+   ],
+   "loud_edge": false,
+   "notes": "The Lighthouse's seat (Clarion). The bridge lights were kept lit all through the Howling. No toll, ever. Kindle, elder of the Keepers, lives on the bridge. The News keeps a desk here.",
+   "economy": {
+    "surplus": {
+     "fresh_food": 1
+    },
+    "want": {
+     "guzzoline": 3,
+     "meat": 2,
+     "medicine": 1
+    },
+    "stock": {
+     "fresh_food": 10
+    }
+   },
+   "services": [
+    "information",
+    "leisure"
+   ],
+   "needs": [],
+   "population": 5948,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": [
+     "defend-only",
+     "well-disciplined"
+    ]
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall",
+    "seat",
+    "crossing",
+    "congregation"
+   ],
+   "lean": {
+    "lighthouse": 100
+   },
+   "subfactions": {
+    "keepers": {
+     "presence": 3,
+     "hidden": false
+    },
+    "news": {
+     "presence": 3,
+     "hidden": false
+    },
+    "tankermen": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "anchorage",
+   "name": "Anchorage",
+   "region": "The Crossing",
+   "octant": "Centre",
+   "ring": "centre",
+   "layer": "surface",
+   "site": "Memphis riverfront",
+   "lat": 35.17,
+   "lon": -90.05,
+   "tier": "major",
+   "boss": "Hugo",
+   "surplus_text": "shelter, scrap",
+   "want_text": "drinking water",
+   "faction": "lighthouse",
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "Barges chained together into a floating town on the poisoned river.",
+   "economy": {
+    "surplus": {
+     "fresh_food": 1,
+     "scrap": 3
+    },
+    "want": {
+     "medicine": 1,
+     "water": 3
+    },
+    "stock": {
+     "fresh_food": 7,
+     "scrap": 21
+    }
+   },
+   "services": [
+    "shelter"
+   ],
+   "needs": [],
+   "population": 1917,
+   "gang": {
+    "size": "medium",
+    "harm": 3,
+    "armor": 1,
+    "tags": [
+     "defend-only"
+    ]
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall"
+   ],
+   "lean": {
+    "lighthouse": 60,
+    "independent": 40
+   },
+   "subfactions": {
+    "family": {
+     "presence": 2,
+     "hidden": true
+    }
+   }
+  },
+  {
+   "id": "saltlick",
+   "name": "Saltlick",
+   "region": "The Crossing",
+   "octant": "Centre",
+   "ring": "centre",
+   "layer": "surface",
+   "site": "Highway department road‑salt barns",
+   "lat": 35.34,
+   "lon": -89.9,
+   "tier": "hold",
+   "boss": "Ula",
+   "surplus_text": "salt, preserved foods",
+   "want_text": "labor, medical supplies",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "Worked by debtors. The Salt discipline site.",
+   "economy": {
+    "surplus": {
+     "fresh_food": 1,
+     "preserved_food": 2,
+     "salt": 3
+    },
+    "want": {
+     "medicine": 3
+    },
+    "stock": {
+     "fresh_food": 4,
+     "preserved_food": 8,
+     "salt": 12
+    }
+   },
+   "services": [],
+   "needs": [
+    "labor"
+   ],
+   "population": 761,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 0,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "independent": 77,
+    "lighthouse": 23
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "gnarly",
+   "name": "Gnarly",
+   "region": "The Crossing",
+   "octant": "Centre",
+   "ring": "centre",
+   "layer": "surface",
+   "site": "Truck stop on I‑55",
+   "lat": 34.82,
+   "lon": -89.99,
+   "tier": "hold",
+   "boss": "Gnarly",
+   "surplus_text": "repairs",
+   "want_text": "scrap",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "Built in the shell of a Buckaroo's travel centre. A Wheelwrights garage. Driver start.",
+   "economy": {
+    "surplus": {
+     "fresh_food": 1
+    },
+    "want": {
+     "medicine": 1,
+     "scrap": 3
+    },
+    "stock": {
+     "fresh_food": 4
+    }
+   },
+   "services": [
+    "repairs"
+   ],
+   "needs": [],
+   "population": 788,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "garage"
+   ],
+   "lean": {
+    "independent": 78,
+    "lighthouse": 22
+   },
+   "subfactions": {
+    "wheelwrights": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "pyramid",
+   "name": "Pyramid",
+   "region": "The Crossing",
+   "octant": "Centre",
+   "ring": "centre",
+   "layer": "surface",
+   "site": "The Memphis pyramid arena",
+   "lat": 35.155,
+   "lon": -90.052,
+   "tier": "major",
+   "boss": "Preen",
+   "surplus_text": "shelter, leisure (fights)",
+   "want_text": "fresh foods",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "A fighting pit. Rivals offer single combat here.",
+   "economy": {
+    "surplus": {},
+    "want": {
+     "fresh_food": 3,
+     "medicine": 1
+    },
+    "stock": {}
+   },
+   "services": [
+    "leisure",
+    "shelter"
+   ],
+   "needs": [],
+   "population": 1451,
+   "gang": {
+    "size": "medium",
+    "harm": 3,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall"
+   ],
+   "lean": {
+    "independent": 78,
+    "lighthouse": 22
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "beale",
+   "name": "Beale",
+   "region": "The Crossing",
+   "octant": "Centre",
+   "ring": "centre",
+   "layer": "surface",
+   "site": "Beale Street",
+   "lat": 35.139,
+   "lon": -90.054,
+   "tier": "hold",
+   "boss": "Lala",
+   "surplus_text": "music and art, liquor",
+   "want_text": "drinking water",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "Chapter house of the Players.",
+   "economy": {
+    "surplus": {
+     "art": 3,
+     "fresh_food": 1,
+     "liquor": 2
+    },
+    "want": {
+     "medicine": 1,
+     "water": 3
+    },
+    "stock": {
+     "art": 12,
+     "fresh_food": 4,
+     "liquor": 8
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 698,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "independent": 78,
+    "lighthouse": 22
+   },
+   "subfactions": {
+    "players": {
+     "presence": 3,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "haven",
+   "name": "Haven",
+   "region": "The Crossing",
+   "octant": "Centre",
+   "ring": "centre",
+   "layer": "surface",
+   "site": "A Southaven mall",
+   "lat": 34.97,
+   "lon": -90.01,
+   "tier": "hold",
+   "boss": "Roark",
+   "surplus_text": "specialized goods (mall salvage)",
+   "want_text": "security",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "fresh_food": 1,
+     "goods": 3
+    },
+    "want": {
+     "medicine": 1
+    },
+    "stock": {
+     "fresh_food": 4,
+     "goods": 12
+    }
+   },
+   "services": [],
+   "needs": [
+    "security"
+   ],
+   "population": 771,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "independent": 78,
+    "lighthouse": 22
+   },
+   "subfactions": {
+    "odd_lot": {
+     "presence": 2,
+     "hidden": true
+    }
+   }
+  },
+  {
+   "id": "weigh_station",
+   "name": "Weigh Station",
+   "region": "The Crossing",
+   "octant": "Centre",
+   "ring": "centre",
+   "layer": "surface",
+   "site": "West Memphis truck scales",
+   "lat": 35.15,
+   "lon": -90.18,
+   "tier": "outpost",
+   "boss": "White",
+   "surplus_text": "information",
+   "want_text": "ammo",
+   "faction": "lighthouse",
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "Counts every rig that crosses.",
+   "economy": {
+    "surplus": {},
+    "want": {
+     "ammo": 3
+    },
+    "stock": {}
+   },
+   "services": [
+    "information"
+   ],
+   "needs": [],
+   "population": 103,
+   "gang": {
+    "size": "tiny",
+    "harm": 1,
+    "armor": 0,
+    "tags": [
+     "defend-only"
+    ]
+   },
+   "walls": 0,
+   "buildings": [
+    "trader"
+   ],
+   "lean": {
+    "lighthouse": 60,
+    "independent": 40
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "siege",
+   "name": "Siege",
+   "region": "The Delta",
+   "octant": "S",
+   "ring": "closer",
+   "layer": "surface",
+   "site": "Vicksburg, I‑20 bridge",
+   "lat": 32.315,
+   "lon": -90.905,
+   "tier": "major",
+   "boss": "Grip",
+   "surplus_text": "weaponry, tolls",
+   "want_text": "drinking water",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [
+    "Mississippi"
+   ],
+   "loud_edge": false,
+   "notes": "An old battlefield fort over the river.",
+   "economy": {
+    "surplus": {
+     "ammo": 1,
+     "cloth": 1,
+     "grain": 1,
+     "weaponry": 3
+    },
+    "want": {
+     "guzzoline": 1,
+     "medicine": 1,
+     "water": 3
+    },
+    "stock": {
+     "ammo": 7,
+     "cloth": 7,
+     "grain": 7,
+     "weaponry": 21
+    }
+   },
+   "services": [
+    "tolls"
+   ],
+   "needs": [],
+   "population": 2091,
+   "gang": {
+    "size": "medium",
+    "harm": 3,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall",
+    "crossing"
+   ],
+   "lean": {
+    "independent": 89,
+    "lighthouse": 8,
+    "burning_water": 3
+   },
+   "subfactions": {
+    "keepers": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "bluff",
+   "name": "Bluff",
+   "region": "The Delta",
+   "octant": "S",
+   "ring": "closer",
+   "layer": "surface",
+   "site": "Natchez",
+   "lat": 31.56,
+   "lon": -91.4,
+   "tier": "hold",
+   "boss": "Heron",
+   "surplus_text": "vantage, cloth",
+   "want_text": "grain",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "cloth": 3
+    },
+    "want": {
+     "grain": 3,
+     "guzzoline": 1,
+     "medicine": 1
+    },
+    "stock": {
+     "cloth": 12
+    }
+   },
+   "services": [
+    "vantage"
+   ],
+   "needs": [],
+   "population": 553,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "independent": 91,
+    "lighthouse": 5,
+    "burning_water": 4
+   },
+   "subfactions": {
+    "gar": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "brace_win",
+   "name": "Brace Win",
+   "region": "The Delta",
+   "octant": "S",
+   "ring": "closer",
+   "layer": "surface",
+   "site": "The Old River Control Structure",
+   "lat": 31.08,
+   "lon": -91.6,
+   "tier": "major",
+   "boss": "Brace Win",
+   "surplus_text": "fortifications",
+   "want_text": "gasoline",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [
+    "Mississippi"
+   ],
+   "loud_edge": false,
+   "notes": "The dam that keeps the river in its bed. A crossing over the gates.",
+   "economy": {
+    "surplus": {
+     "cloth": 1,
+     "grain": 1
+    },
+    "want": {
+     "guzzoline": 3,
+     "medicine": 1
+    },
+    "stock": {
+     "cloth": 7,
+     "grain": 7
+    }
+   },
+   "services": [
+    "fortifications"
+   ],
+   "needs": [],
+   "population": 2149,
+   "gang": {
+    "size": "medium",
+    "harm": 3,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall",
+    "crossing"
+   ],
+   "lean": {
+    "independent": 91,
+    "burning_water": 5,
+    "lighthouse": 4
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "barge_town",
+   "name": "Barge Town",
+   "region": "The Delta",
+   "octant": "S",
+   "ring": "closer",
+   "layer": "surface",
+   "site": "Greenville barge hulks",
+   "lat": 33.41,
+   "lon": -91.06,
+   "tier": "hold",
+   "boss": "Setter",
+   "surplus_text": "shelter, trade",
+   "want_text": "meat",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "Home of the Gar (road gang).",
+   "economy": {
+    "surplus": {
+     "cloth": 1,
+     "grain": 1
+    },
+    "want": {
+     "guzzoline": 1,
+     "meat": 3,
+     "medicine": 1
+    },
+    "stock": {
+     "cloth": 4,
+     "grain": 4
+    }
+   },
+   "services": [
+    "shelter",
+    "trade"
+   ],
+   "needs": [],
+   "population": 519,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 0,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "independent": 88,
+    "lighthouse": 12
+   },
+   "subfactions": {
+    "family": {
+     "presence": 2,
+     "hidden": true
+    },
+    "gar": {
+     "presence": 3,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "crossroads",
+   "name": "Crossroads",
+   "region": "The Delta",
+   "octant": "S",
+   "ring": "closer",
+   "layer": "surface",
+   "site": "Clarksdale",
+   "lat": 34.2,
+   "lon": -90.57,
+   "tier": "hold",
+   "boss": "Jackbird",
+   "surplus_text": "music and art",
+   "want_text": "drinking water",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "Rumors say a deal was once made here with something in the maelstrom.",
+   "economy": {
+    "surplus": {
+     "art": 3,
+     "cloth": 1,
+     "grain": 1
+    },
+    "want": {
+     "guzzoline": 1,
+     "medicine": 1,
+     "water": 3
+    },
+    "stock": {
+     "art": 12,
+     "cloth": 4,
+     "grain": 4
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 271,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 0,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary",
+    "brainers_room"
+   ],
+   "lean": {
+    "independent": 83,
+    "lighthouse": 17
+   },
+   "subfactions": {
+    "players": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "mudflat",
+   "name": "Mudflat",
+   "region": "The Delta",
+   "octant": "S",
+   "ring": "closer",
+   "layer": "surface",
+   "site": "Delta farmland",
+   "lat": 33.75,
+   "lon": -90.72,
+   "tier": "hold",
+   "boss": "Gams",
+   "surplus_text": "grain",
+   "want_text": "labor",
+   "faction": "choir",
+   "via_tum_tum": true,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "Sharecroppers in debt to Tum Tum.",
+   "economy": {
+    "surplus": {
+     "cloth": 1,
+     "grain": 3
+    },
+    "want": {
+     "guzzoline": 1,
+     "medicine": 1
+    },
+    "stock": {
+     "cloth": 4,
+     "grain": 12
+    }
+   },
+   "services": [],
+   "needs": [
+    "labor"
+   ],
+   "population": 708,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": [
+     "opened"
+    ]
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "choir": 60,
+    "independent": 26,
+    "lighthouse": 14
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "reservoir",
+   "name": "Reservoir",
+   "region": "The Delta",
+   "octant": "S",
+   "ring": "closer",
+   "layer": "surface",
+   "site": "Jackson, the Ross Barnett reservoir",
+   "lat": 32.4,
+   "lon": -90.07,
+   "tier": "major",
+   "boss": "Kal",
+   "surplus_text": "drinking water, fish",
+   "want_text": "weaponry",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "cloth": 1,
+     "fresh_food": 2,
+     "grain": 1,
+     "water": 3
+    },
+    "want": {
+     "guzzoline": 1,
+     "medicine": 1,
+     "weaponry": 3
+    },
+    "stock": {
+     "cloth": 7,
+     "fresh_food": 14,
+     "grain": 7,
+     "water": 21
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 993,
+   "gang": {
+    "size": "medium",
+    "harm": 3,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall",
+    "wells"
+   ],
+   "lean": {
+    "independent": 91,
+    "lighthouse": 9
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "helena",
+   "name": "Helena",
+   "region": "The Delta",
+   "octant": "S",
+   "ring": "closer",
+   "layer": "surface",
+   "site": "Helena bridge",
+   "lat": 34.53,
+   "lon": -90.59,
+   "tier": "outpost",
+   "boss": "Line",
+   "surplus_text": "cloth",
+   "want_text": "medical supplies",
+   "faction": "lighthouse",
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [
+    "Mississippi"
+   ],
+   "loud_edge": false,
+   "notes": "Half the bridge is out. A rope crossing.",
+   "economy": {
+    "surplus": {
+     "cloth": 3
+    },
+    "want": {
+     "medicine": 3
+    },
+    "stock": {
+     "cloth": 6
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 89,
+   "gang": {
+    "size": "tiny",
+    "harm": 1,
+    "armor": 0,
+    "tags": [
+     "defend-only"
+    ]
+   },
+   "walls": 0,
+   "buildings": [
+    "trader",
+    "crossing"
+   ],
+   "lean": {
+    "lighthouse": 60,
+    "independent": 40
+   },
+   "subfactions": {
+    "gar": {
+     "presence": 2,
+     "hidden": false
+    },
+    "keepers": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "red",
+   "name": "Red",
+   "region": "The Twenty",
+   "octant": "W",
+   "ring": "closer",
+   "layer": "surface",
+   "site": "Shreveport, on the dry Red River",
+   "lat": 32.51,
+   "lon": -93.75,
+   "tier": "major",
+   "boss": "Peppering",
+   "surplus_text": "leisure (gambling)",
+   "want_text": "fresh foods",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "Where the Red riverbed road meets the Twenty.",
+   "economy": {
+    "surplus": {
+     "raw_materials": 1
+    },
+    "want": {
+     "fresh_food": 3,
+     "medicine": 1
+    },
+    "stock": {
+     "raw_materials": 7
+    }
+   },
+   "services": [
+    "leisure"
+   ],
+   "needs": [],
+   "population": 2402,
+   "gang": {
+    "size": "medium",
+    "harm": 3,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall"
+   ],
+   "lean": {
+    "independent": 87,
+    "burning_water": 6,
+    "lighthouse": 4,
+    "sweetwell": 3
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "ferry",
+   "name": "Ferry",
+   "region": "The Twenty",
+   "octant": "W",
+   "ring": "closer",
+   "layer": "surface",
+   "site": "Monroe, the Ouachita",
+   "lat": 32.51,
+   "lon": -92.12,
+   "tier": "hold",
+   "boss": "Tern",
+   "surplus_text": "tolls",
+   "want_text": "meat",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "A ferry over a small living river.",
+   "economy": {
+    "surplus": {
+     "raw_materials": 1
+    },
+    "want": {
+     "meat": 3,
+     "medicine": 1
+    },
+    "stock": {
+     "raw_materials": 4
+    }
+   },
+   "services": [
+    "tolls"
+   ],
+   "needs": [],
+   "population": 714,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "independent": 90,
+    "lighthouse": 6,
+    "burning_water": 4
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "corbett",
+   "name": "Corbett",
+   "region": "The Twenty",
+   "octant": "W",
+   "ring": "closer",
+   "layer": "surface",
+   "site": "Meridian",
+   "lat": 32.36,
+   "lon": -88.7,
+   "tier": "hold",
+   "boss": "Corbett",
+   "surplus_text": "grain (greenhouses)",
+   "want_text": "fuel",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "grain": 3,
+     "raw_materials": 1
+    },
+    "want": {
+     "guzzoline": 3,
+     "medicine": 1
+    },
+    "stock": {
+     "grain": 12,
+     "raw_materials": 4
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 220,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "independent": 92,
+    "lighthouse": 8
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "furnace",
+   "name": "Furnace",
+   "region": "The Twenty",
+   "octant": "W",
+   "ring": "closer",
+   "layer": "surface",
+   "site": "Birmingham steelworks",
+   "lat": 33.52,
+   "lon": -86.8,
+   "tier": "major",
+   "boss": "Brain",
+   "surplus_text": "machinery, weaponry",
+   "want_text": "grain",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "ammo": 1,
+     "machinery": 3,
+     "raw_materials": 1,
+     "weaponry": 2
+    },
+    "want": {
+     "grain": 3,
+     "medicine": 1
+    },
+    "stock": {
+     "ammo": 7,
+     "machinery": 21,
+     "raw_materials": 7,
+     "weaponry": 14
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 1113,
+   "gang": {
+    "size": "medium",
+    "harm": 3,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall"
+   ],
+   "lean": {
+    "independent": 92,
+    "lighthouse": 8
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "stadium",
+   "name": "Stadium",
+   "region": "The Twenty",
+   "octant": "W",
+   "ring": "closer",
+   "layer": "surface",
+   "site": "Tuscaloosa",
+   "lat": 33.21,
+   "lon": -87.55,
+   "tier": "hold",
+   "boss": "Pinkie",
+   "surplus_text": "shelter, security",
+   "want_text": "drinking water",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "raw_materials": 1
+    },
+    "want": {
+     "medicine": 1,
+     "water": 3
+    },
+    "stock": {
+     "raw_materials": 4
+    }
+   },
+   "services": [
+    "security",
+    "shelter"
+   ],
+   "needs": [],
+   "population": 615,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 0,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "independent": 91,
+    "lighthouse": 9
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "pines",
+   "name": "Pines",
+   "region": "The Twenty",
+   "octant": "W",
+   "ring": "closer",
+   "layer": "surface",
+   "site": "Ruston",
+   "lat": 32.52,
+   "lon": -92.64,
+   "tier": "outpost",
+   "boss": "Dusk",
+   "surplus_text": "raw materials (timber)",
+   "want_text": "preserved foods",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "raw_materials": 3
+    },
+    "want": {
+     "medicine": 1,
+     "preserved_food": 3
+    },
+    "stock": {
+     "raw_materials": 6
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 98,
+   "gang": {
+    "size": "tiny",
+    "harm": 1,
+    "armor": 0,
+    "tags": []
+   },
+   "walls": 0,
+   "buildings": [
+    "trader"
+   ],
+   "lean": {
+    "independent": 90,
+    "lighthouse": 6,
+    "burning_water": 4
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "partridge",
+   "name": "Partridge",
+   "region": "The Twenty",
+   "octant": "W",
+   "ring": "closer",
+   "layer": "surface",
+   "site": "Texarkana",
+   "lat": 33.43,
+   "lon": -94.05,
+   "tier": "major",
+   "boss": "Partridge",
+   "surplus_text": "caravans",
+   "want_text": "drinking water",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "A caravanserai on the state line. Hall of the Tankermen. Hardholder start option.",
+   "economy": {
+    "surplus": {
+     "raw_materials": 1
+    },
+    "want": {
+     "medicine": 1,
+     "water": 3
+    },
+    "stock": {
+     "raw_materials": 7
+    }
+   },
+   "services": [
+    "caravans"
+   ],
+   "needs": [],
+   "population": 1545,
+   "gang": {
+    "size": "medium",
+    "harm": 3,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall"
+   ],
+   "lean": {
+    "independent": 86,
+    "lighthouse": 6,
+    "burning_water": 5,
+    "sweetwell": 3
+   },
+   "subfactions": {
+    "tankermen": {
+     "presence": 3,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "derricks",
+   "name": "Derricks",
+   "region": "The Twenty",
+   "octant": "W",
+   "ring": "closer",
+   "layer": "surface",
+   "site": "Kilgore oil field",
+   "lat": 32.39,
+   "lon": -94.88,
+   "tier": "hold",
+   "boss": "Wei",
+   "surplus_text": "crude",
+   "want_text": "labor",
+   "faction": "burning_water",
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "crude": 3,
+     "raw_materials": 1
+    },
+    "want": {
+     "medicine": 1
+    },
+    "stock": {
+     "crude": 12,
+     "raw_materials": 4
+    }
+   },
+   "services": [],
+   "needs": [
+    "labor"
+   ],
+   "population": 440,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 2,
+    "tags": [
+     "fire"
+    ]
+   },
+   "walls": 0,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "burning_water": 60,
+    "independent": 31,
+    "sweetwell": 5,
+    "lighthouse": 4
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "stockade",
+   "name": "Stockade",
+   "region": "The Forty",
+   "octant": "W/E",
+   "ring": "closer",
+   "layer": "surface",
+   "site": "Oklahoma City stockyards",
+   "lat": 35.47,
+   "lon": -97.52,
+   "tier": "hold",
+   "boss": "Bish",
+   "surplus_text": "livestock, meat",
+   "want_text": "drinking water",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "The west edge of the Forty. Home of the Twister Riders.",
+   "economy": {
+    "surplus": {
+     "grain": 1,
+     "livestock": 3,
+     "meat": 2
+    },
+    "want": {
+     "machinery": 1,
+     "medicine": 1,
+     "water": 3
+    },
+    "stock": {
+     "grain": 4,
+     "livestock": 12,
+     "meat": 8
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 236,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 0,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "independent": 94,
+    "sweetwell": 3,
+    "burning_water": 3
+   },
+   "subfactions": {
+    "twister_riders": {
+     "presence": 3,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "gallows",
+   "name": "Gallows",
+   "region": "The Forty",
+   "octant": "W/E",
+   "ring": "closer",
+   "layer": "surface",
+   "site": "Fort Smith",
+   "lat": 35.39,
+   "lon": -94.4,
+   "tier": "hold",
+   "boss": "Pierre",
+   "surplus_text": "information (bounties)",
+   "want_text": "fresh foods",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "The hanging‑judge town. Posts bounty gigs.",
+   "economy": {
+    "surplus": {
+     "grain": 1,
+     "livestock": 1
+    },
+    "want": {
+     "fresh_food": 3,
+     "machinery": 1,
+     "medicine": 1
+    },
+    "stock": {
+     "grain": 4,
+     "livestock": 4
+    }
+   },
+   "services": [
+    "information"
+   ],
+   "needs": [],
+   "population": 367,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "independent": 94,
+    "lighthouse": 6
+   },
+   "subfactions": {
+    "twister_riders": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "rock",
+   "name": "Rock",
+   "region": "The Forty",
+   "octant": "W/E",
+   "ring": "closer",
+   "layer": "surface",
+   "site": "Little Rock, on the dry Arkansas",
+   "lat": 34.75,
+   "lon": -92.29,
+   "tier": "major",
+   "boss": "Mice",
+   "surplus_text": "trade",
+   "want_text": "security",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "The Arkansas riverbed road runs west from here.",
+   "economy": {
+    "surplus": {
+     "grain": 1,
+     "livestock": 1
+    },
+    "want": {
+     "machinery": 1
+    },
+    "stock": {
+     "grain": 7,
+     "livestock": 7
+    }
+   },
+   "services": [
+    "trade"
+   ],
+   "needs": [
+    "security"
+   ],
+   "population": 1180,
+   "gang": {
+    "size": "medium",
+    "harm": 3,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall"
+   ],
+   "lean": {
+    "independent": 85,
+    "lighthouse": 12,
+    "burning_water": 3
+   },
+   "subfactions": {
+    "twister_riders": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "baths",
+   "name": "The Baths",
+   "region": "The Forty",
+   "octant": "W/E",
+   "ring": "closer",
+   "layer": "surface",
+   "site": "Hot Springs",
+   "lat": 34.5,
+   "lon": -93.06,
+   "tier": "major",
+   "boss": "Lavender",
+   "surplus_text": "hot water, leisure, medical supplies",
+   "want_text": "meat",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "grain": 1,
+     "hot_water": 3,
+     "livestock": 1,
+     "medicine": 3
+    },
+    "want": {
+     "machinery": 1,
+     "meat": 3
+    },
+    "stock": {
+     "grain": 7,
+     "hot_water": 21,
+     "livestock": 7,
+     "medicine": 21
+    }
+   },
+   "services": [
+    "leisure"
+   ],
+   "needs": [],
+   "population": 2327,
+   "gang": {
+    "size": "medium",
+    "harm": 3,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall"
+   ],
+   "lean": {
+    "independent": 87,
+    "lighthouse": 10,
+    "burning_water": 3
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "strings",
+   "name": "Strings",
+   "region": "The Forty",
+   "octant": "W/E",
+   "ring": "closer",
+   "layer": "surface",
+   "site": "Nashville",
+   "lat": 36.16,
+   "lon": -86.78,
+   "tier": "major",
+   "boss": "Gazelle",
+   "surplus_text": "music and art, liquor",
+   "want_text": "fuel",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "art": 3,
+     "grain": 1,
+     "liquor": 2,
+     "livestock": 1
+    },
+    "want": {
+     "guzzoline": 3,
+     "machinery": 1
+    },
+    "stock": {
+     "art": 21,
+     "grain": 7,
+     "liquor": 14,
+     "livestock": 7
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 1815,
+   "gang": {
+    "size": "medium",
+    "harm": 3,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall"
+   ],
+   "lean": {
+    "independent": 94,
+    "lighthouse": 6
+   },
+   "subfactions": {
+    "players": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "hub",
+   "name": "Hub",
+   "region": "The Forty",
+   "octant": "W/E",
+   "ring": "closer",
+   "layer": "surface",
+   "site": "Jackson, Tennessee",
+   "lat": 35.61,
+   "lon": -88.81,
+   "tier": "outpost",
+   "boss": "Tico",
+   "surplus_text": "tolls, information",
+   "want_text": "preserved foods",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {},
+    "want": {
+     "preserved_food": 3
+    },
+    "stock": {}
+   },
+   "services": [
+    "information",
+    "tolls"
+   ],
+   "needs": [],
+   "population": 86,
+   "gang": {
+    "size": "tiny",
+    "harm": 1,
+    "armor": 0,
+    "tags": []
+   },
+   "walls": 0,
+   "buildings": [
+    "trader"
+   ],
+   "lean": {
+    "independent": 84,
+    "lighthouse": 16
+   },
+   "subfactions": {
+    "twister_riders": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "temple",
+   "name": "Temple",
+   "region": "The Forty",
+   "octant": "W/E",
+   "ring": "closer",
+   "layer": "surface",
+   "site": "The Nashville Parthenon",
+   "lat": 36.15,
+   "lon": -86.81,
+   "tier": "hold",
+   "boss": "Midnight",
+   "surplus_text": "information (pilgrims)",
+   "want_text": "meat",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "A hocus congregation.",
+   "economy": {
+    "surplus": {
+     "grain": 1,
+     "livestock": 1
+    },
+    "want": {
+     "machinery": 1,
+     "meat": 3
+    },
+    "stock": {
+     "grain": 4,
+     "livestock": 4
+    }
+   },
+   "services": [
+    "information"
+   ],
+   "needs": [],
+   "population": 783,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 0,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary",
+    "congregation"
+   ],
+   "lean": {
+    "independent": 94,
+    "lighthouse": 6
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "spillway",
+   "name": "Spillway",
+   "region": "The Forty",
+   "octant": "W/E",
+   "ring": "closer",
+   "layer": "surface",
+   "site": "Kentucky Dam",
+   "lat": 37.01,
+   "lon": -88.27,
+   "tier": "major",
+   "boss": "Dune",
+   "surplus_text": "power, drinking water",
+   "want_text": "machinery",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [
+    "Tennessee"
+   ],
+   "loud_edge": false,
+   "notes": "Crosses the Tennessee. Hydro power.",
+   "economy": {
+    "surplus": {
+     "batteries": 3,
+     "grain": 1,
+     "livestock": 1,
+     "water": 2
+    },
+    "want": {
+     "machinery": 3
+    },
+    "stock": {
+     "batteries": 21,
+     "grain": 7,
+     "livestock": 7,
+     "water": 14
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 1254,
+   "gang": {
+    "size": "medium",
+    "harm": 3,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall",
+    "crossing"
+   ],
+   "lean": {
+    "independent": 89,
+    "lighthouse": 11
+   },
+   "subfactions": {
+    "keepers": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "rails",
+   "name": "Rails",
+   "region": "The Sixty‑Five",
+   "octant": "E",
+   "ring": "closer",
+   "layer": "surface",
+   "site": "Montgomery rail yards",
+   "lat": 32.38,
+   "lon": -86.31,
+   "tier": "hold",
+   "boss": "Dou",
+   "surplus_text": "scrap, machinery",
+   "want_text": "grain",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "machinery": 2,
+     "scrap": 3
+    },
+    "want": {
+     "fresh_food": 1,
+     "grain": 3,
+     "medicine": 1
+    },
+    "stock": {
+     "machinery": 8,
+     "scrap": 12
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 241,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "garage"
+   ],
+   "lean": {
+    "independent": 97,
+    "lighthouse": 3
+   },
+   "subfactions": {
+    "wheelwrights": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "fuse",
+   "name": "Fuse",
+   "region": "The Sixty‑Five",
+   "octant": "E",
+   "ring": "closer",
+   "layer": "surface",
+   "site": "Huntsville rocket garden",
+   "lat": 34.71,
+   "lon": -86.65,
+   "tier": "major",
+   "boss": "Newton",
+   "surplus_text": "hi‑tech",
+   "want_text": "labor",
+   "faction": "exchange",
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "Vault diggers, and home of the Diggers. A rival to the Savvyhead.",
+   "economy": {
+    "surplus": {
+     "hitech": 3,
+     "scrap": 1
+    },
+    "want": {
+     "fresh_food": 1
+    },
+    "stock": {
+     "hitech": 21,
+     "scrap": 7
+    }
+   },
+   "services": [],
+   "needs": [
+    "labor"
+   ],
+   "population": 2399,
+   "gang": {
+    "size": "medium",
+    "harm": 3,
+    "armor": 1,
+    "tags": [
+     "mercenary"
+    ]
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall"
+   ],
+   "lean": {
+    "exchange": 60,
+    "independent": 31,
+    "lighthouse": 9
+   },
+   "subfactions": {
+    "diggers": {
+     "presence": 3,
+     "hidden": false
+    },
+    "waking": {
+     "presence": 2,
+     "hidden": true
+    }
+   }
+  },
+  {
+   "id": "mammoth",
+   "name": "Mammoth",
+   "region": "The Sixty‑Five",
+   "octant": "E",
+   "ring": "closer",
+   "layer": "surface",
+   "site": "Mammoth Cave",
+   "lat": 37.19,
+   "lon": -86.1,
+   "tier": "hold",
+   "boss": "Boo",
+   "surplus_text": "shelter, fresh foods (mushrooms)",
+   "want_text": "batteries",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "A Down entrance.",
+   "economy": {
+    "surplus": {
+     "fresh_food": 3,
+     "scrap": 1
+    },
+    "want": {
+     "batteries": 3
+    },
+    "stock": {
+     "fresh_food": 12,
+     "scrap": 4
+    }
+   },
+   "services": [
+    "shelter"
+   ],
+   "needs": [],
+   "population": 529,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 0,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "garage"
+   ],
+   "lean": {
+    "independent": 95,
+    "lighthouse": 5
+   },
+   "subfactions": {
+    "family": {
+     "presence": 2,
+     "hidden": true
+    }
+   }
+  },
+  {
+   "id": "derby",
+   "name": "Derby",
+   "region": "The Sixty‑Five",
+   "octant": "E",
+   "ring": "closer",
+   "layer": "surface",
+   "site": "Louisville",
+   "lat": 38.25,
+   "lon": -85.76,
+   "tier": "major",
+   "boss": "Half pint",
+   "surplus_text": "livestock (horses), liquor",
+   "want_text": "grain",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [
+    "Ohio"
+   ],
+   "loud_edge": false,
+   "notes": "Crosses the Ohio.",
+   "economy": {
+    "surplus": {
+     "liquor": 2,
+     "livestock": 3,
+     "scrap": 1
+    },
+    "want": {
+     "fresh_food": 1,
+     "grain": 3
+    },
+    "stock": {
+     "liquor": 14,
+     "livestock": 21,
+     "scrap": 7
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 1650,
+   "gang": {
+    "size": "medium",
+    "harm": 3,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall",
+    "crossing"
+   ],
+   "lean": {
+    "independent": 96,
+    "lighthouse": 4
+   },
+   "subfactions": {
+    "keepers": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "vault",
+   "name": "The Vault",
+   "region": "The Sixty‑Five",
+   "octant": "E",
+   "ring": "closer",
+   "layer": "surface",
+   "site": "Fort Knox",
+   "lat": 37.88,
+   "lon": -85.96,
+   "tier": "major",
+   "boss": "Jackabacka",
+   "surplus_text": "weaponry",
+   "want_text": "fresh foods",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "Nobody has opened the inner vault. Rothschild wants it.",
+   "economy": {
+    "surplus": {
+     "ammo": 1,
+     "scrap": 1,
+     "weaponry": 3
+    },
+    "want": {
+     "fresh_food": 3,
+     "medicine": 1
+    },
+    "stock": {
+     "ammo": 7,
+     "scrap": 7,
+     "weaponry": 21
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 2186,
+   "gang": {
+    "size": "medium",
+    "harm": 3,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall"
+   ],
+   "lean": {
+    "independent": 95,
+    "lighthouse": 5
+   },
+   "subfactions": {
+    "diggers": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "shoals",
+   "name": "Shoals",
+   "region": "The Sixty‑Five",
+   "octant": "E",
+   "ring": "closer",
+   "layer": "surface",
+   "site": "Muscle Shoals, Wilson Dam",
+   "lat": 34.8,
+   "lon": -87.67,
+   "tier": "hold",
+   "boss": "Blues",
+   "surplus_text": "music and art, power",
+   "want_text": "preserved foods",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [
+    "Tennessee"
+   ],
+   "loud_edge": false,
+   "notes": "Crosses the Tennessee.",
+   "economy": {
+    "surplus": {
+     "art": 3,
+     "batteries": 2,
+     "scrap": 1
+    },
+    "want": {
+     "fresh_food": 1,
+     "medicine": 1,
+     "preserved_food": 3
+    },
+    "stock": {
+     "art": 12,
+     "batteries": 8,
+     "scrap": 4
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 773,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "garage",
+    "crossing"
+   ],
+   "lean": {
+    "independent": 88,
+    "lighthouse": 12
+   },
+   "subfactions": {
+    "keepers": {
+     "presence": 2,
+     "hidden": false
+    },
+    "players": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "abbey",
+   "name": "Abbey",
+   "region": "The Sixty‑Five",
+   "octant": "E",
+   "ring": "closer",
+   "layer": "surface",
+   "site": "The Ave Maria Grotto",
+   "lat": 34.18,
+   "lon": -86.84,
+   "tier": "outpost",
+   "boss": "Monk",
+   "surplus_text": "information (pilgrims)",
+   "want_text": "meat",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "Miniature cathedrals.",
+   "economy": {
+    "surplus": {},
+    "want": {
+     "meat": 3,
+     "medicine": 1
+    },
+    "stock": {}
+   },
+   "services": [
+    "information"
+   ],
+   "needs": [],
+   "population": 75,
+   "gang": {
+    "size": "tiny",
+    "harm": 1,
+    "armor": 0,
+    "tags": []
+   },
+   "walls": 0,
+   "buildings": [
+    "trader",
+    "congregation"
+   ],
+   "lean": {
+    "independent": 91,
+    "lighthouse": 9
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "sinkhole",
+   "name": "Sinkhole",
+   "region": "The Sixty‑Five",
+   "octant": "E",
+   "ring": "closer",
+   "layer": "surface",
+   "site": "Bowling Green, the car museum and its sinkhole",
+   "lat": 36.99,
+   "lon": -86.44,
+   "tier": "hold",
+   "boss": "Buzz",
+   "surplus_text": "vehicles (classic frames)",
+   "want_text": "drinking water",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "A Driver collector's hook.",
+   "economy": {
+    "surplus": {
+     "parts": 3,
+     "scrap": 1
+    },
+    "want": {
+     "fresh_food": 1,
+     "medicine": 1,
+     "water": 3
+    },
+    "stock": {
+     "parts": 12,
+     "scrap": 4
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 246,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 0,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "garage"
+   ],
+   "lean": {
+    "independent": 94,
+    "lighthouse": 6
+   },
+   "subfactions": {
+    "wheelwrights": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "dog_head",
+   "name": "Dog Head",
+   "region": "The Ten",
+   "octant": "S",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "The Houston ship channel",
+   "lat": 29.73,
+   "lon": -95.2,
+   "tier": "hold",
+   "boss": "Dog head",
+   "surplus_text": "specialized goods (stolen)",
+   "want_text": "security",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "Fence market and home of the Odd Lot. Chopper start.",
+   "economy": {
+    "surplus": {
+     "goods": 3,
+     "guzzoline": 1
+    },
+    "want": {
+     "medicine": 1,
+     "water": 1
+    },
+    "stock": {
+     "goods": 12,
+     "guzzoline": 4
+    }
+   },
+   "services": [],
+   "needs": [
+    "security"
+   ],
+   "population": 598,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "independent": 70,
+    "burning_water": 18,
+    "sweetwell": 9,
+    "cerro": 3
+   },
+   "subfactions": {
+    "odd_lot": {
+     "presence": 3,
+     "hidden": true
+    }
+   }
+  },
+  {
+   "id": "rumhouse",
+   "name": "Rumhouse",
+   "region": "The Ten",
+   "octant": "S",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "A grounded Galveston ferry",
+   "lat": 29.3,
+   "lon": -94.8,
+   "tier": "hold",
+   "boss": "Rufe",
+   "surplus_text": "drugs, leisure",
+   "want_text": "drinking water",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "drugs": 3,
+     "guzzoline": 1
+    },
+    "want": {
+     "medicine": 1,
+     "water": 3
+    },
+    "stock": {
+     "drugs": 12,
+     "guzzoline": 4
+    }
+   },
+   "services": [
+    "leisure"
+   ],
+   "needs": [],
+   "population": 237,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "independent": 69,
+    "burning_water": 23,
+    "sweetwell": 8
+   },
+   "subfactions": {
+    "odd_lot": {
+     "presence": 2,
+     "hidden": true
+    },
+    "teeth": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "burning_water",
+   "name": "Burning Water",
+   "region": "The Ten",
+   "octant": "S",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Texas City refineries",
+   "lat": 29.38,
+   "lon": -94.92,
+   "tier": "seat",
+   "boss": "Parcher",
+   "surplus_text": "gasoline",
+   "want_text": "drinking water, labor",
+   "faction": "burning_water",
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "Burning Water's seat (Parcher). An eternal refinery fire: what can't be refined is burned. Harrowgate's lights are visible from the flare stacks.",
+   "economy": {
+    "surplus": {
+     "guzzoline": 3
+    },
+    "want": {
+     "medicine": 1,
+     "water": 3
+    },
+    "stock": {
+     "guzzoline": 30
+    }
+   },
+   "services": [],
+   "needs": [
+    "labor"
+   ],
+   "population": 7362,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 2,
+    "tags": [
+     "fire"
+    ]
+   },
+   "walls": 2,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall",
+    "seat"
+   ],
+   "lean": {
+    "burning_water": 100
+   },
+   "subfactions": {
+    "tankermen": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "pitch",
+   "name": "Pitch",
+   "region": "The Ten",
+   "octant": "S",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Port Arthur",
+   "lat": 29.9,
+   "lon": -93.93,
+   "tier": "hold",
+   "boss": "Ba",
+   "surplus_text": "raw materials, crude",
+   "want_text": "medical supplies",
+   "faction": "burning_water",
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "crude": 2,
+     "guzzoline": 1,
+     "raw_materials": 3
+    },
+    "want": {
+     "medicine": 3,
+     "water": 1
+    },
+    "stock": {
+     "crude": 8,
+     "guzzoline": 4,
+     "raw_materials": 12
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 482,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 2,
+    "tags": [
+     "fire"
+    ]
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "burning_water": 60,
+    "independent": 34,
+    "sweetwell": 6
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "kettle",
+   "name": "Kettle",
+   "region": "The Ten",
+   "octant": "S",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Lake Charles bayous",
+   "lat": 30.23,
+   "lon": -93.22,
+   "tier": "hold",
+   "boss": "Jeanette",
+   "surplus_text": "drinking water (fog nets)",
+   "want_text": "meat, weaponry",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "guzzoline": 1,
+     "water": 3
+    },
+    "want": {
+     "meat": 3,
+     "medicine": 1,
+     "weaponry": 2
+    },
+    "stock": {
+     "guzzoline": 4,
+     "water": 12
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 308,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 0,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary",
+    "wells"
+   ],
+   "lean": {
+    "independent": 90,
+    "burning_water": 7,
+    "sweetwell": 3
+   },
+   "subfactions": {
+    "gar": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "crawdad",
+   "name": "Crawdad",
+   "region": "The Ten",
+   "octant": "S",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Lafayette",
+   "lat": 30.22,
+   "lon": -92.02,
+   "tier": "hold",
+   "boss": "Ruth",
+   "surplus_text": "fresh foods",
+   "want_text": "fuel",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "fresh_food": 3
+    },
+    "want": {
+     "guzzoline": 3,
+     "medicine": 1,
+     "water": 1
+    },
+    "stock": {
+     "fresh_food": 12
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 480,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 0,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "independent": 87,
+    "burning_water": 7,
+    "lighthouse": 3,
+    "sweetwell": 3
+   },
+   "subfactions": {
+    "gar": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "capitol",
+   "name": "Capitol",
+   "region": "The Ten",
+   "octant": "S",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Baton Rouge, the capitol tower and the I‑10 bridge",
+   "lat": 30.45,
+   "lon": -91.19,
+   "tier": "major",
+   "boss": "Biz",
+   "surplus_text": "information, tolls",
+   "want_text": "drinking water",
+   "faction": "choir",
+   "via_tum_tum": true,
+   "silenced": false,
+   "crossing": [
+    "Mississippi"
+   ],
+   "loud_edge": false,
+   "notes": "The southern crossing.",
+   "economy": {
+    "surplus": {
+     "guzzoline": 1
+    },
+    "want": {
+     "medicine": 1,
+     "water": 3
+    },
+    "stock": {
+     "guzzoline": 7
+    }
+   },
+   "services": [
+    "information",
+    "tolls"
+   ],
+   "needs": [],
+   "population": 2479,
+   "gang": {
+    "size": "medium",
+    "harm": 3,
+    "armor": 1,
+    "tags": [
+     "opened"
+    ]
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall",
+    "crossing"
+   ],
+   "lean": {
+    "choir": 60,
+    "independent": 32,
+    "burning_water": 5,
+    "lighthouse": 3
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "orleans",
+   "name": "Orleans",
+   "region": "The Ten",
+   "octant": "S",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "New Orleans",
+   "lat": 29.95,
+   "lon": -90.07,
+   "tier": "major",
+   "boss": "Dez",
+   "surplus_text": "music and art, liquor",
+   "want_text": "drinking water",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "art": 3,
+     "guzzoline": 1,
+     "liquor": 2
+    },
+    "want": {
+     "medicine": 1,
+     "water": 3
+    },
+    "stock": {
+     "art": 21,
+     "guzzoline": 7,
+     "liquor": 14
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 2244,
+   "gang": {
+    "size": "medium",
+    "harm": 3,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall"
+   ],
+   "lean": {
+    "independent": 94,
+    "lighthouse": 3,
+    "burning_water": 3
+   },
+   "subfactions": {
+    "news": {
+     "presence": 2,
+     "hidden": false
+    },
+    "players": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "dustwich",
+   "name": "Dustwich",
+   "region": "The Ten",
+   "octant": "S",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "The New Orleans container port",
+   "lat": 29.99,
+   "lon": -90.03,
+   "tier": "major",
+   "boss": "Bill",
+   "surplus_text": "scrap, machinery",
+   "want_text": "grain",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "Savvyhead start.",
+   "economy": {
+    "surplus": {
+     "guzzoline": 1,
+     "machinery": 2,
+     "scrap": 3
+    },
+    "want": {
+     "grain": 3,
+     "medicine": 1,
+     "water": 1
+    },
+    "stock": {
+     "guzzoline": 7,
+     "machinery": 14,
+     "scrap": 21
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 1349,
+   "gang": {
+    "size": "medium",
+    "harm": 3,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall"
+   ],
+   "lean": {
+    "independent": 94,
+    "lighthouse": 3,
+    "burning_water": 3
+   },
+   "subfactions": {
+    "diggers": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "casino",
+   "name": "Casino",
+   "region": "The Ten",
+   "octant": "S",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Biloxi",
+   "lat": 30.4,
+   "lon": -88.89,
+   "tier": "hold",
+   "boss": "Esco",
+   "surplus_text": "leisure, drugs",
+   "want_text": "drinking water",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "drugs": 3,
+     "guzzoline": 1
+    },
+    "want": {
+     "medicine": 1,
+     "water": 3
+    },
+    "stock": {
+     "drugs": 12,
+     "guzzoline": 4
+    }
+   },
+   "services": [
+    "leisure"
+   ],
+   "needs": [],
+   "population": 683,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "independent": 97,
+    "lighthouse": 3
+   },
+   "subfactions": {
+    "odd_lot": {
+     "presence": 2,
+     "hidden": true
+    }
+   }
+  },
+  {
+   "id": "mobile",
+   "name": "Mobile",
+   "region": "The Ten",
+   "octant": "S",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Mobile",
+   "lat": 30.69,
+   "lon": -88.04,
+   "tier": "hold",
+   "boss": "Dice",
+   "surplus_text": "trade",
+   "want_text": "fuel",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "A hold built on rail cars that rolls along the coast line.",
+   "economy": {
+    "surplus": {},
+    "want": {
+     "guzzoline": 3,
+     "medicine": 1,
+     "water": 1
+    },
+    "stock": {}
+   },
+   "services": [
+    "trade"
+   ],
+   "needs": [],
+   "population": 744,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 0,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "independent": 96,
+    "lighthouse": 4
+   },
+   "subfactions": {
+    "odd_lot": {
+     "presence": 2,
+     "hidden": true
+    }
+   }
+  },
+  {
+   "id": "spindletop",
+   "name": "Spindletop",
+   "region": "The Ten",
+   "octant": "S",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Beaumont, the first great gusher",
+   "lat": 30.06,
+   "lon": -94.1,
+   "tier": "hold",
+   "boss": "Key",
+   "surplus_text": "crude",
+   "want_text": "fresh foods",
+   "faction": "burning_water",
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "crude": 3,
+     "guzzoline": 1
+    },
+    "want": {
+     "fresh_food": 3,
+     "medicine": 1,
+     "water": 1
+    },
+    "stock": {
+     "crude": 12,
+     "guzzoline": 4
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 638,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 2,
+    "tags": [
+     "fire"
+    ]
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "burning_water": 60,
+    "independent": 34,
+    "sweetwell": 6
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "pier",
+   "name": "Pier",
+   "region": "The Ten",
+   "octant": "S",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Gulfport",
+   "lat": 30.37,
+   "lon": -89.09,
+   "tier": "outpost",
+   "boss": "Yen",
+   "surplus_text": "shelter",
+   "want_text": "meat",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {},
+    "want": {
+     "meat": 3,
+     "medicine": 1
+    },
+    "stock": {}
+   },
+   "services": [
+    "shelter"
+   ],
+   "needs": [],
+   "population": 37,
+   "gang": {
+    "size": "tiny",
+    "harm": 1,
+    "armor": 0,
+    "tags": []
+   },
+   "walls": 0,
+   "buildings": [
+    "trader"
+   ],
+   "lean": {
+    "independent": 97,
+    "lighthouse": 3
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "sweetwell",
+   "name": "Sweetwell",
+   "region": "The Thirty‑Five",
+   "octant": "W",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "San Antonio, the aquifer springs",
+   "lat": 29.42,
+   "lon": -98.49,
+   "tier": "seat",
+   "boss": "Grome",
+   "surplus_text": "drinking water",
+   "want_text": "everything else",
+   "faction": "sweetwell",
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "Seat. Sets the water price across the southwest.",
+   "economy": {
+    "surplus": {
+     "water": 3
+    },
+    "want": {
+     "ammo": 1,
+     "fresh_food": 1,
+     "grain": 1,
+     "guzzoline": 1,
+     "meat": 1,
+     "medicine": 1
+    },
+    "stock": {
+     "water": 30
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 8413,
+   "gang": {
+    "size": "medium",
+    "harm": 3,
+    "armor": 2,
+    "tags": [
+     "well-disciplined"
+    ]
+   },
+   "walls": 2,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall",
+    "seat",
+    "wells"
+   ],
+   "lean": {
+    "sweetwell": 100
+   },
+   "subfactions": {
+    "tankermen": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "mission",
+   "name": "Mission",
+   "region": "The Thirty‑Five",
+   "octant": "W",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "A mission compound",
+   "lat": 29.33,
+   "lon": -98.47,
+   "tier": "hold",
+   "boss": "Bello",
+   "surplus_text": "security",
+   "want_text": "fresh foods",
+   "faction": "sweetwell",
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "meat": 1
+    },
+    "want": {
+     "fresh_food": 3,
+     "guzzoline": 1,
+     "medicine": 1,
+     "water": 1
+    },
+    "stock": {
+     "meat": 4
+    }
+   },
+   "services": [
+    "security"
+   ],
+   "needs": [],
+   "population": 716,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 2,
+    "tags": [
+     "well-disciplined"
+    ]
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "sweetwell": 60,
+    "independent": 26,
+    "burning_water": 8,
+    "cerro": 6
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "blue_hole",
+   "name": "Blue Hole",
+   "region": "The Thirty‑Five",
+   "octant": "W",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "San Marcos springs",
+   "lat": 29.88,
+   "lon": -97.94,
+   "tier": "hold",
+   "boss": "Chel",
+   "surplus_text": "drinking water",
+   "want_text": "weaponry",
+   "faction": "sweetwell",
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "meat": 1,
+     "water": 3
+    },
+    "want": {
+     "guzzoline": 1,
+     "medicine": 1,
+     "weaponry": 3
+    },
+    "stock": {
+     "meat": 4,
+     "water": 12
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 442,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 2,
+    "tags": [
+     "well-disciplined"
+    ]
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary",
+    "wells"
+   ],
+   "lean": {
+    "sweetwell": 60,
+    "independent": 27,
+    "burning_water": 8,
+    "cerro": 5
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "dome",
+   "name": "Dome",
+   "region": "The Thirty‑Five",
+   "octant": "W",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Austin, the capitol and the university",
+   "lat": 30.27,
+   "lon": -97.74,
+   "tier": "major",
+   "boss": "Jav",
+   "surplus_text": "books, information",
+   "want_text": "fuel",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "books": 3,
+     "meat": 1,
+     "medicine": 2
+    },
+    "want": {
+     "guzzoline": 3,
+     "water": 1
+    },
+    "stock": {
+     "books": 21,
+     "meat": 7,
+     "medicine": 14
+    }
+   },
+   "services": [
+    "information"
+   ],
+   "needs": [],
+   "population": 1291,
+   "gang": {
+    "size": "medium",
+    "harm": 3,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall"
+   ],
+   "lean": {
+    "independent": 71,
+    "sweetwell": 16,
+    "burning_water": 9,
+    "cerro": 4
+   },
+   "subfactions": {
+    "waking": {
+     "presence": 2,
+     "hidden": true
+    }
+   }
+  },
+  {
+   "id": "silo",
+   "name": "Silo",
+   "region": "The Thirty‑Five",
+   "octant": "W",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Waco grain elevators",
+   "lat": 31.55,
+   "lon": -97.15,
+   "tier": "hold",
+   "boss": "Li",
+   "surplus_text": "grain",
+   "want_text": "security",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "grain": 3,
+     "meat": 1
+    },
+    "want": {
+     "guzzoline": 1,
+     "medicine": 1,
+     "water": 1
+    },
+    "stock": {
+     "grain": 12,
+     "meat": 4
+    }
+   },
+   "services": [],
+   "needs": [
+    "security"
+   ],
+   "population": 767,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 0,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "independent": 78,
+    "sweetwell": 10,
+    "burning_water": 9,
+    "cerro": 3
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "stack",
+   "name": "The Stack",
+   "region": "The Thirty‑Five",
+   "octant": "W",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "The Dallas High Five interchange",
+   "lat": 32.92,
+   "lon": -96.77,
+   "tier": "major",
+   "boss": "Kim",
+   "surplus_text": "tolls, vantage",
+   "want_text": "fresh foods",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "A five‑level interchange. Whoever holds it watches three interstates.",
+   "economy": {
+    "surplus": {
+     "meat": 1
+    },
+    "want": {
+     "fresh_food": 3,
+     "guzzoline": 1,
+     "medicine": 1,
+     "water": 1
+    },
+    "stock": {
+     "meat": 7
+    }
+   },
+   "services": [
+    "tolls",
+    "vantage"
+   ],
+   "needs": [],
+   "population": 1435,
+   "gang": {
+    "size": "medium",
+    "harm": 3,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall"
+   ],
+   "lean": {
+    "independent": 85,
+    "sweetwell": 6,
+    "burning_water": 6,
+    "lighthouse": 3
+   },
+   "subfactions": {
+    "teeth": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "brand",
+   "name": "Brand",
+   "region": "The Thirty‑Five",
+   "octant": "W",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Fort Worth stockyards",
+   "lat": 32.79,
+   "lon": -97.35,
+   "tier": "hold",
+   "boss": "Fleece",
+   "surplus_text": "meat, hides",
+   "want_text": "drinking water",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "meat": 3,
+     "raw_materials": 2
+    },
+    "want": {
+     "guzzoline": 1,
+     "medicine": 1,
+     "water": 3
+    },
+    "stock": {
+     "meat": 12,
+     "raw_materials": 8
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 764,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "independent": 89,
+    "sweetwell": 6,
+    "burning_water": 5
+   },
+   "subfactions": {
+    "teeth": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "border",
+   "name": "Border",
+   "region": "The Thirty‑Five",
+   "octant": "W",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Laredo bridges",
+   "lat": 27.51,
+   "lon": -99.51,
+   "tier": "major",
+   "boss": "III",
+   "surplus_text": "tolls, information",
+   "want_text": "preserved foods",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "The main crossing south onto the Eighty‑Five.",
+   "economy": {
+    "surplus": {
+     "meat": 1
+    },
+    "want": {
+     "guzzoline": 1,
+     "preserved_food": 3,
+     "water": 1
+    },
+    "stock": {
+     "meat": 7
+    }
+   },
+   "services": [
+    "information",
+    "tolls"
+   ],
+   "needs": [],
+   "population": 1986,
+   "gang": {
+    "size": "medium",
+    "harm": 3,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall"
+   ],
+   "lean": {
+    "independent": 70,
+    "cerro": 13,
+    "sweetwell": 12,
+    "burning_water": 5
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "pinwheel",
+   "name": "Pinwheel",
+   "region": "The Thirty‑Five",
+   "octant": "W",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "An I‑35 wind farm",
+   "lat": 32.01,
+   "lon": -97.13,
+   "tier": "outpost",
+   "boss": "Do",
+   "surplus_text": "power",
+   "want_text": "scrap",
+   "faction": "sweetwell",
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "batteries": 3
+    },
+    "want": {
+     "medicine": 1,
+     "scrap": 3
+    },
+    "stock": {
+     "batteries": 6
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 87,
+   "gang": {
+    "size": "tiny",
+    "harm": 1,
+    "armor": 1,
+    "tags": [
+     "well-disciplined"
+    ]
+   },
+   "walls": 0,
+   "buildings": [
+    "trader"
+   ],
+   "lean": {
+    "sweetwell": 60,
+    "independent": 33,
+    "burning_water": 7
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "teeth",
+   "name": "The Teeth",
+   "region": "The Rag‑Wastes",
+   "octant": "W",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "The Permian Basin, a mobile camp",
+   "lat": 31.9,
+   "lon": -102.2,
+   "tier": "major",
+   "boss": "Dremmer",
+   "surplus_text": "weaponry, raiders",
+   "want_text": "everything",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "Home camp of the Teeth (road gang, see [18](18-sub-factions.md)). Moves every season.",
+   "economy": {
+    "surplus": {
+     "crude": 1,
+     "weaponry": 3
+    },
+    "want": {
+     "ammo": 1,
+     "fresh_food": 1,
+     "grain": 1,
+     "guzzoline": 1,
+     "meat": 1,
+     "medicine": 1,
+     "water": 1
+    },
+    "stock": {
+     "crude": 7,
+     "weaponry": 21
+    }
+   },
+   "services": [
+    "raiders"
+   ],
+   "needs": [],
+   "population": 1999,
+   "gang": {
+    "size": "large",
+    "harm": 3,
+    "armor": 1,
+    "tags": [
+     "savage",
+     "mobile"
+    ]
+   },
+   "walls": 0,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall"
+   ],
+   "lean": {
+    "independent": 95,
+    "sweetwell": 5
+   },
+   "subfactions": {
+    "teeth": {
+     "presence": 3,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "twice",
+   "name": "Twice",
+   "region": "The Rag‑Wastes",
+   "octant": "W",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "San Angelo",
+   "lat": 31.46,
+   "lon": -100.44,
+   "tier": "hold",
+   "boss": "Princy",
+   "surplus_text": "livestock",
+   "want_text": "medical supplies",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "Goat herders, raided twice a year.",
+   "economy": {
+    "surplus": {
+     "crude": 1,
+     "livestock": 3,
+     "meat": 1
+    },
+    "want": {
+     "medicine": 3,
+     "water": 1
+    },
+    "stock": {
+     "crude": 4,
+     "livestock": 12,
+     "meat": 4
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 554,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "independent": 85,
+    "sweetwell": 9,
+    "burning_water": 3,
+    "cerro": 3
+   },
+   "subfactions": {
+    "teeth": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "nodders",
+   "name": "Nodders",
+   "region": "The Rag‑Wastes",
+   "octant": "W",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Pumpjack fields",
+   "lat": 31.85,
+   "lon": -102.37,
+   "tier": "hold",
+   "boss": "Winkle",
+   "surplus_text": "crude",
+   "want_text": "preserved foods",
+   "faction": "burning_water",
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "crude": 3,
+     "meat": 1
+    },
+    "want": {
+     "preserved_food": 3,
+     "water": 1
+    },
+    "stock": {
+     "crude": 12,
+     "meat": 4
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 182,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 2,
+    "tags": [
+     "fire"
+    ]
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "burning_water": 60,
+    "independent": 35,
+    "sweetwell": 5
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "drift",
+   "name": "Drift",
+   "region": "The Rag‑Wastes",
+   "octant": "W",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "The Monahans sandhills",
+   "lat": 31.65,
+   "lon": -102.82,
+   "tier": "outpost",
+   "boss": "Crine",
+   "surplus_text": "information (scouts)",
+   "want_text": "drinking water",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "Run by Crine, Dremmer's lieutenant in the Teeth.",
+   "economy": {
+    "surplus": {},
+    "want": {
+     "medicine": 1,
+     "water": 3
+    },
+    "stock": {}
+   },
+   "services": [
+    "information"
+   ],
+   "needs": [],
+   "population": 109,
+   "gang": {
+    "size": "tiny",
+    "harm": 1,
+    "armor": 0,
+    "tags": []
+   },
+   "walls": 0,
+   "buildings": [
+    "trader"
+   ],
+   "lean": {
+    "independent": 96,
+    "sweetwell": 4
+   },
+   "subfactions": {
+    "teeth": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "halter",
+   "name": "Halter",
+   "region": "The Rag‑Wastes",
+   "octant": "W",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "A horse ranch",
+   "lat": 32.45,
+   "lon": -99.73,
+   "tier": "hold",
+   "boss": "Harridan",
+   "surplus_text": "livestock (work animals)",
+   "want_text": "fuel",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "crude": 1,
+     "livestock": 3,
+     "meat": 1
+    },
+    "want": {
+     "guzzoline": 3,
+     "water": 1
+    },
+    "stock": {
+     "crude": 4,
+     "livestock": 12,
+     "meat": 4
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 618,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "independent": 89,
+    "sweetwell": 8,
+    "burning_water": 3
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "long_fence",
+   "name": "Long Fence",
+   "region": "The Rag‑Wastes",
+   "octant": "W",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "A ranch",
+   "lat": 32.47,
+   "lon": -100.41,
+   "tier": "outpost",
+   "boss": "Missed",
+   "surplus_text": "hides",
+   "want_text": "medical supplies",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "raw_materials": 3
+    },
+    "want": {
+     "medicine": 3
+    },
+    "stock": {
+     "raw_materials": 6
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 30,
+   "gang": {
+    "size": "tiny",
+    "harm": 1,
+    "armor": 0,
+    "tags": []
+   },
+   "walls": 0,
+   "buildings": [
+    "trader"
+   ],
+   "lean": {
+    "independent": 91,
+    "sweetwell": 6,
+    "burning_water": 3
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "dry_spring",
+   "name": "Dry Spring",
+   "region": "The Rag‑Wastes",
+   "octant": "W",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Big Spring, an old armory",
+   "lat": 32.25,
+   "lon": -101.48,
+   "tier": "hold",
+   "boss": "Tao",
+   "surplus_text": "ammo",
+   "want_text": "drinking water",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "ammo": 3,
+     "crude": 1,
+     "meat": 1
+    },
+    "want": {
+     "medicine": 1,
+     "water": 3
+    },
+    "stock": {
+     "ammo": 12,
+     "crude": 4,
+     "meat": 4
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 723,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "independent": 94,
+    "sweetwell": 6
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "last_stop",
+   "name": "Last Stop",
+   "region": "The Rag‑Wastes",
+   "octant": "W",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Pecos, on the Ten",
+   "lat": 31.42,
+   "lon": -103.49,
+   "tier": "outpost",
+   "boss": "Wire",
+   "surplus_text": "information (who went west), scrap",
+   "want_text": "everything",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": true,
+   "notes": "The edge of the Loud. West of here, the Ten still howls.",
+   "economy": {
+    "surplus": {
+     "scrap": 3
+    },
+    "want": {
+     "ammo": 1,
+     "fresh_food": 1,
+     "grain": 1,
+     "guzzoline": 1,
+     "meat": 1,
+     "medicine": 1
+    },
+    "stock": {
+     "scrap": 6
+    }
+   },
+   "services": [
+    "information"
+   ],
+   "needs": [],
+   "population": 82,
+   "gang": {
+    "size": "tiny",
+    "harm": 1,
+    "armor": 0,
+    "tags": []
+   },
+   "walls": 0,
+   "buildings": [
+    "trader"
+   ],
+   "lean": {
+    "independent": 96,
+    "sweetwell": 4
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "gullet",
+   "name": "Gullet",
+   "region": "The Bravo",
+   "octant": "S/W",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "A Rio Grande canyon near Del Rio",
+   "lat": 29.36,
+   "lon": -100.9,
+   "tier": "hold",
+   "boss": "Ik",
+   "surplus_text": "hides, meat",
+   "want_text": "ammo",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "A choke point on the riverbed road.",
+   "economy": {
+    "surplus": {
+     "meat": 2,
+     "raw_materials": 3,
+     "salt": 1
+    },
+    "want": {
+     "ammo": 3,
+     "medicine": 1,
+     "water": 1
+    },
+    "stock": {
+     "meat": 8,
+     "raw_materials": 12,
+     "salt": 4
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 382,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 0,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "independent": 78,
+    "sweetwell": 12,
+    "cerro": 6,
+    "burning_water": 4
+   },
+   "subfactions": {
+    "teeth": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "gemela",
+   "name": "Gemela",
+   "region": "The Bravo",
+   "octant": "S/W",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Nuevo Laredo",
+   "lat": 27.48,
+   "lon": -99.52,
+   "tier": "hold",
+   "boss": "Lupe",
+   "surplus_text": "trade",
+   "want_text": "security",
+   "faction": "cerro",
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "Border's twin across the dry bed.",
+   "economy": {
+    "surplus": {
+     "salt": 1
+    },
+    "want": {
+     "medicine": 1,
+     "water": 1
+    },
+    "stock": {
+     "salt": 4
+    }
+   },
+   "services": [
+    "trade"
+   ],
+   "needs": [
+    "security"
+   ],
+   "population": 523,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 2,
+    "tags": [
+     "siege"
+    ]
+   },
+   "walls": 2,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "cerro": 60,
+    "independent": 23,
+    "sweetwell": 12,
+    "burning_water": 5
+   },
+   "subfactions": {
+    "odd_lot": {
+     "presence": 2,
+     "hidden": true
+    }
+   }
+  },
+  {
+   "id": "falcon",
+   "name": "Falcon",
+   "region": "The Bravo",
+   "octant": "S/W",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Falcon Dam",
+   "lat": 26.56,
+   "lon": -99.17,
+   "tier": "major",
+   "boss": "Rache",
+   "surplus_text": "drinking water (reservoir)",
+   "want_text": "weaponry",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "salt": 1,
+     "water": 3
+    },
+    "want": {
+     "weaponry": 3
+    },
+    "stock": {
+     "salt": 7,
+     "water": 21
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 1019,
+   "gang": {
+    "size": "medium",
+    "harm": 3,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall",
+    "wells"
+   ],
+   "lean": {
+    "independent": 79,
+    "cerro": 10,
+    "sweetwell": 8,
+    "burning_water": 3
+   },
+   "subfactions": {
+    "tankermen": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "pesca",
+   "name": "Pesca",
+   "region": "The Bravo",
+   "octant": "S/W",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "The riverbed flats",
+   "lat": 26.38,
+   "lon": -98.82,
+   "tier": "hold",
+   "boss": "Nee",
+   "surplus_text": "vehicles (land yachts)",
+   "want_text": "drinking water",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "Builds land yachts that sail the dry Bravo.",
+   "economy": {
+    "surplus": {
+     "parts": 3,
+     "salt": 1
+    },
+    "want": {
+     "medicine": 1,
+     "water": 3
+    },
+    "stock": {
+     "parts": 12,
+     "salt": 4
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 437,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "garage"
+   ],
+   "lean": {
+    "independent": 81,
+    "cerro": 9,
+    "sweetwell": 7,
+    "burning_water": 3
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "cerro",
+   "name": "Cerro",
+   "region": "The Bravo",
+   "octant": "S/W",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Monterrey",
+   "lat": 25.67,
+   "lon": -100.31,
+   "tier": "seat",
+   "boss": "Otilia",
+   "surplus_text": "machinery, weaponry (steel)",
+   "want_text": "fresh foods",
+   "faction": "cerro",
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "Cerro's seat (Otilia). A mountain‑ringed city of steel and cement. The biggest hold in the south.",
+   "economy": {
+    "surplus": {
+     "ammo": 1,
+     "machinery": 3,
+     "salt": 1,
+     "weaponry": 2
+    },
+    "want": {
+     "fresh_food": 3,
+     "medicine": 1,
+     "water": 1
+    },
+    "stock": {
+     "ammo": 10,
+     "machinery": 30,
+     "salt": 10,
+     "weaponry": 20
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 4130,
+   "gang": {
+    "size": "medium",
+    "harm": 3,
+    "armor": 2,
+    "tags": [
+     "siege"
+    ]
+   },
+   "walls": 2,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall",
+    "seat"
+   ],
+   "lean": {
+    "cerro": 100
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "desierto",
+   "name": "Desierto",
+   "region": "The Bravo",
+   "octant": "S/W",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Saltillo",
+   "lat": 25.42,
+   "lon": -101.0,
+   "tier": "hold",
+   "boss": "Abe",
+   "surplus_text": "raw materials",
+   "want_text": "drinking water",
+   "faction": "cerro",
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "raw_materials": 3,
+     "salt": 1
+    },
+    "want": {
+     "water": 3
+    },
+    "stock": {
+     "raw_materials": 12,
+     "salt": 4
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 652,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 2,
+    "tags": [
+     "siege"
+    ]
+   },
+   "walls": 2,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "cerro": 60,
+    "independent": 36,
+    "sweetwell": 4
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "soto",
+   "name": "Soto",
+   "region": "The Bravo",
+   "octant": "S/W",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "A Tamaulipas ranch",
+   "lat": 23.77,
+   "lon": -98.21,
+   "tier": "outpost",
+   "boss": "Rosa",
+   "surplus_text": "livestock",
+   "want_text": "medical supplies",
+   "faction": "cerro",
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "livestock": 3
+    },
+    "want": {
+     "medicine": 3
+    },
+    "stock": {
+     "livestock": 6
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 72,
+   "gang": {
+    "size": "tiny",
+    "harm": 1,
+    "armor": 1,
+    "tags": [
+     "siege"
+    ]
+   },
+   "walls": 2,
+   "buildings": [
+    "trader"
+   ],
+   "lean": {
+    "cerro": 60,
+    "independent": 37,
+    "sweetwell": 3
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "mouth",
+   "name": "Mouth",
+   "region": "The Bravo",
+   "octant": "S/W",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Brownsville and Matamoros",
+   "lat": 25.9,
+   "lon": -97.5,
+   "tier": "hold",
+   "boss": "Lazo",
+   "surplus_text": "salt, fish",
+   "want_text": "fuel",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "Where the Bravo meets the Gulf.",
+   "economy": {
+    "surplus": {
+     "fresh_food": 2,
+     "salt": 3
+    },
+    "want": {
+     "guzzoline": 3,
+     "water": 1
+    },
+    "stock": {
+     "fresh_food": 8,
+     "salt": 12
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 257,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "independent": 83,
+    "cerro": 8,
+    "sweetwell": 5,
+    "burning_water": 4
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "tampico",
+   "name": "Tampico",
+   "region": "The Sierra Coast",
+   "octant": "S",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Tampico",
+   "lat": 22.25,
+   "lon": -97.86,
+   "tier": "major",
+   "boss": "Mar",
+   "surplus_text": "gasoline, crude",
+   "want_text": "fresh foods",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "crude": 2,
+     "guzzoline": 3
+    },
+    "want": {
+     "ammo": 1,
+     "fresh_food": 3,
+     "medicine": 1
+    },
+    "stock": {
+     "crude": 14,
+     "guzzoline": 21
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 1788,
+   "gang": {
+    "size": "medium",
+    "harm": 3,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall"
+   ],
+   "lean": {
+    "independent": 97,
+    "cerro": 3
+   },
+   "subfactions": {
+    "tankermen": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "tux",
+   "name": "Tux",
+   "region": "The Sierra Coast",
+   "octant": "S",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Tuxpan oil terminal",
+   "lat": 20.96,
+   "lon": -97.4,
+   "tier": "hold",
+   "boss": "Cruz",
+   "surplus_text": "crude",
+   "want_text": "drinking water",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "crude": 3,
+     "fresh_food": 1
+    },
+    "want": {
+     "ammo": 1,
+     "medicine": 1,
+     "water": 3
+    },
+    "stock": {
+     "crude": 12,
+     "fresh_food": 4
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 376,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 0,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "independent": 100
+   },
+   "subfactions": {
+    "mourners": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "tajin",
+   "name": "Tajin",
+   "region": "The Sierra Coast",
+   "octant": "S",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "The El Tajín pyramids",
+   "lat": 20.45,
+   "lon": -97.38,
+   "tier": "hold",
+   "boss": "Quiet",
+   "surplus_text": "information (augury)",
+   "want_text": "meat",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "Home of the Watchers (cult). A maelstrom site (Echo, secondary).",
+   "economy": {
+    "surplus": {
+     "fresh_food": 1
+    },
+    "want": {
+     "ammo": 1,
+     "meat": 3,
+     "medicine": 1
+    },
+    "stock": {
+     "fresh_food": 4
+    }
+   },
+   "services": [
+    "information"
+   ],
+   "needs": [],
+   "population": 534,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 0,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary",
+    "brainers_room"
+   ],
+   "lean": {
+    "independent": 100
+   },
+   "subfactions": {
+    "mourners": {
+     "presence": 2,
+     "hidden": false
+    },
+    "watchers": {
+     "presence": 3,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "fort",
+   "name": "The Fort",
+   "region": "The Sierra Coast",
+   "octant": "S",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Veracruz, the island fortress",
+   "lat": 19.21,
+   "lon": -96.13,
+   "tier": "major",
+   "boss": "Salvi",
+   "surplus_text": "fortifications, weaponry",
+   "want_text": "fresh foods",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "weaponry": 3
+    },
+    "want": {
+     "ammo": 1,
+     "fresh_food": 3,
+     "medicine": 1
+    },
+    "stock": {
+     "weaponry": 21
+    }
+   },
+   "services": [
+    "fortifications"
+   ],
+   "needs": [],
+   "population": 1511,
+   "gang": {
+    "size": "medium",
+    "harm": 3,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall"
+   ],
+   "lean": {
+    "independent": 100
+   },
+   "subfactions": {
+    "mourners": {
+     "presence": 2,
+     "hidden": false
+    },
+    "watchers": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "barrow",
+   "name": "Barrow",
+   "region": "The Sierra Coast",
+   "octant": "S",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Xalapa",
+   "lat": 19.54,
+   "lon": -96.91,
+   "tier": "hold",
+   "boss": "Matilda",
+   "surplus_text": "burial, preserved foods (salt meat)",
+   "want_text": "medical supplies",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "Mourners: home of the Mourners. The Mend discipline site. Hocus start.",
+   "economy": {
+    "surplus": {
+     "fresh_food": 1,
+     "preserved_food": 3
+    },
+    "want": {
+     "ammo": 1,
+     "medicine": 3
+    },
+    "stock": {
+     "fresh_food": 4,
+     "preserved_food": 12
+    }
+   },
+   "services": [
+    "burial"
+   ],
+   "needs": [],
+   "population": 218,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary",
+    "congregation"
+   ],
+   "lean": {
+    "independent": 100
+   },
+   "subfactions": {
+    "mourners": {
+     "presence": 3,
+     "hidden": false
+    },
+    "watchers": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "green",
+   "name": "The Green",
+   "region": "The Sierra Coast",
+   "octant": "S",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Los Tuxtlas jungle",
+   "lat": 18.45,
+   "lon": -95.2,
+   "tier": "outpost",
+   "boss": "Brujo",
+   "surplus_text": "drugs, fresh foods (herbs)",
+   "want_text": "ammo",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "drugs": 3,
+     "fresh_food": 2
+    },
+    "want": {
+     "ammo": 3
+    },
+    "stock": {
+     "drugs": 6,
+     "fresh_food": 4
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 98,
+   "gang": {
+    "size": "tiny",
+    "harm": 1,
+    "armor": 0,
+    "tags": []
+   },
+   "walls": 0,
+   "buildings": [
+    "trader"
+   ],
+   "lean": {
+    "independent": 100
+   },
+   "subfactions": {
+    "watchers": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "southmost",
+   "name": "Southmost",
+   "region": "The Sierra Coast",
+   "octant": "S",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "The climb toward the City",
+   "lat": 18.85,
+   "lon": -97.1,
+   "tier": "outpost",
+   "boss": "Ibis",
+   "surplus_text": "information, scrap",
+   "want_text": "everything",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": true,
+   "notes": "The edge of the Loud. The Eighty‑Five keeps going to a megacity nobody has come back from.",
+   "economy": {
+    "surplus": {
+     "scrap": 3
+    },
+    "want": {
+     "ammo": 1,
+     "fresh_food": 1,
+     "grain": 1,
+     "guzzoline": 1,
+     "meat": 1,
+     "medicine": 1
+    },
+    "stock": {
+     "scrap": 6
+    }
+   },
+   "services": [
+    "information"
+   ],
+   "needs": [],
+   "population": 97,
+   "gang": {
+    "size": "tiny",
+    "harm": 1,
+    "armor": 0,
+    "tags": []
+   },
+   "walls": 0,
+   "buildings": [
+    "trader"
+   ],
+   "lean": {
+    "independent": 100
+   },
+   "subfactions": {
+    "watchers": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "pellet",
+   "name": "Pellet",
+   "region": "The Seventy",
+   "octant": "N",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "The Kansas City stockyards",
+   "lat": 39.1,
+   "lon": -94.6,
+   "tier": "seat",
+   "boss": "Tum Tum",
+   "surplus_text": "labor (slaves; never a player good)",
+   "want_text": "luxury goods",
+   "faction": "choir",
+   "via_tum_tum": true,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "Seat.",
+   "economy": {
+    "surplus": {
+     "grain": 1
+    },
+    "want": {
+     "guzzoline": 1,
+     "luxury": 3,
+     "medicine": 1
+    },
+    "stock": {
+     "grain": 10
+    }
+   },
+   "services": [
+    "labor"
+   ],
+   "needs": [],
+   "population": 4015,
+   "gang": {
+    "size": "medium",
+    "harm": 2,
+    "armor": 1,
+    "tags": [
+     "catchers"
+    ]
+   },
+   "walls": 2,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall",
+    "seat"
+   ],
+   "lean": {
+    "choir": 100
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "arch",
+   "name": "The Arch",
+   "region": "The Seventy",
+   "octant": "N",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "St Louis",
+   "lat": 38.62,
+   "lon": -90.18,
+   "tier": "major",
+   "boss": "Doc",
+   "surplus_text": "status (pilgrims), leisure",
+   "want_text": "everything",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [
+    "Mississippi",
+    "Missouri"
+   ],
+   "loud_edge": false,
+   "notes": "Crosses the Mississippi. Starts singing at 9:00.",
+   "economy": {
+    "surplus": {},
+    "want": {
+     "ammo": 1,
+     "fresh_food": 1,
+     "grain": 1,
+     "guzzoline": 1,
+     "meat": 1,
+     "medicine": 1
+    },
+    "stock": {}
+   },
+   "services": [
+    "leisure",
+    "status"
+   ],
+   "needs": [],
+   "population": 1668,
+   "gang": {
+    "size": "medium",
+    "harm": 3,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall",
+    "crossing"
+   ],
+   "lean": {
+    "independent": 93,
+    "lighthouse": 7
+   },
+   "subfactions": {
+    "cross_folk": {
+     "presence": 2,
+     "hidden": false
+    },
+    "keepers": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "fork",
+   "name": "Fork",
+   "region": "The Seventy",
+   "octant": "N",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Cairo, where the rivers meet",
+   "lat": 37.0,
+   "lon": -89.18,
+   "tier": "major",
+   "boss": "Inch",
+   "surplus_text": "information",
+   "want_text": "preserved foods",
+   "faction": "lighthouse",
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [
+    "Mississippi",
+    "Ohio"
+   ],
+   "loud_edge": false,
+   "notes": "Crosses both the Mississippi and the Ohio.",
+   "economy": {
+    "surplus": {
+     "grain": 1
+    },
+    "want": {
+     "guzzoline": 1,
+     "medicine": 1,
+     "preserved_food": 3
+    },
+    "stock": {
+     "grain": 7
+    }
+   },
+   "services": [
+    "information"
+   ],
+   "needs": [],
+   "population": 2316,
+   "gang": {
+    "size": "medium",
+    "harm": 3,
+    "armor": 1,
+    "tags": [
+     "defend-only"
+    ]
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall",
+    "crossing"
+   ],
+   "lean": {
+    "lighthouse": 60,
+    "independent": 40
+   },
+   "subfactions": {
+    "keepers": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "quake",
+   "name": "Quake",
+   "region": "The Seventy",
+   "octant": "N",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "New Madrid",
+   "lat": 36.59,
+   "lon": -89.53,
+   "tier": "outpost",
+   "boss": "Core",
+   "surplus_text": "scrap",
+   "want_text": "fortifications",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "The ground still shifts.",
+   "economy": {
+    "surplus": {
+     "scrap": 3
+    },
+    "want": {},
+    "stock": {
+     "scrap": 6
+    }
+   },
+   "services": [],
+   "needs": [
+    "fortifications"
+   ],
+   "population": 82,
+   "gang": {
+    "size": "tiny",
+    "harm": 1,
+    "armor": 0,
+    "tags": []
+   },
+   "walls": 0,
+   "buildings": [
+    "trader"
+   ],
+   "lean": {
+    "independent": 90,
+    "lighthouse": 10
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "campus",
+   "name": "Campus",
+   "region": "The Seventy",
+   "octant": "N",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Columbia",
+   "lat": 38.95,
+   "lon": -92.33,
+   "tier": "hold",
+   "boss": "Plum",
+   "surplus_text": "books, know‑how",
+   "want_text": "fresh foods",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "books": 3,
+     "grain": 1,
+     "medicine": 2
+    },
+    "want": {
+     "fresh_food": 3,
+     "guzzoline": 1
+    },
+    "stock": {
+     "books": 12,
+     "grain": 4,
+     "medicine": 8
+    }
+   },
+   "services": [
+    "know_how"
+   ],
+   "needs": [],
+   "population": 745,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "independent": 96,
+    "lighthouse": 4
+   },
+   "subfactions": {
+    "cross_folk": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "cross",
+   "name": "Cross",
+   "region": "The Seventy",
+   "octant": "N",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Effingham, a giant cross",
+   "lat": 39.12,
+   "lon": -88.54,
+   "tier": "hold",
+   "boss": "Orchid",
+   "surplus_text": "information (pilgrims)",
+   "want_text": "meat",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "Home of the Cross‑folk (cult). Hum‑touched early (6:00).",
+   "economy": {
+    "surplus": {
+     "grain": 1
+    },
+    "want": {
+     "guzzoline": 1,
+     "meat": 3,
+     "medicine": 1
+    },
+    "stock": {
+     "grain": 4
+    }
+   },
+   "services": [
+    "information"
+   ],
+   "needs": [],
+   "population": 521,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 0,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary",
+    "congregation"
+   ],
+   "lean": {
+    "independent": 95,
+    "lighthouse": 5
+   },
+   "subfactions": {
+    "cross_folk": {
+     "presence": 3,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "track",
+   "name": "The Track",
+   "region": "The Seventy",
+   "octant": "N",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "The Indianapolis speedway",
+   "lat": 39.79,
+   "lon": -86.23,
+   "tier": "major",
+   "boss": "Dandy",
+   "surplus_text": "vehicles, leisure (races)",
+   "want_text": "fresh foods",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "Races decide disputes. Driver rivals.",
+   "economy": {
+    "surplus": {
+     "grain": 1,
+     "parts": 3
+    },
+    "want": {
+     "fresh_food": 3,
+     "guzzoline": 1
+    },
+    "stock": {
+     "grain": 7,
+     "parts": 21
+    }
+   },
+   "services": [
+    "leisure"
+   ],
+   "needs": [],
+   "population": 1563,
+   "gang": {
+    "size": "medium",
+    "harm": 3,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall"
+   ],
+   "lean": {
+    "independent": 97,
+    "lighthouse": 3
+   },
+   "subfactions": {
+    "wheelwrights": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "granary",
+   "name": "Granary",
+   "region": "The Seventy",
+   "octant": "N",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Columbus",
+   "lat": 39.96,
+   "lon": -83.0,
+   "tier": "hold",
+   "boss": "Clover",
+   "surplus_text": "grain",
+   "want_text": "fuel",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "grain": 3
+    },
+    "want": {
+     "guzzoline": 3,
+     "medicine": 1
+    },
+    "stock": {
+     "grain": 12
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 599,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "independent": 97,
+    "highwater": 3
+   },
+   "subfactions": {
+    "cross_folk": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "boon",
+   "name": "Boon",
+   "region": "The Seventy",
+   "octant": "N",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "A Missouri River bridge",
+   "lat": 38.97,
+   "lon": -92.74,
+   "tier": "outpost",
+   "boss": "Sword",
+   "surplus_text": "salt (springs), tolls",
+   "want_text": "meat",
+   "faction": "choir",
+   "via_tum_tum": true,
+   "silenced": false,
+   "crossing": [
+    "Missouri"
+   ],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "salt": 3
+    },
+    "want": {
+     "meat": 3
+    },
+    "stock": {
+     "salt": 6
+    }
+   },
+   "services": [
+    "tolls"
+   ],
+   "needs": [],
+   "population": 93,
+   "gang": {
+    "size": "tiny",
+    "harm": 1,
+    "armor": 0,
+    "tags": [
+     "opened"
+    ]
+   },
+   "walls": 0,
+   "buildings": [
+    "trader",
+    "crossing"
+   ],
+   "lean": {
+    "choir": 60,
+    "independent": 37,
+    "lighthouse": 3
+   },
+   "subfactions": {
+    "cross_folk": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "highwater",
+   "name": "Highwater",
+   "region": "The Lakes",
+   "octant": "N",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Toronto",
+   "lat": 43.65,
+   "lon": -79.38,
+   "tier": "seat",
+   "boss": "Abondo",
+   "surplus_text": "drinking water, fish",
+   "want_text": "fuel, meat",
+   "faction": "highwater",
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "Seat. Runs the winter ice roads.",
+   "economy": {
+    "surplus": {
+     "fresh_food": 2,
+     "medicine": 2,
+     "preserved_food": 1,
+     "water": 3
+    },
+    "want": {
+     "guzzoline": 3,
+     "meat": 2
+    },
+    "stock": {
+     "fresh_food": 20,
+     "medicine": 20,
+     "preserved_food": 10,
+     "water": 30
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 6384,
+   "gang": {
+    "size": "large",
+    "harm": 2,
+    "armor": 2,
+    "tags": [
+     "well-disciplined"
+    ]
+   },
+   "walls": 2,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall",
+    "seat",
+    "wells"
+   ],
+   "lean": {
+    "highwater": 100
+   },
+   "subfactions": {
+    "news": {
+     "presence": 2,
+     "hidden": false
+    },
+    "tankermen": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "loop",
+   "name": "The Loop",
+   "region": "The Lakes",
+   "octant": "N",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Chicago",
+   "lat": 41.88,
+   "lon": -87.63,
+   "tier": "major",
+   "boss": "Lawn",
+   "surplus_text": "machinery, scrap",
+   "want_text": "fresh foods",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "Down entrance (the old freight tunnels).",
+   "economy": {
+    "surplus": {
+     "machinery": 3,
+     "medicine": 1,
+     "preserved_food": 1,
+     "scrap": 2,
+     "water": 1
+    },
+    "want": {
+     "fresh_food": 3,
+     "guzzoline": 1
+    },
+    "stock": {
+     "machinery": 21,
+     "medicine": 7,
+     "preserved_food": 7,
+     "scrap": 14,
+     "water": 7
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 1346,
+   "gang": {
+    "size": "medium",
+    "harm": 3,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall"
+   ],
+   "lean": {
+    "independent": 100
+   },
+   "subfactions": {
+    "family": {
+     "presence": 2,
+     "hidden": true
+    },
+    "whiteout": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "motor",
+   "name": "Motor",
+   "region": "The Lakes",
+   "octant": "N",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Detroit",
+   "lat": 42.33,
+   "lon": -83.05,
+   "tier": "major",
+   "boss": "Lars",
+   "surplus_text": "vehicles (factory salvage)",
+   "want_text": "power",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "The best garage in the north. Home of the Wheelwrights.",
+   "economy": {
+    "surplus": {
+     "parts": 3,
+     "preserved_food": 1,
+     "water": 1
+    },
+    "want": {
+     "batteries": 3,
+     "fresh_food": 1,
+     "guzzoline": 1
+    },
+    "stock": {
+     "parts": 21,
+     "preserved_food": 7,
+     "water": 7
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 2332,
+   "gang": {
+    "size": "medium",
+    "harm": 3,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall"
+   ],
+   "lean": {
+    "independent": 92,
+    "highwater": 8
+   },
+   "subfactions": {
+    "wheelwrights": {
+     "presence": 3,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "burnriver",
+   "name": "Burnriver",
+   "region": "The Lakes",
+   "octant": "N",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Cleveland, the river that burned",
+   "lat": 41.5,
+   "lon": -81.69,
+   "tier": "hold",
+   "boss": "Spice",
+   "surplus_text": "raw materials (chemicals)",
+   "want_text": "medical supplies",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "preserved_food": 1,
+     "raw_materials": 3,
+     "water": 1
+    },
+    "want": {
+     "fresh_food": 1,
+     "guzzoline": 1,
+     "medicine": 3
+    },
+    "stock": {
+     "preserved_food": 4,
+     "raw_materials": 12,
+     "water": 4
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 246,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 0,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "independent": 94,
+    "highwater": 6
+   },
+   "subfactions": {
+    "whiteout": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "falls",
+   "name": "The Falls",
+   "region": "The Lakes",
+   "octant": "N",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Niagara",
+   "lat": 43.09,
+   "lon": -79.07,
+   "tier": "major",
+   "boss": "Venus",
+   "surplus_text": "power, drinking water",
+   "want_text": "meat",
+   "faction": "highwater",
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [
+    "Niagara"
+   ],
+   "loud_edge": false,
+   "notes": "Crosses the Niagara.",
+   "economy": {
+    "surplus": {
+     "batteries": 3,
+     "preserved_food": 1,
+     "water": 2
+    },
+    "want": {
+     "fresh_food": 1,
+     "guzzoline": 1,
+     "meat": 3,
+     "medicine": 1
+    },
+    "stock": {
+     "batteries": 21,
+     "preserved_food": 7,
+     "water": 14
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 2484,
+   "gang": {
+    "size": "medium",
+    "harm": 3,
+    "armor": 2,
+    "tags": [
+     "well-disciplined"
+    ]
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall",
+    "crossing"
+   ],
+   "lean": {
+    "highwater": 60,
+    "independent": 40
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "brewhouse",
+   "name": "Brewhouse",
+   "region": "The Lakes",
+   "octant": "N",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Milwaukee",
+   "lat": 43.04,
+   "lon": -87.91,
+   "tier": "hold",
+   "boss": "Storm",
+   "surplus_text": "liquor, grain",
+   "want_text": "fuel",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "grain": 2,
+     "liquor": 3,
+     "preserved_food": 1,
+     "water": 1
+    },
+    "want": {
+     "fresh_food": 1,
+     "guzzoline": 3,
+     "medicine": 1
+    },
+    "stock": {
+     "grain": 8,
+     "liquor": 12,
+     "preserved_food": 4,
+     "water": 4
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 728,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 0,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "independent": 100
+   },
+   "subfactions": {
+    "whiteout": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "mill_town",
+   "name": "Mill Town",
+   "region": "The Lakes",
+   "octant": "N",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Gary steelworks",
+   "lat": 41.6,
+   "lon": -87.34,
+   "tier": "hold",
+   "boss": "Icicle",
+   "surplus_text": "machinery, weaponry",
+   "want_text": "fresh foods",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "Winter home of the Whiteout (road gang).",
+   "economy": {
+    "surplus": {
+     "ammo": 1,
+     "machinery": 3,
+     "preserved_food": 1,
+     "water": 1,
+     "weaponry": 2
+    },
+    "want": {
+     "fresh_food": 3,
+     "guzzoline": 1,
+     "medicine": 1
+    },
+    "stock": {
+     "ammo": 4,
+     "machinery": 12,
+     "preserved_food": 4,
+     "water": 4,
+     "weaponry": 8
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 348,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "garage"
+   ],
+   "lean": {
+    "independent": 97,
+    "highwater": 3
+   },
+   "subfactions": {
+    "whiteout": {
+     "presence": 3,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "tunnel",
+   "name": "The Tunnel",
+   "region": "The Lakes",
+   "octant": "N",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "The Detroit–Windsor tunnel",
+   "lat": 42.315,
+   "lon": -83.03,
+   "tier": "hold",
+   "boss": "Shade",
+   "surplus_text": "tolls",
+   "want_text": "meat",
+   "faction": "highwater",
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [
+    "Detroit"
+   ],
+   "loud_edge": false,
+   "notes": "Crosses the Detroit River.",
+   "economy": {
+    "surplus": {
+     "preserved_food": 1,
+     "water": 1
+    },
+    "want": {
+     "fresh_food": 1,
+     "guzzoline": 1,
+     "meat": 3
+    },
+    "stock": {
+     "preserved_food": 4,
+     "water": 4
+    }
+   },
+   "services": [
+    "tolls"
+   ],
+   "needs": [],
+   "population": 444,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 2,
+    "tags": [
+     "well-disciplined"
+    ]
+   },
+   "walls": 0,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary",
+    "crossing"
+   ],
+   "lean": {
+    "highwater": 60,
+    "independent": 40
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "pen",
+   "name": "Pen",
+   "region": "The Lakes",
+   "octant": "N",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Kingston penitentiary, on the 401",
+   "lat": 44.23,
+   "lon": -76.49,
+   "tier": "hold",
+   "boss": "Frost",
+   "surplus_text": "labor (convicts)",
+   "want_text": "preserved foods",
+   "faction": "highwater",
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": true,
+   "notes": "The 401 east of here runs into the Loud.",
+   "economy": {
+    "surplus": {
+     "water": 1
+    },
+    "want": {
+     "fresh_food": 1,
+     "guzzoline": 1,
+     "medicine": 1,
+     "preserved_food": 3
+    },
+    "stock": {
+     "water": 4
+    }
+   },
+   "services": [
+    "labor"
+   ],
+   "needs": [],
+   "population": 584,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 2,
+    "tags": [
+     "well-disciplined"
+    ]
+   },
+   "walls": 0,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "highwater": 60,
+    "independent": 40
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "visage",
+   "name": "Visage",
+   "region": "The Lakes",
+   "octant": "N",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Toledo, the glass city",
+   "lat": 41.65,
+   "lon": -83.54,
+   "tier": "hold",
+   "boss": "Mimi",
+   "surplus_text": "luxury goods (glass, lenses)",
+   "want_text": "fresh foods",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "glass": 3,
+     "preserved_food": 1,
+     "water": 1
+    },
+    "want": {
+     "fresh_food": 3,
+     "guzzoline": 1,
+     "medicine": 1
+    },
+    "stock": {
+     "glass": 12,
+     "preserved_food": 4,
+     "water": 4
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 607,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 0,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "independent": 94,
+    "highwater": 6
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "forks",
+   "name": "Forks",
+   "region": "The Lakes",
+   "octant": "N",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "London, Ontario, on the 401",
+   "lat": 42.98,
+   "lon": -81.25,
+   "tier": "hold",
+   "boss": "Bai",
+   "surplus_text": "grain",
+   "want_text": "fuel",
+   "faction": "highwater",
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "grain": 3,
+     "preserved_food": 1,
+     "water": 1
+    },
+    "want": {
+     "fresh_food": 1,
+     "guzzoline": 3
+    },
+    "stock": {
+     "grain": 12,
+     "preserved_food": 4,
+     "water": 4
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 793,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 2,
+    "tags": [
+     "well-disciplined"
+    ]
+   },
+   "walls": 0,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "highwater": 60,
+    "independent": 40
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "span",
+   "name": "Span",
+   "region": "The Seventy‑Five",
+   "octant": "E",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Cincinnati, the Ohio bridges",
+   "lat": 39.1,
+   "lon": -84.51,
+   "tier": "major",
+   "boss": "Balls",
+   "surplus_text": "tolls, security",
+   "want_text": "drinking water",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [
+    "Ohio"
+   ],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "fresh_food": 1
+    },
+    "want": {
+     "guzzoline": 1,
+     "medicine": 1,
+     "water": 3
+    },
+    "stock": {
+     "fresh_food": 7
+    }
+   },
+   "services": [
+    "security",
+    "tolls"
+   ],
+   "needs": [],
+   "population": 2582,
+   "gang": {
+    "size": "medium",
+    "harm": 3,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall",
+    "crossing"
+   ],
+   "lean": {
+    "independent": 100
+   },
+   "subfactions": {
+    "keepers": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "stables",
+   "name": "Stables",
+   "region": "The Seventy‑Five",
+   "octant": "E",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Lexington",
+   "lat": 38.04,
+   "lon": -84.5,
+   "tier": "hold",
+   "boss": "Amy",
+   "surplus_text": "livestock (work animals)",
+   "want_text": "fuel",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "fresh_food": 1,
+     "livestock": 3
+    },
+    "want": {
+     "guzzoline": 3,
+     "medicine": 1
+    },
+    "stock": {
+     "fresh_food": 4,
+     "livestock": 12
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 714,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "independent": 96,
+    "lighthouse": 4
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "sphere",
+   "name": "The Sphere",
+   "region": "The Seventy‑Five",
+   "octant": "E",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Knoxville, the gold glass tower",
+   "lat": 35.96,
+   "lon": -83.92,
+   "tier": "hold",
+   "boss": "October",
+   "surplus_text": "vantage, information",
+   "want_text": "fresh foods",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {},
+    "want": {
+     "fresh_food": 3,
+     "guzzoline": 1
+    },
+    "stock": {}
+   },
+   "services": [
+    "information",
+    "vantage"
+   ],
+   "needs": [],
+   "population": 540,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 0,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "independent": 97,
+    "lighthouse": 3
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "lookout",
+   "name": "Lookout",
+   "region": "The Seventy‑Five",
+   "octant": "E",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Chattanooga, Lookout Mountain",
+   "lat": 35.01,
+   "lon": -85.34,
+   "tier": "hold",
+   "boss": "Cutter",
+   "surplus_text": "weaponry, scouts",
+   "want_text": "preserved foods",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "ammo": 1,
+     "fresh_food": 1,
+     "weaponry": 3
+    },
+    "want": {
+     "guzzoline": 1,
+     "medicine": 1,
+     "preserved_food": 3
+    },
+    "stock": {
+     "ammo": 4,
+     "fresh_food": 4,
+     "weaponry": 12
+    }
+   },
+   "services": [
+    "scouts"
+   ],
+   "needs": [],
+   "population": 369,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "independent": 96,
+    "lighthouse": 4
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "spaghetti",
+   "name": "Spaghetti",
+   "region": "The Seventy‑Five",
+   "octant": "E",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Atlanta's mega‑interchange",
+   "lat": 33.89,
+   "lon": -84.26,
+   "tier": "major",
+   "boss": "Millions",
+   "surplus_text": "trade, tolls",
+   "want_text": "drinking water",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "The biggest interchange on the map.",
+   "economy": {
+    "surplus": {
+     "fresh_food": 1
+    },
+    "want": {
+     "guzzoline": 1,
+     "medicine": 1,
+     "water": 3
+    },
+    "stock": {
+     "fresh_food": 7
+    }
+   },
+   "services": [
+    "tolls",
+    "trade"
+   ],
+   "needs": [],
+   "population": 2226,
+   "gang": {
+    "size": "medium",
+    "harm": 3,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall"
+   ],
+   "lean": {
+    "independent": 97,
+    "lighthouse": 3
+   },
+   "subfactions": {
+    "wheelwrights": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "orchard",
+   "name": "Orchard",
+   "region": "The Seventy‑Five",
+   "octant": "E",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Macon",
+   "lat": 32.84,
+   "lon": -83.63,
+   "tier": "hold",
+   "boss": "June",
+   "surplus_text": "fresh foods",
+   "want_text": "fuel",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "fresh_food": 3
+    },
+    "want": {
+     "guzzoline": 3
+    },
+    "stock": {
+     "fresh_food": 12
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 198,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 0,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "independent": 93,
+    "exchange": 4,
+    "lighthouse": 3
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "hangar",
+   "name": "Hangar",
+   "region": "The Seventy‑Five",
+   "octant": "E",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Dayton, the air museum",
+   "lat": 39.78,
+   "lon": -84.11,
+   "tier": "major",
+   "boss": "Wheels",
+   "surplus_text": "hi‑tech, vehicles (aircraft parts)",
+   "want_text": "fresh foods",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "hitech": 3,
+     "parts": 2
+    },
+    "want": {
+     "fresh_food": 3,
+     "guzzoline": 1,
+     "medicine": 1
+    },
+    "stock": {
+     "hitech": 21,
+     "parts": 14
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 1216,
+   "gang": {
+    "size": "medium",
+    "harm": 3,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall"
+   ],
+   "lean": {
+    "independent": 97,
+    "highwater": 3
+   },
+   "subfactions": {
+    "diggers": {
+     "presence": 2,
+     "hidden": false
+    },
+    "waking": {
+     "presence": 2,
+     "hidden": true
+    }
+   }
+  },
+  {
+   "id": "kudzu",
+   "name": "Kudzu",
+   "region": "The Seventy‑Five",
+   "octant": "E",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "A north Georgia town under vines",
+   "lat": 34.5,
+   "lon": -84.95,
+   "tier": "outpost",
+   "boss": "Hide",
+   "surplus_text": "raw materials (fiber)",
+   "want_text": "medical supplies",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "raw_materials": 3
+    },
+    "want": {
+     "medicine": 3
+    },
+    "stock": {
+     "raw_materials": 6
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 41,
+   "gang": {
+    "size": "tiny",
+    "harm": 1,
+    "armor": 0,
+    "tags": []
+   },
+   "walls": 0,
+   "buildings": [
+    "trader"
+   ],
+   "lean": {
+    "independent": 96,
+    "lighthouse": 4
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "painted_barns",
+   "name": "Painted Barns",
+   "region": "The Seventy‑Five",
+   "octant": "E",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Barns with old roadside signs, near Chattanooga",
+   "lat": 34.9,
+   "lon": -85.2,
+   "tier": "outpost",
+   "boss": "Char",
+   "surplus_text": "information (the painted signs still mark routes)",
+   "want_text": "preserved foods",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {},
+    "want": {
+     "medicine": 1,
+     "preserved_food": 3
+    },
+    "stock": {}
+   },
+   "services": [
+    "information"
+   ],
+   "needs": [],
+   "population": 77,
+   "gang": {
+    "size": "tiny",
+    "harm": 1,
+    "armor": 0,
+    "tags": []
+   },
+   "walls": 0,
+   "buildings": [
+    "trader"
+   ],
+   "lean": {
+    "independent": 96,
+    "lighthouse": 4
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "exchange",
+   "name": "The Exchange",
+   "region": "The Glass",
+   "octant": "E",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Tampa",
+   "lat": 27.95,
+   "lon": -82.46,
+   "tier": "seat",
+   "boss": "Rothschild",
+   "surplus_text": "luxury goods, loans",
+   "want_text": "books, hi‑tech",
+   "faction": "exchange",
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "Seat. The only lender on the map.",
+   "economy": {
+    "surplus": {
+     "glass": 1,
+     "luxury": 3,
+     "medicine": 1
+    },
+    "want": {
+     "books": 3,
+     "hitech": 2,
+     "water": 1
+    },
+    "stock": {
+     "glass": 10,
+     "luxury": 30,
+     "medicine": 10
+    }
+   },
+   "services": [
+    "loans"
+   ],
+   "needs": [],
+   "population": 7847,
+   "gang": {
+    "size": "medium",
+    "harm": 3,
+    "armor": 1,
+    "tags": [
+     "mercenary"
+    ]
+   },
+   "walls": 2,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall",
+    "seat",
+    "exchange"
+   ],
+   "lean": {
+    "exchange": 100
+   },
+   "subfactions": {
+    "news": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "mirror_town",
+   "name": "Mirror Town",
+   "region": "The Glass",
+   "octant": "E",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "A glass sinkhole",
+   "lat": 28.55,
+   "lon": -82.39,
+   "tier": "hold",
+   "boss": "Rice",
+   "surplus_text": "shelter",
+   "want_text": "drinking water",
+   "faction": "exchange",
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "The Mirror discipline site.",
+   "economy": {
+    "surplus": {
+     "glass": 1,
+     "luxury": 1
+    },
+    "want": {
+     "medicine": 1,
+     "water": 3
+    },
+    "stock": {
+     "glass": 4,
+     "luxury": 4
+    }
+   },
+   "services": [
+    "shelter"
+   ],
+   "needs": [],
+   "population": 755,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": [
+     "mercenary"
+    ]
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "exchange": 60,
+    "independent": 40
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "kingdom",
+   "name": "The Kingdom",
+   "region": "The Glass",
+   "octant": "E",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "A castle of painted concrete, Orlando",
+   "lat": 28.42,
+   "lon": -81.58,
+   "tier": "major",
+   "boss": "Grace",
+   "surplus_text": "leisure, luxury goods",
+   "want_text": "everything",
+   "faction": "exchange",
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "glass": 1,
+     "luxury": 3,
+     "medicine": 1
+    },
+    "want": {
+     "ammo": 1,
+     "fresh_food": 1,
+     "grain": 1,
+     "guzzoline": 1,
+     "meat": 1,
+     "water": 1
+    },
+    "stock": {
+     "glass": 7,
+     "luxury": 21,
+     "medicine": 7
+    }
+   },
+   "services": [
+    "leisure"
+   ],
+   "needs": [],
+   "population": 1032,
+   "gang": {
+    "size": "medium",
+    "harm": 3,
+    "armor": 1,
+    "tags": [
+     "mercenary"
+    ]
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall"
+   ],
+   "lean": {
+    "exchange": 60,
+    "independent": 40
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "circus",
+   "name": "Circus",
+   "region": "The Glass",
+   "octant": "E",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Sarasota winter quarters",
+   "lat": 27.34,
+   "lon": -82.53,
+   "tier": "hold",
+   "boss": "Peacock",
+   "surplus_text": "leisure (performers)",
+   "want_text": "meat",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "Skinners.",
+   "economy": {
+    "surplus": {
+     "glass": 1,
+     "luxury": 1
+    },
+    "want": {
+     "meat": 3,
+     "medicine": 1,
+     "water": 1
+    },
+    "stock": {
+     "glass": 4,
+     "luxury": 4
+    }
+   },
+   "services": [
+    "leisure"
+   ],
+   "needs": [],
+   "population": 300,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 0,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "independent": 81,
+    "exchange": 19
+   },
+   "subfactions": {
+    "players": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "pier_saint",
+   "name": "Pier Saint",
+   "region": "The Glass",
+   "octant": "E",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "St Petersburg",
+   "lat": 27.77,
+   "lon": -82.64,
+   "tier": "hold",
+   "boss": "Lion",
+   "surplus_text": "music and art",
+   "want_text": "drinking water",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "art": 3,
+     "glass": 1,
+     "luxury": 1
+    },
+    "want": {
+     "medicine": 1,
+     "water": 3
+    },
+    "stock": {
+     "art": 12,
+     "glass": 4,
+     "luxury": 4
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 682,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "independent": 79,
+    "exchange": 21
+   },
+   "subfactions": {
+    "players": {
+     "presence": 2,
+     "hidden": false
+    }
+   }
+  },
+  {
+   "id": "field",
+   "name": "The Field",
+   "region": "The Glass",
+   "octant": "E",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Pensacola naval air station",
+   "lat": 30.35,
+   "lon": -87.29,
+   "tier": "major",
+   "boss": "Bullet",
+   "surplus_text": "weaponry, aircraft parts",
+   "want_text": "fresh foods",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "ammo": 1,
+     "glass": 1,
+     "luxury": 1,
+     "parts": 2,
+     "weaponry": 3
+    },
+    "want": {
+     "fresh_food": 3,
+     "medicine": 1,
+     "water": 1
+    },
+    "stock": {
+     "ammo": 7,
+     "glass": 7,
+     "luxury": 7,
+     "parts": 14,
+     "weaponry": 21
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 933,
+   "gang": {
+    "size": "medium",
+    "harm": 3,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall"
+   ],
+   "lean": {
+    "independent": 94,
+    "lighthouse": 3,
+    "exchange": 3
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "hill",
+   "name": "Hill",
+   "region": "The Glass",
+   "octant": "E",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Tallahassee",
+   "lat": 30.44,
+   "lon": -84.28,
+   "tier": "hold",
+   "boss": "Jay",
+   "surplus_text": "books, information",
+   "want_text": "grain",
+   "faction": "exchange",
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "books": 3,
+     "glass": 1,
+     "luxury": 1
+    },
+    "want": {
+     "grain": 3,
+     "water": 1
+    },
+    "stock": {
+     "books": 12,
+     "glass": 4,
+     "luxury": 4
+    }
+   },
+   "services": [
+    "information"
+   ],
+   "needs": [],
+   "population": 375,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": [
+     "mercenary"
+    ]
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "exchange": 60,
+    "independent": 40
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "sawgrass",
+   "name": "Sawgrass",
+   "region": "The Glass",
+   "octant": "E",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "The Everglades edge",
+   "lat": 26.15,
+   "lon": -80.45,
+   "tier": "outpost",
+   "boss": "Emmy",
+   "surplus_text": "fuel (peat), fresh foods (plants)",
+   "want_text": "medical supplies",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": true,
+   "notes": "The edge of the Loud. The Seventy‑Five south of here still howls.",
+   "economy": {
+    "surplus": {
+     "fresh_food": 2,
+     "guzzoline": 3
+    },
+    "want": {
+     "medicine": 3
+    },
+    "stock": {
+     "fresh_food": 4,
+     "guzzoline": 6
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 104,
+   "gang": {
+    "size": "tiny",
+    "harm": 1,
+    "armor": 0,
+    "tags": []
+   },
+   "walls": 0,
+   "buildings": [
+    "trader"
+   ],
+   "lean": {
+    "independent": 91,
+    "exchange": 9
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "neon",
+   "name": "Neon",
+   "region": "The Glass",
+   "octant": "E",
+   "ring": "farther",
+   "layer": "surface",
+   "site": "Panama City Beach",
+   "lat": 30.18,
+   "lon": -85.8,
+   "tier": "hold",
+   "boss": "Francois",
+   "surplus_text": "luxury goods",
+   "want_text": "fresh foods",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "glass": 1,
+     "luxury": 3
+    },
+    "want": {
+     "fresh_food": 3,
+     "medicine": 1,
+     "water": 1
+    },
+    "stock": {
+     "glass": 4,
+     "luxury": 12
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 337,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "independent": 96,
+    "exchange": 4
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "harrowgate",
+   "name": "Harrowgate",
+   "region": "Up: Harrowgate",
+   "octant": "Up",
+   "ring": "farther",
+   "layer": "up",
+   "site": "The Houston skyline and the space center dishes",
+   "lat": 29.76,
+   "lon": -95.37,
+   "tier": "seat",
+   "boss": "Last",
+   "surplus_text": "—",
+   "want_text": "people",
+   "faction": "choir",
+   "via_tum_tum": false,
+   "silenced": true,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "Seat. The endgame.",
+   "economy": {
+    "surplus": {},
+    "want": {},
+    "stock": {}
+   },
+   "services": [],
+   "needs": [],
+   "population": 3000,
+   "gang": {
+    "size": "huge",
+    "harm": 2,
+    "armor": 0,
+    "tags": [
+     "opened"
+    ]
+   },
+   "walls": 2,
+   "buildings": [],
+   "lean": null,
+   "subfactions": {}
+  },
+  {
+   "id": "wisher",
+   "name": "Wisher",
+   "region": "Up: Harrowgate",
+   "octant": "Up",
+   "ring": "farther",
+   "layer": "up",
+   "site": "A downtown radio tower",
+   "lat": 29.758,
+   "lon": -95.38,
+   "tier": "hold",
+   "boss": "Norvell",
+   "surplus_text": "information (radio)",
+   "want_text": "power, fresh foods",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "Falls to the Hum at 6:00. The Echo discipline site.",
+   "economy": {
+    "surplus": {},
+    "want": {
+     "batteries": 3,
+     "fresh_food": 2,
+     "medicine": 1
+    },
+    "stock": {}
+   },
+   "services": [
+    "information"
+   ],
+   "needs": [],
+   "population": 206,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 0,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary",
+    "brainers_room"
+   ],
+   "lean": {
+    "independent": 71,
+    "burning_water": 17,
+    "sweetwell": 9,
+    "cerro": 3
+   },
+   "subfactions": {}
+  },
+  {
+   "id": "gondola",
+   "name": "The Gondola",
+   "region": "Up: Harrowgate",
+   "octant": "Up",
+   "ring": "farther",
+   "layer": "up",
+   "site": "An airship crashed between two towers",
+   "lat": 29.752,
+   "lon": -95.362,
+   "tier": "hold",
+   "boss": "Fianelly",
+   "surplus_text": "vantage, cable lines",
+   "want_text": "everything",
+   "faction": "choir",
+   "via_tum_tum": false,
+   "silenced": true,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "Cable‑car trade between the towers.",
+   "economy": {
+    "surplus": {},
+    "want": {},
+    "stock": {}
+   },
+   "services": [
+    "cable_lines",
+    "vantage"
+   ],
+   "needs": [],
+   "population": 251,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": [
+     "opened"
+    ]
+   },
+   "walls": 1,
+   "buildings": [],
+   "lean": null,
+   "subfactions": {}
+  },
+  {
+   "id": "krin_s_nest",
+   "name": "Krin's Nest",
+   "region": "Down: the Deep Lines",
+   "octant": "Down",
+   "ring": "farther",
+   "layer": "down",
+   "site": "A Louisiana salt‑dome cavern",
+   "lat": 29.9,
+   "lon": -91.91,
+   "tier": "major",
+   "boss": "Mother Krin",
+   "surplus_text": "labor, fresh foods (mushrooms)",
+   "want_text": "meat",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "Home of the Family (secret society, see [18](18-sub-factions.md)). The Rot discipline site.",
+   "economy": {
+    "surplus": {
+     "fresh_food": 3
+    },
+    "want": {
+     "batteries": 1,
+     "meat": 3
+    },
+    "stock": {
+     "fresh_food": 21
+    }
+   },
+   "services": [
+    "labor"
+   ],
+   "needs": [],
+   "population": 1784,
+   "gang": {
+    "size": "medium",
+    "harm": 3,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall"
+   ],
+   "lean": {
+    "independent": 88,
+    "burning_water": 6,
+    "lighthouse": 3,
+    "sweetwell": 3
+   },
+   "subfactions": {
+    "family": {
+     "presence": 3,
+     "hidden": true
+    }
+   }
+  },
+  {
+   "id": "junction",
+   "name": "Junction",
+   "region": "Down: the Deep Lines",
+   "octant": "Down",
+   "ring": "farther",
+   "layer": "down",
+   "site": "Pipeline galleries under the Mississippi",
+   "lat": 30.05,
+   "lon": -90.85,
+   "tier": "major",
+   "boss": "Mercer",
+   "surplus_text": "access (tunnels)",
+   "want_text": "power (light)",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [
+    "Mississippi"
+   ],
+   "loud_edge": false,
+   "notes": "The only crossing that's under every river. The Waking meet here in secret. Quarantine start (the stasis bunker is beneath it).",
+   "economy": {
+    "surplus": {},
+    "want": {
+     "batteries": 3,
+     "medicine": 1
+    },
+    "stock": {}
+   },
+   "services": [
+    "access"
+   ],
+   "needs": [],
+   "population": 1574,
+   "gang": {
+    "size": "medium",
+    "harm": 3,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 1,
+   "buildings": [
+    "market",
+    "bar",
+    "garage",
+    "infirmary",
+    "notice_wall"
+   ],
+   "lean": {
+    "independent": 96,
+    "burning_water": 4
+   },
+   "subfactions": {
+    "family": {
+     "presence": 2,
+     "hidden": true
+    },
+    "waking": {
+     "presence": 3,
+     "hidden": true
+    }
+   }
+  },
+  {
+   "id": "pumphouse",
+   "name": "The Pumphouse",
+   "region": "Down: the Deep Lines",
+   "octant": "Down",
+   "ring": "farther",
+   "layer": "down",
+   "site": "An old water‑main pumping station",
+   "lat": 29.95,
+   "lon": -90.13,
+   "tier": "hold",
+   "boss": "Foster",
+   "surplus_text": "drinking water (pipes)",
+   "want_text": "machinery",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "Half‑working. The Hex discipline site.",
+   "economy": {
+    "surplus": {
+     "water": 3
+    },
+    "want": {
+     "batteries": 1,
+     "machinery": 3,
+     "medicine": 1
+    },
+    "stock": {
+     "water": 12
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 234,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 0,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary",
+    "wells"
+   ],
+   "lean": {
+    "independent": 94,
+    "lighthouse": 3,
+    "burning_water": 3
+   },
+   "subfactions": {
+    "family": {
+     "presence": 2,
+     "hidden": true
+    }
+   }
+  },
+  {
+   "id": "reserve",
+   "name": "The Reserve",
+   "region": "Down: the Deep Lines",
+   "octant": "Down",
+   "ring": "farther",
+   "layer": "down",
+   "site": "The strategic oil reserve caverns",
+   "lat": 28.93,
+   "lon": -95.38,
+   "tier": "hold",
+   "boss": "Mill",
+   "surplus_text": "crude (vast)",
+   "want_text": "power (light), fresh foods",
+   "faction": null,
+   "via_tum_tum": false,
+   "silenced": false,
+   "crossing": [],
+   "loud_edge": false,
+   "notes": "",
+   "economy": {
+    "surplus": {
+     "crude": 3
+    },
+    "want": {
+     "batteries": 3,
+     "fresh_food": 2
+    },
+    "stock": {
+     "crude": 12
+    }
+   },
+   "services": [],
+   "needs": [],
+   "population": 270,
+   "gang": {
+    "size": "small",
+    "harm": 2,
+    "armor": 1,
+    "tags": []
+   },
+   "walls": 0,
+   "buildings": [
+    "market",
+    "bar",
+    "notice_wall",
+    "infirmary"
+   ],
+   "lean": {
+    "independent": 75,
+    "burning_water": 19,
+    "sweetwell": 6
+   },
+   "subfactions": {
+    "family": {
+     "presence": 2,
+     "hidden": true
+    }
+   }
+  }
+ ]
+}
