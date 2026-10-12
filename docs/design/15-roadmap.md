@@ -48,10 +48,10 @@
 |---|---|
 | **The Director feels random** | Golden tests, the designer overlay, *announce before you hit* (fan rules), and threats visible in the journal |
 | **The economy breaks** (runaway money, dead markets) | Saturation, monthly lifestyle drain, the headless sim with 200‑seed balance reports in CI |
-| **Text volume** (AW's voice is the game) | A text‑bank pipeline with tags (region, threat, move, result). A writers' style guide built from the AW playbook voice |
+| **Text volume** (AW's voice is the game) | A text‑bank pipeline with tags (region, threat, move, result). A writers' style guide built from the AW playbook voice, including the [southern voice guide](02-world.md#voice-the-bravo-and-the-sierra-coast). A Spanish‑fluent writer or sensitivity reader for the southern text bank |
 | **Licensing scope** | **Confirmed by the client.** The license covers this video game. AW text is still kept in `/data` so it's easy to audit |
 | **Mature content and ratings** | The content policy in [00](00-vision.md#tone-and-content-policy), content toggles, and an early ESRB/PEGI/IARC questionnaire |
-| **Real‑world geography** | Real places are named only in designer docs. In game, holds use survivor names, with no brands, companies or trademarked attractions. Golden‑age names appear only through the Quarantine and as generic geography (interstate numbers, rivers, lakes) |
+| **Real‑world geography and parody brands** | Real geography and real interstate numbers are used (client decision). Holds use survivor names, and real place names appear through the Quarantine. Parody brands are rare set dressing under strict rules ([13](13-content-tables.md#parody-brands-set-dressing)): never real names, logos or trade dress. **Legal review of the parody list before content lock.** |
 | **Map scale** (130 holds) | The headless sim tests all 130 from M1. Hold tiers (outposts are cheap) keep content cost down. Regions are authored in priority order: the slice region first, the Loud edges last |
 | **macOS distribution** | Apple Developer ID signing and notarization in CI from M1. Universal (Apple Silicon + Intel) builds. Test on a low‑end MacBook Air |
 | **Source‑game IP** | We take *philosophy*, not content. No Koei names, maps, text, art or music. The RE notes stay internal, and ROMs are never committed |
@@ -66,8 +66,9 @@
 | 4 | Map scale | **About 130 holds** across a smaller area: a portion of the former US, Canada and Mexico | [02](02-world.md), [16](16-gazetteer.md) |
 | 5 | Platforms | **Windows and macOS only** | [Platform recommendation](../research/platform-recommendation.md) |
 | 6 | Travel model | **Interstates are the seas**, dry riverbeds are extra roads, living rivers are barriers, and **the Easing** makes exploration the heart of the game | [02](02-world.md#the-map-as-a-road-network), [08](08-travel-and-vehicles.md) |
+| 7 | The drained Gulf | **Dropped.** The Gulf stays as water at the map's edge | [02](02-world.md) |
+| 8 | Spanish | **Spanish‑inflected dialogue** along the Bravo and the Sierra Coast, without drifting from apocalyptica. UI and moves stay in English | [02](02-world.md#voice-the-bravo-and-the-sierra-coast) |
+| 9 | Real geography and brands | **Real interstate numbers and real geography.** Brands are rare set dressing in less‑rusted ruins, always as clear parodies (*Murica Burger*, *Bogg‑ees*) | [02](02-world.md#naming-rules), [13](13-content-tables.md#parody-brands-set-dressing) |
 
 ## Open questions for the client
-1. **The drained Gulf.** The first draft had a drained Gulf of Mexico as the "sea". The interstates replace it. Do you want any of it back, for example as a single salt‑flat region in the south? (Recommendation: no. The Gulf stays as water at the map's edge.)
-2. **Spanish‑language flavour**: should holds along the Bravo and the Sierra Coast use Spanish‑inflected dialogue, and should Spanish localization be a launch language?
-3. **Real interstate numbers**: survivors call roads "the Ten" and "the Thirty‑Five". Is the client comfortable using real highway numbers and real geography (no brands), or should roads get invented numbers?
+None outstanding. New questions will come out of the M1 sim spike (economy balance at 130 holds) and the M2 Director prototype.

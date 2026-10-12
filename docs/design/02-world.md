@@ -180,6 +180,26 @@ Golden‑Age technology always comes with a **downside** for the Director to *ac
 
 ## Naming rules
 - **People** take AW‑style single names, nicknames and odd words: Tum Tum, Gnarly, Clarion, Dremmer, Omie Wise, Brace Win, Fianelly. Along the Bravo and the Sierra Coast, names lean into Spanish words in the same spirit (Lupe, Rache, Otilia).
-- **Places** are named for what they *do* or *are* now, for a person, or keep a worn golden‑age name. No hold is named after a real company, brand or trademarked attraction.
+- **Places** are named for what they *do* or *are* now, for a person, or keep a worn golden‑age name. **Real geography is used as is**: real interstate numbers, rivers, lakes and the shape of the land. No hold is named after a brand.
+- **Brands are set dressing, and rare.** After twenty‑five years of the Howling, most signage is rust and bare poles, and nobody cares what a logo meant. Occasionally, in a less‑rusted ruin, a sign survives. When it does, it's a **parody that's a clear reference to the real brand**: *Murica Burger*, *Bogg‑ees*. It's never the real name or logo. See [13](13-content-tables.md#parody-brands-set-dressing) for rules and a seed list.
+- **Spanish‑inflected speech** along the Bravo and the Sierra Coast. See [the voice guide below](#voice-the-bravo-and-the-sierra-coast).
 - **Roads** are called by their number: "*the Ten*", "*the Four‑Oh‑One*".
 - **Nobody says** "post‑apocalyptic", "America", "Mexico" or "Canada". People say "*the golden age*", "*before*", "*the Howling*", "*the Quiet*" and "*the world*".
+
+## Voice: the Bravo and the Sierra Coast
+Holds south of the Thirty‑Five and down the Mex 180 speak **Apocalypse World first, Spanish‑inflected second**. The voice is still AW: second person, profane, wry, scarcity and the maelstrom in every line. The inflection is in the rhythm and the vocabulary, not in turning the game into a different setting.
+
+**Do:**
+- Code‑switch the way border speech does: a Spanish word where it's the natural one. Terms of address (*mija*, *compa*, *jefe*), swearing (*pinche*, *cabrón*), small words (*pues*, *órale*, *ándale*, *ni modo*).
+- Give the south its own names for the AW world in the same spirit: the maelstrom is *el remolino* or *la gritona* ("the screamer"); the Howling is *los años del grito*; the Easing is *la calma*; barter is *trueque*; jingle is *feria*; a rig is *la troca*; a hold is *el fuerte*.
+- Keep at least 80% of every line in English. A player who reads no Spanish must never miss a choice, a price, a threat or a move. **Move names, UI text and choose‑lists are always in English.**
+
+**Don't:**
+- Write whole Spanish lines or paragraphs, or "translate" the AW voice into a folkloric or touristic one.
+- Use stereotypes: no sombreros, siestas, cartel‑drama shorthand, or "magical" Mexico. The south is as broken, practical and weird as everywhere else.
+- Let the inflection replace apocalyptica. Every southern scene still barfs forth the world: rust, thirst, the dishes humming on the horizon.
+
+**Example**, at Falcon, from Rache, the dam's boss:
+> "*Water's two feria a cask, compa, and that's me being nice. Before la calma nobody drove up here at all. Now everybody wants to drink my lake. Pues, ni modo. Pay or turn the troca around.*"
+
+The Spanish here is the texture of the speech: the line carries the scarcity, the threat and the price, and an English‑only reader loses nothing.

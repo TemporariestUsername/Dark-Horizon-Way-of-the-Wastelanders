@@ -10,7 +10,7 @@ Surplus and want use the resource names from [13](13-content-tables.md#resources
 | **The Lighthouse** ✕ | Memphis, I‑40 bridge | M | Clarion | information, leisure | fuel, meat | Ind | The bridge lights were kept lit all through the Howling. Neutral by custom, and no toll. The News keeps a desk here. |
 | **Anchorage** | Memphis riverfront | M | Hugo | shelter, scrap | drinking water | Ind | Barges chained together into a floating town on the poisoned river. |
 | **Saltlick** | Highway department road‑salt barns | H | Ula | salt, preserved foods | labor, medical supplies | Ind | Worked by debtors. The Salt discipline site. |
-| **Gnarly** | Truck stop on I‑55 | H | Gnarly | repairs | scrap | Ind | **Driver start.** |
+| **Gnarly** | Truck stop on I‑55 | H | Gnarly | repairs | scrap | Ind | Built in the shell of a *Bogg‑ees* travel centre. **Driver start.** |
 | **Pyramid** | The Memphis pyramid arena | M | Preen | shelter, leisure (fights) | fresh foods | Ind | A fighting pit. Rivals offer single combat here. |
 | **Beale** | Beale Street | H | Lala | music and art, liquor | drinking water | Ind | |
 | **Haven** | A Southaven mall | H | Roark | specialized goods (mall salvage) | security | Ind | |
