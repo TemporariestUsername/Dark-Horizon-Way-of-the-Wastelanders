@@ -111,16 +111,13 @@ func _report(data, runs: Array, sample_events: Array, secs: float) -> Dictionary
 	var bt: Dictionary = data.factions["balance_targets"]
 	var cbt: Dictionary = data.choir["balance_targets"]
 	var rows: Array = []
-	var all_pass := true
 
 	var add_row := func(name: String, target: String, values: Array, ok_fn: Callable, required: bool = true) -> void:
 		var passes: int = values.filter(ok_fn).size()
 		var med: float = _median(values)
 		var ok: bool = float(passes) / max(n, 1) >= 0.5
 		rows.append({"target": name, "goal": target, "median": med, "min": values.min(), "max": values.max(),
-			"pass_rate": float(passes) / max(n, 1), "ok": ok})
-		if required and not ok:
-			all_pass = false
+			"pass_rate": float(passes) / max(n, 1), "ok": ok, "required": required})
 
 	var fm := faction_month
 	add_row.call("Factions alive at month %d" % fm, "%d–%d of 6" % [bt["factions_alive"][0], bt["factions_alive"][1]],
@@ -158,6 +155,8 @@ func _report(data, runs: Array, sample_events: Array, secs: float) -> Dictionary
 			runs.map(func(r): return sil_at.call(r, 120)),
 			func(v): return v >= wp["month_120_silenced_range"][0] and v <= wp["month_120_silenced_range"][1])
 
+	# (Lambdas capture locals by value, so the verdict is read back from the rows.)
+	var all_pass := rows.all(func(r): return r["ok"] or not r["required"])
 	var md := PackedStringArray()
 	md.append("# M1 balance report")
 	md.append("")
