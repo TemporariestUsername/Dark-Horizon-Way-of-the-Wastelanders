@@ -1,6 +1,6 @@
 # sim/
 
-The M1 headless simulation: the world turn from [docs/design/10](../docs/design/10-warlords-and-politics.md#the-world-turn-end-of-each-month), in plain GDScript with no scene or Node code, so it runs in tests, in the balance runner, and later under the game.
+The headless simulation: the M1 world turn from [docs/design/10](../docs/design/10-warlords-and-politics.md#the-world-turn-end-of-each-month), and M2's battles and events, in plain GDScript with no scene or Node code, so it runs in tests, in the balance runners, and under the playable scenes in [`game/`](../game/README.md).
 
 | Script | What it does |
 |---|---|
@@ -22,7 +22,9 @@ The M1 headless simulation: the world turn from [docs/design/10](../docs/design/
 
 **Determinism.** Every random draw goes through the World's one `RandomNumberGenerator`, seeded per run, and every loop walks dictionaries in insertion order. The same seed always replays the same history (`tests/run_tests.gd` checks it).
 
-**Not yet.** The player, the Wanderer AI (it needs the named-NPC roster), the League (it needs a broker, the player), playable Godot scenes (next).
+**Stepping.** The battles and the journey can also be played a step at a time, for the playable scenes in [`game/`](../game/README.md): `Skirmish` (`start_round`, `begin_turn`, `ai_act` or the `player_*` actions, `end_round`, `finish`), `RoadWar` (the same shape, with `player_drive`, `player_fire`, `player_ram`, `player_board`, `player_evade`, `player_run`) and `Journey` in `interactive` mode (`step`, `choose`, `battle_done`). `run()` is these steps with the AI deciding, so a stepped game with the AI deciding gives the same result, word for word (the tests check it).
+
+**Not yet.** The player as a persistent character (levels, gear and crew carried between journeys), the Wanderer AI (it needs the named-NPC roster), the League (it needs a broker, the player).
 
 ## Running
 ```sh

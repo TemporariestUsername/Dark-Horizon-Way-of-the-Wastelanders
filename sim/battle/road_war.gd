@@ -116,21 +116,104 @@ func _class_abilities(ch: Dictionary) -> Array:
 
 func run(max_rounds: int = 30) -> Dictionary:
 	while round_n < max_rounds and _outcome() == "":
-		round_n += 1
-		var order: Array = _active()
-		order.sort_custom(func(a, b): return a["speed"] * 10 + a["handling"] / 10.0 > b["speed"] * 10 + b["handling"] / 10.0)
-		for r in order:
+		for r in start_round():
 			if r["status"] != "active" or _outcome() != "":
 				continue
 			_turn(r)
-		for r in _active():
-			if r["burning"] > 0:
-				r["burning"] -= 1
-				_damage(r, 10.0, "fire")
-			if r["hooked"] > 0:
-				r["hooked"] -= 1
-			r["evade"] = false
-		_check_rout()
+		end_round()
+	return finish()
+
+
+# ---------------------------------------------------------------- stepping (for the playable scene)
+
+## Starts a round. Returns the rigs in turn order (fastest and best-handling first).
+func start_round() -> Array:
+	round_n += 1
+	var order: Array = _active()
+	order.sort_custom(func(a, b): return a["speed"] * 10 + a["handling"] / 10.0 > b["speed"] * 10 + b["handling"] / 10.0)
+	return order
+
+
+## End of a round: fires burn, hooks slip, evasion ends, and a beaten convoy may break off.
+func end_round() -> void:
+	for r in _active():
+		if r["burning"] > 0:
+			r["burning"] -= 1
+			_damage(r, 10.0, "fire")
+		if r["hooked"] > 0:
+			r["hooked"] -= 1
+		r["evade"] = false
+	_check_rout()
+
+
+func outcome() -> String:
+	return _outcome()
+
+
+## The AI's turn for a rig (also the "Auto" button for a party rig).
+func ai_turn(r: Dictionary) -> void:
+	_turn(r)
+
+
+## Drive: up to Speed cells along the road (dx, + is forward) and one lane change.
+func player_drive(r: Dictionary, dx: int, dlane: int) -> void:
+	var dx_c: int = clampi(dx, -r["speed"], r["speed"])
+	_drive(r, r["x"] + dx_c, clampi(r["lane"] + dlane, 0, lanes - 1))
+
+
+## Fire every manned gun, at `target` if it's in a gun's bands, else at the best target in range.
+func player_fire(r: Dictionary, target: Dictionary = {}) -> void:
+	var foes: Array = _active("enemy" if r["side"] == "party" else "party")
+	_fire(r, [target] if not target.is_empty() and target["status"] == "active" else foes)
+	lines.append("%s fires." % r["name"])
+
+
+func can_contact(r: Dictionary, t: Dictionary) -> bool:
+	return t["status"] == "active" and _gap(r, t) <= BAND_CONTACT and t["lane"] == r["lane"]
+
+
+func player_ram(r: Dictionary, t: Dictionary) -> bool:
+	if not can_contact(r, t):
+		return false
+	_ram(r, t)
+	lines.append("%s rams %s." % [r["name"], t["name"]])
+	return true
+
+
+func player_board(r: Dictionary, t: Dictionary) -> bool:
+	if not can_contact(r, t) or r["crew"] < 2:
+		return false
+	lines.append("%s's crew boards %s." % [r["name"], t["name"]])
+	_board(r, t)
+	return true
+
+
+func player_evade(r: Dictionary) -> void:
+	r["evade"] = true
+	lines.append("%s weaves and evades." % r["name"])
+
+
+## The whole convoy runs: from now on the party's rigs drive away on their turns.
+func player_run() -> void:
+	party_mode = "flee"
+	lines.append("The convoy runs for it.")
+
+
+func boarding_odds(r: Dictionary, t: Dictionary) -> float:
+	return _boarding_odds(r, t)
+
+
+func gun_chance(r: Dictionary, t: Dictionary) -> float:
+	var f: Dictionary = rules["fire"]
+	var handling: float = t["handling"] + (float(rules["evade_handling"]) if t["evade"] else 0.0)
+	return clampf(float(f["base"]) + _gun_accuracy(r) - handling, float(f["min"]), float(f["max"]))
+
+
+func manned_guns(r: Dictionary) -> int:
+	return _manned_guns(r)
+
+
+func finish() -> Dictionary:
 	var outcome := _outcome()
 	var party: Array = rigs.filter(func(r): return r["side"] == "party")
 	var dur := 0.0

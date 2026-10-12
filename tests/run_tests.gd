@@ -1,4 +1,4 @@
-## M1 unit tests for res://sim. No add-ons needed:
+## Unit tests for res://sim and the playable scenes in res://game. No add-ons needed:
 ##   godot --headless --path . --script res://tests/run_tests.gd
 ## Exits 0 when every test passes, 1 otherwise.
 extends SceneTree
@@ -25,7 +25,11 @@ var failures := 0
 var checks := 0
 
 
-func _init() -> void:
+func _initialize() -> void:
+	_run_all.call_deferred()   # once the tree is up, so the scene tests can add scenes to it
+
+
+func _run_all() -> void:
 	data = SimData.new()
 	data.load_all()
 	graph = RoadGraph.new()
@@ -34,6 +38,7 @@ func _init() -> void:
 		"test_data_loads", "test_graph", "test_lean", "test_gang_war", "test_conditions",
 		"test_characters", "test_determinism", "test_invariants",
 		"test_build_class", "test_skirmish", "test_road_war", "test_events", "test_golden_journeys",
+		"test_interactive_journey", "test_scenes", "test_scene_player",
 	]:
 		var before := failures
 		call(t)
@@ -361,3 +366,215 @@ func test_golden_journeys() -> void:
 			continue
 		var want := FileAccess.get_file_as_string(path)
 		ok(want == text, "golden journey %s -> %s (seed %d) matches %s" % [g[0], g[1], g[3], path])
+
+
+## Played step by step with the auto policy's choices and auto-resolved battles, an interactive
+## journey must tell exactly the story run() tells.
+func test_interactive_journey() -> void:
+	for pair in [["lighthouse", "dustwich", 3], ["sweetwell", "last_stop", 4], ["highwater", "motor", 4]]:
+		for s in range(1, 6):
+			var r1 := RandomNumberGenerator.new()
+			r1.seed = s
+			var a = Journey.new()
+			a.setup(data, graph, null, pair[0], pair[1], pair[2], r1)
+			a.run()
+			var r2 := RandomNumberGenerator.new()
+			r2.seed = s
+			var b = Journey.new()
+			b.setup(data, graph, null, pair[0], pair[1], pair[2], r2)
+			b.interactive = true
+			var st: Dictionary = b.step()
+			var n := 0
+			while st["kind"] != "end" and n < 5000:
+				n += 1
+				if st["kind"] == "card":
+					st = b.choose(b.auto_choice(st["event"], st["chances"]))
+				elif st["kind"] == "battle":
+					st = b.battle_done(st["sim"].run())
+				else:
+					st = b.step()
+			ok(st["kind"] == "end", "interactive journey %s-%s seed %d ends" % [pair[0], pair[1], s])
+			ok(a.lines == b.lines, "interactive journey %s-%s seed %d matches run()" % [pair[0], pair[1], s])
+
+
+## The playable scenes: with the AI playing every unit, a battle scene's turn loop must reach
+## exactly the result the sim's own run() reaches; the journey scene must play a route through.
+func test_scenes() -> void:
+	var Game = load("res://game/game.gd")
+	for kind in ["skirmish", "road_war"]:
+		var foes: Array = data.units["encounters"] if kind == "skirmish" else data.units["convoys"]
+		for i in foes.size():
+			var foe: Dictionary = foes[i]
+			Game.next = {"encounter" if kind == "skirmish" else "convoy": foe["id"], "level": int(foe["party_level"]), "seed": 100 + i}
+			var played = load("res://game/%s_scene.tscn" % kind).instantiate()
+			root.add_child(played)
+			if not ok_ready(played, kind):
+				return
+			played.auto_all = true
+			var n := 0
+			while not played.done and n < 5000:
+				played.step()
+				n += 1
+			Game.next = {"encounter" if kind == "skirmish" else "convoy": foe["id"], "level": int(foe["party_level"]), "seed": 100 + i}
+			var ran = load("res://game/%s_scene.tscn" % kind).instantiate()
+			root.add_child(ran)
+			var sim = ran.sk if kind == "skirmish" else ran.rw
+			var res: Dictionary = sim.run()
+			ok(played.done and played.result == res, "%s scene plays %s like run(): %s vs %s" % [kind, foe["id"], played.result, res])
+			played.free()
+			ran.free()
+	Game.journey = null
+	Game.next = {"from": "lighthouse", "to": "dustwich", "level": 3, "seed": 7}
+	var js = load("res://game/journey_scene.tscn").instantiate()
+	root.add_child(js)
+	if not ok_ready(js, "journey"):
+		return
+	var n := 0
+	while not js.over and n < 2000:
+		n += 1
+		var kind: String = js.state["kind"]
+		if kind == "card":
+			js._on_choice(js.j.auto_choice(js.state["event"], js.state["chances"]))
+		elif kind == "battle":
+			js._on_auto_resolve()
+		else:
+			js.advance(true)
+	ok(js.over and js.state["arrived"], "the journey scene plays the Lighthouse to Dustwich through")
+	ok(js.shown_lines == js.j.lines.size(), "the journal shows every line of the journey")
+	js.free()
+	# "Fight it out": the journey hands its battle to a battle scene and takes the result back.
+	var fought := 0
+	for seed in range(1, 40):
+		if fought >= 2:
+			break
+		Game.journey = null
+		Game.next = {"from": "lighthouse", "to": "dustwich", "level": 3, "seed": seed}
+		js = load("res://game/journey_scene.tscn").instantiate()
+		root.add_child(js)
+		n = 0
+		while not js.over and js.state["kind"] != "battle" and n < 2000:
+			n += 1
+			if js.state["kind"] == "card":
+				js._on_choice(js.j.auto_choice(js.state["event"], js.state["chances"]))
+			else:
+				js.advance(true)
+		if js.over:
+			js.free()
+			continue
+		var spec: String = js.state["spec"]
+		var kind := "skirmish" if spec.begins_with("skirmish") else "road_war"
+		var battles_before: int = js.j.stats["battles"]
+		Game.next = {"sim": js.state["sim"], "title": spec}
+		js.free()
+		var bs = load("res://game/%s_scene.tscn" % kind).instantiate()
+		root.add_child(bs)
+		ok(bs.embedded, "the %s scene plays the journey's own battle" % kind)
+		bs.auto_all = true
+		n = 0
+		while not bs.done and n < 5000:
+			bs.step()
+			n += 1
+		Game.next = {"battle_result": bs.result}
+		bs.free()
+		js = load("res://game/journey_scene.tscn").instantiate()
+		root.add_child(js)
+		ok(js.j.pending_battle.is_empty() and js.state["kind"] != "battle", "the journey takes the %s result back" % kind)
+		ok(js.j.stats["battles"] == battles_before, "no battle is counted twice")
+		js.free()
+		fought += 1
+	ok(fought == 2, "found journeys with battles to fight")
+	Game.journey = null
+	Game.next = {}
+
+
+func ok_ready(scene: Node, what: String) -> bool:
+	var ready: bool = scene.is_node_ready()
+	ok(ready, "the %s scene is ready once in the tree" % what)
+	return ready
+
+
+## A scripted player drives the battle scenes through their click and button handlers: every
+## fight must end, and every action must leave the sim in a legal state.
+func test_scene_player() -> void:
+	var Game = load("res://game/game.gd")
+	for i in 6:
+		var enc: Dictionary = data.units["encounters"][i * 2]
+		Game.next = {"encounter": enc["id"], "level": int(enc["party_level"]), "seed": 300 + i}
+		var sc = load("res://game/skirmish_scene.tscn").instantiate()
+		root.add_child(sc)
+		var n := 0
+		var acted := 0
+		while not sc.done and n < 3000:
+			n += 1
+			if not sc.waiting:
+				sc.step()
+				continue
+			var c: Dictionary = sc.active
+			var skills: Array = sc.sk.skills_for(c)
+			var targets: Array = sc.sk.targets_for(c)
+			if not skills.is_empty() and n % 3 == 0:
+				sc.skill_list = skills
+				sc._on_skill_chosen(0)
+				if sc.waiting and not targets.is_empty():
+					sc.click_tile(targets[0]["pos"])
+				if sc.waiting:
+					sc._end_turn()
+			elif not targets.is_empty():
+				sc.click_tile(targets[0]["pos"])
+			else:
+				var reach: Array = sc.sk.reachable(c)
+				if not reach.is_empty():
+					var foes: Array = sc.sk.units.filter(func(u): return u["side"] == "enemy" and not u["down"] and not u["fled"])
+					reach.sort_custom(func(a, b): return (a - foes[0]["pos"]).length_squared() < (b - foes[0]["pos"]).length_squared())
+					sc.click_tile(reach[0])
+				if sc.waiting:
+					sc._on_defend()
+			acted += 1
+			if n % 50 == 0:
+				for u in sc.sk.units:
+					ok(sc.sk._in_bounds(u["pos"]), "units stay on the grid")
+		ok(sc.done and acted > 0, "a scripted player finishes %s (%d actions, %s)" % [enc["id"], acted, sc.result.get("winner", "?")])
+		sc.free()
+	for i in 6:
+		var cv: Dictionary = data.units["convoys"][i]
+		Game.next = {"convoy": cv["id"], "level": int(cv["party_level"]), "seed": 400 + i}
+		var rs = load("res://game/road_war_scene.tscn").instantiate()
+		root.add_child(rs)
+		var n := 0
+		var acted := 0
+		var used := {}
+		while not rs.done and n < 3000:
+			n += 1
+			if not rs.waiting:
+				rs.step()
+				continue
+			var r: Dictionary = rs.active
+			var t: Dictionary = rs.target
+			var cells: Array = rs.drive_cells()
+			cells.sort_custom(func(a, b): return abs(a.y - t["x"]) + abs(a.x - t["lane"]) < abs(b.y - t["x"]) + abs(b.x - t["lane"]))
+			for cell in cells:
+				if rs._rig_at(cell).is_empty() and abs(cell.y - t["x"]) >= 1:
+					rs.click_cell(cell)
+					break
+			if rs.stage == "drive":
+				rs._on_stay()
+			if not rs.btn["Board"].disabled and acted % 2 == 0:
+				rs._on_board()
+				used["board"] = true
+			elif not rs.btn["Ram"].disabled:
+				rs._on_ram()
+				used["ram"] = true
+			elif not rs.btn["Fire"].disabled:
+				rs._on_fire()
+				used["fire"] = true
+			else:
+				rs._on_evade()
+			if rs.waiting:
+				rs._on_evade()
+			acted += 1
+			for x in rs.rw.rigs:
+				if x["status"] == "active" and n % 50 == 0:
+					ok(x["lane"] >= 0 and x["lane"] < rs.rw.lanes, "rigs stay in their lanes")
+		ok(rs.done and acted > 0, "a scripted driver finishes %s (%d actions, %s, used %s)" % [cv["id"], acted, rs.result.get("winner", "?"), used.keys()])
+		rs.free()
+	Game.next = {}

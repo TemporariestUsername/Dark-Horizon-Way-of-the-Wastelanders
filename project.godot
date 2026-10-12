@@ -1,6 +1,7 @@
 ; Engine configuration file.
 ; Dark Horizon: Way of the Wastelanders. Godot 4.4.
-; M1 is headless: the simulation lives in res://sim, the runner in res://tools.
+; The simulation lives in res://sim (headless), the playable M2 scenes in res://game,
+; the runners and benches in res://tools.
 
 config_version=5
 
@@ -8,11 +9,14 @@ config_version=5
 
 config/name="Dark Horizon: Way of the Wastelanders"
 config/features=PackedStringArray("4.4")
+run/main_scene="res://game/main_menu.tscn"
 
 [display]
 
 window/size/viewport_width=480
 window/size/viewport_height=270
+window/size/window_width_override=1440
+window/size/window_height_override=810
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
 

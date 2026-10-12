@@ -57,6 +57,8 @@ As a hold's **Hum level** rises, its tiles lose saturation step by step. A Marke
 | **First contact** | UWNH port discovery | The arrival at an uncharted hold: the gate, the watchers, and the hold's name painted onto your map. |
 | **Month Report** | "Meanwhile…" | A one‑page broadsheet in the News' voice. The Choir's reach is printed in the masthead. |
 
+**Placeholder screens (M2).** The skirmish, road war and journey (route strip, supply gauges, event cards) are playable with art drawn in code from this palette: see [`game/`](../../game/README.md) and the [screenshots](../screenshots/). They test layout and readability, not the final look.
+
 ## UI: the dashboard
 - **Diegetic**. The UI is built from the convoy's own parts: a **dashboard** with needle gauges, scrap‑metal panels with **stencilled** labels, rivets, rust and chipped paint.
 - **Supply gauges are fuel gauges**: water, chow and guzzoline each get a needle and an "E" mark. Crew morale is a tachometer that redlines below 30.

@@ -5,9 +5,9 @@ A thousand dead cars, nose to tail for a mile, rusted together where they stoppe
   1) Salvage for a day  [Sharp check, fair: 59%]
   2) Drive on
 > Salvage for a day (59%: failure)
+  1 day(s)
   Skirmish: Scavvers in the stores. Won in 5 rounds.
   Loot: 1.5 barter.
-  1 day(s)
 
 Day 5, near Corbett (The Twenty, spring)
 The water from the last cask is green at the bottom. Somebody's already drunk some.

@@ -110,6 +110,14 @@ func run() -> Dictionary:
 
 
 func _road_day() -> void:
+	var pick := _day_start()
+	if not pick.is_empty():
+		_play(pick, pending_ctx)
+	_day_finish()
+
+
+## Morning: a new day, supplies burn, and a road event is drawn (or nothing).
+func _day_start() -> Dictionary:
 	day += 1.0
 	stats["road_days"] += 1
 	_burn()
@@ -117,10 +125,15 @@ func _road_day() -> void:
 	var hd: Dictionary = data.hold_by_id[h]
 	var ctx := {"day": day, "hold": h, "region": hd["region"], "ring": hd["ring"], "season": season(), "kind": "road",
 		"crossing": edges[leg]["crossing"] != null if leg < edges.size() else false, "water": supplies["water"], "chow": supplies["chow"]}
+	pending_ctx = ctx
 	var pick: Dictionary = events.draw(ctx)
 	if not pick.is_empty():
 		stats["road_events"] += 1
-		_play(pick, ctx)
+	return pick
+
+
+## The rest of the day: the drive, and a hold visit if the convoy reaches one.
+func _day_finish() -> void:
 	stats["max_bad_streak"] = max(stats["max_bad_streak"], events.bad_streak)
 	if supplies["fuel"] <= 0.0:
 		stats["days_out_of_fuel"] += 1
@@ -200,12 +213,23 @@ func _visit(h: String) -> void:
 	var pick: Dictionary = events.draw(ctx)
 	if not pick.is_empty():
 		stats["hold_events"] += 1
-		_play(pick, ctx)
+		if interactive:
+			_open_card(pick, ctx)
+		else:
+			_play(pick, ctx)
 
 
 # ---------------------------------------------------------------- playing an event card
 
 func _play(pick: Dictionary, ctx: Dictionary) -> void:
+	var chances := _present(pick, ctx)
+	var e: Dictionary = pick["event"]
+	var idx: int = policy.call(e, e["choices"], chances) if policy.is_valid() else auto_choice(e, chances)
+	_choose(pick, idx)
+
+
+## Shows a card (the transcript lines and stats). Returns each choice's chance (-1 if safe).
+func _present(pick: Dictionary, ctx: Dictionary) -> Array:
 	var e: Dictionary = pick["event"]
 	stats["events"] += 1
 	stats["by_tone"][e["tone"]] = int(stats["by_tone"].get(e["tone"], 0)) + 1
@@ -223,7 +247,11 @@ func _play(pick: Dictionary, ctx: Dictionary) -> void:
 		if c.has("check"):
 			tag = "  [%s check, %s: %d%%]" % [c["check"]["attr"].capitalize(), c["check"]["difficulty"], chances[i]]
 		say("  %d) %s%s" % [i + 1, c["label"], tag])
-	var idx: int = policy.call(e, e["choices"], chances) if policy.is_valid() else auto_choice(e, chances)
+	return chances
+
+
+func _choose(pick: Dictionary, idx: int) -> void:
+	var e: Dictionary = pick["event"]
 	var choice: Dictionary = e["choices"][idx]
 	var res = events.resolve(choice, party)
 	var outcome := ""
@@ -288,12 +316,15 @@ func _apply(fx: Dictionary, pick: Dictionary) -> void:
 			r = "Word is %s are out there, %s." % [events.threats[t]["name"], "near " + data.hold_by_id[events.threats[t]["at"]]["name"]] if t != "" else "Nothing you didn't know."
 		rumors.append(r)
 		summary.append("rumor: \"%s\"" % r)
+	if not summary.is_empty():
+		say("  " + ", ".join(summary))
 	if fx.has("battle"):
+		if interactive:
+			pending_battle = {"spec": fx["battle"], "on_win": fx.get("on_win", {}), "pick": pick}
+			return
 		var won := _battle(fx["battle"])
 		if won and fx.has("on_win"):
 			_apply(fx["on_win"], pick)
-	if not summary.is_empty():
-		say("  " + ", ".join(summary))
 
 
 static func _num(x: float, signed: bool = false) -> String:
@@ -301,11 +332,16 @@ static func _num(x: float, signed: bool = false) -> String:
 	return ("+" + t) if signed and x > 0.0 else t
 
 
-## Fights a battle from the data. Returns true if the party won.
+## Fights a battle from the data, automatically. Returns true if the party won.
 func _battle(spec: String) -> bool:
+	var sim = battle_setup(spec)
+	return battle_outcome(spec, sim, sim.run())
+
+
+## Builds the battle a card started (a Skirmish or a RoadWar, ready to run or to play).
+func battle_setup(spec: String):
 	stats["battles"] += 1
 	var parts: PackedStringArray = spec.split(":")
-	var won := false
 	if parts[0] == "skirmish":
 		var enc: Dictionary = data.units["encounters"].filter(func(x): return x["id"] == parts[1])[0]
 		var enemies: Array = []
@@ -321,17 +357,27 @@ func _battle(spec: String) -> bool:
 			m["buffs"] = []
 		var sk := Skirmish.new()
 		sk.setup(data, party, enemies, rng)
-		var res := sk.run()
-		won = res["winner"] == "party"
+		return sk
+	var cv: Dictionary = data.units["convoys"].filter(func(x): return x["id"] == parts[1])[0]
+	var rw := RoadWar.new()
+	rw.setup(data, convoy, cv["rigs"], cv["road"], rng)
+	return rw
+
+
+## Applies a finished battle's result to the journey. Returns true if the party won.
+func battle_outcome(spec: String, sim, res: Dictionary) -> bool:
+	var parts: PackedStringArray = spec.split(":")
+	var won: bool = res["winner"] == "party"
+	if parts[0] == "skirmish":
+		var enc: Dictionary = data.units["encounters"].filter(func(x): return x["id"] == parts[1])[0]
 		for m in party:
 			m["hp"] = max(m["hp"], 1.0)   # the downed are stabilised after the fight
-		say("  Skirmish: %s. %s in %d rounds." % [enc["name"], "Won" if won else "Lost", res["rounds"]])
+			m["fled"] = false
+		say("  Skirmish: %s. %s in %d rounds." % [enc["name"], "Won" if won else ("Got away" if res["winner"] == "fled" else "Lost"), res["rounds"]])
+		if res["winner"] == "fled":
+			return false
 	else:
 		var cv: Dictionary = data.units["convoys"].filter(func(x): return x["id"] == parts[1])[0]
-		var rw := RoadWar.new()
-		rw.setup(data, convoy, cv["rigs"], cv["road"], rng)
-		var res := rw.run()
-		won = res["winner"] == "party"
 		repairs += (1.0 - res["party_durability_share"]) * 6.0
 		if res["winner"] == "escaped":
 			say("  Road war: %s. You get away." % cv["name"])
@@ -353,6 +399,79 @@ func _battle(spec: String) -> bool:
 		morale = max(0.0, morale - 15.0)
 		say("  Beaten. They take half the cargo and half the stores, and leave you on the road.")
 	return won
+
+
+# ---------------------------------------------------------------- playing it (the journey scene)
+
+var interactive := false
+var phase := "start"              # start, morning, drive, end
+var pending_ctx: Dictionary = {}
+var pending_card: Dictionary = {} # {pick, ctx, chances}
+var pending_battle: Dictionary = {}  # {spec, on_win, pick}
+var limit_days := 0.0
+
+
+func _open_card(pick: Dictionary, ctx: Dictionary) -> void:
+	pending_card = {"pick": pick, "ctx": ctx, "chances": _present(pick, ctx)}
+
+
+## Advances until the player is needed. Returns one of:
+##   {kind: "card", event, chances}     choose with choose(i)
+##   {kind: "battle", spec, sim}        play sim, then battle_done(sim.finish())
+##   {kind: "day"}                      a day passed; call step() again
+##   {kind: "end", arrived}
+func step() -> Dictionary:
+	if not pending_battle.is_empty():
+		return {"kind": "battle", "spec": pending_battle["spec"], "sim": pending_battle.get("sim")}
+	if not pending_card.is_empty():
+		return {"kind": "card", "event": pending_card["pick"]["event"], "chances": pending_card["chances"]}
+	if phase == "start":
+		var expected := 0.0
+		for e in edges:
+			expected += graph.edge_days(e)
+		stats["expected_days"] = expected
+		limit_days = expected * MAX_DAYS_FACTOR + 20.0
+		say("From %s to %s: %d legs, about %.0f days." % [data.hold_by_id[route[0]]["name"], data.hold_by_id[route[-1]]["name"], edges.size(), expected])
+		phase = "morning"
+	if phase == "end" or leg >= edges.size() or day >= limit_days:
+		if phase != "end":
+			phase = "end"
+			stats["arrived"] = leg >= edges.size()
+			stats["days"] = day
+			say("%s after %.1f days. Cargo %d%%, barter %.1f, morale %d." % ["Arrived" if stats["arrived"] else "Gave up", day, roundi(cargo * 100), barter, roundi(morale)])
+		return {"kind": "end", "arrived": stats["arrived"]}
+	if phase == "morning":
+		var pick := _day_start()
+		phase = "drive"
+		if not pick.is_empty():
+			_open_card(pick, pending_ctx)
+			return step()
+	if phase == "drive":
+		_day_finish()
+		phase = "morning"
+		if not pending_card.is_empty():
+			return step()
+	return {"kind": "day"}
+
+
+## The player picks a choice on the open card.
+func choose(idx: int) -> Dictionary:
+	var pick: Dictionary = pending_card["pick"]
+	pending_card = {}
+	_choose(pick, idx)
+	if not pending_battle.is_empty():
+		pending_battle["sim"] = battle_setup(pending_battle["spec"])
+	return step()
+
+
+## The battle scene reports back with the sim's finish() result.
+func battle_done(res: Dictionary) -> Dictionary:
+	var pb := pending_battle
+	pending_battle = {}
+	var won := battle_outcome(pb["spec"], pb["sim"], res)
+	if won and not pb["on_win"].is_empty():
+		_apply(pb["on_win"], pb["pick"])
+	return step()
 
 
 # ---------------------------------------------------------------- the auto policy

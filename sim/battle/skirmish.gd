@@ -15,6 +15,7 @@ var size := Vector2i(16, 10)
 var round_n := 0
 var lines: Array = []            # one line per notable event
 var result := {}
+var party_fled := false
 
 
 func setup(sim_data, party: Array, enemies: Array, random: RandomNumberGenerator, cover_tiles: int = 10) -> void:
@@ -58,23 +59,203 @@ func _place(side: Array, player_side: bool) -> void:
 
 # ---------------------------------------------------------------- running
 
-## Runs to the end (or max_rounds). Returns the result dictionary.
+## Runs to the end (or max_rounds) with the AI on both sides. Returns the result dictionary.
 func run(max_rounds: int = 30) -> Dictionary:
 	while round_n < max_rounds and _winner() == "":
-		round_n += 1
-		var order: Array = _alive()
-		var sr := float(rules["speed_reroll"])
-		var keyed: Array = []
-		for c in order:
-			keyed.append([c["speed"] * rng.randf_range(1.0 - sr, 1.0 + sr), c])
-		keyed.sort_custom(func(a, b): return a[0] > b[0])
-		for k in keyed:
-			var c: Dictionary = k[1]
+		for c in start_round():
 			if c["down"] or c["fled"] or _winner() != "":
 				continue
 			_take_turn(c)
-		_check_rout()
-	var w := _winner()
+		end_round()
+	return finish()
+
+
+# ---------------------------------------------------------------- stepping (for the playable scene)
+
+## Starts a round: Speed order, re-rolled +-10%. Returns the units in turn order.
+func start_round() -> Array:
+	round_n += 1
+	var order: Array = _alive()
+	var sr := float(rules["speed_reroll"])
+	var keyed: Array = []
+	for c in order:
+		keyed.append([c["speed"] * rng.randf_range(1.0 - sr, 1.0 + sr), c])
+	keyed.sort_custom(func(a, b): return a[0] > b[0])
+	return keyed.map(func(k): return k[1])
+
+
+func end_round() -> void:
+	_check_rout()
+
+
+func winner() -> String:
+	return _winner()
+
+
+## Start of a unit's turn: statuses, stuns, reloads and Hum-struck lashing out.
+## Returns true if the unit may now act (by the AI or the player).
+func begin_turn(c: Dictionary) -> bool:
+	c["defending"] = false
+	c["moved"] = false
+	_tick_statuses(c)
+	if c["down"]:
+		return false
+	if c["statuses"].has("stunned") or c["statuses"].has("petrified"):
+		lines.append("%s can't act." % c["name"])
+		return false
+	_tick_buffs(c)
+	var foes: Array = _alive("enemy" if c["side"] == "party" else "party")
+	var friends: Array = _alive(c["side"])
+	if foes.is_empty():
+		return false
+	if c["statuses"].has("hum_struck") and rng.randf() < 0.5:
+		var victims: Array = friends.filter(func(x): return x != c and _dist(x["pos"], c["pos"]) <= 1)
+		if not victims.is_empty():
+			lines.append("%s is Hum-struck and lashes out." % c["name"])
+			_attack(c, victims[0], 1.0)
+			return false
+	if c["needs_reload"]:
+		c["needs_reload"] = false
+		_step_toward_cover(c)
+		lines.append("%s reloads." % c["name"])
+		return false
+	return true
+
+
+## The AI's choice for a unit that may act (also the "Auto" button).
+func ai_act(c: Dictionary) -> void:
+	var foes: Array = _alive("enemy" if c["side"] == "party" else "party")
+	var friends: Array = _alive(c["side"])
+	if foes.is_empty():
+		return
+	if _try_support(c, friends):
+		return
+	if _try_technique(c, foes):
+		return
+	if c["ammo"] <= 0 and int(c["weapon"]["ammo"]) > 0:
+		c["weapon"] = Characters.weapon(data, "fists")   # out of ammo: fight with what's left
+	var target := _pick_target(c, foes)
+	var rng_tiles := _range_tiles(c)
+	if _dist(c["pos"], target["pos"]) > rng_tiles:
+		_move_toward(c, target["pos"], rng_tiles)
+	if _dist(c["pos"], target["pos"]) <= rng_tiles:
+		_attack(c, target, 1.0)
+	else:
+		c["defending"] = true
+
+
+## Tiles a unit can reach this turn (breadth-first over free tiles).
+func reachable(c: Dictionary) -> Array:
+	var steps := int(rules["move_tiles"]) + int(_buff(c, "move"))
+	var seen := {c["pos"]: 0}
+	var frontier: Array = [c["pos"]]
+	while not frontier.is_empty():
+		var p: Vector2i = frontier.pop_front()
+		if seen[p] >= steps:
+			continue
+		for d in [Vector2i(1, 0), Vector2i(-1, 0), Vector2i(0, 1), Vector2i(0, -1)]:
+			var q: Vector2i = p + d
+			if _in_bounds(q) and not seen.has(q) and _unit_at(q).is_empty():
+				seen[q] = seen[p] + 1
+				frontier.append(q)
+	seen.erase(c["pos"])
+	return seen.keys()
+
+
+func player_move(c: Dictionary, tile: Vector2i) -> bool:
+	if c["moved"] or not reachable(c).has(tile):
+		return false
+	c["pos"] = tile
+	c["moved"] = true
+	return true
+
+
+func range_of(c: Dictionary) -> int:
+	if c["ammo"] <= 0 and int(c["weapon"]["ammo"]) > 0:
+		c["weapon"] = Characters.weapon(data, "fists")
+	return _range_tiles(c)
+
+
+func targets_for(c: Dictionary) -> Array:
+	var r := range_of(c)
+	return _alive("enemy" if c["side"] == "party" else "party").filter(func(t): return _dist(c["pos"], t["pos"]) <= r)
+
+
+func hit_chance(c: Dictionary, t: Dictionary) -> float:
+	var shots := 3 if c["weapon"]["tags"].has("autofire") and c["ammo"] >= 3 else 1
+	return _hit_chance(c, t, -15.0 if shots == 3 else 0.0)
+
+
+func player_attack(c: Dictionary, t: Dictionary) -> bool:
+	if not targets_for(c).has(t):
+		return false
+	var hp_before: float = t["hp"]
+	_attack(c, t, 1.0)
+	lines.append("%s attacks %s: %s." % [c["name"], t["name"], ("%d damage" % roundi(hp_before - t["hp"])) if t["hp"] < hp_before else "miss"])
+	return true
+
+
+func player_defend(c: Dictionary) -> void:
+	c["defending"] = true
+	lines.append("%s defends." % c["name"])
+
+
+## Battle actions a unit has right now: class abilities (heal, revive) and discipline techniques.
+func skills_for(c: Dictionary) -> Array:
+	var out: Array = []
+	for ab in c["abilities"]:
+		var b: Dictionary = ab["battle"]
+		if b.has("action") and b["action"] in ["heal", "revive"] and c["grit"] >= float(b.get("grit", 0)) * c["grit_cost_mult"]:
+			out.append({"kind": "ability", "name": ab["name"], "def": ab, "grit": float(b.get("grit", 0))})
+	for t in c["techniques"]:
+		if c["grit"] >= float(t["grit"]) * c["grit_cost_mult"] and t["target"] != "map":
+			out.append({"kind": "technique", "name": t["name"], "def": t, "grit": float(t["grit"])})
+	return out
+
+
+## Use a skill. Heals and revives pick the neediest ally; attacks need a target in reach.
+func player_skill(c: Dictionary, skill: Dictionary, target: Dictionary = {}) -> bool:
+	var friends: Array = _alive(c["side"])
+	if skill["kind"] == "ability" or skill["def"]["target"] in ["ally", "downed_ally"]:
+		return _try_support(c, friends)
+	var foes: Array = _alive("enemy" if c["side"] == "party" else "party")
+	if target.is_empty():
+		target = _pick_target(c, foes)
+	var t: Dictionary = skill["def"]
+	if t["target"] != "self" and _dist(c["pos"], target["pos"]) > 6:
+		return false
+	c["grit"] -= float(t["grit"]) * c["grit_cost_mult"]
+	if t.has("buff"):
+		(c if t["target"] == "self" else target)["buffs"].append(t["buff"].duplicate())
+	var victims: Array = [target] if t["target"] != "self" else []
+	if t["target"] == "enemy_area":
+		victims = foes.filter(func(f): return _dist(f["pos"], target["pos"]) <= 1)
+	for v in victims:
+		if t.has("damage"):
+			_hurt(v, float(t["damage"]), t["name"])
+		if t.has("hum_damage"):
+			_hurt(v, float(t["hum_damage"]), t["name"])
+		if t.has("status") and not v["down"]:
+			v["statuses"][t["status"]["id"]] = int(t["status"]["turns"])
+	lines.append("%s uses %s." % [c["name"], t["name"]])
+	return true
+
+
+## The party tries to flee: one roll for everyone. Success ends the battle.
+func player_flee() -> bool:
+	var ok := rng.randf() * 100.0 < flee_chance()
+	if ok:
+		for c in _alive("party"):
+			c["fled"] = true
+		party_fled = true
+		lines.append("The party gets away.")
+	else:
+		lines.append("The party tries to run, and can't.")
+	return ok
+
+
+func finish() -> Dictionary:
+	var w := "fled" if party_fled else _winner()
 	var party: Array = units.filter(func(c): return c["side"] == "party")
 	var hp_max := 0.0
 	var hp_now := 0.0
@@ -126,40 +307,8 @@ func _check_rout() -> void:
 # ---------------------------------------------------------------- a turn
 
 func _take_turn(c: Dictionary) -> void:
-	c["defending"] = false
-	_tick_statuses(c)
-	if c["down"]:
-		return
-	if c["statuses"].has("stunned") or c["statuses"].has("petrified"):
-		return
-	_tick_buffs(c)
-	var foes: Array = _alive("enemy" if c["side"] == "party" else "party")
-	var friends: Array = _alive(c["side"])
-	if foes.is_empty():
-		return
-	if c["statuses"].has("hum_struck") and rng.randf() < 0.5:
-		var victims: Array = friends.filter(func(x): return x != c and _dist(x["pos"], c["pos"]) <= 1)
-		if not victims.is_empty():
-			_attack(c, victims[0], 1.0)
-			return
-	if c["needs_reload"]:
-		c["needs_reload"] = false
-		_step_toward_cover(c)
-		return
-	if _try_support(c, friends):
-		return
-	if _try_technique(c, foes):
-		return
-	if c["ammo"] <= 0 and int(c["weapon"]["ammo"]) > 0:
-		c["weapon"] = Characters.weapon(data, "fists")   # out of ammo: fight with what's left
-	var target := _pick_target(c, foes)
-	var rng_tiles := _range_tiles(c)
-	if _dist(c["pos"], target["pos"]) > rng_tiles:
-		_move_toward(c, target["pos"], rng_tiles)
-	if _dist(c["pos"], target["pos"]) <= rng_tiles:
-		_attack(c, target, 1.0)
-	else:
-		c["defending"] = true
+	if begin_turn(c):
+		ai_act(c)
 
 
 func _tick_statuses(c: Dictionary) -> void:
