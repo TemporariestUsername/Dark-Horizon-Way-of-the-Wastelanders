@@ -4,7 +4,7 @@
 ##       --script res://tools/capture.gd -- <shot> <out.png>
 ##
 ## Shots: menu, skirmish, skirmish_end, skirmish_result, road_war, road_war_end, road_war_result,
-## journey, journey_card, journey_end. The *_result and journey_end shots play as a tester who
+## journey, journey_card, journey_battle, journey_end. The *_result and journey_end shots play as a tester who
 ## presses Auto every turn, so the "how did that feel?" buttons show.
 ## Needs a renderer (not --headless).
 extends SceneTree
@@ -35,7 +35,7 @@ func _run() -> void:
 		"road_war", "road_war_end", "road_war_result":
 			Game.next = {"convoy": "teeth_raid", "level": 3, "seed": 1}
 			scene_path = "res://game/road_war_scene.tscn"
-		"journey", "journey_card", "journey_end":
+		"journey", "journey_card", "journey_battle", "journey_end":
 			Game.next = {"from": "lighthouse", "to": "dustwich", "level": 3, "seed": 1}
 			Game.journey = null
 			scene_path = "res://game/journey_scene.tscn"
@@ -91,11 +91,21 @@ func _run() -> void:
 					scene._on_auto_resolve()
 				else:
 					scene.advance(true)
+		"journey_battle":
+			for i in 400:
+				if scene.over or scene.state["kind"] == "battle":
+					break
+				if scene.state["kind"] == "card":
+					scene._on_choice(scene.j.auto_choice(scene.state["event"], scene.state["chances"]))
+				else:
+					scene.advance(true)
 		"journey_card":
 			for i in 40:
 				if scene.card.size() > 0 or scene.over:
 					break
 				scene.advance()
+	if scene.has_method("_animate"):
+		scene._animate(5.0)   # let slides finish and popups fade, as they would in play
 	if "cam_x" in scene and not scene.waiting:
 		scene.cam_x = scene._party_center()
 	scene.queue_redraw()

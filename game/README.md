@@ -1,6 +1,6 @@
 # game/
 
-The playable M2 prototype: a skirmish, a road war and a journey, with **placeholder art drawn in code** from the palette in [doc 14](../docs/design/14-art-audio-ui.md) (a hot world of ochre, rust and bone; the Choir is the only cold, violet thing). Real sprites, portraits and the dashboard come later.
+The playable M2 prototype: a skirmish, a road war and a journey, with **placeholder pixel art generated in code** from the palette in [doc 14](../docs/design/14-art-audio-ui.md) (a hot world of ochre, rust and bone; the Choir is the only cold, violet thing). It's stand-in art, made to be readable and consistent until an artist replaces it.
 
 The scenes hold no rules. Each one drives a sim from [`sim/`](../sim/README.md) through its step API and draws it, so a fight played here follows the same rules, and the same AI, as the balance benches. With the AI playing every unit, a scene reaches exactly the result the sim's `run()` reaches (`tests/run_tests.gd` checks it for every encounter and convoy).
 
@@ -10,13 +10,18 @@ The scenes hold no rules. Each one drives a sim from [`sim/`](../sim/README.md) 
 | `skirmish_scene.tscn` | Inindo's grid battle (doc 09) |
 | `road_war_scene.tscn` | UWNH's fleet battle on the road: lanes, range bands, the camera following the convoy |
 | `journey_scene.tscn` | A route day by day: the route strip, supply gauges, event cards with their check chances, battles to fight or auto-resolve |
-| `game.gd` | Shared state (the loaded data, the journey in progress, what the next scene sets up), the palette, the theme and drawing helpers |
+| `game.gd` | Shared state (the loaded data, the journey in progress, what the next scene sets up), the palette, fonts, the theme and drawing helpers (shadowed text, bars, dial gauges, panels) |
+| `art.gd` | The placeholder art, built once and cached: people from parts (head gear, body, weapon, extras) with a one-pixel outline, beasts, side-view rigs by frame and crew colours, ground tiles, cover, road wrecks, icons, riveted UI plates and the menu's sunset backdrop |
+| `fonts/` | Micro 5 (text) and Jersey 10 (headings) by the Soft Type Project, SIL Open Font License 1.1 (licences alongside; shipped in the playtest zips). Drawn only at their native sizes (10, 20, 40), with no smoothing |
 | `playtest_log.gd` | The playtest log: every fight, card and journey, and testers' "too easy / about right / too hard", as JSON lines in the user folder. See [playtesting](../docs/playtest/README.md) |
 
 ![The test menu](../docs/screenshots/m2-menu.png)
 ![A skirmish](../docs/screenshots/m2-skirmish.png)
 ![A road war](../docs/screenshots/m2-road_war.png)
 ![An event card on a journey](../docs/screenshots/m2-journey_card.png)
+![A battle on a journey](../docs/screenshots/m2-journey_battle.png)
+
+**What moves.** Units slide between squares; shots draw tracers; hits flash and show their damage; misses say so; the fallen fall. On the road the asphalt rolls by, rigs bounce and kick up dust, guns flash, rams throw sparks, wrecks burn and drop behind. The effects come from the sims' `fx` lists, which the sims only ever append to, so they can't change a result.
 
 ## Controls
 **Skirmish.** On a party unit's turn, teal tiles are where it can move (once a turn). Click an enemy in range (its hit chance shows under it) to attack, which ends the turn. Hover a unit to see its stats.
@@ -37,5 +42,5 @@ GODOT=$(tools/get_godot.sh)
 Screenshots without a display (Linux, Xvfb and Mesa):
 ```sh
 xvfb-run -a -s "-screen 0 1280x800x24" "$GODOT" --path . --rendering-driver opengl3 \
-    --script res://tools/capture.gd -- skirmish out.png   # also: menu, skirmish_result, road_war, road_war_result, journey_card, journey_end…
+    --script res://tools/capture.gd -- skirmish out.png   # also: menu, skirmish_result, road_war, road_war_result, journey_card, journey_battle, journey_end…
 ```

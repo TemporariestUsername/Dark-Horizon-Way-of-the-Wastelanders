@@ -42,7 +42,7 @@ func _run_all() -> void:
 		"test_data_loads", "test_graph", "test_lean", "test_gang_war", "test_conditions",
 		"test_characters", "test_determinism", "test_invariants",
 		"test_build_class", "test_skirmish", "test_road_war", "test_events", "test_golden_journeys",
-		"test_interactive_journey", "test_scenes", "test_scene_player", "test_playtest_log",
+		"test_interactive_journey", "test_scenes", "test_scene_player", "test_playtest_log", "test_art",
 	]:
 		var before := failures
 		call(t)
@@ -629,3 +629,23 @@ func test_playtest_log() -> void:
 				ok(r["verdict"] in ["too_easy", "about_right", "too_hard"], "a feel record has a verdict")
 	ok(recs.any(func(r): return r["kind"] == "journey_battle" and r["mode"] == "fought"), "a fought journey battle is logged")
 	ok(recs.any(func(r): return r["kind"] == "skirmish" and r["source"] == "journey" or r["kind"] == "road_war" and r["source"] == "journey"), "a battle fought from a journey says so")
+
+
+## Every unit, class and rig frame in the data has its own placeholder sprite (no silent
+## fallback to a generic one), and every sprite builds.
+func test_art() -> void:
+	var Art = load("res://game/art.gd")
+	for u in data.units["units"]:
+		ok(Art.PEOPLE.has(u["id"]) or Art.BEASTS.has(u["id"]), "unit %s has a sprite of its own" % u["id"])
+		var t: Texture2D = Art.unit(u["id"])
+		ok(t != null and t.get_width() > 8 and t.get_height() > 8, "unit %s's sprite builds" % u["id"])
+	for c in data.classes["classes"]:
+		ok(Art.PEOPLE.has(c["id"]), "class %s has a sprite of its own" % c["id"])
+	var crews: Array = data.units["crews"].map(func(c): return c["id"])
+	for f in data.equipment["frames"]:
+		for crew in crews:
+			var t: Texture2D = Art.rig(f["id"], "enemy", crew)
+			ok(t != null and t.get_width() > 8, "frame %s builds for %s" % [f["id"], crew])
+	for k in ["panel", "card", "button", "button_hover", "button_pressed", "button_disabled"]:
+		ok(Art.plate(k).texture != null, "plate %s builds" % k)
+	ok(Art.backdrop().get_width() == 480, "the menu backdrop is 480 wide")

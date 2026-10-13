@@ -28,6 +28,9 @@ var round_n := 0
 var lines: Array = []
 var party_mode := "fight"        # or "flee"
 var result := {}
+## What happened, for the playable scene's effects: {kind: shot, miss, ram or board, from, to}.
+## Only appended to; the sim never reads it, so it can't change a result.
+var fx: Array = []
 
 
 ## party_rigs / enemy_rigs: specs as in data/units/units.json (frame, crew, crew_type, guns,
@@ -71,6 +74,7 @@ func _build_rig(spec: Dictionary, side: String, idx: int, x: int) -> Dictionary:
 		ch = Characters.build_unit(data, spec["leader"], side, rng, idx)
 	var rig := {
 		"id": "%s_%s_%d" % [side, spec["frame"], idx], "name": fr["name"], "side": side,
+		"frame": spec["frame"], "crew_type": spec["crew_type"],
 		"durability": float(fr["durability"]), "max_durability": float(fr["durability"]),
 		"armor": float(fr["armor"]), "speed": int(fr["speed"]), "handling": float(fr["handling"]),
 		"ram": float(fr["ram"]), "mounts": int(fr["gun_mounts"]), "guns": guns.slice(0, int(fr["gun_mounts"])),
@@ -416,7 +420,9 @@ func _fire(r: Dictionary, foes: Array) -> void:
 			var handling: float = t["handling"] + (float(rules["evade_handling"]) if t["evade"] else 0.0)
 			var chance := clampf(float(f["base"]) + _gun_accuracy(r) - handling, float(f["min"]), float(f["max"]))
 			if rng.randf() * 100.0 >= chance:
+				fx.append({"kind": "miss", "from": r["id"], "to": t["id"]})
 				continue
+			fx.append({"kind": "shot", "from": r["id"], "to": t["id"], "burning": g["tags"].has("burning"), "hook": g["tags"].has("hook")})
 			var armor: float = t["armor"] * (0.5 if g["tags"].has("armour_piercing") else 1.0)
 			_damage(t, max(1.0, float(g["power"]) - armor), g.get("name", "riders"))
 			if g["tags"].has("burning"):
@@ -439,6 +445,7 @@ func _damage(r: Dictionary, amount: float, source: String) -> void:
 func _ram(r: Dictionary, t: Dictionary) -> void:
 	var diff: float = max(0, r["speed"] - t["speed"])
 	var power: float = r["ram"] * (1.0 + diff / 4.0) * (1.0 + r["charge_ram_pct"] / 100.0)
+	fx.append({"kind": "ram", "from": r["id"], "to": t["id"]})
 	_damage(t, max(1.0, power - t["armor"]), r["name"] + "'s ram")
 	_damage(r, max(0.0, power * float(rules["ram"]["self_damage_share"]) - r["armor"] - r["charge_armor"]), "ramming")
 
@@ -465,6 +472,7 @@ func _duel_favoured(r: Dictionary, t: Dictionary) -> bool:
 
 
 func _board(r: Dictionary, t: Dictionary) -> void:
+	fx.append({"kind": "board", "from": r["id"], "to": t["id"]})
 	var boarders := float(r["crew"] - 1)
 	var a_ch: Dictionary = r["character"]
 	var d_ch: Dictionary = t["character"]

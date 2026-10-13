@@ -16,6 +16,9 @@ var round_n := 0
 var lines: Array = []            # one line per notable event
 var result := {}
 var party_fled := false
+## What happened, for the playable scene's effects: {kind: hit, miss, hum or stun, from, to}.
+## Only appended to; the sim never reads it, so it can't change a result.
+var fx: Array = []
 
 
 func setup(sim_data, party: Array, enemies: Array, random: RandomNumberGenerator, cover_tiles: int = 10) -> void:
@@ -457,13 +460,17 @@ func _attack(c: Dictionary, t: Dictionary, dmg_mult: float) -> void:
 		if int(w["ammo"]) > 0:
 			c["ammo"] -= 1
 		if rng.randf() * 100.0 >= _hit_chance(c, t, acc_mod):
+			fx.append({"kind": "miss", "from": c["id"], "to": t["id"]})
 			continue
 		if tags.has("hum"):
+			fx.append({"kind": "hum", "from": c["id"], "to": t["id"]})
 			_hum_hit(c, t)
 			continue
 		if tags.has("stun"):
+			fx.append({"kind": "stun", "from": c["id"], "to": t["id"]})
 			t["statuses"]["stunned"] = 1
 			continue
+		fx.append({"kind": "hit", "from": c["id"], "to": t["id"]})
 		var crit = rng.randf() * 100.0 < c["luck"] / 4.0 * c["crit_mult"]
 		var var_r: Array = rules["damage"]["variance"]
 		var raw := (Characters.attack_value(c) + _buff(c, "attack")) * rng.randf_range(float(var_r[0]), float(var_r[1])) * dmg_mult

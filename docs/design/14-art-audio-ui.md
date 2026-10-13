@@ -57,7 +57,7 @@ As a hold's **Hum level** rises, its tiles lose saturation step by step. A Marke
 | **First contact** | UWNH port discovery | The arrival at an uncharted hold: the gate, the watchers, and the hold's name painted onto your map. |
 | **Month Report** | "Meanwhile…" | A one‑page broadsheet in the News' voice. The Choir's reach is printed in the masthead. |
 
-**Placeholder screens (M2).** The skirmish, road war and journey (route strip, supply gauges, event cards) are playable with art drawn in code from this palette: see [`game/`](../../game/README.md) and the [screenshots](../screenshots/). They test layout and readability, not the final look.
+**Placeholder screens (M2).** The skirmish, road war and journey (route strip, dial gauges, event cards) are playable with placeholder pixel art generated in code from this palette, pixel fonts at their native sizes, riveted plates and stencil buttons: see [`game/`](../../game/README.md) and the [screenshots](../screenshots/). They test layout, readability and feel, not the final look: an artist replaces them.
 
 ## UI: the dashboard
 - **Diegetic**. The UI is built from the convoy's own parts: a **dashboard** with needle gauges, scrap‑metal panels with **stencilled** labels, rivets, rust and chipped paint.

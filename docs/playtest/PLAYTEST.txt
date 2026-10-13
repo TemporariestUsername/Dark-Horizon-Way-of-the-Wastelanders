@@ -35,3 +35,7 @@ On the menu, click "Open log folder" and send us the file log.jsonl. It's here:
   macOS:   ~/Library/Application Support/Dark Horizon/playtest/log.jsonl
 Notes on what felt good or bad are just as welcome: tell us the build number
 shown on the menu.
+
+CREDITS
+Fonts: Micro 5 and Jersey 10 by the Soft Type Project (Sarah Cadigan-Fried), under the
+SIL Open Font License 1.1. The licences are in the licenses folder.

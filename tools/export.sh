@@ -5,6 +5,7 @@
 #
 #   tools/export.sh                 # all three, into build/
 #   BUILD_ID=abc1234 tools/export.sh windows macos
+#   tools/export.sh macos-arm64 macos-x86_64   # one-architecture Macs, half the size (to send directly)
 #
 # Needs: tools/get_godot.sh and tools/get_export_templates.sh (Linux x86_64).
 set -euo pipefail
@@ -39,12 +40,15 @@ for t in "${targets[@]}"; do
     windows)
       export_one Windows build/windows/DarkHorizon.exe
       cp docs/playtest/PLAYTEST.txt build/windows/
+      mkdir -p build/windows/licenses && cp game/fonts/OFL-*.txt build/windows/licenses/
       python3 -I - build/windows "build/out/$name-windows.zip" <<'EOF'
 import os, sys, zipfile
 src, out = sys.argv[1], sys.argv[2]
-with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
-    for f in sorted(os.listdir(src)):
-        z.write(os.path.join(src, f), f)
+with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as z:
+    for d, _, fs in sorted(os.walk(src)):
+        for f in sorted(fs):
+            path = os.path.join(d, f)
+            z.write(path, os.path.relpath(path, src))
 EOF
       ;;
     macos)
@@ -52,7 +56,7 @@ EOF
       # Rename the bundle ("Dark Horizon- Way of the..." from the project name) to "Dark Horizon.app",
       # keeping file modes. The ad-hoc signature covers Contents/, not the bundle's folder name.
       python3 -I - build/macos/export.zip docs/playtest/PLAYTEST.txt "build/out/$name-macos.zip" <<'EOF'
-import sys, zipfile
+import glob, os, sys, zipfile
 src, readme, out = sys.argv[1], sys.argv[2], sys.argv[3]
 with zipfile.ZipFile(src) as zin, zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as zout:
     for info in zin.infolist():
@@ -65,14 +69,78 @@ with zipfile.ZipFile(src) as zin, zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED
         new.compress_type = zipfile.ZIP_DEFLATED
         zout.writestr(new, zin.read(info))
     zout.write(readme, "PLAYTEST.txt")
+    for lic in sorted(glob.glob("game/fonts/OFL-*.txt")):
+        zout.write(lic, "licenses/" + os.path.basename(lic))
 EOF
+      ;;
+    macos-arm64|macos-x86_64)
+      # One architecture only (half the size of the universal build, for sending directly):
+      # a custom template holding just that slice of the official universal binary.
+      arch="${t#macos-}"
+      tpl="$PWD/build/macos-template-$arch.zip"
+      python3 -I - "$(tools/get_export_templates.sh)/macos.zip" "$tpl" "$arch" <<'PY'
+import struct, sys, zipfile
+src, out, arch = sys.argv[1], sys.argv[2], sys.argv[3]
+cpu_of = {0x0100000C: "arm64", 0x01000007: "x86_64"}
+with zipfile.ZipFile(src) as zin:
+    entries = [(i.filename, i.external_attr, i.date_time, zin.read(i.filename)) for i in zin.infolist()]
+with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as zo:
+    for name, attr, dt, data in entries:
+        if "/Contents/MacOS/" in name and not name.endswith("/"):
+            if "release" not in name:
+                continue
+            for i in range(struct.unpack(">I", data[4:8])[0]):   # the fat header's slices
+                cpu, _, off, size, _ = struct.unpack(">5I", data[8 + i * 20: 28 + i * 20])
+                if cpu_of.get(cpu) == arch:
+                    data = data[off:off + size]
+                    break
+            else:
+                raise SystemExit("no " + arch + " slice in " + name)
+            name = name.replace(".universal", "." + arch)
+        zi = zipfile.ZipInfo(name, dt)
+        zi.external_attr = attr
+        zi.create_system = 3
+        zi.compress_type = zipfile.ZIP_DEFLATED
+        zo.writestr(zi, data)
+PY
+      # Point the macOS preset at that template for this one export, then put it back.
+      cp export_presets.cfg build/export_presets.cfg.bak
+      python3 -I - "$arch" "$tpl" <<'PY'
+import re, sys
+arch, tpl = sys.argv[1], sys.argv[2]
+s = open("export_presets.cfg").read()
+head, mac = s.split("[preset.1.options]")
+mac, rest = mac.split("[preset.2]")
+mac = re.sub(r'binary_format/architecture="[^"]*"', f'binary_format/architecture="{arch}"', mac)
+mac = re.sub(r'custom_template/release="[^"]*"', f'custom_template/release="{tpl}"', mac)
+open("export_presets.cfg", "w").write(head + "[preset.1.options]" + mac + "[preset.2]" + rest)
+PY
+      status=0
+      ( export_one macOS "build/macos-$arch/export.zip" ) || status=$?
+      cp build/export_presets.cfg.bak export_presets.cfg
+      [ "$status" -eq 0 ] || exit 1
+      python3 -I - "build/macos-$arch/export.zip" docs/playtest/PLAYTEST.txt "build/out/$name-$t.zip" <<'PY'
+import glob, os, sys, zipfile
+src, readme, out = sys.argv[1], sys.argv[2], sys.argv[3]
+with zipfile.ZipFile(src) as zin, zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as zout:
+    for info in zin.infolist():
+        top, _, rest = info.filename.partition("/")
+        new = zipfile.ZipInfo("Dark Horizon.app/" + rest, info.date_time)
+        new.external_attr = info.external_attr
+        new.create_system = 3   # Unix, so the executable bit survives
+        new.compress_type = zipfile.ZIP_DEFLATED
+        zout.writestr(new, zin.read(info), compresslevel=9)
+    zout.write(readme, "PLAYTEST.txt")
+    for lic in sorted(glob.glob("game/fonts/OFL-*.txt")):
+        zout.write(lic, "licenses/" + os.path.basename(lic))
+PY
       ;;
     linux)
       export_one Linux build/linux/DarkHorizon.x86_64
       # The smoke test: the exported build loads the data and writes the playtest log, then quits.
       XDG_DATA_HOME="$PWD/build/smoke-home" timeout 120 build/linux/DarkHorizon.x86_64 --headless -- --smoke-test
       ;;
-    *) echo "unknown target $t (windows, macos, linux)" >&2; exit 2 ;;
+    *) echo "unknown target $t (windows, macos, macos-arm64, macos-x86_64, linux)" >&2; exit 2 ;;
   esac
 done
 ls -la build/out
