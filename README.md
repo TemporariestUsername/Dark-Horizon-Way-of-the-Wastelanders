@@ -53,6 +53,7 @@ python3 tools/playtest_report.py playtest-logs/                  # what testers'
 ## Research (`docs/research/`)
 - [Teardown: Uncharted Waters: New Horizons](docs/research/uncharted-waters-new-horizons.md): reverse‑engineered from the ROM (headers, data tables, text) and observed in emulation.
 - [Teardown: Inindo: Way of the Ninja](docs/research/inindo-way-of-the-ninja.md): same method.
+- [Play notes](docs/research/rom-play-notes.md): what both games feel like in play, with measured prices, haggling and credit, and the M3 tuning targets they set.
 - [Apocalypse World source notes](docs/research/apocalypse-world-source-notes.md): the AW elements we use as flavour, and the rules we don't.
 - [**Platform recommendation**](docs/research/platform-recommendation.md): **Godot 4**, a data‑driven 2D game with a headless simulation core, for Windows and macOS.
 
